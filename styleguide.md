@@ -36,7 +36,7 @@ comments
         <id> line <from>-<to>: <description>
         
     for attributes:
-        <id> variable <name>: <type>: <description>   
+        <id> variable <type> <name>: <description>   
     
     for functions:
         <id> def <function name>(*<parameter>: <type>) -> <returntype>:
