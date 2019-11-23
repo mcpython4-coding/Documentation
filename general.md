@@ -1,15 +1,21 @@
-Every file of these project contains not the program itself,
-this is only the documentation for it.
+general documentation of the main directory
 
-These documentation may not be always up-to-date, there may
-be big changes been made which take some time to write an
-documentation for.
+This directory holds the program itself
 
-If you want any information about an function, simply go to
-the same file in the documentation ending with .md instead of .py
+It contains an endless amount of files, including:
 
-If you point any typo, mistake or improvement out, feel free
-to create an issue or pull request.
+    __main__.py: file to launch the program
 
-Please have also an look at warnings, they help if you want to
-work with these project.
+    version.info: changelog
+
+    deprecated.txt: list of things that will be removed in the future
+    
+    LICENSE, LICENSE_Fogleman & LICENSE_Minecraft: licences of different parts of the program
+    
+    mods.json: an file used by the program to indicate mod changes
+    
+    REAME.md & README_old.md: the first should be read, the second is an guide on what could be added
+    
+    requirements.txt: an pip-styled file to install all needed modules at once
+    
+    tasks.list: an file containing some thoughts for the future of this project 
