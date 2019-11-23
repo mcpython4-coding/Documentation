@@ -19,7 +19,6 @@ comments
     ___
     
     This file is used for <what it is used for> by <what uses this file>
-    It contains <quick overview about what's in it>
     
     <some general words around content>
     
