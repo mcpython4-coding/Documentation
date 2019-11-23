@@ -15,7 +15,9 @@ every style definition is formatted with one tab. text to insert as
 blank text, in "<>" descriptions on what to insert and in "\[\]" 
 comments  
 
-    <the name of the python file with path> - documentation
+    ***<the name of the python file with path> - documentation***
+    ___
+    
     This file is used for <what it is used for> by <what uses this file>
     It contains <quick overview about what's in it>
     
