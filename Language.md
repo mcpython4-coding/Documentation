@@ -7,7 +7,8 @@ language files of minecraft to translated once.
 1. variable dict<str -> Language.Language> LANGUAGES: 
 table name -> Language instance, used for translating strings
 
-2. variable str ACTIVE_LANGUAGE: The name of the active language
+2. variable str ACTIVE_LANGUAGE: The name of the active language,
+can be changed during runtime
 
 3. def get(key: str, formatting=[]) -> str
     Translates an key to translated in active language. formatting are
@@ -23,35 +24,37 @@ table name -> Language instance, used for translating strings
     supports formatting by adding them with '|' after key
 
 5. class Language(object):
-    main class for Language system
+    main class for Language system, holds all translateable's
+    for one language
     
-    5.1 def from_file(cls, file: str, name=None)
+    1. def from_file(cls, file: str, name=None)
     
-    Will read file as Language file. Name is the language name. If name
-    is None, name is extracted from filename. "file" is read through 
-    ResouceLocator's read function with json system.
-    WARNING: only new language format is supported at the moment,
-    old format is planed but not implemented yet.
+        Will read file as Language file. Name is the language name. If name
+        is None, name is extracted from filename. "file" is read through 
+        ResouceLocator's read function with json system.
+        
+        WARNING: only new language format is supported at the moment,
+        old format is planed but not implemented yet.
+        
+    2. def from_data(cls, name: str, data: dict)
     
-    5.2 def from_data(cls, name: str, data: dict)
+        Will load the language data (new format!) into the system using name
+        as language name. WARNING: if any to translate exists in system, 
+        behaviour may be not what us wanted
+        
+    3. def \_\_init__(self)
     
-    Will load the language data (new format!) into the system using name
-    as language name. WARNING: if any to translate exists in system, 
-    behaviour may be not what us wanted
+        Creates an new Language-object with empty table
+        
+    4. def add_entry(self, key: str, value: str)
     
-    5.3 def \_\_init__(self)
+        Will add an new translated entry like replace(key, value) in every 
+        string
     
-    Creates an new Language-object with empty table
+    5. def read_value(self, key)
     
-    5.4 def add_entry(self, key: str, value: str)
-    
-    Will add an new translated entry like replace(key, value) in every 
-    string
-    
-    5.5 def read_value(self, key)
-    
-    Will access the key from the Language file. If not arrival, returns
-    key.
+        Will access the key from the Language file. If not arrival, returns
+        key.
     
 6. def from_directory(directory, modname)
     
@@ -63,4 +66,4 @@ table name -> Language instance, used for translating strings
     will call from_directory with default location 
     ("assets/\<modname\>/lang")
 
-8. line 81: load minecraft files
+8. line 81: load minecraft files by from_mod_name-method

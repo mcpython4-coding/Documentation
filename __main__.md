@@ -28,5 +28,5 @@ Everything is in an try-except block to make closing the resources simpler
     
 12. line 90-93: on exception in this part, the game will be able to cleanup before crash
 
-13. line 96-103: called when directly launched, calls main() in an 
+13. line 96-103: called when directly launched, calls (11) in an 
 try-finally block to make cleanup easier

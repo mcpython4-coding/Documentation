@@ -18,25 +18,25 @@ during certain moments of loading, instead always.
 
     The class to use to share data
     
-    1.1 def \_\_init__(self, name)
+    1. def \_\_init__(self, name)
         
-    constructor of FeatureTable. "name" is the name of the table.
+        constructor of FeatureTable. "name" is the name of the table.
     
-    1.2 def add_holder(self, name: str, info: str)
+    2. def add_holder(self, name: str, info: str)
     
-    adds an entry into the table. info is an description on what is 
-    does. These function sets the value to None, not any other value.
+        adds an entry into the table. info is an description on what is 
+        does. These function sets the value to None, not any other value.
     
-    1.3 set_attribute(self, name: str, data) -> object
+    3. set_attribute(self, name: str, data) -> object
     
-    Sets an value in the table. If name is not found, ValueError is
-    raised. Returns data if it is the first set for the value, otherwise
-    the value set before.
+        Sets an value in the table. If name is not found, ValueError is
+        raised. Returns data if it is the first set for the value, otherwise
+        the value set before.
+        
+    4. exists_in_table(self, name: str) -> bool
     
-    1.4 exists_in_table(self, name: str) -> bool
-    
-    returns if name is an entry in table with value set. raises NO
-    ValueError if name does not exist.
+        returns if name is an entry in table with value set. raises NO
+        ValueError if name does not exist.
 
 2. variable features.FeatureTable ITEMS: table for items
 

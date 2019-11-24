@@ -31,7 +31,7 @@ sprinting in gamemode 3 in blocks/sec
 to \[walking speed, sprinting speed\] or \[walking speed, sprinting 
 speed, flying speed, fly-sprint-speed\] used to calculate traveled
 distance in state.StatePartGame.StatePartGame._update, dynamically
-generated from values 2 - 7.
+generated from values (2) - (7).
 
 9. int/float GRAVITY: the gravity in the game, in blocks/sec^2, used in 
 state.StatePartGame.StatePartGame._update
@@ -43,7 +43,7 @@ in state.StatePartGame.StatePartGame._update
 
 12. float JUMP_SPEED: speed to the top on enter hit, in blocks/sec, used
 in state.StatePartGame.StatePartGame._update, dynamically calculated
-from 9 and 11
+from (9) and (11)
 
 13. int/float PLAYER_HEIGHT: how tall is the player? Used in
 util.math.get_max_y and in state.StatePartGame.StatePartGame._update

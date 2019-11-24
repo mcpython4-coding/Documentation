@@ -13,7 +13,7 @@ short style guide guide:
 
 every style definition is formatted with one tab. text to insert as
 blank text, in "<>" descriptions on what to insert and in "\[\]" 
-comments  
+comments. Links to other entries should be (<n>)
 
     ***<the name of the python file with path> - documentation***
     ___
@@ -24,7 +24,7 @@ comments
     
     <now follows an list of everything found in the file, following the following style>
     
-    id is an version like structure like 1.1.1 1.1.2, 2.1, ...
+    id is an tree-like structure for 1. and than with tab the sub level
     sub-version is for class-sub-structures or function descriptions,
     otherwise count on the level one up
     
