@@ -4,6 +4,17 @@ ___
 This file is used for the base system for blocks.
 It contains the base class for every block in game.
 
+How are blocks internal handled?
+
+For every block in the game an instance of the corresponding
+Block-class is created storing the information about the block.
+
+This object may be reused under certain circumstance for another block
+in the world, when for example been moved or been copied to an location
+from another. The block object can see it as an direct placed block in
+the world and does not need to handle things for object references from
+more than one position
+
 1. class Block(object):
     
     Abstract base class for every block in the game.
@@ -14,11 +25,18 @@ It contains the base class for every block in game.
     There ARE some default-implementations for certain functions,
     feel free to overwrite all of them.
     
-    1. def \_\_init__(self, position: tuple, setted_to: tuple=None, state: dict=None, real_hit:tuple<3float>=None)
+    attributes
+    
+    - position: the position add. May change on move, will get an
+    block update when this happens
+    - set_to: the position the block was set to, WARNING: may be None
+    - real_hit: where the set_to block was hit at, WARNING: may be None
+    
+    1. def \_\_init__(self, position: tuple, set_to: tuple=None, state: dict=None, real_hit:tuple<3float>=None)
         Creates an new block instance. needs no overwrite.
         parameters:
         - position: the position created at
-        - setted_to: when set by player, this will be the block which
+        - set_to: when set by player, this will be the block which
         was one block further the view-line
         - state: an dict representing the state the block should be in
         - real_hit: the float position the block setted_to was hit at
@@ -29,7 +47,9 @@ It contains the base class for every block in game.
         
     3. def on_register(registry)
         
-        called by the block handling system when notated to G.registry
+        called by the block handling system when notated to G.registry.
+        May be useful when creating an base class which has to perform
+        some actions when registered
         
     4. def on_remove(self)
     
@@ -40,7 +60,7 @@ It contains the base class for every block in game.
         should return an list of block inventories provided by this
         block. Default is an empty list
         
-    6. def is_brakeable(self) -> bool
+    6. def is_breakable(self) -> bool
     
         returns if the block can be broken in gamemode 0 or 2
         
