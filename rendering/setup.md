@@ -1,4 +1,4 @@
-***opengl_setup.py - documentation***
+***rendering/setup.py - documentation***
 ___
 
 This file is used for setting up OpenGL
