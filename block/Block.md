@@ -13,14 +13,24 @@ If you want an simpler solution for creating new blocks, see factory/BlockFactor
 
     class Block extends event.Registry.IRegistryContent
     
-        attribute CUSTOM_WALING_SPEED_MULTIPLIER: float - describes an factor which is used when standing on the block.
+        static attribute CUSTOM_WALING_SPEED_MULTIPLIER: float - describes an factor which is used when standing on the block.
             When None, it is not used
             
-        overriding attribute TYPE: str - used internally to identify it as an Block-subclass
+        overriding static attribute TYPE: str - used internally to identify it as an Block-subclass
         
-        attribute BLOCK_ITEM_GENERATOR_STATE: dict - used by BlockItemFactory to generate the block-item, defines the
+        static attribute BLOCK_ITEM_GENERATOR_STATE: dict - used by BlockItemFactory to generate the block-item, defines the
             model state the block is shown in as an item. Uses Block.set_model_state(BLOCK_ITEM_GENERATOR_STATE) when
             creating the block-item
+            
+        attribute position: tuple - the position the block is at
+        
+        attribute set_to: tuple - the block the block was set to
+        
+        attribute real_hit: tuple - the hit position as float tuple
+        
+        attribute face_state: block.BlockFaceState.BlockFaceState - the object representing the face data of the block
+        
+        attribute block_state: int - internal identifier storing which model id to use
         
         function __init__ position: tuple [set_to: tuple] [real_hit: tuple] [state: dict]
             creates an new Block-object from this class. "position" must be an valid position in the world
