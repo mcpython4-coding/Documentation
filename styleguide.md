@@ -1,69 +1,35 @@
 How to create documentation files?
 
-Every python file of the program has at the same level in the 
+Every python file of the program should have at the same level in the 
 documentation an .md file named the same as the corresponding python 
-file.
+file. If there is not one, it will be created.
+
+If your have any questions, feel free to ask on the "issues" page on github.
 
 Additionally, there can be an general.md file in any directory to 
 describe what in this directory exists and how to work with them.
 
-How to format .md file for an python file?
+How to format these .md files? [updated version]
 
-short style guide guide:
+Every .md files starts with an header as the following:
 
-every style definition is formatted with one tab. text to insert as
-blank text, in "<>" descriptions on what to insert and in "\[\]" 
-comments. Links to other entries should be (<n>)
+-------------------
 
-    ***<the name of the python file with path> - documentation***
-    ___
-    
-    This file is used for <what it is used for> by <what uses this file>
-    
-    <some general words around content>
-    
-    <now follows an list of everything found in the file, following the following style>
-    
-    id is an tree-like structure for 1. and than with tab the sub level
-    sub-version is for class-sub-structures or function descriptions,
-    otherwise count on the level one up
-    
-    type is full path to attribute using <path without py>.<substructure>
-    
-    
-    for functional script parts:
-        <id> line <from>-<to>: <description>
-        
-    for attributes:
-        <id> variable <type> <name>: <description>   
-    
-    for functions:
-        <id> def <function name>(*<parameter>: <type>) -> <returntype>:
-        <description on what the function does, including:
-        parameter work, raising (when known), affect on the game...>
-        *<subpart>
-     
-    for classes:
-        <id> class <class name>(*<supers>):
-        <description on what the class is used for> 
-        *<subpart>
+**\<your file name>.py - Documentation - Last updated on \<update date formatted dd/mm/yyyy> by \<your nickname>**
 
-How to format the general.md files?
+--------------
 
-    <the name of the directory> - general documentation
-    This directory is used for <usage>
-    It contains the following files:
-    *<filename>: <very short overview>
-    
-    [optional]
-    This directory was added by <who added it> on <when it was added>
-    
+\<general info about the file>
 
-How to mark something as deprecated?
-use "WARNING: deprecated on \<date when deprecated\> by 
-\<who deprecated it\>", add marker to code and add it to deprecated.txt
+Structure:
 
-Changes to these file are always accepted. Please do not forget on
-updating affected files.
-     
+<an list of entries, splitted up by \n\n>
     
+    class <classname> extends <super classes> followed by general infomation about the class and an list of sub-entries
+    
+    function <function name> <parametername: valuetype> -> <return type> followed by general information
+        parameters may be in [] when optional
+    
+    attribute <name>: <data type> followed by information what it does 
+    
+    functions and attributes can have "static " prefix to mark them as static 

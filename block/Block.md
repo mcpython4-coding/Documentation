@@ -1,142 +1,108 @@
-***block/Block.py - documentation***
-___
+----
 
-This file is used for the base system for blocks.
-It contains the base class for every block in game.
+**block/Block.py - Documentation - Last updated on 02.03.2020 by uuk**
 
-How are blocks internal handled?
+----
 
-For every block in the game an instance of the corresponding
-Block-class is created storing the information about the block.
+This file contains the base class for every block in the game. Every block MUST inherit from this in order to work.
 
-This object may be reused under certain circumstance for another block
-in the world, when for example been moved or been copied to an location
-from another. The block object can see it as an direct placed block in
-the world and does not need to handle things for object references from
-more than one position
+You are allowed to use other classes beside this class in your code as super classes, but you should be aware of that
+this might lead into unwanted behaviour.
 
-1. class Block(object):
+If you want an simpler solution for creating new blocks, see factory/BlockFactory.md, this adds an class-generator for blocks.
+
+    class Block extends event.Registry.IRegistryContent
     
-    Abstract base class for every block in the game.
-    
-    Every block which would like to use G.registry for registration
-    needs to inherit from this class.
-    
-    There ARE some default-implementations for certain functions,
-    feel free to overwrite all of them.
-    
-    attributes
-    
-    - position: the position add. May change on move, will get an
-    block update when this happens
-    - set_to: the position the block was set to, WARNING: may be None
-    - real_hit: where the set_to block was hit at, WARNING: may be None
-    
-    1. def \_\_init__(self, position: tuple, set_to: tuple=None, state: dict=None, real_hit:tuple<3float>=None)
-        Creates an new block instance. needs no overwrite.
-        parameters:
-        - position: the position created at
-        - set_to: when set by player, this will be the block which
-        was one block further the view-line
-        - state: an dict representing the state the block should be in
-        - real_hit: the float position the block setted_to was hit at
+        attribute CUSTOM_WALING_SPEED_MULTIPLIER: float - describes an factor which is used when standing on the block.
+            When None, it is not used
+            
+        overriding attribute TYPE: str - used internally to identify it as an Block-subclass
         
-    2. def get_name() -> str
+        attribute BLOCK_ITEM_GENERATOR_STATE: dict - used by BlockItemFactory to generate the block-item, defines the
+            model state the block is shown in as an item. Uses Block.set_model_state(BLOCK_ITEM_GENERATOR_STATE) when
+            creating the block-item
         
-        returns the name of the block, must be implemented
+        function __init__ position: tuple [set_to: tuple] [real_hit: tuple] [state: dict]
+            creates an new Block-object from this class. "position" must be an valid position in the world
+            defining where the block is located. set_to is optional and defines the coordinates of the block the block 
+            was set to. real_hit defines the exact position the other block was hit at. state defines in which model 
+            state the block should be created in. When you sub-class Block and would like to do stuff on creation, you
+            MUST call the the method of Block to make sure that everything is set up correctly.
+            
+        function on_remove
+            called when the block is removed. Called BEFORE removed from world. Can be used to drop items out of
+            inventories or do other (funny) stuff. Please notice: Block drops may NOT be calculated yet.
+            
+        function get_inventories -> list
+            Used to get the inventories from an block. Used by /replaceitem-command and /iteminfo command,
+            WARNING: will be removed in future. Use get_provided_slots
+            
+        function is_breakable -> bool
+            Used to determine if the block can be broken by player
+            WARNING: may be merged with get_hardness in the future
+            
+        function on_random_update
+            Called when the block recieves an random update
         
-    3. def on_register(registry)
+        function on_block_update
+            Called when the block recives an block-update by e.g. adding/removing an near-by block
+            
+        function is_solid_side face: util.enums.EnumSide -> bool
+            Should return if the given face is solid or not
+            WARNING: may be moved to an attribute in the future
+            
+        function get_model_state -> dict
+            Used to get the state of the block in terms of rendering
+            Used to select in BlockState to find the correct state to render
+            
+        function set_model_state state: dict
+            Used to set an model-state from data
+            Used in debug world for block rendering
+            
+        static function get_all_model_states -> dict
+            Used in debug world for finding all possible states of an block
         
-        called by the block handling system when notated to G.registry.
-        May be useful when creating an base class which has to perform
-        some actions when registered
+        function on_player_interact itemstack: gui.ItemStack.ItemStack button: int modifiers: int exact_hit: tuple -> bool
+            Called when the player presses the button [an entry in pyglet.window.mouse] when over the block during 
+            holding modifiers [an entry in pyglet.window.key.MOD_[...]] during having itemstack in hand. 
+            The position the block was hit is handed over in exact_hit
+            The function MUST return if the default logic should stop on or not (e.g. brake the block)
+            
+            WARNING: this is called when the item of the itemstack does not trigger an event
+            WARNING: when you change some things in the world and return False, bad things might happen
+            
+            WARNING: in the future, maybe an IPlayerLikeEntity object might be added as an parameter to use as the sender
+            
+        function get_hardness -> int/float
+            Used to get the hardness of the block
+            WARNING: may be changed to attribute in the future
+            
+        function get_minimum_tool_level -> int/float
+            Used to compare with the tool level of the tool braking the block. See the tools for the values
+            
+            WARNING: may be chaned to attribute in the future
+            WARNING: return type may change in the future
         
-    4. def on_remove(self)
-    
-        called when the block is removed out of the world
-        
-    5. def get_inventories(self):
-    
-        should return an list of block inventories provided by this
-        block. Default is an empty list
-        
-    6. def is_breakable(self) -> bool
-    
-        returns if the block can be broken in gamemode 0 or 2
-        
-    7. def on_random_update(self):
-    
-        default disabled function called when the block gets an random
-        update
-     
-    8. def on_block_update(self)
-    
-        called when an block next to this gets updated
-        
-    9. def is_solid_side(self, side: util.enums.EnumSide) -> bool
-    
-        returns if the side is solid or not. This is used for 
-        calculation of which block should be shown
-    
-    10. def get_model_state(self)
-    
-        returns the dict representing an valid entry in the blockstate
-        file for this block
-        
-    11. def set_model_state(self, state: dict)
-    
-        set the model state of the block from the data
-        
-    12. def get_all_model_states()
-    
-        returns an list of block states these block supports. used by
-        the debug world generator
-        
-    13. def on_player_interact(self, itemstack: gui.ItemStack.ItemStack, button: int, modifiers: int, exact_hit: tuple<3float>) -> bool
-        
-        called when the block is interacted by the player with itemstack
-        in hand with button & modifiers at mouse and at hit exact_hit.
-        returns if "normal" behaviour should go on or interrupted.
-    
-    14. def get_hardness(self) -> float
-    
-        returns the hardness of the block. Used to calculate brake time
-        
-    15. def get_minimum_tool_level(self) -> int
-    
-        every tool has an level. Here the minimum is defined. 
-        
-    16. def get_best_tools(self)
-    
-        returns an list of item.ItemTool.ToolType representing good 
-        tools to brake this block. Used for brake time calculation
-    
-    17. def get_provided_slots(self, side: util.enums.EnumSide)
-    
-        returns an list of slots for the given side. Used for item 
-        transfer (in the future).
-        
-        WARNING: The slots may not be only item holding. Please check 
-        against gui.Slot.Slot before using.
-    
-    18. def get_view_bbox(self) -> block.BoundingBox.BoundingBox
-    
-        returns an bounding box used for these block
-        
-    19. def get_custom_block_renderer(self) -> block.ICustomBlockRenderer.ICustomBlockRenderer
-    
-        returns if needed an 
-        block.ICustomBlockRenderer.ICustomBlockRenderer
-        
-    20. def on_request_item_for_block(self, itemstack: gui.ItemStack.ItemStack)
-    
-        called when an item specific for THESE block is needed. This 
-        means for example for chests: with inventory data in item.
-    
-    21. def modify_block_item(cls, itemconstructor)
-    
-        called by the BlockItemFactory. Makes it possible to change the
-        properties of the item for the block. Can fully replace it.
+        function get_best_tools -> list<util.enums.ToolType>
+            Used to compare with the tool type braking the block
+            
+            WARNING: may change to attribute in th future
+            
+        function get_provided_slots side: util.enums.EnumSide
+            Should return the slots for the given side
+            
+        function get_view_bbox -> block.BoundingBox.BoundingBox / block.BoundingBox.BoundingArea
+            Used to get the bounding box of the block
+            WARNING: is called every draw of the world when viewed at. Store the BoundingBox somewhere
+            
+        function get_custom_block_renderer -> object
+            Used to get an custom block renderer
+            Unused at the moment
+            WARNING: may be removed or moved to an attribute in the future
          
-         
-        
+        function on_request_item_for_block itemstack: gui.ItemStack.ItemStack
+            Used to modify an itemstack for the block
+            Used in picking the block with middle-click
+            
+        static function modify_block_item item: factory.ItemFactory.ItemFactory
+            Used to modify data of the item factory when needed when creating the block-item
