@@ -20,10 +20,10 @@ The file contains code for creating the carpet's from the color name
             overriding function on_block_update
                 used to brake carpet when block under the carpet is broken
                 
-            overriding function is_solid_side side: util.enums.EnumSide
+            overriding function is_solid_side side: util.enums.EnumSide -> bool
                 only the side on the down is solid
                 
-            overriding function get_view_bbox
+            overriding function get_view_bbox -> [...]
                 returns the default bbox
                 
             static overriding function modify_block_item itemfactory: factory.ItemFactory.ItemFactory
