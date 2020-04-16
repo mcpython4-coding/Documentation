@@ -1,6 +1,6 @@
 ----
 
-**block/BlockCraftingTable.py - Documentation - Last updated on 02.03.2020 by uuk**
+**block/BlockCraftingTable.py - Documentation - Last updated on 16.04.2020 by uuk**
 
 ----
 
@@ -19,11 +19,9 @@ This file contains the code for the crafting table block
         overriding function get_inventories -> list
             returns the inventory of the block
             
-        overriding function get_hardness -> float
-            returns the inventory of the block
-            
-        overriding function get_best_tools -> list
-            returns axe as the best tool to brake the block
+        overriding static attribute HARDNESS: float = 2.5
+
+        overriding static attribute BEST_TOOLS_TO_BREAK [...]
             
         overriding function on_remove
             closes the inventory when inventory is open

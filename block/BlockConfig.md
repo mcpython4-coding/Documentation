@@ -1,12 +1,12 @@
 ----
 
-**block/BlockConfig.py - Documentation - Last updated on 03.03.2020 by uuk**
+**block/BlockConfig.py - Documentation - Last updated on 16.04.2020 by uuk**
 
 ----
 
 This file holds some code to "tag" block with special properties
 
-WARNING: will be moved in the future to tag-system
+WARNING: may be moved in the future to tag-system
 
 
     class BlockConfigEntry
