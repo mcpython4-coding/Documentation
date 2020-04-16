@@ -1,6 +1,6 @@
 ----
 
-**block/BlockChest.py - Documentation - Last updated on 03.03.2020 by uuk**
+**block/BlockChest.py - Documentation - Last updated on 16.04.2020 by uuk**
 
 ----
 
@@ -17,6 +17,8 @@ This file contains the block-class of the chest
         
         attribute inventory: gui.InventoryChest.InventoryChest - the inventory of the chest
         
+        attribute loot_table_link: str - an link to an valid loot-table to roll into the inventory on next inv open
+        
         static overriding attribute NAME: str - the name of the chest
         
         overriding function __init__ [...]
@@ -26,13 +28,13 @@ This file contains the block-class of the chest
             returns if the block inventory can be opened by the player
             
         overriding function on_player_interact [...]
-            opens the inventory when needed
+            opens the inventory when needed and rolls the loot table when needed
             
         overriding function get_inventories [...]
             returns the inventory of the chest
             
-        overriding function get_hardness -> float
-            returns the hardness of the block
+        overriding static attribute HARDNESS: float = 2.5
+        overriding static attribuee BEST_TOOLS_TO_BREAK [...] - axe to break0
             
         overriding function get_best_tools [...]
             returns axe as the best tool to brake the block
@@ -63,4 +65,10 @@ This file contains the block-class of the chest
             
         static overriding function modify_block_item [...]
             adds fuel level to block-item
+            
+        overriding save -> dict
+            saves the model state and the loot table
+            
+        overriding load data: dict
+            loads previous dumped data
 
