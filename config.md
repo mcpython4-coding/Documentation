@@ -4,6 +4,7 @@ ___
     This file is used for configuration of various parts of the game
     
 
+
     variable MC_VERSION_BASE: str - the version based on
 
     variable VERSION_TYPE: str - the type of version
@@ -40,12 +41,12 @@ ___
 
     variable JUMP_SPEED: float
         To derive the formula for calculating jump speed, first solve
-    v_t = v_0 + a * t
-    for the time at which you achieve maximum height, where a is the acceleration
-    due to gravity and v_t = 0. This gives:
-    t = - v_0 / a
-    Use t and the desired MAX_JUMP_HEIGHT to solve for v_0 (jump speed) in
-    s = s_0 + v_0 * t + (a * t^2) / 2
+        v_t = v_0 + a * t
+        for the time at which you achieve maximum height, where a is the acceleration
+        due to gravity and v_t = 0. This gives:
+        t = - v_0 / a
+        Use t and the desired MAX_JUMP_HEIGHT to solve for v_0 (jump speed) in
+        s = s_0 + v_0 * t + (a * t^2) / 2
 
     variable PLAYER_HEIGHT: float - the height of the player, in blocks; WARNING: will be removed in the future
 
@@ -66,6 +67,6 @@ ___
 
     variable CHUNK_GENERATION_RANGE: int
         how far to generate chunks on sector change, in chunks from the chunk the player is in, in an square with
-    CHUNK_GENERATION_RANGE * 2 + 1 -size
+        CHUNK_GENERATION_RANGE * 2 + 1 -size
 
     variable WRITE_NOT_FORMATTED_EXCEPTION: bool - if exceptions should be not formatted-printed to console by logger

@@ -64,6 +64,7 @@ ___""".format(raw_file, now, user)
                 if doc_type in (0, 1, 2):
                     doc += "\n" + "    " * (level if doc_type == 0 else level + 1) + "{}\n".format(doc_string)
                 doc_string = ""
+                doc_type = 0
         elif in_doc:
             pass
         elif not in_function:
@@ -80,7 +81,7 @@ ___""".format(raw_file, now, user)
                         break
                     i2 -= 1
                 c = s[1].split("(")[0].split(":")[0]
-                doc += "\n" + "    " * (level + 1) + mod + "class {}".format(c)
+                doc += "\n\n" + "    " * (level + 1) + mod + "class {}".format(c)
                 if s[1].count("(") > 0:
                     doc += " extends " + line[line.index("(") + 1:line.index(")")].replace(",", ", ")
             elif s[0] == "def":
@@ -100,10 +101,10 @@ ___""".format(raw_file, now, user)
                         break
                     i2 -= 1
                 f = line[line.index("def") + 4:line.index(")") + 1]
-                doc += "\n" + "    " * (level + 1) + mod + "function {}".format(f) + "\n"
+                doc += "\n" + "    " * (level + 1) + mod + "function {}".format(f)
             elif len(s) > 1:
                 if s[1] == "=" or (len(s) > 2 and s[2] == "=" and s[0].endswith(":")):
-                    doc += "\n" + "    " * (level + 1) + "variable {}".format(s[0])
+                    doc += "\n\n" + "    " * (level + 1) + "variable {}".format(s[0])
                     if s[0].endswith(":"):
                         doc += " " + s[1]
                     if "#" in line:
@@ -120,7 +121,7 @@ ___""".format(raw_file, now, user)
                     if len(sdoc) > 0:
                         sdoc.reverse()
                         doc += "\n" + "    " * (level + 2)
-                        doc += ("\n" + "    " * (level + 1)).join(sdoc)
+                        doc += ("\n" + "    " * (level + 2)).join(sdoc)
                     doc += "\n"
             elif line.startswith("# todo"):
                 doc += "    " * (level + 1)+line[2:]
