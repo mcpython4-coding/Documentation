@@ -1,10 +1,10 @@
 ***globals.py - documentation - last updated on 9.5.2020 by uuk***
 ___
 
-This file is used for storing global stuff like handlers and runtime
-flags.
-It contains a wide range of instances of handlers & registries
-
+    This file is used for storing global stuff like handlers and runtime
+    flags.
+    It contains a wide range of instances of handlers & registries
+    
 
     variable prebuilding: bool - True if rebuild mode is enabled
 

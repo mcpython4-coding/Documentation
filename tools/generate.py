@@ -40,11 +40,14 @@ ___""".format(raw_file, now, user)
     doc_type = None
     handler_type = 0
     doc_string = ""
+    in_function = False
+    function_level = None
     for i, oline in enumerate(lines):
         line = oline.strip()
         level = oline.count("    ")
+        if in_function and level <= function_level: in_function = False
         if in_doc:
-            doc_string += "\n" + "    " * level + line.replace('"""', "")
+            doc_string += "\n" + "    " * (level+1) + line.replace('"""', "")
         if line.startswith('"""') or line.endswith('"""'):
             in_doc = not in_doc
             if in_doc:
@@ -63,18 +66,41 @@ ___""".format(raw_file, now, user)
                 doc_string = ""
         elif in_doc:
             pass
-        else:
+        elif not in_function:
             s = line.split(" ")
             if s[0] == "class":
                 handler_type = 1
+                i2 = i - 1
+                mod = ""
+                while i2 >= 0:
+                    l = lines[i2].strip()
+                    if l.startswith("@"):
+                        mod += l + " "
+                    else:
+                        break
+                    i2 -= 1
                 c = s[1].split("(")[0].split(":")[0]
-                doc += "\n" + "    " * (level + 1) + "class {}".format(c)
+                doc += "\n" + "    " * (level + 1) + mod + "class {}".format(c)
                 if s[1].count("(") > 0:
                     doc += " extends " + line[line.index("(") + 1:line.index(")")].replace(",", ", ")
             elif s[0] == "def":
+                in_function = True
+                function_level = level
                 handler_type = 2
+                mod = ""
+                i2 = i - 1
+                while i2 >= 0:
+                    l = lines[i2].strip()
+                    if l.startswith("@"):
+                        if l in ("@classmethod", "@staticmethod"):
+                            mod += "static "
+                        else:
+                            mod += l + " "
+                    else:
+                        break
+                    i2 -= 1
                 f = line[line.index("def") + 4:line.index(")") + 1]
-                doc += "\n" + "    " * (level + 1) + "function {}".format(f) + "\n"
+                doc += "\n" + "    " * (level + 1) + mod + "function {}".format(f) + "\n"
             elif len(s) > 1:
                 if s[1] == "=" or (len(s) > 2 and s[2] == "=" and s[0].endswith(":")):
                     doc += "\n" + "    " * (level + 1) + "variable {}".format(s[0])
@@ -96,6 +122,8 @@ ___""".format(raw_file, now, user)
                         doc += "\n" + "    " * (level + 2)
                         doc += ("\n" + "    " * (level + 1)).join(sdoc)
                     doc += "\n"
+            elif line.startswith("# todo"):
+                doc += "    " * (level + 1)+line[2:]
     flag = os.path.exists(doc_file_loc)
     with open(doc_file_loc, mode="w") as f:
         f.write(doc)

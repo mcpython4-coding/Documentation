@@ -1,69 +1,75 @@
-***Language.py - documentation***
+***Language.py - documentation - last updated on 9.5.2020 by uuk***
 ___
 
-This file is used for translating various texts with help of the 
-language files of minecraft to translated once.
-
-1. variable dict<str -> Language.Language> LANGUAGES: 
-table name -> Language instance, used for translating strings
-
-2. variable str ACTIVE_LANGUAGE: The name of the active language,
-can be changed during runtime
-
-3. def get(key: str, formatting=[]) -> str
-    Translates an key to translated in active language. formatting are
-    args that can be given to the function and are than 
-    result.format(*formatting). If key is not found, key is returned as
-    it is. 
+    This file is used for translating various texts with help of the
+    language files of minecraft to translated once.
     
 
-4. def translate(s: str) -> str:
-    former decode(s: str) -> str, deprecation since doc create.
-    will translate the given string replacing every 
-    "#\*\<translateable\>\*#" with the translated key. translateable 
-    supports formatting by adding them with '|' after key
+    variable LANGUAGES: dict - an list representing all loaded languages
 
-5. class Language(object):
-    main class for Language system, holds all translateable's
-    for one language
-    
-    1. def from_file(cls, file: str, name=None)
-    
-        Will read file as Language file. Name is the language name. If name
-        is None, name is extracted from filename. "file" is read through 
-        ResouceLocator's read function with json system.
+    variable ACTIVE_LANGUAGE: str - an str representing the active language, only changeable on startup
+        change this for having another language, you have to include the needed lang files yourself :/
+
+    function get(key, formatting=None)
+
         
-        WARNING: only new language format is supported at the moment,
-        old format is planed but not implemented yet.
+        get the translated name for an given key
+        :param key: the key to get
+        :param formatting: an list of formatting to use
         
-    2. def from_data(cls, name: str, data: dict)
-    
-        Will load the language data (new format!) into the system using name
-        as language name. WARNING: if any to translate exists in system, 
-        behaviour may be not what us wanted
-        
-    3. def \_\_init__(self)
-    
-        Creates an new Language-object with empty table
-        
-    4. def add_entry(self, key: str, value: str)
-    
-        Will add an new translated entry like replace(key, value) in every 
-        string
-    
-    5. def read_value(self, key)
-    
-        Will access the key from the Language file. If not arrival, returns
-        key.
-    
-6. def from_directory(directory, modname)
-    
-    will register all files in directory to the load stage
-    for language files on event bus of modname.
 
-7. def from_mod_name(modname: str)
-    
-    will call from_directory with default location 
-    ("assets/\<modname\>/lang")
+    function translate(s: str)
 
-8. line 81: load minecraft files by from_mod_name-method
+        
+        translates an special string to an translated one
+        :param s: an string defining it
+        :return: the formatted string
+        
+
+    class Language
+        static function from_file(cls, file: str, name=None)
+
+            
+            loads an language file into the system
+            :param file: the file to load
+            :param name: the name to subscribe under, or None if to generate from file
+            
+
+        static function from_old_data(cls, file: str, name=None)
+
+            
+            loads an old pre-1.13 language file into the system
+            :param file: the file to load
+            :param name: the name to subscribe under, or None if to generate from file
+            
+
+        static function from_data(cls, name: str, data: dict)
+
+            
+            loads data direct into the system
+            :param name: the name to register under
+            :param data: the data to register
+            
+
+        function __init__(self)
+
+        function add_entry(self, key: str, value: str)
+
+            
+            will insert an new entry into the language class
+            :param key: the key to use
+            :param value: the value to use
+            :return:
+            
+
+        function read_value(self, key: str)
+
+            
+            reads an given key from the Language object
+            :param key: the key
+            :return: the translation
+            
+
+    function from_directory(directory: str, modname: str)
+
+    function from_mod_name(modname: str)

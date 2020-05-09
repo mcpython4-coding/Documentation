@@ -1,8 +1,8 @@
 ***config.py - documentation - last updated on 9.5.2020 by uuk***
 ___
 
-This file is used for configuration of various parts of the game
-
+    This file is used for configuration of various parts of the game
+    
 
     variable MC_VERSION_BASE: str - the version based on
 
