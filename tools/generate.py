@@ -83,17 +83,18 @@ ___""".format(file, now, user)
                                 doc += " " + s[1]
                             if "#" in line:
                                 doc += " - {}".format(line[line.index("#")+2:])
-                            i2 = i
-                            sdoc = [""]
-                            while i2 > 0:
-                                p = lines[i2-1].strip()
+                            i2 = i-1
+                            sdoc = []
+                            while i2 >= 0:
+                                p = lines[i2].strip()
                                 if p.startswith("#"):
-                                    sdoc.append(p[1:])
+                                    sdoc.append(p[1:].strip())
                                 else:
                                     break
                                 i2 -= 1
-                            if len(sdoc) > 1:
+                            if len(sdoc) > 0:
                                 sdoc.reverse()
+                                doc += "\n"+"    "*(level+2)
                                 doc += ("\n"+"    "*(level+1)).join(sdoc)
                             doc += "\n"
             flag = os.path.exists(doc_file)
