@@ -1,79 +1,80 @@
-***config.py - documentation***
+***config.py - documentation - last updated on 9.5.2020 by uuk***
 ___
 
-This file is used for configurating various parts of the game
+authors: uuk, xkcdjerry (inactive)
 
-WARNING: some of the content of this file is not for changing by the end
-user, it can affect the game in an way that it is afterwards UNPLAYABLE.
-Make sure you know what you are doing when using this!
+based on the game of fogleman (https://github.com/fogleman/Minecraft) licenced under MIT-licence
+original game "minecraft" by Mojang (www.minecraft.net)
+mod loader inspired by "minecraft forge" (https://github.com/MinecraftForge/MinecraftForge)
 
-1. variable str MC_VERSION_BASE: the version of minecraft this version of the game is based on
+blocks based on 1.15.2.jar of minecraft, downloaded on 1th of February, 2020
 
-2. variable str VERSION_TYPE: the type of the version, possible: "dev", "snapshot" and "release"
 
-3. variable str VERSION_NAME: the name of the version
+This file is used for configuration of various parts of the game
 
-4. variable str FULL_VERSION_NAME: the full name of the version based on (1)-(3) 
 
-5. variable int TICKS_PER_SEC: defaulted to 20, changing this will 
-affect running speed of the game. 20 is also the speed of minecraft!
-Used in window to set update schedule.
+    variable MC_VERSION_BASE: str - the version based on
 
-6. variable int/float WALKING_SPEED: how fast to walk, in blocks/sec
+    variable VERSION_TYPE: str - the type of version
 
-7. variable int/float SPRINTING_SPEED: how fast to sprint, in blocks/sec
+    variable VERSION_NAME: str - the name of the version
 
-8. variable int/float FLYING_SPEED: how fast to fly in gamemode 1, in 
-blocks/sec
+    variable VERSION_ORDER: typing.List[str] list of all versions since 19w52a to indicate order of release; used in save files
+    
 
-9. variable int/float FLYING_SPRINTING_SPEED: how fast to fly when 
-sprinting in gamemode 1 in blocks/sec
+    variable FULL_VERSION_NAME: str the name of the version as an full name with all information needed
+    
 
-10. variable int/float GAMEMODE_3_SPEED: how fast to fly in gamemode 3,
-in blocks/sec
+    variable TICKS_PER_SEC: int - how many ticks per second should be executed
 
-11. variable int/float GAMEMODE_3_SPRINTING_SPEED: how fast to fly when
-sprinting in gamemode 3 in blocks/sec
+    variable WALKING_SPEED: int - how fast to walk
 
-12. variable dict<int: list<int/float>> SPEED_DICT: an dict from gamemode
-to \[walking speed, sprinting speed\] or \[walking speed, sprinting 
-speed, flying speed, fly-sprint-speed\] used to calculate traveled
-distance in state.StatePartGame.StatePartGame._update, dynamically
-generated from values (6) - (11).
+    variable SPRINTING_SPEED: int - how fast to sprint
 
-13. int/float GRAVITY: the gravity in the game, in blocks/sec^2, used in 
-state.StatePartGame.StatePartGame._update
+    variable FLYING_SPEED: int - how fast to fly
 
-14. int/float TERMINAL_VELOCITY: max downward speed, in blocks/sec, used
-in state.StatePartGame.StatePartGame._update
+    variable FLYING_SPRINTING_SPEED: int - how fast to sprint-fly
 
-15. float MAX_JUMP_HEIGHT: max height of the player to jump
+    variable GAMEMODE_3_SPEED: int - how fast to fly in gamemode 3
 
-16. float JUMP_SPEED: speed to the top on enter hit, in blocks/sec, used
-in state.StatePartGame.StatePartGame._update, dynamically calculated
-from (13) and (15)
+    variable GAMEMODE_3_SPRINTING_SPEED: int - how fast to sprint-fly in gamemode 3
 
-17. int/float PLAYER_HEIGHT: how tall is the player? Used in
-util.math.get_max_y and in state.StatePartGame.StatePartGame._update
+    variable SPEED_DICT: typing.Dict[int,typing.List[int]]
 
-18. list<tuple<int/float, int/float, int/float>> FACES: dx, dy, dz for
-all 6 sides of a cube, used by world.Chunk.Chunk.exposed & 
-world.Chunk.Chunk.check_neighbors 
+    variable GRAVITY: float - gravity, in -m/s^2 -> speed is calculated with v -= GRAVITY * dt
 
-19. list<tuple<int/float, int/float, int/float>> ADVANCED_FACES: like
-18, but also including edge-positions, used by 
-rendering.window.Window.collide
+    variable TERMINAL_VELOCITY: int - maximum speed downwards
 
-20. list<util.enums.EnumSide> FACE_NAMES: names of faces in order of 
-faces in (18), used by world.Chunk.Chunk.exposed
+    variable MAX_JUMP_HEIGHT: float - About the height of a block. used to determine how height to jump
 
-21. list<util.enums.EnumSide> REVERSED_FACE_NAMES: the opposite sides to
-(20), used by nothing, but maybe useful
+    variable JUMP_SPEED: float To derive the formula for calculating jump speed, first solve
+        v_t = v_0 + a * t
+     for the time at which you achieve maximum height, where a is the acceleration
+     due to gravity and v_t = 0. This gives:
+        t = - v_0 / a
+     Use t and the desired MAX_JUMP_HEIGHT to solve for v_0 (jump speed) in
+        s = s_0 + v_0 * t + (a * t^2) / 2
+    
 
-22. int RANDOM_TICK_SPEED: how much random ticks per 16x16x16 sector?
-used by event.TickHandler.TickHandler.send_random_ticks. defaulted to 3,
-which is also minecraft's value
+    variable PLAYER_HEIGHT: float - the height of the player, in blocks; WARNING: will be removed in the future
 
-23. int RANDOM_TICK_RANGE: how far away random ticks are send, in 
-chunks. Defaulted to 0 due to performance issues. Used by 
-event.TickHandler.TickHandler.send_random_ticks
+    variable _ADVANCED_FACES: typing.List[typing.List[typing.List[typing.Tuple[int,int,int]]]]
+
+    variable ADVANCED_FACES: typing.List[typing.Tuple[int,int,int]]
+
+    variable RANDOM_TICK_RANGE: int - how far to execute random ticks away from player
+
+    variable USE_MISSING_TEXTURES_ON_MISS_TEXTURE: bool if missing texture should be used when no texture was selected for an face
+    
+
+    variable CPU_USAGE_REFRESH_TIME: float - how often to refresh cpu usage indicator
+
+    variable FOG_DISTANCE: int - something like view distance, but will no force the chunks to generate
+
+    variable BIOME_HEIGHT_RANGE_MAP: typing.Dict[str,typing.Tuple[int,int]] - an dict of biomename: height range storing the internal height range
+
+    variable CHUNK_GENERATION_RANGE: int how far to generate chunks on sector change, in chunks from the chunk the player is in, in an square with
+     CHUNK_GENERATION_RANGE * 2 + 1 -size
+    
+
+    variable WRITE_NOT_FORMATTED_EXCEPTION: bool - if exceptions should be not formatted-printed to console by logger
