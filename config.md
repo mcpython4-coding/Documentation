@@ -1,15 +1,6 @@
 ***config.py - documentation - last updated on 9.5.2020 by uuk***
 ___
 
-authors: uuk, xkcdjerry (inactive)
-
-based on the game of fogleman (https://github.com/fogleman/Minecraft) licenced under MIT-licence
-original game "minecraft" by Mojang (www.minecraft.net)
-mod loader inspired by "minecraft forge" (https://github.com/MinecraftForge/MinecraftForge)
-
-blocks based on 1.15.2.jar of minecraft, downloaded on 1th of February, 2020
-
-
 This file is used for configuration of various parts of the game
 
 
