@@ -100,7 +100,7 @@ ___""".format(raw_file, now, user)
                     else:
                         break
                     i2 -= 1
-                f = line[line.index("def") + 4:line.index(")") + 1]
+                f = line[line.index("def") + 4:line.rindex(":")]
                 doc += "\n" + "    " * (level + 1) + mod + "function {}".format(f)
             elif len(s) > 1:
                 if s[1] == "=" or (len(s) > 2 and s[2] == "=" and s[0].endswith(":")):
