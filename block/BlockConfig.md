@@ -1,24 +1,13 @@
-----
-
-**block/BlockConfig.py - Documentation - Last updated on 16.04.2020 by uuk**
-
-----
-
-This file holds some code to "tag" block with special properties
-
-WARNING: may be moved in the future to tag-system
-
+***BlockConfig.py - documentation - last updated on 14.5.2020 by uuk***
+___
 
     class BlockConfigEntry
-        attribute name: str - the name of the config
-        
-        attribute affects: list - an list of objects this affects, may be str-only
-    
-        function __init__ configname: str
-            creates an new BlockConfigEntry-object
-            
-        function add_data data: list
-            adds new affected data to the config
-        
-        function contains & __contains__ item: object -> bool
-            returns if the item is affected
+        function __init__(self, configname)
+        function add_data(self, data)
+        function contains(self, item)
+        function __contains__(self, item)
+
+    variable ENTRYS
+
+
+        variable name

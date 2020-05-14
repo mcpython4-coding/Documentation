@@ -1,19 +1,29 @@
-----
-
-**block/BlockCoralBlock.py - Documentation - Last updated on 16.04.2020 by uuk**
-
-----
-
-This file contains the base class for every coral & the coral block declaration
-
+***BlockCoralBlock.py - documentation - last updated on 14.5.2020 by uuk***
+___
 
     class ICoralBlock extends block.Block.Block
-        Base class for every coral block
-        
-        overriding function on_random_update
-            will transform the block to dead variant
-            
-    class BrainCoralBlock & BubbleCoralBlock & FireCoralBlock & HornCoralBlock & TubeCoralBlock extends ICoralBlock
-        block-classes for living coral block
-        
-    Code for constructing the dead variants
+        function on_random_update(self)
+
+    @G.registry class BrainCoralBlock extends ICoralBlock
+
+        variable NAME
+
+
+    @G.registry class BubbleCoralBlock extends ICoralBlock
+
+        variable NAME
+
+
+    @G.registry class FireCoralBlock extends ICoralBlock
+
+        variable NAME
+
+
+    @G.registry class HornCoralBlock extends ICoralBlock
+
+        variable NAME
+
+
+    @G.registry class TubeCoralBlock extends ICoralBlock
+
+        variable NAME

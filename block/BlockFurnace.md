@@ -1,54 +1,33 @@
-----
+***BlockFurnace.py - documentation - last updated on 14.5.2020 by uuk***
+___
 
-**block/BlockFurnace.py - Documentation - Last updated on 17.04.2020 by uuk**
+    @G.registry class BlockFurnace extends block.Block.Block
 
-----
-
-This file contains the classes for the furnace-block and its specific sub-furnaces
+        variable FURNACE_RECIPES
 
 
-    class BlockFurnce extends block.Block.Block
-        static attribute FURNACE_RECIPES: list<str[recipe type]>: a list of furnace recipes to use
-        
-        overriding static attribute NAME: str - the name of the block
-        
-        attribute facing: str - where the block faces to
-        
-        attribute active: bool - if something is processing in the furnace
-        
-        attribute inventory: gui.Inventory.Inventory - the inventory of the furnace
-        
-        function __init__ [...]
-            construct an new Furnace-block
-            
-        overriding function get_model_state -> dict<str -> str>
-            gets the model-state of the block
-            
-        overriding function set_model_state state: dict<str -> str>
-            injects the model state
-            
-        overriding static function get_all_model_states -> list<dict<str -> str>>
-            gets all model states
-            
-        overriding function on_player_interact [...]
-            will open inventory if needed
-            
-        overriding function get_inventories -> list<gui.Inventory.Inventory>
-            will return the inventory of the block
-            
-        overriding function get_provided_slots [...]
-            will return the slots for the side
-            
-        overriding function on_remove
-            will make sure that items are dropped
-            
-    class BlastFurnace extends block.BlockFurnace.BlockFurnace
-        overriding attribute NAME: str - the name of the block
-        
-        overriding attribute FURNACE_RECIPES: list<str> - the recipe names
-        
-    class Smoker extends block.BlockFurnace.BlockFurnace
-        overriding attribute NAME: str - the name of the block
-        
-        overriding attribute FURNACE_RECIPES: list<str> - the recipe names
+        variable NAME
 
+        function __init__(self, *args, **kwargs)
+        function get_model_state(self) -> dict
+        function set_model_state(self, state: dict)
+        static function get_all_model_states() -> list
+        function on_player_interact(self, player, itemstack, button, modifiers, exact_hit) -> bool
+        function get_inventories(self)
+        function get_provided_slots(self, side)
+        function on_remove(self)
+
+    @G.registry class BlastFurnace extends BlockFurnace
+
+        variable NAME
+
+
+        variable FURNACE_RECIPES
+
+
+    @G.registry class Smoker extends BlockFurnace
+
+        variable NAME
+
+
+        variable FURNACE_RECIPES

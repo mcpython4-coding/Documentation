@@ -1,30 +1,10 @@
-----
+***BlockCarpet.py - documentation - last updated on 14.5.2020 by uuk***
+___
 
-**block/BlockCarpet.py - Documentation - Last updated on 16.04.2020 by uuk**
+    variable carpet_bbox
 
-----
-
-The file contains code for creating the carpet's from the color name
-
-
-    static attribute carpet_bbox: block.BoundingBox.BoundingBox - the bounding box of an carpet
-    
-    static function create_carpet color: str
-        creates an new carpet block-class
-        
-        class Carpet extends block.Block.Block
-            the generated block-class
-            
-            static overriding attribute NAME: str - the name of the carpet block
-            
-            overriding function on_block_update
-                used to brake carpet when block under the carpet is broken
-                
-            overriding function is_solid_side side: util.enums.EnumSide -> bool
-                only the side on the down is solid
-                
-            overriding function get_view_bbox -> [...]
-                returns the default bbox
-                
-            static overriding function modify_block_item itemfactory: factory.ItemFactory.ItemFactory
-                sets the fuel level of the block
+    function create_carpet(carpet_color: str)
+            function __init__(self, *args, **kwargs)
+            function on_block_update(self)
+            function get_view_bbox(self)
+            static function modify_block_item(cls, itemfactory)

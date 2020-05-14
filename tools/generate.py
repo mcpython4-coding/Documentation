@@ -17,8 +17,8 @@ if os.path.exists(config_file):
 else:
     data = {}
 
-path = input("path to cloned core-repo: ") if "repo" not in data and data["repo"] is not None else data["repo"]
-user = input("user name: ") if "user" not in data and data["user"] is not None else data["user"]
+path = input("path to cloned core-repo: ") if "repo" not in data or data["repo"] is None else data["repo"]
+user = input("user name: ") if "user" not in data or data["user"] is None else data["user"]
 
 with open(config_file, mode="w") as f:
     json.dump({"repo": path, "user": user}, f)
@@ -100,6 +100,9 @@ ___""".format(raw_file, now, user)
                     else:
                         break
                     i2 -= 1
+                if ":" not in line:
+                    print("warning: unable to read method definition for {}".format(line))
+                    continue
                 f = line[line.index("def") + 4:line.rindex(":")]
                 doc += "\n" + "    " * (level + 1) + mod + "function {}".format(f)
             elif len(s) > 1:
@@ -129,9 +132,9 @@ ___""".format(raw_file, now, user)
     with open(doc_file_loc, mode="w") as f:
         f.write(doc)
     if flag:
-        print("please adapt file {} as it had content before!".format(doc_file_loc))
-        a = input("re-run generation? ").lower()
-        if a in ("y", "j", "1"): return False
+        print("please adapt file '{}' as it had content before!".format(doc_file_loc))
+        # a = input("re-run generation? ").lower()
+        # if a in ("y", "j", "1"): return False
     return True
 
 
@@ -143,11 +146,15 @@ def main():
 
     while len(found_files) > 0:
         root, file = found_files.pop(0)
+        sub_root = root[len(path)+1:]
         if file.endswith(".py"):
-            a = input("generate doc for '{}'? ".format(file)).lower()
-            if a not in ("y", "j", "1"): continue
+            # a = input("generate doc for '{}'? ".format(file)).lower()
+            # if a not in ("y", "j", "1"): continue
             real_file = os.path.join(root, file)
-            doc_file = os.path.join(local, file.split(".")[0]+".md")
+            doc_file = os.path.join(local, sub_root, file.split(".")[0]+".md")
+            d = os.path.dirname(doc_file)
+            if not os.path.isdir(d):
+                os.makedirs(d)
             while not generate_doc(file, real_file, doc_file):
                 time.sleep(0.2)
 

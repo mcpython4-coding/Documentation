@@ -1,30 +1,21 @@
-----
+***BlockCraftingTable.py - documentation - last updated on 14.5.2020 by uuk***
+___
 
-**block/BlockCraftingTable.py - Documentation - Last updated on 16.04.2020 by uuk**
+    @G.registry class BlockCraftingTable extends Block.Block
 
-----
+        variable NAME
 
-
-This file contains the code for the crafting table block
-
-
-    class BlockCraftingTable extends block.Block.Block
-        static attibute inventory: gui.InventoryCraftingTable.InventoryCraftingTable - stores the global crafting table, WARNING: may be moved in the future to player-class
-        
-        static overriding attribute NAME: str - the name of the block
-        
-        overriding function on_player_interact [...]
-            opens the inventory when needed
+        function on_player_interact(self, player, itemstack, button, modifiers, exact_hit) -> bool
+        function get_inventories(self)
             
-        overriding function get_inventories -> list
-            returns the inventory of the block
+            called to get an list of inventories
             
-        overriding static attribute HARDNESS: float = 2.5
 
-        overriding static attribute BEST_TOOLS_TO_BREAK [...]
-            
-        overriding function on_remove
-            closes the inventory when inventory is open
-            
-        static overriding function modify_block_item itemfactory: factory.ItemFactory.ItemFactory
-            sets the fuel level of the block
+
+        variable HARDNESS
+
+
+        variable BEST_TOOLS_TO_BREAK
+
+        function on_remove(self)
+        static function modify_block_item(cls, itemfactory)
