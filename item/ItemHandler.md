@@ -7,24 +7,21 @@ ___
 
         variable indexdata
 
-
             variable file
-
 
             variable textureatlas.group
 
-
             variable indexdata[file]
-
 
         variable indexdata["loaded_item_file_names"]
 
     function load_data(from_block_item_generator=False)
+
     function add_to_image_atlas(textureatlas, image, file)
+
     function register_item(registry, itemclass)
 
     variable items
-
 
     variable items.itemindextable
 

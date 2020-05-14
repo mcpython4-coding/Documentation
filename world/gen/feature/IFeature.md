@@ -2,4 +2,5 @@
 ___
 
     class IFeature extends event.Registry.Registry
+
         static function place(dimension, x, y, z, **config)

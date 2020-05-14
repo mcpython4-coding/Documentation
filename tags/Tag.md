@@ -2,7 +2,29 @@
 ___
 
     class Tag
+
         static function from_data(master, tagname: str, data: dict)
+
         function __init__(self, master, name: str, entries)
+
+            variable self.entries
+
+            variable self.master
+
+            variable self.name
+
+            variable self.load_tries
+
         function get_dependencies(self) -> list
+
+            variable dep
+
         function build(self)
+
+            variable raw
+
+            variable old_entries
+
+                            variable self.load_tries
+
+                        variable self.entries

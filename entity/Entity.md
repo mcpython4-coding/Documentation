@@ -6,11 +6,9 @@ ___
         dummy class for every entity,
         only used by the player at the moment (as no more entities are implemented)
         feel free to use, general functions for cross-mod work
-        
 
 
         variable TYPE
-
 
         variable SUMMON_ABLE - if the entity can be used in /summom-command
 
@@ -23,26 +21,57 @@ ___
             :return: the created entity
             todo: make added to world
             for moder: use this rather than raw constructor
-            
+
 
         function __init__(self, dimension=None)
             
             creates an new entity for the world
             for moder: you SHOULD implement an custom constructor which set the bellow values to an "good" value
-            
+
+
+            variable self.dimension
+
+            variable self.__position
+
+            variable self.rotation
+
+            variable self.inventories
+
+            variable self.harts
+
+            variable self.chunk
+
+            variable self.uuid
+
+            variable self.movement
 
         function __del__(self)
+
         function get_position(self)
+
         function set_position(self, position: tuple)
+
         function set_position_unsafe(self, position: tuple)
+
         function teleport(self, position, dimension=None, force_chunk_save_update=False)
             
             called when the entity should be teleported
             :param position: the position to teleport to
             :param dimension: to which dimension-id to teleport to, if None, no dimension change is used
             :param force_chunk_save_update: if the system should force to update were player data is stored
-            
 
+
+            variable else: sector_before
+
+            variable else: before_dim
+
+            variable else: dimension_id
+
+            variable self.__position
+
+            variable sector_after
+
+                variable self.chunk
 
         variable position
 
@@ -51,7 +80,7 @@ ___
             tells the entity an message. Not intended to inter-mod com
             Should be used by say-commands
             :param msg: the msg to tell
-            
+
 
         function kill(self, drop_items=True, kill_animation=True)
             
@@ -59,7 +88,7 @@ ___
             :param drop_items: if items should be dropped
             :param kill_animation: if the kill animation should be played
             todo: drop items
-            
+
 
         function pick_up(self, itemstack: gui.ItemStack.ItemStack) -> bool
             
@@ -67,7 +96,7 @@ ___
             :param itemstack: the itemstack to use
             :return: if it was successful or not
             for moder: see world/player.py as an example how this could work
-            
+
 
         function damage(self, damage, reason=None)
             
@@ -78,7 +107,7 @@ ___
                 - you may want to override this method for an custom implementation
             :param damage: the damage to apply
             :param reason: the reason for the damage, may be entity or str [something like DamageSource in mc]
-            
+
 
         function on_interact(self, player, button, modifiers, itemstack)
             
@@ -90,25 +119,25 @@ ___
             todo: make called
             todo: damage entity when needed
             for moder: should damage entity if needed
-            
+
 
         function draw(self)
             
             called to draw the entity
-            
+
 
         function tick(self)
             
             called every tick to update the entity
             can be used to update animations, movement, do path finding stuff, damage other entities, ...
-            
+
 
         function dump(self)
             
             dumps the entity into an save-able version
             :return: an pickle-able version, excluding position, rotation and harts, should include inventory serializer
                 calls to make sure that everything works
-            
+
 
         function load(self, data)
             
@@ -116,4 +145,3 @@ ___
             For Moder:
                 you CAN include an version entry to make sure you can fix the data version
             :param data: the data to load from
-            

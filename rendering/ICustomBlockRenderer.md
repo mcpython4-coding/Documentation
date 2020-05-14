@@ -2,8 +2,11 @@
 ___
 
     class ICustomBatchBlockRenderer
+
         function add(self, position, block, face)
+
         function remove(self, position, block, data, face)
 
     class ICustomDrawMethodRenderer
+
         function draw(self, position, block)

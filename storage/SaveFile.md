@@ -13,39 +13,49 @@ ___
         - block coordinates are stored now relative to chunk; decreases chunk size
     - 5: introduced: 17.03.2020 [part of entity update], outdated since: -, not loadable since: -
         - added entity serializer
-    
     planned:
     - 6: introduced: -, outdated since: -, not loadable since: -
         - changed how block-inventories are stored
         - optimisations to chunk-accessing
         - introduced datafixer system for mods; introduced block-fixers
-        
         data structure changes:
             Region: add last_loaded-parameter
             Chunk: add unapplied_fixers-list for storing which fixers to apply when loaded
             General: add an list of data-fixers applied to the world in the time of live of the world
-    
 
 
     variable LATEST_VERSION
 
-
     variable G.STORAGE_VERSION
-
 
     variable SAVE_DIRECTORY
 
-
     class SaveFile
+
         function __init__(self, directory_name)
+
+            variable self.directory
+
+            variable self.version
+
+            variable self.save_in_progress
+
         function load_world(self)
 
                     variable generaldatafixer
 
-
                     variable self.version
 
         function save_world(self, *_, override=False)
+
+                variable self.save_in_progress
+
+                variable G.worldgenerationhandler.enable_generation
+
+                variable G.worldgenerationhandler.enable_generation
+
+            variable self.save_in_progress
+
         function upgrade(self, part=None, version=None, to=None, **kwargs)
             
             upgrades the part of the SaveFile to the latest version supported
@@ -53,7 +63,17 @@ ___
             :param kwargs: kwargs given to the fixers
             :param version: which version to upgrade from
             :param to: to which version to upgrade to
-            
+
+
+            variable new_version
+
+            variable flag
+
+                            variable flag
+
+                            variable new_version
+
+                variable version
 
         function read(self, part, **kwargs)
             
@@ -61,7 +81,7 @@ ___
             :param part: the part to load
             :param kwargs: kwargs given to the loader
             :return: whatever the loader returns
-            
+
 
         function dump(self, data, part, **kwargs)
             
@@ -69,11 +89,38 @@ ___
             :param data: the data to store, optional, may be None
             :param part: the part to save
             :param kwargs: the kwargs to give the saver
-            
+
 
         function access_file_json(self, file)
+
+            variable file
+
         function access_file_pickle(self, file)
+
+            variable file
+
         function access_raw(self, file)
+
+            variable file
+
         function dump_file_json(self, file, data)
+
+            variable file
+
+            variable d
+
+            variable data
+
         function dump_file_pickle(self, file, data)
+
+            variable file
+
+            variable d
+
+            variable data
+
         function dump_raw(self, file, data)
+
+            variable file
+
+            variable d

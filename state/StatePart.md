@@ -6,7 +6,17 @@ ___
         variable NAME
 
         function __init__(self)
+
+            variable self.parts
+
+            variable self.master
+
         function activate(self)
+
         function deactivate(self)
+
         function get_sub_parts(self) -> list
+
         function bind_to_eventbus(self)
+
+                variable statepart.master

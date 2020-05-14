@@ -2,6 +2,7 @@
 ___
 
     @G.worldgenerationhandler class DefaultBedrockLayer extends Layer
+
         static function normalize_config(config: LayerConfig)
 
         variable NAME

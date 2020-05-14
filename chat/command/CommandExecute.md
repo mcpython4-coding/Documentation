@@ -4,13 +4,14 @@ ___
     @G.registry class CommandExecute extends chat.command.Command.Command
         
         class for /execute command
-        
 
 
         variable NAME
 
         static function insert_parse_bridge(parsebridge: ParseBridge)
+
         static function parse(values: list, modes: list, info)
+
         static function _parse_subcommand(index, command, values, info)
             
             execute an entry in the parsed command
@@ -18,32 +19,23 @@ ___
             :param command: the parsed active command
             :param values: the values that where parsed
             :param info: the command info which was used
-            
 
 
                     variable info.entity
 
-
                     variable info.position
-
 
                 variable subcommand: str
 
-
                 variable flag
-
 
                         variable block
 
-
                         variable flag
 
-
                         variable flag
-
 
                     variable selector
-
 
                     variable flag
 

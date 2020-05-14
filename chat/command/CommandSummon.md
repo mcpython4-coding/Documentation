@@ -4,11 +4,12 @@ ___
     @G.registry class CommandSummon extends chat.command.Command.Command
         
         command /summon
-        
 
 
         variable NAME
 
         static function insert_parse_bridge(parsebridge: ParseBridge)
+
         static function parse(cls, values: list, modes: list, info)
+
         static function get_help() -> list

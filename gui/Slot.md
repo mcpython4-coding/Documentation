@@ -3,14 +3,11 @@ ___
 
     variable SLOT_WIDTH
 
-
     variable PYGLET_IMAGE_HOVERING
-
 
     class Slot
         
         slot class
-        
 
             
             creates an new slot
@@ -23,10 +20,12 @@ ___
             :param allow_half_getting: can the player get only the half of the items out of the slot?
             :param on_shift_click: called when shift-clicked on the block, should return if normal logic should go on or not
             :param on_button_press: called when an button is pressed when hovering above the slot
-            
+
 
         function get_itemstack(self)
+
         function set_itemstack(self, stack, update=True, player=False)
+
         function call_update(self, player=False)
 
         variable itemstack
@@ -36,69 +35,81 @@ ___
             creates an copy of self
             :param position: the position to create at
             :return: a slotcopy pointing to this
-            
+
 
         function draw(self, dx=0, dy=0, hovering=False)
             
             draws the slot
-            
+
 
         function draw_lable(self, x, y)
             
             these code draws only the lable, before, normal draw should be executed for correcrt setup
-            
 
 
                 variable self.amount_label.text
 
-
                 variable self.amount_label.x
-
 
                 variable self.amount_label.y
 
         function can_set_item(self, itemstack) -> bool
+
         function save(self)
+
         function load(self, data)
+
         function __str__(self)
 
     class SlotCopy
+
         function get_allowed_item_tags(self)
+
         function set_allowed_item_tags(self, tags: list)
 
         variable allowed_item_tags
 
         function get_itemstack(self)
+
         function set_itemstack(self, stack, **kwargs)
+
         function call_update(self, player=False)
 
         variable itemstack
 
         function copy(self, position=(0, 0))
+
         function draw(self, dx=0, dy=0, hovering=False)
             
             draws the slot
-            
+
 
         function draw_lable(self, x, y)
+
         function can_set_item(self, itemstack) -> bool
+
         function save(self)
+
         function load(self, data)
+
         function __str__(self)
 
     class SlotInfiniteStack extends Slot
+
         function set_itemstack(self, stack, update=True, player=False)
+
         function call_update(self, player=False)
 
         variable itemstack
-
 
     class SlotInfiniteStackExchangeable extends Slot
+
         function set_itemstack(self, stack, update=True, player=False)
+
         function call_update(self, player=False)
 
         variable itemstack
 
-
     class SlotTrashCan extends Slot
+
         function set_itemstack(self, stack, update=True, player=False)

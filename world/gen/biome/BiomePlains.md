@@ -6,6 +6,9 @@ ___
         variable NAME
 
         static function get_temperature() -> float
+
         static function get_weight() -> int
+
         static function get_height_range()
+
         static function get_trees() -> list

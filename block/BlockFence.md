@@ -4,90 +4,85 @@ ___
     class IFence extends block.Block.Block
         
         Base class for every fence-like block. Expects
-        
 
 
         variable FENCE_TYPE_NAME
-
 
         variable BBOX
 
         function __init__(self, *args, **kwargs)
+
+            variable self.connections
+
+            variable self.face_solid
+
         function get_model_state(self) -> dict
+
+            variable state
+
         function on_block_update(self)
 
             variable block_north: block.Block.Block
 
-
             variable block_east: block.Block.Block
-
 
             variable block_south: block.Block.Block
 
-
             variable block_west: block.Block.Block
-
 
             variable self.connections["east"]
 
-
             variable self.connections["south"]
 
-
             variable self.connections["west"]
-
 
             variable self.connections["north"]
 
         function set_model_state(self, state: dict)
+
+                variable self.connections[key]
+
         static function get_all_model_states() -> list
+
+            variable states
+
         function connects_to(self, face: util.enums.EnumSide, blockinstance: block.Block.Block)
 
         variable BLOCK_ITEM_GENERATOR_STATE
 
-
     class IWoodenFence extends IFence
         
         Base class for every wooden fence; used to set the wooden fence flag for all children at ones
-        
 
 
         variable FENCE_TYPE_NAME
-
 
     @G.registry class AcaciaFence extends IWoodenFence
 
         variable NAME
 
-
     @G.registry class BirchFence extends IWoodenFence
 
         variable NAME
-
 
     @G.registry class DarkOakFence extends IWoodenFence
 
         variable NAME
 
-
     @G.registry class JungleFence extends IWoodenFence
 
         variable NAME
-
 
     @G.registry class OakFence extends IWoodenFence
 
         variable NAME
 
-
     @G.registry class SpruceFence extends IWoodenFence
 
         variable NAME
 
-
     @G.registry class NetherBrickFence extends IFence
 
         variable NAME
-
 
         variable FENCE_TYPE_NAME

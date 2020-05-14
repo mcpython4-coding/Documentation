@@ -12,27 +12,22 @@ ___
             :param text: the text to draw ontop of the progress bar
             :param anchor_pgb: the anchor on the progress bar
             :param anchor_window: the anchor on the window
-            
 
 
             variable self.lable
 
-
             variable self.active
 
         function bind_to_eventbus(self)
+
         function on_draw_2d(self)
 
             variable sx
 
-
             variable self.lable.text
-
 
             variable self.lable.font_size
 
-
             variable self.lable.x
-
 
             variable self.lable.y

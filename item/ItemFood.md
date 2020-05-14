@@ -2,11 +2,11 @@
 ___
 
     class ItemFood extends item.Item.Item
+
         function on_eat(self)
             
             called when the player eats the item
             :return: if the item was eaten or not
-            
 
 
         variable HUNGER_ADDITION

@@ -6,6 +6,7 @@ ___
         variable noise
 
         static function update_seed(cls)
+
         static function normalize_config(config: LayerConfig)
 
         variable NAME

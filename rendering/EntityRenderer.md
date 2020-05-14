@@ -3,12 +3,24 @@ ___
 
     variable RENDERERS
 
-
     variable TEXTURES
 
-
     class EntityRenderer
+
         function __init__(self, name)
+
+            variable self.name
+
+            variable self.path
+
+            variable self.data
+
+            variable self.box_models
+
+            variable self.states
+
+            variable self.texture_size
+
         function reload(self)
             
             reloads from file
@@ -41,7 +53,29 @@ ___
                     }
                 }
             }
-            
+
+
+            variable self.data
+
+            variable reloaded
+
+                variable box
+
+                variable texture
+
+                variable self.texture_size
+
+                    variable group
+
+                        variable group
+
+                        variable group
+
+                variable self.box_models[boxname]
+
+                variable d
+
+                variable self.states[state]
 
         function draw(self, entity, state, rotation=(0, 0, 0), part_rotation=None)
             
@@ -50,9 +84,18 @@ ___
             :param state: the state to render
             :param rotation: the rotation to use
             :param part_rotation: the rotation of every part
-            
+
+
+                variable box
+
+                variable rotation_2
+
+                variable rotation_center
 
         function draw_box(self, entity, boxname, position=(0, 0, 0), rotation=(0, 0, 0), rotation_center=(0, 0, 0))
+
+            variable box
+
         function add_to_batch(self, batch, entity, state, rotation=(0, 0, 0), part_rotation=None)
             
             adds the entity to an batch. Useful mostly for static entities like static complex block elements
@@ -63,4 +106,12 @@ ___
             :param part_rotation: the rotation of every part
             :return: an list of vertex-objects created with the batch
             WARNING: batch  M U S T  be rendered in an 3d environment with, if the texture needs it, alpha enabled
-            
+
+
+            variable data
+
+                variable box
+
+                variable rotation_2
+
+                variable rotation_center

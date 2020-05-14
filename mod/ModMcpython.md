@@ -3,24 +3,17 @@ ___
 
     variable VERSION_POST
 
-
         variable VERSION
-
 
             variable s
 
-
             variable VERSION
-
 
             variable c
 
-
             variable VERSION
 
-
         variable VERSION
-
 
     variable mcpython
         create the mod

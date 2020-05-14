@@ -5,7 +5,6 @@ ___
         
         base class for dirt
         todo: implement -> grass convert
-        
 
 
         variable NAME

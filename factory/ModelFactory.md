@@ -2,7 +2,25 @@
 ___
 
     class ModelFactory
+
         function __init__(self, name: str, parent="block/block")
+
+            variable self.name
+
+            variable self.parent
+
+            variable self.elements
+
+            variable self.textures
+
         function add_drawing_box(self, position, size, texturenames)
+
         function set_texture(self, name, texturefile)
+
+            variable self.textures[name]
+
         function finish(self)
+
+            variable data
+
+            variable G.modelhandler.models[self.name]

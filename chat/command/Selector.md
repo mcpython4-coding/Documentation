@@ -4,15 +4,18 @@ ___
     class Selector extends event.Registry.IRegistryContent
         
         selector base class
-        
 
 
         variable TYPE
 
         static function is_valid(entry) -> bool
+
         static function parse(entry, config)
+
     function load()
+
             static function is_valid(entry) -> bool
+
             static function parse(entry, config)
 
         @G.registry class PlayerSelector extends Selector
@@ -20,6 +23,7 @@ ___
             variable NAME
 
             static function is_valid(entry) -> bool
+
             static function parse(entry, config)
 
         @G.registry class RandomPlayerSelector extends Selector
@@ -27,6 +31,7 @@ ___
             variable NAME
 
             static function is_valid(entry) -> bool
+
             static function parse(entry, config)
 
         @G.registry class AllPlayerSelector extends Selector
@@ -34,6 +39,7 @@ ___
             variable NAME
 
             static function is_valid(entry) -> bool
+
             static function parse(entry, config)
 
         @G.registry class EntitySelector extends Selector
@@ -41,4 +47,5 @@ ___
             variable NAME
 
             static function is_valid(entry) -> bool
+
             static function parse(entry, config)

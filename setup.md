@@ -11,12 +11,10 @@ ___
         What happens if the user adds some data into the game?
             The system is not generating during runtime anymore. To update the data, run program with --rebuild or import
             the __main__ file and the setup file and call the functions by hand
-            
         What happens if an mod loader should be added?
             Have a look what is done to generate the vanilla things. Try to give the mod an interface for generating things.
             Rerun mod specified and vanilla-adapting tasks when the mod with the given version was run first. Afterwards,
-            only access the prepared data.
-    
+            only access the prepared data. 
 
 
     class IPrepareAbleTask extends event.Registry.IRegistryContent
@@ -27,14 +25,13 @@ ___
 
         variable USES_DIRECTORY
 
-
     variable taskregistry
 
     function add()
+
             static function dump_data(directory: str)
 
             variable USES_DIRECTORY
-
 
         @G.registry class TextureFactoryGenerate extends IPrepareAbleTask
 
@@ -47,6 +44,5 @@ ___
     function execute()
 
             variable data
-
 
             variable G.prebuilding

@@ -42,13 +42,16 @@ ___""".format(raw_file, now, user)
     doc_string = ""
     in_function = False
     function_level = None
+    in_init = False
+    pre_level = None
     for i, oline in enumerate(lines):
-        line = oline.strip()
-        level = oline.count("    ")
+        line = oline.lstrip()
+        level = oline[:-len(line)].count("    ")
+        if pre_level is not None and pre_level < level:
+            pre_level = level
+            in_init = False
         if in_function and level <= function_level: in_function = False
-        if in_doc:
-            doc_string += "\n" + "    " * (level+1) + line.replace('"""', "")
-        if line.startswith('"""') or line.endswith('"""'):
+        if '"""' in line and line.count('"""') % 2 == 1:
             in_doc = not in_doc
             if in_doc:
                 if handler_type == 0:
@@ -66,8 +69,11 @@ ___""".format(raw_file, now, user)
                 doc_string = ""
                 doc_type = 0
         elif in_doc:
+            if line.replace('"""', "").strip() == "": continue
+            doc_string += "\n" + "    " * (level+1) + line.replace('"""', "")
+        elif in_doc:
             pass
-        elif not in_function:
+        elif not in_function or in_init:
             s = line.split(" ")
             if s[0] == "class":
                 handler_type = 1
@@ -103,8 +109,10 @@ ___""".format(raw_file, now, user)
                 if ":" not in line:
                     print("warning: unable to read method definition for {}".format(line))
                     continue
+                if "__init__" in line:
+                    in_init = True
                 f = line[line.index("def") + 4:line.rindex(":")]
-                doc += "\n" + "    " * (level + 1) + mod + "function {}".format(f)
+                doc += "\n\n" + "    " * (level + 1) + mod + "function {}".format(f)
             elif len(s) > 1:
                 if s[1] == "=" or (len(s) > 2 and s[2] == "=" and s[0].endswith(":")):
                     doc += "\n\n" + "    " * (level + 1) + "variable {}".format(s[0])
@@ -125,7 +133,6 @@ ___""".format(raw_file, now, user)
                         sdoc.reverse()
                         doc += "\n" + "    " * (level + 2)
                         doc += ("\n" + "    " * (level + 2)).join(sdoc)
-                    doc += "\n"
             elif line.startswith("# todo"):
                 doc += "    " * (level + 1)+line[2:]
     flag = os.path.exists(doc_file_loc)

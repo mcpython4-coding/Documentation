@@ -2,9 +2,17 @@
 ___
 
     class LayerConfig
+
         function __init__(self, *config, **cconfig)
 
+            variable self.config
+
+            variable self.layer
+
+            variable self.dimension
+
     class Layer extends event.Registry.Registry
+
         static function normalize_config(config: LayerConfig)
 
         variable NAME

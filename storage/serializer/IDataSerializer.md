@@ -9,10 +9,10 @@ ___
 
         variable TYPE
 
-
         variable PART - which part it can serialize
 
         static function load(cls, savefile, **kwargs)
+
         static function save(cls, data, savefile, **kwargs)
 
     variable dataserializerregistry

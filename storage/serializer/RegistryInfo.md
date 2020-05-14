@@ -6,4 +6,5 @@ ___
         variable PART
 
         static function load(cls, savefile)
+
         static function save(cls, data, savefile)

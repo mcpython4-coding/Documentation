@@ -2,4 +2,5 @@
 ___
 
     class IShulkerBoxLikeItem
+
         function is_blocked_in(self, inventory) -> bool

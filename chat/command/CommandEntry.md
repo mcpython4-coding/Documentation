@@ -4,7 +4,6 @@ ___
     class CommandEntry extends event.Registry.IRegistryContent
         
         an parseable command entry
-        
 
 
         variable TYPE
@@ -18,7 +17,7 @@ ___
             :param arguments: overgiven creation arguments
             :param kwargs: overgiven optional creative arguments
             :return: an (new start, value)-tuple
-            
+
 
         static function is_valid(entrylist: list, start: int, arguments, kwargs) -> bool
             
@@ -28,105 +27,105 @@ ___
             :param arguments: overgiven creation arguments
             :param kwargs: overgiven optional creation arguments
             :return: if entry is valid
-            
+
 
     function load()
             
             Entry for definite string
-            
 
 
             variable NAME
 
             static function parse(entrylist: list, start: int, info, arguments, kwargs) -> tuple
+
             static function is_valid(entrylist: list, start: int, arguments, kwargs) -> bool
 
         @G.registry class IntEntry extends CommandEntry
             
             entry for int
-            
 
 
             variable NAME
 
             static function parse(entrylist: list, start: int, info, arguments, kwargs) -> tuple
+
             static function is_valid(entrylist: list, start: int, arguments, kwargs) -> bool
 
         @G.registry class StringEntry extends CommandEntry
             
             string entry
-            
 
 
             variable NAME
 
             static function parse(entrylist: list, start: int, info, arguments, kwargs) -> tuple
+
             static function is_valid(entrylist: list, start: int, arguments, kwargs) -> bool
 
         @G.registry class StringWithoutQuotesEntry extends CommandEntry
             
             string entry
-            
 
 
             variable NAME
 
             static function parse(entrylist: list, start: int, info, arguments, kwargs) -> tuple
+
             static function is_valid(entrylist: list, start: int, arguments, kwargs) -> bool
 
         @G.registry class FloatEntry extends CommandEntry
             
             float entry
-            
 
 
             variable NAME
 
             static function parse(entrylist: list, start: int, info, arguments, kwargs) -> tuple
+
             static function is_valid(entrylist: list, start: int, arguments, kwargs) -> bool
 
         @G.registry class BlockNameEntry extends CommandEntry
             
             blockname entry
-            
 
 
             variable NAME
 
             static function parse(entrylist: list, start: int, info, arguments, kwargs) -> tuple
+
             static function is_valid(entrylist: list, start: int, arguments, kwargs) -> bool
 
         @G.registry class ItemNameEntry extends CommandEntry
             
             itemname entry
-            
 
 
             variable NAME
 
             static function parse(entrylist: list, start: int, info, arguments, kwargs) -> tuple
+
             static function is_valid(entrylist: list, start: int, arguments, kwargs) -> bool
 
         @G.registry class SelectorEntry extends CommandEntry
             
             Selector entry
-            
 
 
             variable NAME
 
             static function parse(entrylist: list, start: int, info, arguments, kwargs) -> tuple
+
             static function is_valid(entrylist: list, start: int, arguments, kwargs) -> bool
 
         @G.registry class PositionEntry extends CommandEntry
             
             position entry
-            
 
 
             variable NAME
 
             static function parse(entrylist: list, start: int, info, arguments, kwargs) -> tuple
+
             static function _parse_coordinate_to_real(r: str, index: int, info) -> float
                 
                 parse an coordinate (could be relative) to an valid coordinate
@@ -134,38 +133,38 @@ ___
                 :param index: the index in the info position
                 :param info: the info to use
                 :return: an float value representing this
-                
+
 
             static function is_valid(entrylist: list, start: int, arguments, kwargs) -> bool
 
         @G.registry class SelectDefinitedStringEntry extends CommandEntry
             
             select definite string entry
-            
 
 
             variable NAME
 
             static function parse(entrylist: list, start: int, info, arguments, kwargs) -> tuple
+
             static function is_valid(entrylist: list, start: int, arguments, kwargs) -> bool
 
         @G.registry class OpenEndUndefinedStringEntry extends CommandEntry
             
             open end undefined string entry
-            
 
 
             variable NAME
 
             static function parse(entrylist: list, start: int, info, arguments, kwargs) -> tuple
+
             static function is_valid(entrylist: list, start: int, arguments, kwargs) -> bool
 
         @G.registry class BooleanEntry extends CommandEntry
 
             variable TABLE
 
-
             variable NAME
 
             static function parse(entrylist: list, start: int, info, arguments, kwargs) -> tuple
+
             static function is_valid(entrylist: list, start: int, arguments, kwargs) -> bool

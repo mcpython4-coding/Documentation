@@ -5,11 +5,17 @@ ___
         adapted from mc version 1.15.2, decompiled with mc-forge located under net.minecraft.crash.CrashReport
         added some extra entries
 
-
     variable log_file
-
 
     variable inter_home
 
     function println(*msg, sep=" ", end="\n", write_into_console=True, write_into_log_file=True)
+
     function write_exception(*info)
+    
+    machine: {}
+    processor: {}
+    python version: {}, implementation: {}
+
+
+    function add_funny_line()

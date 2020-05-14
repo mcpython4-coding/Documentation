@@ -2,5 +2,23 @@
 ___
 
     class UIPart extends state.StatePart.StatePart
+
         function __init__(self, position, bboxsize, anchor_element="WS", anchor_window="WS")
+
+            variable self.position
+
+            variable self.bboxsize
+
+            variable self.anchor_element
+
+            variable self.anchor_window
+
         function get_real_position(self)
+
+                variable x
+
+                variable y
+
+                variable x
+
+                variable y

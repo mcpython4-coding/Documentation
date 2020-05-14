@@ -9,18 +9,13 @@ ___
 
             variable blocktable
 
-
             variable blocklist
-
 
             variable size
 
-
             variable hsize
 
-
                 variable chunk
-
 
                     variable rx
 
@@ -28,14 +23,10 @@ ___
 
             variable heigthmap
 
-
             variable blockmap
-
 
                 variable block
 
-
         variable G.window.flying
-
 
     variable config

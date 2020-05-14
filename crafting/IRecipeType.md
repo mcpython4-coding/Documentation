@@ -2,7 +2,13 @@
 ___
 
     class IRecipe
+
         static function get_recipe_names() -> list
+
         static function from_data(cls, data: dict)
+
         function __init__(self)
+
+            variable self.uuid
+
         function register(self)

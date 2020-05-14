@@ -10,4 +10,5 @@ ___
         variable NAME
 
         static function add_generate_functions_to_chunk(cls, config: LayerConfig, reference)
+
         static function generate_xz(reference, x, z, config, factor)

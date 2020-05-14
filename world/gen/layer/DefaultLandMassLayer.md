@@ -5,13 +5,12 @@ ___
 
         variable noise1
 
-
         variable noise2
-
 
         variable noise3
 
         static function update_seed(cls)
+
         static function normalize_config(config: LayerConfig)
 
         variable NAME

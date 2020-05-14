@@ -2,8 +2,21 @@
 ___
 
     class EntityHandler
+
         function __init__(self)
+
+            variable self.registry
+
+            variable self.entity_map
+
         function add_entity(self, name, position, *args, dimension=None, uuid=None, check_summon=False, **kwargs)
+
+            variable entity
+
+            variable entity
+
+            variable self.entity_map[entity.uuid]
+
         function tick(self)
 
     variable G.entityhandler

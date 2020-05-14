@@ -2,4 +2,5 @@
 ___
 
     class OakTreeNormalFeature
+
         static function place(dimension, x, y, z, heightrange=(3, 5))

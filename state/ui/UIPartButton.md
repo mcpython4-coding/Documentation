@@ -3,15 +3,11 @@ ___
 
     variable image
 
-
     variable disabled
-
 
     variable enabled
 
-
     variable hovering
-
 
     variable IMAGES
 
@@ -26,36 +22,32 @@ ___
             :param press: the EventInfo for mouse buttons and mods, no area
             :param anchor_button: the anchor on the button
             :param anchor_window: the anchor on the window
-            
 
 
             variable self.on_press
 
-
             variable self.on_hover
-
 
             variable self.on_try_press
 
-
             variable self.enabled
-
 
             variable self.has_hovering_state
 
-
             variable self.hovering
 
-
             variable self.lable
-
 
             variable self.active
 
         function bind_to_eventbus(self)
+
         function deactivate(self)
+
         function on_mouse_press(self, x, y, button, modifiers)
+
         function on_mouse_motion(self, x, y, dx, dy)
+
         function on_draw_2d(self)
 
     class UIPartToggleButton extends UIPartButton
@@ -75,35 +67,28 @@ ___
             :param has_hovering_state: if the button gets blue when mouse is over it
             :param text_constructor: an string.format(item) or an function(item: str) -> str entry
             :param start: where in the array to start from
-            
 
 
             variable self.on_toggle
 
-
             variable self.on_hover
-
 
             variable self.on_try_press
 
-
             variable self.event_functions
-
 
             variable self.enabled
 
-
             variable self.has_hovering_state
-
 
             variable self.hovering
 
-
             variable self.lable
-
 
             variable self.active
 
         function _generate_text(self)
+
         function on_mouse_press(self, x, y, button, modifiers)
+
         function on_draw_2d(self)
