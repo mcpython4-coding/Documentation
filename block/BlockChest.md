@@ -1,23 +1,33 @@
 ***BlockChest.py - documentation - last updated on 14.5.2020 by uuk***
 ___
 
-    variable BBOX
+    variable BBOX - the bounding box of the chest
 
     @G.registry class BlockChest extends Block.Block
+        
+        The Chest block class
 
-        variable now
 
-        variable is_christmas
+        variable now: datetime - now
 
-        variable NAME
+        variable is_christmas: bool - if christmas is today
+
+        variable NAME: str - the name of the chest
 
         function __init__(self, *args, **kwargs)
+            
+            creates an new BlockChest
+
 
             variable self.front_side
 
                     variable self.front_side
 
         function can_open_inventory(self) -> bool
+            
+            checks if the inventory can be opened
+            :return: if the block can be opened
+
 
         function on_player_interact(self, player, itemstack, button, modifiers, exact_hit) -> bool
 

@@ -1,9 +1,15 @@
 ***BlockEnderChest.py - documentation - last updated on 14.5.2020 by uuk***
 ___
 
-    @G.registry class BlockChest extends Block.Block
+    @G.registry class BlockEnderChest extends Block.Block
+        
+        class for the ender chest
+
 
         function __init__(self, *args, **kwargs)
+            
+            creates the ender chest block
+
 
             variable self.front_side
 
@@ -32,3 +38,5 @@ ___
         function get_view_bbox(self)
 
         function on_remove(self)
+
+    variable BlockChest - todo: remove in a1.2.0

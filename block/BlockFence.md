@@ -6,11 +6,15 @@ ___
         Base class for every fence-like block. Expects
 
 
-        variable FENCE_TYPE_NAME
+        variable FENCE_TYPE_NAME: set - the type list of the fences
 
-        variable BBOX
+        variable BBOX - the bounding box
+            todo: add bounding-box
 
         function __init__(self, *args, **kwargs)
+            
+            will create the fence
+
 
             variable self.connections
 

@@ -7,6 +7,6 @@ ___
         todo: implement -> grass convert
 
 
-        variable NAME
+        variable NAME: str
 
         function on_random_update(self)

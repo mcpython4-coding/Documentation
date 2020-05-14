@@ -2,8 +2,11 @@
 ___
 
     @G.registry class BlockCraftingTable extends Block.Block
+        
+        class for the crafting table
 
-        variable NAME
+
+        variable NAME: str
 
         function on_player_interact(self, player, itemstack, button, modifiers, exact_hit) -> bool
 

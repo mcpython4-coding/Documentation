@@ -2,12 +2,18 @@
 ___
 
     @G.registry class BlockFurnace extends block.Block.Block
+        
+        class for the furnace block
 
-        variable FURNACE_RECIPES
 
-        variable NAME
+        variable FURNACE_RECIPES: list - the list of recipe groups to use for this furnace
+
+        variable NAME: str
 
         function __init__(self, *args, **kwargs)
+            
+            creates an furnace block in the world
+
 
             variable self.facing
 
@@ -31,12 +37,12 @@ ___
 
     @G.registry class BlastFurnace extends BlockFurnace
 
-        variable NAME
+        variable NAME: str
 
-        variable FURNACE_RECIPES
+        variable FURNACE_RECIPES: list
 
     @G.registry class Smoker extends BlockFurnace
 
-        variable NAME
+        variable NAME: str
 
-        variable FURNACE_RECIPES
+        variable FURNACE_RECIPES: list
