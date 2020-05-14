@@ -13,13 +13,7 @@ ___
 
         function _switch_to(self, statename)
 
-            variable self.CANCEL_SWITCH_STATE
-
-            variable self.active_state: State.State
-
         function add_state(self, state: State.State)
-
-            variable self.states[state.NAME]
 
         function update_exclusive(self)
 

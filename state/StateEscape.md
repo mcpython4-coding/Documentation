@@ -22,5 +22,3 @@ ___
     variable escape
 
     function create()
-
-        variable escape

@@ -12,5 +12,3 @@ ___
             variable self.name
 
         function execute(self, info=None)
-
-            variable count

@@ -18,5 +18,3 @@ ___
         function get_sub_parts(self) -> list
 
         function bind_to_eventbus(self)
-
-                variable statepart.master

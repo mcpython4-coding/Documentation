@@ -32,33 +32,15 @@ ___
 
         function add_player(self, name, add_inventories=True)
 
-            variable self.players[name]
-
         function get_active_player(self)
 
         function reset_config(self)
-
-            variable self.config
-
-            variable self.gamerulehandler
-
-            variable self.hide_faces_to_ungenerated_chunks
 
         function get_active_dimension(self) -> world.Dimension.Dimension
 
         function add_dimension(self, id, name, config={}) -> world.Dimension.Dimension
 
-            variable dim
-
         function join_dimension(self, id, save_current=True)
-
-            variable self.CANCEL_DIM_CHANGE
-
-            variable sector
-
-            variable old
-
-            variable self.active_dimension
 
         function hit_test(self, position, vector, max_distance=8)
             
@@ -123,14 +105,4 @@ ___
 
         function cleanup(self, remove_dims=False, filename=None, add_player=False)
 
-                variable dimension.chunks
-
-            variable G.window.flying
-
-            variable self.spawnpoint
-
         function setup_by_filename(self, filename: str)
-
-            variable self.filename
-
-            variable self.savefile

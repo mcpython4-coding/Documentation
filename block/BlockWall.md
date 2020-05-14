@@ -7,11 +7,7 @@ ___
 
             variable self.connections
 
-            variable self.face_solid
-
         function get_model_state(self) -> dict
-
-            variable state
 
         function on_block_update(self)
 
@@ -41,11 +37,7 @@ ___
 
         function set_model_state(self, state: dict)
 
-                variable self.connections[key]
-
         static function get_all_model_states() -> list
-
-            variable states
 
     @G.registry class AndesiteWall extends IWall
 

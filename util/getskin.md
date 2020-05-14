@@ -27,26 +27,6 @@ ___
 
     function get_url(url, **kwargs)
 
-            variable content
-
-            variable is_json
-
-            variable raw
-
-                    variable content
-
-                variable is_json
-
-                    variable content
-
-                variable is_json
-
-                    variable content
-
-                variable is_json
-
-                variable raw
-
     function download_skin(username: str, store: str)
 
             variable r

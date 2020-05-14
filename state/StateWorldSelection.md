@@ -13,11 +13,7 @@ ___
 
         function on_new_world_press(self, *_)
 
-            variable worldname
-
         function on_world_load_press(self, *_)
-
-            variable worldname
 
         function bind_to_eventbus(self)
 
@@ -30,5 +26,3 @@ ___
     variable worldselection
 
     function create()
-
-        variable worldselection

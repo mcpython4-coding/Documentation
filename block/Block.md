@@ -130,8 +130,6 @@ ___
             :param level: the level of redstone, between 0 and 15
 
 
-            variable self.injected_redstone_power[side]
-
         function get_redstone_output(self, side: util.enums.EnumSide) -> int
             
             gets the redstone value on an given side

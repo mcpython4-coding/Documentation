@@ -31,19 +31,7 @@ ___
 
         function rotate(self, rotation)
 
-            variable face
-
-                    variable index
-
-                    variable face
-
         function rotate_reverse(self, rotation)
-
-            variable face
-
-                    variable index
-
-                    variable face
 
     variable FACE_ORDER
 

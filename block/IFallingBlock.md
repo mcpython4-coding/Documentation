@@ -12,14 +12,7 @@ ___
 
         function on_block_update(self)
 
-            variable blockinst
-
-                    variable self.fall_cooldown
-
         function fall(self, check=True)
             
             let the block fall
             :param check: weither to check if the block can fall to that position or not
-
-
-                variable chunk

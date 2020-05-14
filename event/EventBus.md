@@ -48,25 +48,7 @@ ___
             :return: an list of tuple of (return value, info)
 
 
-            variable result
-
-            variable exception_occ
-
-                variable dif
-
-                    variable start
-
-                    variable dif
-
-                    variable exception_occ
-
         function call_until(self, event_name, check_function, *args, **kwargs)
-
-                variable start
-
-                    variable result
-
-                    variable dif
 
         function activate(self)
 
@@ -74,16 +56,4 @@ ___
 
         function create_sub_bus(self, *args, activate=True, **kwargs)
 
-            variable bus
-
         function call_as_stack(self, eventname, *args, amount=1, **kwargs)
-
-            variable result
-
-            variable exception_occ
-
-                variable start
-
-                    variable exception_occ
-
-                variable dif

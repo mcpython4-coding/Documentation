@@ -64,8 +64,6 @@ ___
 
         function set_status(self, value: str)
 
-            variable self.status
-
     variable gamerule_registry
 
     @G.registry class GameRuleDoImmediateRespawn extends GameRule

@@ -35,14 +35,8 @@ ___
 
         function add_entry(self, key: str, value: str)
 
-            variable self.table[key]
-
         function read_value(self, key: str)
 
     function from_directory(directory: str, modname: str)
-
-        variable files
-
-        variable m
 
     function from_mod_name(modname: str)

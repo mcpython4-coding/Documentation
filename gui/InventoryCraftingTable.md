@@ -25,14 +25,8 @@ ___
             draws the inventory
 
 
-                variable self.bgsprite.position
-
         function get_interaction_slots(self)
 
         function on_key_press(self, symbol, modifiers)
 
         function update_shift_container(self)
-
-            variable G.inventoryhandler.shift_container.container_A
-
-            variable G.inventoryhandler.shift_container.container_B

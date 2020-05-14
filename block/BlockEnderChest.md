@@ -9,16 +9,6 @@ ___
 
                     variable self.front_side
 
-                    variable self.front_side
-
-                    variable self.front_side
-
-                    variable self.front_side
-
-            variable self.inventory
-
-            variable self.face_solid
-
         variable NAME
 
         function on_player_interact(self, player, itemstack, button, modifiers, exact_hit) -> bool
@@ -34,12 +24,6 @@ ___
         function get_provided_slots(self, side)
 
         function set_model_state(self, state: dict)
-
-                variable face
-
-                    variable self.front_side
-
-                    variable self.front_side
 
         function get_model_state(self) -> dict
 

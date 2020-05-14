@@ -61,18 +61,6 @@ ___
             :param force_chunk_save_update: if the system should force to update were player data is stored
 
 
-            variable else: sector_before
-
-            variable else: before_dim
-
-            variable else: dimension_id
-
-            variable self.__position
-
-            variable sector_after
-
-                variable self.chunk
-
         variable position
 
         function tell(self, msg: str)

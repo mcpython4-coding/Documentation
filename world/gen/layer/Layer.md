@@ -9,8 +9,6 @@ ___
 
             variable self.layer
 
-            variable self.dimension
-
     class Layer extends event.Registry.Registry
 
         static function normalize_config(config: LayerConfig)

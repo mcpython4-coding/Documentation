@@ -11,20 +11,8 @@ ___
 
                     variable self.face
 
-                    variable self.face
-
-                    variable self.face
-
-                    variable self.face
-
-                    variable self.face
-
-                    variable self.face
-
         function get_model_state(self) -> dict
 
         function set_model_state(self, state: dict)
-
-                variable self.face
 
         static function get_all_model_states(cls) -> list

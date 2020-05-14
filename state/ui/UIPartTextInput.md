@@ -32,11 +32,3 @@ ___
         function bind_to_eventbus(self)
 
         function on_key_press(self, button, mod)
-
-                        variable uiparttextinput.selected
-
-                        variable reindex
-
-                        variable self.textinputs[reindex].selected
-
-                variable self.textinputs[0].selected

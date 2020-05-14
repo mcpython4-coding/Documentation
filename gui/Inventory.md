@@ -39,45 +39,6 @@ ___
             todo: make public
 
 
-                variable self.config
-
-                variable self.config
-
-                variable sid
-
-                variable entry
-
-                    variable self.slots[sid].position
-                        logger.println(sid, entry)
-
-                    variable self.slots[sid].interaction_mode[1]
-
-                    variable self.slots[sid].interaction_mode[0]
-
-                    variable self.slots[sid].interaction_mode[2]
-
-                    variable image
-
-                    variable image
-
-                    variable self.slots[sid].empty_image
-
-                    variable self.slots[sid].allowed_item_tags
-
-                variable self.bgimagesize
-
-                variable self.bganchor
-
-                variable self.windowanchor
-
-                variable self.position
-
-                    variable self.bgsprite
-
-                    variable self.bgsprite
-
-                variable self.bg_image_pos
-
         function create_slots(self) -> list:  # todo
             
             creates the slots
@@ -88,10 +49,6 @@ ___
             
             :return: the position of the inventory
 
-
-                variable x
-
-                variable y
 
         function activate(self):  # todo
 
@@ -115,8 +72,6 @@ ___
             
             draws the inventory
 
-
-                variable self.bgsprite.position
 
         function on_draw_background(self):  # todo
             
@@ -148,8 +103,6 @@ ___
 
         function copy(self)
 
-            variable obj
-
         function load(self, data) -> bool
             
             serializes the data into the inventory
@@ -166,12 +119,6 @@ ___
         function insert_items(self, items: list, random_check_order=False, insert_when_same_item=True)
 
         function insert_item(self, itemstack, random_check_order=False, insert_when_same_item=True)
-
-            variable slots
-
-                        variable overflow
-
-                        variable slot.itemstack.amount
 
         function update_shift_container(self)
             

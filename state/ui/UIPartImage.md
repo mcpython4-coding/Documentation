@@ -12,10 +12,6 @@ ___
             :param anchor_window: the anchor on the window
 
 
-            variable self.image
-
-            variable self.press: event.EventInfo.MousePressEventInfo
-
             variable self.on_press
 
             variable self.active
@@ -24,8 +20,4 @@ ___
 
         function on_mouse_press(self, x, y, button, modifiers)
 
-            variable self.press.area
-
         function on_draw_2d(self)
-
-            variable self.image.position

@@ -9,10 +9,6 @@ ___
 
         function get_parts(self) -> list
 
-            variable parts - gui.back*#", (-320, 20), anchor_window="MD",
-
-            variable text
-
         function on_back_press(self, x, y)
 
         function on_generate_press(self, x, y)
@@ -27,16 +23,6 @@ ___
 
         function on_activate(self)
 
-            variable self.parts[2].index
-
-            variable self.parts[2].text
-
-            variable self.parts[3].index
-
-            variable self.parts[3].text
-
     variable worldgenerationconfig
 
     function create()
-
-        variable worldgenerationconfig

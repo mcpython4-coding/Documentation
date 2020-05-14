@@ -13,11 +13,11 @@ ___
             Creates an new BlockBarrel-class
 
 
-            variable self.facing
+            variable self.facing: str - the direction the block faces to
 
-            variable self.opened
+            variable self.opened: bool - if the barrel is open
 
-            variable self.inventory
+            variable self.inventory: gui.InventoryBarrel.InventoryBarrel
 
         function on_player_interact(self, player, itemstack, button, modifiers, exact_hit) -> bool
 
@@ -31,25 +31,13 @@ ___
 
         function set_model_state(self, state: dict)
 
-                variable face
-
-                    variable self.front_side
-
-                    variable self.front_side
-
         function get_model_state(self) -> dict
 
         static function get_all_model_states() -> list
 
-            variable facing
-
         static function set_block_data(cls, iteminst, block)
 
-                variable block.inventory
-
         function on_request_item_for_block(self, itemstack)
-
-                variable itemstack.item.inventory
 
         function on_remove(self)
 

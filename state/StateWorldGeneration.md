@@ -13,43 +13,7 @@ ___
 
         function on_update(self, dt)
 
-                variable c
-
-                    variable self.status_table[chunk]
-
-                    variable count
-
-                    variable self.status_table[chunk]
-
         function on_activate(self)
-
-            variable sx
-
-            variable sx
-
-            variable sy
-
-            variable sy
-
-            variable G.worldgenerationhandler.enable_generation
-
-            variable fx
-
-            variable fy
-
-            variable ffx
-
-            variable ffy
-
-            variable seed
-
-                    variable seed
-
-                    variable seed
-
-                variable seed
-
-            variable G.world.config["seed"]
 
         function finish(self)
 
@@ -86,8 +50,6 @@ ___
 
         function on_draw_2d_post(self)
 
-            variable self.parts[1].text
-
                 variable status
 
                     variable factor
@@ -101,5 +63,3 @@ ___
     variable worldgeneration
 
     function create()
-
-        variable worldgeneration

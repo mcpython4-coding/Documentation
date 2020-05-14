@@ -38,24 +38,12 @@ ___
             :param command: the command to add
 
 
-            variable parsebridge
-
-            variable self.CANCEL_REGISTER
-
-                variable self.commandparsing[entry]
-
         function parse(self, command: str, info=None)
             
             pase an command
             :param command: the command to parse
             :param info: the info to use. can be None if one should be generated
 
-
-            variable split
-
-            variable pre
-
-            variable self.CANCEL_COMMAND_EXECUTE
 
         function _convert_to_values(self, command, parsebridge, info, index=1) -> tuple
             
@@ -65,19 +53,5 @@ ___
             :param info: the info to use
             :param index: the index to start on
 
-
-            variable active_entry
-
-            variable values
-
-            variable array
-
-            variable commandregistry
-
-                variable flag1
-
-                        variable active_entry
-
-                        variable flag1
 
     variable G.commandparser

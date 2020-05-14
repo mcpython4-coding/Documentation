@@ -48,14 +48,6 @@ ___
 
         function save_world(self, *_, override=False)
 
-                variable self.save_in_progress
-
-                variable G.worldgenerationhandler.enable_generation
-
-                variable G.worldgenerationhandler.enable_generation
-
-            variable self.save_in_progress
-
         function upgrade(self, part=None, version=None, to=None, **kwargs)
             
             upgrades the part of the SaveFile to the latest version supported
@@ -64,16 +56,6 @@ ___
             :param version: which version to upgrade from
             :param to: to which version to upgrade to
 
-
-            variable new_version
-
-            variable flag
-
-                            variable flag
-
-                            variable new_version
-
-                variable version
 
         function read(self, part, **kwargs)
             
@@ -93,34 +75,12 @@ ___
 
         function access_file_json(self, file)
 
-            variable file
-
         function access_file_pickle(self, file)
-
-            variable file
 
         function access_raw(self, file)
 
-            variable file
-
         function dump_file_json(self, file, data)
-
-            variable file
-
-            variable d
-
-            variable data
 
         function dump_file_pickle(self, file, data)
 
-            variable file
-
-            variable d
-
-            variable data
-
         function dump_raw(self, file, data)
-
-            variable file
-
-            variable d

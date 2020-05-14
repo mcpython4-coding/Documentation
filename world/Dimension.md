@@ -13,8 +13,6 @@ ___
 
         function setStaticId(self, dimid)
 
-            variable self.id
-
     class DimensionHandler
 
         function __init__(self)
@@ -25,15 +23,9 @@ ___
 
         function finish(self)
 
-            variable i
-
-                variable dim.id
-
         function add_default_dimensions(self)
 
         function add_dimension(self, dim: DimensionDefinition)
-
-                variable self.dimensions[dim.id]
 
         function init_dims(self)
 
@@ -62,11 +54,7 @@ ___
 
         function get_chunk_for_position(self, position, **kwargs) -> world.Chunk.Chunk or None
 
-                variable position
-
         function get_block(self, position)
-
-            variable chunk
 
         function add_block(self, position: tuple, blockname
 
@@ -79,9 +67,5 @@ ___
         function hide_block(self, position, immediate=True)
 
         function draw(self)
-
-            variable pad
-
-                    variable chunk
 
         function __del__(self)

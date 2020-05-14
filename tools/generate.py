@@ -47,9 +47,9 @@ ___""".format(raw_file, now, user)
     for i, oline in enumerate(lines):
         line = oline.lstrip()
         level = oline[:-len(line)].count("    ")
-        if pre_level is not None and pre_level < level:
-            pre_level = level
+        if pre_level is not None and pre_level > level:
             in_init = False
+        pre_level = level
         if in_function and level <= function_level: in_function = False
         if '"""' in line and line.count('"""') % 2 == 1:
             in_doc = not in_doc

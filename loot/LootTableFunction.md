@@ -37,10 +37,6 @@ ___
 
         function apply(self, items: list, *args, **kwargs)
 
-                    variable block
-
-                        variable item.display_name
-
     @G.registry class CopyNBT extends ILootTableFunction
 
         variable NAME
@@ -71,12 +67,6 @@ ___
 
         function apply(self, items: list, *args, **kwargs)
 
-                variable itemname
-
-                    variable result
-
-                    variable items[i]
-
     @G.registry class FillPlayerHead extends ILootTableFunction
 
         variable NAME
@@ -102,10 +92,6 @@ ___
         variable NAME
 
         function apply(self, items: list, *args, **kwargs)
-
-                            variable count
-
-                            variable count
 
     @G.registry class SetDamage extends ILootTableFunction
 

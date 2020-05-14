@@ -11,15 +11,11 @@ ___
 
         function create_bus(self, *args, active=True, **kwargs) -> event.EventBus.EventBus
 
-            variable bus
-
         function activate_bus(self, bus: event.EventBus.EventBus)
 
         function deactivate_bus(self, bus: event.EventBus.EventBus)
 
         function call(self, eventname, *args, **kwargs)
-
-            variable results
 
         function __call__(self, *args, **kwargs)
 

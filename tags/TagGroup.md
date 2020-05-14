@@ -15,13 +15,7 @@ ___
 
         function build(self)
 
-            variable depend_list
-
-            variable sort
-
         function get_tags_for(self, obj, cache=False) -> list
-
-            variable result
 
         function provides_object_tag(self, obj, tag_name: str) -> bool
 

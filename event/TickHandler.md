@@ -33,12 +33,6 @@ ___
             :param dt: the time that came after the last event
 
 
-                        variable result
-
-                            variable self.results[ticketid]
-
-                        variable self.lost_time
-
         function schedule_once(self, function, *args, **kwargs)
             
             Will execute the function in near time. Helps when in an event and need to exchange stuff which might be
@@ -57,20 +51,8 @@ ___
             :param kwargs: the kwargs to give
 
 
-                variable ticketid
-
-                variable ticketid
-
         function bind_redstone_tick(self, function, tick, *args, **kwargs)
 
         function send_random_ticks(self, *args, **kwargs)
-
-                        variable x
-
-                        variable z
-
-                                variable position
-
-                                variable blockinst
 
     variable handler

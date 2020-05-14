@@ -25,21 +25,11 @@ ___
 
         function _load_datapack(self, directory)
 
-            variable datapack
-
         function reload(self)
-
-            variable old_status_table
-
-                        variable datapack.status
 
         function cleanup(self)
 
         function try_call_function(self, name: str, info=None)
-
-                variable info
-
-                    variable tag
 
     variable datapackhandler
 
@@ -61,34 +51,6 @@ ___
 
         function load(self)
 
-                variable self.access
-
-                variable info
-
-                    variable self.status
-
-                variable self.description
-
-                    variable split
-
-                        variable name
-
-                        variable self.function_table[name]
-
-                variable self.status
-
-            variable self.status
-
         function unload(self)
 
-            variable self.status - deactivated access during working
-
-                variable self.status
-
-            variable self.status - we have successfully unloaded the data-pack
-
-            variable self.access
-
         function set_status(self, status: DataPackStatus)
-
-            variable self.status

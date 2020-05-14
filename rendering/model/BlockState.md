@@ -33,51 +33,11 @@ ___
 
         function add_face_to_batch(self, block, batch, face)
 
-            variable state
-
-            variable result
-
-                    variable data
-
-                            variable entries
-
-                            variable block.block_state
-
         static function _test_for(cls, state, part, use_or=False)
-
-                        variable condition
-
-                        variable condition
-
-                        variable condition
-
-                        variable condition
 
         function transform_to_hitbox(self, blockinstance)
 
-            variable state
-
-            variable bbox
-
-                    variable data
-
-                        variable model
-
-                            variable entries
-
-                            variable block.block_state
-
-                        variable model
-
         function draw_face(self, block, face)
-
-            variable state
-
-                    variable data
-
-                            variable entries
-
-                            variable block.block_state
 
     @G.registry class DefaultDecoder extends IBlockStateDecoder
 
@@ -93,25 +53,11 @@ ___
 
                         variable keymap[e.split("=")[0]]
 
-                    variable keymap
-
         function add_face_to_batch(self, block, batch, face)
-
-            variable data
 
         function transform_to_hitbox(self, blockinstance)
 
-            variable data
-
-            variable bbox
-
-                    variable model
-
-                        variable rotation
-
         function draw_face(self, block, face)
-
-            variable data
         
     @G.registry
     class ForgeVersionDecoder(IBlockStateDecoder):
@@ -133,10 +79,6 @@ ___
         static function from_file(cls, file: str, modname: str)
 
         static function _from_file(cls, file: str)
-
-                variable s
-
-                variable modname
 
         static function from_data(cls, name, data)
 
@@ -160,20 +102,8 @@ ___
 
             variable self.models - (model, config)
 
-                variable models
-
         static function decode_entry(data: dict)
-
-            variable model
-
-            variable rotations
 
         function add_face_to_batch(self, block, batch, face)
 
-                variable block.block_state
-
-            variable result
-
         function draw_face(self, block, face)
-
-                variable block.block_state

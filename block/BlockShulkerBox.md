@@ -27,10 +27,6 @@ ___
 
             static function set_block_data(cls, iteminst, block)
 
-                    variable block.inventory
-
             function on_request_item_for_block(self, itemstack)
-
-                variable itemstack.item.inventory
 
             function on_remove(self)

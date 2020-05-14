@@ -15,35 +15,13 @@ ___
 
         static function add_transform(registry, obj: ITextureChange)
 
-            variable G.texturefactoryhandler.changer[obj.NAME]
-
         function transform(self, images: list, image, mode, *args, **kwargs)
-
-            variable texturechange: ITextureChange
 
         function apply_from_file(self, file)
 
         function apply_from_data(self, data: dict)
 
-            variable images
-
-                variable image
-
-                variable out
-
-                variable mode
-
-                        variable images[out[i]]
-
-                    variable images[out]
-
-                variable f
-
-                variable d
-
         function load(self)
-
-            variable entries
 
     variable G.texturefactoryhandler
 
@@ -73,12 +51,8 @@ ___
 
         static function convert(images: list, image: PIL.Image.Image, size=None, position=(0, 0)) -> PIL.Image.Image
 
-            variable base
-
     @G.registry class TextureCombine extends ITextureChange
 
         variable NAME
 
         static function convert(images: list, image: PIL.Image.Image, base=None, position=(0, 0)) -> PIL.Image.Image
-
-            variable imageb: PIL.Image.Image

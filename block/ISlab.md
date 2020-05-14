@@ -12,15 +12,9 @@ ___
 
                 variable self.type
 
-                variable self.type
-
-            variable self.face_solid
-
         function get_model_state(self)
 
         function set_model_state(self, state: dict)
-
-                variable self.type
 
         static function get_all_model_states() -> list
 

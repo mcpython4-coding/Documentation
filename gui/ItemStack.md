@@ -11,14 +11,6 @@ ___
 
                 variable self.item
 
-                    variable self.item
-
-                    variable self.item
-
-                variable self.item
-
-            variable self.amount
-
         function copy(self)
             
             copy the itemstack
@@ -29,10 +21,6 @@ ___
             
             clean the itemstack
 
-
-            variable self.item
-
-            variable self.amount
 
         static function get_empty()
             
@@ -46,8 +34,6 @@ ___
         function get_item_name(self)
 
         function set_amount(self, amount)
-
-            variable self.amount
 
         function add_amount(self, amount)
 

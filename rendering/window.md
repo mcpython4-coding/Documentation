@@ -190,11 +190,7 @@ ___
 
         function on_mouse_release(self, x, y, button, modifiers)
 
-            variable self.mouse_pressing[button]
-
         function on_mouse_drag(self, x, y, dx, dy, buttons, modifiers)
-
-            variable self.mouse_position
 
         function on_mouse_scroll(self, x, y, scroll_x, scroll_y)
 
@@ -306,10 +302,6 @@ ___
                 variable self.label3.text
 
         function get_block_entity_info(self)
-
-            variable vector
-
-                variable blockname
 
         function draw_reticle(self)
             

@@ -14,10 +14,6 @@ ___
 
         function get_parts(self) -> list
 
-            variable parts
-
-            variable y
-
         function bind_to_eventbus(self)
 
         static function on_key_press(symbol, modifiers)
@@ -27,5 +23,3 @@ ___
     variable gameinfo
 
     function create()
-
-        variable gameinfo

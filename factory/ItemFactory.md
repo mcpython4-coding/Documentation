@@ -50,8 +50,6 @@ ___
 
         function _finish(self, register)
 
-            variable master
-
             class baseclass extends object
 
                 variable self.itemfile
@@ -90,8 +88,6 @@ ___
                         :return: if the item was eaten or not
 
 
-                        variable G.world.get_active_player().hunger
-
                     variable HUNGER_ADDITION
 
                 class ConstructedItem extends ConstructedItem
@@ -112,76 +108,38 @@ ___
 
         function setBaseClass(self, baseclass)
 
-            variable self.baseclass
-
         function setBaseClassByName(self, baseclassname: str)
 
         function setName(self, name: str)
 
-            variable self.name
-
         function setDefaultItemFile(self, itemfile: str)
-
-            variable self.itemfile
 
         function setHasBlockFlag(self, hasblock: bool)
 
-            variable self.has_block
-
         function setBlockName(self, blockname: str)
-
-            variable self.blockname
 
         function setUsedItemTextures(self, itemtextures: list)
 
-            variable self.used_itemfiles
-
-                variable self.itemfile
-
         function setMaxStackSize(self, stacksize: int)
-
-            variable self.stacksize
 
         function setCreationCallback(self, function)
 
-            variable self.creation_callback
-
         function setInteractionCallback(self, function)
-
-            variable self.interaction_callback
 
         function setFoodValue(self, value: int)
 
-            variable self.hungerregen
-
         function setEatCallback(self, function)
-
-            variable self.eat_callback
 
         function setToolLevel(self, level: int)
 
-            variable self.tool_level
-
         function setToolType(self, tooltype: list)
-
-            variable self.tool_type
 
         function setToolBrakeMutli(self, multi: float)
 
-            variable self.tool_speed_multi
-
         function setToolBrakeMultiCallback(self, function)
-
-            variable self.tool_speed_callback
 
         function setArmorPoints(self, points: int)
 
-            variable self.armor_points
-
         function setCustomFromItemFunction(self, function)
 
-            variable self.customfromitemfunction
-
         function setFuelLevel(self, level)
-
-            variable self.fuel_level

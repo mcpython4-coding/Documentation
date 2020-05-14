@@ -13,15 +13,7 @@ ___
 
         function test_point_hit(self, point, boxposition)
 
-            variable point
-
         function draw_outline(self, position)
-
-            variable rot
-
-            variable vertex_data_ur
-
-            variable vertex_data
 
     class BoundingArea
         

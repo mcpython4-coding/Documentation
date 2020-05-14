@@ -17,14 +17,4 @@ ___
 
         function get_dependencies(self) -> list
 
-            variable dep
-
         function build(self)
-
-            variable raw
-
-            variable old_entries
-
-                            variable self.load_tries
-
-                        variable self.entries

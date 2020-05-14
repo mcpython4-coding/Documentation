@@ -20,34 +20,6 @@ ___
 
         function execute(self, **kwargs)
 
-                    variable gl_command
-
-                    variable gl_function
-
-                    variable param_raw
-
-                    variable glu_command
-
-                    variable glu_function
-
-                    variable param_raw
-
-                    variable raw
-
-                    variable invoke
-
         function _transform_value(self, name: str, **kwargs)
 
-                variable t
-
-                variable raw
-
-                variable raw
-
-                variable raw
-
         function _set_value(self, address, value)
-
-                variable trace
-
-                variable trace

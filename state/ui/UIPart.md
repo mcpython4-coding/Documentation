@@ -14,11 +14,3 @@ ___
             variable self.anchor_window
 
         function get_real_position(self)
-
-                variable x
-
-                variable y
-
-                variable x
-
-                variable y

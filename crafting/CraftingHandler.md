@@ -24,15 +24,7 @@ ___
 
         function add_recipe_from_data(self, data: dict)
 
-            variable name
-
-                variable recipe
-
         function add_recipe_from_file(self, file: str)
-
-            variable data
-
-            variable result
 
         function load(self, modname, check_mod_dirs=True, load_direct=False)
 

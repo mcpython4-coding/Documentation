@@ -19,12 +19,6 @@ ___
             :return:
 
 
-            variable dim
-
-            variable p
-
-            variable count
-
         function schedule_invoke(self, chunk: world.Chunk.Chunk, method, *args, **kwargs)
             
             schedules an callable-invoke for the future
@@ -44,8 +38,6 @@ ___
             :param on_add: an callable called together with the block instance when the block is added
             :param kwargs: the kwargs send to the add_block-method
 
-
-            variable kwargs["immediate"]
 
         function schedule_block_remove(self, chunk: world.Chunk.Chunk, position: tuple, *args, on_remove=None, **kwargs)
             
@@ -86,16 +78,6 @@ ___
             :param log_msg: if messages for extra info should be logged
 
 
-            variable start
-
-                variable chunk
-
-                variable chunk.generated
-
-                variable chunk.finished
-
-                variable chunk.loaded
-
         function process_tasks(self, chunks=None, timer=None)
             
             process tasks
@@ -103,41 +85,11 @@ ___
             :param timer: if given, an float in seconds to determine how far to generate
 
 
-            variable start
-
-                variable flag
-
-                    variable flag
-
-                    variable chunk.generated
-
-                    variable chunk.finished
-
-                    variable chunk.loaded
-
         function _process_0_array(self, chunk: world.Chunk.Chunk) -> bool
-
-                variable dim_map
-
-                    variable m: list
-
-                    variable data
 
         function _process_1_array(self, chunk: world.Chunk.Chunk) -> bool
 
-                variable dim_map
-
-                    variable m: dict
-
-                        variable block
-
         function _process_2_array(self, chunk: world.Chunk.Chunk) -> bool
-
-                variable dim_map
-
-                    variable m: dict
-
-                    variable block
 
         function get_block(self, position: tuple, chunk=None, dimension=None)
             
@@ -147,17 +99,11 @@ ___
             :param dimension: if the dimension is known
 
 
-                variable chunk
-
         function clear_chunk(self, chunk: world.Chunk.Chunk)
             
             will remove all scheduled tasks from an given chunk
             :param chunk: the chunk
 
-
-            variable dim
-
-            variable p
 
         function clear(self)
             
@@ -221,78 +167,23 @@ ___
                 running tasks when in-generation progress]
 
 
-                    variable chunk
-
-                    variable chunk
-
-            variable chunk.loaded
-
         function _add_chunk(self, chunk: world.Chunk.Chunk)
             
             internal implementation of the chunk generation code
             :param chunk: the chunk to schedule
 
 
-            variable dimension
-
-            variable configname
-
-            variable config
-
-            variable reference
-
         function process_one_generation_task(self, **kwargs):  # todo
 
         function setup_dimension(self, dimension, config=None)
 
-            variable configname
-
-                variable layer
-
-                    variable cconfig
-
-                    variable cconfig.dimension
-
-                    variable cconfig
-
-                variable dimension.worldgenerationconfigobjects[layername]
-
-                variable cconfig.layer
-
         function generate_chunk(self, chunk: world.Chunk.Chunk, dimension=None, check_chunk=True)
 
-                    variable chunk
-
-                    variable chunk
-
-            variable chunk.loaded
-
-            variable dimension
-
-            variable configname
-
-            variable config
-
-            variable m
-
-            variable handler
-
-                variable layer
-
-            variable chunk.generated
-
-            variable chunk.loaded
-
         function register_layer(self, layer: world.gen.layer.Layer.Layer)
-
-            variable self.layers[layer.NAME]
-                logger.println(layer, layer.get_name())
 
         function register_feature(self, decorator)
 
         function register_world_gen_config(self, name: str, layerconfig: dict)
-
-            variable self.configs[name]
 
         function __call__(self, data: str or world.gen.layer.Layer, config=None)
 

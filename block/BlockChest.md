@@ -17,25 +17,9 @@ ___
 
                     variable self.front_side
 
-                    variable self.front_side
-
-                    variable self.front_side
-
-                    variable self.front_side
-
-            variable self.inventory
-
-            variable self.loot_table_link
-
-            variable self.face_solid
-
         function can_open_inventory(self) -> bool
 
-            variable blockinst
-
         function on_player_interact(self, player, itemstack, button, modifiers, exact_hit) -> bool
-
-                    variable self.loot_table_link
 
         function get_inventories(self)
 
@@ -47,12 +31,6 @@ ___
 
         function set_model_state(self, state: dict)
 
-                variable face
-
-                    variable self.front_side
-
-                    variable self.front_side
-
         function get_model_state(self) -> dict
 
         static function get_all_model_states() -> list
@@ -61,11 +39,7 @@ ___
 
         static function set_block_data(cls, iteminst, block)
 
-                variable block.inventory
-
         function on_request_item_for_block(self, itemstack)
-
-                variable itemstack.item.inventory
 
         function on_remove(self)
 
@@ -74,5 +48,3 @@ ___
         function save(self)
 
         function load(self, data)
-
-                variable self.loot_table_link

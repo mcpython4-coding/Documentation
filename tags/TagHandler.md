@@ -17,19 +17,9 @@ ___
 
         function load_tags(self, direct_call=False)
 
-                    variable data
-
-                    variable s
-
-                    variable modname
-
-                    variable name - }:{}".format(modname, "/".join(s[s.index("tags") + 2:]).split(".")[0])
-
         function get_tag_for(self, name: str, group: str) -> tags.Tag.Tag
 
         function get_tags_for_entry(self, identifier: str, group: str) -> list
-
-            variable taglist
 
         function has_entry_tag(self, identifier: str, group: str, tagname: str) -> bool
 

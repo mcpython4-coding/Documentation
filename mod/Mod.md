@@ -24,15 +24,11 @@ ___
 
         function arrival(self) -> bool
 
-            variable mod
-
         function __testfor(self, version, args: tuple) -> bool
 
         function get_version(self)
 
         function __str__(self)
-
-            variable cond
 
     class Mod
         
@@ -46,46 +42,20 @@ ___
             :param version: an tuple of CONSTANT length across ALL versions representing the version of the mod
 
 
-            variable self.name
-
-            variable self.eventbus: event.EventBus.EventBus
-
-            variable self.dependinfo - need, possible, not possible, before, after, only with, only without
-
-            variable self.path
-
-            variable self.version
-
-            variable self.package
-
         function mod_string(self)
 
         function add_load_default_resources(self)
 
         function add_dependency(self, depend)
 
-                variable depend
-
         function add_not_load_dependency(self, depend)
-
-                variable depend
 
         function add_not_compatible(self, depend)
 
-                variable depend
-
         function add_load_before_if_arrival(self, depend)
-
-                variable depend
 
         function add_load_after_if_arrival(self, depend)
 
-                variable depend
-
         function add_load_only_when_arrival(self, depend)
 
-                variable depend
-
         function add_load_only_when_not_arrival(self, depend)
-
-                variable depend

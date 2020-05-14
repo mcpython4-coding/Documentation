@@ -22,5 +22,3 @@ ___
     variable startmenu
 
     function create()
-
-        variable startmenu

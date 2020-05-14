@@ -17,10 +17,4 @@ ___
 
         function set_texture(self, name, texturefile)
 
-            variable self.textures[name]
-
         function finish(self)
-
-            variable data
-
-            variable G.modelhandler.models[self.name]

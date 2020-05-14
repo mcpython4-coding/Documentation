@@ -15,25 +15,13 @@ ___
 
         function __call__(self, biome)
 
-            variable self.biomes[biome.NAME]
-
         function add_biome_to_dim(self, dim: int, biomename: str)
 
-            variable biome
-
-                variable self.biometable[dim][biome.get_landmass()][biome.get_temperature()]
-
         function remove_biome_from_dim(self, dim: int, biomename: str)
-
-            variable biome
 
         function is_biome_in_dim(self, dim: int, biomename: str)
 
         function get_biomes_for_dimension(self, dim: int, landmass: str, weighted=False, temperature=None) -> list
-
-                variable l
-
-                variable l
 
         function get_sum_weight_count(self, dim: int, landmass: str, temperature=None) -> int
 
@@ -46,14 +34,6 @@ ___
             :param temperature: the temperature to use
             :return: the biome which was selected
 
-
-            variable temperatures
-
-            variable temperature
-
-            variable biomes
-
-            variable selectvalue
 
     variable G.biomehandler
 

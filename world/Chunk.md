@@ -29,13 +29,7 @@ ___
 
                 variable self.attr[attr]
 
-            variable self.positions_updated_since_last_save
-
-            variable self.entities
-
         function set_value(self, name, value)
-
-            variable self.attr[name]
 
         function get_value(self, name)
 
@@ -53,20 +47,6 @@ ___
 
         function exposed_faces(self, position)
 
-            variable faces
-
-            variable blockinst
-
-                variable pos
-
-                variable chunk
-
-                    variable faces[face]
-
-                    variable block
-
-                    variable else: faces[face]
-
         function is_position_blocked(self, position)
 
         function add_block(self, position: tuple, block_name
@@ -82,19 +62,7 @@ ___
             :return: the block instance or None if it could not be created
 
 
-                variable blockobj
-
-                variable blockobj.position
-
-                variable table
-
-                variable blockobj
-
-            variable self.world[position]
-
         function on_block_updated(self, position, itself=True)
-
-                            variable b: Block.Block
 
         function remove_block(self, position, immediate=True, block_update=True, blockupdateself=True)
             
@@ -163,11 +131,7 @@ ___
 
         function show(self)
 
-            variable self.visible
-
         function hide(self)
-
-            variable self.visible
 
         function update_visable_block(self, position, hide=True)
 
@@ -176,8 +140,6 @@ ___
         function hide_all(self, immediate=True)
 
         function get_block(self, position)
-
-            variable position
 
         function __del__(self)
 

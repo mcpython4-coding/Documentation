@@ -35,10 +35,6 @@ ___
 
         static function from_data(cls, data: dict)
 
-            variable inputs
-
-            variable out
-
         function __init__(self, inputs, output)
 
             variable self.inputs

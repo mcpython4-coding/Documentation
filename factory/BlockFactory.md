@@ -49,10 +49,6 @@ ___
 
         function copy(self)
 
-            variable block
-
-            variable block.__dict__
-
         function finish(self, register=True)
 
         function _finish(self, register)
@@ -75,8 +71,6 @@ ___
 
                 static function get_all_model_states()
 
-                    variable states
-
                 function __init__(self, *args, **kwargs)
 
                 function on_remove(self)
@@ -90,10 +84,6 @@ ___
                 function set_model_state(self, state)
 
                 function get_model_state(self)
-
-                    variable state
-
-                        variable state
 
                 class ConstructedBlock extends ConstructedBlock
 
@@ -129,53 +119,27 @@ ___
 
         function setName(self, name: str)
 
-            variable self.name
-
         function setCreateCallback(self, function)
-
-            variable self.create_callback
 
         function setDeleteCallback(self, function)
 
-            variable self.delete_callback
-
         function setBrakeAbleFlag(self, state: bool)
-
-            variable self.breakable
 
         function setRandomUpdateCallback(self, function)
 
-            variable self.randomupdate_callback
-
         function setUpdateCallback(self, function)
-
-            variable self.update_callback
 
         function setCustomSolidSideFunction(self, function)
 
-            variable self.customsolidsidefunction
-
         function setSolidSideTableEntry(self, side, state: bool)
-
-            variable self.solid_faces[side]
 
         function setCustomModelStateFunction(self, function)
 
-            variable self.custommodelstatefunction
-
         function setDefaultModelState(self, state: dict)
-
-                variable state
-
-            function get_state(*_)
 
         function setAllModelStateInfo(self, modelstates)
 
-            variable self.modelstates
-
         function setInteractionCallback(self, function)
-
-            variable self.interaction_callback
 
         function setFallable(self)
 
@@ -183,38 +147,20 @@ ___
 
         function setLog(self)
 
-            variable self.islog
-
         function setSlab(self)
 
         function setHardness(self, value: float)
 
-            variable self.hardness
-
         function setMinimumToolLevel(self, value: int)
-
-            variable self.minmum_toollevel
 
         function setBestTools(self, tools)
 
-            variable self.besttools
-
         function setCustomItemstackModificationFunction(self, function)
-
-            variable self.customitemstackmodifcationfunction
 
         function setCustomBlockItemModification(self, function)
 
-            variable self.customblockitemmodificationfunction
-
         function setSpeedMultiplier(self, factor)
-
-            variable self.speed_multiplier
 
         function setBlockItemGeneratorState(self, state: dict)
 
-            variable self.block_item_generator_state
-
         function setHorizontalOrientable(self, face_name="facing")
-
-            variable self.face_name

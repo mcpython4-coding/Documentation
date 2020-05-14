@@ -51,11 +51,7 @@ ___
 
         function roll(self, name: str, *args, **kwargs) -> list
 
-                variable name
-
         function for_mod_name(self, modname, directoryname=None)
-
-            variable modinstance
 
         function _add_load(self, modinstance, path)
 
@@ -63,39 +59,15 @@ ___
 
         function parse_function(self, data: dict) -> loot.LootTableFunction.ILootTableFunction
 
-            variable name
-
         function parse_condition(self, data: dict) -> loot.LootTableCondition.ILootTableCondition
 
-            variable name
-
         function get_drop_for_block(self, block, player=None)
-
-            variable table_name
 
     variable handler
 
     class LootTablePoolEntry
 
         static function from_data(cls, pool, data: dict)
-
-            variable obj
-
-            variable obj.pool
-
-                variable obj.conditions
-
-                variable obj.functions
-
-                variable obj.name
-
-                variable obj.children
-
-                variable obj.expand
-
-                variable obj.weight
-
-                variable obj.quality
 
         function __init__(self, entry_type=LootTablePoolEntryType.UNSET)
 
@@ -119,31 +91,9 @@ ___
 
         function roll(self, *args, **kwargs)
 
-            variable items
-
-                    variable item
-
-                    variable item
-
     class LootTablePool
 
         static function from_data(cls, table, data: dict)
-
-            variable obj
-
-            variable obj.table
-
-                variable obj.conditions
-
-                variable obj.functions
-
-                variable obj.entries
-
-                variable obj.entry_weights
-
-                    variable obj.roll_range
-
-                    variable obj.roll_range
 
         function __init__(self)
 
@@ -163,29 +113,11 @@ ___
 
         function roll(self, *args, **kwargs)
 
-            variable items
-
-            variable i
-
-            variable done
-
-                variable entry
-
-                variable item
-
     class LootTable
 
         static function from_file(cls, file: str, name=None)
 
-                variable s
-
-                variable name
-
         static function from_data(cls, data: dict, name: str)
-
-            variable obj
-
-            variable handler.loot_tables[name]
 
         function __init__(self, table_type=LootTableTypes.UNSET)
 
@@ -194,7 +126,5 @@ ___
             variable self.pools
 
         function roll(self, *args, **kwargs)
-
-            variable data
 
     function init()

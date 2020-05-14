@@ -42,8 +42,6 @@ ___
 
         function get_all_entries_in_directory(self, directory: str, go_sub=True) -> list
 
-            variable result
-
     class ResourceDirectory extends IResourceLocation
 
         static function is_valid(path: str) -> bool
@@ -56,19 +54,7 @@ ___
 
         function read(self, filename: str, mode: str)
 
-            variable file
-
-                variable file
-
-                variable data: bytes
-
         function get_all_entries_in_directory(self, directory: str) -> list
-
-            variable file_list
-
-                    variable file
-
-                    variable file
 
     variable RESOURCE_PACK_LOADERS
 
@@ -76,55 +62,17 @@ ___
 
     function load_resource_packs()
 
-            variable file
-
-            variable flag
-
-                    variable flag
-
-        variable i
-
-            variable element
-
-                variable path
-
     function close_all_resources()
 
     variable MC_IMAGE_LOCATIONS
 
     function transform_name(file: str) -> str
 
-        variable f
-
-                variable f
-
-                variable f
-
     function exists(file, transform=True)
-
-            variable data
-
-            variable resource
-
-            variable file
 
     function read(file, mode=None)
 
-            variable data
-
-            variable resource
-
-            variable file
-
-            variable file
-
-        variable loc
-
     function get_all_entries(directory: str) -> list
-
-        variable result
-
-        variable loc
 
     function get_all_entries_special(directory: str) -> list
         
@@ -132,7 +80,5 @@ ___
         :param directory: the directory to searc from
         :return: an list of found resources
 
-
-        variable result
 
     function add_resources_by_modname(modname, pathname=None)

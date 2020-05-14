@@ -11,25 +11,13 @@ ___
 
         function add_image(self, image: PIL.Image.Image, modname: str) -> tuple
 
-            variable image
-
         function add_image_file(self, file: str, modname: str) -> tuple
 
         function add_images(self, images: list, modname, one_atlased=True) -> list
 
-            variable images
-
-            variable m_size
-
-            variable atlas
-
         function add_image_files(self, files: list, modname: str, one_atlased=True) -> list
 
         function output(self)
-
-                    variable location
-
-                    variable atlas.group
 
     class TextureAtlas
 
@@ -53,22 +41,6 @@ ___
 
         function add_image(self, image: PIL.Image.Image, ind=None, position=None) -> tuple
 
-                variable self.image_size
-
-                variable self.texture
-
-                variable image
-
-                variable old
-
-                variable self.size
-
-                variable self.texture
-
-            variable pos
-
         function is_free_for(self, images: list) -> bool
-
-            variable count
 
     variable handler
