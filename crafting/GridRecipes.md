@@ -1,4 +1,4 @@
-***GridRecipes.py - documentation - last updated on 14.5.2020 by uuk***
+***GridRecipes.py - documentation - last updated on 16.5.2020 by uuk***
 ___
 
     function transform_to_item_stack(item, table: dict) -> list

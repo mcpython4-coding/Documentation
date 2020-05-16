@@ -1,4 +1,4 @@
-***IDataSerializer.py - documentation - last updated on 14.5.2020 by uuk***
+***IDataSerializer.py - documentation - last updated on 16.5.2020 by uuk***
 ___
 
     class InvalidSaveException extends Exception

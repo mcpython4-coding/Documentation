@@ -1,4 +1,4 @@
-***BlockFence.py - documentation - last updated on 14.5.2020 by uuk***
+***BlockFence.py - documentation - last updated on 16.5.2020 by uuk***
 ___
 
     class IFence extends block.Block.Block

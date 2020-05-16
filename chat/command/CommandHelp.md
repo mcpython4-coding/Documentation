@@ -1,4 +1,4 @@
-***CommandHelp.py - documentation - last updated on 14.5.2020 by uuk***
+***CommandHelp.py - documentation - last updated on 16.5.2020 by uuk***
 ___
 
     @G.registry class CommandHelp extends chat.command.Command.Command

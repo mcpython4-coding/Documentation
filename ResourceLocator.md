@@ -1,4 +1,4 @@
-***ResourceLocator.py - documentation - last updated on 14.5.2020 by uuk***
+***ResourceLocator.py - documentation - last updated on 16.5.2020 by uuk***
 ___
 
     specifications for the resource loader system

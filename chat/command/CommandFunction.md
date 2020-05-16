@@ -1,4 +1,4 @@
-***CommandFunction.py - documentation - last updated on 14.5.2020 by uuk***
+***CommandFunction.py - documentation - last updated on 16.5.2020 by uuk***
 ___
 
     @G.registry class CommandFunction extends chat.command.Command.Command

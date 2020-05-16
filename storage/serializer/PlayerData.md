@@ -1,4 +1,4 @@
-***PlayerData.py - documentation - last updated on 14.5.2020 by uuk***
+***PlayerData.py - documentation - last updated on 16.5.2020 by uuk***
 ___
 
     @G.registry class PlayerData extends storage.serializer.IDataSerializer.IDataSerializer

@@ -1,4 +1,4 @@
-***FurnaceCrafting.py - documentation - last updated on 14.5.2020 by uuk***
+***FurnaceCrafting.py - documentation - last updated on 16.5.2020 by uuk***
 ___
 
     @G.craftinghandler class FurnesRecipe extends crafting.IRecipeType.IRecipe

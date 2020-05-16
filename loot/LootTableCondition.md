@@ -1,4 +1,4 @@
-***LootTableCondition.py - documentation - last updated on 14.5.2020 by uuk***
+***LootTableCondition.py - documentation - last updated on 16.5.2020 by uuk***
 ___
 
     class ILootTableCondition extends event.Registry.IRegistryContent

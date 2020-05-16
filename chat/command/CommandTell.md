@@ -1,4 +1,4 @@
-***CommandTell.py - documentation - last updated on 14.5.2020 by uuk***
+***CommandTell.py - documentation - last updated on 16.5.2020 by uuk***
 ___
 
     @G.registry class CommandTell extends chat.command.Command.Command

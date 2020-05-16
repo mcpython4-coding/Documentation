@@ -1,4 +1,4 @@
-***CommandGive.py - documentation - last updated on 14.5.2020 by uuk***
+***CommandGive.py - documentation - last updated on 16.5.2020 by uuk***
 ___
 
     @G.registry class CommandGive extends chat.command.Command.Command

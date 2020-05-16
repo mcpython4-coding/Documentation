@@ -1,4 +1,4 @@
-***BlockConfig.py - documentation - last updated on 14.5.2020 by uuk***
+***BlockConfig.py - documentation - last updated on 16.5.2020 by uuk***
 ___
 
     classes will be removed in the future as they can be replaced by tags

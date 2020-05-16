@@ -136,6 +136,11 @@ ___""".format(raw_file, now, user)
             elif line.startswith("# todo"):
                 doc += "    " * (level + 1)+line[2:]
     flag = os.path.exists(doc_file_loc)
+    if flag:
+        with open(doc_file_loc) as f:
+            d = f.read()
+        if d.split("\n")[1:] == doc.split("\n")[1:]:
+            return True
     with open(doc_file_loc, mode="w") as f:
         f.write(doc)
     if flag:

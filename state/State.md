@@ -1,4 +1,4 @@
-***State.py - documentation - last updated on 14.5.2020 by uuk***
+***State.py - documentation - last updated on 16.5.2020 by uuk***
 ___
 
     class State extends event.Registry.IRegistryContent

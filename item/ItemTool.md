@@ -1,4 +1,4 @@
-***ItemTool.py - documentation - last updated on 14.5.2020 by uuk***
+***ItemTool.py - documentation - last updated on 16.5.2020 by uuk***
 ___
 
     class ItemTool extends item.Item.Item

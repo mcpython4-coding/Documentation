@@ -1,4 +1,4 @@
-***BlockChest.py - documentation - last updated on 14.5.2020 by uuk***
+***BlockChest.py - documentation - last updated on 16.5.2020 by uuk***
 ___
 
     variable BBOX - the bounding box of the chest

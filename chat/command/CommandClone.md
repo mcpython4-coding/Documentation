@@ -1,4 +1,4 @@
-***CommandClone.py - documentation - last updated on 14.5.2020 by uuk***
+***CommandClone.py - documentation - last updated on 16.5.2020 by uuk***
 ___
 
     @G.registry class CommandClone extends chat.command.Command.Command

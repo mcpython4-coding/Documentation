@@ -1,4 +1,4 @@
-***CommandReload.py - documentation - last updated on 14.5.2020 by uuk***
+***CommandReload.py - documentation - last updated on 16.5.2020 by uuk***
 ___
 
     @G.registry class CommandReload extends chat.command.Command.Command

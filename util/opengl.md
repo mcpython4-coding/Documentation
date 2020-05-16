@@ -1,4 +1,4 @@
-***opengl.py - documentation - last updated on 14.5.2020 by uuk***
+***opengl.py - documentation - last updated on 16.5.2020 by uuk***
 ___
 
     function draw_rectangle(position, size, color=(.0, .0, .0))

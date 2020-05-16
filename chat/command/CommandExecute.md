@@ -1,4 +1,4 @@
-***CommandExecute.py - documentation - last updated on 14.5.2020 by uuk***
+***CommandExecute.py - documentation - last updated on 16.5.2020 by uuk***
 ___
 
     @G.registry class CommandExecute extends chat.command.Command.Command
