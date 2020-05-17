@@ -1,4 +1,4 @@
-***Block.py - documentation - last updated on 16.5.2020 by uuk***
+***Block.py - documentation - last updated on 17.5.2020 by uuk***
 ___
 
     class Block extends event.Registry.IRegistryContent
@@ -104,11 +104,18 @@ ___
             :param state: the state to set
 
 
-        function get_provided_slots(self, side: util.enums.EnumSide) -> typing.List[typing.Union[gui.Slot.Slot, gui.Slot.SlotCopy]]
+        @deprecation.deprecated("dev1-2", "a1.3.0") function get_provided_slots(self, side: util.enums.EnumSide) -> typing.List[typing.Union[gui.Slot.Slot, gui.Slot.SlotCopy]]
             
             gets the slots for an given side
             :param side: the side to check
             :return: an list of slot of the side
+
+
+        function get_provided_slot_lists(self, side: util.enums.EnumSide)
+            
+            gets slots for various reasons for an given side
+            :param side: the side asked for
+            :return: an tuple of lists of input slots and output slots
 
 
         function get_view_bbox(self) -> typing.Union[block.BoundingBox.BoundingBox, block.BoundingBox.BoundingArea]

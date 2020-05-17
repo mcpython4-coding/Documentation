@@ -1,4 +1,4 @@
-***player.py - documentation - last updated on 16.5.2020 by uuk***
+***player.py - documentation - last updated on 17.5.2020 by uuk***
 ___
 
     @globals.registry class Player extends entity.Entity.Entity

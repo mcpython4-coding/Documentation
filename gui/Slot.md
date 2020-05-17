@@ -1,4 +1,4 @@
-***Slot.py - documentation - last updated on 16.5.2020 by uuk***
+***Slot.py - documentation - last updated on 17.5.2020 by uuk***
 ___
 
     variable SLOT_WIDTH
@@ -20,7 +20,10 @@ ___
             :param allow_half_getting: can the player get only the half of the items out of the slot?
             :param on_shift_click: called when shift-clicked on the block, should return if normal logic should go on or not
             :param on_button_press: called when an button is pressed when hovering above the slot
+            :param capacity: the max item count for the slot
 
+
+        function get_capacity(self)
 
         function get_itemstack(self)
 

@@ -1,4 +1,4 @@
-***ModLoader.py - documentation - last updated on 16.5.2020 by uuk***
+***ModLoader.py - documentation - last updated on 17.5.2020 by uuk***
 ___
 
     class LoadingStage
@@ -195,6 +195,20 @@ ___
             load the stored json file
             :param data: the data to load
             :param file: the file to load, for debugging uses
+
+                
+                example:
+                {
+                    "version": "1.2.0",
+                    "entries": [
+                        {
+                            "name": "TestMod",
+                            "version": "Some.Version",
+                            "load_resources": true,
+                            "load_files": ["some.package.to.load"]
+                        }
+                    ]
+                }
 
 
         static function cast_dependency(cls, depend: dict)

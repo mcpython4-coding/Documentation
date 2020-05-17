@@ -1,4 +1,4 @@
-***ItemStack.py - documentation - last updated on 16.5.2020 by uuk***
+***ItemStack.py - documentation - last updated on 17.5.2020 by uuk***
 ___
 
     class ItemStack
@@ -35,6 +35,6 @@ ___
 
         function set_amount(self, amount)
 
-        function add_amount(self, amount)
+        function add_amount(self, amount, check_overflow=True)
 
         function __str__(self)
