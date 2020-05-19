@@ -1,4 +1,4 @@
-***Chat.py - documentation - last updated on 16.5.2020 by uuk***
+***Chat.py - documentation - last updated on 19.5.2020 by uuk***
 ___
 
     class ChatInventory extends gui.Inventory.Inventory
@@ -6,7 +6,10 @@ ___
         main class for chat
 
 
-        function __init__(self, *args, **kwargs)
+        function __init__(self)
+            
+            creates an new Chat-instance
+
 
             variable self.lable
 
@@ -16,15 +19,32 @@ ___
 
             variable self.eventbus
 
-        function update_text(self, text, underline_index)
+        function update_text(self, text: str, underline_index: int)
+            
+            updates the text displayed by the chat
+            :param text: the text to use
+            :param underline_index: the index where the "_" is
+
 
         function on_activate(self)
+            
+            called by the system on activation of the inventory
+
 
         function on_deactivate(self)
+            
+            called by the system on deactivation of the inventory
+
 
         function on_draw_background(self)
+            
+            called to draw the background of the inventory
+
 
         function on_draw_overlay(self)
+            
+            called to draw the overlay of the inventory
+
 
     class Chat
         
@@ -57,9 +77,16 @@ ___
             called when an key is pressed
             :param symbol: the symbol that is pressed
             :param modifiers: the modifiers that are used
+            todo: split up into parts
 
 
         function print_ln(self, text: str)
+            
+            will print an line into the chat
+            :param text: the line to print
+            todo: make an in-game chat an link this to there
+            todo: make all commands use this as backend
+
 
         function close(self)
             
@@ -67,5 +94,8 @@ ___
 
 
         function clear(self)
+            
+            will clear the chat
+
 
     variable G.chat

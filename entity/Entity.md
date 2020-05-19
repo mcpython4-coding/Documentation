@@ -1,4 +1,4 @@
-***Entity.py - documentation - last updated on 16.5.2020 by uuk***
+***Entity.py - documentation - last updated on 19.5.2020 by uuk***
 ___
 
     class Entity extends event.Registry.IRegistryContent
@@ -46,6 +46,8 @@ ___
             variable self.movement
 
         function __del__(self)
+
+        function __str__(self)
 
         function get_position(self)
 
@@ -107,6 +109,12 @@ ___
             todo: make called
             todo: damage entity when needed
             for moder: should damage entity if needed
+
+
+        function get_inventories(self) -> list
+            
+            will return an list of all currently arrival inventories for this entity
+            :return:
 
 
         function draw(self)

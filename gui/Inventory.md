@@ -1,9 +1,10 @@
-***Inventory.py - documentation - last updated on 17.5.2020 by uuk***
+***Inventory.py - documentation - last updated on 19.5.2020 by uuk***
 ___
 
     class Inventory
         
         base inventory class
+        todo: split up into the storage part and the rendering part
 
 
         static function get_config_file() -> str

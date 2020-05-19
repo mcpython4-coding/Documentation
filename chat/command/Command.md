@@ -1,4 +1,4 @@
-***Command.py - documentation - last updated on 16.5.2020 by uuk***
+***Command.py - documentation - last updated on 19.5.2020 by uuk***
 ___
 
     class ParseType extends enum.Enum
@@ -26,22 +26,26 @@ ___
 
         variable OPEN_END_UNDEFINITED_STRING - an variable list of strings
 
-        variable STRING_WITHOUT_QUOTES
+        variable STRING_WITHOUT_QUOTES - an varialbe string without the ""
 
-        variable BOOLEAN
+        variable BOOLEAN - an boolean value
+
+        function add_subcommand(self, subcommand)
+
+        function set_mode(self, parsemode)
 
     class ParseMode extends enum.Enum
         
         An enum for how ParseType-entries are handled
 
 
-        variable USER_NEED_ENTER - user must enter this
+        variable USER_NEED_ENTER - user must enter this entry
 
-        variable OPTIONAL - user can enter this
+        variable OPTIONAL - user can enter this, but all sub-elements are than invalid
 
     class SubCommand
         
-        class for an part of an command. contains one parseable entry, one parsemode and an list of sub-commands
+        class for an part of an command. contains one parse-able entry, one ParseMode and an list of sub-commands
 
 
         function __init__(self, type, *args, mode=ParseMode.USER_NEED_ENTER, **kwargs)
@@ -65,8 +69,8 @@ ___
 
         function add_subcommand(self, subcommand)
             
-            add an new subcommand to this
-            :param subcommand: the subcommand to add
+            add an new SubCommand to this SubCommand
+            :param subcommand: the SubCommand to add
             :return: itself
 
 
@@ -88,13 +92,16 @@ ___
         function add_subcommand(self, subcommand)
             
             add an new subcommand to this
-            :param subcommand: the subcommand to add
-            :return: itself
+            :param subcommand: the subcommand to add or an ParseType
+            :return: the object invoked on (the self)
 
 
     class Command extends event.Registry.IRegistryContent
+        
+        base class for every command
 
-        variable TYPE
+
+        variable TYPE - the type defintion for the registry
 
         static function insert_parse_bridge(parsebridge: ParseBridge)
             
@@ -112,5 +119,5 @@ ___
 
         static function get_help() -> list
             
-            :return: help pages for this command. a (commandprefix, info)-list
+            :return: help pages for this command. a "<command build>: <description>"-list
             todo: make translated
