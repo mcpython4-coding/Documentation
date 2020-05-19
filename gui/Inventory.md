@@ -45,7 +45,9 @@ ___
             :return: the slots the inventory uses
 
 
-        function _get_position(self)
+        @deprecation.deprecated("dev1-2", "a1.3.0") function _get_position(self)
+
+        function get_position(self)
             
             :return: the position of the inventory
 

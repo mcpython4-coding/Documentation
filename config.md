@@ -1,4 +1,4 @@
-***config.py - documentation - last updated on 16.5.2020 by uuk***
+***config.py - documentation - last updated on 19.5.2020 by uuk***
 ___
 
     variable MC_VERSION_BASE
@@ -13,9 +13,10 @@ ___
 
     variable FULL_VERSION_NAME
 
-    variable TICKS_PER_SEC - how many ticks per second should be executed
+    variable TICKS_PER_SEC - how many ticks per second should be executed, todo: remove (unused)
 
     variable WALKING_SPEED
+        todo: remove definitions of "raw" values
 
     variable SPRINTING_SPEED
 
@@ -44,9 +45,10 @@ ___
         Use t and the desired MAX_JUMP_HEIGHT to solve for v_0 (jump speed) in
         s = s_0 + v_0 * t + (a * t^2) / 2
 
-    variable PLAYER_HEIGHT - the height of the player, in blocks; WARNING: will be removed in the future
+    variable PLAYER_HEIGHT - the height of the player, in blocks; WARNING: will be removed in the future todo: remove
 
     variable _ADVANCED_FACES
+        todo: move to util.enums
 
     variable ADVANCED_FACES
 
@@ -65,3 +67,19 @@ ___
         CHUNK_GENERATION_RANGE * 2 + 1 -size
 
     variable WRITE_NOT_FORMATTED_EXCEPTION - if exceptions should be not formatted-printed to console by logger
+
+    function load()
+
+        variable config
+
+        variable speeds
+
+        variable physics
+
+        variable timing
+
+        variable rendering
+
+        variable biomeconfig
+
+        @G.modloader("minecraft", "stage:mod:config:work") function load_data()

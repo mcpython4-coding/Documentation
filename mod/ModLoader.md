@@ -50,6 +50,9 @@ ___
 
         variable PREBUILD
 
+        variable CONFIGS
+            first: create ConfigFile objects, second: internally, third: do something with the data
+
         variable EXTRA_RESOURCE_LOCATIONS
 
         variable TAGS
