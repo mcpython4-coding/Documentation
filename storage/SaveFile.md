@@ -1,6 +1,20 @@
-***SaveFile.py - documentation - last updated on 16.5.2020 by uuk***
+***SaveFile.py - documentation - last updated on 19.5.2020 by uuk***
 ___
 
+    How to decide when an new version is needed?
+    - you do better an new version in case of an update
+    - you may use the old one if your data is still compatible or it is auto-fixing it OR you were on an unstable 
+        feature-branch
+    - you must increase the version number in case of any problems with loading new data arrays in compatible released 
+        versions [e.g. an hotfix for an snapshot which changed some parts of the save]
+    When to remove the data-fixers from an version?
+    - the version is not played by anybody
+    - two major updated were in between
+    - the version was only short-living and is very outdated
+    How to remove an version
+    a) when the version is the last supported version of its kind, remove the DataFixer
+    b) when the version is an minor between versions, remove the DataFixer and change the one before to skip the removed one
+    c) when the version is an major version, remove all data-fixers up to the point
     History of save versions:
     - 1: introduced: 07.03.2020, outdated since: 10.03.2020, not loadable since: -
         - added save system
@@ -13,26 +27,24 @@ ___
         - block coordinates are stored now relative to chunk; decreases chunk size
     - 5: introduced: 17.03.2020 [part of entity update], outdated since: -, not loadable since: -
         - added entity serializer
-    planned:
-    - 6: introduced: -, outdated since: -, not loadable since: -
-        - changed how block-inventories are stored
-        - optimisations to chunk-accessing
-        - introduced datafixer system for mods; introduced block-fixers
-        data structure changes:
-            Region: add last_loaded-parameter
-            Chunk: add unapplied_fixers-list for storing which fixers to apply when loaded
-            General: add an list of data-fixers applied to the world in the time of live of the world
 
 
-    variable LATEST_VERSION
-
-    variable G.STORAGE_VERSION
+    variable G.STORAGE_VERSION - the latest version, used for upgrading
 
     variable SAVE_DIRECTORY
+        where the stuff should be saved
 
     class SaveFile
+        
+        Interface to an stored file on the disk
+        Used to load certain parts into the system & store them
 
-        function __init__(self, directory_name)
+
+        function __init__(self, directory_name: str)
+            
+            Creates an new SaveFile object
+            :param directory_name: the name of the directory
+
 
             variable self.directory
 
@@ -41,12 +53,20 @@ ___
             variable self.save_in_progress
 
         function load_world(self)
+            
+            loads all setup-data into the world
+
 
                     variable generaldatafixer
 
                     variable self.version
 
         function save_world(self, *_, override=False)
+            
+            save all base-data into the system
+            :param _: used when used by special event triggers
+            :param override: flag for saving the chunks
+
 
         function upgrade(self, part=None, version=None, to=None, **kwargs)
             
@@ -73,14 +93,43 @@ ___
             :param kwargs: the kwargs to give the saver
 
 
-        function access_file_json(self, file)
+        function access_file_json(self, file: str)
+            
+            access save an json file
+            :param file: the file to load
+            :return: the data of the file or None if an error has occur
 
-        function access_file_pickle(self, file)
 
-        function access_raw(self, file)
+        function access_file_pickle(self, file: str)
+            
+            access save an pickle file
+            :param file: the file to load
+            :return: the data of the file or None if an error has occur
 
-        function dump_file_json(self, file, data)
 
-        function dump_file_pickle(self, file, data)
+        function access_raw(self, file: str)
+            
+            access save an file in binary mode
+            :param file: the file to load
+            :return: the data of the file or None if an error has occur
 
-        function dump_raw(self, file, data)
+
+        function dump_file_json(self, file: str, data)
+            
+            saves stuff with json into the system
+            :param file: the file to save to
+            :param data: the data to save
+
+
+        function dump_file_pickle(self, file: str, data)
+            
+            saves stuff with pickle into the system
+            :param file: the file to save to
+            :param data: the data to save
+
+
+        function dump_raw(self, file: str, data: bytes)
+            
+            saves bytes into the system
+            :param file: the file to save to
+            :param data: the data to save

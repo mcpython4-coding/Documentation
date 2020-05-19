@@ -83,3 +83,9 @@ ___
         variable biomeconfig
 
         @G.modloader("minecraft", "stage:mod:config:work") function load_data()
+
+            variable USE_MISSING_TEXTURES_ON_MISS_TEXTURE
+
+            variable WRITE_NOT_FORMATTED_EXCEPTION
+
+            variable BIOME_HEIGHT_RANGE_MAP["minecraft:plains"]
