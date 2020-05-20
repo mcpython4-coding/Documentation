@@ -1,4 +1,4 @@
-***BlockGrassBlock.py - documentation - last updated on 16.5.2020 by uuk***
+***BlockGrassBlock.py - documentation - last updated on 20.5.2020 by uuk***
 ___
 
     @G.registry class BlockGrassBlock extends Block.Block
@@ -7,6 +7,14 @@ ___
 
 
         variable NAME
+
+        variable HARDNESS
+
+        variable BLAST_RESISTANCE
+
+        variable BEST_TOOLS_TO_BREAK
+
+        variable ENABLE_RANDOM_TICKS
 
         function get_model_state(self) -> dict
 

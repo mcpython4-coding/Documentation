@@ -1,10 +1,12 @@
-***BlockCoralBlock.py - documentation - last updated on 16.5.2020 by uuk***
+***BlockCoralBlock.py - documentation - last updated on 20.5.2020 by uuk***
 ___
 
     class ICoralBlock extends block.Block.Block
         
         base class for every coral block
 
+
+        variable ENABLE_RANDOM_TICKS
 
         function on_random_update(self)
 

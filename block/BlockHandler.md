@@ -1,4 +1,4 @@
-***BlockHandler.py - documentation - last updated on 16.5.2020 by uuk***
+***BlockHandler.py - documentation - last updated on 20.5.2020 by uuk***
 ___
 
     function register_block(registry, blockclass)
@@ -6,6 +6,8 @@ ___
                 variable blockclass.CONDUCTS_REDSTONE_POWER
 
                 variable blockclass.CAN_MOBS_SPAWN_ON
+
+                    variable blockclass.ENABLE_RANDOM_TICKS
 
     variable block_registry
 

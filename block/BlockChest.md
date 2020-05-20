@@ -1,4 +1,4 @@
-***BlockChest.py - documentation - last updated on 16.5.2020 by uuk***
+***BlockChest.py - documentation - last updated on 20.5.2020 by uuk***
 ___
 
     variable BBOX - the bounding box of the chest
@@ -13,6 +13,10 @@ ___
         variable is_christmas: bool - if christmas is today
 
         variable NAME: str - the name of the chest
+
+        variable HARDNESS
+
+        variable BLAST_RESISTANCE
 
         function __init__(self, *args, **kwargs)
             

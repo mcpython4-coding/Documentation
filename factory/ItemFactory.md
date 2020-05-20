@@ -1,4 +1,4 @@
-***ItemFactory.py - documentation - last updated on 16.5.2020 by uuk***
+***ItemFactory.py - documentation - last updated on 19.5.2020 by uuk***
 ___
 
     class ItemFactory
@@ -10,6 +10,8 @@ ___
         function __init__(self)
 
             variable self.name
+
+            variable self.modname
 
             variable self.itemfile
 
@@ -46,9 +48,30 @@ ___
 
             variable self.fuel_level
 
+            variable self.template
+
+        function setTemplate(self)
+            
+            sets the current status as "template". This status will be set to on every .finish() call, but will not affect
+            the new generated entry.
+
+
+        function setToTemplate(self)
+
+        function resetTemplate(self)
+
         function finish(self, register=True, task_list=False)
 
-        function _finish(self, register)
+        function copy(self)
+
+        @deprecation.deprecated("dev1-2", "a1.2.0") function _finish(self, register)
+
+        function finish_up(self, register=False)
+            
+            will finish up the creation
+            :param register: if the result should be registered to the registry
+            todo: clean up this mess!!!!!
+
 
             class baseclass extends object
 
@@ -109,6 +132,8 @@ ___
         function setBaseClass(self, baseclass)
 
         function setBaseClassByName(self, baseclassname: str)
+
+        function setGlobalModName(self, name: str)
 
         function setName(self, name: str)
 

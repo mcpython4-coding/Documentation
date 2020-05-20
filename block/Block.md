@@ -1,4 +1,4 @@
-***Block.py - documentation - last updated on 17.5.2020 by uuk***
+***Block.py - documentation - last updated on 20.5.2020 by uuk***
 ___
 
     class Block extends event.Registry.IRegistryContent
@@ -12,9 +12,13 @@ ___
 
         variable HARDNESS: float - the hardness of the block
 
+        variable BLAST_RESISTANCE: float - how good it is in resisting explosions
+
         variable MINIMUM_TOOL_LEVEL: float - the minimum tool level
 
         variable BEST_TOOLS_TO_BREAK: typing.List[util.enums.ToolType] - the tools best to break
+
+        variable ENABLE_RANDOM_TICKS
 
         function __init__(self, position: tuple, set_to=None, real_hit=None, state=None)
             

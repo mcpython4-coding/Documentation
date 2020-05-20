@@ -1,4 +1,4 @@
-***ModLoader.py - documentation - last updated on 17.5.2020 by uuk***
+***ModLoader.py - documentation - last updated on 19.5.2020 by uuk***
 ___
 
     class LoadingStage
@@ -76,6 +76,8 @@ ___
         variable ENTITIES
 
         variable WORLDGEN
+
+        variable MODEL_FACTORY
 
         variable BLOCKSTATE
 
