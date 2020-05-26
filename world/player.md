@@ -1,4 +1,4 @@
-***player.py - documentation - last updated on 17.5.2020 by uuk***
+***player.py - documentation - last updated on 26.5.2020 by uuk***
 ___
 
     @globals.registry class Player extends entity.Entity.Entity
@@ -58,6 +58,14 @@ ___
         function load_xp_icons(self)
 
         function set_gamemode(self, gamemode: int or str)
+
+        function teleport(self, position=None, dimension=None, force_chunk_save_update=False)
+            
+            called when the entity should be teleported
+            :param position: the position to teleport to
+            :param dimension: to which dimension-id to teleport to, if None, no dimension change is used
+            :param force_chunk_save_update: if the system should force to update were player data is stored
+
 
         function get_needed_xp_for_next_level(self) -> int
 

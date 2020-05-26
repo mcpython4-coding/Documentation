@@ -1,4 +1,4 @@
-***globals.py - documentation - last updated on 16.5.2020 by uuk***
+***globals.py - documentation - last updated on 26.5.2020 by uuk***
 ___
 
     variable prebuilding
@@ -50,3 +50,17 @@ ___
     variable modloader
 
     variable NEXT_EVENT_BUS_ID
+
+    function invalid(*args, **kwargs)
+
+    class EnumSide
+
+        variable CLIENT
+
+        variable SERVER
+
+        variable ANY
+
+        function __call__(self, function)
+
+    variable SIDE
