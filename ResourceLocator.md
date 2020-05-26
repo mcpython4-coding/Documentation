@@ -1,4 +1,4 @@
-***ResourceLocator.py - documentation - last updated on 16.5.2020 by uuk***
+***ResourceLocator.py - documentation - last updated on 26.5.2020 by uuk***
 ___
 
     specifications for the resource loader system
@@ -82,3 +82,7 @@ ___
 
 
     function add_resources_by_modname(modname, pathname=None)
+        
+        loads the default data locations into the system for an given namespace
+        :param modname: the name of the mod for the loading stages
+        :param pathname: the namespace or None if the same as the mod name

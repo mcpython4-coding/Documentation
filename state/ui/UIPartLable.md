@@ -1,4 +1,4 @@
-***UIPartLable.py - documentation - last updated on 16.5.2020 by uuk***
+***UIPartLable.py - documentation - last updated on 26.5.2020 by uuk***
 ___
 
     class UIPartLable extends UIPart.UIPart
@@ -9,6 +9,9 @@ ___
             :param press: the EventInfo for mouse lables and mods, no area
             :param anchor_lable: the anchor on the lable
             :param anchor_window: the anchor on the window
+            :param on_press: called when the mouse presses on the lable together with x and y
+            :param color: the color of the text to use
+            :param text_size: the size of the text
 
 
             variable self.on_press

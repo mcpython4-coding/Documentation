@@ -1,13 +1,13 @@
-***StateStartMenu.py - documentation - last updated on 16.5.2020 by uuk***
+***StateStartMenu.py - documentation - last updated on 26.5.2020 by uuk***
 ___
 
     class StateStartMenu extends state.State.State
 
         variable NAME
 
-        function __init__(self)
+        variable CONFIG_LOCATION
 
-        function get_parts(self) -> list
+        function __init__(self)
 
         function bind_to_eventbus(self)
 

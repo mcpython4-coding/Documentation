@@ -1,4 +1,4 @@
-***StateHandler.py - documentation - last updated on 16.5.2020 by uuk***
+***StateHandler.py - documentation - last updated on 26.5.2020 by uuk***
 ___
 
     class StateHandler
@@ -13,7 +13,7 @@ ___
 
         function _switch_to(self, statename)
 
-        function add_state(self, state: State.State)
+        function add_state(self, state_instance: State.State)
 
         function update_exclusive(self)
 

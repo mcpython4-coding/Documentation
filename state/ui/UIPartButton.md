@@ -1,4 +1,4 @@
-***UIPartButton.py - documentation - last updated on 21.5.2020 by uuk***
+***UIPartButton.py - documentation - last updated on 26.5.2020 by uuk***
 ___
 
     variable image
@@ -22,6 +22,11 @@ ___
             :param press: the EventInfo for mouse buttons and mods, no area
             :param anchor_button: the anchor on the button
             :param anchor_window: the anchor on the window
+            :param on_press: called together with x and y on press on the button  todo: change to include button
+            :param on_hover: called on every mouse move on the button with the mouse x and y
+            :param on_try_press: called when the button is pressed during an in-active phase of the button with x and y
+            :param enabled: if the button should be enabled from the start
+            :param has_hovering_state: if the button has an state different from normal when the mouse is over it
 
 
             variable self.on_press
