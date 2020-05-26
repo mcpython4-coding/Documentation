@@ -1,4 +1,4 @@
-***Chunk.py - documentation - last updated on 16.5.2020 by uuk***
+***Chunk.py - documentation - last updated on 26.5.2020 by uuk***
 ___
 
     class Chunk
@@ -33,7 +33,7 @@ ___
 
         function get_value(self, name)
 
-        function draw(self)
+        @G.EnumSide.CLIENT function draw(self)
 
         function exposed(self, position)
             
@@ -62,7 +62,7 @@ ___
             :return: the block instance or None if it could not be created
 
 
-        function on_block_updated(self, position, itself=True)
+        @G.EnumSide.SERVER function on_block_updated(self, position, itself=True)
 
         function remove_block(self, position, immediate=True, block_update=True, blockupdateself=True)
             
@@ -79,7 +79,7 @@ ___
 
                 variable position
 
-        function check_neighbors(self, position)
+        @G.EnumSide.CLIENT function check_neighbors(self, position)
             
             state is current. This means hiding blocks that are not exposed and
             ensuring that all exposed blocks are shown. Usually used after a block
@@ -90,7 +90,7 @@ ___
 
                 variable b
 
-        function show_block(self, position, immediate=True)
+        @G.EnumSide.CLIENT function show_block(self, position, immediate=True)
             
             block has already been added with add_block()
             Parameters
@@ -103,7 +103,7 @@ ___
 
                 variable position
 
-        function _show_block(self, position, block)
+        @G.EnumSide.CLIENT function _show_block(self, position, block)
             
             Parameters
             ----------
@@ -112,7 +112,7 @@ ___
             block: the blockinstance to show
 
 
-        function hide_block(self, position, immediate=True)
+        @G.EnumSide.CLIENT function hide_block(self, position, immediate=True)
             
             block from the world.
             Parameters
@@ -125,19 +125,23 @@ ___
 
                 variable position
 
-        function _hide_block(self, position)
+        @G.EnumSide.CLIENT function _hide_block(self, position)
             
 
 
-        function show(self)
+        @G.EnumSide.CLIENT function show(self)
 
-        function hide(self)
+        @G.EnumSide.CLIENT function hide(self)
 
-        function update_visable_block(self, position, hide=True)
+        @deprecation.deprecated("dev1-3", "a1.3.0") function update_visable_block(self, position, hide=True)
 
-        function update_visable(self, hide=True, immediate=False)
+        @G.EnumSide.CLIENT function update_visible_block(self, position, hide)
 
-        function hide_all(self, immediate=True)
+        @deprecation.deprecated("dev1-3", "a1.3.0") function update_visable(self, hide=True, immediate=False)
+
+        @G.EnumSide.CLIENT function update_visible(self, hide=True, immediate=False)
+
+        @G.EnumSide.CLIENT function hide_all(self, immediate=True)
 
         function get_block(self, position)
 

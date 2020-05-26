@@ -1,10 +1,10 @@
-***Language.py - documentation - last updated on 16.5.2020 by uuk***
+***Language.py - documentation - last updated on 26.5.2020 by uuk***
 ___
 
-    variable LANGUAGES
+    variable LANGUAGES: dict - an dict representing the languages todo: remove
 
     variable ACTIVE_LANGUAGE
-        change this for having another language, you have to include the needed lang files yourself :/
+        change this for having another language, you have to include the needed lang files yourself to the resource system :/
 
     function get(key, formatting=None)
         
@@ -22,6 +22,10 @@ ___
 
 
     class Language
+        
+        Base class for Language-related stuff.
+        Holds all translations for an given language
+
 
         static function from_file(cls, file: str, name=None)
 

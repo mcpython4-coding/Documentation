@@ -53,6 +53,8 @@ ___
 
     function invalid(*args, **kwargs)
 
+    variable invalid.ARRIVAL
+
     class EnumSide
 
         variable CLIENT
