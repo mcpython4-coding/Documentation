@@ -31,7 +31,6 @@ if not os.path.isdir(path):
 
 
 def generate_doc(raw_file, file, doc_file_loc):
-    print("generating doc for '{}'".format(file))
     doc = """***{} - documentation - last updated on {} by {}***
 ___""".format(raw_file, now, user)
     with open(file) as f:
@@ -143,6 +142,7 @@ ___""".format(raw_file, now, user)
             return True
     with open(doc_file_loc, mode="w") as f:
         f.write(doc)
+    print("generating doc for '{}'".format(file))
     if flag:
         print("please adapt file '{}' as it had content before!".format(doc_file_loc))
         # a = input("re-run generation? ").lower()

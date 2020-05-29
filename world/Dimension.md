@@ -1,4 +1,4 @@
-***Dimension.py - documentation - last updated on 26.5.2020 by uuk***
+***Dimension.py - documentation - last updated on 27.5.2020 by uuk***
 ___
 
     class DimensionDefinition
@@ -66,6 +66,6 @@ ___
 
         function hide_block(self, position, immediate=True)
 
-        @G.EnumSide.CLIENT function draw(self)
+        function draw(self)
 
         function __del__(self)

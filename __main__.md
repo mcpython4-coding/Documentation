@@ -1,12 +1,21 @@
-***__main__.py - documentation - last updated on 16.5.2020 by uuk***
+***__main__.py - documentation - last updated on 29.5.2020 by uuk***
 ___
 
         variable version
 
             variable G.prebuilding
 
-        function setup()
+        @deprecation.deprecated() function setup()
+            
+            will set up some stuff
+            todo: move to somewhere else
+
 
         function run()
+            
+            will launch the game in the active configuration
 
-        function main()
+
+        @deprecation.deprecated() function main()
+            
+            todo: merge with run()

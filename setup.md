@@ -1,9 +1,7 @@
-***setup.py - documentation - last updated on 26.5.2020 by uuk***
+***setup.py - documentation - last updated on 29.5.2020 by uuk***
 ___
 
-    As the time progresses, these system gets more and more unneeded.
-    We are currently deciding if it should be removed, but it likely to do so.
-    As so, the access to this data will be deprecated at some point
+    WARNING: the system is outdated and will likely be removed in the future
     what does this system do?
         as mentioned in #1 (may be closed when you read this), game loading takes / have taken for some reasons on some
             devices very long (in #1: 30 minutes).

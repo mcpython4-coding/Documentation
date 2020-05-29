@@ -1,4 +1,4 @@
-***ModelHandler.py - documentation - last updated on 16.5.2020 by uuk***
+***ModelHandler.py - documentation - last updated on 29.5.2020 by uuk***
 ___
 
     class ModelHandler
@@ -7,25 +7,38 @@ ___
 
             variable self.models
 
-            variable self.used_models
+            variable self.used_models - todo: change to set
 
-            variable self.found_models
+            variable self.found_models - todo: clear when not needed
 
             variable self.blockstates
 
-            variable self.lookup_locations
+            variable self.lookup_locations - todo: change to set
 
-            variable self.dependence_list
+            variable self.dependence_list - todo: clear when not needed
 
-        function add_from_mod(self, modname)
+        function add_from_mod(self, modname: str)
+            
+            will add locations for an given mod name
+            :param modname: the mod to use
+
 
         function search(self)
+            
+            will search all locations for new stuff
+            todo: add datapack locations
 
-        function add_from_data(self, name, data)
 
-        function build(self)
+        function add_from_data(self, name: str, data: dict)
+            
+            will inject data as an block-model file
+            :param name: the name to use
+            :param data: the data to inject
 
-        function __let_subscribe_to_build(self, model)
+
+        function build(self): [self.let_subscribe_to_build(model) for model in self.used_models]  # todo
+
+        function let_subscribe_to_build(self, model)
 
         function special_build(self, used)
 

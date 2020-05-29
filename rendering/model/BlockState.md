@@ -1,4 +1,4 @@
-***BlockState.py - documentation - last updated on 16.5.2020 by uuk***
+***BlockState.py - documentation - last updated on 29.5.2020 by uuk***
 ___
 
     class BlockStateNotNeeded extends Exception
@@ -58,17 +58,6 @@ ___
         function transform_to_hitbox(self, blockinstance)
 
         function draw_face(self, block, face)
-        
-    @G.registry
-    class ForgeVersionDecoder(IBlockStateDecoder):
-        @classmethod
-        def is_valid(cls, data: dict) -> bool:
-            return "forge_marker" in data and data["forge_marker"] == 1 and "mod_marker" not in data
-        def __init__(self, data: dict, block_state):
-            super().__init__(data, block_state)
-        def add_face_to_batch(self, block, batch, face):
-            return []
-
 
     class BlockStateDefinition
 

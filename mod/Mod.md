@@ -1,4 +1,4 @@
-***Mod.py - documentation - last updated on 16.5.2020 by uuk***
+***Mod.py - documentation - last updated on 29.5.2020 by uuk***
 ___
 
     class ModDependency
@@ -27,7 +27,7 @@ ___
 
         function arrival(self) -> bool
 
-        function __testfor(self, version, args: tuple) -> bool
+        static function __testfor(cls, version, args: tuple) -> bool
             
             will test for the arrival of the dependency
             :param version: the version found
@@ -50,7 +50,7 @@ ___
         mod.json file.
 
 
-        function __init__(self, name: str, version: tuple)
+        function __init__(self, name: str, version: typing.Union[tuple, str, set, list])
             
             creates an new mod
             :param name: the name of the mod
