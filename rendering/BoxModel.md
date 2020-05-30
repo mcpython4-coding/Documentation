@@ -1,4 +1,4 @@
-***BoxModel.py - documentation - last updated on 16.5.2020 by uuk***
+***BoxModel.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     variable UV_ORDER
@@ -34,9 +34,11 @@ ___
 
             variable self.raw_vertices
 
-        @deprecation.deprecated(deprecated_in="snapshot dev 1 cycle 1", removed_in="v1.2.0 alpha") function get_data(self)
+        @deprecation.deprecated(deprecated_in="snapshot dev 1 cycle 1", removed_in="v1.2.0 alpha")
+        function get_data(self)
 
-        @deprecation.deprecated(deprecated_in="snapshot dev 1 cycle 1", removed_in="v1.2.0 alpha") function set_data(self, data)
+        @deprecation.deprecated(deprecated_in="snapshot dev 1 cycle 1", removed_in="v1.2.0 alpha")
+        function set_data(self, data)
 
         variable data
 
@@ -88,14 +90,16 @@ ___
 
         function draw_face(self, position, rotation, face)
 
-        @deprecation.deprecated(deprecated_in="snapshot dev 1 cycle 1", removed_in="v1.2.0 alpha") function copy(self, new_model=None)
+        @deprecation.deprecated(deprecated_in="snapshot dev 1 cycle 1", removed_in="v1.2.0 alpha")
+        function copy(self, new_model=None)
 
     class BaseBoxModel
         
         an non-model-bound boxmodel class
 
 
-        function __init__(self, relative_position: tuple, size
+        function __init__(self, relative_position: tuple, size: tuple, texture, texture_region=[(0, 0, 1, 1)]*6,
+                rotation=(0, 0, 0), rotation_center=None):
             
             creates an new renderer for the box-model
             :param relative_position: where to position the box relative to draw position
@@ -108,13 +112,17 @@ ___
 
         function recalculate_cache(self)
 
-        function get_rotation(self)
+        function get_rotation(self): return self.__rotation
+                
+                def set_rotation(self, rotation: tuple):
 
         function set_rotation(self, rotation: tuple)
 
         variable rotation
 
-        function get_texture_region(self)
+        function get_texture_region(self): return self.__texture_region
+                
+                def set_texture_region(self, region):
 
         function set_texture_region(self, region)
 

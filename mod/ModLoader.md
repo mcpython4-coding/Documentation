@@ -1,4 +1,4 @@
-***ModLoader.py - documentation - last updated on 19.5.2020 by uuk***
+***ModLoader.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class LoadingStage
@@ -27,7 +27,8 @@ ___
 
             variable self.max_progress
 
-        static function finish(cls, astate)
+        static
+        function finish(cls, astate)
             
             will finish up the system
             :param astate: the state to use
@@ -153,7 +154,8 @@ ___
             :return: an ModLoaderAnnotation-instance for annotation
 
 
-        static function get_locations(cls) -> list
+        static
+        function get_locations(cls) -> list
             
             will return an list of mod locations found for loading
 
@@ -186,16 +188,20 @@ ___
             :param file: the file located under
 
 
-        static function load_from_decoded_json(cls, data: dict, file: str)
+        static
+        function load_from_decoded_json(cls, data: dict, file: str)
             
             will parse the decoded json-data to the correct system
             :param data: the data of the mod
             :param file: the file allocated (used for warning messages)
 
 
-        @deprecation.deprecated("dev1:2", "a1.2.0") static function load_new_json(cls, data: dict, file: str)
+        @deprecation.deprecated("dev1:2", "a1.2.0")
+        static
+        function load_new_json(cls, data: dict, file: str)
 
-        static function load_json(cls, data: dict, file: str)
+        static
+        function load_json(cls, data: dict, file: str)
             
             load the stored json file
             :param data: the data to load
@@ -216,14 +222,17 @@ ___
                 }
 
 
-        static function cast_dependency(cls, depend: dict)
+        static
+        function cast_dependency(cls, depend: dict)
             
             will cast an dict-structure to the depend
             :param depend: the depend dict
             :return: the parsed mod.Mod.ModDependency-object
 
 
-        @deprecation.deprecated("dev1:2", "a1.3.0") static function _load_from_old_json(data: dict, file: str)
+        @deprecation.deprecated("dev1:2", "a1.3.0")
+        static
+        function _load_from_old_json(data: dict, file: str)
 
         function load_mods_toml(self, data: str, file)
             

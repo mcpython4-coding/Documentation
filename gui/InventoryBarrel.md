@@ -1,4 +1,4 @@
-***InventoryBarrel.py - documentation - last updated on 16.5.2020 by uuk***
+***InventoryBarrel.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class InventoryBarrel extends gui.Inventory.Inventory
@@ -10,7 +10,8 @@ ___
 
             variable self.block
 
-        static function get_config_file() -> str or None
+        static
+        function get_config_file() -> str or None
 
         function on_activate(self)
 

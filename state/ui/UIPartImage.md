@@ -1,9 +1,10 @@
-***UIPartImage.py - documentation - last updated on 16.5.2020 by uuk***
+***UIPartImage.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class UIPartImage extends UIPart.UIPart
 
-        function __init__(self, image
+        function __init__(self, image: pyglet.sprite.Sprite, position, anchor_window="WS", on_press=None,
+                press=event.EventInfo.MousePressEventInfo(pyglet.window.mouse.LEFT), anchor_image="WS"):
             
             creates an new UIPartButton
             :param position: the position of the button

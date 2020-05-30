@@ -1,4 +1,4 @@
-***logger.py - documentation - last updated on 29.5.2020 by uuk***
+***logger.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     variable FUNNY_STRINGS

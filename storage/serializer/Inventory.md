@@ -1,4 +1,4 @@
-***Inventory.py - documentation - last updated on 16.5.2020 by uuk***
+***Inventory.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     improvements for the future:
@@ -9,6 +9,8 @@ ___
 
         variable PART
 
-        static function load(cls, savefile, inventory: gui.Inventory.Inventory, path: str, file=None)
+        static
+        function load(cls, savefile, inventory: gui.Inventory.Inventory, path: str, file=None)
 
-        static function save(cls, data, savefile, inventory: gui.Inventory.Inventory, path: str, file=None, override=False)
+        static
+        function save(cls, data, savefile, inventory: gui.Inventory.Inventory, path: str, file=None, override=False)

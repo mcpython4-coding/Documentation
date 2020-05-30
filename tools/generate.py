@@ -43,7 +43,11 @@ ___""".format(raw_file, now, user)
     function_level = None
     in_init = False
     pre_level = None
+    skip = 0
     for i, oline in enumerate(lines):
+        if skip > 0:
+            skip -= 1
+            continue
         line = oline.lstrip()
         level = oline[:-len(line)].count("    ")
         if pre_level is not None and pre_level > level:
@@ -99,19 +103,31 @@ ___""".format(raw_file, now, user)
                     l = lines[i2].strip()
                     if l.startswith("@"):
                         if l in ("@classmethod", "@staticmethod"):
-                            mod += "static "
+                            mod += "    " * (level+1) + "static\n"
                         else:
-                            mod += l + " "
+                            mod += "    " * (level+1) + l + "\n"
                     else:
                         break
                     i2 -= 1
-                if ":" not in line:
-                    print("warning: unable to read method definition for {}".format(line))
-                    continue
+                if not line.endswith(":"):
+                    head = line[line.index("def") + 4:]
+                    i2 = i + 1
+                    while i2 < len(lines):
+                        cline = lines[i2].strip()
+                        head += "\n" + cline
+                        if cline.endswith(":") and (("):" in cline) or (") ->" in cline)):
+                            break
+                        i2 += 1
+                    if head.count("\n") > 5:
+                        print("skipping {} as function HEAD is to big".format(line))
+                        continue
+                    skip = i - i2
+                else:
+                    head = line[line.index("def") + 4:line.rindex(":")]
                 if "__init__" in line:
                     in_init = True
-                f = line[line.index("def") + 4:line.rindex(":")]
-                doc += "\n\n" + "    " * (level + 1) + mod + "function {}".format(f)
+                doc += "\n\n" + mod + "    " * (level + 1) + "function {}".format(
+                    ("\n"+"    " * (level + 3)).join(head.split("\n")))
             elif len(s) > 1:
                 if s[1] == "=" or (len(s) > 2 and s[2] == "=" and s[0].endswith(":")):
                     doc += "\n\n" + "    " * (level + 1) + "variable {}".format(s[0])

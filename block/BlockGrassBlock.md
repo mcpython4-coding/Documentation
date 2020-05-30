@@ -1,4 +1,4 @@
-***BlockGrassBlock.py - documentation - last updated on 20.5.2020 by uuk***
+***BlockGrassBlock.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     @G.registry class BlockGrassBlock extends Block.Block

@@ -1,4 +1,4 @@
-***TagHandler.py - documentation - last updated on 16.5.2020 by uuk***
+***TagHandler.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class TagHandler
@@ -32,4 +32,5 @@ ___
         WARNING: when adding outside normal build period, errors may occur
 
 
-    @G.modloader("minecraft", "stage:tag:group", "adding tag group locations") function on_group_add()
+    @G.modloader("minecraft", "stage:tag:group", "adding tag group locations")
+    function on_group_add()

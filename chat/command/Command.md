@@ -1,4 +1,4 @@
-***Command.py - documentation - last updated on 19.5.2020 by uuk***
+***Command.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class ParseType extends enum.Enum
@@ -103,13 +103,15 @@ ___
 
         variable TYPE - the type defintion for the registry
 
-        static function insert_parse_bridge(parsebridge: ParseBridge)
+        static
+        function insert_parse_bridge(parsebridge: ParseBridge)
             
             takes an ParseBridge and fills it with life
             :param parsebridge: the parsebridge to use
 
 
-        static function parse(values: list, modes: list, info)
+        static
+        function parse(values: list, modes: list, info)
             
             parse the command
             :param values: the values parsed over parsebridge
@@ -117,7 +119,8 @@ ___
             :param info: an ParsingCommandInfo for parsing this command
 
 
-        static function get_help() -> list
+        static
+        function get_help() -> list
             
             :return: help pages for this command. a "<command build>: <description>"-list
             todo: make translated

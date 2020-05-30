@@ -1,4 +1,4 @@
-***InventoryFurnace.py - documentation - last updated on 16.5.2020 by uuk***
+***InventoryFurnace.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     variable arrow
@@ -30,7 +30,8 @@ ___
 
             variable self.types
 
-        static function get_config_file() -> str or None
+        static
+        function get_config_file() -> str or None
 
         function reset(self)
 
@@ -38,9 +39,11 @@ ___
 
         function create_slots(self) -> list
 
-        static function is_fuel(cls, itemstack)
+        static
+        function is_fuel(cls, itemstack)
 
-        static function on_shift(slot, x, y, button, mod, player)
+        static
+        function on_shift(slot, x, y, button, mod, player)
 
         function on_input_update(self, player=False)
 

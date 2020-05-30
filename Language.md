@@ -1,4 +1,4 @@
-***Language.py - documentation - last updated on 29.5.2020 by uuk***
+***Language.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     variable LANGUAGES - table of data of Languages
@@ -26,21 +26,24 @@ ___
         base class for language data
 
 
-        static function from_file(cls, file: str, name=None)
+        static
+        function from_file(cls, file: str, name=None)
             
             will load an file into the system
             :param file: the file to load, as ResourceLocate-able
             :param name: the name of the language to use or None for generation from file name
 
 
-        static function from_old_data(cls, file: str, name=None)
+        static
+        function from_old_data(cls, file: str, name=None)
             
             will load an file from the old format into the system
             :param file: the file to load
             :param name: the name to load under, or None if to read from the file name
 
 
-        static function from_data(cls, name: str, data: dict)
+        static
+        function from_data(cls, name: str, data: dict)
             
             will load data into the system
             :param name: the name to load under
@@ -60,6 +63,3 @@ ___
         will create Language data for an directory
         :param directory: the directory name
         :param modname: the mod name
-
-
-    function from_mod_name(modname: str)

@@ -1,9 +1,12 @@
-***GridRecipeInterface.py - documentation - last updated on 16.5.2020 by uuk***
+***GridRecipeInterface.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class GridRecipeInterface extends crafting.IRecipeInterface.IRecipeInterface
 
         variable NAME
+
+        function __init__(self, slot_input_map, slot_output_map, maxsize=None, minsize=None, enabled=True,
+                enable_shaped_recipes=True, enable_shapeless_recipes=True):
             
             creates an new grid recipe interface
             recipe order: first in, first checked
@@ -18,11 +21,14 @@ ___
 
         function check_recipe_state(self)
 
-        static function _minimize_slotmap(slotmap: dict) -> dict
+        static
+        function _minimize_slotmap(slotmap: dict) -> dict
 
-        static function _check_shaped(recipe: crafting.GridRecipes.GridShaped, itemtable: dict) -> bool
+        static
+        function _check_shaped(recipe: crafting.GridRecipes.GridShaped, itemtable: dict) -> bool
 
-        static function _check_shapeless(recipe: crafting.GridRecipes.GridShapeless, items: list) -> bool
+        static
+        function _check_shapeless(recipe: crafting.GridRecipes.GridShapeless, items: list) -> bool
 
         function update_output(self)
 

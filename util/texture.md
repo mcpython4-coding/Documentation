@@ -1,4 +1,4 @@
-***texture.py - documentation - last updated on 16.5.2020 by uuk***
+***texture.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     function colorize(mask: PIL.Image.Image, color: tuple) -> PIL.Image.Image

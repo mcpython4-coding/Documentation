@@ -1,4 +1,4 @@
-***ConfigFile.py - documentation - last updated on 19.5.2020 by uuk***
+***ConfigFile.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class InvalidMapperData extends Exception
@@ -39,9 +39,11 @@ ___
         Will need to add to the MAPPERS list
 
 
-        static function valid_value_to_parse(cls, data) -> bool
+        static
+        function valid_value_to_parse(cls, data) -> bool
 
-        static function parse(cls, data) -> IDataMapper
+        static
+        function parse(cls, data) -> IDataMapper
 
     class DictDataMapper extends IDataMapper
 
@@ -61,7 +63,8 @@ ___
 
         function serialize(self) -> str
 
-        static function deserialize(cls, d: StringParsingPool)
+        static
+        function deserialize(cls, d: StringParsingPool)
 
         function integrate(self, other)
 
@@ -85,7 +88,8 @@ ___
 
         function serialize(self) -> str
 
-        static function deserialize(cls, d: StringParsingPool)
+        static
+        function deserialize(cls, d: StringParsingPool)
 
     class IntDataMapper extends IDataMapper
 
@@ -97,7 +101,8 @@ ___
 
         function serialize(self) -> str
 
-        static function deserialize(cls, d: StringParsingPool)
+        static
+        function deserialize(cls, d: StringParsingPool)
 
         function integrate(self, other)
 
@@ -111,7 +116,8 @@ ___
 
         function serialize(self) -> str
 
-        static function deserialize(cls, d: StringParsingPool)
+        static
+        function deserialize(cls, d: StringParsingPool)
 
     class StringDataMapper extends IDataMapper
 
@@ -123,7 +129,8 @@ ___
 
         function serialize(self) -> str
 
-        static function deserialize(cls, d: StringParsingPool)
+        static
+        function deserialize(cls, d: StringParsingPool)
 
     class BooleanDataMapper extends IDataMapper
 
@@ -135,7 +142,8 @@ ___
 
         function serialize(self) -> str
 
-        static function deserialize(cls, d: StringParsingPool)
+        static
+        function deserialize(cls, d: StringParsingPool)
 
     variable MAPPERS
 
@@ -172,4 +180,5 @@ ___
 
         function write(self)
 
-    @G.modloader("minecraft", "stage:mod:config:define") function load()
+    @G.modloader("minecraft", "stage:mod:config:define")
+    function load()

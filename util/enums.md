@@ -1,4 +1,4 @@
-***enums.py - documentation - last updated on 16.5.2020 by uuk***
+***enums.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class EnumSide extends enum.Enum
@@ -15,7 +15,8 @@ ___
 
         variable WEST
 
-        static function iterate(cls)
+        static
+        function iterate(cls)
 
         function __init__(self, dx, dy, dz, normal_name)
 

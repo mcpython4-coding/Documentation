@@ -1,7 +1,10 @@
-***UIPartProgressBar.py - documentation - last updated on 16.5.2020 by uuk***
+***UIPartProgressBar.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class UIPartProgressBar extends UIPart.UIPart
+
+        function __init__(self, position, size, color=(1., 0., 0.), progress_items=None, status=0, text="", anchor_pgb="WS",
+                anchor_window="WS", text_color=(0, 0, 0, 255)):
             
             creates an new UIPartProgressBar
             :param position: the position to create on

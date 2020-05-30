@@ -1,4 +1,4 @@
-***ItemTool.py - documentation - last updated on 16.5.2020 by uuk***
+***ItemTool.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class ItemTool extends item.Item.Item
@@ -17,8 +17,9 @@ ___
 
         function __eq__(self, other)
 
-        function get_tool_level(self):  # todo
-
-        function get_tool_type(self):  # todo
+        function get_tool_type(self):  # todo: remove
+                return self.TOOL_TYPE
+                
+                def get_speed_multiplyer(self, itemstack):
 
         function get_speed_multiplyer(self, itemstack)

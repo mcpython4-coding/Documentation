@@ -1,4 +1,4 @@
-***Dimension.py - documentation - last updated on 27.5.2020 by uuk***
+***Dimension.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class DimensionDefinition
@@ -56,11 +56,14 @@ ___
 
         function get_block(self, position)
 
-        function add_block(self, position: tuple, blockname
+        function add_block(self, position: tuple, blockname: str, immediate=True, block_update=True, blockupdateself=True,
+                args=[], kwargs={}):
 
         function remove_block(self, position: tuple, immediate=True, block_update=True, blockupdateself=True)
 
-        function check_neighbors(self, position)
+        function check_neighbors(self, position): self.get_chunk_for_position(position).check_neighbors(position)
+                
+                def show_block(self, position, immediate=True):
 
         function show_block(self, position, immediate=True)
 

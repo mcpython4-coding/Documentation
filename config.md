@@ -1,4 +1,4 @@
-***config.py - documentation - last updated on 19.5.2020 by uuk***
+***config.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     variable MC_VERSION_BASE
@@ -82,7 +82,8 @@ ___
 
         variable biomeconfig
 
-        @G.modloader("minecraft", "stage:mod:config:work") function load_data()
+        @G.modloader("minecraft", "stage:mod:config:work")
+        function load_data()
 
             variable USE_MISSING_TEXTURES_ON_MISS_TEXTURE
 

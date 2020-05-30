@@ -1,7 +1,10 @@
-***UIPartLable.py - documentation - last updated on 26.5.2020 by uuk***
+***UIPartLable.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class UIPartLable extends UIPart.UIPart
+
+        function __init__(self, text, position, press=event.EventInfo.MousePressEventInfo(pyglet.window.mouse.LEFT),
+                anchor_lable="WS", anchor_window="WS", on_press=None, color=(0, 0, 0, 255), text_size=20):
             
             creates an new UIPartButton
             :param text: the text of the lable

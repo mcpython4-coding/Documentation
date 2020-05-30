@@ -1,4 +1,4 @@
-***IDataSerializer.py - documentation - last updated on 16.5.2020 by uuk***
+***IDataSerializer.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class InvalidSaveException extends Exception
@@ -11,9 +11,11 @@ ___
 
         variable PART - which part it can serialize
 
-        static function load(cls, savefile, **kwargs)
+        static
+        function load(cls, savefile, **kwargs)
 
-        static function save(cls, data, savefile, **kwargs)
+        static
+        function save(cls, data, savefile, **kwargs)
 
     variable dataserializerregistry
 

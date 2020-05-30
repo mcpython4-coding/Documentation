@@ -1,11 +1,12 @@
-***DebugOverWorldGenerator.py - documentation - last updated on 16.5.2020 by uuk***
+***DebugOverWorldGenerator.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class Blockinfo
 
         variable TABLE - {chunk: tuple<x, z> -> {position<x,z> -> blockname}}
 
-        static function construct(cls)
+        static
+        function construct(cls)
 
             variable blocktable
 

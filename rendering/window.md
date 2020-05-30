@@ -1,4 +1,4 @@
-***window.py - documentation - last updated on 16.5.2020 by uuk***
+***window.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class Window extends pyglet.window.Window

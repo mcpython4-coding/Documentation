@@ -1,4 +1,4 @@
-***Block.py - documentation - last updated on 20.5.2020 by uuk***
+***Block.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class Block extends event.Registry.IRegistryContent
@@ -108,7 +108,8 @@ ___
             :param state: the state to set
 
 
-        @deprecation.deprecated("dev1-2", "a1.3.0") function get_provided_slots(self, side: util.enums.EnumSide) -> typing.List[typing.Union[gui.Slot.Slot, gui.Slot.SlotCopy]]
+        @deprecation.deprecated("dev1-2", "a1.3.0")
+        function get_provided_slots(self, side: util.enums.EnumSide) -> typing.List[typing.Union[gui.Slot.Slot, gui.Slot.SlotCopy]]
             
             gets the slots for an given side
             :param side: the side to check
@@ -155,6 +156,13 @@ ___
             :return: an value between 0 and 15 representing the redstone value
 
 
-        static function modify_block_item(cls, itemconstructor): pass  # todo
+        static
+        function modify_block_item(cls, itemconstructor): pass  # todo: add an table for subscriptions
+                
+                @staticmethod
+                def get_all_model_states() -> list: return [{}]  # todo: make attribute
+                
 
-        static function get_all_model_states() -> list: return [{}]  # todo
+        static
+        function get_all_model_states() -> list: return [{}]  # todo: make attribute
+                

@@ -1,9 +1,10 @@
-***Tag.py - documentation - last updated on 16.5.2020 by uuk***
+***Tag.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class Tag
 
-        static function from_data(master, tagname: str, data: dict)
+        static
+        function from_data(master, tagname: str, data: dict)
 
         function __init__(self, master, name: str, entries)
 

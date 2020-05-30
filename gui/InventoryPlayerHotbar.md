@@ -1,4 +1,4 @@
-***InventoryPlayerHotbar.py - documentation - last updated on 16.5.2020 by uuk***
+***InventoryPlayerHotbar.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     variable base: pyglet.image.AbstractImage
@@ -24,7 +24,8 @@ ___
 
         function get_select_sprite(self)
 
-        static function get_config_file()
+        static
+        function get_config_file()
 
         function is_blocking_interactions(self) -> bool
 
@@ -60,6 +61,12 @@ ___
 
         function draw_armor(self, hx, hy)
 
-        function is_closable_by_escape(self) -> bool
+        function is_closable_by_escape(self) -> bool: return False
+                
+                def is_always_open(self) -> bool: return True
+                
+                
 
-        function is_always_open(self) -> bool
+        function is_always_open(self) -> bool: return True
+                
+                

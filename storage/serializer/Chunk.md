@@ -1,13 +1,18 @@
-***Chunk.py - documentation - last updated on 16.5.2020 by uuk***
+***Chunk.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
-    function chunk2region(cx, cz)
+    function chunk2region(cx, cz): return cx >> 5, cz >> 5
+            
+            
+            @G.registry
+            class Chunk(storage.serializer.IDataSerializer.IDataSerializer):
 
     @G.registry class Chunk extends storage.serializer.IDataSerializer.IDataSerializer
 
         variable PART
 
-        static function load(cls, savefile, dimension: int, chunk: tuple, immediate=False)
+        static
+        function load(cls, savefile, dimension: int, chunk: tuple, immediate=False)
 
             variable G.worldgenerationhandler.enable_generation
 
@@ -39,7 +44,8 @@ ___
 
             variable G.worldgenerationhandler.enable_generation
 
-        static function save(cls, data, savefile, dimension: int, chunk: tuple, override=False)
+        static
+        function save(cls, data, savefile, dimension: int, chunk: tuple, override=False)
 
                 variable biome_map
 

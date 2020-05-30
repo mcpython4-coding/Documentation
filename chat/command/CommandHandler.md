@@ -1,4 +1,4 @@
-***CommandHandler.py - documentation - last updated on 16.5.2020 by uuk***
+***CommandHandler.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     function register_command(registry, command)

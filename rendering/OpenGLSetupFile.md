@@ -1,4 +1,4 @@
-***OpenGLSetupFile.py - documentation - last updated on 16.5.2020 by uuk***
+***OpenGLSetupFile.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     variable FILES
@@ -10,9 +10,11 @@ ___
         Base class for an OpenGL-parse-able file
 
 
-        static function from_name(cls, name: str)
+        static
+        function from_name(cls, name: str)
 
-        static function from_file(cls, file: str)
+        static
+        function from_file(cls, file: str)
 
         function __init__(self, data: str)
 

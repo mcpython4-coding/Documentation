@@ -1,4 +1,4 @@
-***StatePartConfigBackground.py - documentation - last updated on 16.5.2020 by uuk***
+***StatePartConfigBackground.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class BackgroundHandler
@@ -15,7 +15,8 @@ ___
 
         variable old_win_size
 
-        static function recreate(cls, wx, wy)
+        static
+        function recreate(cls, wx, wy)
 
     class StatePartConfigBackground extends state.StatePart.StatePart
 
@@ -23,6 +24,12 @@ ___
 
         function bind_to_eventbus(self)
 
-        function draw(self)
+        function draw(self): BackgroundHandler.batch.draw()
+                
+                def resize(self, x, y): BackgroundHandler.recreate(x, y)
+                
+                
 
-        function resize(self, x, y)
+        function resize(self, x, y): BackgroundHandler.recreate(x, y)
+                
+                

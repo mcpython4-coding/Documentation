@@ -1,4 +1,4 @@
-***Mod.py - documentation - last updated on 29.5.2020 by uuk***
+***Mod.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class ModDependency
@@ -23,11 +23,13 @@ ___
 
             variable self.versions
 
-        static function convert_any_to_version_tuple(cls, a)
+        static
+        function convert_any_to_version_tuple(cls, a)
 
         function arrival(self) -> bool
 
-        static function __testfor(cls, version, args: tuple) -> bool
+        static
+        function __testfor(cls, version, args: tuple) -> bool
             
             will test for the arrival of the dependency
             :param version: the version found

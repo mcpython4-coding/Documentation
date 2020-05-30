@@ -1,11 +1,12 @@
-***math.py - documentation - last updated on 16.5.2020 by uuk***
+***math.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     function get_max_y(pos)
         
 
 
-    @deprecation.deprecated(deprecated_in="snapshot dev 1 cycle 1", removed_in="v1.2.0 alpha") function cube_vertices(x, y, z, nx, ny, nz, faces=(True, True, True, True, True, True))
+    @deprecation.deprecated(deprecated_in="snapshot dev 1 cycle 1", removed_in="v1.2.0 alpha")
+    function cube_vertices(x, y, z, nx, ny, nz, faces=(True, True, True, True, True, True))
         
         Same as cube_vertices_better, but will return all summed up instead of separated lists
 
@@ -23,7 +24,8 @@ ___
         :return: an tuple representing the texture coordinates
 
 
-    @deprecation.deprecated(deprecated_in="snapshot dev 1 cycle 1", removed_in="v1.2.0 alpha") function tex_coords(*args, size=(32, 32), tex_region=None, rotation=(0, 0, 0, 0, 0, 0))
+    @deprecation.deprecated(deprecated_in="snapshot dev 1 cycle 1", removed_in="v1.2.0 alpha")
+    function tex_coords(*args, size=(32, 32), tex_region=None, rotation=(0, 0, 0, 0, 0, 0))
         
         same as tex_coords_better, but returns everything in an single list instead of an list of tuples
         todo: when removed, rename later the new one to this
@@ -40,7 +42,10 @@ ___
         :return: an list of lists of texture coords
 
 
-    function tex_coord_factor(fx, fy, tx, ty)
+    function tex_coord_factor(fx, fy, tx, ty): return fx, fy, tx, fy, tx, ty, fx, ty
+            
+            
+            def normalize(position):
 
     function normalize(position)
         

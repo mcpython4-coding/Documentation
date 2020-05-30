@@ -1,4 +1,4 @@
-***LootTableCondition.py - documentation - last updated on 16.5.2020 by uuk***
+***LootTableCondition.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class ILootTableCondition extends event.Registry.IRegistryContent
@@ -79,7 +79,11 @@ ___
 
         variable NAME
 
-        function check(self, source, *args, **kwargs) -> bool
+        function check(self, source, *args, **kwargs) -> bool: return True
+                
+                
+                @G.registry
+                class TableBonus(ILootTableCondition):
 
     @G.registry class TableBonus extends ILootTableCondition
 

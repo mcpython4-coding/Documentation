@@ -1,4 +1,4 @@
-***Inventory.py - documentation - last updated on 19.5.2020 by uuk***
+***Inventory.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class Inventory
@@ -7,7 +7,8 @@ ___
         todo: split up into the storage part and the rendering part
 
 
-        static function get_config_file() -> str
+        static
+        function get_config_file() -> str
             
             :return: the location of the inventory config file (if provided)
 
@@ -39,23 +40,23 @@ ___
             reload the config file
             todo: make public
 
-
-        function create_slots(self) -> list:  # todo
             
             creates the slots
             :return: the slots the inventory uses
 
 
-        @deprecation.deprecated("dev1-2", "a1.3.0") function _get_position(self)
+        @deprecation.deprecated("dev1-2", "a1.3.0")
+        function _get_position(self)
 
         function get_position(self)
             
             :return: the position of the inventory
 
 
-        function activate(self):  # todo
-
-        function deactivate(self):  # todo
+        function deactivate(self):  # todo: remove
+                G.inventoryhandler.hide(self)
+                
+                def on_activate(self):
 
         function on_activate(self)
             
@@ -67,40 +68,37 @@ ___
             called when the inventory is hidden
 
 
-        function is_closable_by_escape(self) -> bool: return True  # todo
+        function is_closable_by_escape(self) -> bool: return True  # todo: make attribute
+                
+                def is_always_open(self) -> bool: return False  # todo: make attribute
+                
+                def draw(self, hoveringslot=None):
 
-        function is_always_open(self) -> bool: return False  # todo
+        function is_always_open(self) -> bool: return False  # todo: make attribute
+                
+                def draw(self, hoveringslot=None):
 
         function draw(self, hoveringslot=None)
             
             draws the inventory
 
-
-        function on_draw_background(self):  # todo
             
             draw the background
 
-
-        function on_draw_over_backgroundimage(self):  # todo
             
             draw between background and slots
 
-
-        function on_draw_over_image(self):  # todo
             
             draw between slots and counts
 
-
-        function on_draw_overlay(self):  # todo
             
             draw over anything else
 
 
-        function is_blocking_interactions(self) -> bool:  # todo
-
-        function on_world_cleared(self):  # todo
-
-        function get_interaction_slots(self):  # todo
+        function get_interaction_slots(self):  # todo: make attribute
+                return self.slots
+                
+                def clear(self):
 
         function clear(self)
 

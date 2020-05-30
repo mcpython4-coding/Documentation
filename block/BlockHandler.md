@@ -1,4 +1,4 @@
-***BlockHandler.py - documentation - last updated on 20.5.2020 by uuk***
+***BlockHandler.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     function register_block(registry, blockclass)

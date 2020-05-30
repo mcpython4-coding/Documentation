@@ -1,4 +1,4 @@
-***StateHandler.py - documentation - last updated on 26.5.2020 by uuk***
+***StateHandler.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class StateHandler

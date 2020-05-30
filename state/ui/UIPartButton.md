@@ -1,4 +1,4 @@
-***UIPartButton.py - documentation - last updated on 26.5.2020 by uuk***
+***UIPartButton.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     variable image
@@ -14,6 +14,10 @@ ___
     function draw_button(position, size, mode)
 
     class UIPartButton extends UIPart.UIPart
+
+        function __init__(self, size, text, position, press=event.EventInfo.MousePressEventInfo(pyglet.window.mouse.LEFT),
+                anchor_button="WS", anchor_window="WS", on_press=None, on_hover=None, on_try_press=None,
+                enabled=True, has_hovering_state=True):
             
             creates an new UIPartButton
             :param size: the size of the button
@@ -56,6 +60,12 @@ ___
         function on_draw_2d(self)
 
     class UIPartToggleButton extends UIPartButton
+
+        function __init__(self, size, textpossibilitys, position,
+                toggle=event.EventInfo.MousePressEventInfo(pyglet.window.mouse.LEFT),
+                retoggle=event.EventInfo.MousePressEventInfo(pyglet.window.mouse.RIGHT),
+                anchor_button="WS", anchor_window="WS", on_toggle=None, on_hover=None, on_try_press=None,
+                enabled=True, has_hovering_state=True, text_constructor="{}", start=0):
             
             creates an new UIPartButton
             :param size: the size of the button

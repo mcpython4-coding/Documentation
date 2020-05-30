@@ -1,4 +1,4 @@
-***BlockState.py - documentation - last updated on 29.5.2020 by uuk***
+***BlockState.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class BlockStateNotNeeded extends Exception
@@ -7,7 +7,10 @@ ___
 
         variable TYPE
 
-        static function is_valid(cls, data: dict) -> bool
+        static
+        function is_valid(cls, data: dict) -> bool: raise NotImplementedError()
+                
+                def __init__(self, data: dict, block_state):
 
         function __init__(self, data: dict, block_state)
 
@@ -17,23 +20,21 @@ ___
 
         function add_face_to_batch(self, block, batch, face) -> list
 
-        function transform_to_hitbox(self, block):  # optional
-
-        function draw_face(self, block, face):  # optional
-
     variable blockstatedecoderregistry
 
     @G.registry class MultiPartDecoder extends IBlockStateDecoder
 
         variable NAME
 
-        static function is_valid(cls, data: dict) -> bool
+        static
+        function is_valid(cls, data: dict) -> bool
 
         function __init__(self, data: dict, block_state)
 
         function add_face_to_batch(self, block, batch, face)
 
-        static function _test_for(cls, state, part, use_or=False)
+        static
+        function _test_for(cls, state, part, use_or=False)
 
         function transform_to_hitbox(self, blockinstance)
 
@@ -43,7 +44,8 @@ ___
 
         variable NAME
 
-        static function is_valid(cls, data: dict) -> bool
+        static
+        function is_valid(cls, data: dict) -> bool
 
         function __init__(self, data: dict, block_state)
 
@@ -63,15 +65,20 @@ ___
 
         variable TO_CREATE
 
-        static function from_directory(directory: str, modname: str)
+        static
+        function from_directory(directory: str, modname: str)
 
-        static function from_file(cls, file: str, modname: str)
+        static
+        function from_file(cls, file: str, modname: str)
 
-        static function _from_file(cls, file: str)
+        static
+        function _from_file(cls, file: str)
 
-        static function from_data(cls, name, data)
+        static
+        function from_data(cls, name, data)
 
-        static function _from_data(cls, name, data)
+        static
+        function _from_data(cls, name, data)
 
         function __init__(self, data: dict, name: str)
 
@@ -81,9 +88,11 @@ ___
 
                     variable self.loader
 
-        function add_face_to_batch(self, block, batch, face)
-
-        function draw_face(self, block, face)
+        function draw_face(self, block, face): self.loader.draw_face(block, face)
+                
+                
+                class BlockState:
+                def __init__(self, data):
 
     class BlockState
 
@@ -91,7 +100,8 @@ ___
 
             variable self.models - (model, config)
 
-        static function decode_entry(data: dict)
+        static
+        function decode_entry(data: dict)
 
         function add_face_to_batch(self, block, batch, face)
 

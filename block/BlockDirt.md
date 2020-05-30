@@ -1,4 +1,4 @@
-***BlockDirt.py - documentation - last updated on 20.5.2020 by uuk***
+***BlockDirt.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     @G.registry class BlockDirt extends Block.Block

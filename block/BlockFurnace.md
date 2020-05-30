@@ -1,4 +1,4 @@
-***BlockFurnace.py - documentation - last updated on 16.5.2020 by uuk***
+***BlockFurnace.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     @G.registry class BlockFurnace extends block.Block.Block
@@ -25,13 +25,20 @@ ___
 
         function set_model_state(self, state: dict)
 
-        static function get_all_model_states() -> list
+        static
+        function get_all_model_states() -> list
 
         function on_player_interact(self, player, itemstack, button, modifiers, exact_hit) -> bool
 
-        function get_inventories(self)
+        function get_inventories(self): return [self.inventory]
+                
+                def get_provided_slots(self, side): return self.inventory.slots
+                
+                def on_remove(self):
 
-        function get_provided_slots(self, side)
+        function get_provided_slots(self, side): return self.inventory.slots
+                
+                def on_remove(self):
 
         function on_remove(self)
 

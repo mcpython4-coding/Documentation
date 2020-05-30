@@ -1,4 +1,4 @@
-***ILog.py - documentation - last updated on 16.5.2020 by uuk***
+***ILog.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class ILog extends block.Block.Block
@@ -10,8 +10,11 @@ ___
 
             variable self.axis
 
-        function get_model_state(self): return {"axis"
+        function get_model_state(self): return {"axis": self.axis.name.lower()}
+                
+                def set_model_state(self, state: dict):
 
         function set_model_state(self, state: dict)
 
-        static function get_all_model_states() -> list
+        static
+        function get_all_model_states() -> list

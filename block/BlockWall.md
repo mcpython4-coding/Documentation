@@ -1,4 +1,4 @@
-***BlockWall.py - documentation - last updated on 16.5.2020 by uuk***
+***BlockWall.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class IWall extends block.Block.Block
@@ -37,7 +37,8 @@ ___
 
         function set_model_state(self, state: dict)
 
-        static function get_all_model_states() -> list
+        static
+        function get_all_model_states() -> list
 
     @G.registry class AndesiteWall extends IWall
 

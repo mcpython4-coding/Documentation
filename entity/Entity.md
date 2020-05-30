@@ -1,4 +1,4 @@
-***Entity.py - documentation - last updated on 19.5.2020 by uuk***
+***Entity.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class Entity extends event.Registry.IRegistryContent
@@ -12,7 +12,8 @@ ___
 
         variable SUMMON_ABLE - if the entity can be used in /summom-command
 
-        static function create_new(cls, position, *args, **kwargs)
+        static
+        function create_new(cls, position, *args, **kwargs)
             
             creates an new entity and set up it correctly for later use
             :param position: the position to create at
@@ -49,11 +50,16 @@ ___
 
         function __str__(self)
 
-        function get_position(self)
+        function set_position(self, position: tuple): self.teleport(position)
+                
+                # only for some small use-cases. WARNING: will  N O T  do any internal handling for updating the position
+                def set_position_unsafe(self, position: tuple): self.__position = position
+                
+                def teleport(self, position, dimension=None, force_chunk_save_update=False):
 
-        function set_position(self, position: tuple)
-
-        function set_position_unsafe(self, position: tuple)
+        function set_position_unsafe(self, position: tuple): self.__position = position
+                
+                def teleport(self, position, dimension=None, force_chunk_save_update=False):
 
         function teleport(self, position, dimension=None, force_chunk_save_update=False)
             

@@ -1,4 +1,4 @@
-***WorldGenerationHandler.py - documentation - last updated on 16.5.2020 by uuk***
+***WorldGenerationHandler.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class WorldGenerationTaskHandler
@@ -154,6 +154,9 @@ ___
             variable self.enable_auto_gen - if chunks around the player should be generated when needed
 
             variable self.task_handler
+
+        function add_chunk_to_generation_list(self, chunk, dimension=None, prior=False, force_generate=False, immediate=False,
+                generate_add=False):
             
             adds chunk schedule to the system
             will set the loaded-flag of the chunk during the process
@@ -173,7 +176,11 @@ ___
             :param chunk: the chunk to schedule
 
 
-        function process_one_generation_task(self, **kwargs):  # todo
+        function process_one_generation_task(self, **kwargs):  # todo: remove
+                if not self.enable_generation: return
+                self.task_handler.process_one_task(**kwargs)
+                
+                def setup_dimension(self, dimension, config=None):
 
         function setup_dimension(self, dimension, config=None)
 

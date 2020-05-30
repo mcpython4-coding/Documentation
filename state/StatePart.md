@@ -1,4 +1,4 @@
-***StatePart.py - documentation - last updated on 26.5.2020 by uuk***
+***StatePart.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class StatePart
@@ -17,6 +17,9 @@ ___
 
         function deactivate(self)
 
-        function get_sub_parts(self) -> list:  # todo
+        function get_sub_parts(self) -> list:  # todo: remove
+                return []
+                
+                def bind_to_eventbus(self):
 
         function bind_to_eventbus(self)

@@ -1,11 +1,18 @@
-***GameRule.py - documentation - last updated on 16.5.2020 by uuk***
+***GameRule.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class GameRuleDataType
 
-        static function is_valid_value(cls, data: str)
+        static
+        function is_valid_value(cls, data: str): raise NotImplementedError()
+                
+                def copy(self): raise NotImplementedError()
+                
+                def save(self):
 
-        function copy(self)
+        function copy(self): raise NotImplementedError()
+                
+                def save(self):
 
         function save(self)
             
@@ -20,7 +27,8 @@ ___
 
     class GameRuleTypeBoolean extends GameRuleDataType
 
-        static function is_valid_value(cls, data: str)
+        static
+        function is_valid_value(cls, data: str)
 
         function __init__(self, data: str)
 
@@ -28,25 +36,38 @@ ___
 
             variable self.status
 
-        function copy(self)
+        function save(self): return self.status
+                
+                def load(self, data): self.status = data
+                
+                
+                class GameRuleTypeInt(GameRuleDataType):
 
-        function save(self)
-
-        function load(self, data)
+        function load(self, data): self.status = data
+                
+                
+                class GameRuleTypeInt(GameRuleDataType):
 
     class GameRuleTypeInt extends GameRuleDataType
 
-        static function is_valid_value(cls, data: str)
+        static
+        function is_valid_value(cls, data: str)
 
         function __init__(self, data: str)
 
             variable self.status
 
-        function copy(self)
+        function save(self): return self.status
+                
+                def load(self, data): self.status = data
+                
+                
+                class GameRule(event.Registry.IRegistryContent):
 
-        function save(self)
-
-        function load(self, data)
+        function load(self, data): self.status = data
+                
+                
+                class GameRule(event.Registry.IRegistryContent):
 
     class GameRule extends event.Registry.IRegistryContent
 

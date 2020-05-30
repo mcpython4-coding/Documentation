@@ -1,4 +1,4 @@
-***DataFixer1to2.py - documentation - last updated on 16.5.2020 by uuk***
+***DataFixer1to2.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     @G.registry class GeneralFix extends storage.datafixer.IDataFixer.IGeneralDataFixer
@@ -18,7 +18,8 @@ ___
 
         variable PART - which part it fixes, only one per part is executed
 
-        static function fix(cls, savefile, dimension, region)
+        static
+        function fix(cls, savefile, dimension, region)
 
     @G.registry class InventoryFixer extends storage.datafixer.IDataFixer.IDataFixer
 
@@ -28,4 +29,5 @@ ___
 
         variable PART - which part it fixes, only one per part is executed
 
-        static function fix(cls, savefile, path, file=None)
+        static
+        function fix(cls, savefile, path, file=None)

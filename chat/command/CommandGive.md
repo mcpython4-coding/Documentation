@@ -1,4 +1,4 @@
-***CommandGive.py - documentation - last updated on 16.5.2020 by uuk***
+***CommandGive.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     @G.registry class CommandGive extends chat.command.Command.Command
@@ -10,8 +10,11 @@ ___
 
         variable CANCEL_GIVE
 
-        static function insert_parse_bridge(parsebridge: ParseBridge)
+        static
+        function insert_parse_bridge(parsebridge: ParseBridge)
 
-        static function parse(cls, values: list, modes: list, info)
+        static
+        function parse(cls, values: list, modes: list, info)
 
-        static function get_help() -> list
+        static
+        function get_help() -> list

@@ -1,4 +1,4 @@
-***BlockCraftingTable.py - documentation - last updated on 16.5.2020 by uuk***
+***BlockCraftingTable.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     @G.registry class BlockCraftingTable extends Block.Block
@@ -21,4 +21,5 @@ ___
 
         function on_remove(self)
 
-        static function modify_block_item(cls, itemfactory)
+        static
+        function modify_block_item(cls, itemfactory)

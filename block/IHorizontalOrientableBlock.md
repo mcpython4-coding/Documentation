@@ -1,4 +1,4 @@
-***IHorizontalOrientableBlock.py - documentation - last updated on 16.5.2020 by uuk***
+***IHorizontalOrientableBlock.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class IHorizontalOrientableBlock extends block.Block.Block
@@ -15,4 +15,5 @@ ___
 
         function set_model_state(self, state: dict)
 
-        static function get_all_model_states(cls) -> list
+        static
+        function get_all_model_states(cls) -> list

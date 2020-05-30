@@ -1,4 +1,4 @@
-***SaveFile.py - documentation - last updated on 19.5.2020 by uuk***
+***SaveFile.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     How to decide when an new version is needed?

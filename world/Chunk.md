@@ -1,4 +1,4 @@
-***Chunk.py - documentation - last updated on 27.5.2020 by uuk***
+***Chunk.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class Chunk
@@ -7,7 +7,8 @@ ___
 
         variable attributes
 
-        static function add_default_attribute(name, reference, default, authcode=None) -> int
+        static
+        function add_default_attribute(name, reference, default, authcode=None) -> int
 
         function __init__(self, dimension, position)
 
@@ -49,7 +50,8 @@ ___
 
         function is_position_blocked(self, position)
 
-        function add_block(self, position: tuple, block_name
+        function add_block(self, position: tuple, block_name: str, immediate=True, block_update=True, blockupdateself=True,
+                args=[], kwargs={}):
             
             adds an block to the given position
             :param position: the position to add

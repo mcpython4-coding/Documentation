@@ -1,4 +1,4 @@
-***InventoryPlayerMain.py - documentation - last updated on 16.5.2020 by uuk***
+***InventoryPlayerMain.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class InventoryPlayerMain extends gui.Inventory.Inventory
@@ -14,7 +14,8 @@ ___
 
             variable self.recipeinterface
 
-        static function get_config_file() -> str or None
+        static
+        function get_config_file() -> str or None
 
         function create_slots(self) -> list
 

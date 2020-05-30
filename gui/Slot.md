@@ -1,4 +1,4 @@
-***Slot.py - documentation - last updated on 17.5.2020 by uuk***
+***Slot.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     variable SLOT_WIDTH
@@ -9,6 +9,10 @@ ___
         
         slot class
 
+
+        function __init__(self, itemstack=None, position=(0, 0), allow_player_remove=True, allow_player_insert=True,
+                allow_player_add_to_free_place=True, on_update=None, allow_half_getting=True, on_shift_click=None,
+                empty_image=None, allowed_item_tags=None, allowed_item_test=None, on_button_press=None, capacity=None):
             
             creates an new slot
             :param itemstack: the itemstack to use
@@ -66,6 +70,10 @@ ___
 
     class SlotCopy
 
+        function __init__(self, master, position=(0, 0), allow_player_remove=True, allow_player_insert=True,
+                allow_player_add_to_free_place=True, on_update=None, allow_half_getting=True, on_shift_click=None,
+                on_button_press=None):
+
         function get_allowed_item_tags(self)
 
         function set_allowed_item_tags(self, tags: list)
@@ -89,7 +97,9 @@ ___
 
         function draw_lable(self, x, y)
 
-        function can_set_item(self, itemstack) -> bool
+        function can_set_item(self, itemstack) -> bool: return self.master.can_set_item(itemstack)
+                
+                def save(self):
 
         function save(self)
 
@@ -99,6 +109,9 @@ ___
 
     class SlotInfiniteStack extends Slot
 
+        function __init__(self, itemstack, position=(0, 0), allow_player_remove=True, on_button_press=None,
+                allow_player_add_to_free_place=True, on_update=None, allow_half_getting=True, on_shift_click=None):
+
         function set_itemstack(self, stack, update=True, player=False)
 
         function call_update(self, player=False)
@@ -106,6 +119,9 @@ ___
         variable itemstack
 
     class SlotInfiniteStackExchangeable extends Slot
+
+        function __init__(self, itemstack, position=(0, 0), allow_player_remove=True, on_button_press=None,
+                allow_player_add_to_free_place=True, on_update=None, allow_half_getting=True, on_shift_click=None):
 
         function set_itemstack(self, stack, update=True, player=False)
 

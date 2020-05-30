@@ -1,4 +1,4 @@
-***BlockFactory.py - documentation - last updated on 20.5.2020 by uuk***
+***BlockFactory.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class BlockFactory
@@ -185,7 +185,8 @@ ___
                 template instance
 
 
-        @deprecation.deprecated("dev1-2", "a1.2.0") function _finish(self, register: bool)
+        @deprecation.deprecated("dev1-2", "a1.2.0")
+        function _finish(self, register: bool)
 
         function finish_up(self)
             
@@ -223,7 +224,8 @@ ___
 
                 variable ENABLE_RANDOM_TICKS
 
-                static function get_all_model_states()
+                static
+                function get_all_model_states()
 
                 function __init__(self, *args, **kwargs)
 
@@ -245,7 +247,10 @@ ___
 
                 class ConstructedBlock extends ConstructedBlock
 
-                    function on_random_update(self)
+                    function on_random_update(self): master.randomupdate_callback(self)
+                            
+                            if master.update_callback:
+                            class ConstructedBlock(ConstructedBlock):
 
                 class ConstructedBlock extends ConstructedBlock
 
@@ -265,7 +270,8 @@ ___
 
                 class ConstructedBlock extends ConstructedBlock
 
-                    static function modify_block_item(cls, itemconstructor)
+                    static
+                    function modify_block_item(cls, itemconstructor)
 
                 class ConstructedBlock extends ConstructedBlock
 
@@ -316,7 +322,8 @@ ___
             :param function: the function to invoke on deletion. It is called together with the block instance
 
 
-        @deprecation.deprecated("dev1-2", "a1.3.0") function setBrakeAbleFlag(self, state: bool)
+        @deprecation.deprecated("dev1-2", "a1.3.0")
+        function setBrakeAbleFlag(self, state: bool)
 
         function setBreakAbleFlag(self, state: bool)
             
@@ -362,7 +369,12 @@ ___
             :return:
 
 
-            function get_state(*_)
+            function get_state(*_): return state
+                    
+                    self.setCustomModelStateFunction(get_state)
+                    return self
+                    
+                    def setAllModelStateInfo(self, modelstates: list):
 
         function setAllModelStateInfo(self, modelstates: list)
             

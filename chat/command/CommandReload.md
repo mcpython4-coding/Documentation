@@ -1,4 +1,4 @@
-***CommandReload.py - documentation - last updated on 16.5.2020 by uuk***
+***CommandReload.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     @G.registry class CommandReload extends chat.command.Command.Command
@@ -10,12 +10,16 @@ ___
 
         variable CANCEL_RELOAD
 
-        static function insert_parse_bridge(parsebridge: ParseBridge)
+        static
+        function insert_parse_bridge(parsebridge: ParseBridge)
 
-        static function parse(cls, values: list, modes: list, info)
+        static
+        function parse(cls, values: list, modes: list, info)
 
-        static function reload(cls)
+        static
+        function reload(cls)
 
-        static function get_help() -> list
+        static
+        function get_help() -> list
 
     function reload_chunks()

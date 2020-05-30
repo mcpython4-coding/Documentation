@@ -1,4 +1,4 @@
-***BlockShulkerBox.py - documentation - last updated on 16.5.2020 by uuk***
+***BlockShulkerBox.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     function create_shulker_box(name)
@@ -21,11 +21,16 @@ ___
 
             variable BEST_TOOLS_TO_BREAK
 
-            function get_provided_slots(self, side)
+            function get_provided_slots(self, side): return self.inventory.slots
+                    
+                    @classmethod
+                    def modify_block_item(cls, itemconstructor: factory.ItemFactory.ItemFactory):
 
-            static function modify_block_item(cls, itemconstructor: factory.ItemFactory.ItemFactory)
+            static
+            function modify_block_item(cls, itemconstructor: factory.ItemFactory.ItemFactory)
 
-            static function set_block_data(cls, iteminst, block)
+            static
+            function set_block_data(cls, iteminst, block)
 
             function on_request_item_for_block(self, itemstack)
 

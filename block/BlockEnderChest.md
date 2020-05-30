@@ -1,4 +1,4 @@
-***BlockEnderChest.py - documentation - last updated on 16.5.2020 by uuk***
+***BlockEnderChest.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     @G.registry class BlockEnderChest extends Block.Block
@@ -33,7 +33,8 @@ ___
 
         function get_model_state(self) -> dict
 
-        static function get_all_model_states() -> list
+        static
+        function get_all_model_states() -> list
 
         function get_view_bbox(self)
 

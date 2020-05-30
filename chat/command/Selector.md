@@ -1,4 +1,4 @@
-***Selector.py - documentation - last updated on 16.5.2020 by uuk***
+***Selector.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class Selector extends event.Registry.IRegistryContent
@@ -8,44 +8,56 @@ ___
 
         variable TYPE
 
-        static function is_valid(entry) -> bool
+        static
+        function is_valid(entry) -> bool
 
-        static function parse(entry, config)
+        static
+        function parse(entry, config)
 
     function load()
 
-            static function is_valid(entry) -> bool
+            static
+            function is_valid(entry) -> bool
 
-            static function parse(entry, config)
+            static
+            function parse(entry, config)
 
         @G.registry class PlayerSelector extends Selector
 
             variable NAME
 
-            static function is_valid(entry) -> bool
+            static
+            function is_valid(entry) -> bool
 
-            static function parse(entry, config)
+            static
+            function parse(entry, config)
 
         @G.registry class RandomPlayerSelector extends Selector
 
             variable NAME
 
-            static function is_valid(entry) -> bool
+            static
+            function is_valid(entry) -> bool
 
-            static function parse(entry, config)
+            static
+            function parse(entry, config)
 
         @G.registry class AllPlayerSelector extends Selector
 
             variable NAME
 
-            static function is_valid(entry) -> bool
+            static
+            function is_valid(entry) -> bool
 
-            static function parse(entry, config)
+            static
+            function parse(entry, config)
 
         @G.registry class EntitySelector extends Selector
 
             variable NAME
 
-            static function is_valid(entry) -> bool
+            static
+            function is_valid(entry) -> bool
 
-            static function parse(entry, config)
+            static
+            function parse(entry, config)

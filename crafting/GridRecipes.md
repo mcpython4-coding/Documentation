@@ -1,4 +1,4 @@
-***GridRecipes.py - documentation - last updated on 16.5.2020 by uuk***
+***GridRecipes.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     function transform_to_item_stack(item, table: dict) -> list
@@ -11,9 +11,11 @@ ___
 
     @G.craftinghandler class GridShaped extends crafting.IRecipeType.IRecipe
 
-        static function get_recipe_names() -> list
+        static
+        function get_recipe_names() -> list
 
-        static function from_data(cls, data: dict)
+        static
+        function from_data(cls, data: dict)
 
         function __init__(self, inputs, output)
 
@@ -31,9 +33,11 @@ ___
 
     @G.craftinghandler class GridShapeless extends crafting.IRecipeType.IRecipe
 
-        static function get_recipe_names() -> list
+        static
+        function get_recipe_names() -> list
 
-        static function from_data(cls, data: dict)
+        static
+        function from_data(cls, data: dict)
 
         function __init__(self, inputs, output)
 

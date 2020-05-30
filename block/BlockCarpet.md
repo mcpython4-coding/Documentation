@@ -1,4 +1,4 @@
-***BlockCarpet.py - documentation - last updated on 16.5.2020 by uuk***
+***BlockCarpet.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     variable carpet_bbox
@@ -17,9 +17,13 @@ ___
 
         function on_block_update(self)
 
-        function get_view_bbox(self)
+        function get_view_bbox(self): return carpet_bbox
+                
+                @classmethod
+                def modify_block_item(cls, itemfactory):
 
-        static function modify_block_item(cls, itemfactory)
+        static
+        function modify_block_item(cls, itemfactory)
 
     function create_carpet(carpet_color: str)
         

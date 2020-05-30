@@ -1,4 +1,4 @@
-***CraftingHandler.py - documentation - last updated on 16.5.2020 by uuk***
+***CraftingHandler.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class CraftingHandler
@@ -20,7 +20,8 @@ ___
 
         function __call__(self, obj)
 
-        static function add_recipe(recipe: crafting.IRecipeType.IRecipe)
+        static
+        function add_recipe(recipe: crafting.IRecipeType.IRecipe)
 
         function add_recipe_from_data(self, data: dict)
 

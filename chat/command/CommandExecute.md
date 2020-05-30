@@ -1,4 +1,4 @@
-***CommandExecute.py - documentation - last updated on 16.5.2020 by uuk***
+***CommandExecute.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     @G.registry class CommandExecute extends chat.command.Command.Command
@@ -8,11 +8,14 @@ ___
 
         variable NAME
 
-        static function insert_parse_bridge(parsebridge: ParseBridge)
+        static
+        function insert_parse_bridge(parsebridge: ParseBridge)
 
-        static function parse(values: list, modes: list, info)
+        static
+        function parse(values: list, modes: list, info)
 
-        static function _parse_subcommand(index, command, values, info)
+        static
+        function _parse_subcommand(index, command, values, info)
             
             execute an entry in the parsed command
             :param index: the index to start
@@ -39,4 +42,5 @@ ___
 
                     variable flag
 
-        static function get_help() -> list
+        static
+        function get_help() -> list

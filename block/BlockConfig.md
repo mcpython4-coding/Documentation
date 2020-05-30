@@ -1,4 +1,4 @@
-***BlockConfig.py - documentation - last updated on 16.5.2020 by uuk***
+***BlockConfig.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     classes will be removed in the future as they can be replaced by tags
@@ -30,8 +30,6 @@ ___
             will check if the item is marked as affected
             :param item: the item to check
 
-
-        function __contains__(self, item)
 
     variable ENTRYS - todo: remove in a1.2.0
 

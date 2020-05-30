@@ -1,4 +1,4 @@
-***StateEscape.py - documentation - last updated on 16.5.2020 by uuk***
+***StateEscape.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class StateEscape extends State.State
@@ -11,11 +11,14 @@ ___
 
         function bind_to_eventbus(self)
 
-        static function start_menu_press(x, y)
+        static
+        function start_menu_press(x, y)
 
-        static function on_key_press(symbol, modifiers)
+        static
+        function on_key_press(symbol, modifiers)
 
-        static function on_draw_2d_pre()
+        static
+        function on_draw_2d_pre()
 
         function on_activate(self)
 

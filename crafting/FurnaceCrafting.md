@@ -1,11 +1,13 @@
-***FurnaceCrafting.py - documentation - last updated on 16.5.2020 by uuk***
+***FurnaceCrafting.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     @G.craftinghandler class FurnesRecipe extends crafting.IRecipeType.IRecipe
 
-        static function get_recipe_names() -> list
+        static
+        function get_recipe_names() -> list
 
-        static function from_data(cls, data: dict)
+        static
+        function from_data(cls, data: dict)
 
         function __init__(self, t, i, o, xp, time)
 

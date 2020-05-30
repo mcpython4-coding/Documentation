@@ -1,4 +1,4 @@
-***LootTable.py - documentation - last updated on 16.5.2020 by uuk***
+***LootTable.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class LootTableTypes extends enum.Enum
@@ -67,7 +67,8 @@ ___
 
     class LootTablePoolEntry
 
-        static function from_data(cls, pool, data: dict)
+        static
+        function from_data(cls, pool, data: dict)
 
         function __init__(self, entry_type=LootTablePoolEntryType.UNSET)
 
@@ -93,7 +94,8 @@ ___
 
     class LootTablePool
 
-        static function from_data(cls, table, data: dict)
+        static
+        function from_data(cls, table, data: dict)
 
         function __init__(self)
 
@@ -115,9 +117,11 @@ ___
 
     class LootTable
 
-        static function from_file(cls, file: str, name=None)
+        static
+        function from_file(cls, file: str, name=None)
 
-        static function from_data(cls, data: dict, name: str)
+        static
+        function from_data(cls, data: dict, name: str)
 
         function __init__(self, table_type=LootTableTypes.UNSET)
 

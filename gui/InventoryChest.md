@@ -1,4 +1,4 @@
-***InventoryChest.py - documentation - last updated on 16.5.2020 by uuk***
+***InventoryChest.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class InventoryChest extends gui.Inventory.Inventory
@@ -6,7 +6,8 @@ ___
         inventory class for chest
 
 
-        static function get_config_file() -> str or None
+        static
+        function get_config_file() -> str or None
 
         function on_activate(self)
 

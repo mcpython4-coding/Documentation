@@ -1,4 +1,4 @@
-***Chat.py - documentation - last updated on 19.5.2020 by uuk***
+***Chat.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class ChatInventory extends gui.Inventory.Inventory

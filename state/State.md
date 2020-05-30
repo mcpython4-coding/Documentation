@@ -1,4 +1,4 @@
-***State.py - documentation - last updated on 26.5.2020 by uuk***
+***State.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class State extends event.Registry.IRegistryContent
@@ -10,7 +10,11 @@ ___
 
         variable CONFIG_LOCATION - default location: data/{mod}/states/{name}.json
 
-        static function is_mouse_exclusive(cls):  # todo
+        static
+        function is_mouse_exclusive(cls):  # todo: make attribute
+                return cls.IS_MOUSE_EXCLUSIVE
+                
+                def __init__(self):
 
         function __init__(self)
 
@@ -26,10 +30,7 @@ ___
 
         function deactivate(self)
 
-        function bind_to_eventbus(self):  # todo
-
-        function get_parts(self) -> list:  # todo
-
-        function on_activate(self):  # todo
-
-        function on_deactivate(self):  # todo
+        function on_deactivate(self):  # todo: remove
+                pass
+                
+                

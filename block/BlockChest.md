@@ -1,4 +1,4 @@
-***BlockChest.py - documentation - last updated on 20.5.2020 by uuk***
+***BlockChest.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     variable BBOX - the bounding box of the chest
@@ -41,23 +41,31 @@ ___
 
         variable BEST_TOOLS_TO_BREAK
 
-        function get_provided_slots(self, side)
+        function get_provided_slots(self, side): return self.inventory.slots
+                
+                def set_model_state(self, state: dict):
 
         function set_model_state(self, state: dict)
 
         function get_model_state(self) -> dict
 
-        static function get_all_model_states() -> list
+        static
+        function get_all_model_states() -> list
 
-        function get_view_bbox(self)
+        function get_view_bbox(self): return BBOX
+                
+                @classmethod
+                def set_block_data(cls, iteminst, block):
 
-        static function set_block_data(cls, iteminst, block)
+        static
+        function set_block_data(cls, iteminst, block)
 
         function on_request_item_for_block(self, itemstack)
 
         function on_remove(self)
 
-        static function modify_block_item(cls, itemfactory)
+        static
+        function modify_block_item(cls, itemfactory)
 
         function save(self)
 

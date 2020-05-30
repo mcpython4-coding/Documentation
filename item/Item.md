@@ -1,4 +1,4 @@
-***Item.py - documentation - last updated on 16.5.2020 by uuk***
+***Item.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class Item extends event.Registry.IRegistryContent
@@ -9,9 +9,11 @@ ___
 
         variable HAS_BLOCK
 
-        static function get_used_texture_files(cls):  # WARNING: will be removed during item rendering update; todo
-
-        static function get_default_item_image_location() -> str:  # WARNING
+        static
+        function get_default_item_image_location() -> str:  # WARNING: will be removed during item rendering update
+                raise NotImplementedError()
+                
+                def __init__(self):
 
         function __init__(self)
 
@@ -19,7 +21,10 @@ ___
 
         function __eq__(self, other)
 
-        function get_active_image_location(self):  # WARNING
+        function get_active_image_location(self):  # WARNING: will be removed during item rendering update
+                return self.get_default_item_image_location()
+                
+                def get_block(self) -> str:
 
         function get_block(self) -> str
 
@@ -36,6 +41,8 @@ ___
 
         function on_set_from_item(self, block)
 
-        function get_data(self): return "no
+        function get_data(self): return "no:data"
+                
+                def set_data(self, data):
 
         function set_data(self, data)

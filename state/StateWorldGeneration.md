@@ -1,4 +1,4 @@
-***StateWorldGeneration.py - documentation - last updated on 16.5.2020 by uuk***
+***StateWorldGeneration.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class StateWorldGeneration extends State.State

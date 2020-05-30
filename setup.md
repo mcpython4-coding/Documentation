@@ -1,4 +1,4 @@
-***setup.py - documentation - last updated on 29.5.2020 by uuk***
+***setup.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     WARNING: the system is outdated and will likely be removed in the future
@@ -22,15 +22,14 @@ ___
 
         variable TYPE
 
-        static function dump_data(directory: str)
-
         variable USES_DIRECTORY
 
     variable taskregistry
 
     function add()
 
-            static function dump_data(directory: str)
+            static
+            function dump_data(directory: str)
 
             variable USES_DIRECTORY
 
@@ -38,7 +37,8 @@ ___
 
             variable NAME
 
-            static function dump_data(directory: str)
+            static
+            function dump_data(directory: str)
 
             variable USES_DIRECTORY
 

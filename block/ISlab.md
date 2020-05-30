@@ -1,4 +1,4 @@
-***ISlab.py - documentation - last updated on 16.5.2020 by uuk***
+***ISlab.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     variable BBOX_DICT
@@ -16,8 +16,11 @@ ___
 
         function set_model_state(self, state: dict)
 
-        static function get_all_model_states() -> list
+        static
+        function get_all_model_states() -> list
 
         function on_player_interact(self, player, itemstack, button, modifiers, exact_hit) -> bool
 
-        function get_view_bbox(self)
+        function get_view_bbox(self): return BBOX_DICT[self.type]
+                
+                

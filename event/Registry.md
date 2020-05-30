@@ -1,4 +1,4 @@
-***Registry.py - documentation - last updated on 16.5.2020 by uuk***
+***Registry.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class IRegistryContent
@@ -7,27 +7,33 @@ ___
 
         variable TYPE
 
-        static function on_register(cls, registry)
-
         variable INFO - can be used to display any special info in e.g. /registryinfo-command
 
-        static function compressed_info(cls)
+        static
+        function compressed_info(cls): return cls.NAME
+                
+                
+                class Registry:
+                def __init__(self, name: str, registry_type_names: list, injection_function=None,
+                allow_argument_injection=False, class_based=True):
 
     class Registry
 
-        function __init__(self, name: str, registry_type_names
+        function __init__(self, name: str, registry_type_names: list, injection_function=None,
+                allow_argument_injection=False, class_based=True):
 
         function is_valid(self, obj: IRegistryContent)
 
         function register(self, obj: IRegistryContent, override_existing=True)
 
-        function lock(self)
-
-        function unlock(self)
-
     class RegistryInjectionHolder
 
-        function __init__(self, *args, **kwargs):   # todo
+        function __init__(self, *args, **kwargs):   # todo: do something with the args and kwargs!
+                self.args = args
+                self.kwargs = kwargs
+                self.injectable = None
+                
+                def __call__(self, obj):
 
             variable self.args
 

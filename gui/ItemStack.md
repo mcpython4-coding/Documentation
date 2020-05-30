@@ -1,4 +1,4 @@
-***ItemStack.py - documentation - last updated on 17.5.2020 by uuk***
+***ItemStack.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class ItemStack
@@ -22,16 +22,23 @@ ___
             clean the itemstack
 
 
-        static function get_empty()
+        static
+        function get_empty()
             
             get an empty itemstack
 
 
         function __eq__(self, other)
 
-        function is_empty(self)
+        function is_empty(self): return self.amount == 0 or self.item is None
+                
+                def get_item_name(self): return self.item.NAME if self.item else None
+                
+                def set_amount(self, amount):
 
-        function get_item_name(self)
+        function get_item_name(self): return self.item.NAME if self.item else None
+                
+                def set_amount(self, amount):
 
         function set_amount(self, amount)
 

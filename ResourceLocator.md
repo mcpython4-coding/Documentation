@@ -1,4 +1,4 @@
-***ResourceLocator.py - documentation - last updated on 29.5.2020 by uuk***
+***ResourceLocator.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     specifications for the resource loader system
@@ -17,22 +17,27 @@ ___
         base class for an class holding an link to an resource system
 
 
-        static function is_valid(path: str) -> bool
+        function close(self): pass
+                
+                def get_all_entries_in_directory(self, directory: str) -> list: raise NotImplementedError()
+                
+                
+                class ResourceZipFile(IResourceLocation):
 
-        function is_in_path(self, filename: str) -> bool
-
-        function read(self, filename: str, mode: str)
-
-        function close(self)
-
-        function get_all_entries_in_directory(self, directory: str) -> list
+        function get_all_entries_in_directory(self, directory: str) -> list: raise NotImplementedError()
+                
+                
+                class ResourceZipFile(IResourceLocation):
 
     class ResourceZipFile extends IResourceLocation
         
         implementation for archives
 
 
-        static function is_valid(path: str) -> bool
+        static
+        function is_valid(path: str) -> bool: return zipfile.is_zipfile(path)
+                
+                def __init__(self, path: str):
 
         function __init__(self, path: str)
 
@@ -53,7 +58,8 @@ ___
         implementation for raw directories
 
 
-        static function is_valid(path: str) -> bool
+        static
+        function is_valid(path: str) -> bool
 
         function __init__(self, path: str)
 

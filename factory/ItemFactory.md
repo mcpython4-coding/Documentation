@@ -1,11 +1,12 @@
-***ItemFactory.py - documentation - last updated on 19.5.2020 by uuk***
+***ItemFactory.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
     class ItemFactory
 
         variable TASKS
 
-        static function process(cls)
+        static
+        function process(cls)
 
         function __init__(self)
 
@@ -64,7 +65,8 @@ ___
 
         function copy(self)
 
-        @deprecation.deprecated("dev1-2", "a1.2.0") function _finish(self, register)
+        @deprecation.deprecated("dev1-2", "a1.2.0")
+        function _finish(self, register)
 
         function finish_up(self, register=False)
             
@@ -83,17 +85,20 @@ ___
 
             class ConstructedItem extends baseclass
 
-                static function get_used_texture_files(cls)
-
                 variable NAME
 
                 variable HAS_BLOCK
 
-                function get_block(self) -> str
+                static
+                function get_default_item_image_location() -> str: return master.itemfile
+                        
+                        def get_active_image_location(self): return master.itemfile
+                        
+                        def __init__(self):
 
-                static function get_default_item_image_location() -> str
-
-                function get_active_image_location(self)
+                function get_active_image_location(self): return master.itemfile
+                        
+                        def __init__(self):
 
                 function __init__(self)
 
@@ -129,7 +134,11 @@ ___
 
                     variable FUEL
 
-        function setBaseClass(self, baseclass)
+        function setBaseClass(self, baseclass):   # overwrites all previous base classes and replace them with the new(s)
+                self.baseclass = baseclass if type(baseclass) == list else [baseclass]
+                return self
+                
+                def setBaseClassByName(self, baseclassname: str):
 
         function setBaseClassByName(self, baseclassname: str)
 
