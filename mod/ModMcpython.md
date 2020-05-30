@@ -3,17 +3,7 @@ ___
 
     variable VERSION_POST
 
-        variable VERSION
-
-            variable s
-
-            variable VERSION
-
-            variable c
-
-            variable VERSION
-
-        variable VERSION
+    function parse_version(string: str) -> tuple
 
     variable mcpython
         create the mod

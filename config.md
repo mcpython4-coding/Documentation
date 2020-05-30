@@ -8,6 +8,10 @@ ___
     variable VERSION_NAME
         possible: [<pre>]<version>, <normal mc snapshot format>, snapshot dev <number of snapshot> cycle <cycle number>
 
+    variable DEVELOPING_FOR
+
+    variable DEVELOPMENT_COUNTER - cycle 1
+
     variable VERSION_ORDER
         list of all versions since 19w52a to indicate order of release; used in save files todo: export to other file
 
