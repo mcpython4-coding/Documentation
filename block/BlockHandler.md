@@ -1,25 +1,18 @@
----
-***block/BlockHandler.py - documentation - Last updated on 17.04.2020 by uuk***
+***BlockHandler.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
-This file is used for dealing with blocks and keeping track about
-what blocks the game can use.
+    function register_block(registry, blockclass)
 
-    function register_block registry: event.Registry.Registry blockclass: block.Block.Block
-        Called by the registry when an new object is registered. Generates
-        also needed table entries in the registry object. Will raise 
-        ValueError when non-block-subclass is tried to be registered.
+                variable blockclass.CONDUCTS_REDSTONE_POWER
+
+                variable blockclass.CAN_MOBS_SPAWN_ON
+
+                    variable blockclass.ENABLE_RANDOM_TICKS
+
+    variable block_registry
+
+    variable block_registry.full_table - an table of localized & un-localized block names
+
+    function load()
         
-        WARNING: when direct calling this method for registration, the 
-        system may not work correct. There is stuff handled direct by the
-        registry system outside these function.
-    
-    line 22-23: create block registry
-
-    function load
-        Called by the loading system for loading the block stuff
-    
-    line 38: register load to the loading system
-
-    line 41-42: import of block helper files
-
+        loads all blocks that should be loaded, only the ones for blocks may be loaded somewhere else

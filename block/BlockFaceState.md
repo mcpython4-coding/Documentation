@@ -1,45 +1,55 @@
-----
-
-**block/BlockFaceState.py - Documentation - Last updated on 16.04.2020 by uuk**
-
-----
-
-This file contains the class for the status of the faces of every block in-game
+***BlockFaceState.py - documentation - last updated on 30.5.2020 by uuk***
+___
 
     class BlockFaceState
         
-        attribute block: block.Block.Block - the block based on
-        
-        attribute faces: dict<util.enums.EnumSide -> bool> - which faces are currently shown
-        
-        attribute face_data: dict<util.enums.EnumSide -> list<vertices>> - the vertex data for each face
-        
-        attribute custom_renderer: rendering.ICustomBlockRenderer - an custom renderer describing the block
-        
-        attribute subscribed_renderer: bool - True when custom_renderer is draw-function and it was added
-            to the correct event bus
+        class for face state of the block
+
+
+        function __init__(self, block)
             
-        function __init__ block: block.Block.Block
-            will set up the system for an block instance
+            block face state
+
+
+            variable self.block
+
+            variable self.faces
+
+            variable self.face_data
+
+            variable self.custom_renderer - holds an custom block renderer
+
+            variable self.subscribed_renderer: bool
+
+        function show_face(self, face: util.enums.EnumSide)
             
-        function show_face face: util.enums.EnumSide
-            will show an face. If already shown, northing happens. Will
-            handle custom block renderers as needed.
+            shows an face
+            :param face: the face of the block
+
+
+        function hide_face(self, face: util.enums.EnumSide)
             
-        function hide_face face: util.enums.EnumSide
-            will hide an face. If not shown, nothing happens. Will handle
-            custom block renderers as needed
+            will hide an face
+            :param face: the face to hide
+
+
+        function _draw_custom_render(self)
             
-        function _draw_custom_renderer
-            internally used to draw an custom block renderer. Used to send the correct interfaces
-            to the custom block renderers
+            will inherit the custom renderer
+
+
+        function update(self, redraw_complete=False)
             
-        function update [redraw_complete: bool = False]
-            Updates all faces. When redraw_complete is True, firstly, all faces are hidden.
+            updates the block face state
+            :param redraw_complete: if all sides should be re-drawn
+            todo: make redraw-complete always True or default to True
+
+
+        function hide_all(self)
             
-        function hide_all
-            will hide all shown faces. Will handle custom block renderers as needed.
+            will hide all faces
+
+
+        function __del__(self)
             
-        function __str__ -> str
-            transforms the BlockFaceState into an attribute-based object-str
-    
+            will delete references to various parts for gc

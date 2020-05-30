@@ -1,30 +1,37 @@
-----
+***BlockCarpet.py - documentation - last updated on 30.5.2020 by uuk***
+___
 
-**block/BlockCarpet.py - Documentation - Last updated on 16.04.2020 by uuk**
+    variable carpet_bbox
 
-----
-
-The file contains code for creating the carpet's from the color name
-
-
-    static attribute carpet_bbox: block.BoundingBox.BoundingBox - the bounding box of an carpet
-    
-    static function create_carpet color: str
-        creates an new carpet block-class
+    class ICarpet extends block.Block.Block
         
-        class Carpet extends block.Block.Block
-            the generated block-class
+        base class for every carpet
+
+
+        function __init__(self, *args, **kwargs)
             
-            static overriding attribute NAME: str - the name of the carpet block
-            
-            overriding function on_block_update
-                used to brake carpet when block under the carpet is broken
+            creates an new carpet class
+
+
+            variable self.face_solid
+
+        function on_block_update(self)
+
+        function get_view_bbox(self): return carpet_bbox
                 
-            overriding function is_solid_side side: util.enums.EnumSide -> bool
-                only the side on the down is solid
-                
-            overriding function get_view_bbox -> [...]
-                returns the default bbox
-                
-            static overriding function modify_block_item itemfactory: factory.ItemFactory.ItemFactory
-                sets the fuel level of the block
+                @classmethod
+                def modify_block_item(cls, itemfactory):
+
+        static
+        function modify_block_item(cls, itemfactory)
+
+    function create_carpet(carpet_color: str)
+        
+        generator function for carpets. Will create an new class for an carpet
+        :param carpet_color: the color name of the carpet
+        :return: the generated class
+
+
+        @G.registry class Carpet extends ICarpet
+
+            variable NAME: str - the name of the block

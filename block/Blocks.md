@@ -1,12 +1,13 @@
----
-***block/Blocks.py - documentation - Last updated on 17.04.2020 by uuk***
+***Blocks.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
-This file is used for generating the simple block classes.
-It uses factory.BlockFactory to generate the blocks.
+    function remove_if_downer_block_not_solid(blockinstance)
+        
+        Helper function for donwer implementation.
+        Will remove THIS block when the block below is air or an not-generated block
+        :param blockinstance: the block-instance to check
 
-    function load_blocks
-        Will create the factory instances for all "simple" blocks
-        See the file itself for an complete list
 
-    below everything else: make (1) loaded by loading system
+    function load_blocks()
+
+        variable colors - inecraft:colors"].entries

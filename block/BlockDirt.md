@@ -1,14 +1,20 @@
-----
+***BlockDirt.py - documentation - last updated on 30.5.2020 by uuk***
+___
 
-**block/BlockDirt.py - Documentation - Last updated on 16.04.2020 by uuk**
-
-----
-
-
-Code for the dirt-block
-
-    class BlockDirt extends block.Block.Block
-        static attribute NAME: str - the name of the block
+    @G.registry class BlockDirt extends Block.Block
         
-        overriding function on_random_update
-            called on random update, will try to convert to grass_block if possible
+        base class for dirt
+        todo: implement -> grass convert
+
+
+        variable NAME: str
+
+        variable HARDNESS
+
+        variable BLAST_RESISTANCE
+
+        variable BEST_TOOLS_TO_BREAK
+
+        variable ENABLE_RANDOM_TICKS
+
+        function on_random_update(self)

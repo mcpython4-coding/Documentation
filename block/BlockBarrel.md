@@ -1,58 +1,49 @@
-----
+***BlockBarrel.py - documentation - last updated on 30.5.2020 by uuk***
+___
 
-**block/BlockBarrel.py - Documentation - Last updated on 02.03.2020 by uuk**
+    @G.registry class BlockBarrel extends Block.Block
+        
+        class for the Barrel-Block
 
-----
 
-This file contains the class for the barrel-block.
-See https://minecraft.gamepedia.com/Barrel for more information.
-    
-    class BlockBarrel extends block.Block.Block
-        class for the barrel block
-        
-        overriding static attribute NAME: str - the name of the block
-        
-        attribute facing: str - where the block faces to
-        
-        attribute opened: bool - if the barrel is opened or not
-        
-        attribute inventory: gui.InventoryBarrel.InventoryBarrel - the inventory of the block
-        
-        overriding function __init__
-            sets up the barrel
+        variable NAME: str - the name of the block
+
+        function __init__(self, *args, **kwargs)
             
-        overrriding function on_player_interact itemstack: gui.ItemStack.ItemStack button: int modifiers: int exact_hit: tuple -> bool
-            opens the inventory when needed
-            
-        overriding function get_inventories
-            returns the inventory of the block
-            
-        overriding function get_hardness
-            returns the hardness of the block
-            
-        overriding function get_best_tools -> list<util.enums.ToolType>
-            returns axe as the best tool to brake the block with
-            
-        overriding function get_provided_slots side: util.enums.EnumSide
-            returns the slots of the inventory of the block
-            
-        overriding function set_model_state state: dict
-            sets the model state of the block
-            
-        overriding function get_model_state -> dict
-            returns the state of the barrel
-            
-        overriding static function get_all_model_states -> list
-            returns all possible states of the barrel
-            
-        static function set_block_data iteminst: item.Item.Item block: block.Block.Block
-            loads the inventory if arrival from an item
-            
-        overriding function on_request_item_for_block itemstack: gui.ItemStack.ItemStack
-            adds the inventory to the item when requested
-            
-        overriding function on_remove
-            drops the items from the inventory if needed
-            
-        overiding static function modify_block_item itemfactory: factory.ItemFactory.ItemFactory
-            sets the fuel level of the block
+            Creates an new BlockBarrel-class
+
+
+            variable self.facing: str - the direction the block faces to
+
+            variable self.opened: bool - if the barrel is open
+
+            variable self.inventory: gui.InventoryBarrel.InventoryBarrel
+
+        function on_player_interact(self, player, itemstack, button, modifiers, exact_hit) -> bool
+
+        function get_inventories(self)
+
+        variable HARDNESS
+
+        variable BEST_TOOLS_TO_BREAK
+
+        function get_provided_slots(self, side): return self.inventory.slots
+                
+                def set_model_state(self, state: dict):
+
+        function set_model_state(self, state: dict)
+
+        function get_model_state(self) -> dict
+
+        static
+        function get_all_model_states() -> list
+
+        static
+        function set_block_data(cls, iteminst, block)
+
+        function on_request_item_for_block(self, itemstack)
+
+        function on_remove(self)
+
+        static
+        function modify_block_item(cls, itemfactory)

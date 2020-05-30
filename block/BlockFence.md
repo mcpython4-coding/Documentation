@@ -1,60 +1,85 @@
-----
-
-**block/BlockFence.py - Documentation - Last updated on 16.04.2020 by uuk**
-
-----
-
-
-class for every fence
+***BlockFence.py - documentation - last updated on 30.5.2020 by uuk***
+___
 
     class IFence extends block.Block.Block
         
-        static attribute FENCE_TYPE_NAME: set - an list of type-names used for connecting
-        
-        static attribute BBOX - unused attribute to set the bounding box from
-        
-        attribute connections: dict<str[face name] -> bool> - an dict representing the connections
-        
-        overriding attribute BLOCK_ITEM_GENERATOR_STATE: dict<str[face name] -> str[bool.lower()]> - the state for block item gen
-        
-        overriding function __init__ [...]
-            construct an new fence-object 
-            
-        overriding function get_model_state -> dict
-            returns the constructed model state from the attribute connections
-            
-        overriding function on_block_update
-            will update connections & visible state
-            
-        overriding set_model_state state: dict
-            deserializes the previous stored data
-            
-        function connects_to face: util.enums.EnumSide blockinstance: block.Block.Block -> bool
-            will check if connecting to
-            
-    class IWoodenFence extends block.BlockFence.IFence
-        overriding attribute FENCE_TYPE_NAME: set - the wooden fence type
-        
-    class AcaciaFence extends block.BlockFence.IWoodenFence
-        overriding attribute NAME: str - the name of the block
-        
-    class BirchFence extends block.BlockFence.IWoodenFence
-        overriding attribute NAME: str - the name of the block
-    
-    class DarkOakFence extends block.BlockFence.IWoodenFence
-        overriding attribute NAME: str - the name of the block
-    
-    class JungleFence extends block.BlockFence.IWoodenFence
-        overriding attribute NAME: str - the name of the block
-    
-    class OakFence extends block.BlockFence.IWoodenFence
-        overriding attribute NAME: str - the name of the block
-    
-    class SpruceFence extends block.BlockFence.IWoodenFence
-        overriding attribute NAME: str - the name of the block
-        
-    class NetherBrickFence extends block.BlockFence.IFence
-        overriding attribute NAME: str - the name of the block
-        
-        overriding attribute FENCE_TYPE_NAME: set - the fence type
+        Base class for every fence-like block. Expects
 
+
+        variable FENCE_TYPE_NAME: set - the type list of the fences
+
+        variable BBOX - the bounding box
+            todo: add bounding-box
+
+        function __init__(self, *args, **kwargs)
+            
+            will create the fence
+
+
+            variable self.connections
+
+        function get_model_state(self) -> dict
+
+        function on_block_update(self)
+
+            variable block_north: block.Block.Block
+
+            variable block_east: block.Block.Block
+
+            variable block_south: block.Block.Block
+
+            variable block_west: block.Block.Block
+
+            variable self.connections["east"]
+
+            variable self.connections["south"]
+
+            variable self.connections["west"]
+
+            variable self.connections["north"]
+
+        function set_model_state(self, state: dict)
+
+        static
+        function get_all_model_states() -> list
+
+        function connects_to(self, face: util.enums.EnumSide, blockinstance: block.Block.Block)
+
+        variable BLOCK_ITEM_GENERATOR_STATE
+
+    class IWoodenFence extends IFence
+        
+        Base class for every wooden fence; used to set the wooden fence flag for all children at ones
+
+
+        variable FENCE_TYPE_NAME
+
+    @G.registry class AcaciaFence extends IWoodenFence
+
+        variable NAME
+
+    @G.registry class BirchFence extends IWoodenFence
+
+        variable NAME
+
+    @G.registry class DarkOakFence extends IWoodenFence
+
+        variable NAME
+
+    @G.registry class JungleFence extends IWoodenFence
+
+        variable NAME
+
+    @G.registry class OakFence extends IWoodenFence
+
+        variable NAME
+
+    @G.registry class SpruceFence extends IWoodenFence
+
+        variable NAME
+
+    @G.registry class NetherBrickFence extends IFence
+
+        variable NAME
+
+        variable FENCE_TYPE_NAME

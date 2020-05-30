@@ -1,71 +1,49 @@
-***setup.py - documentation***
+***setup.py - documentation - last updated on 30.5.2020 by uuk***
 ___
 
-This file is used for the prebuilding system.
-For more information, see prebuilding.md.
+    WARNING: the system is outdated and will likely be removed in the future
+    what does this system do?
+        as mentioned in #1 (may be closed when you read this), game loading takes / have taken for some reasons on some
+            devices very long (in #1: 30 minutes).
+        These file tries to fix this problem by adding an system which generates before the game is started by the user
+            (or on his first start in an new downloaded folder) the things from different parts of the game which can be
+            prepared before the game starts (texture atlases, file transformations, texture editing, ...) in an separated
+            folder. Access to the prepared data is organized by index files.
+        What happens if the user adds some data into the game?
+            The system is not generating during runtime anymore. To update the data, run program with --rebuild or import
+            the __main__ file and the setup file and call the functions by hand
+        What happens if an mod loader should be added?
+            Have a look what is done to generate the vanilla things. Try to give the mod an interface for generating things.
+            Rerun mod specified and vanilla-adapting tasks when the mod with the given version was run first. Afterwards,
+            only access the prepared data. 
 
-1. line 8 - 24: simple description of the system
 
-2. class IPrepareAbleTask(object)
-    base class for every "normal" prebuild task
-    
-    1. def get_name() -> str
-    
-        abstract method for getting the name of the task
-        
-    2. def dump_data(directory: str)
-        
-        abstract method for dumping data into the build-folder
-        
-    3. variable bool USES_DIRECTORY
-    
-        if an directory should be created for these task
+    class IPrepareAbleTask extends event.Registry.IRegistryContent
 
-3. variable event.Registry.Registry taskregistry: registry for 
-prebuilding tasks
+        variable TYPE
 
-4. def add()
-    
-    loading function for adding the tasks
-    
-    1. class Cleanup(setup.IPrepareAbleTask)
-        
-        class notated to G.registry for rebuilding. Will remove all data
-        from the cache
-        
-        1. def get_name() -> str
-        
-            overwrite of super method
-        
-        2. def dump_data(directory: str)
-        
-            overwrite of super method, will remove folder
-        
-        3. variable bool USES_DIRECTORY = False
-        
-            overwrite of super variable
-            
-    2. class TextureFactoryGenerate(IPrepareAbleTask)
-    
-        class notated to G.registry for rebuilding. Will prepare
-        various texture files for usage by the game
-        
-        WARNING: these class is "empty" and has no affect on the game
-        
-        1. def get_name() -> str
-        
-            overwrite of the super method
-            
-        2. def dump_data(directory: str)
-        
-            clear overwrite of the super method
-        
-        3. variable bool USES_DIRECTORY = False
-        
-            overwrite of super variable
+        variable USES_DIRECTORY
 
-5. def execute()
+    variable taskregistry
 
-    will execute all registered prebuild tasks in order of registration
-    
-6. line 89 to 93: setup game's stuff & register to loading system
+    function add()
+
+            static
+            function dump_data(directory: str)
+
+            variable USES_DIRECTORY
+
+        @G.registry class TextureFactoryGenerate extends IPrepareAbleTask
+
+            variable NAME
+
+            static
+            function dump_data(directory: str)
+
+            variable USES_DIRECTORY
+
+    function execute()
+
+            variable data
+
+            variable G.prebuilding
