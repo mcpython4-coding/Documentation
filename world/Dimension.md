@@ -29,6 +29,8 @@ ___
 
         function init_dims(self)
 
+        function setup_dimensions(self)
+
     variable G.dimensionhandler
 
     class Dimension
