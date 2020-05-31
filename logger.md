@@ -1,4 +1,4 @@
-***logger.py - documentation - last updated on 30.5.2020 by uuk***
+***logger.py - documentation - last updated on 31.5.2020 by uuk***
 ___
 
     variable FUNNY_STRINGS
@@ -8,6 +8,15 @@ ___
     variable log_file
 
     variable inter_home
+
+    variable ESCAPE
+
+    function escape(string: str) -> str
+        
+        will escape the string correctly
+        :param string: the string to escape
+        :return: the escaped string
+
 
     function println(*msg, sep=" ", end="\n", write_into_console=True, write_into_log_file=True)
         

@@ -1,4 +1,4 @@
-***World.py - documentation - last updated on 30.5.2020 by uuk***
+***World.py - documentation - last updated on 31.5.2020 by uuk***
 ___
 
     class World
@@ -105,9 +105,9 @@ ___
         @deprecation.deprecated("dev1-4", "a1.3.0")
         function show_sector(self, sector): self.show_chunk(sector)
                 
-                def show_chunk(self, chunk: typing.Tuple[int, int]):
+                def show_chunk(self, chunk: typing.Union[typing.Tuple[int, int], world.Chunk.Chunk]):
 
-        function show_chunk(self, chunk: typing.Tuple[int, int])
+        function show_chunk(self, chunk: typing.Union[typing.Tuple[int, int], world.Chunk.Chunk])
             
             Ensure all blocks in the given chunk that should be shown are
             drawn to the canvas.
@@ -117,12 +117,13 @@ ___
         @deprecation.deprecated("dev1-4", "a1.3.0")
         function hide_sector(self, sector, immediate=False): self.hide_chunk(sector)
                 
-                def hide_chunk(self, chunk: typing.Tuple[int, int]):
+                def hide_chunk(self, chunk: typing.Union[typing.Tuple[int, int], world.Chunk.Chunk]):
 
-        function hide_chunk(self, chunk: typing.Tuple[int, int])
+        function hide_chunk(self, chunk: typing.Union[typing.Tuple[int, int], world.Chunk.Chunk])
             
             Ensure all blocks in the given chunk that should be hidden are
             removed from the canvas.
+            :param chunk: the chunk to hide
 
 
         @deprecation.deprecated("dev1-4", "a1.3.0")
