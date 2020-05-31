@@ -1,4 +1,4 @@
-***config.py - documentation - last updated on 30.5.2020 by uuk***
+***config.py - documentation - last updated on 31.5.2020 by uuk***
 ___
 
     variable MC_VERSION_BASE
@@ -72,6 +72,12 @@ ___
 
     variable WRITE_NOT_FORMATTED_EXCEPTION - if exceptions should be not formatted-printed to console by logger
 
+    variable ENABLE_PROFILING
+
+    variable ENABLE_PROFILER_DRAW
+
+    variable ENABLE_PROFILER_TICK
+
     function load()
 
         variable config
@@ -84,6 +90,8 @@ ___
 
         variable rendering
 
+        variable profiler
+
         variable biomeconfig
 
         @G.modloader("minecraft", "stage:mod:config:work")
@@ -94,3 +102,9 @@ ___
             variable WRITE_NOT_FORMATTED_EXCEPTION
 
             variable BIOME_HEIGHT_RANGE_MAP["minecraft:plains"]
+
+            variable ENABLE_PROFILING
+
+            variable ENABLE_PROFILER_DRAW
+
+            variable ENABLE_PROFILER_TICK

@@ -1,4 +1,4 @@
-***window.py - documentation - last updated on 30.5.2020 by uuk***
+***window.py - documentation - last updated on 31.5.2020 by uuk***
 ___
 
     class Window extends pyglet.window.Window
@@ -49,9 +49,15 @@ ___
 
             variable self.mouse_position
 
+            variable self.draw_profiler
+
+            variable self.tick_profiler
+
             variable self.keys
 
             variable self.CROSSHAIRS_TEXTURE
+
+        function print_profiler(self, dt=None)
 
         function reset_caption(self)
 
@@ -256,50 +262,18 @@ ___
 
         function on_draw(self)
             
+            Called by pyglet to draw the canvas.
 
 
         function draw_focused_block(self)
             
-            crosshairs.
+            Draw black edges around the block that is currently under the crosshairs.
 
-
-            variable vector
-
-            variable block
-
-                variable block
 
         function draw_label(self)
             
+            Draw the label in the top left of the screen.
 
-
-                variable x
-
-            variable chunk
-
-            variable self.label.text
-
-            variable vector
-
-                variable blockname
-
-                variable self.label2.text
-
-                variable self.label3.y
-
-                variable self.label3.y
-
-                variable biomemap
-
-            variable process
-
-            variable mem_info
-
-            variable used_m
-
-            variable total_m
-
-                variable self.label3.text
 
         function get_block_entity_info(self)
 

@@ -1,9 +1,12 @@
-***ConfigFile.py - documentation - last updated on 30.5.2020 by uuk***
+***ConfigFile.py - documentation - last updated on 31.5.2020 by uuk***
 ___
 
     class InvalidMapperData extends Exception
 
     class StringParsingPool
+        
+        An system dedicated to handling an file context with the ability to pop and get lines.
+
 
         function __init__(self, text: str)
 
@@ -16,27 +19,56 @@ ___
         function get_line(self) -> str
 
     function toDataMapper(value)
+        
+        will 'map' the given value to an IDataMapper-object
+        :param value: the value to map
+        :return: an IDataMapper-instance
+        WARNING: in case of non normal data mapper found, an StringDataMapper is used
+
 
     class IDataMapper
+        
+        base class for every serialize-able content in config files
+
 
         function __init__(self, default_value)
 
             variable self.value
 
         function read(self)
+            
+            will return an pythonic representation of the content
+
 
         function write(self, value)
+            
+            will write to the internal buffer the data
+            :param value: the value to write
+
 
         function serialize(self) -> str
+            
+            will compress the mapper into an string-representation
+            :return: the stringified version
+
 
         function deserialize(self, d: StringParsingPool)
+            
+            will write certain data into the mapper
+            :param d: the pool to read from
+
 
         function integrate(self, other)
+            
+            will integrate the data from other into this
+            :param other: the mapper to integrate
+
 
     class ICustomDataMapper extends IDataMapper,  ABC
         
-        For modders which would like to add their own config data types.
-        Will need to add to the MAPPERS list
+        For modders which would like to add their own config data types
+        Will need to add to the MAPPERS list to work with config system
+        WARNING: lower priority than normal aata mappers beside string mapper. Overriding with this not possible
 
 
         static
@@ -46,6 +78,9 @@ ___
         function parse(cls, data) -> IDataMapper
 
     class DictDataMapper extends IDataMapper
+        
+        implementation of an mapper mapping dict-objects
+
 
         function __init__(self)
 
