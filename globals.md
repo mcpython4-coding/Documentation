@@ -1,4 +1,4 @@
-***globals.py - documentation - last updated on 27.5.2020 by uuk***
+***globals.py - documentation - last updated on 6.6.2020 by uuk***
 ___
 
     variable prebuilding

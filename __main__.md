@@ -1,4 +1,4 @@
-***__main__.py - documentation - last updated on 30.5.2020 by uuk***
+***__main__.py - documentation - last updated on 6.6.2020 by uuk***
 ___
 
         variable version
