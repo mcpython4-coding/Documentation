@@ -1,4 +1,4 @@
-***World.py - documentation - last updated on 31.5.2020 by uuk***
+***World.py - documentation - last updated on 6.6.2020 by uuk***
 ___
 
     class World
@@ -12,14 +12,6 @@ ___
 
             variable self.active_dimension: int - todo: change to str; todo: move to player; todo: make property
 
-            variable self.CANCEL_DIM_CHANGE: bool - flag for canceling the dim change event
-
-            variable self.hide_faces_to_ungenerated_chunks: bool - todo: move to configs
-
-            variable self.filename: str - the file-name to use, todo: make None if not needed
-
-            variable self.savefile: storage.SaveFile.SaveFile - the save file instance
-
             variable self.active_player: str - todo: make property, make None-able & set default None when not in world
                 self.add_player("unknown", add_inventories=False)
 
@@ -32,7 +24,7 @@ ___
             :return: the player instance
 
 
-        function get_active_player(self, create: bool = True) -> typing.Union[world.player.Player, None]
+        function get_active_player(self, create: bool = True) -> typing.Union[mcpython.world.player.Player, None]
             
             returns the player instance for this client
             :param create: if the player should be created or not
@@ -50,14 +42,14 @@ ___
 
             variable self.gamerulehandler
 
-        function get_active_dimension(self) -> typing.Union[world.Dimension.Dimension, None]
+        function get_active_dimension(self) -> typing.Union[mcpython.world.Dimension.Dimension, None]
             
             will return the dimension the player is in
             :return: the dimension or None if no dimension is set
             todo: move to player
 
 
-        function add_dimension(self, dim_id: int, name: str, dim_config=None, config=None) -> world.Dimension.Dimension
+        function add_dimension(self, dim_id: int, name: str, dim_config=None, config=None) -> mcpython.world.Dimension.Dimension
             
             will add an new dimension into the system
             :param dim_id: the id to create under
@@ -75,7 +67,7 @@ ___
             todo: move to player
 
 
-        function get_dimension(self, dim_id: int) -> world.Dimension.Dimension
+        function get_dimension(self, dim_id: int) -> mcpython.world.Dimension.Dimension
             
             will get an dimension with an special id
             :param dim_id: the id to use
@@ -105,9 +97,9 @@ ___
         @deprecation.deprecated("dev1-4", "a1.3.0")
         function show_sector(self, sector): self.show_chunk(sector)
                 
-                def show_chunk(self, chunk: typing.Union[typing.Tuple[int, int], world.Chunk.Chunk]):
+                def show_chunk(self, chunk: typing.Union[typing.Tuple[int, int], mcpython.world.Chunk.Chunk]):
 
-        function show_chunk(self, chunk: typing.Union[typing.Tuple[int, int], world.Chunk.Chunk])
+        function show_chunk(self, chunk: typing.Union[typing.Tuple[int, int], mcpython.world.Chunk.Chunk])
             
             Ensure all blocks in the given chunk that should be shown are
             drawn to the canvas.
@@ -117,9 +109,9 @@ ___
         @deprecation.deprecated("dev1-4", "a1.3.0")
         function hide_sector(self, sector, immediate=False): self.hide_chunk(sector)
                 
-                def hide_chunk(self, chunk: typing.Union[typing.Tuple[int, int], world.Chunk.Chunk]):
+                def hide_chunk(self, chunk: typing.Union[typing.Tuple[int, int], mcpython.world.Chunk.Chunk]):
 
-        function hide_chunk(self, chunk: typing.Union[typing.Tuple[int, int], world.Chunk.Chunk])
+        function hide_chunk(self, chunk: typing.Union[typing.Tuple[int, int], mcpython.world.Chunk.Chunk])
             
             Ensure all blocks in the given chunk that should be hidden are
             removed from the canvas.
