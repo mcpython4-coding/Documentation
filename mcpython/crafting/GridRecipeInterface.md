@@ -1,4 +1,4 @@
-***GridRecipeInterface.py - documentation - last updated on 6.6.2020 by uuk***
+***GridRecipeInterface.py - documentation - last updated on 7.6.2020 by uuk***
 ___
 
     class GridRecipeInterface extends mcpython.crafting.IRecipeInterface.IRecipeInterface
@@ -38,4 +38,4 @@ ___
 
         function on_output_update(self, player=False)
 
-        function on_output_shift_click(self, slot, x, y, button, modifiers)
+        function on_output_shift_click(self, slot, x, y, button, modifiers, player)

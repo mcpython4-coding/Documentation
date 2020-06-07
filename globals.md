@@ -5,7 +5,7 @@ ___
 
     variable debugevents
 
-    variable dev_environment
+    variable dev_environment - dynamical set on build
 
     variable local
 
