@@ -1,6 +1,2 @@
-***IRecipeInterface.py - documentation - last updated on 6.6.2020 by uuk***
+***IRecipeInterface.py - documentation - last updated on 7.6.2020 by uuk***
 ___
-
-    class IRecipeInterface
-
-        variable NAME

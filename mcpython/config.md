@@ -1,4 +1,4 @@
-***config.py - documentation - last updated on 6.6.2020 by uuk***
+***config.py - documentation - last updated on 7.6.2020 by uuk***
 ___
 
     variable MC_VERSION_BASE
@@ -10,7 +10,7 @@ ___
 
     variable DEVELOPING_FOR
 
-    variable DEVELOPMENT_COUNTER - cycle 1
+    variable DEVELOPMENT_COUNTER - major step 2
 
     variable VERSION_ORDER
         list of all versions since 19w52a to indicate order of release; used in save files todo: export to other file

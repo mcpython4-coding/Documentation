@@ -49,3 +49,11 @@ For advanced modders:
 
     You may want to search with hasattr function; function should start with mod name to make sure that it does not 
     override another mod's function
+
+- setting up your workspace
+    
+    The workspace is very free. You should create an mod.json file for your mod
+    information. If you follow not the end-user code structure, you should
+    add an file which generates you an mod-zipfile \[example see tools/generate_build.py].
+    If you want to use data generators, make sure you have mcpython4 in an dev-environment set up
+    or override the globals.py flag indicating dev environment.  

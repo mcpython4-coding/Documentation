@@ -1,4 +1,4 @@
-***ModLoader.py - documentation - last updated on 6.6.2020 by uuk***
+***ModLoader.py - documentation - last updated on 7.6.2020 by uuk***
 ___
 
     class LoadingStage
@@ -50,6 +50,9 @@ ___
         variable ADD_LOADING_STAGES
 
         variable PREBUILD
+
+        variable DATA_GENERATION
+            Optional stage for running the data generators. Only active in --data-gen mode
 
         variable CONFIGS
             first: create ConfigFile objects, second: internally, third: do something with the data
@@ -280,3 +283,6 @@ ___
 
 
     variable G.modloader
+
+    @G.modloader("minecraft", "special:exit")
+    function exit()

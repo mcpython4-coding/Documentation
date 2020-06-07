@@ -15,6 +15,10 @@ ___
 
     variable tmp
 
+    variable data_gen
+
+    variable data_gen_exit
+
     variable STORAGE_VERSION
 
     variable window
