@@ -1,8 +1,9 @@
-***ModelFactory.py - documentation - last updated on 8.6.2020 by uuk***
+***ModelFactory.py - documentation - last updated on 10.6.2020 by uuk***
 ___
 
-    class ModelFactory
+    @deprecation.deprecated("dev2-2", "a1.5.0") class ModelFactory
 
+        @deprecation.deprecated("dev2-2", "a1.5.0")
         function __init__(self, name: str, parent="block/block")
 
             variable self.name
@@ -15,6 +16,8 @@ ___
 
         function add_drawing_box(self, position, size, texturenames)
 
+        @deprecation.deprecated("dev2-2", "a1.5.0")
         function set_texture(self, name, texturefile)
 
+        @deprecation.deprecated("dev2-2", "a1.5.0")
         function finish(self)

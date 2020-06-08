@@ -1,4 +1,4 @@
-***Configuration.py - documentation - last updated on 8.6.2020 by uuk***
+***Configuration.py - documentation - last updated on 10.6.2020 by uuk***
 ___
 
     class IDataGenerator
@@ -50,6 +50,14 @@ ___
             
             will create an new mcpython.datagen.RecipeGenerator.ShapelessRecipeGenerator create with these config object
             :param name: the name to generate under; used for the path-formatter
+
+
+        function one_to_one(self, name: str, i, o)
+            
+            simple way to create an shapeless recipe with only one input and one output
+            :param name: the name to generate under; used for the path-formatter
+            :param i: the input
+            :param o: the output
 
 
         function smelting_recipe(self, *args, **kwargs)
