@@ -2,52 +2,78 @@
 ___
 
     class ICraftingKeyEncoder
+        
+        base class for an encoder for an crafting field
+
 
         static
-        function encode(cls, data): raise NotImplementedError()
+        function encode(cls, data, config): raise NotImplementedError()
                 
                 
                 class ItemStackEncoder(ICraftingKeyEncoder):
 
     class ItemStackEncoder extends ICraftingKeyEncoder
+        
+        encodes an ItemStack-instance
+        WARNING: in normal mode, ItemStacks can NOT be used as they are based on the item-registry which is not yet
+            filled with data
+
 
         static
         function valid(cls, data) -> bool
 
         static
-        function encode(cls, data: mcpython.gui.ItemStack.ItemStack)
+        function encode(cls, data: mcpython.gui.ItemStack.ItemStack, config)
 
     class TagEncoder extends ICraftingKeyEncoder
+        
+        encodes an string-tag like "#minecraft:logs"
+
 
         static
         function valid(cls, data) -> bool
 
         static
-        function encode(cls, data: str)
+        function encode(cls, data: str, config)
 
     class StringTypedItem extends ICraftingKeyEncoder
+        
+        encodes an raw item name
+
 
         static
         function valid(cls, data) -> bool
 
         static
-        function encode(cls, data)
+        function encode(cls, data, config)
 
     class MixedTypeList extends ICraftingKeyEncoder
+        
+        encodes an list of key encode-ables
+
 
         static
         function valid(cls, data) -> bool
 
         static
-        function encode(cls, data: list)
+        function encode(cls, data: list, config)
 
     variable CRAFTING_ENCODERS
 
-    function encode_data(data)
+    function encode_data(data, config)
+        
+        encodes data together with the configuration to use
+        :param data: the data to encode
+        :param config: the config to use
+        :return: encoded data for later dumping in data gen
+
 
     variable INDICATOR_LIST
 
     class ShapedRecipeGenerator extends mcpython.datagen.Configuration.IDataGenerator
+        
+        Generator for an shaped recipe
+
 
         function __init__(self, name: str, config)
 
