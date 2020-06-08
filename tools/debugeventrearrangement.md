@@ -1,4 +1,4 @@
-***debugeventrearrangement.py - documentation - last updated on 30.5.2020 by uuk***
+***debugeventrearrangement.py - documentation - last updated on 8.6.2020 by uuk***
 ___
 
     variable local
