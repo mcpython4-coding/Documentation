@@ -31,7 +31,7 @@ ___
 
             variable self.wrap_cache - holding the data when calling wrap() to make later re-use possible
 
-        function wrap(self) -> dict
+        function wrap(self, config) -> dict
             
             will encode your data to an json-able dict
 
@@ -73,10 +73,10 @@ ___
 
             variable self.states
 
-        function add_state(self, state: typing.Any[str, dict, list], *models: typing.List[typing.Any[str, ModelRepresentation]])
+        function add_state(self, state: typing.Union[None, str, dict, list], *models)
             
             will add an new possible state into the block state file
-            :param state: the state as an str, an dict or an list of states
+            :param state: the state as an str, an dict or an list of states or None for default
             :param models: the models to use in this case
 
 
@@ -93,8 +93,7 @@ ___
 
             variable self.states
 
-        function add_state(self, state: typing.Any[None, str, dict, list],
-                *models: typing.List[typing.Any[str, ModelRepresentation]]):
+        function add_state(self, state: typing.Union[None, str, dict, list], *models)
             
             will add an entry
             :param state: the case in which this should be active.
@@ -153,7 +152,7 @@ ___
 
         function set_texture_variable(self, name: str, texture: str)
 
-        function add_element(self, f: tuple, t: tuple, *faces: typing.List[SingleFaceConfiguration], rotation_center=None,
+        function add_element(self, f: tuple, t: tuple, *faces, rotation_center=None,
                 rotation_axis=None, rotation_angle=None, rotation_rescale=False, shade=True):
 
         function set_display_mode(self, key: str, config: ModelDisplay)
