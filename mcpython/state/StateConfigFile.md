@@ -1,4 +1,4 @@
-***StateConfigFile.py - documentation - last updated on 8.6.2020 by uuk***
+***StateConfigFile.py - documentation - last updated on 11.6.2020 by uuk***
 ___
 
     class IStateConfigEntry extends mcpython.event.Registry.IRegistryContent
@@ -16,7 +16,8 @@ ___
 
         static
         function deserialize(cls, state_instance, data: dict,
-                existing: typing.Union[None, mcpython.state.StatePart.StatePart]) -> mcpython.state.StatePart.StatePart:
+                existing: typing.Union[
+                None, mcpython.state.StatePart.StatePart]) -> mcpython.state.StatePart.StatePart:
 
             variable size
 
@@ -74,12 +75,52 @@ ___
 
                 variable existing.text_size
 
+    @G.registry class UIProgressBarConfigEntry extends IStateConfigEntry
+
+        variable NAME
+
+        static
+        function deserialize(cls, state_instance, data: dict, existing) -> mcpython.state.StatePart.StatePart
+
+            variable position
+
+            variable size
+
+            variable color
+
+            variable item_count
+
+            variable status
+
+            variable text
+
+            variable anchor_ele
+
+            variable anchor_win
+
+                variable existing.position
+
+                variable existing.size
+
+                variable existing.anchor_window
+
+                variable existing.anchor_element
+
+                variable existing.color
+
+                variable existing.progress
+
+                variable existing.progress_max
+
+                variable existing.text
+
     @G.registry class ConfigBackground extends IStateConfigEntry
 
         variable NAME
 
         static
-        function deserialize(cls, state_instance, data: dict, existing: typing.Union[None, mcpython.state.StatePart.StatePart]) -> \
+        function deserialize(cls, state_instance, data: dict,
+                existing: typing.Union[None, mcpython.state.StatePart.StatePart]) -> \
                 mcpython.state.StatePart.StatePart:
                 import mcpython.state.StatePartConfigBackground
                 if existing is not None and issubclass(type(existing),

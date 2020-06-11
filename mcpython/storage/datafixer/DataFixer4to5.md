@@ -1,7 +1,7 @@
-***DataFixer4to5.py - documentation - last updated on 8.6.2020 by uuk***
+***DataFixer4to5.py - documentation - last updated on 11.6.2020 by uuk***
 ___
 
-    @G.registry class GeneralFix extends mcpython.storage.datafixer.IDataFixer.IGeneralDataFixer
+    @deprecation.deprecated("dev3-1", "a1.3.0") class GeneralFix extends mcpython.storage.datafixer.IDataFixer.IGeneralDataFixer
 
         variable NAME
 
@@ -9,25 +9,25 @@ ___
 
         variable UPGRADES_TO
 
-    @G.registry class ChunkFixer extends mcpython.storage.datafixer.IDataFixer.IDataFixer
+    @deprecation.deprecated("dev3-1", "a1.3.0") class ChunkFixer extends mcpython.storage.datafixer.IDataFixer.IDataFixer
 
         variable NAME
-            NAME should be: "<version from>-<version to>:<part>"
 
-        variable TRANSFORMS - from, to
+        variable TRANSFORMS
 
-        variable PART - which part it fixes, only one per part is executed
+        variable PART
 
+        @deprecation.deprecated("dev3-1", "a1.3.0")
         static
         function fix(cls, savefile, dimension, region)
 
-    @G.registry class InventoryFixer extends mcpython.storage.datafixer.IDataFixer.IDataFixer
+    @deprecation.deprecated("dev3-1", "a1.3.0") class InventoryFixer extends mcpython.storage.datafixer.IDataFixer.IDataFixer
 
         variable NAME
 
-        variable TRANSFORMS - from, to
+        variable TRANSFORMS
 
-        variable PART - which part it fixes, only one per part is executed
+        variable PART
 
         static
         function fix(cls, savefile, path, file=None)

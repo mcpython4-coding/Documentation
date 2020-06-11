@@ -1,4 +1,4 @@
-***SaveFile.py - documentation - last updated on 8.6.2020 by uuk***
+***SaveFile.py - documentation - last updated on 11.6.2020 by uuk***
 ___
 
     How to decide when an new version is needed?
@@ -25,8 +25,12 @@ ___
         - chest container stores now also the loot table link when set
     - 4: introduced: 31.03.2020, outdated since: -, not loadable since: -
         - block coordinates are stored now relative to chunk; decreases chunk size
-    - 5: introduced: 17.03.2020 [part of entity update], outdated since: -, not loadable since: -
+    - 5: introduced: 17.03.2020 [part of entity update], outdated since: 11.06.2020, not loadable since: -
         - added entity serializer
+    - 6: introduced: 11.06.2020, outdated since: -, not loadable since: -
+        - re-write of data fixer system, old still fix-able
+        - removed "version"-attribute out of region files and inventory files
+        - data fixers are applied to the WHOLE world ON LOAD, not when needed
 
 
     variable G.STORAGE_VERSION - the latest version, used for upgrading
@@ -34,11 +38,29 @@ ___
     variable SAVE_DIRECTORY
         where the stuff should be saved
 
+    class DataFixerNotFoundException extends Exception
+
+    function register_storage_fixer(_, fixer: mcpython.storage.datafixers.IDataFixer.IStorageVersionFixer)
+
+    function register_mod_fixer(_, fixer: mcpython.storage.datafixers.IDataFixer.IModVersionFixer)
+
     class SaveFile
         
         Interface to an stored file on the disk
         Used to load certain parts into the system & store them
 
+
+        variable storage_version_fixers
+
+        variable mod_fixers
+
+        variable storage_fixer_registry
+
+        variable mod_fixer_registry
+
+        variable group_fixer_registry
+
+        variable part_fixer_registry
 
         function __init__(self, directory_name: str)
             
@@ -52,14 +74,12 @@ ___
 
             variable self.save_in_progress
 
+        function region_iterator(self)
+
         function load_world(self)
             
             loads all setup-data into the world
 
-
-                    variable generaldatafixer
-
-                    variable self.version
 
         function save_world(self, *_, override=False)
             
@@ -68,14 +88,19 @@ ___
             :param override: flag for saving the chunks
 
 
-        function upgrade(self, part=None, version=None, to=None, **kwargs)
-            
-            upgrades the part of the SaveFile to the latest version supported
-            :param part: the part to update, or None, if all should upgrade
-            :param kwargs: kwargs given to the fixers
-            :param version: which version to upgrade from
-            :param to: to which version to upgrade to
+        function apply_storage_fixer(self, name: str, *args, **kwargs)
 
+        function apply_group_fixer(self, name: str, *args, **kwargs)
+
+        function apply_part_fixer(self, name: str, *args, **kwargs)
+
+        function apply_mod_fixer(self, modname: str, source_version: tuple, *args, **kwargs)
+
+        static
+        function _get_distance(cls, v, t)
+
+        static
+        function get_serializer_for(cls, part)
 
         function read(self, part, **kwargs)
             
@@ -133,3 +158,10 @@ ___
             saves bytes into the system
             :param file: the file to save to
             :param data: the data to save
+
+
+        @deprecation.deprecated("dev3-1", "a1.3.0")
+        function upgrade(self, part=None, version=None, to=None, **kwargs)
+
+    @G.modloader("minecraft", "stage:datafixer:general")
+    function load_elements()

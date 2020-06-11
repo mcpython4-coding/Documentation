@@ -1,37 +1,36 @@
-***IDataFixer.py - documentation - last updated on 8.6.2020 by uuk***
+***IDataFixer.py - documentation - last updated on 11.6.2020 by uuk***
 ___
 
-    class DataFixerException extends Exception
+    @deprecation.deprecated("dev3-1", "a1.3.0") class DataFixerException extends Exception
 
-    class IDataFixer extends mcpython.event.Registry.IRegistryContent
+    @deprecation.deprecated("dev3-1", "a1.3.0") class IDataFixer extends mcpython.event.Registry.IRegistryContent
 
         variable TYPE
 
-        variable TRANSFORMS - from, to
+        variable TRANSFORMS
 
-        variable PART - which part it fixes, only one per part is executed
+        variable PART
 
-        variable DEPENDS - an list of fixer parts which should be executed first
+        variable DEPENDS
 
+        @deprecation.deprecated("dev3-1", "a1.3.0")
         static
         function fix(cls, savefile)
 
-    class IGeneralDataFixer extends mcpython.event.Registry.IRegistryContent
-        
-        Every version supported by datafixer need this.
-        It provides information what to fix on load and what can wait
-
+    @deprecation.deprecated("dev3-1", "a1.3.0") class IGeneralDataFixer extends mcpython.event.Registry.IRegistryContent
 
         variable TYPE
 
-        variable LOAD_FIXES - an list of parts to fix an or (partname, kwargs)
+        variable LOAD_FIXES
 
-        variable UPGRADES_TO - which version this datafixer upgrades to
+        variable UPGRADES_TO
 
-    variable datafixerregistry
+    variable datafixerregistry - mcpython.event.Registry.Registry("datafixers", ["minecraft:datafixer"])
 
-    variable generaldatafixerregistry
+    variable generaldatafixerregistry - mcpython.event.Registry.Registry("generaldatafixers", ["minecraft:general_datafixer"])
 
+    @deprecation.deprecated("dev3-1", "a1.3.0")
     function load_general_fixer()
 
+    @deprecation.deprecated("dev3-1", "a1.3.0")
     function load_fixer()
