@@ -1,4 +1,4 @@
-***recipes.py - documentation - last updated on 10.6.2020 by uuk***
+***recipes.py - documentation - last updated on 11.6.2020 by uuk***
 ___
 
     variable DEFAULT_OUTPUT - where to output data - in dev environment
@@ -389,7 +389,7 @@ ___
 
         variable adG
 
-        variable adH
+        variable adH - ooden_slabs"
 
         variable adI
 
@@ -603,7 +603,7 @@ ___
 
         variable afJ
 
-        variable afK - ooden_slabs"
+        variable afK
 
         variable afL
 
@@ -837,7 +837,7 @@ ___
 
         variable ahW
 
-        variable ahX
+        variable ahX - lanks"
 
         variable ahY
 
@@ -931,7 +931,7 @@ ___
 
         variable aiR
 
-        variable aiS
+        variable aiS - ogs"
 
         variable aiT
 
@@ -996,353 +996,3 @@ ___
         variable ajx
 
         variable ajy
-
-        variable ajz
-
-        variable ajA
-
-        variable ajB
-
-        variable ajC
-
-        variable ajD
-
-        variable ajE
-
-        variable ajF
-
-        variable ajG
-
-        variable ajH
-
-        variable ajI
-
-        variable ajJ
-
-        variable ajK
-
-        variable ajL
-
-        variable ajM
-
-        variable ajN
-
-        variable ajO
-
-        variable ajP
-
-        variable ajQ
-
-        variable ajR
-
-        variable ajS
-
-        variable ajT
-
-        variable ajU
-
-        variable ajV
-
-        variable ajW
-
-        variable ajX
-
-        variable ajY
-
-        variable ajZ
-
-        variable aka
-
-        variable akb
-
-        variable akc
-
-        variable akd
-
-        variable ake
-
-        variable akf
-
-        variable akg
-
-        variable akh
-
-        variable aki
-
-        variable akj
-
-        variable akk
-
-        variable akl
-
-        variable akm
-
-        variable akn
-
-        variable ako
-
-        variable akp
-
-        variable akq
-
-        variable akr
-
-        variable aks
-
-        variable akt
-
-        variable aku
-
-        variable akv
-
-        variable akw
-
-        variable akx
-
-        variable aky
-
-        variable akz
-
-        variable akA
-
-        variable akB
-
-        variable akC
-
-        variable akD
-
-        variable akE
-
-        variable akF
-
-        variable akG
-
-        variable akH
-
-        variable akI
-
-        variable akJ
-
-        variable akK
-
-        variable akL
-
-        variable akM
-
-        variable akN
-
-        variable akO
-
-        variable akP
-
-        variable akQ
-
-        variable akR
-
-        variable akS
-
-        variable akT
-
-        variable akU
-
-        variable akV
-
-        variable akW
-
-        variable akX
-
-        variable akY
-
-        variable akZ
-
-        variable ala
-
-        variable alb - lanks"
-
-        variable alc
-
-        variable ald
-
-        variable ale
-
-        variable alf
-
-        variable alg
-
-        variable alh
-
-        variable ali
-
-        variable alj
-
-        variable alk
-
-        variable all
-
-        variable alm
-
-        variable aln
-
-        variable alo
-
-        variable alp
-
-        variable alq
-
-        variable alr
-
-        variable als
-
-        variable alt
-
-        variable alu
-
-        variable alv
-
-        variable alw
-
-        variable alx
-
-        variable aly
-
-        variable alz
-
-        variable alA
-
-        variable alB
-
-        variable alC
-
-        variable alD
-
-        variable alE
-
-        variable alF
-
-        variable alG
-
-        variable alH
-
-        variable alI
-
-        variable alJ
-
-        variable alK
-
-        variable alL
-
-        variable alM
-
-        variable alN
-
-        variable alO
-
-        variable alP
-
-        variable alQ
-
-        variable alR
-
-        variable alS
-
-        variable alT
-
-        variable alU
-
-        variable alV
-
-        variable alW
-
-        variable alX
-
-        variable alY
-
-        variable alZ
-
-        variable ama
-
-        variable amb
-
-        variable amc
-
-        variable amd
-
-        variable ame - ogs"
-
-        variable amf
-
-        variable amg
-
-        variable amh
-
-        variable ami
-
-        variable amj
-
-        variable amk
-
-        variable aml
-
-        variable amm
-
-        variable amn
-
-        variable amo
-
-        variable amp
-
-        variable amq
-
-        variable amr
-
-        variable ams
-
-        variable amt
-
-        variable amu
-
-        variable amv
-
-        variable amw
-
-        variable amx
-
-        variable amy
-
-        variable amz
-
-        variable amA
-
-        variable amB
-
-        variable amC
-
-        variable amD
-
-        variable amE
-
-        variable amF
-
-        variable amG
-
-        variable amH
-
-        variable amI
-
-        variable amJ
-
-        variable amK
-
-        variable amL
-
-        variable amM
-
-        variable amN
-
-        variable amO
-
-        variable amP
-
-        variable amQ
-
-        variable amR

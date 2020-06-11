@@ -1,9 +1,9 @@
-***window.py - documentation - last updated on 8.6.2020 by uuk***
+***window.py - documentation - last updated on 11.6.2020 by uuk***
 ___
 
     class NoWindow
         
-        class simulating an window
+        class simulating an window for the no-window mode
 
 
         function __init__(self, *args, **kwargs)
@@ -25,14 +25,19 @@ ___
     class Window extends pyglet.window.Window if "--no-window" not in sys.argv else NoWindow
 
         function __init__(self, *args, **kwargs)
+            
+            creates an new window-instance
+            :param args: args send to pyglet.window.Window-constructor
+            :param kwargs: kwargs send to pyglet.window.Window-constructor
 
-            variable G.window
+
+            variable G.window - write window instance to globals.py for sharing
 
             variable self.exclusive
                 Whether or not the window exclusively captures the mouse.
 
             variable self.flying
-                When flying gravity has no effect and speed is increased.
+                When flying gravity has no effect and speed is increased. todo: move to player
 
             variable self.strafe
                 Strafing is moving lateral to the direction you are facing,
@@ -40,107 +45,81 @@ ___
                 
                 First element is -1 when moving forward, 1 when moving back, and 0
                 otherwise. The second element is -1 when moving left, 1 when moving
-                right, and 0 otherwise.
+                right, and 0 otherwise. todo: move to player's movement-attribute
 
-            variable self.sector
+            variable self.sector - todo: move to player
                 Which sector the player is currently in.
 
-            variable self.dy
+            variable self.dy - todo: move to player
                 Velocity in the y (upward) direction.
 
             variable self.num_keys
                 Convenience list of num keys, todo: move to config.py
 
             variable self.world
-                Instance of the model that handles the world.
+                Instance of the model that handles the world.  todo: remove attribute
 
             variable self.label
-                The label that is displayed in the top left of the canvas.
+                The label that is displayed in the top left of the canvas.  todo: move to separated class
 
             variable self.label2
 
             variable self.label3
 
-            variable self.cpu_usage
+            variable self.cpu_usage - todo: move to separated class
 
-            variable self.cpu_usage_timer
+            variable self.cpu_usage_timer - todo: move to separated class
 
             variable self.mouse_pressing
-                storing mouse information
+                storing mouse information todo: use pyglet's mouse handler
 
             variable self.mouse_position
 
-            variable self.draw_profiler
+            variable self.draw_profiler - todo: move to separated class
 
-            variable self.tick_profiler
+            variable self.tick_profiler - todo: move to separated class
 
-            variable self.keys
+            variable self.keys - key handler from pyglet
 
             variable self.CROSSHAIRS_TEXTURE
+                todo: move to seperated class
 
         function print_profiler(self, dt=None)
+            
+            will print the enabled profiler(s)
+
 
         function reset_caption(self)
+            
+            will set the caption of the window to the default one
+
 
         function set_exclusive_mouse(self, exclusive)
             
-            the game will ignore the mouse.
+            If `exclusive` is True, the game will capture the mouse and not display it. Otherwise,
+            the mouse is free to move
 
 
-            variable self.exclusive
-
-        function get_sight_vector(self)
+        static
+        function get_sight_vector(cls)
             
+            Returns the current line of sight vector indicating the direction
             the player is looking.
+            todo: move to player
 
 
-            variable m
-                y ranges from -90 to 90, or -pi/2 to pi/2, so m ranges from 0 to 1 and
-                is 1 when looking ahead parallel to the ground and 0 when looking
-                straight up or down.
-
-            variable dy
-                dy ranges from -1 to 1 and is -1 when looking straight down and 1 when
-                looking straight up.
-
-            variable dx
-
-            variable dz
-
-        function get_motion_vector(self)
+        function get_motion_vector(self) -> tuple
             
+            Returns the current motion vector indicating the velocity of the
             player.
-            Returns
-            -------
-            vector : tuple of len 3
-                Tuple containing the velocity in x, y, and z respectively.
+            :return: vector: Tuple containing the velocity in x, y, and z respectively.
+            todo: integrate into player movement
 
 
-                variable strafe
-
-                variable y_angle
-
-                variable x_angle
-
-                variable dy
-
-                variable dx
-
-                variable dz
-
-                variable dy
-
-                variable dx
-
-                variable dz
-
-        function update(self, dt)
+        function update(self, dt: float)
             
-            clock.
-            Parameters
-            ----------
-            dt : float
-                The change in time since the last call.
+            This method is scheduled to be called repeatedly by the pyglet clock.
+            :param dt: The change in time since the last call.
 
 
                 variable self.cpu_usage
@@ -191,89 +170,80 @@ ___
 
                                 variable G.world.get_active_player().fallen_since_y
 
-        function on_mouse_press(self, x, y, button, modifiers)
+        function on_mouse_press(self, x: int, y: int, button: int, modifiers: int)
             
-            amd modifier mappings.
-            Parameters
-            ----------
-            x, y : int
-                The coordinates of the mouse click. Always center of the screen if
-                the mouse is captured.
-            button : int
-                Number representing mouse button that was clicked. 1 = left button,
-                4 = right button.
-            modifiers : int
-                Number representing any modifying keys that were pressed when the
-                mouse button was clicked.
+            Called when a mouse button is pressed. See pyglet docs for button amd modifier mappings.
+            :param x, y: The coordinates of the mouse click. Always center of the screen if the mouse is captured.
+            :param button: Number representing mouse button that was clicked. 1 = left button, 4 = right button.
+                [access via pyglet.window.mouse]
+            :param modifiers : Number representing any modifying keys that were pressed when the mouse button was clicked.
+                [access via pyglet.window.key.MOD_[...]]
 
 
             variable self.mouse_pressing[button]
 
         function on_mouse_release(self, x, y, button, modifiers)
-
-        function on_mouse_drag(self, x, y, dx, dy, buttons, modifiers)
-
-        function on_mouse_scroll(self, x, y, scroll_x, scroll_y)
-
-        function on_mouse_motion(self, x, y, dx, dy)
             
-            Parameters
-            ----------
-            x, y : int
-                The coordinates of the mouse click. Always center of the screen if
-                the mouse is captured.
-            dx, dy : float
-                The movement of the mouse.
+            called when an button is released with the same argument as on_mouse_press
+
+
+        function on_mouse_drag(self, x: int, y: int, dx: int, dy: int, buttons: int, modifiers: int)
+            
+            called when the mouse moves over the screen while one or more buttons are pressed
+            :param x: the new x position
+            :param y: the new y position
+            :param dx: the delta x
+            :param dy: the delta y
+            :param buttons: the buttons pressed
+            :param modifiers: the modifiers pressed
+
+
+        function on_mouse_scroll(self, x: int, y: int, scroll_x: int, scroll_y: int)
+            
+            called by pyglet when the mouse wheel is spinned
+            :param x: the new x scroll
+            :param y: the new y scroll
+            :param scroll_x: the delta x
+            :param scroll_y: the detla y
+
+
+        function on_mouse_motion(self, x: int, y: int, dx: float, dy: float)
+            
+            Called when the player moves the mouse.
+            :param x, y: The coordinates of the mouse click. Always center of the screen if the mouse is captured.
+            :param dx, dy : The movement of the mouse.
 
 
             variable self.mouse_position
 
-        function on_key_press(self, symbol, modifiers)
+        function on_key_press(self, symbol: int, modifiers: int)
             
-            mappings.
-            Parameters
-            ----------
-            symbol : int
-                Number representing the key that was pressed.
-            modifiers : int
-                Number representing any modifying keys that were pressed.
+            Called when the player presses a key. See pyglet docs for key mappings.
+            :param symbol: Number representing the key that was pressed.
+            :param modifiers: Number representing any modifying keys that were pressed.
 
 
         function on_key_release(self, symbol, modifiers)
             
-            mappings.
-            Parameters
-            ----------
-            symbol : int
-                Number representing the key that was pressed.
-            modifiers : int
-                Number representing any modifying keys that were pressed.
+            Called when the player releases a key. See pyglet docs for key mappings.
+            :param symbol: Number representing the key that was pressed.
+            :param modifiers: Number representing any modifying keys that were pressed.
 
 
-        function on_resize(self, width, height)
+        function on_resize(self, width: int, height: int)
             
+            Called when the window is resized to a new `width` and `height`.
 
-
-            variable self.label.y
-                label
-
-            variable self.label2.y
-
-            variable self.label3.x
-
-            variable self.label3.y
 
         function set_2d(self)
             
+            Configure OpenGL to draw in 2d.
 
-
-            variable viewport
 
         function set_3d(self, position=None, rotation=None)
             
+            Configure OpenGL to draw in 3d.
 
-
-            variable viewport
 
         function on_draw(self)
             
@@ -291,11 +261,22 @@ ___
 
 
         function get_block_entity_info(self)
+            
+            used by hotkey for copying entity data to the clipboard
+
 
         function draw_reticle(self)
             
+            Draw the crosshairs in the center of the screen.
 
 
-        function on_text(self, text)
+        function on_text(self, text: str)
+            
+            called by pyglet with decoded key values when an text is entered
+            :param text: the text entered
+
 
         function on_close(self)
+            
+            called when the window tries to close itself
+            cleans up some stuff before closing

@@ -1,4 +1,4 @@
-***player.py - documentation - last updated on 8.6.2020 by uuk***
+***player.py - documentation - last updated on 11.6.2020 by uuk***
 ___
 
     @globals.registry class Player extends mcpython.entity.Entity.Entity
@@ -106,3 +106,5 @@ ___
         function draw(self, position=None, rotation=None, full=None)
 
         function __del__(self)
+
+        function __str__(self)
