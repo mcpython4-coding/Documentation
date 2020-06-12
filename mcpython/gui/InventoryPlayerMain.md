@@ -1,4 +1,4 @@
-***InventoryPlayerMain.py - documentation - last updated on 11.6.2020 by uuk***
+***InventoryPlayerMain.py - documentation - last updated on 12.6.2020 by uuk***
 ___
 
     class InventoryPlayerMain extends mcpython.gui.Inventory.Inventory
@@ -20,6 +20,8 @@ ___
         function create_slots(self) -> list
 
         function armor_update(self, player=None)
+
+        function remove_items_from_crafting(self)
 
         function on_deactivate(self)
 
