@@ -1,4 +1,4 @@
-***StateWorldGeneration.py - documentation - last updated on 8.6.2020 by uuk***
+***StateWorldGeneration.py - documentation - last updated on 12.6.2020 by uuk***
 ___
 
     class StateWorldGeneration extends State.State
@@ -44,9 +44,13 @@ ___
             variable player
                 set player position
 
+            variable G.world.world_loaded
+
         function bind_to_eventbus(self)
 
         function on_key_press(self, symbol, modifiers)
+
+        function calculate_percentage_of_progress(self)
 
         function on_draw_2d_post(self)
 

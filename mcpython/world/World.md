@@ -1,4 +1,4 @@
-***World.py - documentation - last updated on 8.6.2020 by uuk***
+***World.py - documentation - last updated on 12.6.2020 by uuk***
 ___
 
     class World
@@ -14,6 +14,8 @@ ___
 
             variable self.active_player: str - todo: make property, make None-able & set default None when not in world
                 self.add_player("unknown", add_inventories=False)
+
+            variable self.world_loaded - describes if the world is loaded or not
 
         function add_player(self, name: str, add_inventories: bool = True, override: bool = True)
             

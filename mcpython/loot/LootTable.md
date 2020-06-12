@@ -1,4 +1,4 @@
-***LootTable.py - documentation - last updated on 8.6.2020 by uuk***
+***LootTable.py - documentation - last updated on 12.6.2020 by uuk***
 ___
 
     class LootTableTypes extends enum.Enum
@@ -47,9 +47,15 @@ ___
 
             variable self.loot_tables
 
+            variable self.relink_table
+
+        function shuffle_data(self)
+
         function __getitem__(self, item)
 
-        function roll(self, name: str, *args, **kwargs) -> list
+        function roll(self, name: str, *args, relink=True, **kwargs) -> list
+
+        function get_drop_for_block(self, block, player=None, relink=True)
 
         function for_mod_name(self, modname, directoryname=None)
 
@@ -60,8 +66,6 @@ ___
         function parse_function(self, data: dict) -> mcpython.loot.LootTableFunction.ILootTableFunction
 
         function parse_condition(self, data: dict) -> mcpython.loot.LootTableCondition.ILootTableCondition
-
-        function get_drop_for_block(self, block, player=None)
 
     variable handler
 

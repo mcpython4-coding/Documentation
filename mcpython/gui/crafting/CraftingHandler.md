@@ -1,4 +1,4 @@
-***CraftingHandler.py - documentation - last updated on 8.6.2020 by uuk***
+***CraftingHandler.py - documentation - last updated on 12.6.2020 by uuk***
 ___
 
     class CraftingHandler
@@ -6,6 +6,10 @@ ___
         function __init__(self)
 
             variable self.recipeinfotable
+
+            variable self.recipe_table
+
+            variable self.recipe_relink_table
 
             variable self.crafting_recipes_shapeless
                 all shapeless recipes sorted after item count
@@ -18,12 +22,15 @@ ___
 
             variable self.loaded_mod_dirs
 
+        function shuffle_data(self)
+
+        function check_relink(self, recipe)
+
         function __call__(self, obj)
 
-        static
-        function add_recipe(recipe: mcpython.gui.crafting.IRecipeType.IRecipe)
+        function add_recipe(self, recipe: mcpython.gui.crafting.IRecipeType.IRecipe, name)
 
-        function add_recipe_from_data(self, data: dict)
+        function add_recipe_from_data(self, data: dict, name: str)
 
         function add_recipe_from_file(self, file: str)
 

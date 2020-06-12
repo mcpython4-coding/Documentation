@@ -1,4 +1,4 @@
-***IRecipeType.py - documentation - last updated on 8.6.2020 by uuk***
+***IRecipeType.py - documentation - last updated on 12.6.2020 by uuk***
 ___
 
     class IRecipe
@@ -12,5 +12,7 @@ ___
         function __init__(self)
 
             variable self.uuid
+
+            variable self.name
 
         function register(self)

@@ -1,4 +1,4 @@
-***config.py - documentation - last updated on 11.6.2020 by uuk***
+***config.py - documentation - last updated on 12.6.2020 by uuk***
 ___
 
     variable MC_VERSION_BASE
@@ -78,6 +78,10 @@ ___
 
     variable ENABLE_PROFILER_TICK
 
+    variable SHUFFLE_DATA
+
+    variable SHUFFLE_INTERVAL
+
     function load()
 
         variable config
@@ -91,6 +95,8 @@ ___
         variable rendering
 
         variable profiler
+
+        variable misc
 
         variable biomeconfig
 
@@ -108,3 +114,9 @@ ___
             variable ENABLE_PROFILER_DRAW
 
             variable ENABLE_PROFILER_TICK
+
+            variable SHUFFLE_DATA
+
+            variable SHUFFLE_INTERVAL
+
+                function on_shuffle(dt)

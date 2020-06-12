@@ -1,4 +1,4 @@
-***StateWorldLoading.py - documentation - last updated on 8.6.2020 by uuk***
+***StateWorldLoading.py - documentation - last updated on 12.6.2020 by uuk***
 ___
 
     class StateWorldLoading extends State.State
@@ -29,6 +29,8 @@ ___
         function bind_to_eventbus(self)
 
         function on_key_press(self, symbol, modifiers)
+
+        function calculate_percentage_of_progress(self)
 
         function on_draw_2d_post(self)
 

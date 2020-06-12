@@ -1,4 +1,4 @@
-***StateStartMenu.py - documentation - last updated on 8.6.2020 by uuk***
+***StateStartMenu.py - documentation - last updated on 12.6.2020 by uuk***
 ___
 
     class StateStartMenu extends mcpython.state.State.State
@@ -12,6 +12,8 @@ ___
                 def bind_to_eventbus(self):
 
         function bind_to_eventbus(self)
+
+        function on_activate(self)
 
         static
         function on_new_game_press(x, y)

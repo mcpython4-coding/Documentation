@@ -1,4 +1,4 @@
-***WorldGenerationHandler.py - documentation - last updated on 8.6.2020 by uuk***
+***WorldGenerationHandler.py - documentation - last updated on 12.6.2020 by uuk***
 ___
 
     class WorldGenerationTaskHandler
@@ -11,6 +11,11 @@ ___
             variable self.chunks
 
             variable self.data_maps - invoke, world_changes, shown_updates
+
+        function get_total_task_stats(self) -> list
+            
+            will return the sum of all tasks of the whole system, in invoke, world_changes and shown_updates separated
+
 
         function get_task_count_for_chunk(self, chunk: mcpython.world.Chunk.Chunk) -> int
             
