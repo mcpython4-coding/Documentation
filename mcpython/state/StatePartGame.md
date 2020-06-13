@@ -1,4 +1,4 @@
-***StatePartGame.py - documentation - last updated on 8.6.2020 by uuk***
+***StatePartGame.py - documentation - last updated on 13.6.2020 by uuk***
 ___
 
     class HotKeys extends enum.Enum
@@ -99,6 +99,8 @@ ___
                 The change in time since the last call.
 
 
+            variable player
+
             variable speed
 
                 variable block_inst
@@ -111,9 +113,9 @@ ___
 
             variable before
 
-                variable G.world.get_active_player().fallen_since_y
+                variable player.fallen_since_y
 
-            variable G.world.get_active_player().position
+            variable player.position
 
                 variable self.void_damage_cooldown
 

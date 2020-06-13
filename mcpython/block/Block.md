@@ -1,4 +1,4 @@
-***Block.py - documentation - last updated on 8.6.2020 by uuk***
+***Block.py - documentation - last updated on 13.6.2020 by uuk***
 ___
 
     class Block extends mcpython.event.Registry.IRegistryContent
@@ -20,7 +20,7 @@ ___
 
         variable ENABLE_RANDOM_TICKS
 
-        function __init__(self, position: tuple, set_to=None, real_hit=None, state=None)
+        function __init__(self, position: tuple, set_to=None, real_hit=None, state=None, player=None)
             
             creates new Block
             :param position: the position to create the block on

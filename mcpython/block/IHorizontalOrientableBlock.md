@@ -1,4 +1,4 @@
-***IHorizontalOrientableBlock.py - documentation - last updated on 8.6.2020 by uuk***
+***IHorizontalOrientableBlock.py - documentation - last updated on 13.6.2020 by uuk***
 ___
 
     class IHorizontalOrientableBlock extends mcpython.block.Block.Block

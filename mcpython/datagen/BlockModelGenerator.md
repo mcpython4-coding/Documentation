@@ -1,4 +1,4 @@
-***BlockModelGenerator.py - documentation - last updated on 10.6.2020 by uuk***
+***BlockModelGenerator.py - documentation - last updated on 13.6.2020 by uuk***
 ___
 
     function encode_model_key(key)
@@ -151,6 +151,8 @@ ___
             variable self.display
 
         function set_texture_variable(self, name: str, texture: str)
+
+        function set_texture_variables(self, texture: str, *names)
 
         function add_element(self, f: tuple, t: tuple, *faces, rotation_center=None,
                 rotation_axis=None, rotation_angle=None, rotation_rescale=False, shade=True):

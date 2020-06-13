@@ -1,4 +1,4 @@
-***Registry.py - documentation - last updated on 8.6.2020 by uuk***
+***Registry.py - documentation - last updated on 13.6.2020 by uuk***
 ___
 
     class IRegistryContent
@@ -54,5 +54,7 @@ ___
         function get_by_name(self, name: str) -> Registry
 
         function register(self, *args, **kwargs)
+
+        function async_register(self, mod: str, phase: str)
 
     variable G.registry
