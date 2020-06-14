@@ -1,4 +1,4 @@
-***ModLoader.py - documentation - last updated on 8.6.2020 by uuk***
+***ModLoader.py - documentation - last updated on 14.6.2020 by uuk***
 ___
 
     class LoadingStage
@@ -46,42 +46,45 @@ ___
 
 
         variable PREPARE
+            used to do the magic stuff to set up your system
 
         variable ADD_LOADING_STAGES
+            this special phase is for adding new loading phases, if you want to
+
+        variable EXTRA_RESOURCE_LOCATIONS
+            if your mod has other resource locations...
 
         variable PREBUILD
-
-        variable DATA_GENERATION
-            Optional stage for running the data generators. Only active in --data-gen mode
+            deprecated (but removal in long future) system of preparing data, but storing them in an "cache"
 
         variable CONFIGS
             first: create ConfigFile objects, second: internally, third: do something with the data
 
-        variable EXTRA_RESOURCE_LOCATIONS
-
-        variable TAGS
-
         variable BLOCKS
+            blocks, items, inventories, ... all stuff to register
 
         variable ITEMS
 
-        variable LANGUAGE
-
-        variable RECIPE
-
         variable INVENTORIES
-
-        variable STATES
 
         variable COMMANDS
 
-        variable LOOT_TABLES
-
         variable ENTITIES
 
-        variable WORLDGEN
+        variable DATA_GENERATION
+            Optional stage for running the data generators. Only active in --data-gen mode
+
+        variable LANGUAGE
+            all the deserialization stuff, must be after data gen as data gen may want to inject some stuff
+
+        variable TAGS
+
+        variable RECIPE
+
+        variable LOOT_TABLES
 
         variable MODEL_FACTORY
+            so, all stuff around block models & states
 
         variable BLOCKSTATE
 
@@ -89,7 +92,14 @@ ___
 
         variable BAKE
 
+        variable WORLDGEN
+            now, the world gen, depends on results of registry system and data deserialization
+
         variable FILE_INTERFACE
+            How about storing stuff?
+
+        variable STATES
+            Display-ables. Depends on most of above, nothing depends on
 
         variable POST
 

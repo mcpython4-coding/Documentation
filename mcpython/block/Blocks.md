@@ -1,4 +1,4 @@
-***Blocks.py - documentation - last updated on 8.6.2020 by uuk***
+***Blocks.py - documentation - last updated on 14.6.2020 by uuk***
 ___
 
     function remove_if_downer_block_not_solid(blockinstance)
@@ -10,4 +10,4 @@ ___
 
     function load_blocks()
 
-        variable colors - inecraft:colors"].entries
+        variable colors

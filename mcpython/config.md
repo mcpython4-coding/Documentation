@@ -1,4 +1,4 @@
-***config.py - documentation - last updated on 12.6.2020 by uuk***
+***config.py - documentation - last updated on 14.6.2020 by uuk***
 ___
 
     variable MC_VERSION_BASE
@@ -59,6 +59,8 @@ ___
     variable RANDOM_TICK_RANGE - how far to execute random ticks away from player
 
     variable USE_MISSING_TEXTURES_ON_MISS_TEXTURE - if missing texture should be used when no texture was selected for an face
+
+    variable USE_MIP_MAPPING
 
     variable CPU_USAGE_REFRESH_TIME - how often to refresh cpu usage indicator
 

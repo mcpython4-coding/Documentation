@@ -1,4 +1,4 @@
-***Chunk.py - documentation - last updated on 8.6.2020 by uuk***
+***Chunk.py - documentation - last updated on 14.6.2020 by uuk***
 ___
 
     class Chunk
@@ -66,11 +66,10 @@ ___
             will draw the chunk with the content for it
 
 
-        function exposed(self, position: typing.Tuple[int, int, int])
-            
-            Returns False is given `position` should be hidden, True otherwise
-            :param position: the position to use
-
+        @deprecation.deprecated("dev3-1", "a1.3.0")
+        function exposed(self, position): return any(self.exposed_faces(position).values())
+                
+                def exposed_faces(self, position: typing.Tuple[int, int, int]) -> typing.Dict[mcpython.util.enums.EnumSide, bool]:
 
         function exposed_faces(self, position: typing.Tuple[int, int, int]) -> typing.Dict[mcpython.util.enums.EnumSide, bool]
             
@@ -150,14 +149,16 @@ ___
         @deprecation.deprecated("dev1-4", "a1.2.0")
         function _hide_block(self, position)
 
-        function show(self)
+        function show(self, force=False)
             
             will show the chunk
+            :param force: if the chunk show should be forced or not
 
 
-        function hide(self)
+        function hide(self, force=False)
             
             will hide the chunk
+            :param force: if the chunk hide should be forced or not
 
 
         @deprecation.deprecated("dev1-4", "a1.4.0")

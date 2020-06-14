@@ -1,4 +1,4 @@
-***getskin.py - documentation - last updated on 8.6.2020 by uuk***
+***getskin.py - documentation - last updated on 14.6.2020 by uuk***
 ___
 
     variable DEBUG
@@ -9,7 +9,10 @@ ___
 
     variable userinfo_url
 
-    class SimulatedResponse extends object
+    class SimulatedResponse
+        
+        Simulated response
+
 
         function __init__(self, content, is_json, raw=None)
 

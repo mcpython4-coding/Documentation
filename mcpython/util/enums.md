@@ -1,5 +1,7 @@
-***enums.py - documentation - last updated on 8.6.2020 by uuk***
+***enums.py - documentation - last updated on 14.6.2020 by uuk***
 ___
+
+    variable COLORS
 
     class EnumSide extends enum.Enum
 
