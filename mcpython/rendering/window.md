@@ -1,4 +1,4 @@
-***window.py - documentation - last updated on 11.6.2020 by uuk***
+***window.py - documentation - last updated on 18.6.2020 by uuk***
 ___
 
     class NoWindow
@@ -10,9 +10,7 @@ ___
 
             variable self.width
 
-        function get_size(self): return self.width, self.height
-                
-                def push_handlers(self, handler):
+        function get_size(self)
 
         function push_handlers(self, handler)
 

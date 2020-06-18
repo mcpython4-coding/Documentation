@@ -1,4 +1,4 @@
-***LootTableCondition.py - documentation - last updated on 8.6.2020 by uuk***
+***LootTableCondition.py - documentation - last updated on 18.6.2020 by uuk***
 ___
 
     class ILootTableCondition extends mcpython.event.Registry.IRegistryContent
@@ -27,9 +27,23 @@ ___
 
         variable NAME
 
+        function __init__(self, data)
+
+            variable self.name
+
+            variable self.state
+
+        function check(self, source, *args, block=None, **kwargs) -> bool
+
     @G.registry class DamageSourceProperties extends ILootTableCondition
 
         variable NAME
+
+        function __init__(self, data)
+
+            variable self.source
+
+        function check(self, source, *args, damage_source=None, **kwargs) -> bool
 
     @G.registry class EntityProperties extends ILootTableCondition
 

@@ -1,4 +1,4 @@
-***Chunk.py - documentation - last updated on 14.6.2020 by uuk***
+***Chunk.py - documentation - last updated on 18.6.2020 by uuk***
 ___
 
     class Chunk
@@ -46,6 +46,8 @@ ___
                 variable v
 
                 variable self.attr[attr]
+
+        function get_maximum_y_coordinate_from_generation(self, x: int, z: int) -> int
 
         function set_value(self, name: str, value)
             

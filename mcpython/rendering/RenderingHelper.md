@@ -1,9 +1,10 @@
-***RenderingHelper.py - documentation - last updated on 8.6.2020 by uuk***
+***RenderingHelper.py - documentation - last updated on 18.6.2020 by uuk***
 ___
 
     class RenderingHelper
         
         class for helping storing an gl status and exchanging it, rolling back, ...
+        todo: add setup functions for various systems
 
 
         function __init__(self)

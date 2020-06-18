@@ -1,4 +1,4 @@
-***player.py - documentation - last updated on 11.6.2020 by uuk***
+***player.py - documentation - last updated on 18.6.2020 by uuk***
 ___
 
     @globals.registry class Player extends mcpython.entity.Entity.Entity
@@ -100,6 +100,8 @@ ___
 
 
         function reset_moving_slot(self)
+
+        function set_to_spawn_point(self)
 
         function tell(self, msg: str)
 

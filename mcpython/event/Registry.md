@@ -1,4 +1,4 @@
-***Registry.py - documentation - last updated on 13.6.2020 by uuk***
+***Registry.py - documentation - last updated on 18.6.2020 by uuk***
 ___
 
     class IRegistryContent
@@ -15,12 +15,12 @@ ___
                 
                 class Registry:
                 def __init__(self, name: str, registry_type_names: list, injection_function=None,
-                allow_argument_injection=False, class_based=True):
+                allow_argument_injection=False, class_based=True, dump_content_in_saves=True):
 
     class Registry
 
         function __init__(self, name: str, registry_type_names: list, injection_function=None,
-                allow_argument_injection=False, class_based=True):
+                allow_argument_injection=False, class_based=True, dump_content_in_saves=True):
 
         function is_valid(self, obj: IRegistryContent)
 

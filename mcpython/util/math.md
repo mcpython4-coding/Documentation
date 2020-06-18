@@ -1,11 +1,8 @@
-***math.py - documentation - last updated on 14.6.2020 by uuk***
+***math.py - documentation - last updated on 18.6.2020 by uuk***
 ___
 
+    @deprecation.deprecated("dev3-2", "a1.3.0")
     function get_max_y(pos)
-        
-        gets the max y at a x,y,z or x,z pos
-        todo: move to Chunk-class
-
 
     @deprecation.deprecated(deprecated_in="snapshot dev 1 cycle 1", removed_in="v1.2.0 alpha")
     function cube_vertices(x, y, z, nx, ny, nz, faces=(True, True, True, True, True, True))

@@ -1,4 +1,4 @@
-***LootTable.py - documentation - last updated on 12.6.2020 by uuk***
+***LootTable.py - documentation - last updated on 18.6.2020 by uuk***
 ___
 
     class LootTableTypes extends enum.Enum
@@ -54,6 +54,20 @@ ___
         function __getitem__(self, item)
 
         function roll(self, name: str, *args, relink=True, **kwargs) -> list
+            
+            will roll the loot table
+            :param name: the name of the loot table
+            :param args: args send to every part
+            :param relink: if relinks should be followed or not
+            :param kwargs: kwargs send to every part
+            :return: an list of item stacks
+            kwarg-options:
+                - block=<Block instance>: an block parsed on
+                - damage_source=<DamageSource instance>: an damage source
+                - this_entity=<Entity instance>: an entity generated for
+                - killer_entity=<Entity instance>:  the entity killed the this_entity
+                - position=<tuple of lenght 3>: the position executed at
+
 
         function get_drop_for_block(self, block, player=None, relink=True)
 

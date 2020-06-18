@@ -1,4 +1,4 @@
-***StateWorldGeneration.py - documentation - last updated on 12.6.2020 by uuk***
+***StateWorldGeneration.py - documentation - last updated on 18.6.2020 by uuk***
 ___
 
     class StateWorldGeneration extends State.State
@@ -29,11 +29,12 @@ ___
 
             variable G.world.active_player
 
-            variable G.world.get_active_player().position
-
             variable G.world.config["enable_auto_gen"] - special.value.true*#"
 
             variable G.world.config["enable_world_barrier"]
+
+            variable chunk
+                set spawn-point
 
             variable height
 
