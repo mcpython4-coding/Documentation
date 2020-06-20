@@ -1,4 +1,4 @@
-***SaveFile.py - documentation - last updated on 11.6.2020 by uuk***
+***SaveFile.py - documentation - last updated on 20.6.2020 by uuk***
 ___
 
     How to decide when an new version is needed?
@@ -89,12 +89,47 @@ ___
 
 
         function apply_storage_fixer(self, name: str, *args, **kwargs)
+            
+            will apply an fixer to fix the storage version
+            :param name: the name of the fixer to use
+            :param args: the args to send
+            :param kwargs: the kwargs to use
+            :raises DataFixerNotFoundException: if the name is invalid
+
 
         function apply_group_fixer(self, name: str, *args, **kwargs)
+            
+            will apply an group fixer to the system
+            :param name: the name of the group fixer to use
+            :param args: the args to use
+            :param kwargs: the kwargs to use
+            :raises DataFixerNotFoundException: if the name is invalid
+
 
         function apply_part_fixer(self, name: str, *args, **kwargs)
+            
+            will apply an part fixer to the system
+            :param name: the name to use
+            :param args: the args to send
+            :param kwargs: the kwargs
+            :raises DataFixerNotFoundException: if the name is invalid
+
 
         function apply_mod_fixer(self, modname: str, source_version: tuple, *args, **kwargs)
+            
+            applies an mod fixer(list) to the system
+            :param modname: the mod name
+            :param source_version: where to start from
+            :param args: args to call with
+            :param kwargs: kwargs to call with
+            :raises DataFixerNotFoundException: if the name is invalid
+
+
+                    variable fixer: mcpython.storage.datafixers.IDataFixer.IModVersionFixer
+
+                    variable fixer: mcpython.storage.datafixers.IDataFixer.IModVersionFixer
+
+                variable source_version
 
         static
         function _get_distance(cls, v, t)

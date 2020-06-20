@@ -1,4 +1,4 @@
-***RenderingHelper.py - documentation - last updated on 18.6.2020 by uuk***
+***RenderingHelper.py - documentation - last updated on 20.6.2020 by uuk***
 ___
 
     class RenderingHelper
@@ -16,6 +16,8 @@ ___
             variable self.status_table
 
             variable self.saved
+
+            variable self.default_3d_stack
 
         function save_status(self, add_to_stack=True)
             
@@ -54,3 +56,19 @@ ___
             
             will apply an status
             :param data: the data to apply or None to use the active one (to make sure everything is set correctly)
+
+
+        function get_default_3d_matrix_stack(self, base=None) -> mcpython.rendering.MatrixStack.MatrixStack
+            
+            will create an MatrixStack-instance with the active transformation for the active player
+            Will set up perspective for 3d rendering with these stack
+            :param base: the MatrixStack-instance to set into
+            :return: the MatrixStack instance
+            WARNING: all transformations will be applied ON TOP of the base-MatrixStack if its provided
+
+
+        function get_dynamic_3d_matrix_stack(self, base=None) -> mcpython.rendering.MatrixStack.LinkedMatrixStack
+            
+            same as get_default_3d_matrix_stack, but the matrix stack is an LinkedMatrixStack with links to player position,
+                etc.
+            [see above]
