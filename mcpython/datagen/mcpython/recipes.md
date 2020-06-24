@@ -1,4 +1,4 @@
-***recipes.py - documentation - last updated on 11.6.2020 by uuk***
+***recipes.py - documentation - last updated on 24.6.2020 by uuk***
 ___
 
     variable DEFAULT_OUTPUT - where to output data - in dev environment
@@ -103,7 +103,7 @@ ___
 
         variable aaT
 
-        variable aaU
+        variable aaU - oul_fire_base_blocks"
 
         variable aaV
 
@@ -137,7 +137,7 @@ ___
 
         variable abk
 
-        variable abl
+        variable abl - tone_tool_materials"
 
         variable abm
 
@@ -389,7 +389,7 @@ ___
 
         variable adG
 
-        variable adH - ooden_slabs"
+        variable adH
 
         variable adI
 
@@ -467,7 +467,7 @@ ___
 
         variable aet
 
-        variable aeu
+        variable aeu - ooden_slabs"
 
         variable aev
 
@@ -693,7 +693,7 @@ ___
 
         variable agC
 
-        variable agD
+        variable agD - old_ores"
 
         variable agE
 
@@ -837,7 +837,7 @@ ___
 
         variable ahW
 
-        variable ahX - lanks"
+        variable ahX
 
         variable ahY
 
@@ -893,7 +893,7 @@ ___
 
         variable aiy
 
-        variable aiz
+        variable aiz - lanks"
 
         variable aiA
 
@@ -931,7 +931,7 @@ ___
 
         variable aiR
 
-        variable aiS - ogs"
+        variable aiS
 
         variable aiT
 
@@ -995,4 +995,78 @@ ___
 
         variable ajx
 
-        variable ajy
+        variable ajy - ogs"
+
+        variable ajz
+
+        variable ajA
+
+        variable ajB
+
+        variable ajC
+
+        variable ajD
+
+        variable ajE
+
+        variable ajF
+
+        variable ajG
+
+        variable ajH
+
+        variable ajI
+
+        variable ajJ
+
+        variable ajK
+
+        variable ajL
+
+        variable ajM
+
+        variable ajN
+
+        variable ajO
+
+        variable ajP
+
+        variable ajQ
+
+        variable ajR
+
+        variable ajS
+
+        variable ajT
+
+        variable ajU
+
+        variable ajV
+
+        variable ajW
+
+        variable ajX
+
+        variable ajY
+
+        variable ajZ
+
+        variable aka
+
+        variable akb
+
+        variable akc
+
+        variable akd
+
+        variable ake
+
+        variable akf
+
+        variable akg
+
+        variable akh
+
+        variable aki
+
+        variable akj
