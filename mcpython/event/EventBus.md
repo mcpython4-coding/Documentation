@@ -1,5 +1,13 @@
-***EventBus.py - documentation - last updated on 8.6.2020 by uuk***
+***EventBus.py - documentation - last updated on 24.6.2020 by uuk***
 ___
+
+    class CancelAbleEvent
+
+        function __init__(self)
+
+            variable self.canceled
+
+        function cancel(self)
 
     class EventBus
         
@@ -47,6 +55,8 @@ ___
             :param kwargs: kwargs to give
             :return: an list of tuple of (return value, info)
 
+
+        function call_cancelable(self, event_name, *args, **kwargs)
 
         function call_until(self, event_name, check_function, *args, **kwargs)
 

@@ -1,4 +1,4 @@
-***Slot.py - documentation - last updated on 8.6.2020 by uuk***
+***Slot.py - documentation - last updated on 24.6.2020 by uuk***
 ___
 
     variable SLOT_WIDTH
@@ -68,6 +68,8 @@ ___
 
         function __str__(self)
 
+        function __repr__(self)
+
     class SlotCopy
 
         function __init__(self, master, position=(0, 0), allow_player_remove=True, allow_player_insert=True,
@@ -106,6 +108,8 @@ ___
         function load(self, data)
 
         function __str__(self)
+
+        function __repr__(self)
 
     class SlotInfiniteStack extends Slot
 

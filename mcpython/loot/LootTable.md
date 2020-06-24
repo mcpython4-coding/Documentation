@@ -1,4 +1,4 @@
-***LootTable.py - documentation - last updated on 18.6.2020 by uuk***
+***LootTable.py - documentation - last updated on 24.6.2020 by uuk***
 ___
 
     class LootTableTypes extends enum.Enum
@@ -20,6 +20,8 @@ ___
         variable ADVANCEMENT_REWARD
 
         variable GENERIC
+
+        variable BARTER
 
     class LootTablePoolEntryType extends enum.Enum
 

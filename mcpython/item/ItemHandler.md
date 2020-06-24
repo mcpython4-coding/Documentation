@@ -1,23 +1,15 @@
-***ItemHandler.py - documentation - last updated on 8.6.2020 by uuk***
+***ItemHandler.py - documentation - last updated on 24.6.2020 by uuk***
 ___
 
-    variable TEXTURE_ATLASES
+    variable COLLECTED_ITEMS
+
+    variable ITEM_ATLAS
 
     function build()
 
-        variable indexdata
-
-            variable file
-
-            variable textureatlas.group
-
-            variable indexdata[file]
-
-        variable indexdata["loaded_item_file_names"]
-
     function load_data(from_block_item_generator=False)
 
-    function add_to_image_atlas(textureatlas, image, file)
+    function add_to_image_atlas(file)
 
     function register_item(registry, itemclass)
 

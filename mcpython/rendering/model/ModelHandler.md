@@ -1,4 +1,4 @@
-***ModelHandler.py - documentation - last updated on 8.6.2020 by uuk***
+***ModelHandler.py - documentation - last updated on 24.6.2020 by uuk***
 ___
 
     class ModelHandler
@@ -36,9 +36,7 @@ ___
             :param data: the data to inject
 
 
-        function build(self): [self.let_subscribe_to_build(model) for model in self.used_models]  # todo: use set intersection
-                
-                def let_subscribe_to_build(self, model):
+        function build(self)
 
         function let_subscribe_to_build(self, model)
 

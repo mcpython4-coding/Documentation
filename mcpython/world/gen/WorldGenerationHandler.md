@@ -1,9 +1,10 @@
-***WorldGenerationHandler.py - documentation - last updated on 12.6.2020 by uuk***
+***WorldGenerationHandler.py - documentation - last updated on 24.6.2020 by uuk***
 ___
 
     class WorldGenerationTaskHandler
         
         handler for generating tasks off-call
+        todo: make task work more efficient!!!
 
 
         function __init__(self)

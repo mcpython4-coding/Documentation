@@ -1,4 +1,4 @@
-***player.py - documentation - last updated on 18.6.2020 by uuk***
+***player.py - documentation - last updated on 24.6.2020 by uuk***
 ___
 
     @globals.registry class Player extends mcpython.entity.Entity.Entity
@@ -110,3 +110,5 @@ ___
         function __del__(self)
 
         function __str__(self)
+
+        function on_inventory_cleared(self)

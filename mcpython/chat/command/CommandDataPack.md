@@ -1,9 +1,9 @@
-***CommandDataPack.py - documentation - last updated on 8.6.2020 by uuk***
+***CommandDataPack.py - documentation - last updated on 24.6.2020 by uuk***
 ___
 
     @G.registry class CommandDatapack extends mcpython.chat.command.Command.Command
         
-        command /datapack
+        Class holding the /datapack command
 
 
         variable NAME

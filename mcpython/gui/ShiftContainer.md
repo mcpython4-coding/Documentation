@@ -1,7 +1,10 @@
-***ShiftContainer.py - documentation - last updated on 8.6.2020 by uuk***
+***ShiftContainer.py - documentation - last updated on 24.6.2020 by uuk***
 ___
 
     class ShiftContainer
+        
+        container class holding information on which inventory parts can be shift-clicked
+
 
         function __init__(self)
 

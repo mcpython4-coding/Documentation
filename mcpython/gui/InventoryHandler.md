@@ -1,4 +1,4 @@
-***InventoryHandler.py - documentation - last updated on 8.6.2020 by uuk***
+***InventoryHandler.py - documentation - last updated on 24.6.2020 by uuk***
 ___
 
     class OpenedInventoryStatePart extends mcpython.state.StatePart.StatePart
@@ -39,7 +39,7 @@ ___
 
         function deactivate(self)
 
-        function on_mouse_drag(self, x, y, dx, dy, buttons, modifers)
+        function on_mouse_drag(self, x, y, dx, dy, button, modifiers)
 
         function reorder_slot_list_stacks(self)
 

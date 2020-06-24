@@ -1,4 +1,4 @@
-***Block.py - documentation - last updated on 13.6.2020 by uuk***
+***Block.py - documentation - last updated on 24.6.2020 by uuk***
 ___
 
     class Block extends mcpython.event.Registry.IRegistryContent
@@ -93,7 +93,17 @@ ___
 
         function get_inventories(self)
             
-            called to get an list of inventories
+            Called to get an list of inventories
+            FOR MODDERS: use get_provided_slot_lists() where possible
+
+
+        function get_provided_slot_lists(self, side: mcpython.util.enums.EnumSide)
+            
+            Similar to get_inventories, but specifies only slots & the side on which the interaction can happen.
+            Useful for e.g. furnaces which can get fuel from the side, but from top the item to smelt.
+            gets slots for various reasons for an given side
+            :param side: the side asked for
+            :return: an tuple of lists of input slots and output slots
 
 
         function get_model_state(self) -> dict
@@ -106,18 +116,6 @@ ___
             
             sets the model state for the block
             :param state: the state to set
-
-            
-            gets the slots for an given side
-            :param side: the side to check
-            :return: an list of slot of the side
-
-
-        function get_provided_slot_lists(self, side: mcpython.util.enums.EnumSide)
-            
-            gets slots for various reasons for an given side
-            :param side: the side asked for
-            :return: an tuple of lists of input slots and output slots
 
             
             used to get the bbox of the block
@@ -150,14 +148,7 @@ ___
             :param side: the side to use
             :return: an value between 0 and 15 representing the redstone value
 
-
-        static
-        function modify_block_item(cls, itemconstructor): pass  # todo: add an table for subscriptions
-                
-                @staticmethod
-                def get_all_model_states() -> list: return [{}]  # todo: make attribute or external config file
-                
-
-        static
-        function get_all_model_states() -> list: return [{}]  # todo: make attribute or external config file
-                
+            
+            gets the slots for an given side
+            :param side: the side to check
+            :return: an list of slot of the side

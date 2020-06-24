@@ -1,4 +1,4 @@
-***ResourceLocator.py - documentation - last updated on 8.6.2020 by uuk***
+***ResourceLocator.py - documentation - last updated on 24.6.2020 by uuk***
 ___
 
     specifications for the resource loader system
@@ -109,11 +109,12 @@ ___
 
     variable MC_IMAGE_LOCATIONS - how mc locations look like
 
-    function transform_name(file: str) -> str
+    function transform_name(file: str, raise_on_error=True) -> str
         
         will transform an MC-ResourceLocation string into an local path
         :param file: the thing to use
         :return: the transformed
+        :param raise_on_error: will raise downer exception, otherwise return the file iself
         :raises NotImplementedError: when the data is invalid
 
 

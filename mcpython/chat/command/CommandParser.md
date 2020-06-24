@@ -1,4 +1,4 @@
-***CommandParser.py - documentation - last updated on 8.6.2020 by uuk***
+***CommandParser.py - documentation - last updated on 24.6.2020 by uuk***
 ___
 
     class ParsingCommandInfo
@@ -6,7 +6,7 @@ ___
         info which stores information about the active executed command
 
 
-        function __init__(self, entity=None, position=None, dimension=None)
+        function __init__(self, entity=None, position=None, dimension=None, chat=None)
 
             variable self.entity
 
@@ -14,10 +14,14 @@ ___
 
             variable self.dimension
 
+            variable self.chat
+
         function copy(self)
             
             :return: a copy of itself
 
+
+        function __str__(self)
 
     class CommandParser
         

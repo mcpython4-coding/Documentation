@@ -1,4 +1,4 @@
-***math.py - documentation - last updated on 18.6.2020 by uuk***
+***math.py - documentation - last updated on 24.6.2020 by uuk***
 ___
 
     @deprecation.deprecated("dev3-2", "a1.3.0")
@@ -82,13 +82,15 @@ ___
 
         variable provided
 
-            variable remaining_items
+        variable items
 
-            variable emitted
+        variable missing
 
-                    variable emitted
+        variable previous_missing
 
-            variable items
+        variable result
+
+                variable previous_missing
 
     function rotate_point(point, origin, rotation)
 

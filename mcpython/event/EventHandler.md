@@ -1,4 +1,4 @@
-***EventHandler.py - documentation - last updated on 8.6.2020 by uuk***
+***EventHandler.py - documentation - last updated on 24.6.2020 by uuk***
 ___
 
     class EventHandler
@@ -16,6 +16,8 @@ ___
         function deactivate_bus(self, bus: mcpython.event.EventBus.EventBus)
 
         function call(self, eventname, *args, **kwargs)
+
+        function call_cancelable(self, eventname, *args, **kwargs)
 
     variable G.eventhandler
 

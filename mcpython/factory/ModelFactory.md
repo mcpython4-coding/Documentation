@@ -4,7 +4,7 @@ ___
     @deprecation.deprecated("dev2-2", "a1.5.0") class ModelFactory
 
         @deprecation.deprecated("dev2-2", "a1.5.0")
-        function __init__(self, name: str, parent="block/block")
+        function __init__(self, name: str, parent="minecraft:block/block")
 
             variable self.name
 

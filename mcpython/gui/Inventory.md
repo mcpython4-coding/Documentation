@@ -1,4 +1,4 @@
-***Inventory.py - documentation - last updated on 8.6.2020 by uuk***
+***Inventory.py - documentation - last updated on 24.6.2020 by uuk***
 ___
 
     class Inventory
@@ -40,6 +40,8 @@ ___
             reload the config file
             todo: make public
 
+
+        function on_reload(self)
             
             creates the slots
             :return: the slots the inventory uses

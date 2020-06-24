@@ -1,4 +1,4 @@
-***Entity.py - documentation - last updated on 8.6.2020 by uuk***
+***Entity.py - documentation - last updated on 24.6.2020 by uuk***
 ___
 
     class Entity extends mcpython.event.Registry.IRegistryContent
@@ -50,12 +50,13 @@ ___
 
         function __str__(self)
 
-        function set_position(self, position: tuple): self.teleport(position)
+        function get_position(self): return self.__position
                 
-                # only for some small use-cases. WARNING: will  N O T  do any internal handling for updating the position
-                def set_position_unsafe(self, position: tuple): self.__position = position
-                
-                def teleport(self, position, dimension=None, force_chunk_save_update=False):
+                def set_position(self, position: tuple):
+
+        function set_position(self, position: tuple)
+
+        variable position
 
         function set_position_unsafe(self, position: tuple): self.__position = position
                 
@@ -68,8 +69,6 @@ ___
             :param dimension: to which dimension-id to teleport to, if None, no dimension change is used
             :param force_chunk_save_update: if the system should force to update were player data is stored
 
-
-        variable position
 
         function tell(self, msg: str)
             
@@ -121,6 +120,11 @@ ___
             
             will return an list of all currently arrival inventories for this entity
             :return:
+
+
+        function on_inventory_cleared(self)
+            
+            called by /clear when the inventory of the entity should be cleared
 
 
         function draw(self)
