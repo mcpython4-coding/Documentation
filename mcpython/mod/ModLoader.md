@@ -1,4 +1,4 @@
-***ModLoader.py - documentation - last updated on 14.6.2020 by uuk***
+***ModLoader.py - documentation - last updated on 27.6.2020 by uuk***
 ___
 
     class LoadingStage
@@ -59,6 +59,9 @@ ___
 
         variable CONFIGS
             first: create ConfigFile objects, second: internally, third: do something with the data
+
+        variable COMBINED_FACTORIES
+            Stage collection for combined factories
 
         variable BLOCKS
             blocks, items, inventories, ... all stuff to register

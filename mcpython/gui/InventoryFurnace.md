@@ -1,9 +1,9 @@
-***InventoryFurnace.py - documentation - last updated on 8.6.2020 by uuk***
+***InventoryFurnace.py - documentation - last updated on 27.6.2020 by uuk***
 ___
 
-    variable arrow
+        variable arrow
 
-    variable fire
+        variable fire
 
     class InventoryFurnace extends mcpython.gui.Inventory.Inventory
         

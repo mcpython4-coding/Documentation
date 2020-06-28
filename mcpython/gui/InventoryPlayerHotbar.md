@@ -1,7 +1,7 @@
-***InventoryPlayerHotbar.py - documentation - last updated on 8.6.2020 by uuk***
+***InventoryPlayerHotbar.py - documentation - last updated on 27.6.2020 by uuk***
 ___
 
-    variable base: pyglet.image.AbstractImage
+        variable base: pyglet.image.AbstractImage
 
     function _get_tex_region(rx, ry, rex, rey)
 
@@ -61,12 +61,6 @@ ___
 
         function draw_armor(self, hx, hy)
 
-        function is_closable_by_escape(self) -> bool: return False
-                
-                def is_always_open(self) -> bool: return True
-                
-                
+        function is_closable_by_escape(self) -> bool
 
-        function is_always_open(self) -> bool: return True
-                
-                
+        function is_always_open(self) -> bool

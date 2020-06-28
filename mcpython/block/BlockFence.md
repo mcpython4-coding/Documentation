@@ -1,4 +1,4 @@
-***BlockFence.py - documentation - last updated on 8.6.2020 by uuk***
+***BlockFence.py - documentation - last updated on 27.6.2020 by uuk***
 ___
 
     class IFence extends mcpython.block.Block.Block
@@ -75,6 +75,18 @@ ___
         variable NAME
 
     @G.registry class SpruceFence extends IWoodenFence
+
+        variable NAME
+
+    @G.registry class CrimsonFence extends IFence
+
+        variable FENCE_TYPE_NAME
+
+        variable NAME
+
+    @G.registry class WarpedFence extends IFence
+
+        variable FENCE_TYPE_NAME
 
         variable NAME
 

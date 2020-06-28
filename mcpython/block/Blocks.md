@@ -1,4 +1,4 @@
-***Blocks.py - documentation - last updated on 14.6.2020 by uuk***
+***Blocks.py - documentation - last updated on 28.6.2020 by uuk***
 ___
 
     function remove_if_downer_block_not_solid(blockinstance)
@@ -11,3 +11,24 @@ ___
     function load_blocks()
 
         variable colors
+
+    @G.modloader("minecraft", "stage:combined_factory:blocks")
+    function combined_load()
+
+        function set_stone_properties(_, factory)
+
+        function set_nether_brick(_, factory)
+
+        variable config
+
+        function dirt_callback(_, factory)
+
+        function wood_callback(_, factory)
+
+        function fall_able_callback(_, factory)
+
+        function set_glass(_, factory)
+
+        function set_sandstone(_, factory)
+
+        function set_quartz(_, factory)

@@ -1,4 +1,4 @@
-***config.py - documentation - last updated on 18.6.2020 by uuk***
+***config.py - documentation - last updated on 28.6.2020 by uuk***
 ___
 
     variable MC_VERSION_BASE
@@ -84,6 +84,41 @@ ___
 
     variable SHUFFLE_INTERVAL
 
+    an list of additional blocks to enable/disable when needed
+    WARNING: this content is generated ONTOP of minecraft's content an uses their textures to generate. Please note
+            that any of these objects look like original ones, but they are not (currently)
+    WARNING: All additional blocks have currently no own loot table for drops. These might change in the future,
+            but until than, they are PURELY decorative blocks
+    WARNING: As these blocks are not part of the "normal" game, when they are enabled, they may NOT have the same
+            behaviour flags build-in than the original ones (think about how an sand slab would behave)
+    WARNING: block behaviour is mostly copied from base block and as so, e.g. bedrock slabs are unbreakable in survival
+    WARNING (for modders): You might add your own entries onto this table. But make sure that you DO CHECK if they are
+                        in the table when you read for block creation. Also note, these file is located in the 
+                        minecraft-folder of the config folder.
+
+
+    variable ENABLED_EXTRA_BLOCKS
+
+        variable ENABLED_EXTRA_BLOCKS["minecraft:{}_plank_wall".format(wood)] - Oh, fancy, but what about fences?
+
+        variable ENABLED_EXTRA_BLOCKS["minecraft:{}_wool_slab".format(color)]
+            colored slabs and walls, why not? (excluding powder as it is something "special")
+
+        variable ENABLED_EXTRA_BLOCKS["minecraft:{}_wool_wall".format(color)]
+
+        variable ENABLED_EXTRA_BLOCKS["minecraft:{}_concrete_slab".format(color)]
+
+        variable ENABLED_EXTRA_BLOCKS["minecraft:{}_concrete_wall".format(color)]
+
+        variable ENABLED_EXTRA_BLOCKS["minecraft:{}_stained_glass_slab".format(color)]
+            someone asked for more color, here you go!
+
+        variable ENABLED_EXTRA_BLOCKS["minecraft:{}_stained_glass_wall".format(color)]
+
+        variable ENABLED_EXTRA_BLOCKS["minecraft:{}_terracotta_slab".format(color)]
+
+        variable ENABLED_EXTRA_BLOCKS["minecraft:{}_terracotta_wall".format(color)]
+
     function load()
 
         variable config
@@ -101,6 +136,8 @@ ___
         variable misc
 
         variable biomeconfig
+
+        variable block_config
 
         @G.modloader("minecraft", "stage:mod:config:work")
         function load_data()
@@ -122,3 +159,7 @@ ___
             variable SHUFFLE_INTERVAL
 
                 function on_shuffle(dt)
+
+                    variable ENABLED_EXTRA_BLOCKS[key]
+
+                    variable ENABLED_EXTRA_BLOCKS[key]
