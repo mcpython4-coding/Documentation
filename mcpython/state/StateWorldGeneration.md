@@ -1,4 +1,4 @@
-***StateWorldGeneration.py - documentation - last updated on 18.6.2020 by uuk***
+***StateWorldGeneration.py - documentation - last updated on 28.6.2020 by uuk***
 ___
 
     class StateWorldGeneration extends State.State
@@ -8,6 +8,8 @@ ___
         function __init__(self)
 
             variable self.status_table
+
+            variable self.profiler
 
         function get_parts(self) -> list
 

@@ -80,6 +80,8 @@ ___
 
     variable ENABLE_PROFILER_TICK
 
+    variable ENABLE_PROFILER_GENERATION
+
     variable SHUFFLE_DATA
 
     variable SHUFFLE_INTERVAL
@@ -153,6 +155,8 @@ ___
             variable ENABLE_PROFILER_DRAW
 
             variable ENABLE_PROFILER_TICK
+
+            variable ENABLE_PROFILER_GENERATION
 
             variable SHUFFLE_DATA
 
