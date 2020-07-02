@@ -28,6 +28,6 @@ ___
 
                 variable block
 
-        variable G.window.flying
+        variable G.world.get_active_player().flying
 
     variable config

@@ -1,4 +1,4 @@
-***window.py - documentation - last updated on 18.6.2020 by uuk***
+***window.py - documentation - last updated on 2.7.2020 by uuk***
 ___
 
     class NoWindow
@@ -33,9 +33,6 @@ ___
 
             variable self.exclusive
                 Whether or not the window exclusively captures the mouse.
-
-            variable self.flying
-                When flying gravity has no effect and speed is increased. todo: move to player
 
             variable self.strafe
                 Strafing is moving lateral to the direction you are facing,
@@ -81,6 +78,15 @@ ___
 
             variable self.CROSSHAIRS_TEXTURE
                 todo: move to seperated class
+
+        @deprecation.deprecated("dev4-3", "a1.2.0")
+        function set_flying(self, flying): G.world.get_active_player().is_flying = flying
+                
+                flying = property(get_flying, set_flying)
+                
+                def print_profiler(self, dt=None):
+
+        variable flying
 
         function print_profiler(self, dt=None)
             
@@ -162,7 +168,7 @@ ___
                                 You are colliding with the ground or ceiling, so stop
                                 falling / rising.
 
-                            variable G.window.flying
+                            variable G.world.get_active_player().flying
 
                                 variable dy
 
@@ -234,14 +240,8 @@ ___
 
 
         function set_2d(self)
-            
-            Configure OpenGL to draw in 2d.
-
 
         function set_3d(self, position=None, rotation=None)
-            
-            Configure OpenGL to draw in 3d.
-
 
         function on_draw(self)
             

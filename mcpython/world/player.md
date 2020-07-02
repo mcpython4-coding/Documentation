@@ -1,4 +1,4 @@
-***player.py - documentation - last updated on 24.6.2020 by uuk***
+***player.py - documentation - last updated on 2.7.2020 by uuk***
 ___
 
     @globals.registry class Player extends mcpython.entity.Entity.Entity
@@ -13,9 +13,9 @@ ___
 
         function __init__(self, name="unknown", dimension=None)
 
-            variable self.name: str
+            variable self.name: str - the name of the player
 
-            variable self.gamemode: int
+            variable self.gamemode: int - the current gamemode
 
             variable self.hearts: int
 
@@ -29,15 +29,15 @@ ___
 
             variable self.armor_toughness
 
-            variable self.fallen_since_y
+            variable self.flying - are we currently flying?
 
-            variable self.inventories: dict
+            variable self.fallen_since_y - how far did we fall?
 
             variable self.inventory_order: list - an ([inventoryindexname: str], [reversed slots: bool}) list
 
             variable self.iconparts
 
-            variable self.active_inventory_slot: int
+            variable self.active_inventory_slot: int - which slot is currently selected
 
         function hotkey_get_position(self)
 

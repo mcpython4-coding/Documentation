@@ -141,7 +141,7 @@ ___
 
                 variable G.window.strafe[1]
 
-                    variable G.window.flying
+                    variable G.world.get_active_player().flying
 
                     variable self.double_space_cooldown
 

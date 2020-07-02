@@ -1,4 +1,4 @@
-***RenderingHelper.py - documentation - last updated on 20.6.2020 by uuk***
+***RenderingHelper.py - documentation - last updated on 2.7.2020 by uuk***
 ___
 
     class RenderingHelper
@@ -72,3 +72,6 @@ ___
             same as get_default_3d_matrix_stack, but the matrix stack is an LinkedMatrixStack with links to player position,
                 etc.
             [see above]
+
+
+        function setup2d(self, anchor=(0, 0), z_buffer=0)
