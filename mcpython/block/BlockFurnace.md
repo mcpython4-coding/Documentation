@@ -1,4 +1,4 @@
-***BlockFurnace.py - documentation - last updated on 8.6.2020 by uuk***
+***BlockFurnace.py - documentation - last updated on 3.7.2020 by uuk***
 ___
 
     @G.registry class BlockFurnace extends mcpython.block.Block.Block
@@ -32,13 +32,9 @@ ___
 
         function get_inventories(self): return [self.inventory]
                 
-                def get_provided_slots(self, side): return self.inventory.slots
-                
-                def on_remove(self):
+                def get_provided_slot_lists(self, side):
 
-        function get_provided_slots(self, side): return self.inventory.slots
-                
-                def on_remove(self):
+        function get_provided_slot_lists(self, side)
 
         function on_remove(self)
 

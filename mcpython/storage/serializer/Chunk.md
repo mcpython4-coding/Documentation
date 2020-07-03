@@ -1,4 +1,4 @@
-***Chunk.py - documentation - last updated on 11.6.2020 by uuk***
+***Chunk.py - documentation - last updated on 3.7.2020 by uuk***
 ___
 
     function chunk2region(cx, cz): return cx >> 5, cz >> 5
@@ -111,6 +111,24 @@ ___
 
         variable TARGET_ENTITY_NAME - which entity to apply to
 
+    class ChunkMapDataFixer extends mcpython.storage.datafixers.IDataFixer.IPartFixer
+        
+        Fixer for changing the map data of the chunk
+
+
+        variable TARGET_SERIALIZER_NAME
+
+        static
+        function fix(cls, savefile, dim, region, chunk, data)
+            
+            will apply the fix
+            :param savefile: the savefile to use
+            :param dim: the dimension in
+            :param region: the region in
+            :param chunk: the chunk in
+            :param data: the map data
+
+
     @G.registry class Chunk extends mcpython.storage.serializer.IDataSerializer.IDataSerializer
 
         variable PART
@@ -128,6 +146,8 @@ ___
             variable chunk_instance.generated
 
             variable inv_file
+
+                    variable data["block_palette"][i]
 
                 variable position
 
@@ -154,9 +174,39 @@ ___
         static
         function save(cls, data, savefile, dimension: int, chunk: tuple, override=False)
 
-                variable biome_map
+            variable G.worldgenerationhandler.enable_generation
+                when doing stuff, please make sure that nothing fancy happens
+
+            variable palette - list of {"custom": <some stuff>, "name": <name>, "shown": <shown>, ...}
+                these section is for dumping block stuff...
+
+            variable inv_file - where to dump inventory stuff
+
+            variable overridden
+
+                variable rel_position
+
+                variable block
+
+                variable block_data
+
+                    variable block_data["inventories"] - create the entry for the data
+
+                            variable overridden
+
+                        variable path - were to locate in the file
+
+                    variable cdata["blocks"][rel_position]
+
+                    variable cdata["blocks"][rel_position]
+
+                variable edata
+
+                variable biome_map - read the biome map ...
 
                 variable positions - an list of all (x, z) in the chunk, for sorting the arrays
+                    ... and use it as an template for the following
+                    todo: use something else more stable!
 
                 variable landmass_map
 
@@ -180,12 +230,12 @@ ___
 
                 variable cdata["maps"]["biome"]
 
-                variable cdata["maps"]["biome_palette"]
+                variable cdata["maps"]["biome_palette"] - todo: move to global map of biomes
 
                 variable height_map
 
                 variable cdata["maps"]["height"]
 
-            variable data[chunk]
+            variable data[chunk] - dump the chunk into the region
 
-            variable G.worldgenerationhandler.enable_generation
+            variable G.worldgenerationhandler.enable_generation - re-enable world gen as we are finished

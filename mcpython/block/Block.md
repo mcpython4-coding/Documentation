@@ -1,14 +1,18 @@
-***Block.py - documentation - last updated on 24.6.2020 by uuk***
+***Block.py - documentation - last updated on 3.7.2020 by uuk***
 ___
 
     class Block extends mcpython.event.Registry.IRegistryContent
         
-        base class for all blocks
+        (Abstract) base class for all blocks
+        Provides the normal interfaces for an block.
+        All block classes should extend this.
+        WARNING: These part should be STABLE. Please do NOT override these class
 
 
-        variable TYPE: str
+        variable TYPE: str - internal registry name
 
-        variable BREAKABLE: bool - If this block can be broken in gamemode 0 and 2
+        variable BREAKABLE: bool
+            If this block can be broken in gamemode 0 and 2
 
         variable HARDNESS: float - the hardness of the block
 
@@ -18,14 +22,16 @@ ___
 
         variable BEST_TOOLS_TO_BREAK: typing.List[mcpython.util.enums.ToolType] - the tools best to break
 
-        variable ENABLE_RANDOM_TICKS
+        variable ENABLE_RANDOM_TICKS - if the random tick function should be called if needed or not
 
         function __init__(self, position: tuple, set_to=None, real_hit=None, state=None, player=None)
             
-            creates new Block
+            creates new Block-instance.
+            sets up basic stuff and creates the attributes
             :param position: the position to create the block on
             :param set_to: when the block is set to an block, these parameter contains where
             :param real_hit: were the block the user set to was hit on
+            Sub-classes may want to override the constructor and super().__init__(...) this
 
 
             variable self.position
@@ -46,34 +52,40 @@ ___
 
         function __del__(self)
             
-            used for removing the circular dependency between Block and BlockFaceState for gc
+            Used for removing the circular dependency between Block and BlockFaceState for gc
+            Internal use only
 
 
         function on_remove(self)
             
-            called when the block is removed
+            Called when the block is removed
+            Not cancelable. Block show data is removed, but the "current" state of the block is still stored.
+            After this, the block might stay for some time in memory, but may also get deleted.
 
 
         function on_random_update(self)
             
-            called on random update
+            Called on random update
+            Needs ENABLE_RANDOM_TICKS to be set to True for being invoked
 
 
         function on_block_update(self)
             
-            called when an near-by block-position is updated by setting/removing an block
+            Called when an near-by block-position is updated by setting/removing an block
+            Invokes an redstone update by default. Call if needed.
 
 
         function on_redstone_update(self)
             
-            special event called in order to update redstone state. Not used by vanilla at the moment
+            Special event called in order to update redstone state. Not used by vanilla at the moment
+            Is also invoked on "normal" block update
 
 
         function on_player_interact(self, player, itemstack, button, modifiers, exact_hit) -> bool
             
             Called when the player pressed on mouse button on the block.
             :param player: the entity instance that interacts. WARNING: may not be an player instance
-            :param itemstack: the itemstack hold in hand, todo: remove as it is published by player
+            :param itemstack: the itemstack hold in hand
             :param button: the button pressed
             :param modifiers: the modifiers hold during press
             :param exact_hit: where the block was hit at
@@ -83,18 +95,20 @@ ___
         function save(self)
             
             :return: an pickle-able object representing the whole block, not including inventories
+            todo: maybe expect bytes?
 
 
         function load(self, data)
             
             loads block data
             :param data:  the data saved by save()
+            WARNING: if not providing DataFixers for old mod versions, these data may get very old!
 
 
         function get_inventories(self)
             
             Called to get an list of inventories
-            FOR MODDERS: use get_provided_slot_lists() where possible
+            FOR MODDERS: use get_provided_slot_lists() where possible as it is the more "save" way to interact with the block
 
 
         function get_provided_slot_lists(self, side: mcpython.util.enums.EnumSide)
@@ -104,22 +118,24 @@ ___
             gets slots for various reasons for an given side
             :param side: the side asked for
             :return: an tuple of lists of input slots and output slots
+            Slots may be in inputs AND output.
+            todo: make default return None, None
 
 
         function get_model_state(self) -> dict
             
             the active model state
-            :return: the model state
+            :return: the model state as an dict
 
 
         function set_model_state(self, state: dict)
             
             sets the model state for the block
-            :param state: the state to set
+            :param state: the state to set as an dict
 
             
             used to get the bbox of the block
-            :return: the bbox
+            :return: the bbox instance
 
 
         function on_request_item_for_block(self, itemstack: mcpython.gui.ItemStack.ItemStack)

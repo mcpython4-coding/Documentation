@@ -1,4 +1,4 @@
-***SaveFile.py - documentation - last updated on 20.6.2020 by uuk***
+***SaveFile.py - documentation - last updated on 3.7.2020 by uuk***
 ___
 
     How to decide when an new version is needed?
@@ -75,6 +75,9 @@ ___
             variable self.save_in_progress
 
         function region_iterator(self)
+            
+            Iterator iterating over ALL region files from an save file
+
 
         function load_world(self)
             
@@ -196,7 +199,7 @@ ___
 
 
         @deprecation.deprecated("dev3-1", "a1.3.0")
-        function upgrade(self, part=None, version=None, to=None, **kwargs)
+        function upgrade(self, **kwargs)
 
     @G.modloader("minecraft", "stage:datafixer:general")
     function load_elements()

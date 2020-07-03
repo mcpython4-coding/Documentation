@@ -1,4 +1,4 @@
-***BlockBarrel.py - documentation - last updated on 8.6.2020 by uuk***
+***BlockBarrel.py - documentation - last updated on 3.7.2020 by uuk***
 ___
 
     @G.registry class BlockBarrel extends Block.Block
@@ -27,7 +27,7 @@ ___
 
         variable BEST_TOOLS_TO_BREAK
 
-        function get_provided_slots(self, side): return self.inventory.slots
+        function get_provided_slot_lists(self, side): return self.inventory.slots, self.inventory.slots
                 
                 def set_model_state(self, state: dict):
 

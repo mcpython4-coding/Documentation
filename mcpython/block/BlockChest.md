@@ -1,4 +1,4 @@
-***BlockChest.py - documentation - last updated on 8.6.2020 by uuk***
+***BlockChest.py - documentation - last updated on 3.7.2020 by uuk***
 ___
 
     variable BBOX - the bounding box of the chest
@@ -39,7 +39,7 @@ ___
 
         function get_inventories(self)
 
-        function get_provided_slots(self, side): return self.inventory.slots
+        function get_provided_slot_lists(self, side): return self.inventory.slots, self.inventory.slots
                 
                 def set_model_state(self, state: dict):
 
