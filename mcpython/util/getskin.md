@@ -1,4 +1,4 @@
-***getskin.py - documentation - last updated on 14.6.2020 by uuk***
+***getskin.py - documentation - last updated on 4.7.2020 by uuk***
 ___
 
     variable DEBUG
@@ -29,8 +29,21 @@ ___
     function find_texture_info(properties)
 
     function get_url(url, **kwargs)
+        
+        gets the content of an URL as an requests.get() or an an SimulatedResponse-instance
+        :param url: the url to download from
+        :param kwargs: kwargs to requests.get() with
+        :return: the content
+
 
     function download_skin(username: str, store: str)
+        
+        will download skin data for an user name
+        :param username: the user to download for
+        :param store: where to store the data
+        :raises ValueError: raised when an error occurred during retrieving the data
+        Will also store data in an cache for later usage
+
 
             variable r
 

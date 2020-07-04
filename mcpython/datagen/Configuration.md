@@ -1,4 +1,4 @@
-***Configuration.py - documentation - last updated on 10.6.2020 by uuk***
+***Configuration.py - documentation - last updated on 4.7.2020 by uuk***
 ___
 
     class IDataGenerator
@@ -69,7 +69,8 @@ ___
 
         function __build(self)
             
-            internal function to build the config
+            Internal function to build the config
+            Will decide if the system should data-gen or not
 
 
         function write(self, data, *args)
@@ -82,6 +83,7 @@ ___
 
         function write_json(self, data, *args)
             
-            will write data in human-readable json mode (with \n in place and right indent)
+            Will write data in human-readable json mode (with \n in place and right indent) via the simple json format
+            It will sort the keys
             :param data: the data to save
             :param args: the args to pass to self.write()
