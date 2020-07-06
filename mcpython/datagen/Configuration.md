@@ -1,4 +1,4 @@
-***Configuration.py - documentation - last updated on 4.7.2020 by uuk***
+***Configuration.py - documentation - last updated on 6.7.2020 by uuk***
 ___
 
     class IDataGenerator
@@ -72,6 +72,8 @@ ___
             Internal function to build the config
             Will decide if the system should data-gen or not
 
+
+            variable start
 
         function write(self, data, *args)
             

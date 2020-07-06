@@ -1,4 +1,4 @@
-***BlockWall.py - documentation - last updated on 27.6.2020 by uuk***
+***BlockWall.py - documentation - last updated on 6.7.2020 by uuk***
 ___
 
     class IWall extends mcpython.block.Block.Block
@@ -40,14 +40,10 @@ ___
         static
         function get_all_model_states() -> list
 
-    @G.registry class PrismarineWall extends IWall
-
-        variable NAME
-
-    @G.registry class RedNetherBrickWall extends IWall
-
-        variable NAME
-
     @G.registry class RedSandstoneWall extends IWall
+
+        variable NAME
+
+    @G.registry class SandstoneWall extends IWall
 
         variable NAME

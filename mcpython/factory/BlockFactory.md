@@ -1,4 +1,4 @@
-***BlockFactory.py - documentation - last updated on 8.6.2020 by uuk***
+***BlockFactory.py - documentation - last updated on 6.7.2020 by uuk***
 ___
 
     class BlockFactory
@@ -226,6 +226,9 @@ ___
 
                 static
                 function get_all_model_states()
+
+                    variable states
+                        make the entries unique!
 
                 function __init__(self, *args, **kwargs)
 

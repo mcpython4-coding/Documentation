@@ -1,4 +1,4 @@
-***config.py - documentation - last updated on 28.6.2020 by uuk***
+***config.py - documentation - last updated on 6.7.2020 by uuk***
 ___
 
     variable MC_VERSION_BASE
@@ -101,25 +101,25 @@ ___
 
     variable ENABLED_EXTRA_BLOCKS
 
-        variable ENABLED_EXTRA_BLOCKS["minecraft:{}_plank_wall".format(wood)] - Oh, fancy, but what about fences?
-
-        variable ENABLED_EXTRA_BLOCKS["minecraft:{}_wool_slab".format(color)]
-            colored slabs and walls, why not? (excluding powder as it is something "special")
-
-        variable ENABLED_EXTRA_BLOCKS["minecraft:{}_wool_wall".format(color)]
+        variable ENABLED_EXTRA_BLOCKS["minecraft:{}_wall".format(wood)]
 
         variable ENABLED_EXTRA_BLOCKS["minecraft:{}_concrete_slab".format(color)]
 
         variable ENABLED_EXTRA_BLOCKS["minecraft:{}_concrete_wall".format(color)]
 
-        variable ENABLED_EXTRA_BLOCKS["minecraft:{}_stained_glass_slab".format(color)]
-            someone asked for more color, here you go!
-
-        variable ENABLED_EXTRA_BLOCKS["minecraft:{}_stained_glass_wall".format(color)]
-
         variable ENABLED_EXTRA_BLOCKS["minecraft:{}_terracotta_slab".format(color)]
 
         variable ENABLED_EXTRA_BLOCKS["minecraft:{}_terracotta_wall".format(color)]
+
+        variable ENABLED_EXTRA_BLOCKS["minecraft:{}_wool_slab".format(color)]
+
+        variable ENABLED_EXTRA_BLOCKS["minecraft:{}_wool_wall".format(color)]
+
+        variable ENABLED_EXTRA_BLOCKS["minecraft:{}_stained_glass_slab".format(color)]
+
+        variable ENABLED_EXTRA_BLOCKS["minecraft:{}_stained_glass_wall".format(color)]
+
+        variable ENABLED_EXTRA_BLOCKS["minecraft:polished_{}_wall".format(stone)]
 
     function load()
 
