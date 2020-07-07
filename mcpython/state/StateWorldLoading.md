@@ -1,4 +1,4 @@
-***StateWorldLoading.py - documentation - last updated on 12.6.2020 by uuk***
+***StateWorldLoading.py - documentation - last updated on 7.7.2020 by uuk***
 ___
 
     class StateWorldLoading extends State.State
@@ -18,11 +18,6 @@ ___
         function on_update(self, dt)
 
         function on_activate(self)
-                    
-                    G.worldgenerationhandler.task_handler.schedule_invoke(
-                        c, lambda: G.world.savefile.read("minecraft:chunk", dimension=G.world.active_dimension,
-                                                        chunk=(cx, cz), immediate=False))
-
 
         function on_deactivate(self)
 

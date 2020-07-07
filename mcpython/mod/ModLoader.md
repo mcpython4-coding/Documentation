@@ -65,13 +65,14 @@ ___
             if your mod has other resource locations...
 
         variable PREBUILD
-            deprecated (but removal in long future) system of preparing data, but storing them in an "cache"
+            deprecated (but removal in future) system of preparing data, but storing them in an "cache"
+            should be replaced by data gen and similar
 
         variable CONFIGS
             first: create ConfigFile objects, second: internally, third: do something with the data
 
         variable COMBINED_FACTORIES
-            Stage collection for combined factories
+            Stage collection for combined factories, last for building them
 
         variable BLOCKS
             blocks, items, inventories, ... all stuff to register

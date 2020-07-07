@@ -1,4 +1,4 @@
-***WorldGenerationHandler.py - documentation - last updated on 24.6.2020 by uuk***
+***WorldGenerationHandler.py - documentation - last updated on 7.7.2020 by uuk***
 ___
 
     class WorldGenerationTaskHandler
@@ -163,26 +163,36 @@ ___
 
             variable self.task_handler
 
-        function add_chunk_to_generation_list(self, chunk, dimension=None, prior=False, force_generate=False, immediate=False,
-                generate_add=False):
+        function add_chunk_to_generation_list(self, chunk, dimension=None, force_generate=False, immediate=False,
+                generate_add=False, prior=False):
             
             adds chunk schedule to the system
             will set the loaded-flag of the chunk during the process
             will schedule the internal _add_chunk function
             :param chunk: the chunk
             :param dimension: optional: if chunk is tuple, if another dim than active should be used
-            :param prior: not used anymore, only for backward compatibility todo: remove
             :param force_generate: if generation should take place also when auto-gen is disabled
-            :param generate_add: not used anymore, only for backward compatibility todo: remove
             :param immediate: if _add_chunk should be called immediate or not [can help in cases where TaskHandler stops
                 running tasks when in-generation progress]
+            :param generate_add: not used anymore, only for backward compatibility todo: remove
+            :param prior: not used anymore, only for backward compatibility todo: remove
 
+
+                    variable chunk
+
+                    variable chunk
+
+            variable chunk.loaded
 
         function _add_chunk(self, chunk: mcpython.world.Chunk.Chunk)
             
             internal implementation of the chunk generation code
             :param chunk: the chunk to schedule
 
+
+            variable config
+
+            variable reference
 
         function process_one_generation_task(self, **kwargs):  # todo: remove
                 if not self.enable_generation: return
@@ -192,7 +202,7 @@ ___
 
         function setup_dimension(self, dimension, config=None)
 
-        function generate_chunk(self, chunk: mcpython.world.Chunk.Chunk, dimension=None, check_chunk=True)
+        function generate_chunk(self, chunk: typing.Union[mcpython.world.Chunk.Chunk, tuple], dimension=None, check_chunk=True)
 
         function register_layer(self, layer: mcpython.world.gen.layer.Layer.Layer)
 

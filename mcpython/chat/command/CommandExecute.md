@@ -1,4 +1,4 @@
-***CommandExecute.py - documentation - last updated on 8.6.2020 by uuk***
+***CommandExecute.py - documentation - last updated on 7.7.2020 by uuk***
 ___
 
     @G.registry class CommandExecute extends mcpython.chat.command.Command.Command
@@ -41,6 +41,8 @@ ___
                     variable selector
 
                     variable flag
+
+                variable info.dimension
 
         static
         function get_help() -> list

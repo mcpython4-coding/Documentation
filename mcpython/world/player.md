@@ -1,7 +1,7 @@
-***player.py - documentation - last updated on 2.7.2020 by uuk***
+***player.py - documentation - last updated on 7.7.2020 by uuk***
 ___
 
-    @globals.registry class Player extends mcpython.entity.Entity.Entity
+    @G.registry class Player extends mcpython.entity.Entity.Entity
 
         variable RENDERER
 
@@ -112,3 +112,5 @@ ___
         function __str__(self)
 
         function on_inventory_cleared(self)
+
+        function teleport(self, position, dimension=None, force_chunk_save_update=False)

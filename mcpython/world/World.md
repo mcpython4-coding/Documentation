@@ -1,4 +1,4 @@
-***World.py - documentation - last updated on 12.6.2020 by uuk***
+***World.py - documentation - last updated on 7.7.2020 by uuk***
 ___
 
     class World
@@ -123,7 +123,7 @@ ___
         @deprecation.deprecated("dev1-4", "a1.3.0")
         function change_sectors(self, before, after, immediate=False, generate_chunks=True, load_immediate=False)
 
-        function change_chunks(self, before: typing.Tuple[int, int], after: typing.Tuple[int, int], generate_chunks=True,
+        function change_chunks(self, before: typing.Union[typing.Tuple[int, int], None], after: typing.Union[typing.Tuple[int, int], None], generate_chunks=True,
                 load_immediate=True):
             
             Move from chunk `before` to chunk `after`
