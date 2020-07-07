@@ -1,4 +1,4 @@
-***ItemFactory.py - documentation - last updated on 8.6.2020 by uuk***
+***ItemFactory.py - documentation - last updated on 7.7.2020 by uuk***
 ___
 
     class ItemFactory
@@ -8,7 +8,9 @@ ___
         static
         function process(cls)
 
-        function __init__(self)
+        function __init__(self, name=None)
+
+            variable self.set_name_finises_previous
 
             variable self.name
 
@@ -51,7 +53,9 @@ ___
 
             variable self.template
 
-        function setTemplate(self)
+        function __call__(self, name: str = None)
+
+        function setTemplate(self, set_name_finises_previous=False)
             
             sets the current status as "template". This status will be set to on every .finish() call, but will not affect
             the new generated entry.
@@ -62,6 +66,8 @@ ___
         function resetTemplate(self)
 
         function finish(self, register=True, task_list=False)
+
+            variable copied
 
         function copy(self)
 
@@ -75,15 +81,19 @@ ___
             todo: clean up this mess!!!!!
 
 
-            class baseclass extends object
+            variable master
+
+                variable self.name
+
+            class BaseClass extends object
 
                 variable self.itemfile
 
                 variable self.blockname
 
-                class baseclass extends baseclass,  cls
+                class BaseClass extends BaseClass,  cls
 
-            class ConstructedItem extends baseclass
+            class ConstructedItem extends BaseClass
 
                 variable NAME
 

@@ -1,4 +1,4 @@
-***BlockFactory.py - documentation - last updated on 6.7.2020 by uuk***
+***BlockFactory.py - documentation - last updated on 7.7.2020 by uuk***
 ___
 
     class BlockFactory
@@ -64,6 +64,8 @@ ___
 
             variable self.on_class_create
 
+            variable self.set_name_finises_previous
+
             variable self.name
 
             variable self.modname
@@ -120,6 +122,8 @@ ___
 
             variable self.template
 
+        function __call__(self, name: str = None)
+
         function copy(self)
             
             will copy the BlockFactory-object with all its content (including its template-link)
@@ -142,7 +146,7 @@ ___
 
             variable obj.template
 
-        function setTemplate(self)
+        function setTemplate(self, set_name_finises_previous=False)
             
             sets the current status as "template". This status will be set to on every .finish() call, but will not affect
             the new generated entry.

@@ -1,4 +1,4 @@
-***Chunk.py - documentation - last updated on 3.7.2020 by uuk***
+***Chunk.py - documentation - last updated on 7.7.2020 by uuk***
 ___
 
     function chunk2region(cx, cz): return cx >> 5, cz >> 5
@@ -159,7 +159,7 @@ ___
 
             variable positions
 
-                variable biome_map
+                    variable biome_map
 
                     variable entity_instance
 

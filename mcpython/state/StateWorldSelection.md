@@ -1,4 +1,4 @@
-***StateWorldSelection.py - documentation - last updated on 18.6.2020 by uuk***
+***StateWorldSelection.py - documentation - last updated on 7.7.2020 by uuk***
 ___
 
     variable MISSING_TEXTURE
@@ -19,6 +19,10 @@ ___
 
             variable self.selection_sprite
 
+            variable self.eventbus
+
+                variable statepart.master - StateParts get an list of steps to get to them as an list
+
         function bind_to_eventbus(self)
 
         function on_resize(self, wx, wy)
@@ -33,7 +37,7 @@ ___
 
         function recalculate_sprite_position(self)
 
-                variable self.parts[4].active
+                variable self.parts[-1].active
 
         function on_key_press(self, symbol, modifiers)
 
@@ -46,6 +50,8 @@ ___
         function on_back_press(self, *_)
 
         function on_new_world_press(self, *_)
+
+        function on_delete_press(self, *_)
 
         function on_world_load_press(self, *_)
 

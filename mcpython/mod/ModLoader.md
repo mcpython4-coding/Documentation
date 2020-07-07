@@ -1,4 +1,4 @@
-***ModLoader.py - documentation - last updated on 27.6.2020 by uuk***
+***ModLoader.py - documentation - last updated on 7.7.2020 by uuk***
 ___
 
     class LoadingStage
@@ -33,6 +33,16 @@ ___
             will finish up the system
             :param astate: the state to use
 
+
+                variable G.modloader.finished
+
+            variable astate.parts[2].progress
+
+            variable new_stage
+
+                variable astate.parts[2].progress_max
+
+                variable astate.parts[2].progress_max
 
         function call_one(self, astate)
             
@@ -112,6 +122,7 @@ ___
     class ModLoaderAnnotation
         
         representation of an @G.modloader([...]) annotation
+        todo: make use lambdas
 
 
         function __init__(self, modname: str, eventname: str, info=None)
