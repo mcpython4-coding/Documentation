@@ -1,4 +1,4 @@
-***RenderingHelper.py - documentation - last updated on 2.7.2020 by uuk***
+***RenderingHelper.py - documentation - last updated on 8.7.2020 by uuk***
 ___
 
     class RenderingHelper
@@ -75,3 +75,9 @@ ___
 
 
         function setup2d(self, anchor=(0, 0), z_buffer=0)
+
+        static
+        function enableAlpha(cls)
+
+        static
+        function disableAlpha(cls)

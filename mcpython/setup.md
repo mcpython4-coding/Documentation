@@ -1,4 +1,4 @@
-***setup.py - documentation - last updated on 24.6.2020 by uuk***
+***setup.py - documentation - last updated on 8.7.2020 by uuk***
 ___
 
     WARNING: the system is outdated and will likely be removed in the future
@@ -46,6 +46,10 @@ ___
 
         variable G.prebuilding
 
+        variable G.data_gen
+
             variable data
 
             variable G.prebuilding
+
+            variable G.data_gen

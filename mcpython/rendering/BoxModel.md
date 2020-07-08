@@ -1,4 +1,4 @@
-***BoxModel.py - documentation - last updated on 8.6.2020 by uuk***
+***BoxModel.py - documentation - last updated on 8.7.2020 by uuk***
 ___
 
     variable UV_ORDER
@@ -98,8 +98,7 @@ ___
         an non-model-bound boxmodel class
 
 
-        function __init__(self, relative_position: tuple, size: tuple, texture, texture_region=[(0, 0, 1, 1)]*6,
-                rotation=(0, 0, 0), rotation_center=None):
+        function __init__(self, relative_position: tuple, size: tuple, texture, texture_region=None, rotation=(0, 0, 0), rotation_center=None)
             
             creates an new renderer for the box-model
             :param relative_position: where to position the box relative to draw position
@@ -109,6 +108,12 @@ ___
             :param rotation: how to rotate the bbox
             :param rotation_center: where to rotate the box around
 
+
+            variable self.relative_position
+
+            variable self.size
+
+            variable self.texture
 
         function recalculate_cache(self)
 
