@@ -1,13 +1,23 @@
-***globals.py - documentation - last updated on 27.5.2020 by uuk***
+***globals.py - documentation - last updated on 11.6.2020 by uuk***
 ___
 
     variable prebuilding
 
     variable debugevents
 
+    variable dev_environment - dynamical set on build
+
     variable local
 
+    variable home
+
+    variable build
+
     variable tmp
+
+    variable data_gen
+
+    variable data_gen_exit
 
     variable STORAGE_VERSION
 
@@ -48,5 +58,7 @@ ___
     variable modelhandler
 
     variable modloader
+
+    variable rendering_helper
 
     variable NEXT_EVENT_BUS_ID

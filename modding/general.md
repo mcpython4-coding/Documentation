@@ -10,11 +10,16 @@ Loading:
 - in folders & zip-files, an file called mod.json MUST be located. This file has in version 1.1.0 the following structure:
     
     {
-        "version": "1.1.0",
-        "loader": "python:default",
-        "load:files": [<an list of your python files to import on beginning without .py location relative from folder base>]
+        "version": "1.2.0",
+        "entries": [
+            {
+                "name": "TestMod",
+                "version": "Some.Version",
+                "load_resources": true,
+                "load_files": ["some.package.to.load"]
+            }
+        ]
     }
-
 You can then when your python file are imported create mod.Mod.Mod-instanced giving an modname and an modversion.
 The object you will get you can modify. You can add dependencies [see documentation of mod.Mod.Mod] and
 subscribe to various loading events:
