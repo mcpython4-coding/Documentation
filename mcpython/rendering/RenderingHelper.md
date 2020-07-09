@@ -1,23 +1,19 @@
-***RenderingHelper.py - documentation - last updated on 8.7.2020 by uuk***
+***RenderingHelper.py - documentation - last updated on 9.7.2020 by uuk***
 ___
 
     class RenderingHelper
         
         class for helping storing an gl status and exchanging it, rolling back, ...
         todo: add setup functions for various systems
+        todo: add checks if this is the rendering process
 
 
         function __init__(self)
             
             creates an new rendering helper.
             WARNING: multiple instances may work NOT well together as they are based on the same gl backend
+                -> todo: make shared
 
-
-            variable self.status_table
-
-            variable self.saved
-
-            variable self.default_3d_stack
 
         function save_status(self, add_to_stack=True)
             
@@ -32,6 +28,8 @@ ___
             Will pop the current status and will revert it to the one before the save_status()-call
             WARNING: when no status found, an exception will be raised
 
+
+        function deleteSavedStates(self)
 
         function glEnable(self, flag: int)
             
@@ -65,19 +63,28 @@ ___
             :param base: the MatrixStack-instance to set into
             :return: the MatrixStack instance
             WARNING: all transformations will be applied ON TOP of the base-MatrixStack if its provided
+            Use get_dynamic_3d_matrix_stack() where possible & reuse
 
 
         function get_dynamic_3d_matrix_stack(self, base=None) -> mcpython.rendering.MatrixStack.LinkedMatrixStack
             
             same as get_default_3d_matrix_stack, but the matrix stack is an LinkedMatrixStack with links to player position,
-                etc.
+                etc. (so it dynamically updates itself when the player changes the parameters)
             [see above]
 
 
         function setup2d(self, anchor=(0, 0), z_buffer=0)
+            
+            will setup an 2d environment
+            :param anchor: the anchor in the window as an tuple of two floats representing an move as factors to the window size
+            :param z_buffer: the layer in which to render
 
-        static
-        function enableAlpha(cls)
 
-        static
-        function disableAlpha(cls)
+        function enableAlpha(self)
+            
+            will enable alpha blending
+
+
+        function disableAlpha(self)
+            
+            will disable alpha rendering

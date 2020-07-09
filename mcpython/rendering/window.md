@@ -1,4 +1,4 @@
-***window.py - documentation - last updated on 2.7.2020 by uuk***
+***window.py - documentation - last updated on 9.7.2020 by uuk***
 ___
 
     class NoWindow
@@ -21,6 +21,11 @@ ___
         function set_icon(self, *args)
 
     class Window extends pyglet.window.Window if "--no-window" not in sys.argv else NoWindow
+        
+        Class representing the game window.
+        Interacts with the pyglet backend.
+        todo: move the pyglet-engine-calls to here to make it possible to exchange the backend
+
 
         function __init__(self, *args, **kwargs)
             
@@ -79,18 +84,10 @@ ___
             variable self.CROSSHAIRS_TEXTURE
                 todo: move to seperated class
 
-        @deprecation.deprecated("dev4-3", "a1.2.0")
-        function set_flying(self, flying): G.world.get_active_player().is_flying = flying
-                
-                flying = property(get_flying, set_flying)
-                
-                def print_profiler(self, dt=None):
-
-        variable flying
-
         function print_profiler(self, dt=None)
             
             will print the enabled profiler(s)
+            todo: move to separated Profiler class
 
 
         function reset_caption(self)
@@ -124,6 +121,7 @@ ___
             
             This method is scheduled to be called repeatedly by the pyglet clock.
             :param dt: The change in time since the last call.
+            todo: move to TickHandler
 
 
                 variable self.cpu_usage
@@ -141,6 +139,7 @@ ___
             :param position: The (x, y, z) position to check for collisions at.
             :param height: The height of the player.
             :return The new position of the player taking into account collisions.
+            todo: move to physic package
 
 
             variable pad
@@ -216,6 +215,7 @@ ___
             Called when the player moves the mouse.
             :param x, y: The coordinates of the mouse click. Always center of the screen if the mouse is captured.
             :param dx, dy : The movement of the mouse.
+            todo: use pyglet's MouseHandler for tracking the mouse position and buttons
 
 
             variable self.mouse_position
@@ -246,26 +246,31 @@ ___
         function on_draw(self)
             
             Called by pyglet to draw the canvas.
+            todo: move to separated configurable rendering pipeline
 
 
         function draw_focused_block(self)
             
             Draw black edges around the block that is currently under the crosshairs.
+            todo: move to special helper class
 
 
         function draw_label(self)
             
             Draw the label in the top left of the screen.
+            todo: move to special helper class
 
 
         function get_block_entity_info(self)
             
             used by hotkey for copying entity data to the clipboard
+            todo: move to special helper class
 
 
         function draw_reticle(self)
             
             Draw the crosshairs in the center of the screen.
+            todo: move to special helper class
 
 
         function on_text(self, text: str)
@@ -278,3 +283,12 @@ ___
             
             called when the window tries to close itself
             cleans up some stuff before closing
+
+
+        @deprecation.deprecated("dev4-3", "a1.2.0")
+        function get_flying(self)
+
+        @deprecation.deprecated("dev4-3", "a1.2.0")
+        function set_flying(self, flying)
+
+        variable flying
