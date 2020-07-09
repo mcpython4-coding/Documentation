@@ -1,4 +1,4 @@
-***Item.py - documentation - last updated on 8.6.2020 by uuk***
+***Item.py - documentation - last updated on 9.7.2020 by uuk***
 ___
 
     class Item extends mcpython.event.Registry.IRegistryContent
@@ -8,6 +8,8 @@ ___
         variable STACK_SIZE
 
         variable HAS_BLOCK
+
+        variable ITEM_NAME_COLOR
 
         static
         function get_default_item_image_location() -> str:  # WARNING: will be removed during item rendering update
@@ -46,3 +48,7 @@ ___
                 def set_data(self, data):
 
         function set_data(self, data)
+
+        function get_tooltip_provider(self)
+
+        function getAdditionalTooltipText(self, stack, renderer) -> list

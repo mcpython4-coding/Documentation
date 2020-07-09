@@ -1,4 +1,4 @@
-***ItemFactory.py - documentation - last updated on 7.7.2020 by uuk***
+***ItemFactory.py - documentation - last updated on 9.7.2020 by uuk***
 ___
 
     class ItemFactory
@@ -53,6 +53,12 @@ ___
 
             variable self.template
 
+            variable self.tooltip_renderer
+
+            variable self.tooltip_extra
+
+            variable self.tooltip_color
+
         function __call__(self, name: str = None)
 
         function setTemplate(self, set_name_finises_previous=False)
@@ -99,6 +105,8 @@ ___
 
                 variable HAS_BLOCK
 
+                variable ITEM_NAME_COLOR
+
                 static
                 function get_default_item_image_location() -> str: return master.itemfile
                         
@@ -144,6 +152,16 @@ ___
 
                     variable FUEL
 
+                class ConstructedItem extends ConstructedItem
+
+                    static
+                    function get_tooltip_provider(cls)
+
+                class ConstructedItem extends ConstructedItem
+
+                    static
+                    function getAdditionalTooltipText(cls, *_) -> list
+
         function setBaseClass(self, baseclass):   # overwrites all previous base classes and replace them with the new(s)
                 self.baseclass = baseclass if type(baseclass) == list else [baseclass]
                 return self
@@ -187,3 +205,9 @@ ___
         function setCustomFromItemFunction(self, function)
 
         function setFuelLevel(self, level)
+
+        function setToolTipRenderer(self, renderer)
+
+        function setTooltipExtraLines(self, lines)
+
+        function setToolTipItemNameColor(self, color_name: str)

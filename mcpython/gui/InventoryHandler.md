@@ -1,4 +1,4 @@
-***InventoryHandler.py - documentation - last updated on 24.6.2020 by uuk***
+***InventoryHandler.py - documentation - last updated on 9.7.2020 by uuk***
 ___
 
     class OpenedInventoryStatePart extends mcpython.state.StatePart.StatePart
@@ -19,6 +19,8 @@ ___
 
             variable self.original_amount
 
+            variable self.tool_tip_renderer
+
         function bind_to_eventbus(self)
 
         function on_key_press(self, symbol, modifiers)
@@ -31,6 +33,14 @@ ___
             :param x: the x position
             :param y: the y position
             :return: the slot or None if none found
+
+
+        function _get_slot_inventory_for(self, x, y)
+            
+            get slot for position
+            :param x: the x position
+            :param y: the y position
+            :return: the slot and the inventory or None and None if none found
 
 
         function on_mouse_press(self, x, y, button, modifiers)
