@@ -52,6 +52,8 @@ ___
 
             variable self.child - the entity this is ridden by
 
+            variable self.nbt_data - dict holding entity data, automatically saved & loaded, when loading, data is put ontop of the existing dict
+
         function __del__(self)
 
         function __str__(self)
