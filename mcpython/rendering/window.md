@@ -1,4 +1,4 @@
-***window.py - documentation - last updated on 9.7.2020 by uuk***
+***window.py - documentation - last updated on 11.7.2020 by uuk***
 ___
 
     class NoWindow
@@ -132,7 +132,7 @@ ___
 
                 variable self.sector
 
-        function collide(self, position, height)
+        function collide(self, position: tuple, height: tuple)
             
             Checks to see if the player at the given `position` and `height`
             is colliding with any blocks in the world.
@@ -140,6 +140,8 @@ ___
             :param height: The height of the player.
             :return The new position of the player taking into account collisions.
             todo: move to physic package
+            todo: make player based
+            todo: make account player & block hit box
 
 
             variable pad
@@ -158,6 +160,8 @@ ___
                         variable op
 
                         variable chunk
+
+                        variable block
 
                         variable blockstate
 

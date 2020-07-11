@@ -1,4 +1,4 @@
-***Block.py - documentation - last updated on 3.7.2020 by uuk***
+***Block.py - documentation - last updated on 11.7.2020 by uuk***
 ___
 
     class Block extends mcpython.event.Registry.IRegistryContent
@@ -23,6 +23,8 @@ ___
         variable BEST_TOOLS_TO_BREAK: typing.List[mcpython.util.enums.ToolType] - the tools best to break
 
         variable ENABLE_RANDOM_TICKS - if the random tick function should be called if needed or not
+
+        variable NO_COLLISION
 
         function __init__(self, position: tuple, set_to=None, real_hit=None, state=None, player=None)
             
@@ -168,3 +170,8 @@ ___
             gets the slots for an given side
             :param side: the side to check
             :return: an list of slot of the side
+
+
+        function on_no_collide_collide(self, player)
+            
+            Called when NO_COLLIDE is True and the player is in the block every collision check

@@ -1,4 +1,4 @@
-***BlockFactory.py - documentation - last updated on 7.7.2020 by uuk***
+***BlockFactory.py - documentation - last updated on 11.7.2020 by uuk***
 ___
 
     class BlockFactory
@@ -75,6 +75,8 @@ ___
             variable self.modelstates
 
             variable self.solid_faces
+
+            variable self.no_collision
 
             variable self.create_callback
 
@@ -227,6 +229,8 @@ ___
                 variable CAN_MOBS_SPAWN_ON
 
                 variable ENABLE_RANDOM_TICKS
+
+                variable NO_COLLISION
 
                 static
                 function get_all_model_states()
@@ -480,3 +484,6 @@ ___
             
             will set the resistance against explosions (internally not used, but part of the Block-API
             :param resistance: the resistance of the block
+
+
+        function setNoCollision(self, value: bool = True)
