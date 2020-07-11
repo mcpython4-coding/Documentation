@@ -1,16 +1,27 @@
-***math.py - documentation - last updated on 24.6.2020 by uuk***
+***math.py - documentation - last updated on 11.7.2020 by uuk***
 ___
 
     @deprecation.deprecated("dev3-2", "a1.3.0")
     function get_max_y(pos)
 
-    @deprecation.deprecated(deprecated_in="snapshot dev 1 cycle 1", removed_in="v1.2.0 alpha")
+    @deprecation.deprecated(deprecated_in="dev1-1", removed_in="v1.2.0 alpha")
     function cube_vertices(x, y, z, nx, ny, nz, faces=(True, True, True, True, True, True))
         
         Same as cube_vertices_better, but will return all summed up instead of separated lists
 
 
-    function cube_vertices_better(x, y, z, nx, ny, nz, faces=(True, True, True, True, True, True))
+    function cube_vertices_better(x: float, y: float, z: float, nx: float, ny: float, nz: float, faces=(True, True, True, True, True, True))
+        
+        Similar to cube_vertices, but will return it per-face instead of an whole array of data
+        :param x: the x position
+        :param y: the y position
+        :param z: the z position
+        :param nx: the size in x direction
+        :param ny: the size in y direction
+        :param nz: the size in z direction
+        :param faces: which faces to generate
+        :return: an tuple of length 6 representing each face
+
 
     function tex_coord(x, y, size=(32, 32), region=(0, 0, 1, 1), rot=0) -> tuple
         
@@ -23,7 +34,7 @@ ___
         :return: an tuple representing the texture coordinates
 
 
-    @deprecation.deprecated(deprecated_in="snapshot dev 1 cycle 1", removed_in="v1.2.0 alpha")
+    @deprecation.deprecated(deprecated_in="dev1-1", removed_in="v1.2.0 alpha")
     function tex_coords(*args, size=(32, 32), tex_region=None, rotation=(0, 0, 0, 0, 0, 0))
         
         same as tex_coords_better, but returns everything in an single list instead of an list of tuples
@@ -48,25 +59,30 @@ ___
 
     function normalize(position)
         
+        Accepts `position` of arbitrary precision and returns the block
         containing that position.
-        Parameters
-        ----------
-        position : tuple of len 3
-        Returns
-        -------
-        block_position : tuple of ints of len 3
+        :param position: the position
+        :return block_position: the rounded position
 
 
     function normalize_ceil(position)
-
-    function sectorize(position)
         
-        Parameters
-        ----------
-        position : tuple of len 3
-        Returns
-        -------
-        sector : tuple of len 3
+        Same as normalize(position), but with math.ceil() instead of round()
+        :param position: the position
+        :return: the ceil-ed position
+
+
+    @deprecation.deprecated("dev5-1", "a1.5.0")
+    function sectorize(position): return positionToChunk(position)
+            
+            
+            def positionToChunk(position):
+
+    function positionToChunk(position)
+        
+        Returns a tuple representing the chunk for the given `position`.
+        :param position: the position
+        :return: the chunk
 
 
     function topological_sort(items)
@@ -93,6 +109,13 @@ ___
                 variable previous_missing
 
     function rotate_point(point, origin, rotation)
+        
+        Helper function for rotating an point around another one
+        :param point: the point to rotate
+        :param origin: the origin to rotate around
+        :param rotation: the rotation angle
+        :return: the rotated point
+
 
         variable nx
 

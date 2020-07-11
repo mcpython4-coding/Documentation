@@ -1,4 +1,4 @@
-***ModLoader.py - documentation - last updated on 7.7.2020 by uuk***
+***ModLoader.py - documentation - last updated on 11.7.2020 by uuk***
 ___
 
     class LoadingStage
@@ -120,6 +120,10 @@ ___
     variable LOADING_ORDER: list
         the order of stages todo: make serialized from config file
 
+    function insertAfter(to_insert: LoadingStage, after: LoadingStage) -> bool
+
+    function insertBefore(to_insert: LoadingStage, before: LoadingStage) -> bool
+
     class ModLoaderAnnotation
         
         representation of an @G.modloader([...]) annotation
@@ -172,6 +176,14 @@ ___
             variable self.found_mod_instances
 
                     variable self.lasttime_mods
+
+        function registerReloadAssignedLoadingStage(self, stage: str)
+            
+            Will register an loading stage as one to executed on every reload
+            :param stage: the event name of the stage
+
+
+        function execute_reload_stages(self)
 
         function __call__(self, modname: str, eventname: str, info=None) -> ModLoaderAnnotation
             

@@ -1,7 +1,9 @@
-***BoxModel.py - documentation - last updated on 8.7.2020 by uuk***
+***BoxModel.py - documentation - last updated on 11.7.2020 by uuk***
 ___
 
     variable UV_ORDER
+
+    variable SIDE_ORDER
 
     variable UV_INDICES - representative for the order of uv insertion
 
@@ -117,17 +119,13 @@ ___
 
         function recalculate_cache(self)
 
-        function get_rotation(self): return self.__rotation
-                
-                def set_rotation(self, rotation: tuple):
+        function get_rotation(self)
 
         function set_rotation(self, rotation: tuple)
 
         variable rotation
 
-        function get_texture_region(self): return self.__texture_region
-                
-                def set_texture_region(self, region):
+        function get_texture_region(self)
 
         function set_texture_region(self, region)
 

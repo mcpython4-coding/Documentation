@@ -1,4 +1,4 @@
-***EventBus.py - documentation - last updated on 7.7.2020 by uuk***
+***EventBus.py - documentation - last updated on 11.7.2020 by uuk***
 ___
 
     class CancelAbleEvent
@@ -25,6 +25,8 @@ ___
 
 
             variable self.event_subscriptions - name -> (function, args, kwargs)[
+
+            variable self.popped_event_subscriptions
 
             variable self.extra_arguments
 
@@ -91,3 +93,8 @@ ___
         function create_sub_bus(self, *args, activate=True, **kwargs)
 
         function call_as_stack(self, eventname, *args, amount=1, **kwargs)
+
+        function resetEventStack(self, eventname: str)
+            
+            Will reset all event subscriptions which where popped from the normal list
+            :param eventname: the name of the event to restore
