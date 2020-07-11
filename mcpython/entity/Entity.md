@@ -1,4 +1,4 @@
-***Entity.py - documentation - last updated on 24.6.2020 by uuk***
+***Entity.py - documentation - last updated on 11.7.2020 by uuk***
 ___
 
     class Entity extends mcpython.event.Registry.IRegistryContent
@@ -45,6 +45,12 @@ ___
             variable self.uuid
 
             variable self.movement
+
+            variable self.entity_height - the height of the entity, for positioning the child entity
+
+            variable self.parent - the entity this is riding
+
+            variable self.child - the entity this is ridden by
 
         function __del__(self)
 

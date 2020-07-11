@@ -1,9 +1,11 @@
-***MatrixStack.py - documentation - last updated on 20.6.2020 by uuk***
+***MatrixStack.py - documentation - last updated on 11.7.2020 by uuk***
 ___
 
     class MatrixStack
         
         class handling an configuration of transformations for applying
+        todo: optimise
+        todo: use pyglet.matrix instead [pyglet 2 needed]
 
 
         function __init__(self)
