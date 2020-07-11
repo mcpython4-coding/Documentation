@@ -1,4 +1,4 @@
-***player.py - documentation - last updated on 7.7.2020 by uuk***
+***player.py - documentation - last updated on 11.7.2020 by uuk***
 ___
 
     @G.registry class Player extends mcpython.entity.Entity.Entity
@@ -28,6 +28,10 @@ ___
             variable self.armor_level
 
             variable self.armor_toughness
+
+            variable self.in_nether_portal_since
+
+            variable self.should_leave_nether_portal_before_dim_change
 
             variable self.flying - are we currently flying?
 

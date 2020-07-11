@@ -94,6 +94,13 @@ ___
             :return: if default logic should be interrupted or not
 
 
+        function on_no_collide_collide(self, player, previous: bool)
+            
+            Called when NO_COLLIDE is True and the player is in the block every collision check
+            :param player: the player entering the block
+            :param previous: if the player was in the block before
+
+
         function save(self)
             
             :return: an pickle-able object representing the whole block, not including inventories
@@ -170,8 +177,3 @@ ___
             gets the slots for an given side
             :param side: the side to check
             :return: an list of slot of the side
-
-
-        function on_no_collide_collide(self, player)
-            
-            Called when NO_COLLIDE is True and the player is in the block every collision check

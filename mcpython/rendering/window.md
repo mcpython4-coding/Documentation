@@ -132,17 +132,20 @@ ___
 
                 variable self.sector
 
-        function collide(self, position: tuple, height: tuple)
+        function collide(self, position: tuple, height: int, previous=None)
             
             Checks to see if the player at the given `position` and `height`
             is colliding with any blocks in the world.
             :param position: The (x, y, z) position to check for collisions at.
             :param height: The height of the player.
+            :param previous: the previous position the player was, for the block collision API, optional
             :return The new position of the player taking into account collisions.
             todo: move to physic package
             todo: make player based
             todo: make account player & block hit box
 
+
+            variable previous_positions
 
             variable pad
                 How much overlap with a dimension of a surrounding block you need to
@@ -176,6 +179,14 @@ ___
                                 variable dy
 
                                 variable G.world.get_active_player().fallen_since_y
+
+        function get_colliding_blocks(self, position: tuple, height: int) -> tuple
+            
+            Similar to collide(), but will simply return an list of block-positions the player collides with and an list of blocks the player is in, but should not collide
+            :param position: the position to use as center
+            :param height: the height of the player
+            :return: an tuple of colliding full blocks and colliding no collision blocks
+
 
         function on_mouse_press(self, x: int, y: int, button: int, modifiers: int)
             
