@@ -1,4 +1,4 @@
-***ModLoader.py - documentation - last updated on 11.7.2020 by uuk***
+***ModLoader.py - documentation - last updated on 12.7.2020 by uuk***
 ___
 
     class LoadingStage
@@ -57,6 +57,8 @@ ___
 
         variable PREPARE
             used to do the magic stuff to set up your system
+
+        variable API_MANAGEMENT
 
         variable ADD_LOADING_STAGES
             this special phase is for adding new loading phases, if you want to
