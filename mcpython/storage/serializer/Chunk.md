@@ -1,4 +1,4 @@
-***Chunk.py - documentation - last updated on 7.7.2020 by uuk***
+***Chunk.py - documentation - last updated on 12.7.2020 by uuk***
 ___
 
     function chunk2region(cx, cz): return cx >> 5, cz >> 5
@@ -168,6 +168,10 @@ ___
                 variable entity_instance.harts
 
             variable chunk_instance.loaded
+
+            variable chunk_instance.is_ready
+
+            variable chunk_instance.visible
 
             variable G.worldgenerationhandler.enable_generation
 

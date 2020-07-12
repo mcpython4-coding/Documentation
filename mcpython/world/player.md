@@ -1,4 +1,4 @@
-***player.py - documentation - last updated on 11.7.2020 by uuk***
+***player.py - documentation - last updated on 12.7.2020 by uuk***
 ___
 
     @G.registry class Player extends mcpython.entity.Entity.Entity
@@ -13,35 +13,35 @@ ___
 
         function __init__(self, name="unknown", dimension=None)
 
-            variable self.name: str - the name of the player
+            variable self.name: str - the name of the player  todo: move into nbt
 
-            variable self.gamemode: int - the current gamemode
+            variable self.gamemode: int - the current gamemode todo: move into nbt
 
-            variable self.hearts: int
+            variable self.hearts: int - todo: move into nbt
 
-            variable self.hunger: int
+            variable self.hunger: int - todo: move into nbt
 
-            variable self.xp: int
+            variable self.xp: int - todo: move into nbt
 
-            variable self.xp_level: int
+            variable self.xp_level: int - todo: move into nbt
 
-            variable self.armor_level
+            variable self.armor_level - todo: move into nbt
 
-            variable self.armor_toughness
+            variable self.armor_toughness - todo: move into nbt
 
-            variable self.in_nether_portal_since
+            variable self.in_nether_portal_since - todo: move into nbt
 
-            variable self.should_leave_nether_portal_before_dim_change
+            variable self.should_leave_nether_portal_before_dim_change - todo: move into nbt
 
-            variable self.flying - are we currently flying?
+            variable self.flying - are we currently flying?  # todo: move into nbt
 
-            variable self.fallen_since_y - how far did we fall?
+            variable self.fallen_since_y - how far did we fall?  # todo: move into nbt
 
             variable self.inventory_order: list - an ([inventoryindexname: str], [reversed slots: bool}) list
 
             variable self.iconparts
 
-            variable self.active_inventory_slot: int - which slot is currently selected
+            variable self.active_inventory_slot: int - which slot is currently selected todo: move into nbt
 
         function hotkey_get_position(self)
 

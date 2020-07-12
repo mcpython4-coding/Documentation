@@ -1,4 +1,4 @@
-***Entity.py - documentation - last updated on 11.7.2020 by uuk***
+***Entity.py - documentation - last updated on 12.7.2020 by uuk***
 ___
 
     class Entity extends mcpython.event.Registry.IRegistryContent
@@ -32,25 +32,23 @@ ___
 
             variable self.dimension
 
-            variable self.__position
+            variable self.unsafe_position - todo: move to nbt
 
-            variable self.rotation
+            variable self.rotation - todo: move to nbt
 
             variable self.inventories
 
-            variable self.harts
+            variable self.harts - todo: move to nbt
 
             variable self.chunk
 
             variable self.uuid
 
-            variable self.movement
-
             variable self.entity_height - the height of the entity, for positioning the child entity
 
-            variable self.parent - the entity this is riding
+            variable self.parent - the entity this is riding todo: move into nbt
 
-            variable self.child - the entity this is ridden by
+            variable self.child - the entity this is ridden by  todo: move into nbt
 
             variable self.nbt_data - dict holding entity data, automatically saved & loaded, when loading, data is put ontop of the existing dict
 
@@ -58,7 +56,7 @@ ___
 
         function __str__(self)
 
-        function get_position(self): return self.__position
+        function get_position(self): return self.unsafe_position
                 
                 def set_position(self, position: tuple):
 
@@ -66,7 +64,9 @@ ___
 
         variable position
 
-        function set_position_unsafe(self, position: tuple): self.__position = position
+        variable movement
+
+        function set_position_unsafe(self, position: tuple): self.unsafe_position = position
                 
                 def teleport(self, position, dimension=None, force_chunk_save_update=False):
 
@@ -87,15 +87,18 @@ ___
 
         function kill(self, drop_items=True, kill_animation=True)
             
-            called to kill the entity [remove the entity from world]
+            Called to kill the entity [remove the entity from world]
+            THIS IS THE FINAL REMOVAL METHOD. THIS DOES NOT HAVE MUCH CHECKS IF IT SHOULD BE ABLE TO BE KILLED!
+            Is not affected by nbt-tag "invulnerable". Must be handled separately.
             :param drop_items: if items should be dropped
             :param kill_animation: if the kill animation should be played
-            todo: drop items
+            todo: drop items if selected
+            todo: play kill animation if selected
 
 
         function pick_up(self, itemstack: mcpython.gui.ItemStack.ItemStack) -> bool
             
-            let the entity pick up an item and insert it into its inventory
+            Let the entity pick up an item and insert it into its inventory
             :param itemstack: the itemstack to use
             :return: if it was successful or not
             for moder: see world/player.py as an example how this could work
