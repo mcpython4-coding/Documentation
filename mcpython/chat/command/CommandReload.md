@@ -1,4 +1,4 @@
-***CommandReload.py - documentation - last updated on 8.6.2020 by uuk***
+***CommandReload.py - documentation - last updated on 12.7.2020 by uuk***
 ___
 
     @G.registry class CommandReload extends mcpython.chat.command.Command.Command
@@ -7,8 +7,6 @@ ___
 
 
         variable NAME
-
-        variable CANCEL_RELOAD
 
         static
         function insert_parse_bridge(parsebridge: ParseBridge)

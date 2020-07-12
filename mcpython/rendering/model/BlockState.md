@@ -1,4 +1,4 @@
-***BlockState.py - documentation - last updated on 8.6.2020 by uuk***
+***BlockState.py - documentation - last updated on 12.7.2020 by uuk***
 ___
 
     class BlockStateNotNeeded extends Exception
@@ -65,11 +65,13 @@ ___
 
         variable TO_CREATE
 
-        static
-        function from_directory(directory: str, modname: str)
+        variable LOOKUP_DIRECTORIES
 
         static
-        function from_file(cls, file: str, modname: str)
+        function from_directory(cls, directory: str, modname: str, immediate=False)
+
+        static
+        function from_file(cls, file: str, modname: str, immediate=False)
 
         static
         function _from_file(cls, file: str)

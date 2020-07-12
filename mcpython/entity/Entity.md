@@ -85,13 +85,14 @@ ___
             :param msg: the msg to tell
 
 
-        function kill(self, drop_items=True, kill_animation=True)
+        function kill(self, drop_items=True, kill_animation=True, damage_source: mcpython.entity.DamageSource.DamageSource=None)
             
             Called to kill the entity [remove the entity from world]
             THIS IS THE FINAL REMOVAL METHOD. THIS DOES NOT HAVE MUCH CHECKS IF IT SHOULD BE ABLE TO BE KILLED!
             Is not affected by nbt-tag "invulnerable". Must be handled separately.
             :param drop_items: if items should be dropped
             :param kill_animation: if the kill animation should be played
+            :param damage_source: the source of the damage
             todo: drop items if selected
             todo: play kill animation if selected
 
@@ -104,7 +105,7 @@ ___
             for moder: see world/player.py as an example how this could work
 
 
-        function damage(self, damage, reason=None)
+        function damage(self, damage, reason: mcpython.entity.DamageSource.DamageSource=None)
             
             applies damage to the entity
             FOR MODER:
@@ -112,7 +113,7 @@ ___
                 - you may want to apply armor calculation code
                 - you may want to override this method for an custom implementation
             :param damage: the damage to apply
-            :param reason: the reason for the damage, may be entity or str [something like DamageSource in mc]
+            :param reason: the reason for the damage, as an DamageSource-instance
 
 
         function on_interact(self, player, button, modifiers, itemstack)
@@ -154,6 +155,7 @@ ___
             dumps the entity into an save-able version
             :return: an pickle-able version, excluding position, rotation and harts, should include inventory serializer
                 calls to make sure that everything works
+            The nbt data is auto-saved
 
 
         function load(self, data)
@@ -162,3 +164,4 @@ ___
             For Moder:
                 you CAN include an version entry to make sure you can fix the data version
             :param data: the data to load from
+            The nbt data is auto-loaded before this event is called

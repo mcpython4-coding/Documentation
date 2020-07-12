@@ -1,4 +1,4 @@
-***LootTable.py - documentation - last updated on 24.6.2020 by uuk***
+***LootTable.py - documentation - last updated on 12.7.2020 by uuk***
 ___
 
     class LootTableTypes extends enum.Enum
@@ -50,6 +50,10 @@ ___
             variable self.loot_tables
 
             variable self.relink_table
+
+            variable self.mod_names_to_load
+
+        function reload(self)
 
         function shuffle_data(self)
 

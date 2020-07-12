@@ -1,4 +1,4 @@
-***ModelHandler.py - documentation - last updated on 24.6.2020 by uuk***
+***ModelHandler.py - documentation - last updated on 12.7.2020 by uuk***
 ___
 
     class ModelHandler
@@ -36,13 +36,13 @@ ___
             :param data: the data to inject
 
 
-        function build(self)
+        function build(self, immediate=False)
 
-        function let_subscribe_to_build(self, model)
+        function let_subscribe_to_build(self, model, immediate=False)
 
-        function special_build(self, used)
+        function special_build(self, used: str)
 
-        function process_models(self)
+        function process_models(self, immediate=False)
 
         function load_model(self, name: str)
 
@@ -53,5 +53,7 @@ ___
         function draw_block(self, block)
 
         function get_bbox(self, block)
+
+        function reload_models(self)
 
     variable G.modelhandler
