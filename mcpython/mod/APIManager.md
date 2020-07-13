@@ -1,4 +1,4 @@
-***APIManager.py - documentation - last updated on 12.7.2020 by uuk***
+***APIManager.py - documentation - last updated on 13.7.2020 by uuk***
 ___
 
     class APIManager
@@ -10,16 +10,25 @@ ___
         WARNING: do NOT ly about your api version. It will only load ONE api file of each version if the api implementation is not provided. So you may end up
             using the code of another's mod
         WARNING: if an api-implementing mod is present, all packages are re-linked there (if the api is compatible).
+        WARNING: DO NOT SHIP AN IMPLEMENTATION FOR AN API FOR ANOTHER MOD! THIS WILL CAUSE REAL PROBLEMS WITH HANDLING THE STUFF IN THE BACKGROUND!
         The system will auto-add an IS_IMPLEMENTED-flag into every API file set to if the implementing mod is provided
         The system will auto-add an API_VERSION representing the API version of the file
         Use than to retrieve the API module the following:
             manager.getAPI(<name>, <version>)
         It will auto-import the needed file. Do not directly import it!!!!
+        MDK setup (plans):
+            - MDK setup can be based on an list of API's which are injected into IDE and read. Compiled in minimum code features.
+            - MDK should auto-generate API annotations
+            - MDK should be compiled to an mod-zip-file without documentation, etc
+            - MDK should be able to compile against source's, api's and compiled mod's
+            - MDK should do compile code with some configuration files for reading information
+            todo: is there an way that we can define the result of "mcpython.mod.APIManager.manager.getAPI(...)" as an special file? Currently,
+                the IDE is not able to detect the api content otherwise.
 
 
         function __init__(self)
 
-            variable self.apis
+            variable self.apis - list of api names
 
             variable self.api_shipments
 
@@ -44,3 +53,21 @@ ___
         function check_compatibility_and_load(self)
 
     variable manager
+
+    class ImplementableFeature
+        
+        API internal class holding an function which is not implemented in the API, but is part of it as an reference.
+        Can be configured to not raise an exception when not implemented
+
+
+        function __init__(self, raises_exception_on_not_implemented=True, return_value=None)
+
+            variable self.implementation_function
+
+            variable self.raises_exception
+
+            variable self.return_value
+
+        function __call__(self, *args, **kwargs)
+
+        function implementation(self, function: typing.Callable)

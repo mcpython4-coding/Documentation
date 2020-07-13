@@ -1,4 +1,4 @@
-***BlockFaceState.py - documentation - last updated on 8.6.2020 by uuk***
+***BlockFaceState.py - documentation - last updated on 13.7.2020 by uuk***
 ___
 
     class BlockFaceState
@@ -38,7 +38,7 @@ ___
             will inherit the custom renderer
 
 
-        function update(self, redraw_complete=False)
+        function update(self, redraw_complete=True)
             
             updates the block face state
             :param redraw_complete: if all sides should be re-drawn
