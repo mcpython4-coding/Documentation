@@ -1,4 +1,4 @@
-***Entity.py - documentation - last updated on 12.7.2020 by uuk***
+***Entity.py - documentation - last updated on 15.7.2020 by uuk***
 ___
 
     class Entity extends mcpython.event.Registry.IRegistryContent
@@ -103,9 +103,10 @@ ___
             :param itemstack: the itemstack to use
             :return: if it was successful or not
             for moder: see world/player.py as an example how this could work
+            Subclasses should implement this when they have an inventory for it
 
 
-        function damage(self, damage, reason: mcpython.entity.DamageSource.DamageSource=None)
+        function damage(self, damage, reason: mcpython.entity.DamageSource.DamageSource = None)
             
             applies damage to the entity
             FOR MODER:

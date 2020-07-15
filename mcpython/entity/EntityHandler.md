@@ -1,7 +1,10 @@
-***EntityHandler.py - documentation - last updated on 8.6.2020 by uuk***
+***EntityHandler.py - documentation - last updated on 15.7.2020 by uuk***
 ___
 
     class EntityHandler
+        
+        Handler for entities in the current world
+
 
         function __init__(self)
 

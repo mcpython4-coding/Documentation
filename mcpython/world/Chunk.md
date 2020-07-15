@@ -1,4 +1,4 @@
-***Chunk.py - documentation - last updated on 18.6.2020 by uuk***
+***Chunk.py - documentation - last updated on 15.7.2020 by uuk***
 ___
 
     class Chunk
@@ -17,14 +17,16 @@ ___
             :param name: the name of the attribute
             :param reference: the reference to use; unused internally
             :param default: the default value
-            :param authcode: deprecated
+            :param authcode: deprecated, will be removed
+            WARNING: content must be saved separately
 
 
         function __init__(self, dimension, position: typing.Tuple[int, int])
             
-            will create an new chunk instance
+            Will create an new chunk instance
             :param dimension: the world.Dimension.Dimension object used to store this chunk
             :param position: the position of the chunk
+            WARNING: use Dimension.get_chunk() where possible
 
 
             variable self.dimension
@@ -48,24 +50,30 @@ ___
                 variable self.attr[attr]
 
         function get_maximum_y_coordinate_from_generation(self, x: int, z: int) -> int
+            
+            Helper function for getting the y height at the given xz generation based on the generation code
+            :param x: the x coord
+            :param z: the y corrd
+            :return: the y value at that position
+
 
         function set_value(self, name: str, value)
             
-            will set an attribute of the chunk
+            Will set an attribute of the chunk
             :param name: the name to use
             :param value: the value to use
 
 
         function get_value(self, name: str)
             
-            will get the value of the given name
+            Will get the value of the given name
             :param name: the name to get
             :return: the data stored
 
 
         function draw(self)
             
-            will draw the chunk with the content for it
+            Will draw the chunk with the content for it
 
 
         @deprecation.deprecated("dev3-1", "a1.3.0")

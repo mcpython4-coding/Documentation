@@ -1,4 +1,4 @@
-***BlockFaceState.py - documentation - last updated on 13.7.2020 by uuk***
+***BlockFaceState.py - documentation - last updated on 15.7.2020 by uuk***
 ___
 
     class BlockFaceState
@@ -42,7 +42,6 @@ ___
             
             updates the block face state
             :param redraw_complete: if all sides should be re-drawn
-            todo: make redraw-complete always True or default to True
 
 
         function hide_all(self)
