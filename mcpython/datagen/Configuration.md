@@ -1,4 +1,4 @@
-***Configuration.py - documentation - last updated on 6.7.2020 by uuk***
+***Configuration.py - documentation - last updated on 15.7.2020 by uuk***
 ___
 
     class IDataGenerator
@@ -74,6 +74,10 @@ ___
 
 
             variable start
+
+            variable total
+
+                variable element
 
         function write(self, data, *args)
             
