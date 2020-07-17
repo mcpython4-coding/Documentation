@@ -1,4 +1,4 @@
-***Slot.py - documentation - last updated on 24.6.2020 by uuk***
+***Slot.py - documentation - last updated on 17.7.2020 by uuk***
 ___
 
     variable SLOT_WIDTH
@@ -12,7 +12,7 @@ ___
 
         function __init__(self, itemstack=None, position=(0, 0), allow_player_remove=True, allow_player_insert=True,
                 allow_player_add_to_free_place=True, on_update=None, allow_half_getting=True, on_shift_click=None,
-                empty_image=None, allowed_item_tags=None, allowed_item_test=None, on_button_press=None, capacity=None):
+                empty_image=None, allowed_item_tags=None, allowed_item_test=None, on_button_press=None, capacity=None, check_function=None):
             
             creates an new slot
             :param itemstack: the itemstack to use
@@ -25,6 +25,7 @@ ___
             :param on_shift_click: called when shift-clicked on the block, should return if normal logic should go on or not
             :param on_button_press: called when an button is pressed when hovering above the slot
             :param capacity: the max item count for the slot
+            :param check_function: an function to check if the item is valid, signature: (Slot, ItemStack) -> bool
 
 
         function get_capacity(self)
@@ -110,6 +111,8 @@ ___
         function __str__(self)
 
         function __repr__(self)
+
+        function getParent(self)
 
     class SlotInfiniteStack extends Slot
 

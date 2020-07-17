@@ -1,4 +1,4 @@
-***BoxModel.py - documentation - last updated on 11.7.2020 by uuk***
+***BoxModel.py - documentation - last updated on 17.7.2020 by uuk***
 ___
 
     variable UV_ORDER
@@ -11,10 +11,15 @@ ___
 
     class BoxModel
 
-        function __init__(self, data: dict, model)
+        static
+        function new(cls, data: dict, model=None)
+
+        function __init__(self, data: dict, model=None)
+
+            variable self.atlas
+                todo: move most of the code here to the build function
 
             variable self.__data - todo: remove
-                todo: move most of the code here to the build function
 
             variable self.model
 
@@ -44,7 +49,7 @@ ___
 
         variable data
 
-        function build(self)
+        function build(self, atlas=None)
 
         function get_vertex_variant(self, rotation: tuple, position: tuple) -> list
             
