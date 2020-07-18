@@ -1,4 +1,4 @@
-***Chunk.py - documentation - last updated on 15.7.2020 by uuk***
+***Chunk.py - documentation - last updated on 18.7.2020 by uuk***
 ___
 
     class Chunk
@@ -143,9 +143,6 @@ ___
             :param immediate: Whether or not to show the block immediately.
 
 
-        @deprecation.deprecated("dev1-4", "a1.2.0")
-        function _show_block(self, position, block=None)
-
         function hide_block(self, position: typing.Union[typing.Tuple[int, int, int], Block.Block], immediate=True)
             
             Hide the block at the given `position`. Hiding does not remove the
@@ -155,9 +152,6 @@ ___
 
 
                 variable position
-
-        @deprecation.deprecated("dev1-4", "a1.2.0")
-        function _hide_block(self, position)
 
         function show(self, force=False)
             

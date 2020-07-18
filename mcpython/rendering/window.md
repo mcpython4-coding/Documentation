@@ -1,4 +1,4 @@
-***window.py - documentation - last updated on 11.7.2020 by uuk***
+***window.py - documentation - last updated on 18.7.2020 by uuk***
 ___
 
     class NoWindow
@@ -298,12 +298,3 @@ ___
             
             called when the window tries to close itself
             cleans up some stuff before closing
-
-
-        @deprecation.deprecated("dev4-3", "a1.2.0")
-        function get_flying(self)
-
-        @deprecation.deprecated("dev4-3", "a1.2.0")
-        function set_flying(self, flying)
-
-        variable flying

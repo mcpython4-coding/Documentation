@@ -1,4 +1,4 @@
-***BoxModel.py - documentation - last updated on 17.7.2020 by uuk***
+***BoxModel.py - documentation - last updated on 18.7.2020 by uuk***
 ___
 
     variable UV_ORDER
@@ -19,8 +19,6 @@ ___
             variable self.atlas
                 todo: move most of the code here to the build function
 
-            variable self.__data - todo: remove
-
             variable self.model
 
             variable self.boxposition
@@ -40,14 +38,6 @@ ___
             variable self.deactive
 
             variable self.raw_vertices
-
-        @deprecation.deprecated(deprecated_in="snapshot dev 1 cycle 1", removed_in="v1.2.0 alpha")
-        function get_data(self)
-
-        @deprecation.deprecated(deprecated_in="snapshot dev 1 cycle 1", removed_in="v1.2.0 alpha")
-        function set_data(self, data)
-
-        variable data
 
         function build(self, atlas=None)
 
@@ -96,9 +86,6 @@ ___
         function add_face_to_batch(self, position, batch, rotation, face)
 
         function draw_face(self, position, rotation, face)
-
-        @deprecation.deprecated(deprecated_in="snapshot dev 1 cycle 1", removed_in="v1.2.0 alpha")
-        function copy(self, new_model=None)
 
     class BaseBoxModel
         

@@ -1,14 +1,8 @@
-***math.py - documentation - last updated on 11.7.2020 by uuk***
+***math.py - documentation - last updated on 18.7.2020 by uuk***
 ___
 
     @deprecation.deprecated("dev3-2", "a1.3.0")
     function get_max_y(pos)
-
-    @deprecation.deprecated(deprecated_in="dev1-1", removed_in="v1.2.0 alpha")
-    function cube_vertices(x, y, z, nx, ny, nz, faces=(True, True, True, True, True, True))
-        
-        Same as cube_vertices_better, but will return all summed up instead of separated lists
-
 
     function cube_vertices_better(x: float, y: float, z: float, nx: float, ny: float, nz: float, faces=(True, True, True, True, True, True))
         
@@ -32,13 +26,6 @@ ___
         :param region: the texture region to use. (0, 0, 1, 1) is full texture atlas texture size
         :param rot: in steps of 90: how much to rotate the vertices
         :return: an tuple representing the texture coordinates
-
-
-    @deprecation.deprecated(deprecated_in="dev1-1", removed_in="v1.2.0 alpha")
-    function tex_coords(*args, size=(32, 32), tex_region=None, rotation=(0, 0, 0, 0, 0, 0))
-        
-        same as tex_coords_better, but returns everything in an single list instead of an list of tuples
-        todo: when removed, rename later the new one to this
 
 
     function tex_coords_better(*args, size=(32, 32), tex_region=None, rotation=(0, 0, 0, 0, 0, 0)) -> list

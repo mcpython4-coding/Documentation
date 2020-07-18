@@ -1,4 +1,4 @@
-***ItemFactory.py - documentation - last updated on 9.7.2020 by uuk***
+***ItemFactory.py - documentation - last updated on 18.7.2020 by uuk***
 ___
 
     class ItemFactory
@@ -76,9 +76,6 @@ ___
             variable copied
 
         function copy(self)
-
-        @deprecation.deprecated("dev1-2", "a1.2.0")
-        function _finish(self, register)
 
         function finish_up(self, register=False)
             

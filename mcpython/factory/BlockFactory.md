@@ -191,9 +191,6 @@ ___
                 template instance
 
 
-        @deprecation.deprecated("dev1-2", "a1.2.0")
-        function _finish(self, register: bool)
-
         function finish_up(self)
             
             will finish up the system

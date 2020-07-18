@@ -1,4 +1,4 @@
-***BlockConfig.py - documentation - last updated on 8.6.2020 by uuk***
+***BlockConfig.py - documentation - last updated on 18.7.2020 by uuk***
 ___
 
     classes will be removed in the future as they can be replaced by tags
@@ -32,7 +32,5 @@ ___
 
 
     variable ENTRIES - the entries
-
-    variable ENTRYS - todo: remove in a1.2.0
 
         variable name

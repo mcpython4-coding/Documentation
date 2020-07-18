@@ -1,4 +1,4 @@
-***BlockEnderChest.py - documentation - last updated on 8.6.2020 by uuk***
+***BlockEnderChest.py - documentation - last updated on 18.7.2020 by uuk***
 ___
 
     @G.registry class BlockEnderChest extends Block.Block
@@ -39,5 +39,3 @@ ___
         function get_view_bbox(self)
 
         function on_remove(self)
-
-    variable BlockChest - todo: remove in a1.2.0
