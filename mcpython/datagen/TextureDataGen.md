@@ -1,4 +1,4 @@
-***TextureDataGen.py - documentation - last updated on 13.6.2020 by uuk***
+***TextureDataGen.py - documentation - last updated on 18.7.2020 by uuk***
 ___
 
     class TextureConstructor extends mcpython.datagen.Configuration.IDataGenerator
@@ -36,5 +36,7 @@ ___
             :param position: the position to add on
             :param rescale: rescale of the image
 
+
+        function add_alpha_composite_layer(self, location_or_image, position=(0, 0))
 
         function generate(self)

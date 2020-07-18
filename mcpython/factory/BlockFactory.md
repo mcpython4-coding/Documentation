@@ -1,4 +1,4 @@
-***BlockFactory.py - documentation - last updated on 11.7.2020 by uuk***
+***BlockFactory.py - documentation - last updated on 18.7.2020 by uuk***
 ___
 
     class BlockFactory
@@ -254,7 +254,9 @@ ___
 
                 class ConstructedBlock extends ConstructedBlock
 
-                    variable self.face_solid
+                    function __init__(self, *args, **kwargs)
+
+                        variable self.face_solid
 
                 class ConstructedBlock extends ConstructedBlock
 

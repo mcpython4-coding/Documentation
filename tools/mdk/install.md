@@ -1,4 +1,4 @@
-***install.py - documentation - last updated on 15.7.2020 by uuk***
+***install.py - documentation - last updated on 18.7.2020 by uuk***
 ___
 
     function download_file(url, dest)
@@ -32,6 +32,10 @@ ___
         variable instance
 
         variable version
+
+        variable d
+
+        variable directory
 
         variable d
 

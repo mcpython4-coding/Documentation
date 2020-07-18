@@ -1,4 +1,4 @@
-***BlockState.py - documentation - last updated on 12.7.2020 by uuk***
+***BlockState.py - documentation - last updated on 18.7.2020 by uuk***
 ___
 
     class BlockStateNotNeeded extends Exception
@@ -90,11 +90,9 @@ ___
 
                     variable self.loader
 
-        function draw_face(self, block, face): self.loader.draw_face(block, face)
-                
-                
-                class BlockState:
-                def __init__(self, data):
+        function add_face_to_batch(self, block, batch, face)
+
+        function draw_face(self, block, face)
 
     class BlockState
 
