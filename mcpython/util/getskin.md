@@ -1,4 +1,4 @@
-***getskin.py - documentation - last updated on 4.7.2020 by uuk***
+***getskin.py - documentation - last updated on 20.7.2020 by uuk***
 ___
 
     variable DEBUG
@@ -9,32 +9,7 @@ ___
 
     variable userinfo_url
 
-    class SimulatedResponse
-        
-        Simulated response
-
-
-        function __init__(self, content, is_json, raw=None)
-
-            variable self.content
-
-            variable self.is_json
-
-            variable self.status_code
-
-            variable self.raw
-
-        function json(self)
-
     function find_texture_info(properties)
-
-    function get_url(url, **kwargs)
-        
-        gets the content of an URL as an requests.get() or an an SimulatedResponse-instance
-        :param url: the url to download from
-        :param kwargs: kwargs to requests.get() with
-        :return: the content
-
 
     function download_skin(username: str, store: str)
         
