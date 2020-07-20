@@ -1,4 +1,4 @@
-***BlockState.py - documentation - last updated on 18.7.2020 by uuk***
+***BlockState.py - documentation - last updated on 20.7.2020 by uuk***
 ___
 
     class BlockStateNotNeeded extends Exception
@@ -98,7 +98,7 @@ ___
 
         function __init__(self, data)
 
-            variable self.models - (model, config)
+            variable self.models - (model, config, weight)
 
         static
         function decode_entry(data: dict)

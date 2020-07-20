@@ -1,7 +1,10 @@
-***GridRecipeInterface.py - documentation - last updated on 8.6.2020 by uuk***
+***GridRecipeInterface.py - documentation - last updated on 20.7.2020 by uuk***
 ___
 
     class GridRecipeInterface extends mcpython.gui.crafting.IRecipeInterface.IRecipeInterface
+        
+        Recipe interface for an crafting grid of arbitrary size using the default recipe implementation
+
 
         variable NAME
 
@@ -20,6 +23,28 @@ ___
 
 
         function check_recipe_state(self)
+            
+            Helper function for re-checking the items in the grid. Auto-called if an slot-itemstack is updated
+
+
+            variable self.active_recipe
+                Reset the active stuff
+
+            variable itemtable
+
+            variable sx
+
+            variable sy
+
+            variable size
+
+            variable recipes
+
+                    variable state
+
+                    variable state
+
+                    variable self.active_recipe
 
         static
         function _minimize_slotmap(slotmap: dict) -> dict

@@ -1,4 +1,4 @@
-***BoundingBox.py - documentation - last updated on 8.6.2020 by uuk***
+***BoundingBox.py - documentation - last updated on 20.7.2020 by uuk***
 ___
 
     class BoundingBox
@@ -28,11 +28,6 @@ ___
 
         function test_point_hit(self, point, boxposition)
 
-        function draw_outline(self, position): [bbox.draw_outline(position) for bbox in self.bboxes]
-                
-                
-                FULL_BLOCK_BOUNDING_BOX = BoundingBox((1, 1, 1))
-                
-                
+        function draw_outline(self, position)
 
     variable FULL_BLOCK_BOUNDING_BOX

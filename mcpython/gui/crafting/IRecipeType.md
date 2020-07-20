@@ -1,10 +1,14 @@
-***IRecipeType.py - documentation - last updated on 12.6.2020 by uuk***
+***IRecipeType.py - documentation - last updated on 20.7.2020 by uuk***
 ___
 
     class IRecipe
 
         static
-        function get_recipe_names() -> list
+        function get_recipe_names() -> list:  # todo: make attribute
+                raise NotImplementedError()
+                
+                @classmethod
+                def from_data(cls, data: dict):
 
         static
         function from_data(cls, data: dict)

@@ -1,4 +1,4 @@
-***BoxModel.py - documentation - last updated on 18.7.2020 by uuk***
+***BoxModel.py - documentation - last updated on 20.7.2020 by uuk***
 ___
 
     variable UV_ORDER
@@ -20,6 +20,8 @@ ___
                 todo: move most of the code here to the build function
 
             variable self.model
+
+            variable self.data
 
             variable self.boxposition
 
@@ -63,29 +65,33 @@ ___
                 vertex_r = [[(e[0] + x, e[1] + y, e[2] + z) for e in l] for l in vertex_r]
 
 
-        function add_to_batch(self, position, batch, rotation, active_faces=None)
+        function add_to_batch(self, position, batch, rotation, active_faces=None, uv_lock=False)
             
             adds the box model to the batch
             :param position: the position based on
             :param batch: the batches to select from
             :param rotation: the rotation to use
             :param active_faces: which faces to show
+            :param uv_lock: if the uv's should be locked in place or not
             :return: an vertex-list-list
             todo: make active_faces an dict of faces -> state, not an order-defined list
 
 
-        function draw(self, position, rotation, active_faces=None)
+        function draw(self, position, rotation, active_faces=None, uv_lock=False)
             
             draws the BoxModel direct into the world
             WARNING: use batches for better performance
             :param position: the position to draw on
             :param rotation: the rotation to draw with
+            :param uv_lock: if the uv's should be locked in place or not
             :param active_faces: which faces to draw
 
 
-        function add_face_to_batch(self, position, batch, rotation, face)
+        function add_face_to_batch(self, position, batch, rotation, face, uv_lock=False)
 
-        function draw_face(self, position, rotation, face)
+        function draw_face(self, position, rotation, face, uv_lock=False)
+
+        function copy(self, new_model=None)
 
     class BaseBoxModel
         

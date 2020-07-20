@@ -1,4 +1,4 @@
-***CraftingHandler.py - documentation - last updated on 12.6.2020 by uuk***
+***CraftingHandler.py - documentation - last updated on 20.7.2020 by uuk***
 ___
 
     class CraftingHandler
@@ -6,6 +6,7 @@ ___
         function __init__(self)
 
             variable self.recipeinfotable
+                todo: add special registry for recipes
 
             variable self.recipe_table
 
