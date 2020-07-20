@@ -1,4 +1,4 @@
-***World.py - documentation - last updated on 7.7.2020 by uuk***
+***World.py - documentation - last updated on 20.7.2020 by uuk***
 ___
 
     class World
@@ -13,7 +13,6 @@ ___
             variable self.active_dimension: int - todo: change to str; todo: move to player; todo: make property
 
             variable self.active_player: str - todo: make property, make None-able & set default None when not in world
-                self.add_player("unknown", add_inventories=False)
 
             variable self.world_loaded - describes if the world is loaded or not
 
@@ -149,7 +148,7 @@ ___
             will clean up the world
             :param remove_dims: if dimensions should be cleared
             :param filename: the new filename if it changes
-            :param add_player: if the player should be added
+            :param add_player: deprecated
             todo: make split up into smaller functions
 
 

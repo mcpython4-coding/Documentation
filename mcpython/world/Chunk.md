@@ -1,4 +1,4 @@
-***Chunk.py - documentation - last updated on 18.7.2020 by uuk***
+***Chunk.py - documentation - last updated on 20.7.2020 by uuk***
 ___
 
     class Chunk
@@ -95,7 +95,7 @@ ___
             :return: if there is an block
 
 
-        function add_block(self, position: tuple, block_name: str, immediate=True, block_update=True, blockupdateself=True,
+        function add_block(self, position: tuple, block_name: typing.Union[str, Block.Block], immediate=True, block_update=True, blockupdateself=True,
                 args=[], kwargs={}):
             
             adds an block to the given position

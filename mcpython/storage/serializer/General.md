@@ -1,4 +1,4 @@
-***General.py - documentation - last updated on 20.6.2020 by uuk***
+***General.py - documentation - last updated on 20.7.2020 by uuk***
 ___
 
     class WorldConfigFixer extends mcpython.storage.datafixers.IDataFixer.IPartFixer
@@ -28,8 +28,6 @@ ___
             variable savefile.version
 
             variable playername
-
-            variable G.world.active_player
 
             variable G.world.config
 

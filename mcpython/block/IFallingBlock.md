@@ -1,4 +1,4 @@
-***IFallingBlock.py - documentation - last updated on 8.6.2020 by uuk***
+***IFallingBlock.py - documentation - last updated on 20.7.2020 by uuk***
 ___
 
     class IFallingBlock extends mcpython.block.Block.Block
@@ -13,6 +13,3 @@ ___
         function on_block_update(self)
 
         function fall(self, check=True)
-            
-            let the block fall
-            :param check: weither to check if the block can fall to that position or not
