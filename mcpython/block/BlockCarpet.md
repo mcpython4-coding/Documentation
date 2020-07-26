@@ -1,4 +1,4 @@
-***BlockCarpet.py - documentation - last updated on 8.6.2020 by uuk***
+***BlockCarpet.py - documentation - last updated on 26.7.2020 by uuk***
 ___
 
     variable carpet_bbox
@@ -35,3 +35,6 @@ ___
         @G.registry class Carpet extends ICarpet
 
             variable NAME: str - the name of the block
+
+    @G.modloader("minecraft", "stage:block:load")
+    function load()

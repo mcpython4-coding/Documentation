@@ -1,4 +1,4 @@
-***Inventory.py - documentation - last updated on 24.6.2020 by uuk***
+***Inventory.py - documentation - last updated on 26.7.2020 by uuk***
 ___
 
     class Inventory
@@ -111,6 +111,12 @@ ___
             serializes the data into the inventory
             :param data: the data saved
             :return: if load is valid or not
+
+
+        function post_load(self, data)
+            
+            serializes stuff after the the slot data is loaded
+            :param data: the data stored
 
 
         function save(self)

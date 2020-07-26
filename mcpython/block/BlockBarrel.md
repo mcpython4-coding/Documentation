@@ -1,7 +1,7 @@
-***BlockBarrel.py - documentation - last updated on 3.7.2020 by uuk***
+***BlockBarrel.py - documentation - last updated on 26.7.2020 by uuk***
 ___
 
-    @G.registry class BlockBarrel extends Block.Block
+    class BlockBarrel extends Block.Block
         
         class for the Barrel-Block
 
@@ -47,3 +47,6 @@ ___
 
         static
         function modify_block_item(cls, itemfactory)
+
+    @G.modloader("minecraft", "stage:block:load")
+    function load()

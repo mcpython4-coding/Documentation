@@ -1,4 +1,4 @@
-***ModLoader.py - documentation - last updated on 12.7.2020 by uuk***
+***ModLoader.py - documentation - last updated on 26.7.2020 by uuk***
 ___
 
     class LoadingStage
@@ -322,6 +322,3 @@ ___
 
 
     variable G.modloader
-
-    @G.modloader("minecraft", "special:exit")
-    function exit()

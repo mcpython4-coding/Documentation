@@ -1,9 +1,9 @@
-***BlockChest.py - documentation - last updated on 3.7.2020 by uuk***
+***BlockChest.py - documentation - last updated on 26.7.2020 by uuk***
 ___
 
     variable BBOX - the bounding box of the chest
 
-    @G.registry class BlockChest extends Block.Block
+    class BlockChest extends Block.Block
         
         The Chest block class
 
@@ -68,3 +68,6 @@ ___
         function save(self)
 
         function load(self, data)
+
+    @G.modloader("minecraft", "stage:block:load")
+    function load()

@@ -1,7 +1,7 @@
-***BlockGrassBlock.py - documentation - last updated on 8.6.2020 by uuk***
+***BlockGrassBlock.py - documentation - last updated on 26.7.2020 by uuk***
 ___
 
-    @G.registry class BlockGrassBlock extends Block.Block
+    class BlockGrassBlock extends Block.Block
         
         base class for grass
 
@@ -19,3 +19,6 @@ ___
         function get_model_state(self) -> dict
 
         function on_random_update(self)
+
+    @G.modloader("minecraft", "stage:block:load")
+    function load()

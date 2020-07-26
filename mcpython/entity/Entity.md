@@ -1,4 +1,4 @@
-***Entity.py - documentation - last updated on 15.7.2020 by uuk***
+***Entity.py - documentation - last updated on 26.7.2020 by uuk***
 ___
 
     class Entity extends mcpython.event.Registry.IRegistryContent
@@ -21,7 +21,7 @@ ___
             :param kwargs: kwargs to send to the constructor
             :return: the created entity
             todo: make added to world
-            for moder: use this rather than raw constructor
+            for moder: use this rather than raw constructor as it is the more "safe" way of doing it
 
 
         function __init__(self, dimension=None)
@@ -157,6 +157,7 @@ ___
             :return: an pickle-able version, excluding position, rotation and harts, should include inventory serializer
                 calls to make sure that everything works
             The nbt data is auto-saved
+            Only extra stuff should be saved!
 
 
         function load(self, data)

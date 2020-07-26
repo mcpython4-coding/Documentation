@@ -1,4 +1,4 @@
-***BlockShulkerBox.py - documentation - last updated on 3.7.2020 by uuk***
+***BlockShulkerBox.py - documentation - last updated on 26.7.2020 by uuk***
 ___
 
     function create_shulker_box(name)
@@ -35,3 +35,6 @@ ___
             function on_request_item_for_block(self, itemstack)
 
             function on_remove(self)
+
+    @G.modloader("minecraft", "stage:block:load")
+    function load()

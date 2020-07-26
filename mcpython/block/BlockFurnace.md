@@ -1,7 +1,7 @@
-***BlockFurnace.py - documentation - last updated on 18.7.2020 by uuk***
+***BlockFurnace.py - documentation - last updated on 26.7.2020 by uuk***
 ___
 
-    @G.registry class BlockFurnace extends mcpython.block.IHorizontalOrientableBlock.IHorizontalOrientableBlock
+    class BlockFurnace extends mcpython.block.IHorizontalOrientableBlock.IHorizontalOrientableBlock
         
         class for the furnace block
 
@@ -36,14 +36,17 @@ ___
 
         function on_remove(self)
 
-    @G.registry class BlastFurnace extends BlockFurnace
+    class BlastFurnace extends BlockFurnace
 
         variable NAME: str
 
         variable FURNACE_RECIPES: list
 
-    @G.registry class Smoker extends BlockFurnace
+    class Smoker extends BlockFurnace
 
         variable NAME: str
 
         variable FURNACE_RECIPES: list
+
+    @G.modloader("minecraft", "stage:block:load")
+    function load()

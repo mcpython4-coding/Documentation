@@ -1,4 +1,4 @@
-***CommandParser.py - documentation - last updated on 24.6.2020 by uuk***
+***CommandParser.py - documentation - last updated on 26.7.2020 by uuk***
 ___
 
     class ParsingCommandInfo
@@ -32,10 +32,6 @@ ___
 
             variable self.commandparsing - start -> (Command, ParseBridge)
 
-            variable self.CANCEL_REGISTER
-
-            variable self.CANCEL_COMMAND_EXECUTE
-
         function add_command(self, command: mcpython.chat.command.Command)
             
             register an command
@@ -47,6 +43,7 @@ ___
             pase an command
             :param command: the command to parse
             :param info: the info to use. can be None if one should be generated
+            todo: check permission
 
 
         function _convert_to_values(self, command, parsebridge, info, index=1) -> tuple

@@ -1,4 +1,4 @@
-***player.py - documentation - last updated on 12.7.2020 by uuk***
+***player.py - documentation - last updated on 26.7.2020 by uuk***
 ___
 
     @G.registry class Player extends mcpython.entity.Entity.Entity
@@ -92,7 +92,7 @@ ___
 
         function get_active_inventory_slot(self)
 
-        function kill(self, test_totem=True)
+        function kill(self, drop_items=True, kill_animation=True, damage_source: mcpython.entity.DamageSource.DamageSource = None, test_totem=True)
 
         function _get_position(self)
 

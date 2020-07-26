@@ -1,4 +1,4 @@
-***BlockWall.py - documentation - last updated on 6.7.2020 by uuk***
+***BlockWall.py - documentation - last updated on 26.7.2020 by uuk***
 ___
 
     class IWall extends mcpython.block.Block.Block
@@ -40,10 +40,13 @@ ___
         static
         function get_all_model_states() -> list
 
-    @G.registry class RedSandstoneWall extends IWall
+    class RedSandstoneWall extends IWall
 
         variable NAME
 
-    @G.registry class SandstoneWall extends IWall
+    class SandstoneWall extends IWall
 
         variable NAME
+
+    @G.modloader("minecraft", "stage:block:load")
+    function load()

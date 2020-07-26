@@ -1,4 +1,4 @@
-***CommandHelp.py - documentation - last updated on 8.6.2020 by uuk***
+***CommandHelp.py - documentation - last updated on 26.7.2020 by uuk***
 ___
 
     @G.registry class CommandHelp extends mcpython.chat.command.Command.Command
@@ -18,7 +18,7 @@ ___
         function get_help() -> list
 
     variable PAGES
-        generate help pages
+        generate help pages  todo: change to an loading stage
 
         variable h
 

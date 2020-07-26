@@ -1,4 +1,4 @@
-***Slot.py - documentation - last updated on 17.7.2020 by uuk***
+***Slot.py - documentation - last updated on 26.7.2020 by uuk***
 ___
 
     variable SLOT_WIDTH
@@ -43,6 +43,11 @@ ___
             creates an copy of self
             :param position: the position to create at
             :return: a slotcopy pointing to this
+
+
+        function deepCopy(self)
+            
+            This will copy the content of the slot into an Slot-object
 
 
         function draw(self, dx=0, dy=0, hovering=False)

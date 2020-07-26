@@ -1,7 +1,7 @@
-***BlockDirt.py - documentation - last updated on 8.6.2020 by uuk***
+***BlockDirt.py - documentation - last updated on 26.7.2020 by uuk***
 ___
 
-    @G.registry class BlockDirt extends Block.Block
+    class BlockDirt extends Block.Block
         
         base class for dirt
         todo: implement -> grass convert
@@ -18,3 +18,6 @@ ___
         variable ENABLE_RANDOM_TICKS
 
         function on_random_update(self)
+
+    @G.modloader("minecraft", "stage:block:load")
+    function load()

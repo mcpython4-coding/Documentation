@@ -1,14 +1,17 @@
-***InventoryFurnace.py - documentation - last updated on 27.6.2020 by uuk***
+***InventoryFurnace.py - documentation - last updated on 26.7.2020 by uuk***
 ___
-
-        variable arrow
-
-        variable fire
 
     class InventoryFurnace extends mcpython.gui.Inventory.Inventory
         
         inventory class for the furnace
 
+
+        variable arrow
+
+        variable fire
+
+        static
+        function reload(cls)
 
         function __init__(self, block, types)
 

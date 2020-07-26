@@ -1,7 +1,7 @@
-***BlockCraftingTable.py - documentation - last updated on 8.6.2020 by uuk***
+***BlockCraftingTable.py - documentation - last updated on 26.7.2020 by uuk***
 ___
 
-    @G.registry class BlockCraftingTable extends Block.Block
+    class BlockCraftingTable extends Block.Block
         
         class for the crafting table
 
@@ -23,3 +23,6 @@ ___
 
         static
         function modify_block_item(cls, itemfactory)
+
+    @G.modloader("minecraft", "stage:block:load")
+    function load()

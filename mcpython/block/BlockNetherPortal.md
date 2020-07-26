@@ -1,7 +1,7 @@
-***BlockNetherPortal.py - documentation - last updated on 11.7.2020 by uuk***
+***BlockNetherPortal.py - documentation - last updated on 26.7.2020 by uuk***
 ___
 
-    @G.registry class NetherPortalBlock extends mcpython.block.Block.Block
+    class NetherPortalBlock extends mcpython.block.Block.Block
         
         class for an nether portal
 
@@ -43,3 +43,6 @@ ___
         function on_no_collide_collide(self, player, previous: bool)
 
                 variable player.in_nether_portal_since
+
+    @G.modloader("minecraft", "stage:block:load")
+    function load()

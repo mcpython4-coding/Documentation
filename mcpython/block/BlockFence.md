@@ -1,4 +1,4 @@
-***BlockFence.py - documentation - last updated on 27.6.2020 by uuk***
+***BlockFence.py - documentation - last updated on 26.7.2020 by uuk***
 ___
 
     class IFence extends mcpython.block.Block.Block
@@ -54,44 +54,47 @@ ___
 
         variable FENCE_TYPE_NAME
 
-    @G.registry class AcaciaFence extends IWoodenFence
+    class AcaciaFence extends IWoodenFence
 
         variable NAME
 
-    @G.registry class BirchFence extends IWoodenFence
+    class BirchFence extends IWoodenFence
 
         variable NAME
 
-    @G.registry class DarkOakFence extends IWoodenFence
+    class DarkOakFence extends IWoodenFence
 
         variable NAME
 
-    @G.registry class JungleFence extends IWoodenFence
+    class JungleFence extends IWoodenFence
 
         variable NAME
 
-    @G.registry class OakFence extends IWoodenFence
+    class OakFence extends IWoodenFence
 
         variable NAME
 
-    @G.registry class SpruceFence extends IWoodenFence
+    class SpruceFence extends IWoodenFence
 
         variable NAME
 
-    @G.registry class CrimsonFence extends IFence
+    class CrimsonFence extends IFence
 
         variable FENCE_TYPE_NAME
 
         variable NAME
 
-    @G.registry class WarpedFence extends IFence
+    class WarpedFence extends IFence
 
         variable FENCE_TYPE_NAME
 
         variable NAME
 
-    @G.registry class NetherBrickFence extends IFence
+    class NetherBrickFence extends IFence
 
         variable NAME
 
         variable FENCE_TYPE_NAME
+
+    @G.modloader("minecraft", "stage:block:load")
+    function load()

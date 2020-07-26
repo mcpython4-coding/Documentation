@@ -1,4 +1,4 @@
-***Chunk.py - documentation - last updated on 12.7.2020 by uuk***
+***Chunk.py - documentation - last updated on 26.7.2020 by uuk***
 ___
 
     function chunk2region(cx, cz): return cx >> 5, cz >> 5
@@ -136,8 +136,38 @@ ___
         static
         function apply_part_fixer(cls, savefile, fixer)
 
+                    variable data
+
+                    variable data
+
+                    variable data
+
+                        variable data[chunk]
+
+                variable blocks
+
+                    variable data
+
+                        variable palette
+
+                                variable palette[i]
+
+                    variable data
+
+                        variable cdata
+
+                    variable data
+
+                        variable cdata
+
+                    variable data
+
+                        variable cdata
+
         static
         function load(cls, savefile, dimension: int, chunk: tuple, immediate=False)
+
+            variable chunk_instance: mcpython.world.Chunk.Chunk
 
             variable G.worldgenerationhandler.enable_generation
 

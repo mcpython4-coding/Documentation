@@ -1,7 +1,7 @@
-***BlockEnderChest.py - documentation - last updated on 18.7.2020 by uuk***
+***BlockEnderChest.py - documentation - last updated on 26.7.2020 by uuk***
 ___
 
-    @G.registry class BlockEnderChest extends Block.Block
+    class BlockEnderChest extends Block.Block
         
         class for the ender chest
 
@@ -39,3 +39,6 @@ ___
         function get_view_bbox(self)
 
         function on_remove(self)
+
+    @G.modloader("minecraft", "stage:block:load")
+    function load()
