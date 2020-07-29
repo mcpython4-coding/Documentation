@@ -1,4 +1,4 @@
-***CombinedBlockFactory.py - documentation - last updated on 6.7.2020 by uuk***
+***CombinedBlockFactory.py - documentation - last updated on 29.7.2020 by uuk***
 ___
 
     variable WALL_TEMPLATE
@@ -11,7 +11,7 @@ ___
 
     function generate_full_block(config, name: str, texture: str = None, callback=None)
 
-    function generate_slab_block(config, name: str, texture: str = None, callback=None, generate_recipe=True)
+    function generate_slab_block(config, name: str, texture: str = None, callback=None, generate_recipe=True, full=None)
 
     function generate_wall_block(config, name: str, texture: str = None, callback=None, generate_recipe=True)
 

@@ -1,4 +1,4 @@
-***BlockModelGenerator.py - documentation - last updated on 13.6.2020 by uuk***
+***BlockModelGenerator.py - documentation - last updated on 29.7.2020 by uuk***
 ___
 
     function encode_model_key(key)
@@ -9,7 +9,7 @@ ___
         Rendering is implemented by the respective rendering backend
 
 
-        function __init__(self, model: str, r_x=0, r_y=0, uvlock=False, weight=None)
+        function __init__(self, model: typing.Union[str, "BlockModelGenerator"], r_x=0, r_y=0, uvlock=False, weight=None)
             
             will create an new entry
             :param model: the model to use as e.g. minecraft:block/stone
@@ -67,17 +67,31 @@ ___
         generator class for an block state
 
 
-        function __init__(self, config, name: str)
+        function __init__(self, config, name: str, parent=None, generate_alias=2)
 
             variable self.name
 
             variable self.states
 
-        function add_state(self, state: typing.Union[None, str, dict, list], *models)
+            variable self.parent
+
+            variable self.alias
+
+            variable self.generate_alias
+
+        function add_state(self, state: typing.Union[None, str, dict, list, "BlockModelGenerator"], *models)
             
             will add an new possible state into the block state file
             :param state: the state as an str, an dict or an list of states or None for default
             :param models: the models to use in this case
+
+
+        function addAliasName(self, name: str, target: str)
+
+        function generateBestAlias(self, limit=2)
+            
+            Helper function for generating aliases where possible
+            :param limit: when an model alias should be created
 
 
         function generate(self)
@@ -87,11 +101,17 @@ ___
         Generator class for an multipart model
 
 
-        function __init__(self, config, name: str)
+        function __init__(self, config, name: str, parent=None, optimize=True)
 
             variable self.name
 
             variable self.states
+
+            variable self.parent
+
+            variable self.alias
+
+            variable self.optimize
 
         function add_state(self, state: typing.Union[None, str, dict, list], *models)
             
@@ -103,6 +123,14 @@ ___
                 list: represents an OR over an list of state-like-entries
             :param models: the models to apply
             :return:
+
+
+        function addAliasName(self, name: str, target: str)
+
+        function generateBestAlias(self, limit=2)
+            
+            Helper function for generating aliases where possible
+            :param limit: when an model alias should be created
 
 
         function generate(self)

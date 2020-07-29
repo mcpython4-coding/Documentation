@@ -1,4 +1,4 @@
-***BlockFactory.py - documentation - last updated on 18.7.2020 by uuk***
+***BlockFactory.py - documentation - last updated on 29.7.2020 by uuk***
 ___
 
     class BlockFactory
@@ -265,10 +265,6 @@ ___
                 class ConstructedBlock extends ConstructedBlock
 
                     function on_block_update(self)
-
-                class ConstructedBlock extends ConstructedBlock
-
-                    function get_model_state(self) -> dict
 
                 class ConstructedBlock extends ConstructedBlock
 

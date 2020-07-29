@@ -1,4 +1,4 @@
-***ICustomBlockRenderer.py - documentation - last updated on 8.6.2020 by uuk***
+***ICustomBlockRenderer.py - documentation - last updated on 29.7.2020 by uuk***
 ___
 
     class ICustomBatchBlockRenderer
@@ -10,3 +10,7 @@ ___
     class ICustomDrawMethodRenderer
 
         function draw(self, position, block)
+
+    class ICustomBlockVertexManager
+
+        function handle(self, block, vertices, face, blockstate)
