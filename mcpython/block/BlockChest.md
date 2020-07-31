@@ -1,4 +1,4 @@
-***BlockChest.py - documentation - last updated on 26.7.2020 by uuk***
+***BlockChest.py - documentation - last updated on 31.7.2020 by uuk***
 ___
 
     variable BBOX - the bounding box of the chest
@@ -35,7 +35,7 @@ ___
             :return: if the block can be opened
 
 
-        function on_player_interact(self, player, itemstack, button, modifiers, exact_hit) -> bool
+        function on_player_interaction(self, player, button: int, modifiers: int, hit_position: tuple)
 
         function get_inventories(self)
 

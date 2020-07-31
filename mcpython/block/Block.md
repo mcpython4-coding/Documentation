@@ -1,4 +1,4 @@
-***Block.py - documentation - last updated on 11.7.2020 by uuk***
+***Block.py - documentation - last updated on 31.7.2020 by uuk***
 ___
 
     class Block extends mcpython.event.Registry.IRegistryContent
@@ -83,16 +83,17 @@ ___
             Is also invoked on "normal" block update
 
 
-        function on_player_interact(self, player, itemstack, button, modifiers, exact_hit) -> bool
+        function on_player_interaction(self, player, button: int, modifiers: int, hit_position: tuple)
             
             Called when the player pressed on mouse button on the block.
             :param player: the entity instance that interacts. WARNING: may not be an player instance
-            :param itemstack: the itemstack hold in hand
             :param button: the button pressed
             :param modifiers: the modifiers hold during press
-            :param exact_hit: where the block was hit at
+            :param hit_position: where the block was hit at
             :return: if default logic should be interrupted or not
 
+
+        function on_player_interact(self, player, itemstack, button, modifiers, exact_hit) -> bool
 
         function on_no_collide_collide(self, player, previous: bool)
             
@@ -102,12 +103,20 @@ ___
 
 
         function save(self)
+
+        function dump(self) -> bytes
             
-            :return: an pickle-able object representing the whole block, not including inventories
-            todo: maybe expect bytes?
+            :return: bytes representing the whole block, not including inventories
 
 
         function load(self, data)
+            
+            loads block data
+            :param data:  the data saved by save()
+            WARNING: if not providing DataFixers for old mod versions, these data may get very old!
+
+
+        function inject(self, data: bytes)
             
             loads block data
             :param data:  the data saved by save()
@@ -135,6 +144,7 @@ ___
             
             the active model state
             :return: the model state as an dict
+            todo: allow string
 
 
         function set_model_state(self, state: dict)
@@ -142,8 +152,16 @@ ___
             sets the model state for the block
             :param state: the state to set as an dict
 
+
+        function get_view_bbox(self) -> typing.Union[mcpython.block.BoundingBox.BoundingBox, mcpython.block.BoundingBox.BoundingArea]
             
-            used to get the bbox of the block
+            used to get the bbox of the block for ray collision
+            :return: the bbox instance
+
+
+        function get_collision_bbox(self) -> typing.Union[mcpython.block.BoundingBox.BoundingBox, mcpython.block.BoundingBox.BoundingArea]
+            
+            used to get the bbox of the block for phyical body collision
             :return: the bbox instance
 
 

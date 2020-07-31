@@ -1,10 +1,11 @@
-***InventoryHandler.py - documentation - last updated on 9.7.2020 by uuk***
+***InventoryHandler.py - documentation - last updated on 31.7.2020 by uuk***
 ___
 
     class OpenedInventoryStatePart extends mcpython.state.StatePart.StatePart
         
         class for inventories as state
         todo: make A LOT OF THINGS public and static
+        todo: move inventory interaction handling to seperated class
 
 
         function __init__(self)
@@ -33,6 +34,7 @@ ___
             :param x: the x position
             :param y: the y position
             :return: the slot or None if none found
+            todo: move to InventoryHandler
 
 
         function _get_slot_inventory_for(self, x, y)
@@ -41,6 +43,7 @@ ___
             :param x: the x position
             :param y: the y position
             :return: the slot and the inventory or None and None if none found
+            todo: move to InventoryHandler
 
 
         function on_mouse_press(self, x, y, button, modifiers)

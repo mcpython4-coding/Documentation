@@ -1,4 +1,4 @@
-***BlockFurnace.py - documentation - last updated on 26.7.2020 by uuk***
+***BlockFurnace.py - documentation - last updated on 31.7.2020 by uuk***
 ___
 
     class BlockFurnace extends mcpython.block.IHorizontalOrientableBlock.IHorizontalOrientableBlock
@@ -26,7 +26,7 @@ ___
         static
         function get_all_model_states(cls) -> list
 
-        function on_player_interact(self, player, itemstack, button, modifiers, exact_hit) -> bool
+        function on_player_interaction(self, player, button, modifiers, exact_hit) -> bool
 
         function get_inventories(self): return [self.inventory]
                 

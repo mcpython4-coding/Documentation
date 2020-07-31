@@ -1,4 +1,4 @@
-***BlockBarrel.py - documentation - last updated on 26.7.2020 by uuk***
+***BlockBarrel.py - documentation - last updated on 31.7.2020 by uuk***
 ___
 
     class BlockBarrel extends Block.Block
@@ -19,7 +19,7 @@ ___
 
             variable self.inventory
 
-        function on_player_interact(self, player, itemstack, button, modifiers, exact_hit) -> bool
+        function on_player_interaction(self, player, button: int, modifiers: int, hit_position: tuple)
 
         function get_inventories(self)
 

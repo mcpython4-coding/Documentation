@@ -1,4 +1,4 @@
-***StatePartGame.py - documentation - last updated on 13.6.2020 by uuk***
+***StatePartGame.py - documentation - last updated on 31.7.2020 by uuk***
 ___
 
     class HotKeys extends enum.Enum
@@ -60,15 +60,11 @@ ___
 
         function __init__(self, activate_physics=True, activate_mouse=True, activate_keyboard=True, activate_3d_draw=True,
                 activate_focused_block=True, glcolor3d=(1., 1., 1.), activate_crosshair=True, activate_lable=True,
-                clearcolor=(0.5, 0.69, 1.0, 1), active_hotkeys=ALL_KEY_COMBOS):
+                clearcolor=(0.5, 0.69, 1.0, 1), active_hotkeys=None):
 
         function set_mouse_active(self, active: bool)
 
-        function get_mouse_active(self): return self.__activate_mouse
-                
-                activate_mouse = property(get_mouse_active, set_mouse_active)
-                
-                def bind_to_eventbus(self):
+        function get_mouse_active(self)
 
         variable activate_mouse
 

@@ -1,4 +1,4 @@
-***BlockCraftingTable.py - documentation - last updated on 26.7.2020 by uuk***
+***BlockCraftingTable.py - documentation - last updated on 31.7.2020 by uuk***
 ___
 
     class BlockCraftingTable extends Block.Block
@@ -8,7 +8,7 @@ ___
 
         variable NAME: str
 
-        function on_player_interact(self, player, itemstack, button, modifiers, exact_hit) -> bool
+        function on_player_interaction(self, player, button: int, modifiers: int, hit_position: tuple)
 
         function get_inventories(self)
             
