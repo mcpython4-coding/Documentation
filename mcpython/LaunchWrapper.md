@@ -21,7 +21,7 @@ ___
 
         function setup_files(self)
 
-                variable G.prebuilding
+                variable G.invalidate_cacheing
 
         function load_mods(self)
 

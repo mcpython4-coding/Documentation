@@ -10,7 +10,7 @@ ___
             prepared before the game starts (texture atlases, file transformations, texture editing, ...) in an separated
             folder. Access to the prepared data is organized by index files.
         What happens if the user adds some data into the game?
-            The system is not generating during runtime anymore. To update the data, run program with --rebuild or import
+            The system is not generating during runtime anymore. To update the data, run program with --invalidate-cache or import
             the __main__ file and the setup file and call the functions by hand
         What happens if an mod loader should be added?
             Have a look what is done to generate the vanilla things. Try to give the mod an interface for generating things.
@@ -44,12 +44,12 @@ ___
 
     function execute()
 
-        variable G.prebuilding
+        variable G.invalidate_cacheing
 
         variable G.data_gen
 
             variable data
 
-            variable G.prebuilding
+            variable G.invalidate_cacheing
 
             variable G.data_gen

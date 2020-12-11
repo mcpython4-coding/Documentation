@@ -6,6 +6,7 @@ import sys
 import datetime
 import json
 import time
+import tokenize
 
 
 local = os.path.dirname(os.path.dirname(__file__))
@@ -158,11 +159,8 @@ ___""".format(raw_file, now, user)
             return True
     with open(doc_file_loc, mode="w") as f:
         f.write(doc)
-    print("generating doc for '{}'".format(file))
     if flag:
         print("please adapt file '{}' as it had content before!".format(doc_file_loc))
-        # a = input("re-run generation? ").lower()
-        # if a in ("y", "j", "1"): return False
     return True
 
 
@@ -176,8 +174,6 @@ def main():
         root, file = found_files.pop(0)
         sub_root = root[len(path)+1:]
         if file.endswith(".py"):
-            # a = input("generate doc for '{}'? ".format(file)).lower()
-            # if a not in ("y", "j", "1"): continue
             real_file = os.path.join(root, file)
             doc_file = os.path.join(local, sub_root, file.split(".")[0]+".md")
             d = os.path.dirname(doc_file)
