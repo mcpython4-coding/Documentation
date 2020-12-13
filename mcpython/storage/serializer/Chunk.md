@@ -244,7 +244,7 @@ ___
 
                 variable landmass_map
 
-                variable cdata["maps"]["landmass_map"]
+                variable cdata["maps"]["minecraft:landmass_map"]
 
                 variable cdata["maps"]["landmass_palette"]
 
