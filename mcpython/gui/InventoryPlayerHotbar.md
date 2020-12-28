@@ -35,7 +35,7 @@ ___
 
         function on_deactivate(self)
 
-        function draw(self, hoveringslot=None)
+        function draw(self, hovering_slot=None)
 
         function on_draw_over_image(self)
 

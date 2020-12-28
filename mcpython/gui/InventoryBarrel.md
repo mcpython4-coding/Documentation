@@ -19,7 +19,7 @@ ___
 
         function create_slots(self) -> list
 
-        function draw(self, hoveringslot=None)
+        function draw(self, hovering_slot=None)
 
         function get_interaction_slots(self)
 

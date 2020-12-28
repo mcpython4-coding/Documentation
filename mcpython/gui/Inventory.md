@@ -74,13 +74,13 @@ ___
                 
                 def is_always_open(self) -> bool: return False  # todo: make attribute
                 
-                def draw(self, hoveringslot=None):
+                def draw(self, hovering_slot=None):
 
         function is_always_open(self) -> bool: return False  # todo: make attribute
                 
-                def draw(self, hoveringslot=None):
+                def draw(self, hovering_slot=None):
 
-        function draw(self, hoveringslot=None)
+        function draw(self, hovering_slot=None)
             
             draws the inventory
 
