@@ -75,7 +75,7 @@ ___
             variable self.settings
 
         @deprecation.deprecated("dev4-2", "a1.4.0")
-        function setName(self, name: str)
+        function set_name(self, name: str)
 
         @deprecation.deprecated("dev4-2", "a1.4.0")
         function getSimpleFactory(self)

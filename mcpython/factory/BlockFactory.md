@@ -5,12 +5,12 @@ ___
         
         factory for creating on an simple way block classes
         examples:
-            BlockFactory().setName("test:block").setHardness(1).setBlastResistance(1).finish()
-            BlockFactory().setName("test:log").setHardness(1).setBlastResistance(1).setLog().finish()
-            BlockFactory().setName("test:slab").setHardness(1).setBlastResistance(1).setSlab().finish()
-            BlockFactory().setName("some:complex_block").setHardness(1).setBlastResistance(1).setDefaultModelState("your=default,model=state").setAllSideSolid(False).finish()
+            BlockFactory().set_name("test:block").set_hardness(1).set_blast_resistance(1).finish()
+            BlockFactory().set_name("test:log").set_hardness(1).set_blast_resistance(1).set_log().finish()
+            BlockFactory().set_name("test:slab").set_hardness(1).set_blast_resistance(1).set_slab().finish()
+            BlockFactory().set_name("some:complex_block").set_hardness(1).set_blast_resistance(1).set_default_model_state("your=default,model=state").set_all_side_solid(False).finish()
         Most functions will return the BlockFactory-object called on to allow above syntax.
-        .setHardness and .setBlastResistance should be set on ALL blocks created as they will be NOT optional in the future.
+        .set_hardness and .set_blast_resistance should be set on ALL blocks created as they will be NOT optional in the future.
         The .finish() method will return the BlockItemFactory-instance for the block. Modifying it before the
             "stage:block:factory:finish"-phase will lead into changes in the base block. This can also lead into exceptions
             in this phase as their the data is read in and the classes are generated.
@@ -30,21 +30,21 @@ ___
         ---------------
         You are able to create BlockFactory templates (pre-configured BlockFactory objects from which you can create
             multiple blocks starting with the same foundation).
-        You can store your config with .setTemplate() on an BlockFactory-object. It will store the active status
+        You can store your config with .set_template() on an BlockFactory-object. It will store the active status
             for later usage. When you call .finish(), the block will be created and the system will reset to the state
-            of your .setTemplate() call. You can manually reset it by calling .setToTemplate() and you can delete
-            the template by calling .resetTemplate(). You can disable the reset to the template on finish-call if you
+            of your .set_template() call. You can manually reset it by calling .set_to_template() and you can delete
+            the template by calling .reset_template(). You can disable the reset to the template on finish-call if you
             pass reset_to_template=False to it.
         If you are creating an block in multiple colors with the configuration, templates should be used as they reduce
             are better internally.
         Templates can be extracted/inserted as the .template-attribute.
-        Template-attribute changes will NOT affect active build block, you must call setToTemplate() first or finish your
+        Template-attribute changes will NOT affect active build block, you must call set_to_template() first or finish your
             block
         Example:
-            your_template = BlockFactory().[some calls].setTemplate()
-            your_template.setName("test:block").finish()  # will create an block called "test:block" with pre-configured parameters
-            your_template.setName("test:slab").setSlab().finish()  # will create an slab
-            your_template.setName("test:block2").finish()   # This is now NOT an slab beside it be based on the same base
+            your_template = BlockFactory().[some calls].set_template()
+            your_template.set_name("test:block").finish()  # will create an block called "test:block" with pre-configured parameters
+            your_template.set_name("test:slab").set_slab().finish()  # will create an slab
+            your_template.set_name("test:block2").finish()   # This is now NOT an slab beside it be based on the same base
         ---------------------
         Extending the Factory
         ---------------------
@@ -148,15 +148,15 @@ ___
 
             variable obj.template
 
-        function setTemplate(self, set_name_finises_previous=False)
+        function set_template(self, set_name_finises_previous=False)
             
             sets the current status as "template". This status will be set to on every .finish() call, but will not affect
             the new generated entry.
 
 
-        function setToTemplate(self)
+        function set_to_template(self)
             
-            will reset the current object to the status right after the .setTemplate() call
+            will reset the current object to the status right after the .set_template() call
 
 
             variable self.interaction_callback
@@ -175,7 +175,7 @@ ___
 
             variable self.baseclass
 
-        function resetTemplate(self)
+        function reset_template(self)
             
             will delete the template-status
 
@@ -285,44 +285,44 @@ ___
 
                 variable r
 
-        function setGlobalModName(self, name: str)
+        function set_global_mod_name(self, name: str)
             
             will set the mod-prefix for the future (only very useful in template systems)
             :param name: the mod-prefix
 
 
-        function setSolidFlag(self, state: bool)
+        function set_solid_flag(self, state: bool)
             
             will set the SOLID-flag of the class
             :param state: the value to set to
 
 
-        function setConductsRedstonePowerFlag(self, state: bool)
+        function set_conducts_redstone_power_flag(self, state: bool)
             
             will set the CAN_CONDUCT_REDSTONE-flag of the class
             :param state: the value to set to
 
 
-        function setCanMobsSpawnOnFlag(self, state: bool)
+        function set_can_mobs_spawn_on_flag(self, state: bool)
             
             will set the CAN_MOBS_SPAWN_ON-flag of the class
             :param state: the state to set to
 
 
-        function setName(self, name: str)
+        function set_name(self, name: str)
             
             will set the name of the block, when mod-prefix was set, the prefix is added in front with an ":" in between,
             but only if <name> has no ":" representing an "<mod-prefix>:<block name>".
             :param name: The name of the block
 
 
-        function setCreateCallback(self, function)
+        function set_create_callback(self, function)
             
             will set an callback for the block creation in __init__-function of final class
             :param function: the function to invoke on creation. It is called together with the block instance
 
 
-        function setDeleteCallback(self, function)
+        function set_delete_callback(self, function)
             
             will set an callback for the deletion of the block
             :param function: the function to invoke on deletion. It is called together with the block instance
@@ -331,44 +331,44 @@ ___
         @deprecation.deprecated("dev1-2", "a1.3.0")
         function setBrakeAbleFlag(self, state: bool)
 
-        function setBreakAbleFlag(self, state: bool)
+        function set_break_able_flag(self, state: bool)
             
             will set the BREAKABLE-flag of the class
             :param state: the state to use
 
 
-        function setRandomUpdateCallback(self, function)
+        function set_random_update_callback(self, function)
             
             will set the callback for random updates
             :param function: the function to invoke on random update together with the block instance
 
 
-        function setUpdateCallback(self, function)
+        function set_update_callback(self, function)
             
             will set the callback for an block update
             :param function: the function to invoke on an block update together with the block instance
 
 
-        function setCustomSolidSideFunction(self, function)
+        function set_custom_solid_side_function(self, function)
             
             will set the callback for the solid side system
             :param function: the function to invoke
 
 
-        function setSolidSideTableEntry(self, side, state: bool)
+        function set_solid_side_table_entry(self, side, state: bool)
             
             will set one entry in the solid face table
             :param side: the side to set
             :param state: the state to set to
 
 
-        function setCustomModelStateFunction(self, function)
+        function set_custom_model_state_function(self, function)
             
             will set the model state getter callback for the class
             :param function: the function to invoke when needed
 
 
-        function setDefaultModelState(self, state)
+        function set_default_model_state(self, state)
             
             Will set the default model state of the block
             :param state: the state as an dict or an string-representation like in the block-state files
@@ -377,19 +377,19 @@ ___
 
             function get_state(*_): return state
                     
-                    self.setCustomModelStateFunction(get_state)
+                    self.set_custom_model_state_function(get_state)
                     return self
                     
-                    def setAllModelStateInfo(self, modelstates: list):
+                    def set_all_model_state_info(self, modelstates: list):
 
-        function setAllModelStateInfo(self, modelstates: list)
+        function set_all_model_state_info(self, modelstates: list)
             
             will set the list of all possible block states of the block
             :param modelstates: the model states, as an list of dicts
             todo: implement stringifier support
 
 
-        function setInteractionCallback(self, function)
+        function set_interaction_callback(self, function)
             
             sets the callback for the interaction event
             :param function: the function to invoke on
@@ -401,23 +401,23 @@ ___
             will make the block affected by gravity
 
 
-        function setAllSideSolid(self, state: bool)
+        function set_all_side_solid(self, state: bool)
             
             sets all side status of solid
             :param state: the status
 
 
-        function setLog(self)
+        function set_log(self)
             
             makes the block an log-like block; Will need the needed block-state variation
 
 
-        function setSlab(self)
+        function set_slab(self)
             
             makes the block an slab-like block; Will need the needed block-state variation
 
 
-        function setHardness(self, value: float)
+        function set_hardness(self, value: float)
             
             will set the hardness of the block
             :param value: the value of the hardness
@@ -430,55 +430,55 @@ ___
             :param blast_resistance: value for blast resistance, if None, hardness is used
 
 
-        function enableRandomTicks(self)
+        function enable_random_ticks(self)
 
-        function setMinimumToolLevel(self, value: int)
+        function set_minimum_tool_level(self, value: int)
             
             will set the minimum needed tool level for breaking the block
             :param value: the value representing an tool level
 
 
-        function setBestTools(self, tools)
+        function set_best_tools(self, tools)
             
             will set the tools good in breaking the block
             :param tools: an list of tools or only one tool
 
 
-        function setCustomItemstackModificationFunction(self, function)
+        function set_custom_itemstack_modification_function(self, function)
             
             will set the callback to modify the itemstack generated when the block is broken
             :param function: the function to invoke
 
 
-        function setCustomBlockItemModification(self, function)
+        function set_custom_block_item_modification(self, function)
             
             will set the callback for the modification call for the ItemFactory-object generated by BlockItemFactory
             :param function: the function to invoke on callback
 
 
-        function setSpeedMultiplier(self, factor: float)
+        function set_speed_multiplier(self, factor: float)
             
             sets the factor applied to the player movement speed when the player is ontop of the block
             :param factor: the factor to use
 
 
-        function setBlockItemGeneratorState(self, state: dict)
+        function set_block_item_generator_state(self, state: dict)
             
             sets the state of the block to use when the BlockItemGenerator makes the image for the item
             :param state: the state as an dict
             todo: make this also accept an string
 
 
-        function setHorizontalOrientable(self, face_name="facing")
+        function set_horizontal_orientable(self, face_name="facing")
             
             will set the block to horizontal orientable mode
             :param face_name: the name for the internal block-state reference for the orientation
 
 
-        function setBlastResistance(self, resistance: float)
+        function set_blast_resistance(self, resistance: float)
             
             will set the resistance against explosions (internally not used, but part of the Block-API
             :param resistance: the resistance of the block
 
 
-        function setNoCollision(self, value: bool = True)
+        function set_no_collision(self, value: bool = True)

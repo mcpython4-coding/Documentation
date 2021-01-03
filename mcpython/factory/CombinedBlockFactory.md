@@ -52,7 +52,7 @@ ___
 
         function __init__(self, modname=None, config=None, on_create_callback=None)
 
-        function setName(self, name: str)
+        function set_name(self, name: str)
 
         function setMode(self, mode: CombinedFullBlockFactoryMode)
 
@@ -83,7 +83,7 @@ ___
             :param full_model: the model for the full block, if existent
 
 
-        function setName(self, name: str)
+        function set_name(self, name: str)
 
         function build(self)
 
@@ -107,7 +107,7 @@ ___
             :param on_create_callback: callback when BlockFactory is active
 
 
-        function setName(self, name: str)
+        function set_name(self, name: str)
 
         function build(self)
 
@@ -131,7 +131,7 @@ ___
             :param on_create_callback: callback when BlockFactory is active
 
 
-        function setName(self, name: str)
+        function set_name(self, name: str)
 
         function build(self)
 

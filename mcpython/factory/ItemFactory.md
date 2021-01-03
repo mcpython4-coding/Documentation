@@ -61,15 +61,15 @@ ___
 
         function __call__(self, name: str = None)
 
-        function setTemplate(self, set_name_finises_previous=False)
+        function set_template(self, set_name_finises_previous=False)
             
             sets the current status as "template". This status will be set to on every .finish() call, but will not affect
             the new generated entry.
 
 
-        function setToTemplate(self)
+        function set_to_template(self)
 
-        function resetTemplate(self)
+        function reset_template(self)
 
         function finish(self, register=True, task_list=False)
 
@@ -167,9 +167,9 @@ ___
 
         function setBaseClassByName(self, baseclassname: str)
 
-        function setGlobalModName(self, name: str)
+        function set_global_mod_name(self, name: str)
 
-        function setName(self, name: str)
+        function set_name(self, name: str)
 
         function setDefaultItemFile(self, itemfile: str)
 
@@ -183,7 +183,7 @@ ___
 
         function setCreationCallback(self, function)
 
-        function setInteractionCallback(self, function)
+        function set_interaction_callback(self, function)
 
         function setFoodValue(self, value: int)
 

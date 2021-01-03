@@ -15,7 +15,7 @@ ___
             variable self.textures
 
         @deprecation.deprecated("dev2-2", "a1.5.0")
-        function setName(self, name: str)
+        function set_name(self, name: str)
 
         @deprecation.deprecated("dev2-2", "a1.5.0")
         function setParent(self, parent: str)
@@ -51,7 +51,7 @@ ___
             variable self.variants
 
         @deprecation.deprecated("dev2-2", "a1.5.0")
-        function setName(self, name: str)
+        function set_name(self, name: str)
 
         @deprecation.deprecated("dev2-2", "a1.5.0")
         function addVariant(self, variant_descriptor: str, *models)
