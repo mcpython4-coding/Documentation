@@ -438,7 +438,7 @@ ___
             :param value: the value representing an tool level
 
 
-        function set_best_tools(self, tools)
+        function set_assigned_tools(self, tools)
             
             will set the tools good in breaking the block
             :param tools: an list of tools or only one tool
