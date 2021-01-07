@@ -185,7 +185,7 @@ ___
 
         function set_interaction_callback(self, function)
 
-        function setFoodValue(self, value: int)
+        function set_food_value(self, value: int)
 
         function setEatCallback(self, function)
 
