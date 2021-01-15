@@ -202,7 +202,7 @@ ___
             will return an list of mod locations found for loading
 
 
-        function load_mod_jsons(self, modlocations: list)
+        function load_mod_json_from_locations(self, modlocations: list)
             
             will load the mod description files for the given locations and parse their content
             :param modlocations: the locations found
