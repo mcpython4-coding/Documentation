@@ -97,7 +97,7 @@ ___
             todo: play kill animation if selected
 
 
-        function pick_up(self, itemstack: mcpython.gui.ItemStack.ItemStack) -> bool
+        function pick_up_item(self, itemstack: mcpython.gui.ItemStack.ItemStack) -> bool
             
             Let the entity pick up an item and insert it into its inventory
             :param itemstack: the itemstack to use

@@ -69,7 +69,7 @@ ___
 
         function add_xp_level(self, xp_levels: int)
 
-        function pick_up(self, itemstack: mcpython.gui.ItemStack.ItemStack) -> bool
+        function pick_up_item(self, itemstack: mcpython.gui.ItemStack.ItemStack) -> bool
             
             adds the item onto the itemstack
             :param itemstack: the itemstack to add
