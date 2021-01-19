@@ -1,10 +1,25 @@
-***math.py - documentation - last updated on 18.7.2020 by uuk***
+***math.py - documentation - last updated on 19.1.2021 by uuk***
 ___
 
-    @deprecation.deprecated("dev3-2", "a1.3.0")
-    function get_max_y(pos)
+    mcpython - a minecraft clone written in python licenced under MIT-licence
+    authors: uuk, xkcdjerry (inactive)
+    based on the game of fogleman (https://github.com/fogleman/Minecraft) licenced under MIT-licence
+    original game "minecraft" by Mojang Studios (www.minecraft.net)
+    mod loader inspired by "minecraft forge" (https://github.com/MinecraftForge/MinecraftForge)
+    blocks based on 20w51a.jar of minecraft, representing snapshot 20w51a
+    (https://www.minecraft.net/en-us/article/minecraft-snapshot-20w51a)
+    This project is not official by mojang and does not relate to it.
 
-    function cube_vertices_better(x: float, y: float, z: float, nx: float, ny: float, nz: float, faces=(True, True, True, True, True, True))
+
+    function cube_vertices_better(
+            x: float,
+            y: float,
+            z: float,
+            nx: float,
+            ny: float,
+            nz: float,
+            faces=(True, True, True, True, True, True),
+            ):
         
         Similar to cube_vertices, but will return it per-face instead of an whole array of data
         :param x: the x position
@@ -17,7 +32,19 @@ ___
         :return: an tuple of length 6 representing each face
 
 
-    function tex_coord(x, y, size=(32, 32), region=(0, 0, 1, 1), rot=0) -> tuple
+        variable top
+
+        variable bottom
+
+        variable left
+
+        variable right
+
+        variable front
+
+        variable back
+
+    function tex_coordinates(x, y, size=(32, 32), region=(0, 0, 1, 1), rot=0) -> tuple
         
         Return the bounding vertices of the texture square.
         :param x: the texture atlas entry to use
@@ -28,7 +55,9 @@ ___
         :return: an tuple representing the texture coordinates
 
 
-    function tex_coords_better(*args, size=(32, 32), tex_region=None, rotation=(0, 0, 0, 0, 0, 0)) -> list
+    function tex_coordinates_better(
+            *args, size=(32, 32), tex_region=None, rotation=(0, 0, 0, 0, 0, 0)
+            ) -> list:
         
         this is an better implementation of above tex_coords function. It will return an list of coords instead
         of an list where you have to manually find entries
@@ -39,10 +68,9 @@ ___
         :return: an list of lists of texture coords
 
 
-    function tex_coord_factor(fx, fy, tx, ty): return fx, fy, tx, fy, tx, ty, fx, ty
-            
-            
-            def normalize(position):
+            variable tex_region
+
+    function tex_coordinates_factor(fx, fy, tx, ty)
 
     function normalize(position)
         
@@ -59,13 +87,14 @@ ___
         :return: the ceil-ed position
 
 
-    @deprecation.deprecated("dev5-1", "a1.5.0")
-    function sectorize(position): return positionToChunk(position)
-            
-            
-            def positionToChunk(position):
+    function position_to_chunk(position)
+        
+        Returns a tuple representing the chunk for the given `position`.
+        :param position: the position
+        :return: the chunk
 
-    function positionToChunk(position)
+
+    function position_to_chunk_unsafe(position)
         
         Returns a tuple representing the chunk for the given `position`.
         :param position: the position
@@ -115,3 +144,5 @@ ___
         variable ny
 
         variable nz
+
+    function product(iterable: typing.List[float])

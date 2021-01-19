@@ -49,12 +49,16 @@ ___""".format(raw_file, now, user)
         if skip > 0:
             skip -= 1
             continue
+
         line = oline.lstrip()
         level = oline[:-len(line)].count("    ")
+
         if pre_level is not None and pre_level > level:
             in_init = False
+
         pre_level = level
         if in_function and level <= function_level: in_function = False
+
         if '"""' in line and line.count('"""') % 2 == 1:
             in_doc = not in_doc
             if in_doc:
@@ -72,11 +76,11 @@ ___""".format(raw_file, now, user)
                     doc += "\n" + "    " * (level if doc_type == 0 else level + 1) + "{}\n".format(doc_string)
                 doc_string = ""
                 doc_type = 0
+
         elif in_doc:
             if line.replace('"""', "").strip() == "": continue
             doc_string += "\n" + "    " * (level+1) + line.replace('"""', "")
-        elif in_doc:
-            pass
+
         elif not in_function or in_init:
             s = line.split(" ")
             if s[0] == "class":
@@ -93,7 +97,15 @@ ___""".format(raw_file, now, user)
                 c = s[1].split("(")[0].split(":")[0]
                 doc += "\n\n" + "    " * (level + 1) + mod + "class {}".format(c)
                 if s[1].count("(") > 0:
-                    doc += " extends " + line[line.index("(") + 1:line.index(")")].replace(",", ", ")
+                    if line.count("(") == line.count(")"):
+                        doc += " extends " + line[line.index("(") + 1:line.index(")")].replace(",", ", ")
+                    else:
+                        while line.count("(") != line.count(")"):
+                            skip += 1
+                            i += 1
+                            line += " " + lines[i].lstrip()
+                        doc += " extends " + line[line.index("(") + 1:line.index(")")].replace(",", ", ")
+
             elif s[0] == "def":
                 in_function = True
                 function_level = level
@@ -113,29 +125,46 @@ ___""".format(raw_file, now, user)
                 if not line.endswith(":"):
                     head = line[line.index("def") + 4:]
                     i2 = i + 1
+
                     while i2 < len(lines):
                         cline = lines[i2].strip()
                         head += "\n" + cline
                         if cline.endswith(":") and (("):" in cline) or (") ->" in cline)):
                             break
                         i2 += 1
-                    if head.count("\n") > 5:
-                        print("skipping {} as function HEAD is to big".format(line))
+                    else:
+                        print("skipping {} as function end not detected!".format(line))
                         continue
+
                     skip = i - i2
                 else:
                     head = line[line.index("def") + 4:line.rindex(":")]
+
                 if "__init__" in line:
                     in_init = True
                 doc += "\n\n" + mod + "    " * (level + 1) + "function {}".format(
                     ("\n"+"    " * (level + 3)).join(head.split("\n")))
+
             elif len(s) > 1:
                 if s[1] == "=" or (len(s) > 2 and s[2] == "=" and s[0].endswith(":")):
-                    doc += "\n\n" + "    " * (level + 1) + "variable {}".format(s[0])
+                    if line.count("]") > line.count("[") or line.count(")") > line.count("("):
+                        i2 = i - 1
+                        while i2 > 0:
+                            if level >= lines[i2][:-len(lines[i2].lstrip())].count("    "):
+                                break
+                            i2 -= 1
+                        else:
+                            print("could not find variable name; skipping...")
+                            continue
+                        doc += "\n\n" + "    " * (level + 1) + "variable {}".format(
+                            lines[i2].split()[0].removesuffix(":"))
+                    else:
+                        doc += "\n\n" + "    " * (level + 1) + "variable {}".format(s[0])
                     if s[0].endswith(":"):
                         doc += " " + s[1]
                     if "#" in line:
                         doc += " - {}".format(line[line.index("#") + 2:])
+
                     i2 = i - 1
                     sdoc = []
                     while i2 >= 0:
@@ -145,22 +174,28 @@ ___""".format(raw_file, now, user)
                         else:
                             break
                         i2 -= 1
+
                     if len(sdoc) > 0:
                         sdoc.reverse()
                         doc += "\n" + "    " * (level + 2)
                         doc += ("\n" + "    " * (level + 2)).join(sdoc)
+
             elif line.startswith("# todo"):
                 doc += "    " * (level + 1)+line[2:]
+
     flag = os.path.exists(doc_file_loc)
     if flag:
         with open(doc_file_loc) as f:
             d = f.read()
         if d.split("\n")[1:] == doc.split("\n")[1:]:
             return True
+
     with open(doc_file_loc, mode="w") as f:
         f.write(doc)
+
     if flag:
         print("please adapt file '{}' as it had content before!".format(doc_file_loc))
+
     return True
 
 

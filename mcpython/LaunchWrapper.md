@@ -1,30 +1,109 @@
-***LaunchWrapper.py - documentation - last updated on 26.7.2020 by uuk***
+***LaunchWrapper.py - documentation - last updated on 19.1.2021 by uuk***
 ___
 
-    class LaunchWrapper
+    mcpython - a minecraft clone written in python licenced under MIT-licence
+    authors: uuk, xkcdjerry (inactive)
+    based on the game of fogleman (https://github.com/fogleman/Minecraft) licenced under MIT-licence
+    original game "minecraft" by Mojang Studios (www.minecraft.net)
+    mod loader inspired by "minecraft forge" (https://github.com/MinecraftForge/MinecraftForge)
+    blocks based on 20w51a.jar of minecraft, representing snapshot 20w51a
+    (https://www.minecraft.net/en-us/article/minecraft-snapshot-20w51a)
+    This project is not official by mojang and does not relate to it.
 
-        function inject_sys_argv(self):  # todo: all sys.argv parsing belongs here
-                pass
-                
-                def setup(self):
+
+    class LaunchWrapper
+        
+        Class for launching the game in an certain configuration
+        Loads all needed part and executed the loading task cycle.
+        todo: move shared.py content into here & remove shared.py
+
+
+        function __init__(self)
+
+            variable self.is_client
+
+            variable self.__side_prepared
+
+        function prepare_client(self)
+
+            variable self.__side_prepared
+
+            variable shared.IS_CLIENT
+
+            variable shared.NO_WINDOW
+
+        function prepare_server(self)
+
+            variable self.__side_prepared
+
+            variable shared.IS_CLIENT
+
+            variable shared.NO_WINDOW
+
+        function inject_sys_argv(self, argv: typing.List[str])
+            
+            Currently unused helper function for loading the sys.argv config into the game
+            todo: all sys.argv parsing belongs here, with a general parser for options not specified
+
 
         function setup(self)
+            
+            Setup general stuff which does not take long to complete
+            Loads first modules into memory and launches registry setup
+
 
         function setup_registries(self)
+            
+            Helper functions for loading the modules which create registries and do similar stuff
 
-            @G.modloader("minecraft", "special:exit")
+
+            @shared.mod_loader("minecraft", "special:exit")
             function exit()
 
         function setup_opengl(self)
+            
+            Helper function for OpenGL setup
+            Loads also the needed API
+
 
         function print_header(self)
+            
+            Prints an header describing the program name and its version
+
+
+            variable version
 
         function setup_files(self)
+            
+            Setup for certain files in the system.
 
-                variable G.invalidate_cacheing
+
+                variable shared.invalidate_cache
 
         function load_mods(self)
+            
+            Do ModLoader initial stuff
+
 
         function launch(self)
+            
+            Launches the game in the current configuration
+            Starts the main cycle with pyglet
+            Loads the mods (finally!)
+            todo: move state selection here
 
-            variable G.world
+
+            variable shared.world
+
+        function error_clean(self)
+            
+            Helper function for cleaning up in an half-inited environment
+            (save)
+            Will enforce cleanup when possible
+
+
+        function clean(self)
+            
+            Helper function for normal cleanup
+            (not save)
+            MAY crash on non-fully stable systems
