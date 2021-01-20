@@ -1,4 +1,4 @@
-***CraftingGridRecipeRenderer.py - documentation - last updated on 19.1.2021 by uuk***
+***CraftingGridRecipeRenderer.py - documentation - last updated on 20.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -51,7 +51,7 @@ ___
             variable self.remaining_state_time
 
         function prepare_for_recipe(
-                self, recipe: mcpython.common.container.crafting.IRecipeType.IRecipe
+                self, recipe: mcpython.common.container.crafting.IRecipe.IRecipe
                 ):
 
             variable self.recipe

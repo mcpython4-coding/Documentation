@@ -1,4 +1,4 @@
-***CraftingGridHelperInterface.py - documentation - last updated on 19.1.2021 by uuk***
+***CraftingGridHelperInterface.py - documentation - last updated on 20.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -18,7 +18,7 @@ ___
                 cls, interface: "CraftingGridHelperInterface", recipe
                 ) -> typing.Optional:
 
-    class CraftingGridHelperInterface extends  mcpython.common.container.crafting.IRecipeInterface.IRecipeInterface 
+    class CraftingGridHelperInterface extends  mcpython.common.container.crafting.IRecipeUser.IRecipeUser 
         
         Recipe interface for an crafting grid of arbitrary size using the default recipe implementation
 

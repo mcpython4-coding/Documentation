@@ -1,4 +1,4 @@
-***RecipeViewRenderer.py - documentation - last updated on 19.1.2021 by uuk***
+***RecipeViewRenderer.py - documentation - last updated on 20.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -16,7 +16,7 @@ ___
     class AbstractRecipeViewRenderer extends ABC
 
         function prepare_for_recipe(
-                self, recipe: mcpython.common.container.crafting.IRecipeType.IRecipe
+                self, recipe: mcpython.common.container.crafting.IRecipe.IRecipe
                 ):
 
         function draw(self, position: typing.Tuple[int, int], hovering_slot=None)

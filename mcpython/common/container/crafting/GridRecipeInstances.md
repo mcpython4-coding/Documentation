@@ -1,4 +1,4 @@
-***GridRecipeInstances.py - documentation - last updated on 19.1.2021 by uuk***
+***GridRecipeInstances.py - documentation - last updated on 20.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -11,30 +11,36 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    function transform_to_item_stack(item, table: dict) -> list
+    function transform_to_item_stack(item, file: str) -> list
         
-        Transforms an item name from recipe to an valid item list to compare with
+        Transforms an item name from recipe to a valid item list to compare with
         :param item: the item name given
-        :param table: optional: an table of items which were decoded previous
+        :param file: the file currently in
         :return: an transformed name list of (item name, amount)
 
 
-    class AbstractCraftingGridRecipe extends  mcpython.common.container.crafting.IRecipeType.IRecipe,  ABC 
+            variable itemname
 
-        variable RECIPE_VIEW_PROVIDER
+            variable values
+
+            variable value
+
+    class AbstractCraftingGridRecipe extends  mcpython.common.container.crafting.IRecipe.IRecipe,  ABC 
+
+        variable RECIPE_VIEW
 
         function as_grid_for_view(
-                self, max_size=(3, 3)
+                self, size=(3, 3)
                 ) -> typing.Tuple[typing.List[typing.List[typing.List[ItemStack]]], ItemStack]:
 
         function __repr__(self)
 
     @shared.crafting_handler class GridShaped extends AbstractCraftingGridRecipe
 
-        variable RECIPE_NAMES
+        variable RECIPE_TYPE_NAMES
 
         static
-        function from_data(cls, data: dict)
+        function from_data(cls, data: dict, file: str)
 
             variable grid
 
@@ -58,10 +64,10 @@ ___
 
         function register(self)
 
-        function as_grid(self)
+        function as_grid(self, size=(3, 3))
 
         function as_grid_for_view(
-                self, max_size=(3, 3)
+                self, size=(3, 3)
                 ) -> typing.Tuple[typing.List[typing.List[typing.List[ItemStack]]], ItemStack]:
 
             variable grid
@@ -71,10 +77,10 @@ ___
 
     @shared.crafting_handler class GridShapeless extends AbstractCraftingGridRecipe
 
-        variable RECIPE_NAMES
+        variable RECIPE_TYPE_NAMES
 
         static
-        function from_data(cls, data: dict)
+        function from_data(cls, data: dict, file: str)
 
         function __init__(
                 self,
@@ -89,7 +95,7 @@ ___
         function register(self)
 
         function as_grid_for_view(
-                self, max_size=(3, 3)
+                self, size=(3, 3)
                 ) -> typing.Tuple[typing.List[typing.List[typing.List[ItemStack]]], ItemStack]:
 
             variable stacks

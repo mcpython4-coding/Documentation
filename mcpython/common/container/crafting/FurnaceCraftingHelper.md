@@ -1,4 +1,4 @@
-***FurnaceCraftingHelper.py - documentation - last updated on 19.1.2021 by uuk***
+***FurnaceCraftingHelper.py - documentation - last updated on 20.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -11,7 +11,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    @shared.crafting_handler class FurnaceRecipe extends mcpython.common.container.crafting.IRecipeType.IRecipe
+    @shared.crafting_handler class FurnaceRecipe extends mcpython.common.container.crafting.IRecipe.IRecipe
         
         Interface for decoding an furnace-like recipe
 
@@ -20,10 +20,11 @@ ___
             The list of type descriptors to decode
 
         static
-        function from_data(cls, data: dict) -> "FurnaceRecipe"
+        function from_data(cls, data: dict, file: str) -> "FurnaceRecipe"
             
             Loader function for an furnace crafting recipe
             :param data: the data to load
+            :param file: the file loaded from
             :return: the recipe instance created
 
 
