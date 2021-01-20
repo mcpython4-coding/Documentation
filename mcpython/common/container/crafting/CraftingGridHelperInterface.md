@@ -21,6 +21,9 @@ ___
     class CraftingGridHelperInterface extends  mcpython.common.container.crafting.IRecipeUser.IRecipeUser 
         
         Recipe interface for an crafting grid of arbitrary size using the default recipe implementation
+        todo: implement insert helper
+        todo: add dynamic replacement table for items (e.g. stone may be replaced by diamond blocks),
+            this MAY be data-driven
 
 
         variable ADAPTERS: typing.List[IRecipeAdapter]
@@ -71,7 +74,8 @@ ___
 
         function check_recipe_state(self)
             
-            Helper function for re-checking the items in the grid. Auto-called if an slot-itemstack is updated
+            Helper function for re-checking the items in the grid. Auto-called if a slot-itemstack
+            assigned to this helper is updated
 
 
             variable self.active_recipe
@@ -86,6 +90,7 @@ ___
             variable size
 
             variable recipes
+                decide which recipes may work
 
                     variable state
 
