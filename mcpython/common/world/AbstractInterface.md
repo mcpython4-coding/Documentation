@@ -1,4 +1,4 @@
-***AbstractInterface.py - documentation - last updated on 19.1.2021 by uuk***
+***AbstractInterface.py - documentation - last updated on 20.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -30,24 +30,74 @@ ___
         function __iter__(self)
 
     class IChunk extends ABC
+        
+        Abstract class for chunks
+        Belows follows an API description
+        This API is STABLE, its implementation should NOT change dramatically if not needed
+        The following stuff MAY change in the near future:
+            - structure / existence of world-attribute
+            - structure / existence of positions_updated_since_last_save-attribute
+            - existence of entities attribute
+            - WIP of chunk_loaded_list attribute, together with add_chunk_load_ticket(...) and check_for_unload()
+
 
         function __init__(self)
 
+            variable self.positions_updated_since_last_save
+
+            variable self.entities
+
+            variable self.chunk_loaded_list
+                inner API list for ChunkLoadTickets [WIP]
+                todo: use something better...
+
+        function is_loaded(self) -> bool
+
+        function is_generated(self) -> bool
+
+        function is_visible(self) -> bool
+
         function add_chunk_load_ticket(self, ticket_type: ChunkLoadTicketType, data=None)
+            
+            Chunk load ticket API
+            Adds a new ticket to the inner system for letting this chunk be loaded
+            WIP
+            todo: add timestamp
+            todo: 16 lists are not good...
+            todo: add way to remove ticket
+            todo: save this to the save files
+
 
         function check_for_unload(self)
+            
+            Helper function for checking if this chunk should get unloaded or not
+            todo: this is not optimal
+            todo: do we really need to do this every tick?
+            todo: 16 lists are bad!
+
 
         function get_dimension(self) -> "IDimension"
 
         function get_position(self) -> typing.Tuple[int, int]
 
         function get_maximum_y_coordinate_from_generation(self, x: int, z: int) -> int
+            
+            Helper for finding the highest position in the chunk from generation
+            todo: migrate to special system for world generation attributes
+
 
         function exposed_faces(
                 self, position: typing.Tuple[int, int, int]
                 ) -> typing.Dict[mcpython.util.enums.EnumSide, bool]:
+            
+            Helper for getting exposed faces of a block
+            todo: add iterating variant
+
 
         function is_position_blocked(self, position: typing.Tuple[float, float, float]) -> bool
+            
+            Checks if the given position is not air
+
 
         function add_block(
                 self,
@@ -74,12 +124,16 @@ ___
             :param lazy_setup: an callable for setting up the block instance
             :param check_build_range: if the build limits should be checked
             :param block_state: the block state to create in, or None if not set
-            :return: the block instance or None if it could not be created
+            :return: the block instance or None if it could not be created for some reason
+            todo: add method which raises an exception on fail
 
 
         function on_block_updated(
                 self, position: typing.Tuple[float, float, float], itself=True
                 ):
+            
+            Updates the block at the given position
+
 
         function remove_block(
                 self,
@@ -92,8 +146,23 @@ ___
                 block_update_self: bool = True,
                 reason=mcpython.common.block.AbstractBlock.BlockRemovalReason.UNKNOWN,
                 ):
+            
+            Removes a block from a given position
+            :param position: the position to remove at
+            :param immediate: immediate hide?
+            :param block_update: block update to the blocks around?
+            :param block_update_self: block update to the current block?
+            :param reason: why it is removed, see mcpython.common.block.AbstractBlock.BlockRemovalReason for possible
+                values
+            todo: add "unsafe" variant skipping various sanity checks
+            todo: add option to not call on_remove on target block
+
 
         function check_neighbors(self, position: typing.Tuple[int, int, int])
+            
+            Checks the visual state of adjusting blocks to the given position
+            todo: rename to something fitting!
+
 
         function show_block(
                 self,
@@ -103,6 +172,12 @@ ___
                 ],
                 immediate: bool = True,
                 ):
+            
+            Client-only visual show function
+            Unused internally
+            todo: remove
+            use block.face_state.update(True) instead
+
 
         function hide_block(
                 self,
@@ -112,42 +187,93 @@ ___
                 ],
                 immediate=True,
                 ):
+            
+            Client-only visual hide function
+            Unused internally
+            todo: remove
+            use block.face_state.hide_all() instead
+
 
         function show(self, force=False)
+            
+            Shows the entire chunk
+            :param force: unused; todo: remove
+
 
         function hide(self, force=False)
+            
+            Hides an entire chunk
+            :param force: if to force-hide; todo: remove
+
 
         function update_visible_block(self, position: typing.Tuple[int, int, int], hide=True)
+            
+            Calls Block.face_state.update()
+            :param position: the position to update at
+            :param hide: not for usage; todo: remove
+
 
         function exposed(self, position: typing.Tuple[int, int, int])
+            
+            Checks if the given position is exposed so it should be shown
+            :param position: the position to check
+
 
         function update_visible(self, hide=True, immediate=False)
+            
+            Updates the visible state of ALL blocks in the chunk
+            todo: merge with show()
+            :param hide: unused; todo: remove
+            :param immediate: immediate execute tasks or scheduling for later?
+
 
         function hide_all(self, immediate=True)
+            
+            Hides all chunks in the chunk
+            todo: merge with hide()
+            :param immediate: immediate execute tasks or scheduling for later?
+
 
         function get_block(
                 self, position: typing.Tuple[int, int, int]
                 ) -> typing.Union[mcpython.common.block.AbstractBlock.AbstractBlock, str, None]:
+            
+            Getter function for a block
+            :param position: the position
+            :return: the block instance, a str representing a block (e.g. for scheduled during generation) or None
+                if there is no block
+
 
         function as_shareable(self) -> "IChunk"
+            
+            Creates a reference to this chunk which can be linked across threads / processes
+            :return: this chunk instance
+            INFO: currently not in use
 
-        function is_loaded(self) -> bool
-
-        function is_generated(self) -> bool
-
-        function set_value(self, key: str, data)
-
-        function get_entities(self)
-
-        function get_value(self, key: str)
-
-        function is_visible(self) -> bool
 
         function mark_dirty(self)
+
+        function get_entities(self)
 
         function tick(self)
 
         function save(self)
+
+        function set_value(self, key: str, data)
+
+        function get_value(self, key: str)
+
+        function __getitem__(self, item)
+
+        function __setitem__(self, key, value)
+
+        function __delitem__(self, key)
+
+        function __contains__(self, item)
+
+        function __iter__(self)
+
+        function __eq__(self, other: "IChunk")
 
     class IDimension extends ABC
 

@@ -1,4 +1,4 @@
-***StateBlockItemGenerator.py - documentation - last updated on 19.1.2021 by uuk***
+***StateBlockItemGenerator.py - documentation - last updated on 20.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -93,6 +93,8 @@ ___
         function add_new_screen(self, *args)
 
             variable dimension
+
+            variable block
 
                 variable instance
 

@@ -1,4 +1,4 @@
-***Dimension.py - documentation - last updated on 19.1.2021 by uuk***
+***Dimension.py - documentation - last updated on 20.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -42,6 +42,7 @@ ___
         Handler for the dimensions
         Works together with the World-class in handling the system
         This class holds general data about the status of the game dimensions, not for an world instance
+        todo: make it fully data-driven
 
 
         function __init__(self)
@@ -52,7 +53,7 @@ ___
 
         function finish(self)
             
-            called to finish up and assign ids to dynamic dimensions
+            Called to finish up and assign ids to dynamic dimensions
 
 
         function add_default_dimensions(self)
@@ -75,14 +76,17 @@ ___
 
     class Dimension extends mcpython.common.world.AbstractInterface.IDimension
         
-        Class holding an whole dimension
+        Class holding a whole dimension
+        Default cross-side implementation
 
 
-        variable BATCH_COUNT - normal, alpha; mods are free to add more
+        variable BATCH_COUNT
+            normal, alpha; mods are free to add more; todo: add better API
 
         function __init__(self, world_in, dim_id: int, name: str, gen_config=None)
             
-            Creates an new dimension. Must be send also to the World-instance
+            Creates a new dimension. Should be registered to the world instance.
+            Can be automated by using the appropriate function at dimension
             :param world_in: the world instance to use
             :param dim_id: the id for it
             :param name: the name for it
@@ -90,6 +94,9 @@ ___
 
 
                 variable gen_config
+
+            variable self.batches
+                batches, see above for usages
 
             variable self.height_range
 

@@ -1,4 +1,4 @@
-***DataPack.py - documentation - last updated on 19.1.2021 by uuk***
+***DataPack.py - documentation - last updated on 20.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -30,32 +30,34 @@ ___
 
     class DataPackHandler
         
-        handler for datapacks
+        Handler for datapacks
 
 
         function __init__(self)
 
-            variable self.data_packs
+            variable self.loaded_data_packs
 
         function _load(self)
             
-            will load all data packs
+            Will load all data packs
 
 
         function load_datapack_from_directory(self, directory: str)
             
-            will load an given data pack
+            Will load an given data pack
             :param directory: the directory to load from
 
 
         function reload(self)
             
-            reloads all data packs
+            Reloads all data packs
 
+
+                        variable datapack.status
 
         function cleanup(self)
             
-            removes all data packs from the system
+            Removes all data packs from the system
 
 
         function try_call_function(
@@ -64,9 +66,9 @@ ___
                 info: mcpython.server.command.CommandParser.ParsingCommandInfo = None,
                 ):
             
-            Will try to invoke an function in an datapack
-            :param name: the name of the function, e.g. minecraft:test
-            :param info: the info-object to use
+            Will try to invoke a function in a datapack
+            :param name: the name of the function, e.g. "minecraft:test"
+            :param info: the info-object to use; when None, one is constructed for this
             WARNING: will only invoke ONE function/tag from the datapacks, not all
 
 
