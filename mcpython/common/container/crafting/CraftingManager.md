@@ -35,11 +35,7 @@ ___
 
         function shuffle_data(self)
 
-        function check_relink(
-                self, recipe: mcpython.common.container.crafting.IRecipe.IRecipe
-                ):
-
-            variable name
+        function check_relink(self, recipe: mcpython.common.container.crafting.IRecipe.IRecipe)
 
         function __call__(self, obj)
 
@@ -51,7 +47,7 @@ ___
 
             variable self.recipe_table[name]
 
-        function add_recipe_from_data(self, data: dict, name: str, file=None)
+        function add_recipe_from_data(self, data: dict, name: str, file: str = None)
 
         function add_recipe_from_file(self, file: str)
 

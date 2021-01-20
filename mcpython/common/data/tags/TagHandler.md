@@ -1,4 +1,4 @@
-***TagHandler.py - documentation - last updated on 19.1.2021 by uuk***
+***TagHandler.py - documentation - last updated on 20.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -67,7 +67,6 @@ ___
             :param name: the name to use
             :param group: the group to use
             :return: the tag instance
-            :raises ValueError: when the tag is not found
 
 
         function get_tags_for_entry(self, identifier: str, group: str) -> list

@@ -62,7 +62,7 @@ ___
 
             variable self.bboxsize
 
-        function register(self)
+        function prepare(self)
 
         function as_grid(self, size=(3, 3))
 
@@ -73,7 +73,7 @@ ___
             variable grid
 
         static
-        function tag_to_stacks(cls, name: str, count: int = None)
+        function tag_to_stacks(cls, name: str, count: int = None, recipe_name=None)
 
     @shared.crafting_handler class GridShapeless extends AbstractCraftingGridRecipe
 
@@ -92,7 +92,7 @@ ___
 
             variable self.output
 
-        function register(self)
+        function prepare(self)
 
         function as_grid_for_view(
                 self, size=(3, 3)
