@@ -1,4 +1,4 @@
-***InventoryFurnace.py - documentation - last updated on 19.1.2021 by uuk***
+***InventoryFurnace.py - documentation - last updated on 20.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -13,7 +13,7 @@ ___
 
     class InventoryFurnace extends mcpython.client.gui.Inventory.Inventory
         
-        inventory class for the furnace
+        Inventory class for the furnace
 
 
         variable TEXTURE_BG
@@ -81,6 +81,8 @@ ___
 
             variable self.types
 
+                variable self.custom_name
+
         static
         function get_config_file() -> str or None
 
@@ -108,7 +110,7 @@ ___
 
         function draw(self, hovering_slot=None)
             
-            draws the inventory
+            Draws the inventory
 
 
         function get_interaction_slots(self)

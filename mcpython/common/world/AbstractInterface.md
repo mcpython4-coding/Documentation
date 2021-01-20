@@ -275,6 +275,8 @@ ___
 
         function __eq__(self, other: "IChunk")
 
+        function __hash__(self)
+
     class IDimension extends ABC
 
         function __init__(self)

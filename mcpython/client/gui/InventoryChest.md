@@ -1,4 +1,4 @@
-***InventoryChest.py - documentation - last updated on 19.1.2021 by uuk***
+***InventoryChest.py - documentation - last updated on 20.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -13,7 +13,8 @@ ___
 
     class InventoryChest extends mcpython.client.gui.Inventory.Inventory
         
-        inventory class for chest
+        Inventory class for chest
+        Defines the default chest layout
 
 
         variable TEXTURE
@@ -25,6 +26,10 @@ ___
 
         static
         function get_config_file() -> str or None
+
+        function __init__(self)
+
+                variable self.custom_name
 
         function on_activate(self)
 

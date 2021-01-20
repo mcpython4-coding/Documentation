@@ -1,4 +1,4 @@
-***InventoryBarrel.py - documentation - last updated on 19.1.2021 by uuk***
+***InventoryBarrel.py - documentation - last updated on 20.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -19,6 +19,8 @@ ___
         function __init__(self, block)
 
             variable self.block
+
+                variable self.custom_name
 
         static
         function get_config_file() -> str or None

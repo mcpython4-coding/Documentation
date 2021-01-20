@@ -1,4 +1,4 @@
-***Inventory.py - documentation - last updated on 19.1.2021 by uuk***
+***Inventory.py - documentation - last updated on 20.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -15,6 +15,7 @@ ___
         
         base inventory class
         todo: split up into the storage part and the rendering part
+            [WIP, see common/container/AbstractContainer.py]
 
 
         static
@@ -46,6 +47,12 @@ ___
             variable self.uuid
 
             variable self.custom_name
+
+            variable self.custom_name_label
+
+            variable self.custom_name_label.anchor_y
+
+            variable self.custom_name_label.color
 
         function reload_config(self)
             
@@ -82,20 +89,23 @@ ___
 
         function is_always_open(self) -> bool
 
+        function get_draw_slots(self)
+
         function draw(self, hovering_slot=None)
             
             Draws the inventory
             Feel free to copy code into your own inventory and write your rendering around it!
 
 
+                    variable self.custom_name_label.text
+
+                variable self.custom_name_label.x
+
+                variable self.custom_name_label.y
+
         function is_blocking_interactions(self) -> bool
 
-        function on_world_cleared(self):  # todo: remove
-                [slot.get_itemstack().clean() for slot in self.slots]
-                if self in shared.inventory_handler.opened_inventory_stack:
-                shared.inventory_handler.hide(self)
-                
-                def get_interaction_slots(self):
+        function on_world_cleared(self)
 
         function get_interaction_slots(self)
 
@@ -143,6 +153,3 @@ ___
         function update_shift_container(self)
             
             called when the inventory should update the content of the ShiftContainer of the inventory-handler
-
-
-        function __del__(self)

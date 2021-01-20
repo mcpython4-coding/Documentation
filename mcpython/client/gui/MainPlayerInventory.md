@@ -1,4 +1,4 @@
-***MainPlayerInventory.py - documentation - last updated on 19.1.2021 by uuk***
+***MainPlayerInventory.py - documentation - last updated on 20.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -23,6 +23,9 @@ ___
         static
         function update_texture(cls)
 
+        static
+        function get_config_file() -> str or None
+
         function __init__(self, hotbar)
 
             variable self.hotbar
@@ -31,17 +34,11 @@ ___
 
             variable self.recipe_interface
 
-        static
-        function get_config_file() -> str or None
-
         function create_slots(self) -> list
 
         function armor_update(self, player=None)
 
         function draw(self, hovering_slot=None)
-            
-            draws the inventory
-
 
         function remove_items_from_crafting(self)
 
