@@ -1,4 +1,4 @@
-***NoiseManager.py - documentation - last updated on 19.1.2021 by uuk***
+***NoiseManager.py - documentation - last updated on 20.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -11,48 +11,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class IOctaveMerger
-
-        static
-        function pre_merge(
-                cls,
-                implementation: "INoiseImplementation",
-                position,
-                *generators: typing.Callable
-                ) -> float:
-
-        static
-        function merge(cls, implementation: "INoiseImplementation", values) -> float
-
-    class EQUAL_MERGER extends IOctaveMerger
-
-        static
-        function merge(cls, implementation: "INoiseImplementation", values)
-
-    class GEO_EQUAL_MERGER extends IOctaveMerger
-
-        static
-        function merge(cls, implementation: "INoiseImplementation", values)
-
-    class INNER_MERGE extends IOctaveMerger
-
-        static
-        function pre_merge(
-                cls,
-                implementation: "INoiseImplementation",
-                position,
-                *generators: typing.Callable
-                ):
-
-                variable implementation.merger_config
-
-            variable value
-
-                variable value
-
-    class INoiseImplementation
-
-        variable NAME
+    class NoiseImplementationWrapper extends INoiseImplementation
 
         function __init__(
                 self,
@@ -64,17 +23,9 @@ ___
 
             variable merger: IOctaveMerger
 
-            variable self.seed
+            variable self.instance: typing.Optional[INoiseImplementation]
 
-            variable self.dimensions
-
-            variable self.octaves
-
-            variable self.scale
-
-            variable self.merger
-
-            variable self.merger_config
+        function create_instance(self, cls: typing.Type[INoiseImplementation])
 
         function set_seed(self, seed: int)
 
@@ -84,28 +35,11 @@ ___
                 self, start: typing.Tuple, end: typing.Tuple
                 ) -> typing.Iterator[typing.Tuple[typing.Tuple, float]]:
 
-    class OpenSimplexImplementation extends INoiseImplementation
-        
-        Default noise implementation.
-
-
-        variable NAME
-
-        function __init__(self, *args, **kwargs)
-
-            variable self.noises: typing.List[typing.Optional[opensimplex.OpenSimplex]]
-
-        function set_seed(self, seed: int)
-
-        function calculate_position(self, position) -> float
-
     class NoiseManager
 
         function __init__(self)
 
             variable self.default_implementation: typing.Optional[str]
-
-            variable self.seed
 
         function register_implementation(
                 self, implementation: typing.Type[INoiseImplementation]
@@ -115,17 +49,18 @@ ___
 
             variable self.instances[implementation.NAME]
 
+        function set_noise_implementation(self, name: str = None)
+
+        function register_optional_implementation(self, package: str, cls_name: str)
+
         function create_noise_instance(
                 self,
                 ref_name: str,
                 dimensions: int,
                 octaves: int = 1,
-                implementation=None,
                 scale=1,
                 merger: IOctaveMerger = EQUAL_MERGER,
                 ) -> INoiseImplementation:
-
-                variable implementation
 
             variable instance
 
