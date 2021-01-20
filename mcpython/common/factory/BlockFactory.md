@@ -1,4 +1,4 @@
-***BlockFactory.py - documentation - last updated on 19.1.2021 by uuk***
+***BlockFactory.py - documentation - last updated on 20.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -47,6 +47,8 @@ ___
             cls: typing.Type[mcpython.common.block.AbstractBlock.AbstractBlock],
             instance: FactoryBuilder.IFactory,
             ):
+
+        variable configs
 
         variable name
 

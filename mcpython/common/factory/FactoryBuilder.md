@@ -1,4 +1,4 @@
-***FactoryBuilder.py - documentation - last updated on 19.1.2021 by uuk***
+***FactoryBuilder.py - documentation - last updated on 20.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -172,6 +172,8 @@ ___
             function set_to_template(self, pop=False)
 
             function copy(self) -> "FactoryBuilder.IFactory"
+
+            function add_base_class(self, cls)
 
             function __copy__(self)
 

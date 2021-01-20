@@ -79,8 +79,6 @@ ___
 
         function deactivate(self)
 
-            variable item_registry
-
             variable window
                 only here for making resizing possible again
 
