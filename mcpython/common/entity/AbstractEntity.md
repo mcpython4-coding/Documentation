@@ -1,4 +1,4 @@
-***AbstractEntity.py - documentation - last updated on 19.1.2021 by uuk***
+***AbstractEntity.py - documentation - last updated on 21.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -6,8 +6,6 @@ ___
     based on the game of fogleman (https://github.com/fogleman/Minecraft) licenced under MIT-licence
     original game "minecraft" by Mojang Studios (www.minecraft.net)
     mod loader inspired by "minecraft forge" (https://github.com/MinecraftForge/MinecraftForge)
-    blocks based on 20w51a.jar of minecraft, representing snapshot 20w51a
-    (https://www.minecraft.net/en-us/article/minecraft-snapshot-20w51a)
     This project is not official by mojang and does not relate to it.
 
 
@@ -92,6 +90,7 @@ ___
                 kill_animation=True,
                 damage_source: mcpython.common.entity.DamageSource.DamageSource = None,
                 force=False,
+                internal=False,
                 ):
             
             Called to kill the entity [remove the entity from world]
@@ -101,6 +100,7 @@ ___
             :param kill_animation: if the kill animation should be played
             :param damage_source: the source of the damage
             :param force: if it should be forced or not
+            :param internal: when this is set, this is a normal despawn / unload call
             todo: drop items if selected
             todo: play kill animation if selected
 
