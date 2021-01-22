@@ -1,4 +1,4 @@
-***WorldGenerationTaskArrays.py - documentation - last updated on 21.1.2021 by uuk***
+***WorldGenerationTaskArrays.py - documentation - last updated on 22.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -11,8 +11,9 @@ ___
 
     class WorldGenerationTaskHandler
         
-        handler for generating tasks off-call
-        todo: make task work more efficient!!!
+        Handler for generating tasks in preparation for off-thread [like MC] & off-process generation
+        [even more efficient when correctly implemented]
+        todo: make task work more efficient, even without
 
 
         function __init__(self)
@@ -23,14 +24,14 @@ ___
 
         function get_total_task_stats(self) -> list
             
-            will return the sum of all tasks of the whole system, in invoke, world_changes and shown_updates separated
+            Will return the sum of all tasks of the whole system, in invoke, world_changes and shown_updates separated
 
 
         function get_task_count_for_chunk(
                 self, chunk: mcpython.common.world.AbstractInterface.IChunk
                 ) -> int:
             
-            gets the total count of tasks for an given chunk as an int
+            Gets the total count of tasks for an given chunk as an int
             :param chunk:
             :return:
 
@@ -49,7 +50,7 @@ ___
                 **kwargs
                 ):
             
-            schedules an callable-invoke for the future
+            Schedules an callable-invoke for the future
             :param chunk: the chunk to link to
             :param method: the method to call
             :param args: the args to call with
@@ -66,7 +67,7 @@ ___
                 **kwargs
                 ):
             
-            schedules an addition of an block
+            Schedules an addition of an block
             :param chunk: the chunk the block is linked to
             :param position: the position of the block
             :param name: the name of the block
@@ -88,7 +89,7 @@ ___
                 **kwargs
                 ):
             
-            schedules an removal of an block
+            Schedules an removal of an block
             :param chunk: the chunk the block is linked to
             :param position: the position of the block
             :param args: the args to call the remove_block-function with
@@ -140,10 +141,22 @@ ___
 
         function process_tasks(self, chunks=None, timer=None)
             
-            process tasks
+            Process tasks in chunks [default to all scheduled chunks] until more time than timer is left behind
+                [Defaults to no limit]
             :param chunks: if given, an iterable of chunks to generate
             :param timer: if given, an float in seconds to determine how far to generate
+            todo: add some better sorting function!
 
+
+                variable flag
+
+                    variable flag
+
+                    variable chunk.generated
+
+                    variable chunk.finished
+
+                    variable chunk.loaded
 
         function _process_0_array(
                 self, chunk: mcpython.common.world.AbstractInterface.IChunk
@@ -179,22 +192,23 @@ ___
                 self, position: tuple, chunk: mcpython.common.world.AbstractInterface.IChunk
                 ):
             
-            gets an generated block from the array
+            Gets an generated block from the array
             :param position: the position of the block
             :param chunk: if the chunk is known
+            todo: make thread-safe
 
 
             variable dimension
 
         function clear_chunk(self, chunk: mcpython.common.world.AbstractInterface.IChunk)
             
-            will remove all scheduled tasks from an given chunk
+            Will remove all scheduled tasks from an given chunk
             :param chunk: the chunk
 
 
         function clear(self)
             
-            will remove all scheduled tasks [chunk-wise]
+            Will remove all scheduled tasks [chunk-wise]
 
 
     class IWorldGenerationTaskHandlerReference

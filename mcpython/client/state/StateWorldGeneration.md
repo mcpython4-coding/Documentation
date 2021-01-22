@@ -1,4 +1,4 @@
-***StateWorldGeneration.py - documentation - last updated on 21.1.2021 by uuk***
+***StateWorldGeneration.py - documentation - last updated on 22.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -28,6 +28,14 @@ ___
         function get_parts(self) -> list
 
         function on_update(self, dt)
+
+                variable c
+
+                    variable self.status_table[chunk]
+
+                    variable count
+
+                    variable self.status_table[chunk]
 
         function activate(self)
 

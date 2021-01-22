@@ -1,4 +1,4 @@
-***ItemFactory.py - documentation - last updated on 21.1.2021 by uuk***
+***ItemFactory.py - documentation - last updated on 22.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -71,6 +71,8 @@ ___
                 function get_speed_multiplyer(self, itemstack)
 
                 variable DEFENSE_POINTS
+
+            function on_set_from_item(self, block)
 
     variable ItemFactory
 

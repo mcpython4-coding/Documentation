@@ -1,4 +1,4 @@
-***ItemAtlas.py - documentation - last updated on 21.1.2021 by uuk***
+***ItemAtlas.py - documentation - last updated on 22.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -22,6 +22,14 @@ ___
         function add_file(self, internal_name: str, file: str)
 
         function add_file_dynamic(self, internal_name: str, file: str)
+
+                variable image
+
+                        variable self.position_map[file]
+
+                    variable atlas
+
+                    variable self.position_map[file]
 
                     variable image
 

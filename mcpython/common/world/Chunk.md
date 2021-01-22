@@ -1,4 +1,4 @@
-***Chunk.py - documentation - last updated on 21.1.2021 by uuk***
+***Chunk.py - documentation - last updated on 22.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -295,8 +295,6 @@ ___
             :return: None if no block, str if scheduled and Block.Block if created
             todo: split up into get_block_generated and get_block_un_generated
 
-
-        function __del__(self)
 
         function __str__(self)
 

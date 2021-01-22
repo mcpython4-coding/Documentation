@@ -50,11 +50,11 @@ ___
             
             Adds chunk schedule to the system
             Will set the loaded-flag of the chunk during the process
-            Will schedule the internal _add_chunk function
+            Will schedule the internal inner_add_chunk function
             :param chunk: the chunk
             :param dimension: optional: if chunk is tuple, if another dim than active should be used
             :param force_generate: if generation should take place also when auto-gen is disabled
-            :param immediate: if _add_chunk should be called immediate or not [can help in cases where TaskHandler stops
+            :param immediate: if inner_add_chunk should be called immediate or not [can help in cases where TaskHandler stops
                 running tasks when in-generation progress]
 
 
@@ -65,7 +65,7 @@ ___
 
             variable chunk.loaded
 
-        function _add_chunk(self, chunk: mcpython.common.world.AbstractInterface.IChunk)
+        function inner_add_chunk(self, chunk: mcpython.common.world.AbstractInterface.IChunk)
             
             internal implementation of the chunk generation code
             :param chunk: the chunk to schedule
