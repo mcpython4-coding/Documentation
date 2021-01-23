@@ -1,4 +1,4 @@
-***StateBlockItemGenerator.py - documentation - last updated on 21.1.2021 by uuk***
+***StateBlockItemGenerator.py - documentation - last updated on 23.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -40,6 +40,8 @@ ___
         function on_resize(self, w, h)
 
         function activate(self)
+
+            variable item_registry
 
                 variable world.hide_faces_to_not_generated_chunks
 
@@ -84,6 +86,8 @@ ___
 
             variable shared.world.hide_faces_to_not_generated_chunks
 
+            variable item_registry
+
         function close(self)
 
         function add_new_screen(self, *args)
@@ -113,6 +117,16 @@ ___
         function _error_counter(self, image, blockname)
 
         function generate_item(self, blockname, file)
+
+            variable model
+
+            variable mcpython.client.rendering.model.ItemModel.handler.models[blockname]
+
+            variable self.tries
+
+            variable self.SETUP_TIME
+
+            variable self.CLEANUP_TIME
 
     variable block_item_generator
 

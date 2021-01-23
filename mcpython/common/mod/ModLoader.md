@@ -1,4 +1,4 @@
-***ModLoader.py - documentation - last updated on 21.1.2021 by uuk***
+***ModLoader.py - documentation - last updated on 23.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -62,6 +62,10 @@ ___
 
 
         function __getitem__(self, item: str)
+
+        function __contains__(self, item)
+
+        function __iter__(self)
 
         function get_locations(self) -> list
             

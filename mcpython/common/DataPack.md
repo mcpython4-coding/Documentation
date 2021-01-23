@@ -1,4 +1,4 @@
-***DataPack.py - documentation - last updated on 21.1.2021 by uuk***
+***DataPack.py - documentation - last updated on 23.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -44,12 +44,16 @@ ___
             WARNING: this function is called also on each reload
 
 
-        function load_datapack_from_directory(self, directory: str, raise_on_error=False) -> typing.Optional["DataPack"]
+        function load_datapack_from_directory(
+                self, directory: str, raise_on_error=False
+                ) -> typing.Optional["DataPack"]:
             
             Will try to load the data pack in the given directory/file
             :param directory: the directory or file to load from
             :param raise_on_error: if a DatapackLoadException should be raised on error
 
+
+                variable datapack
 
         function reload(self)
             

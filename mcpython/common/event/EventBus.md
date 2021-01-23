@@ -1,4 +1,4 @@
-***EventBus.py - documentation - last updated on 21.1.2021 by uuk***
+***EventBus.py - documentation - last updated on 23.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -61,7 +61,7 @@ ___
                 self, event_name: str, function: typing.Callable, *args, info=None, **kwargs
                 ):
             
-            add an function to the event bus by event name. If event name does NOT exists, it will be created locally
+            Add an function to the event bus by event name. If event name does NOT exists, it will be created locally
             :param event_name: the event to listen to on this bis
             :param function: the function that should be called when event is send
             :param args: the args to give

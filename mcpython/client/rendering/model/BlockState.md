@@ -1,4 +1,4 @@
-***BlockState.py - documentation - last updated on 21.1.2021 by uuk***
+***BlockState.py - documentation - last updated on 23.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -201,6 +201,8 @@ ___
 
         variable LOOKUP_DIRECTORIES
 
+        variable RAW_DATA
+
         variable NEEDED - for parent <-> child connection
 
         static
@@ -213,12 +215,18 @@ ___
         function unsafe_from_file(cls, file: str)
 
         static
-        function from_data(cls, name: str, data: typing.Dict[str, typing.Any], immediate=False)
+        function from_data(
+                cls, name: str, data: typing.Dict[str, typing.Any], immediate=False, store=True
+                ):
 
         static
-        function unsafe_from_data(cls, name: str, data: typing.Dict[str, typing.Any])
+        function unsafe_from_data(
+                cls, name: str, data: typing.Dict[str, typing.Any], immediate=False
+                ):
 
-        function __init__(self, data: dict, name: str)
+                variable instance
+
+        function __init__(self, data: dict, name: str, immediate=False)
 
             variable self.name
 

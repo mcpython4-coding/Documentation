@@ -1,4 +1,4 @@
-***ModelHandler.py - documentation - last updated on 21.1.2021 by uuk***
+***ModelHandler.py - documentation - last updated on 23.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -27,6 +27,8 @@ ___
 
             variable self.hide_blockstate_errors
 
+            variable self.raw_models
+
         function add_from_mod(self, modname: str)
             
             will add locations for an given mod name
@@ -35,15 +37,18 @@ ___
 
         function search(self)
             
-            will search all locations for new stuff
+            Will search all locations for new stuff
             todo: add datapack locations
 
 
-        function add_from_data(self, name: str, data: dict)
+                    variable self.found_models[name]
+
+        function add_from_data(self, name: str, data: dict, store=True)
             
             will inject data as an block-model file
             :param name: the name to use
             :param data: the data to inject
+            :param store: if it should be stored and re-loaded on reload event
 
 
         function build(self, immediate=False)
