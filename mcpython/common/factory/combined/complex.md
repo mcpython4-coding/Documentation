@@ -1,4 +1,4 @@
-***complex.py - documentation - last updated on 23.1.2021 by uuk***
+***complex.py - documentation - last updated on 25.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -9,4 +9,8 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    function create_full_slab_wall_set(name: str, texture: str)
+    function create_full_slab_wall_set(
+            name: str, texture: str, and_button=False
+            ) -> CombinedFactoryInstance:
+
+        variable instance

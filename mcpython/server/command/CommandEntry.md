@@ -1,4 +1,4 @@
-***CommandEntry.py - documentation - last updated on 21.1.2021 by uuk***
+***CommandEntry.py - documentation - last updated on 25.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -11,32 +11,32 @@ ___
 
     class CommandEntry extends mcpython.common.event.Registry.IRegistryContent
         
-        an parseable command entry
+        A parse-able command entry
 
 
         variable TYPE
 
         static
-        function parse(entrylist: list, start: int, info, arguments, kwargs) -> tuple
+        function parse(entry_list: list, start: int, info, arguments, kwargs) -> tuple
             
-            parse an entry in entrylist to an value
-            :param entrylist: the entrys to parse
+            parse an entry in entry list to an value
+            :param entry_list: the entries to parse
             :param start: which entry to start at
             :param info: the command info to use
-            :param arguments: overgiven creation arguments
-            :param kwargs: overgiven optional creative arguments
+            :param arguments: handed over creation arguments
+            :param kwargs: handed over optional creative arguments
             :return: an (new start, value)-tuple
 
 
         static
-        function is_valid(entrylist: list, start: int, arguments, kwargs) -> bool
+        function is_valid(entry_list: list, start: int, arguments, kwargs) -> bool
             
             checks if entry is valid
-            :param entrylist: the entrys to check
+            :param entry_list: the entries to check
             :param start: which entry to start at
-            :param arguments: overgiven creation arguments
-            :param kwargs: overgiven optional creation arguments
-            :return: if entry is valid
+            :param arguments: handed over creation arguments
+            :param kwargs: handed over optional creation arguments
+            :return: if entry is valid, as a bool
 
 
     function load()
@@ -47,36 +47,40 @@ ___
             variable NAME
 
             static
-            function parse(entrylist: list, start: int, info, arguments, kwargs) -> tuple
+            function parse(entry_list: list, start: int, info, arguments, kwargs) -> tuple
 
             static
-            function is_valid(entrylist: list, start: int, arguments, kwargs) -> bool
+            function is_valid(entry_list: list, start: int, arguments, kwargs) -> bool
 
         @shared.registry class IntEntry extends CommandEntry
             
-            entry for int
+            Entry for int
 
 
             variable NAME
 
             static
-            function parse(entrylist: list, start: int, info, arguments, kwargs) -> tuple
+            function parse(entry_list: list, start: int, info, arguments, kwargs) -> tuple
 
             static
-            function is_valid(entrylist: list, start: int, arguments, kwargs) -> bool
+            function is_valid(entry_list: list, start: int, arguments, kwargs) -> bool
 
         @shared.registry class StringEntry extends CommandEntry
             
-            string entry
+            String entry
 
 
             variable NAME
 
             static
-            function parse(entrylist: list, start: int, info, arguments, kwargs) -> tuple
+            function parse(entry_list: list, start: int, info, arguments, kwargs) -> tuple
+
+                    variable data
+
+                        variable data
 
             static
-            function is_valid(entrylist: list, start: int, arguments, kwargs) -> bool
+            function is_valid(entry_list: list, start: int, arguments, kwargs) -> bool
 
         @shared.registry class StringWithoutQuotesEntry extends CommandEntry
             
@@ -86,10 +90,10 @@ ___
             variable NAME
 
             static
-            function parse(entrylist: list, start: int, info, arguments, kwargs) -> tuple
+            function parse(entry_list: list, start: int, info, arguments, kwargs) -> tuple
 
             static
-            function is_valid(entrylist: list, start: int, arguments, kwargs) -> bool
+            function is_valid(entry_list: list, start: int, arguments, kwargs) -> bool
 
         @shared.registry class FloatEntry extends CommandEntry
             
@@ -99,10 +103,10 @@ ___
             variable NAME
 
             static
-            function parse(entrylist: list, start: int, info, arguments, kwargs) -> tuple
+            function parse(entry_list: list, start: int, info, arguments, kwargs) -> tuple
 
             static
-            function is_valid(entrylist: list, start: int, arguments, kwargs) -> bool
+            function is_valid(entry_list: list, start: int, arguments, kwargs) -> bool
 
         @shared.registry class BlockNameEntry extends CommandEntry
             
@@ -112,23 +116,23 @@ ___
             variable NAME
 
             static
-            function parse(entrylist: list, start: int, info, arguments, kwargs) -> tuple
+            function parse(entry_list: list, start: int, info, arguments, kwargs) -> tuple
 
             static
-            function is_valid(entrylist: list, start: int, arguments, kwargs) -> bool
+            function is_valid(entry_list: list, start: int, arguments, kwargs) -> bool
 
         @shared.registry class ItemNameEntry extends CommandEntry
             
-            itemname entry
+            Item name entry
 
 
             variable NAME
 
             static
-            function parse(entrylist: list, start: int, info, arguments, kwargs) -> tuple
+            function parse(entry_list: list, start: int, info, arguments, kwargs) -> tuple
 
             static
-            function is_valid(entrylist: list, start: int, arguments, kwargs) -> bool
+            function is_valid(entry_list: list, start: int, arguments, kwargs) -> bool
 
         @shared.registry class SelectorEntry extends CommandEntry
             
@@ -138,25 +142,25 @@ ___
             variable NAME
 
             static
-            function parse(entrylist: list, start: int, info, arguments, kwargs) -> tuple
+            function parse(entry_list: list, start: int, info, arguments, kwargs) -> tuple
 
             static
-            function is_valid(entrylist: list, start: int, arguments, kwargs) -> bool
+            function is_valid(entry_list: list, start: int, arguments, kwargs) -> bool
 
         @shared.registry class PositionEntry extends CommandEntry
             
-            position entry
+            Position entry
 
 
             variable NAME
 
             static
-            function parse(entrylist: list, start: int, info, arguments, kwargs) -> tuple
+            function parse(entry_list: list, start: int, info, arguments, kwargs) -> tuple
 
             static
             function _parse_coordinate_to_real(r: str, index: int, info) -> float
                 
-                parse an coordinate (could be relative) to an valid coordinate
+                Parses a coordinate (could be relative) to a valid coordinate
                 :param r: the coordinate to use
                 :param index: the index in the info position
                 :param info: the info to use
@@ -164,20 +168,20 @@ ___
 
 
             static
-            function is_valid(entrylist: list, start: int, arguments, kwargs) -> bool
+            function is_valid(entry_list: list, start: int, arguments, kwargs) -> bool
 
-        @shared.registry class SelectDefinitedStringEntry extends CommandEntry
+        @shared.registry class SelectDefinedStringEntry extends CommandEntry
             
-            select definite string entry
+            Select definite string entry
 
 
             variable NAME
 
             static
-            function parse(entrylist: list, start: int, info, arguments, kwargs) -> tuple
+            function parse(entry_list: list, start: int, info, arguments, kwargs) -> tuple
 
             static
-            function is_valid(entrylist: list, start: int, arguments, kwargs) -> bool
+            function is_valid(entry_list: list, start: int, arguments, kwargs) -> bool
 
         @shared.registry class OpenEndUndefinedStringEntry extends CommandEntry
             
@@ -187,10 +191,10 @@ ___
             variable NAME
 
             static
-            function parse(entrylist: list, start: int, info, arguments, kwargs) -> tuple
+            function parse(entry_list: list, start: int, info, arguments, kwargs) -> tuple
 
             static
-            function is_valid(entrylist: list, start: int, arguments, kwargs) -> bool
+            function is_valid(entry_list: list, start: int, arguments, kwargs) -> bool
 
         @shared.registry class BooleanEntry extends CommandEntry
 
@@ -199,7 +203,7 @@ ___
             variable NAME
 
             static
-            function parse(entrylist: list, start: int, info, arguments, kwargs) -> tuple
+            function parse(entry_list: list, start: int, info, arguments, kwargs) -> tuple
 
             static
-            function is_valid(entrylist: list, start: int, arguments, kwargs) -> bool
+            function is_valid(entry_list: list, start: int, arguments, kwargs) -> bool

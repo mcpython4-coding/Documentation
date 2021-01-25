@@ -1,4 +1,4 @@
-***Selector.py - documentation - last updated on 21.1.2021 by uuk***
+***Selector.py - documentation - last updated on 25.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -11,7 +11,7 @@ ___
 
     class Selector extends mcpython.common.event.Registry.IRegistryContent
         
-        selector base class
+        Selector base class
 
 
         variable TYPE

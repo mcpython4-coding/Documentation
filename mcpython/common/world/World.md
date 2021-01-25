@@ -1,4 +1,4 @@
-***World.py - documentation - last updated on 21.1.2021 by uuk***
+***World.py - documentation - last updated on 25.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -129,6 +129,9 @@ ___
                 
                 todo: cache the bbox of the block
                 todo: move to dimension
+                todo: add variant only taking the player
+                todo: cache when possible
+                todo: add variant for entities
                 """
                 m = shared.world.gamerule_handler.table[
                 "hitTestSteps"
@@ -150,6 +153,9 @@ ___
             :param max_distance: How many blocks away to search for a hit
             todo: cache the bbox of the block
             todo: move to dimension
+            todo: add variant only taking the player
+            todo: cache when possible
+            todo: add variant for entities
 
 
             variable m

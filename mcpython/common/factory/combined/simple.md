@@ -1,4 +1,4 @@
-***simple.py - documentation - last updated on 23.1.2021 by uuk***
+***simple.py - documentation - last updated on 25.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -130,6 +130,44 @@ ___
                 @shared.mod_loader(mod_name, "stage:model:blockstate_search")
                 function block_state()
 
+        function generate_log_like(
+                self,
+                suffix=None,
+                front_texture=None,
+                side_texture=None,
+                color=None,
+                **consumers,
+                ):
+            
+            Creates a set for a log like block
+            :param suffix: the name suffix
+            :param front_texture: the front texture
+            :param side_texture: the side texture
+            :param color: the color for the texture
+            :param consumers: consumers for the data
+
+
+                variable front_texture
+
+                variable side_texture
+
+            variable name
+
+            variable front_texture
+
+            variable side_texture
+
+            variable textures
+
+        function create_button_block(self, suffix=None, texture=None, color=None, **consumers)
+
+                variable mod_name
+
+                    variable mod_name
+
+                @shared.mod_loader(mod_name, "stage:model:model_search")
+                function generate_models()
+
         function create_slab_block(self, suffix=None, texture=None, color=None, **consumers)
 
         function create_multi_variant_block(
@@ -141,7 +179,9 @@ ___
                 ] = None,
                 block_state_consumer: typing.Callable[
                 ["CombinedFactoryInstance", dict], dict
-                ] = None
+                ] = None,
+                block_state_parent=None,
+                block_state_alias=None,
                 ):
 
             variable mod_name
@@ -158,12 +198,14 @@ ___
                 @shared.mod_loader(mod_name, "stage:model:model_search")
                 function block_model()
 
-                        variable data
-
-                            variable data
-
                 @shared.mod_loader(mod_name, "stage:model:blockstate_search")
                 function block_state()
+
+                        variable data["parent"]
+
+                        variable data["alias"]
+
+                        variable data
 
         function create_wall(self, suffix=None, texture=None, color=None, **consumers)
 
@@ -176,7 +218,7 @@ ___
                 ] = None,
                 block_state_consumer: typing.Callable[
                 ["CombinedFactoryInstance", dict], dict
-                ] = None
+                ] = None,
                 ):
 
             variable mod_name
@@ -193,9 +235,11 @@ ___
                 @shared.mod_loader(mod_name, "stage:model:model_search")
                 function block_model()
 
-                        variable data
-
-                            variable data
-
                 @shared.mod_loader(mod_name, "stage:model:blockstate_search")
                 function block_state()
+
+        function inner_generate_model(self, variant, model_name: str)
+
+            variable data
+
+                variable data

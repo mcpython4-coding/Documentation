@@ -1,4 +1,4 @@
-***CommandHandler.py - documentation - last updated on 21.1.2021 by uuk***
+***CommandHandler.py - documentation - last updated on 25.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -10,6 +10,8 @@ ___
 
 
     function register_command(registry, command)
+
+            variable command_registry.command_entries[command.NAME]
 
     variable command_registry
 

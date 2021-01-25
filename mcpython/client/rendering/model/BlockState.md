@@ -1,4 +1,4 @@
-***BlockState.py - documentation - last updated on 23.1.2021 by uuk***
+***BlockState.py - documentation - last updated on 25.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -12,17 +12,39 @@ ___
     class BlockStateNotNeeded extends Exception
 
     class IBlockStateDecoder extends mcpython.common.event.Registry.IRegistryContent
+        
+        Abstract base class for block state decoders
+        Identification of files to decode:
+            bool(is_valid(data)) == True, where data is the loaded json data
+            for developers of mods: add an entry called "mod_marker" storing the mod name the loader is implemented in and
+                check for it here
+        Loading:
+            __init__(data, BlockStateDefinition) -> Instance
+        Baking:
+            bake() is called to bake references and do similar stuff, returning success or not
+        Drawing:
+            add_face_to_batch() should add the given face to the batches given
+            add_raw_face_to_batch() should add a face to the batch without the block instance, but instead the position
+            draw() should draw the block in-place
+        todo: add draw variant for raw
+        todo: add data getter functions for better performance
+        todo: cache non-offset data from models per state for faster drawing
+        todo: can we do something rendering wise which will make it efficient to draw multiple same blocks
+        todo: block batches should be selected before, based on a property on block class
+
 
         variable TYPE
 
         static
         function is_valid(cls, data: dict) -> bool
 
-        function __init__(self, data: dict, block_state)
+        function __init__(self, data: dict, block_state: "BlockStateDefinition")
 
             variable self.data
 
             variable self.block_state
+
+        function bake(self) -> bool
 
         function add_face_to_batch(
                 self,
@@ -33,21 +55,6 @@ ___
 
         function add_raw_face_to_batch(self, position, state, batches, faces)
 
-        function transform_to_hitbox(
-                self,
-                instance: mcpython.client.rendering.model.api.IBlockStateRenderingTarget,
-                ):  # optional: transforms the BlockState into an BoundingBox-like objects
-                pass
-                
-                def draw_face(
-                self,
-                instance: mcpython.client.rendering.model.api.IBlockStateRenderingTarget,
-                face: mcpython.util.enums.EnumSide,
-                ):  # optional: draws the BlockState direct without an batch
-                pass
-                
-                def bake(self) -> bool:
-
         function draw_face(
                 self,
                 instance: mcpython.client.rendering.model.api.IBlockStateRenderingTarget,
@@ -55,13 +62,39 @@ ___
                 ):  # optional: draws the BlockState direct without an batch
                 pass
                 
-                def bake(self) -> bool:
+                def transform_to_hitbox(
+                self,
+                instance: mcpython.client.rendering.model.api.IBlockStateRenderingTarget,
+                ):  # optional: transforms the BlockState into an BoundingBox-like objects
+                pass
+                
+                
+                blockstate_decoder_registry = mcpython.common.event.Registry.Registry(
+                "minecraft:blockstates",
+                ["minecraft:blockstate"],
+                "stage:blockstate:register_loaders",
+                )
+                
+                
+                @shared.registry
+                class MultiPartDecoder(IBlockStateDecoder):
 
-        function bake(self) -> bool
-            
-            Called when it is time to bake it
-            :return: if it was successful or not
-
+        function transform_to_hitbox(
+                self,
+                instance: mcpython.client.rendering.model.api.IBlockStateRenderingTarget,
+                ):  # optional: transforms the BlockState into an BoundingBox-like objects
+                pass
+                
+                
+                blockstate_decoder_registry = mcpython.common.event.Registry.Registry(
+                "minecraft:blockstates",
+                ["minecraft:blockstate"],
+                "stage:blockstate:register_loaders",
+                )
+                
+                
+                @shared.registry
+                class MultiPartDecoder(IBlockStateDecoder):
 
     variable blockstate_decoder_registry
 
@@ -72,6 +105,7 @@ ___
         entry parent: An parent DefaultDecoded blockstate from which states and model aliases should be copied
         entry alias: An dict of original -> aliased model to transform any model name of this kind in the system with the given model. Alias names MUST start with alias:
         todo: can we optimize it by pre-doing some stuff?
+        todo: fix alias system
 
 
         variable NAME
@@ -81,7 +115,21 @@ ___
 
         function __init__(self, data: dict, block_state)
 
+            variable self.model_alias
+
+                variable self.parent
+
+                variable self.model_alias
+
         function bake(self)
+
+                variable self.parent
+
+                variable data
+
+                        variable data["model"]
+
+                            variable data[i]["model"]
 
         function add_face_to_batch(
                 self,
@@ -154,13 +202,23 @@ ___
 
                         variable keymap[e.split("=")[0]]
 
-        function bake(self)
+                    variable keymap
 
-                variable parent: BlockStateDefinition
+            variable self.model_alias
+
+            variable self.parent
+
+                variable self.parent
+
+                variable self.model_alias
+
+        function bake(self)
 
                 variable self.parent
 
                         variable state.models[i]
+
+                        variable model
 
         function add_face_to_batch(
                 self,
@@ -216,19 +274,39 @@ ___
 
         static
         function from_data(
-                cls, name: str, data: typing.Dict[str, typing.Any], immediate=False, store=True
+                cls,
+                name: str,
+                data: typing.Dict[str, typing.Any],
+                immediate=False,
+                store=True,
+                force=False,
                 ):
 
         static
         function unsafe_from_data(
-                cls, name: str, data: typing.Dict[str, typing.Any], immediate=False
+                cls, name: str, data: typing.Dict[str, typing.Any], immediate=False, force=False
                 ):
 
                 variable instance
 
-        function __init__(self, data: dict, name: str, immediate=False)
+        static
+        function get_or_load(cls, name: str) -> "BlockStateDefinition"
+
+            variable file
+
+            variable data
+
+        function __init__(self, data: dict, name: str, immediate=False, force=False)
 
             variable self.name
+
+            variable shared.model_handler.blockstates[name]
+
+            variable self.loader
+
+                    variable self.loader
+
+            variable self.baked
 
         function bake(self)
 
