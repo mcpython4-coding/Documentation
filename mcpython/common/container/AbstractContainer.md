@@ -1,4 +1,4 @@
-***AbstractContainer.py - documentation - last updated on 21.1.2021 by uuk***
+***AbstractContainer.py - documentation - last updated on 26.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -22,7 +22,7 @@ ___
         function create_renderer(cls)
             
             Called when loading a client to create the renderer; this is the only part which should interact
-            with client-only code
+            with client-only code in this class
 
 
         function __init__(self)

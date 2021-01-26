@@ -1,4 +1,4 @@
-***ShiftContainer.py - documentation - last updated on 21.1.2021 by uuk***
+***ShiftContainer.py - documentation - last updated on 26.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -11,7 +11,9 @@ ___
 
     class ShiftContainer
         
-        container class holding information on which inventory parts can be shift-clicked
+        Container class holding information on which inventory parts can be shift-clicked
+        todo: is their no better way of doing this?
+        todo: maybe add more than two sides?
 
 
         function __init__(self)
@@ -23,3 +25,9 @@ ___
         function get_opposite_item_list_for(self, slot)
 
         function move_to_opposite(self, slot, count=None) -> bool
+
+                variable count
+
+            variable opposite
+
+                    variable delta

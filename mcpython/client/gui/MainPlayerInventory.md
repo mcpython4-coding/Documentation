@@ -1,4 +1,4 @@
-***MainPlayerInventory.py - documentation - last updated on 21.1.2021 by uuk***
+***MainPlayerInventory.py - documentation - last updated on 26.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -9,7 +9,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class MainPlayerInventory extends mcpython.client.gui.Inventory.Inventory
+    class MainPlayerInventory extends mcpython.client.gui.ContainerRenderer.ContainerRenderer
         
         inventory class for the main part of the inventory
 

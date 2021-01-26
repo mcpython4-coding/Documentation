@@ -1,4 +1,4 @@
-***HoveringItemBox.py - documentation - last updated on 21.1.2021 by uuk***
+***HoveringItemBox.py - documentation - last updated on 26.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -91,6 +91,7 @@ ___
         
         Class for generating these tool-tips like in mc
         Uses above IHoveringItemBoxDefinition class to generate for itemstacks
+        Create a new instance for rendering 2 or more at the same time
 
 
         function __init__(self)
@@ -111,7 +112,7 @@ ___
                 self, itemstack: mcpython.common.container.ItemStack.ItemStack, position
                 ):
             
-            will render the ItemBoxProvider for an given slot
+            Will render the ItemBoxProvider for a given slot
             :param itemstack: the slot to render over
             :param position: the position to render at, or None if calculated from slot
 

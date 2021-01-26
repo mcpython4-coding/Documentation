@@ -1,4 +1,4 @@
-***Inventory.py - documentation - last updated on 21.1.2021 by uuk***
+***Inventory.py - documentation - last updated on 26.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -25,7 +25,7 @@ ___
         function load(
                 cls,
                 save_file,
-                inventory: mcpython.client.gui.Inventory.Inventory,
+                inventory: mcpython.client.gui.ContainerRenderer.ContainerRenderer,
                 path: str,
                 file=None,
                 ):
@@ -51,7 +51,7 @@ ___
                 cls,
                 data,
                 save_file,
-                inventory: mcpython.client.gui.Inventory.Inventory,
+                inventory: mcpython.client.gui.ContainerRenderer.ContainerRenderer,
                 path: str,
                 file=None,
                 override=False,

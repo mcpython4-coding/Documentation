@@ -61,7 +61,7 @@ ___
 
         function tick(self, dt: float)
 
-        function create_slots(self) -> list
+        function create_slot_renderers(self) -> list
             
             creates the slots
             :return: the slots the inventory uses
