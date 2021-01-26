@@ -32,7 +32,7 @@ ___
 
             variable self.recipe_interface
 
-        function create_slots(self) -> list
+        function create_slot_renderers(self) -> list
 
         function armor_update(self, player=None)
 

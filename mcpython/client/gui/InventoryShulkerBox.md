@@ -19,4 +19,4 @@ ___
 
                 variable self.custom_name
 
-        function create_slots(self) -> list
+        function create_slot_renderers(self) -> list

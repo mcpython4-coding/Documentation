@@ -30,7 +30,7 @@ ___
 
             variable self.recipeinterface
 
-        function create_slots(self) -> list
+        function create_slot_renderers(self) -> list
 
         function on_activate(self)
 

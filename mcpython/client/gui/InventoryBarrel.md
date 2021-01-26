@@ -27,7 +27,7 @@ ___
 
         function on_deactivate(self)
 
-        function create_slots(self) -> list
+        function create_slot_renderers(self) -> list
 
         function draw(self, hovering_slot=None)
 

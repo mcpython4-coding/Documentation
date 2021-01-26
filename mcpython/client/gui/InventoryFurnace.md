@@ -89,7 +89,7 @@ ___
 
         function update_status(self)
 
-        function create_slots(self) -> list
+        function create_slot_renderers(self) -> list
 
         static
         function is_fuel(cls, itemstack)
