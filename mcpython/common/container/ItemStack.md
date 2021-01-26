@@ -1,4 +1,4 @@
-***ItemStack.py - documentation - last updated on 21.1.2021 by uuk***
+***ItemStack.py - documentation - last updated on 26.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -9,18 +9,34 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class ItemStack
+    class AbstractItemStack extends ABC
         
-        Base class for item stored somewhere
+        Abstract class for item stack like objects
 
 
         static
-        function create_empty()
+        function create_empty(cls)
+
+        function copy(self) -> "AbstractItemStack"
+
+        function copy_from(self, other: "AbstractItemStack")
+
+        function clean(self)
+
+        function is_empty(self) -> bool
+
+    class ItemStack extends AbstractItemStack
+        
+        Default implementation for item stacks
+
+
+        static
+        function create_empty(cls)
             
-            get an empty itemstack
+            Get an empty itemstack
 
 
-        function __init__(self, item_name_or_instance, amount=1)
+        function __init__(self, item_name_or_instance=None, amount=1)
 
         function copy(self) -> "ItemStack"
             

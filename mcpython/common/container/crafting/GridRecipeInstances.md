@@ -1,4 +1,4 @@
-***GridRecipeInstances.py - documentation - last updated on 21.1.2021 by uuk***
+***GridRecipeInstances.py - documentation - last updated on 26.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -26,6 +26,16 @@ ___
     class AbstractCraftingGridRecipe extends  mcpython.common.container.crafting.IRecipe.IRecipe,  ABC 
 
         variable RECIPE_VIEW
+
+        function __init__(self)
+
+            variable self.grid_hash
+
+        function __hash__(self)
+
+        function calculate_hash(self) -> int
+
+        function __eq__(self, other)
 
         function as_grid_for_view(
                 self, size=(3, 3)
