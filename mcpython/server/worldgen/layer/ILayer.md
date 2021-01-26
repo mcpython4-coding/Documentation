@@ -1,4 +1,4 @@
-***ILayer.py - documentation - last updated on 21.1.2021 by uuk***
+***ILayer.py - documentation - last updated on 26.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -16,6 +16,16 @@ ___
             variable self.config
 
             variable self.layer: typing.Optional["ILayer"]
+
+            variable self.bedrock_chance
+
+            variable self.max_height_factor
+
+            variable self.masses
+
+            variable self.temperature_max
+
+            variable self.temperature_min
 
         function apply_config(self, attr_config: dict)
 

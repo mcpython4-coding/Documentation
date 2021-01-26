@@ -1,4 +1,4 @@
-***DefaultBiomeLayer.py - documentation - last updated on 21.1.2021 by uuk***
+***DefaultBiomeLayer.py - documentation - last updated on 26.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -10,6 +10,9 @@ ___
 
 
     @shared.world_generation_handler class DefaultBiomeMapLayer extends ILayer
+        
+        Layer for calculating which biomes to generate
+
 
         variable NAME
 
@@ -19,3 +22,12 @@ ___
 
         static
         function add_generate_functions_to_chunk(cls, config: LayerConfig, reference)
+
+            variable biome_map
+                The various chunk maps needed
+
+            variable land_map
+
+            variable temperature_map
+
+                    variable biome_map[

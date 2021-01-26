@@ -1,4 +1,4 @@
-***DefaultStonePlacementLayer.py - documentation - last updated on 21.1.2021 by uuk***
+***DefaultStonePlacementLayer.py - documentation - last updated on 26.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -21,5 +21,7 @@ ___
         static
         function add_generate_functions_to_chunk(cls, config: LayerConfig, reference)
 
+                    variable height
+
         static
-        function generate_xz(reference, x, z, config)
+        function generate_xz(reference, x, z, config, height)

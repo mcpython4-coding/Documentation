@@ -1,4 +1,4 @@
-***BiomeHandler.py - documentation - last updated on 21.1.2021 by uuk***
+***BiomeHandler.py - documentation - last updated on 26.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -10,6 +10,13 @@ ___
 
 
     class BiomeHandler
+        
+        The main handler for biomes
+        Stores needed maps for the lookup during biome generation
+        todo: make proper registry for biomes as everything is now data-driven-able, and as such depends not on a custom
+            register function
+        todo: maybe use instances for dynamic constructed biomes?
+
 
         function __init__(self)
 
@@ -19,19 +26,40 @@ ___
 
         function register(self, biome: typing.Type[mcpython.server.worldgen.biome.Biome.Biome])
 
-        function __call__(self, biome)
+        static
+        function setup_biome_feature_list(cls, biome: typing.Type[mcpython.server.worldgen.biome.Biome.Biome], force=False)
+            
+            Helper function for recalculating the internal biome feature sorted array
+            :param biome: the biome
+            :param force: force-recalculate?
+
+
+                    variable data
+
+                    variable biome.FEATURES_SORTED[group]
+
+        function __call__(self, biome: typing.Type[mcpython.server.worldgen.biome.Biome.Biome])
+            
+            Registers a biome to the internal system
+            Will setup the FEATURES_SORTED system for later lookup
+            :param biome: the biome to register
+            :return: the biome, for @BiomeHandler-ing
+
+
+            variable self.biomes[biome.NAME]
 
         function unregister(
                 self, biome: typing.Type[mcpython.server.worldgen.biome.Biome.Biome]
                 ):
 
+        static
         function get_biomes_for_dimension(
-                self, biomes: typing.Dict[int, str], weighted=False, temperature=None
+                cls, biomes: typing.Dict[int, str], weighted=False, temperature=None
                 ) -> list:
 
-                variable l
+                variable biomes
 
-                variable l
+                variable biomes
 
         function get_sum_weight_count(self, biomes, temperature=None) -> int
 
@@ -43,8 +71,8 @@ ___
                 biomes: typing.Dict[str, typing.Dict[int, str]],
                 ) -> str:
             
-            gets an biome with given info
-            :param landmass: the landmass to choise from
+            Gets an biome with given info
+            :param landmass: the landmass to chose from
             :param select_value: an value with which the system decides which biome to select, value from 0. - 1.
             :param temperature: the temperature to use
             :param biomes: the biomes to select from

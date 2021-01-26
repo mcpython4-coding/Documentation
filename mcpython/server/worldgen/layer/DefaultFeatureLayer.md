@@ -1,4 +1,4 @@
-***DefaultFeatureLayer.py - documentation - last updated on 21.1.2021 by uuk***
+***DefaultFeatureLayer.py - documentation - last updated on 26.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -20,3 +20,18 @@ ___
 
         static
         function generate_position(x, z, reference, config)
+
+            variable treemap
+                todo: rename to structure blocking info or something similar
+
+            variable biome
+                the various maps
+
+            variable height
+
+                    variable count
+
+                    variable feature_def: mcpython.server.worldgen.feature.IFeature.FeatureDefinition
+                        Use one random feature todo: make noise based
+
+                    variable feature

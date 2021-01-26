@@ -1,4 +1,4 @@
-***DefaultLandMassLayer.py - documentation - last updated on 21.1.2021 by uuk***
+***DefaultLandMassLayer.py - documentation - last updated on 26.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -20,3 +20,9 @@ ___
 
         static
         function add_generate_functions_to_chunk(cls, config: LayerConfig, reference)
+
+            variable noise_map
+
+                variable v
+
+                    variable v

@@ -1,4 +1,4 @@
-***DefaultHeightMapLayer.py - documentation - last updated on 21.1.2021 by uuk***
+***DefaultHeightMapLayer.py - documentation - last updated on 26.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -24,6 +24,8 @@ ___
 
         static
         function add_generate_functions_to_chunk(cls, config: LayerConfig, reference)
+
+            variable noise_map
 
         static
         function get_height_at(cls, config, chunk, x, z, v) -> list
