@@ -1,4 +1,4 @@
-***CommandExecute.py - documentation - last updated on 25.1.2021 by uuk***
+***CommandExecute.py - documentation - last updated on 26.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -11,19 +11,31 @@ ___
 
     @shared.registry class CommandExecute extends mcpython.server.command.Command.Command
         
-        class for /execute command
+        Class for /execute command
 
+
+        variable EXECUTE_NODES
+
+        variable EXECUTE_NODES["unless"].nodes
+
+        variable EXECUTE_END_NODES
+
+        variable SPECIAL_NODE_PARSING
 
         variable NAME
 
         static
-        function insert_parse_bridge(parse_bridge: ParseBridge)
+        function insert_command_syntax_holder(cls, command_syntax_holder: CommandSyntaxHolder)
+
+            variable command_syntax_holder.main_entry
+
+            variable followed
 
         static
         function parse(values: list, modes: list, info)
 
         static
-        function _parse_subcommand(index, command, values, info)
+        function _parse_subcommand(cls, index, command, values, info)
             
             execute an entry in the parsed command
             :param index: the index to start

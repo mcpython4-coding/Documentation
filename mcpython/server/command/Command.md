@@ -1,4 +1,4 @@
-***Command.py - documentation - last updated on 25.1.2021 by uuk***
+***Command.py - documentation - last updated on 26.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -9,7 +9,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class ParseType extends enum.Enum
+    class CommandArgumentType extends enum.Enum
         
         An enum for command entries
 
@@ -51,11 +51,11 @@ ___
         variable BOOLEAN
             A boolean value
 
-        function add_subcommand(self, subcommand)
+        function add_node(self, subcommand)
 
-        function set_mode(self, parse_mode: "ParseMode")
+        function set_mode(self, parse_mode: "CommandArgumentMode")
 
-    class ParseMode extends enum.Enum
+    class CommandArgumentMode extends enum.Enum
         
         An enum for how ParseType-entries are handled
 
@@ -64,59 +64,78 @@ ___
 
         variable OPTIONAL - user can enter this, but all sub-elements are than invalid
 
-    class SubCommand
+    class Node
         
-        Class for an part of an command. contains one parse-able entry, one ParseMode and an list of sub-commands
+        Class for an part of a command (a "Node"). Contains one parse-able entry, one ParseMode and a list of sub-commands
 
 
-        function __init__(self, entry_type: ParseType, *args, mode=ParseMode.USER_NEED_ENTER, **kwargs)
+        function __init__(
+                self,
+                entry_type: CommandArgumentType,
+                *args,
+                mode=CommandArgumentMode.USER_NEED_ENTER,
+                on_node_iterated: typing.Callable[
+                [typing.Any, typing.List, typing.List], None
+                ] = None,
+                on_node_executed: typing.Callable[
+                [typing.Any, typing.List, typing.List], None
+                ] = None,
+                **kwargs
+                ):
             
-            Creates an new subcommand
+            Creates an new Node
             :param entry_type: the type to use
             :param args: arguments to use for check & parsing
             :param mode: the mode to use
             :param kwargs: optional arguments for check & parsing
+            :param on_node_executed: run when this node is the last one on the stack; signature: (info, values, node stack)
+            :param on_node_iterated: run when this node is used during command parsing; signature: (info, values, node stack)
+            todo: add attribute if it can be the last on the stack or not
 
 
             variable self.type
 
             variable self.mode
 
-            variable self.sub_commands: typing.List["SubCommand"]
+            variable self.nodes: typing.List["Node"]
 
             variable self.args
 
             variable self.kwargs
 
-        function add_subcommand(self, subcommand: typing.Union["SubCommand", ParseType])
+            variable self.on_node_executed
+
+            variable self.on_node_iterated
+
+        function add_node(self, node: typing.Union["Node", CommandArgumentType])
             
-            Add an new SubCommand to this SubCommand
-            :param subcommand: the SubCommand to add
+            Add a new sub-Node to this Node
+            :param node: the Node to add
             :return: itself
 
 
-    class ParseBridge
+        function get_node_ends(self) -> typing.Iterable["Node"]
+
+    class CommandSyntaxHolder
         
         A build system for commands
         Inspired by minecraft's brigadier (https://github.com/Mojang/brigadier)
-        todo: every SubCommand should have an onParsingEndHere method executing the command instead of
-            a single function giving the tree
 
 
-        function __init__(self, command)
+        function __init__(self, command: typing.Type["Command"])
             
-            creates an new ParseBridge
+            Creates a new CommandSyntaxHolder instance
             :param command: the command base class to use
 
 
             variable self.main_entry
 
-            variable self.sub_commands
+            variable self.nodes
 
-        function add_subcommand(self, subcommand: typing.Union[SubCommand, ParseType])
+        function add_node(self, node: typing.Union[Node, CommandArgumentType])
             
-            add an new subcommand to this
-            :param subcommand: the subcommand to add or an ParseType
+            add a new Node to this
+            :param node: the Node to add or a ParseType
             :return: the object invoked on (the self)
 
 
@@ -128,10 +147,10 @@ ___
         variable TYPE - the type definition for the registry
 
         static
-        function insert_parse_bridge(parse_bridge: ParseBridge)
+        function insert_command_syntax_holder(command_syntax_holder: CommandSyntaxHolder)
             
             Takes an ParseBridge and fills it with life
-            :param parse_bridge: the parse bridge to use
+            :param command_syntax_holder: the parse bridge to use
 
 
         static
@@ -141,6 +160,7 @@ ___
             :param values: the values parsed over parse bridge
             :param modes: the modes used (a list of decisions)
             :param info: a ParsingCommandInfo for parsing this command
+            todo: remove
 
 
         static

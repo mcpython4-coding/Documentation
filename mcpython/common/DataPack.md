@@ -1,4 +1,4 @@
-***DataPack.py - documentation - last updated on 23.1.2021 by uuk***
+***DataPack.py - documentation - last updated on 26.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -114,6 +114,24 @@ ___
             
             Will load the data pack
 
+
+                variable self.access
+
+                variable info
+
+                    variable self.status
+
+                variable self.description
+
+                    variable split
+
+                        variable name
+
+                        variable self.function_table[
+
+                variable self.status
+
+            variable self.status
 
         function unload(self)
             

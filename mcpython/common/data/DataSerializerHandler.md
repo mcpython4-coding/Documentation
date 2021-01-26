@@ -1,4 +1,4 @@
-***DataSerializerHandler.py - documentation - last updated on 21.1.2021 by uuk***
+***DataSerializerHandler.py - documentation - last updated on 26.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -67,7 +67,7 @@ ___
 
         function register_serializer(self, serializer: typing.Type[ISerializer])
 
-        function map_pack(self, modname: str, pathname: str)
+        function map_pack(self, modname: str, pathname: str, immediate=False)
 
         function load_file(self, file: str)
 

@@ -1,4 +1,4 @@
-***CommandClone.py - documentation - last updated on 25.1.2021 by uuk***
+***CommandClone.py - documentation - last updated on 26.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -19,7 +19,7 @@ ___
         variable NAME
 
         static
-        function insert_parse_bridge(parse_bridge: ParseBridge)
+        function insert_command_syntax_holder(command_syntax_holder: CommandSyntaxHolder)
 
         static
         function parse(values: list, modes: list, info)

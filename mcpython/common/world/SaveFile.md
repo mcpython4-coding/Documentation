@@ -1,4 +1,4 @@
-***SaveFile.py - documentation - last updated on 21.1.2021 by uuk***
+***SaveFile.py - documentation - last updated on 26.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -180,14 +180,14 @@ ___
 
         function access_file_pickle(self, file: str)
             
-            access save an pickle file
+            Access save a pickle file
             :param file: the file to load
             :return: the data of the file or None if an error has occur
 
 
         function access_raw(self, file: str)
             
-            access save an file in binary mode
+            Access save a file in binary mode
             :param file: the file to load
             :return: the data of the file or None if an error has occur
 

@@ -27,12 +27,20 @@ ___
         function register(self, biome: typing.Type[mcpython.server.worldgen.biome.Biome.Biome])
 
         static
-        function setup_biome_feature_list(cls, biome: typing.Type[mcpython.server.worldgen.biome.Biome.Biome], force=False)
+        function setup_biome_feature_list(
+                cls, biome: typing.Type[mcpython.server.worldgen.biome.Biome.Biome], force=False
+                ):
             
             Helper function for recalculating the internal biome feature sorted array
             :param biome: the biome
             :param force: force-recalculate?
 
+
+                variable biome.FEATURES_SORTED
+
+                    variable data
+
+                    variable biome.FEATURES_SORTED[feature_def.group]
 
                     variable data
 
