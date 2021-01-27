@@ -101,21 +101,21 @@ ___
                 self,
                 position: tuple,
                 block_name: typing.Union[
-                str, mcpython.common.block.AbstractBlock.AbstractBlock
+                str, typing.Any
                 ],
                 immediate=True,
                 block_update=True,
                 block_update_self=True,
                 lazy_setup: typing.Callable[
-                [mcpython.common.block.AbstractBlock.AbstractBlock], None
+                [typing.Any], None
                 ] = None,
                 check_build_range=True,
                 block_state=None,
-                ) -> typing.Optional[mcpython.common.block.AbstractBlock.AbstractBlock]:
+                ) -> typing.Optional[typing.Any]:
             
             Adds an block to the given position
             :param position: the position to add at
-            :param block_name: the name of the block or an instance of it (mcpython.common.block.AbstractBlock.AbstractBlock)
+            :param block_name: the name of the block or an instance of it (typing.Any)
             :param immediate: if the block should be shown if needed or not
             :param block_update: if an block-update should be send to neighbors blocks
             :param block_update_self: if the block should get an block-update
@@ -137,12 +137,12 @@ ___
                 self,
                 position: typing.Union[
                 typing.Tuple[int, int, int],
-                mcpython.common.block.AbstractBlock.AbstractBlock,
+                typing.Any,
                 ],
                 immediate: bool = True,
                 block_update: bool = True,
                 block_update_self: bool = True,
-                reason=mcpython.common.block.AbstractBlock.BlockRemovalReason.UNKNOWN,
+                reason=None,
                 ):
             
             Removes a block from a given position
@@ -166,7 +166,7 @@ ___
                 self,
                 position: typing.Union[
                 typing.Tuple[int, int, int],
-                mcpython.common.block.AbstractBlock.AbstractBlock,
+                typing.Any,
                 ],
                 immediate: bool = True,
                 ):
@@ -181,7 +181,7 @@ ___
                 self,
                 position: typing.Union[
                 typing.Tuple[int, int, int],
-                mcpython.common.block.AbstractBlock.AbstractBlock,
+                typing.Any,
                 ],
                 immediate=True,
                 ):
@@ -234,7 +234,7 @@ ___
 
         function get_block(
                 self, position: typing.Tuple[int, int, int]
-                ) -> typing.Union[mcpython.common.block.AbstractBlock.AbstractBlock, str, None]:
+                ) -> typing.Union[typing.Any, str, None]:
             
             Getter function for a block
             :param position: the position
@@ -297,14 +297,14 @@ ___
                 self,
                 position: typing.Union[
                 typing.Tuple[float, float, float],
-                mcpython.common.block.AbstractBlock.AbstractBlock,
+                typing.Any,
                 ],
                 **kwargs
                 ) -> typing.Optional[IChunk]:
 
         function get_block(
                 self, position: typing.Tuple[int, int, int]
-                ) -> typing.Union[mcpython.common.block.AbstractBlock.AbstractBlock, str, None]:
+                ) -> typing.Union[typing.Any, str, None]:
 
         function add_block(
                 self,

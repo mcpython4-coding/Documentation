@@ -24,6 +24,8 @@ ___
 
             variable self.world_loaded - describes if the world is loaded or not
 
+            variable self.world_generation_process
+
         function tick(self)
 
         function add_player(
