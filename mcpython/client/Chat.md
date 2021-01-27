@@ -1,4 +1,4 @@
-***Chat.py - documentation - last updated on 26.1.2021 by uuk***
+***Chat.py - documentation - last updated on 27.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -79,6 +79,28 @@ ___
             :param modifiers: the modifiers that are used
             todo: split up into parts
 
+
+                variable self.text
+
+                variable self.active_index
+
+                variable self.active_index
+
+                variable self.CANCEL_INPUT
+
+                variable self.text
+
+                variable self.active_index
+
+                    variable self.text
+
+                    variable self.text
+
+                variable self.active_index
+
+                    variable self.active_index
+
+                    variable self.active_index
 
         function print_ln(self, text: str)
             

@@ -1,4 +1,4 @@
-***LaunchWrapper.py - documentation - last updated on 21.1.2021 by uuk***
+***LaunchWrapper.py - documentation - last updated on 27.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -40,7 +40,7 @@ ___
 
         function inject_sys_argv(self, argv: typing.List[str])
             
-            Currently unused helper function for loading the sys.argv config into the game
+            Helper function for loading the sys.argv config into the game
             todo: all sys.argv parsing belongs here, with a general parser for options not specified
 
 

@@ -1,4 +1,4 @@
-***texture.py - documentation - last updated on 21.1.2021 by uuk***
+***texture.py - documentation - last updated on 27.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -9,28 +9,35 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    function colorize(mask: PIL.Image.Image, color: tuple) -> PIL.Image.Image
+    function colorize(
+            mask: PIL.Image.Image,
+            color: tuple,
+            colorizer=lambda color, mask: tuple(c * m // 255 for c, m in zip(color, mask)),
+            ) -> PIL.Image.Image:
         
-        colorize an image-mask (greyscale) with an color
+        Colorize an image-mask with a color using colorizer as the operator
         :param mask: the mask to base on
         :param color: the color to use
+        :param colorizer: the colorizer method to use, defaults to a simple channel-based multiplication
         :return: the colorized image
 
+
+        variable color
+
+        variable mask: PIL.Image.Image
+
+        variable new_image: PIL.Image.Image
+
+                variable color_alpha
+
+                    variable pixel_color
 
     function to_pyglet_image(image: PIL.Image.Image) -> pyglet.image.AbstractImage
         
         Will transform the image into an pyglet image
         :param image: the image to transform
         :return: the transformed one
-        todo: can we do this in-memory?
-
-
-    function to_pillow_image(image: pyglet.image.AbstractImage) -> PIL.Image.Image
-        
-        Will transform the pyglet image into an pillow one
-        :param image: the image to transform
-        :return: the transformed one
-        todo: can we do this in-memory?
+        todo: can we do this in-memory? (less time consumed)
 
 
     function to_pyglet_sprite(image: PIL.Image.Image) -> pyglet.sprite.Sprite
@@ -40,4 +47,14 @@ ___
         :return: the sprite
 
 
+    function to_pillow_image(image: pyglet.image.AbstractImage) -> PIL.Image.Image
+        
+        Will transform the pyglet image into an pillow one
+        :param image: the image to transform
+        :return: the transformed one
+        todo: can we do this in-memory? (less time consumed)
+
+
     function hex_to_color(color: str) -> typing.Tuple[int, int, int]
+        
+        Helper method for transforming a hex string encoding a color into a tuple of color entries

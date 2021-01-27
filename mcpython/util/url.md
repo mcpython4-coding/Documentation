@@ -1,4 +1,4 @@
-***url.py - documentation - last updated on 21.1.2021 by uuk***
+***url.py - documentation - last updated on 27.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -26,11 +26,12 @@ ___
 
         function json(self)
 
-    variable SIMULATE
-
     function get_url(url, **kwargs)
         
-        gets the content of an URL as an requests.get() or an an SimulatedResponse-instance
+        Gets the content of an URL as an requests.get() or an an SimulatedResponse-instance
         :param url: the url to download from
         :param kwargs: kwargs to requests.get() with
         :return: the content
+
+        
+        Async variant of above get_url() method

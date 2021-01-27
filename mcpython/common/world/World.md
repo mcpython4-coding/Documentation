@@ -1,4 +1,4 @@
-***World.py - documentation - last updated on 25.1.2021 by uuk***
+***World.py - documentation - last updated on 27.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -68,7 +68,11 @@ ___
             todo: move to player
 
 
-        function get_dimension_by_name(self, name: str)
+        function get_dimension_names(self) -> typing.Iterable[str]
+
+        function get_dimension_by_name(
+                self, name: str
+                ) -> mcpython.common.world.AbstractInterface.IDimension:
 
         function add_dimension(
                 self, dim_id: int, name: str, dim_config=None

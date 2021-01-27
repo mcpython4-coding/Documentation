@@ -1,4 +1,4 @@
-***CommandEntry.py - documentation - last updated on 25.1.2021 by uuk***
+***CommandEntry.py - documentation - last updated on 27.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -124,6 +124,19 @@ ___
         @shared.registry class ItemNameEntry extends CommandEntry
             
             Item name entry
+
+
+            variable NAME
+
+            static
+            function parse(entry_list: list, start: int, info, arguments, kwargs) -> tuple
+
+            static
+            function is_valid(entry_list: list, start: int, arguments, kwargs) -> bool
+
+        @shared.registry class DimensionNameEntry extends CommandEntry
+            
+            Dimension name entry
 
 
             variable NAME

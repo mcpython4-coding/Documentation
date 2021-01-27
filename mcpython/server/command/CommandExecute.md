@@ -1,4 +1,4 @@
-***CommandExecute.py - documentation - last updated on 26.1.2021 by uuk***
+***CommandExecute.py - documentation - last updated on 27.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -16,8 +16,6 @@ ___
 
         variable EXECUTE_NODES
 
-        variable EXECUTE_NODES["unless"].nodes
-
         variable EXECUTE_END_NODES
 
         variable SPECIAL_NODE_PARSING
@@ -31,17 +29,22 @@ ___
 
             variable followed
 
+            variable old
+
+            variable cls.EXECUTE_NODES["unless"].nodes
+
         static
         function parse(values: list, modes: list, info)
 
         static
-        function _parse_subcommand(cls, index, command, values, info)
+        function _parse_subcommand(cls, index: int, command: str, values: typing.List, info)
             
-            execute an entry in the parsed command
+            Execute an entry in the parsed command
             :param index: the index to start
             :param command: the parsed active command
             :param values: the values that where parsed
             :param info: the command info which was used
+            Mods adding custom entries should use the SPECIAL_NODE_PARSING extension point for parsing their entries
 
 
                     variable info.entity
@@ -61,6 +64,11 @@ ___
                     variable selector
 
                     variable flag
+
+                        variable flag
+
+                        variable flag
+                            todo: make more safe
 
                 variable info.dimension
 

@@ -1,4 +1,4 @@
-***CommandParser.py - documentation - last updated on 26.1.2021 by uuk***
+***CommandParser.py - documentation - last updated on 27.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -79,7 +79,25 @@ ___
 
         function _convert_to_values(
                 self, command, syntax, info, index=1
-                ) -> typing.Tuple[typing.Optional[typing.List], typing.Optional[typing.List[typing.Tuple[typing.Any, int]]]]:
+                ) -> typing.Tuple[
+                typing.Optional[typing.List],
+                typing.Optional[typing.List[typing.Tuple[typing.Any, int]]],
+                ]:
+                """
+                Parse command into values that can be than executed
+                :param command: the command to parse
+                :param syntax: the command info to use
+                :param info: the info to use
+                :param index: the index to start on
+                :return: a tuple of the parsed values and the nodes iterated over, as (Node, node index)
+                """
+                if len(command) == 1 and not any(
+                [
+                subcommand.mode
+                == mcpython.server.command.Command.CommandArgumentMode.OPTIONAL
+                for subcommand in syntax.nodes
+                ]
+                ):
             
             Parse command into values that can be than executed
             :param command: the command to parse

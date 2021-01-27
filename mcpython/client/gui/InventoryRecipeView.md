@@ -1,4 +1,4 @@
-***InventoryRecipeView.py - documentation - last updated on 26.1.2021 by uuk***
+***InventoryRecipeView.py - documentation - last updated on 27.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -9,7 +9,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class InventorySingleRecipeView extends mcpython.client.gui.ContainerRenderer.ContainerRenderer
+    class InventorySingleRecipeView extends  mcpython.client.gui.ContainerRenderer.ContainerRenderer 
         
         Inventory class for single inventory recipe view
         todo: add custom name attribute setter from renderer if needed

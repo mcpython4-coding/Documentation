@@ -1,4 +1,4 @@
-***Command.py - documentation - last updated on 26.1.2021 by uuk***
+***Command.py - documentation - last updated on 27.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -19,25 +19,34 @@ ___
 
         variable INT
             An int. May be negative; cannot be NaN or inf
+            todo: add a non-negative variant
+            todo: add variant with NaN and inf
 
         variable STRING
-            A string in "" or '', not mixed. May have spaces in it
+            A string in "" or '', not mixed. May have spaces in it, determined by the " or ' s
 
         variable FLOAT
             A float number, can be negative; must be parse-able by float(), cannot contain spaces
             Represents a java double
+            todo: add a non-negative variant
 
         variable BLOCK_NAME
             A name for a block. Can start with or without mod namespace; must be lookup-able in the block registry
+            todo: add variant with forced namespace
 
         variable ITEM_NAME
             A name for an item. Can start with or without mod namespace; must be lookup-able in the item registry
+            todo: add variant with forced namespace
+
+        variable DIMENSION_NAME
+            A name of a dimension in the active world
 
         variable SELECTOR
             A entity selector; defined by its own registry
 
         variable POSITION
-            A position. May be selector for position; Selector must be unique
+            A position. May be selector; Selector must point to exactly one entity
+            todo: add variant only for whole blocks
 
         variable SELECT_DEFINED_STRING
             A selection of different strings out of an list
@@ -46,7 +55,7 @@ ___
             A variable list of strings
 
         variable STRING_WITHOUT_QUOTES
-            A variable string without the ""
+            A variable string without the "", without spaces
 
         variable BOOLEAN
             A boolean value
@@ -58,6 +67,7 @@ ___
     class CommandArgumentMode extends enum.Enum
         
         An enum for how ParseType-entries are handled
+        todo: merge as optional: bool = False into node creation
 
 
         variable USER_NEED_ENTER - user must enter this entry
@@ -67,6 +77,7 @@ ___
     class Node
         
         Class for an part of a command (a "Node"). Contains one parse-able entry, one ParseMode and a list of sub-commands
+        todo: add variant without entry only linking a subset of nodes
 
 
         function __init__(
@@ -83,7 +94,7 @@ ___
                 **kwargs
                 ):
             
-            Creates an new Node
+            Creates a new Node instance, representing
             :param entry_type: the type to use
             :param args: arguments to use for check & parsing
             :param mode: the mode to use
@@ -91,6 +102,8 @@ ___
             :param on_node_executed: run when this node is the last one on the stack; signature: (info, values, node stack)
             :param on_node_iterated: run when this node is used during command parsing; signature: (info, values, node stack)
             todo: add attribute if it can be the last on the stack or not
+            todo: add permission config entry
+            todo: add "optional" parameter
 
 
             variable self.type
@@ -111,7 +124,7 @@ ___
             
             Add a new sub-Node to this Node
             :param node: the Node to add
-            :return: itself
+            :return: the current Node
 
 
         function get_node_ends(self) -> typing.Iterable["Node"]
@@ -149,8 +162,8 @@ ___
         static
         function insert_command_syntax_holder(command_syntax_holder: CommandSyntaxHolder)
             
-            Takes an ParseBridge and fills it with life
-            :param command_syntax_holder: the parse bridge to use
+            Takes a CommandSyntaxHolder and fills it with life
+            :param command_syntax_holder: the syntax holder to use
 
 
         static

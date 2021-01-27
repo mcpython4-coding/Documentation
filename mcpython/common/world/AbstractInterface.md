@@ -1,4 +1,4 @@
-***AbstractInterface.py - documentation - last updated on 21.1.2021 by uuk***
+***AbstractInterface.py - documentation - last updated on 27.1.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -342,6 +342,8 @@ ___
 
     class IWorld extends ABC
 
+        function get_dimension_names(self) -> typing.Iterable[str]
+
         function add_player(
                 self, name: str, add_inventories: bool = True, override: bool = True
                 ):
@@ -371,7 +373,7 @@ ___
                 ],
                 typing.Tuple[None, None, None],
                 ]:
-                raise NotImplementedError()
+                raise NotImplementedError
                 
                 def show_chunk(self, chunk: typing.Union[typing.Tuple[int, int], IChunk]):
 
