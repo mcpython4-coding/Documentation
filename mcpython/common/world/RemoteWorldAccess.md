@@ -24,9 +24,9 @@ ___
 
                 variable self.helper
 
-            function get_world(self)
+            function get_world(self) -> mcpython.common.world.AbstractInterface.IWorld
 
-            function get_helper(self)
+            function get_helper(self) -> "RemoteWorldHelper"
 
         class RemoteWorldHelperReference
 
