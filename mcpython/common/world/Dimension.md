@@ -1,4 +1,4 @@
-***Dimension.py - documentation - last updated on 21.1.2021 by uuk***
+***Dimension.py - documentation - last updated on 8.2.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -140,7 +140,8 @@ ___
                 variable position
 
         function get_block(
-                self, position: typing.Tuple[int, int, int]
+                self, position: typing.Tuple[int, int, int],
+                none_if_str=False
                 ) -> typing.Union[mcpython.common.block.AbstractBlock.AbstractBlock, str, None]:
 
             variable chunk

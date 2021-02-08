@@ -287,11 +287,13 @@ ___
 
 
         function get_block(
-                self, position: typing.Tuple[int, int, int]
+                self, position: typing.Tuple[int, int, int],
+                none_if_str=False
                 ) -> typing.Union[Block.AbstractBlock, str, None]:
             
             will get the block at an given position
             :param position: the position to check for, must be normalized
+            :param none_if_str: if none if the block instance is str
             :return: None if no block, str if scheduled and Block.Block if created
             todo: split up into get_block_generated and get_block_un_generated
 

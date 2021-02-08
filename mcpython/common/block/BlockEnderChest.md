@@ -12,6 +12,8 @@ ___
     class BlockEnderChest extends AbstractBlock.AbstractBlock
         
         class for the ender chest
+        todo: check if it can be opened like in chests
+        todo: fix renderer
 
 
         variable NAME
@@ -43,6 +45,10 @@ ___
         function get_provided_slots(self, side)
 
         function set_model_state(self, state: dict)
+
+                    variable self.front_side
+
+                    variable self.front_side
 
         function get_model_state(self) -> dict
 

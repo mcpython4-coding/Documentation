@@ -1,4 +1,4 @@
-***generate_build.py - documentation - last updated on 21.1.2021 by uuk***
+***generate_build.py - documentation - last updated on 8.2.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -176,3 +176,5 @@ ___
                         variable string
 
                             variable string
+
+        function strip_client_only_code(self)

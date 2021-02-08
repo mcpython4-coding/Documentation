@@ -28,13 +28,13 @@ ___
 
             variable dim
 
-            variable block_north: mcpython.common.block.AbstractBlock.AbstractBlock
+            variable block_north
 
-            variable block_east: mcpython.common.block.AbstractBlock.AbstractBlock
+            variable block_east
 
-            variable block_south: mcpython.common.block.AbstractBlock.AbstractBlock
+            variable block_south
 
-            variable block_west: mcpython.common.block.AbstractBlock.AbstractBlock
+            variable block_west
 
             variable self.connections["east"]
 
@@ -48,19 +48,17 @@ ___
 
             variable self.connections["up"]
 
-            variable upper_block: mcpython.common.block.AbstractBlock.AbstractBlock
+            variable upper_block
 
                 variable self.connections["up"]
 
         function set_model_state(self, state: dict)
 
-    class RedSandstoneWall extends IWall
+    function create_wall_class(name: str)
+        
+        Constructor helper for creating a new wall class
+        For internal usage only!
 
-        variable NAME
-
-    class SandstoneWall extends IWall
-
-        variable NAME
 
     @shared.mod_loader("minecraft", "stage:block:load")
     function load()

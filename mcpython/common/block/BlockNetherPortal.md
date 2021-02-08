@@ -1,4 +1,4 @@
-***BlockNetherPortal.py - documentation - last updated on 21.1.2021 by uuk***
+***BlockNetherPortal.py - documentation - last updated on 8.2.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -12,6 +12,7 @@ ___
     class NetherPortalBlock extends mcpython.common.block.AbstractBlock.AbstractBlock
         
         Class for the nether portal block
+        Uses the entity no collision collide system
 
 
         variable NAME
@@ -40,9 +41,13 @@ ___
 
         function check_valid_block(self, position: tuple, chunk=None)
 
-        function on_no_collision_collide(self, player, previous: bool)
+            variable block
 
-                variable player.in_nether_portal_since
+        function on_no_collision_collide(self, entity, previous: bool)
+
+                variable entity.in_nether_portal_since
+
+                variable entity.in_nether_portal_since
 
     @shared.mod_loader("minecraft", "stage:block:load")
     function load()

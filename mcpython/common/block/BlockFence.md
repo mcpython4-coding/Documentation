@@ -14,14 +14,14 @@ ___
         Abstract base class for every fence-like block
 
 
-        variable FENCE_TYPE_NAME: set
+        variable FENCE_TYPE_NAME
             The type list of the fences; same types are able to connect to each other, not same types not
 
         variable BBOX
-            the bounding box todo: add
+            the bounding box todo: add the real bounding box
 
         variable DEBUG_WORLD_BLOCK_STATES
-            the debug world states
+            the debug world states, constructed by a builder, using all possible combinations
 
         variable DEFAULT_FACE_SOLID
 
@@ -60,6 +60,7 @@ ___
                 ):
 
         variable BLOCK_ITEM_GENERATOR_STATE
+            the state the block item generator should use, this kinda looks nice
 
     class IWoodenFence extends IFence
         
