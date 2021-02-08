@@ -9,6 +9,13 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
+        class PIL_Image
+
+            class Image
+
+            static
+            function open(cls, file: str)
+    
     specifications for the resource loader system
     On startup / on reload, so called ResourceLocations are created for every archive / directory in resourcepack-folder
     functions to access data:
@@ -49,9 +56,9 @@ ___
             :return: the content of the file loaded in binary
 
 
-        function read_image(self, path: str) -> PIL.Image.Image
+        function read_image(self, path: str) -> PIL_Image.Image
             
-            will read an file into the system as an PIL.Image.Image
+            will read an file into the system as an PIL_Image.Image
             :param path: the file name to use
             :return: the content of the file loaded as image
 
@@ -101,7 +108,7 @@ ___
 
         function read_raw(self, path: str) -> bytes
 
-        function read_image(self, path: str) -> PIL.Image.Image
+        function read_image(self, path: str) -> PIL_Image.Image
 
         function close(self)
 
@@ -129,7 +136,7 @@ ___
 
         function read_raw(self, path: str) -> bytes
 
-        function read_image(self, path: str) -> PIL.Image.Image
+        function read_image(self, path: str) -> PIL_Image.Image
 
         function get_all_entries_in_directory(
                 self, directory: str, go_sub=True
@@ -158,7 +165,7 @@ ___
 
         function provide_raw(self, name: str, raw: bytes)
 
-        function provide_image(self, name: str, image: PIL.Image.Image)
+        function provide_image(self, name: str, image: PIL_Image.Image)
 
         static
         function is_valid(path: str) -> bool
@@ -169,7 +176,7 @@ ___
 
         function read_raw(self, path: str) -> bytes
 
-        function read_image(self, path: str) -> PIL.Image.Image
+        function read_image(self, path: str) -> PIL_Image.Image
 
         function close(self)
 

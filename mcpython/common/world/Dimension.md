@@ -140,8 +140,7 @@ ___
                 variable position
 
         function get_block(
-                self, position: typing.Tuple[int, int, int],
-                none_if_str=False
+                self, position: typing.Tuple[int, int, int], none_if_str=False
                 ) -> typing.Union[mcpython.common.block.AbstractBlock.AbstractBlock, str, None]:
 
             variable chunk

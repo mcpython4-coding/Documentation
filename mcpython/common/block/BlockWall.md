@@ -60,5 +60,9 @@ ___
         For internal usage only!
 
 
+        class GeneratedWall extends IWall
+
+            variable NAME
+
     @shared.mod_loader("minecraft", "stage:block:load")
     function load()

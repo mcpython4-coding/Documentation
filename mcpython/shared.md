@@ -71,7 +71,9 @@ ___
 
     variable mod_loader - the mod loader instance
 
-    variable rendering_helper
+        variable rendering_helper
+
+        variable rendering_helper
 
     variable NEXT_EVENT_BUS_ID
 

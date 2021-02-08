@@ -287,8 +287,7 @@ ___
 
 
         function get_block(
-                self, position: typing.Tuple[int, int, int],
-                none_if_str=False
+                self, position: typing.Tuple[int, int, int], none_if_str=False
                 ) -> typing.Union[Block.AbstractBlock, str, None]:
             
             will get the block at an given position

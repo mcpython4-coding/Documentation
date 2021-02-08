@@ -239,8 +239,7 @@ ___
 
 
         function get_block(
-                self, position: typing.Tuple[int, int, int],
-                none_if_str=False
+                self, position: typing.Tuple[int, int, int], none_if_str=False
                 ) -> typing.Union[typing.Any, str, None]:
             
             Getter function for a block
@@ -311,8 +310,7 @@ ___
                 ) -> typing.Optional[IChunk]:
 
         function get_block(
-                self, position: typing.Tuple[int, int, int],
-                none_if_str=False
+                self, position: typing.Tuple[int, int, int], none_if_str=False
                 ) -> typing.Union[typing.Any, str, None]:
 
         function add_block(
