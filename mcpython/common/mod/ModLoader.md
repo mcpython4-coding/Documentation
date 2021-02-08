@@ -1,4 +1,4 @@
-***ModLoader.py - documentation - last updated on 23.1.2021 by uuk***
+***ModLoader.py - documentation - last updated on 8.2.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -104,6 +104,8 @@ ___
             Will load all mods arrival
 
 
+            variable locations
+
             variable i
 
                 variable element
@@ -112,17 +114,14 @@ ___
 
         function check_for_update(self)
             
-            Will check for changes between versions
+            Will check for changes between versions between this session and the one before
 
 
                     variable shared.invalidate_cache
-
-                    variable shared.data_gen
 
                     variable shared.invalidate_cache
                         we have an mod which was loaded not previous but now
-
-                    variable shared.data_gen
+                        todo: include version of the mod
 
         function write_mod_info(self)
             
@@ -141,6 +140,7 @@ ___
             Will parse the decoded json-data to the correct system
             :param data: the data of the mod
             :param file: the file allocated (used for warning messages)
+            todo: maybe a better format?
 
                 
                 example:
@@ -175,9 +175,15 @@ ___
             :return: the parsed mod.Mod.ModDependency-object
 
 
+                variable config["version_min"]
+
+                variable config["version_max"]
+
+                variable config["versions"]
+
         function load_mods_toml(self, data: str, file: str)
             
-            will load an toml-data-object
+            Will load a toml-data-object
             :param data: the toml-representation
             :param file: the file for debugging reasons
 
@@ -194,19 +200,20 @@ ___
 
         function add_to_add(self, instance: mcpython.common.mod.Mod.Mod)
             
-            Will add an mod-instance into the inner system
+            Will add a mod-instance into the inner system
             :param instance: the mod instance to add
+            Use only when really needed. The system is designed for beeing data-driven!
 
 
             variable self.mods[instance.name]
 
-            variable instance.path
+                variable instance.path
 
         function check_mod_duplicates(self)
             
             Will check for mod duplicates
             :return an tuple of errors as string and collected mod-info's as dict
-            todo: add config option for strategy: fail, load newest, load oldest, load all
+            todo: add config option for strategy: fail, load newest, load oldest, load all, load none
 
 
                     variable errors
@@ -215,11 +222,13 @@ ___
 
         function check_dependency_errors(self, errors: bool, mod_info: dict)
             
-            Will iterate through
-            :param errors: the error list
+            Will iterate through all mods and check dependencies
+            :param errors: if errors occured
             :param mod_info: the mod info dict
             :return: errors and mod-info-tuple
 
+
+                        variable errors
 
         function sort_mods(self)
             
@@ -232,6 +241,8 @@ ___
         function process(self)
             
             Will process some loading tasks scheduled
+            Used internally during mod loading state
+            If on client, the renderer is also updated
 
 
             variable start

@@ -1,4 +1,4 @@
-***LaunchWrapper.py - documentation - last updated on 27.1.2021 by uuk***
+***LaunchWrapper.py - documentation - last updated on 8.2.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -44,6 +44,12 @@ ___
             todo: all sys.argv parsing belongs here, with a general parser for options not specified
 
 
+                    variable shared.ENABLE_MOD_LOADER
+
+                    variable shared.ENABLE_DATAPACK_LOADER
+
+                    variable shared.ENABLE_RESOURCE_PACK_LOADER
+
         function setup(self)
             
             Setup general stuff which does not take long to complete
@@ -62,11 +68,13 @@ ___
             
             Helper function for OpenGL setup
             Loads also the needed API
+            todo: move more rendering setup code here
 
 
         function print_header(self)
             
             Prints an header describing the program name and its version
+            todo: include some more information about the system
 
 
             variable version
@@ -81,6 +89,7 @@ ___
         function load_mods(self)
             
             Do ModLoader initial stuff
+            Looks for mods in the path only when shared.ENABLE_MOD_LOADER is True
 
 
         function launch(self)
