@@ -1,4 +1,4 @@
-***Chunk.py - documentation - last updated on 22.1.2021 by uuk***
+***Chunk.py - documentation - last updated on 8.2.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -35,7 +35,7 @@ ___
                 position: typing.Tuple[int, int],
                 ):
             
-            Will create an new chunk instance
+            Will create a new chunk instance
             :param dimension: the world.Dimension.Dimension object used to store this chunk
             :param position: the position of the chunk
             WARNING: use Dimension.get_chunk() where possible [saver variant, will do some work in the background]
@@ -182,7 +182,7 @@ ___
 
                 variable block.dimension
 
-            variable self.world[position]
+            variable self._world[position]
 
         function on_block_updated(
                 self, position: typing.Tuple[int, int, int], include_itself=True

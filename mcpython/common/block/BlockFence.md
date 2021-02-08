@@ -1,4 +1,4 @@
-***BlockFence.py - documentation - last updated on 21.1.2021 by uuk***
+***BlockFence.py - documentation - last updated on 8.2.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -9,17 +9,19 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class IFence extends mcpython.common.block.AbstractBlock.AbstractBlock
+    class IFence extends mcpython.common.block.AbstractBlock.AbstractBlock,  ABC
         
-        Base class for every fence-like block. Expects
+        Abstract base class for every fence-like block
 
 
-        variable FENCE_TYPE_NAME: set - the type list of the fences
+        variable FENCE_TYPE_NAME: set
+            The type list of the fences; same types are able to connect to each other, not same types not
 
-        variable BBOX - the bounding box
-            todo: add bounding-box
+        variable BBOX
+            the bounding box todo: add
 
         variable DEBUG_WORLD_BLOCK_STATES
+            the debug world states
 
         variable DEFAULT_FACE_SOLID
 

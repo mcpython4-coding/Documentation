@@ -1,4 +1,4 @@
-***enums.py - documentation - last updated on 21.1.2021 by uuk***
+***enums.py - documentation - last updated on 8.2.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -67,6 +67,8 @@ ___
         function as_bit(self) -> int
 
     variable FACE_ORDER: typing.List[EnumSide]
+
+    variable FACE_ORDER_HORIZONTAL
 
     variable ROTATE: typing.List[typing.List[EnumSide]]
         How to rotate the different faces?

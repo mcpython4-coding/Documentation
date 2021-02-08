@@ -1,4 +1,4 @@
-***RemoteWorldAccess.py - documentation - last updated on 27.1.2021 by uuk***
+***RemoteWorldAccess.py - documentation - last updated on 8.2.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -18,7 +18,9 @@ ___
 
         class RemoteWorldContext
 
-            function __init__(self, world: mcpython.common.world.AbstractInterface.IWorld, helper)
+            function __init__(
+                    self, world: mcpython.common.world.AbstractInterface.IWorld, helper
+                    ):
 
                 variable self.world
 
@@ -31,7 +33,10 @@ ___
         class RemoteWorldHelperReference
 
             function __init__(
-                    self, instance: "RemoteWorldHelper", process: multiprocessing.Process, world: mcpython.common.world.AbstractInterface.IWorld
+                    self,
+                    instance: "RemoteWorldHelper",
+                    process: multiprocessing.Process,
+                    world: mcpython.common.world.AbstractInterface.IWorld,
                     ):
 
                 variable self.instance
@@ -49,7 +54,13 @@ ___
             function get_worker_count(self)
 
         static
-        function spawn_process(cls, world: mcpython.common.world.AbstractInterface.IWorld) -> "RemoteWorldHelper.RemoteWorldHelperReference"
+        function spawn_process(
+                cls, world: mcpython.common.world.AbstractInterface.IWorld
+                ) -> "RemoteWorldHelper.RemoteWorldHelperReference":
+
+            variable instance
+
+            variable process
 
         static
         function run_task(cls, task, result_helper, context)
@@ -57,8 +68,10 @@ ___
         static
         function run_task_async(cls, task, context)
 
+                variable p
+
         static
-        function decode_task(cls, task, context) -> typing.Tuple[typing.Callable, typing.Any]
+        function decode_task(cls, task) -> typing.Tuple[typing.Callable, list, dict, typing.Any]
 
         static
         function encode_task(cls, func, args, kwargs, info) -> bytes

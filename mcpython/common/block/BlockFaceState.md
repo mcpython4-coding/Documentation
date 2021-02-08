@@ -1,4 +1,4 @@
-***BlockFaceState.py - documentation - last updated on 21.1.2021 by uuk***
+***BlockFaceState.py - documentation - last updated on 8.2.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -12,7 +12,7 @@ ___
     class BlockFaceState
         
         Class for face state of the block
-        todo: merge into AbstractBlock
+        todo: merge data into AbstractBlock & make this a static class
 
 
         variable DEFAULT_FACE_STATE

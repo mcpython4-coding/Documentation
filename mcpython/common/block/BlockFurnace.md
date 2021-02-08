@@ -1,4 +1,4 @@
-***BlockFurnace.py - documentation - last updated on 21.1.2021 by uuk***
+***BlockFurnace.py - documentation - last updated on 8.2.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -18,7 +18,9 @@ ___
 
         variable NAME: str
 
-        function __init__(self, *args, **kwargs)
+        variable DEBUG_WORLD_BLOCK_STATES
+
+        function __init__(self)
             
             creates an furnace block in the world
 
@@ -30,8 +32,6 @@ ___
         function get_model_state(self) -> dict
 
         function set_model_state(self, state: dict)
-
-        variable DEBUG_WORLD_BLOCK_STATES
 
         function on_player_interaction(self, player, button, modifiers, exact_hit) -> bool
 

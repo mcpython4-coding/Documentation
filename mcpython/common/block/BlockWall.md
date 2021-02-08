@@ -1,4 +1,4 @@
-***BlockWall.py - documentation - last updated on 21.1.2021 by uuk***
+***BlockWall.py - documentation - last updated on 8.2.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -12,6 +12,9 @@ ___
     class IWall extends mcpython.common.block.AbstractBlock.AbstractBlock
 
         variable DEFAULT_FACE_SOLID
+
+        variable DEBUG_WORLD_BLOCK_STATES
+            todo: up is not always allowed / depends on the configuration of the other stuff!
 
         function __init__(self)
 
@@ -50,9 +53,6 @@ ___
                 variable self.connections["up"]
 
         function set_model_state(self, state: dict)
-
-        static
-        function get_all_model_states() -> list
 
     class RedSandstoneWall extends IWall
 

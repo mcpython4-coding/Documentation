@@ -1,4 +1,4 @@
-***AbstractInterface.py - documentation - last updated on 27.1.2021 by uuk***
+***AbstractInterface.py - documentation - last updated on 8.2.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -32,22 +32,32 @@ ___
         Abstract class for chunks
         Belows follows an API description
         This API is STABLE, its implementation should NOT change dramatically if not needed
+        Implementations beside the default Chunk implementation may change signature and calling type (async/await).
+        They should try to be as close to the API as possible
         The following stuff MAY change in the near future:
-            - structure / existence of world-attribute
-            - structure / existence of positions_updated_since_last_save-attribute
+            - structure / existence of __world-attribute
+            - structure / existence of __positions_updated_since_last_save-attribute
             - existence of entities attribute
             - WIP of chunk_loaded_list attribute, together with add_chunk_load_ticket(...) and check_for_unload()
 
 
         function __init__(self)
 
-            variable self.positions_updated_since_last_save
+            variable self._positions_updated_since_last_save
 
-            variable self.entities
+            variable self.entities: typing.Set[typing.Any]
+                a set of entities in this chunk
+                todo: maybe use per-sector?
 
             variable self.chunk_loaded_list
                 inner API list for ChunkLoadTickets [WIP]
                 todo: use something better...
+
+        function clear_positions_updated_since_last_save(self)
+
+        function get_positions_updated_since_last_save(self)
+
+        function mark_position_dirty(self, position)
 
         function is_loaded(self) -> bool
 
@@ -100,15 +110,11 @@ ___
         function add_block(
                 self,
                 position: tuple,
-                block_name: typing.Union[
-                str, typing.Any
-                ],
+                block_name: typing.Union[str, typing.Any],
                 immediate=True,
                 block_update=True,
                 block_update_self=True,
-                lazy_setup: typing.Callable[
-                [typing.Any], None
-                ] = None,
+                lazy_setup: typing.Callable[[typing.Any], None] = None,
                 check_build_range=True,
                 block_state=None,
                 ) -> typing.Optional[typing.Any]:

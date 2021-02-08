@@ -1,4 +1,4 @@
-***BlockEnderChest.py - documentation - last updated on 21.1.2021 by uuk***
+***BlockEnderChest.py - documentation - last updated on 8.2.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under MIT-licence
@@ -24,6 +24,8 @@ ___
 
         variable ASSIGNED_TOOLS
 
+        variable DEBUG_WORLD_BLOCK_STATES
+
         function __init__(self)
 
             variable self.front_side
@@ -43,8 +45,6 @@ ___
         function set_model_state(self, state: dict)
 
         function get_model_state(self) -> dict
-
-        variable DEBUG_WORLD_BLOCK_STATES
 
         function get_view_bbox(self)
 
