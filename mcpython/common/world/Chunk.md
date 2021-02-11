@@ -1,4 +1,4 @@
-***Chunk.py - documentation - last updated on 9.2.2021 by uuk***
+***Chunk.py - documentation - last updated on 11.2.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -17,19 +17,6 @@ ___
 
 
         variable now - when is now?
-
-        variable attributes - an dict representing the default attributes of an chunk
-
-        static
-        function add_default_attribute(name: str, reference: typing.Any, default: typing.Any)
-            
-            will add an config entry into every new chunk instance
-            :param name: the name of the attribute
-            :param reference: the reference to use; unused internally
-            :param default: the default value
-            WARNING: content must be saved by owner, not auto-saved
-            todo: make class based
-
 
         function __init__(
                 self,
@@ -62,12 +49,6 @@ ___
             variable self.dirty
                 if the chunk was modified since last save
 
-                variable v
-
-                    variable v
-
-                variable self.attr[attr]
-
         function tick(self)
 
         function save(self)
@@ -86,20 +67,6 @@ ___
             :param x: the x coord
             :param z: the y coord
             :return: the y value at that position
-
-
-        function set_value(self, name: str, value)
-            
-            Will set an attribute of the chunk
-            :param name: the name to use
-            :param value: the value to use
-
-
-        function get_value(self, name: str)
-            
-            Will get the value of the given name
-            :param name: the name to get
-            :return: the data stored
 
 
         function draw(self)

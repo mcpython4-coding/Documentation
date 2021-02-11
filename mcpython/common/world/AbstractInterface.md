@@ -1,4 +1,4 @@
-***AbstractInterface.py - documentation - last updated on 9.2.2021 by uuk***
+***AbstractInterface.py - documentation - last updated on 11.2.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -54,6 +54,12 @@ ___
             variable self.chunk_loaded_list
                 inner API list for ChunkLoadTickets [WIP]
                 todo: use something better...
+
+            variable self.data_maps
+
+        function get_map(self, name: str)
+
+        function get_all_data_maps(self)
 
         function clear_positions_updated_since_last_save(self)
 
@@ -169,54 +175,34 @@ ___
             Checks the visual state of adjusting blocks to the given position
             todo: rename to something fitting!
 
+        
+        #     Client-only visual show function
+        #     Unused internally
+        #     todo: remove
+        #     use block.face_state.update(True) instead
 
-        function show_block(
-                self,
-                position: typing.Union[
-                typing.Tuple[int, int, int],
-                typing.Any,
-                ],
-                immediate: bool = True,
-                ):
-            
-            Client-only visual show function
-            Unused internally
-            todo: remove
-            use block.face_state.update(True) instead
+        
+        #     Client-only visual hide function
+        #     Unused internally
+        #     todo: remove
+        #     use block.face_state.hide_all() instead
 
 
-        function hide_block(
-                self,
-                position: typing.Union[
-                typing.Tuple[int, int, int],
-                typing.Any,
-                ],
-                immediate=True,
-                ):
-            
-            Client-only visual hide function
-            Unused internally
-            todo: remove
-            use block.face_state.hide_all() instead
-
-
-        function show(self, force=False)
+        function show(self)
             
             Shows the entire chunk
-            :param force: unused; todo: remove
 
 
-        function hide(self, force=False)
+        function hide(self)
             
             Hides an entire chunk
-            :param force: if to force-hide; todo: remove
+            :param force: if to force-hide
 
 
-        function update_visible_block(self, position: typing.Tuple[int, int, int], hide=True)
+        function update_visible_block(self, position: typing.Tuple[int, int, int])
             
             Calls Block.face_state.update()
             :param position: the position to update at
-            :param hide: not for usage; todo: remove
 
 
         function exposed(self, position: typing.Tuple[int, int, int])
@@ -225,18 +211,15 @@ ___
             :param position: the position to check
 
 
-        function update_visible(self, hide=True, immediate=False)
+        function update_visible(self, immediate=False)
             
             Updates the visible state of ALL blocks in the chunk
-            todo: merge with show()
-            :param hide: unused; todo: remove
             :param immediate: immediate execute tasks or scheduling for later?
 
 
         function hide_all(self, immediate=True)
             
             Hides all chunks in the chunk
-            todo: merge with hide()
             :param immediate: immediate execute tasks or scheduling for later?
 
 
@@ -265,10 +248,6 @@ ___
         function tick(self)
 
         function save(self)
-
-        function set_value(self, key: str, data)
-
-        function get_value(self, key: str)
 
         function __getitem__(self, item)
 

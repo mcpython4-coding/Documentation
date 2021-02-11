@@ -1,4 +1,4 @@
-***update_asset_source.py - documentation - last updated on 9.2.2021 by uuk***
+***update_asset_source.py - documentation - last updated on 11.2.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -19,7 +19,7 @@ ___
 
     variable r
 
-    variable target
+    variable target_dir
 
                 variable data
 

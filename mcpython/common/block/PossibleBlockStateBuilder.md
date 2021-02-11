@@ -1,4 +1,4 @@
-***DefaultHeightMapLayer.py - documentation - last updated on 11.2.2021 by uuk***
+***PossibleBlockStateBuilder.py - documentation - last updated on 9.2.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,23 +11,26 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    @shared.world_generation_handler class DefaultHeightMapLayer extends ILayer
+    class PossibleBlockStateBuilder
 
-        variable NAME
+        function __init__(self)
 
-        variable DEPENDS_ON
+            variable self.states
 
-        variable noise
+            variable self.combination_stack
 
-        variable noise.merger_config
+        function combinations(self)
 
-        static
-        function normalize_config(config: LayerConfig)
+        function add_comby(self, key: str, *states)
 
-        static
-        function add_generate_functions_to_chunk(cls, config: LayerConfig, reference)
+        function add_comby_bool(self, key: str)
 
-            variable noise_map
+        function add_comby_side(self, key: str)
 
-        static
-        function get_height_at(cls, config, chunk, x, z, v, biome_map) -> list
+        function add_comby_side_horizontal(self, key: str)
+
+        function build_combys(self)
+
+        function add_state(self, state)
+
+        function build(self)

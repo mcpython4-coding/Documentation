@@ -1,4 +1,4 @@
-***DefaultHeightMapLayer.py - documentation - last updated on 11.2.2021 by uuk***
+***HeightMap.py - documentation - last updated on 11.2.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,23 +11,16 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    @shared.world_generation_handler class DefaultHeightMapLayer extends ILayer
+    @shared.world_generation_handler class HeightMap extends mcpython.server.worldgen.map.AbstractChunkInfoMap.AbstractMap
 
         variable NAME
 
-        variable DEPENDS_ON
+        function __init__(self, chunk)
 
-        variable noise
+        function load_from_saves(self, data)
 
-        variable noise.merger_config
+        function dump_for_saves(self)
 
-        static
-        function normalize_config(config: LayerConfig)
+        function get_at_xz(self, x: int, z: int)
 
-        static
-        function add_generate_functions_to_chunk(cls, config: LayerConfig, reference)
-
-            variable noise_map
-
-        static
-        function get_height_at(cls, config, chunk, x, z, v, biome_map) -> list
+        function set_at_xz(self, x: int, z: int, height)

@@ -1,4 +1,4 @@
-***Chunk.py - documentation - last updated on 9.2.2021 by uuk***
+***Chunk.py - documentation - last updated on 11.2.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -277,7 +277,40 @@ ___
 
             variable positions
 
-                    variable biome_map
+                    variable data_map_data
+                    
+                "minecraft:landmass_map" in data["maps"]
+                and "biome" in data["maps"]
+                and "height" in data["maps"]
+                and sum([len(data["maps"][key]) for key in data["maps"]])
+                == len(data["maps"]) * 256
+            ):
+                try:
+                    chunk_instance.set_value(
+                        "minecraft:landmass_map",
+                        {
+                            pos: data["maps"]["landmass_palette"][
+                                data["maps"]["minecraft:landmass_map"][i]
+                            ]
+                            for i, pos in enumerate(positions)
+                        },
+                    )
+                    biome_map = {
+                        pos: data["maps"]["biome_palette"][data["maps"]["biome"][i]]
+                        for i, pos in enumerate(positions)
+                    }
+                    chunk_instance.set_value("minecraft:biome_map", biome_map)
+                    chunk_instance.set_value(
+                        "heightmap",
+                        {pos: data["maps"]["height"][i] for i, pos in enumerate(positions)},
+                    )
+                except IndexError:
+                    logger.print_exception(
+                        "[CHUNK][CORRUPTED] palette map exception in chunk '{}' in dimension '{}'".format(
+                            chunk, dimension
+                        ),
+                        "this might indicate an unsuccessful save of the world!",
+
 
                     variable entity_instance
 
@@ -324,39 +357,47 @@ ___
 
                 variable edata
 
-                variable biome_map
+                    variable cdata["maps"][data_map.NAME]
+                
+                    "minecraft:biome_map"
+                )  # read the biome map ...
+                # ... and use it as an template for the following
+                # todo: use something else more stable!
+                positions = list(
+                    biome_map.keys()
+                )  # an list of all (x, z) in the chunk, for sorting the arrays
+                positions.sort(key=lambda x: x[1])
+                positions.sort(key=lambda x: x[0])
+                landmass_map = chunk_instance.get_value("minecraft:landmass_map")
+                cdata["maps"]["minecraft:landmass_map"] = []
+                cdata["maps"]["landmass_palette"] = []
+                for pos in positions:
+                    mass = landmass_map[pos]
+                    if mass not in cdata["maps"]["landmass_palette"]:
+                        index = len(cdata["maps"]["landmass_palette"])
+                        cdata["maps"]["landmass_palette"].append(mass)
+                    else:
+                        index = cdata["maps"]["landmass_palette"].index(mass)
+                    cdata["maps"]["minecraft:landmass_map"].append(index)
+                # temperature_map = chunk_instance.get_value("minecraft:temperature_map")
+                # cdata["maps"]["temperature"] = [temperature_map[pos] for pos in positions]
+                biome_palette = []
+                biomes = []
+                for pos in positions:
+                    if biome_map[pos] not in biome_palette:
+                        index = len(biome_palette)
+                        biome_palette.append(biome_map[pos])
+                    else:
+                        index = biome_palette.index(biome_map[pos])
+                    biomes.append(index)
+                cdata["maps"]["biome"] = biomes
+                cdata["maps"][
+                    "biome_palette"
+                ] = biome_palette  # todo: move to global map of biomes
+                height_map = chunk_instance.get_value("heightmap")
+                cdata["maps"]["height"] = [
+                    height_map[pos] if pos in height_map else -1 for pos in positions
 
-                variable positions
-                    ... and use it as an template for the following
-                    todo: use something else more stable!
-
-                variable landmass_map
-
-                variable cdata["maps"]["minecraft:landmass_map"]
-
-                variable cdata["maps"]["landmass_palette"]
-
-                    variable mass
-
-                        variable index
-
-                        variable index
-
-                variable biome_palette
-
-                variable biomes
-
-                        variable index
-
-                        variable index
-
-                variable cdata["maps"]["biome"]
-
-                variable cdata["maps"][ - todo: move to global map of biomes
-
-                variable height_map
-
-                variable cdata["maps"]["height"]
 
             variable data[chunk] - dump the chunk into the region
 

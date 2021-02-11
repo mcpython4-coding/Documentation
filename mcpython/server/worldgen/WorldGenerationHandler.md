@@ -1,4 +1,4 @@
-***WorldGenerationHandler.py - documentation - last updated on 9.2.2021 by uuk***
+***WorldGenerationHandler.py - documentation - last updated on 11.2.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -37,6 +37,19 @@ ___
             variable self.feature_registry
                 the feature registry, replacing old dict stored here
                 has some fancier internals :-)
+
+            variable self.chunk_maps
+
+        function setup_chunk_maps(self, chunk)
+
+        function register_chunk_map(
+                self,
+                chunk_map: typing.Type[
+                mcpython.server.worldgen.map.AbstractChunkInfoMap.AbstractMap
+                ],
+                ):
+
+            variable self.chunk_maps[chunk_map.NAME]
 
         function serialize_chunk_generator_info(self) -> dict
 
@@ -200,3 +213,5 @@ ___
     function load_modes()
 
     function load_features()
+
+    function load_maps()
