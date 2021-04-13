@@ -1,4 +1,4 @@
-***math.py - documentation - last updated on 9.2.2021 by uuk***
+***math.py - documentation - last updated on 13.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -19,7 +19,7 @@ ___
             ny: float,
             nz: float,
             faces=(True, True, True, True, True, True),
-            ):
+            ) -> typing.Iterable[typing.List[float]]:
         
         Similar to cube_vertices, but will return it per-face instead of an whole array of data
         :param x: the x position
@@ -29,7 +29,7 @@ ___
         :param ny: the size in y direction
         :param nz: the size in z direction
         :param faces: which faces to generate
-        :return: an tuple of length 6 representing each face
+        :return: a tuple of length 6 representing each face
 
 
         variable top
@@ -55,6 +55,12 @@ ___
         :return: an tuple representing the texture coordinates
 
 
+            variable reindex
+
+            variable _positions
+
+            variable positions
+
     function tex_coordinates_better(
             *args, size=(32, 32), tex_region=None, rotation=(0, 0, 0, 0, 0, 0)
             ) -> list:
@@ -70,35 +76,27 @@ ___
 
             variable tex_region
 
-    function tex_coordinates_factor(fx, fy, tx, ty)
-
-    function normalize(position)
+    function normalize(position: typing.Tuple[float, float, float])
         
         Accepts `position` of arbitrary precision and returns the block
-        containing that position.
+        containing that position
+        Uses simply rounding on all components
         :param position: the position
-        :return block_position: the rounded position
+        :return: the rounded position
 
 
-    function normalize_ceil(position)
+    function normalize_ceil(position: typing.Tuple[float, float, float])
         
         Same as normalize(position), but with math.ceil() instead of round()
         :param position: the position
         :return: the ceil-ed position
 
 
-    function position_to_chunk(position)
+    function position_to_chunk(position: typing.Union[typing.Tuple[float, float, float], typing.Tuple[float, float]]) -> typing.Tuple[int, int]
         
         Returns a tuple representing the chunk for the given `position`.
-        :param position: the position
-        :return: the chunk
-
-
-    function position_to_chunk_unsafe(position)
-        
-        Returns a tuple representing the chunk for the given `position`.
-        :param position: the position
-        :return: the chunk
+        :param position: the position, as a two-tuple (x, z) or three-tuple (x, y, z)
+        :return: the chunk position, as (x, z)
 
 
     function topological_sort(items)
@@ -110,6 +108,7 @@ ___
         will cause topological_sort() to raise TopologicalSortFailure.
         An empty iterable (e.g. list, tuple, set, ...) produces no items but
         raises no exception.
+        todo: replace with native sorting system
 
 
         variable provided
@@ -131,7 +130,14 @@ ___
         :param origin: the origin to rotate around
         :param rotation: the rotation angle
         :return: the rotated point
+        todo: optimise!
 
+
+        variable rx
+
+        variable ry
+
+        variable rz
 
         variable nx
 
@@ -146,3 +152,7 @@ ___
         variable nz
 
     function product(iterable: typing.List[float])
+        
+        Similar to sum(), will use * instead of +
+        :param iterable: the iterable of add-ables
+        :return: the product of all elements
