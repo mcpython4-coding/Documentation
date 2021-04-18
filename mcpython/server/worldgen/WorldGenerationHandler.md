@@ -1,4 +1,4 @@
-***WorldGenerationHandler.py - documentation - last updated on 11.2.2021 by uuk***
+***WorldGenerationHandler.py - documentation - last updated on 18.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -57,7 +57,7 @@ ___
 
         function add_chunk_to_generation_list(
                 self,
-                chunk,
+                chunk: mcpython.common.world.AbstractInterface.IChunk,
                 dimension=None,
                 force_generate=False,
                 immediate=False,
@@ -134,29 +134,10 @@ ___
             :param chunk: the chunk, as an instance, or a tuple
             :param dimension: if tuple, specifies the dimension. When still None, the active dimension is used
             :param check_chunk: if the chunk should be checked if its generated or not
+            todo: add flag to override any data, not only add additional if the chunk exists
 
 
-                    variable chunk
-
-                    variable chunk
-
-                    variable chunk
-
-                    variable chunk
-
-            variable chunk.loaded
-
-            variable dimension
-
-            variable config
-
-            variable handler
-
-                variable layer
-
-            variable chunk.generated
-
-            variable chunk.loaded
+                variable chunk
 
         function get_current_config(
                 self, dimension: mcpython.common.world.AbstractInterface.IDimension

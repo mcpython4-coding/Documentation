@@ -1,4 +1,4 @@
-***Chat.py - documentation - last updated on 9.2.2021 by uuk***
+***Chat.py - documentation - last updated on 18.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -89,6 +89,16 @@ ___
                 variable self.active_index
 
                 variable self.CANCEL_INPUT
+
+                        variable self.executing_command_info
+
+                        variable self.executing_command_info.chat
+
+                        variable player
+
+                        variable self.executing_command_info.position
+
+                        variable self.executing_command_info.dimension
 
                 variable self.text
 

@@ -1,4 +1,4 @@
-***Dimension.py - documentation - last updated on 9.2.2021 by uuk***
+***Dimension.py - documentation - last updated on 18.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -78,6 +78,10 @@ ___
         
         Class holding a whole dimension
         Default cross-side implementation
+        todo: add network synced variant
+        todo: add save/load/delete methods
+        todo: better config system for world gen
+        todo: move rendering to separated structure only created on client
 
 
         variable BATCH_COUNT
@@ -99,6 +103,10 @@ ___
                 batches, see above for usages
 
             variable self.height_range
+
+        function get_world(self)
+
+        function entity_iterator(self) -> typing.Iterable
 
         function tick(self)
 

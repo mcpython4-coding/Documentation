@@ -1,4 +1,4 @@
-***Registry.py - documentation - last updated on 9.2.2021 by uuk***
+***Registry.py - documentation - last updated on 18.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -56,6 +56,8 @@ ___
 
             variable self.class_based
 
+            variable shared.registry.registries[name]
+
             variable self.dump_content_in_saves
 
         function __contains__(self, item)
@@ -80,6 +82,10 @@ ___
         function lock(self)
 
         function unlock(self)
+
+        function is_valid_key(self, key: str)
+
+        function get(self, key: str)
 
     class RegistryInjectionHolder
 
@@ -113,6 +119,10 @@ ___
         function async_register(self, mod: str, phase: str)
 
         function create_deferred(self, registry: str, mod_name: str)
+
+        function print_content(self, registry: str)
+
+                variable element
 
     variable shared.registry
 

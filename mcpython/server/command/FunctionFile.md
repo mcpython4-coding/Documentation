@@ -1,4 +1,4 @@
-***CommandLoot.py - documentation - last updated on 9.2.2021 by uuk***
+***FunctionFile.py - documentation - last updated on 18.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,28 +11,17 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    @shared.registry class CommandLoot extends mcpython.server.command.Command.Command
-        
-        command /loot
-
-
-        variable NAME
-
-        variable CANCEL_CLEAR - cancel the clear-execute
+    class FunctionFile
 
         static
-        function insert_command_syntax_holder(command_syntax_holder: CommandSyntaxHolder)
+        function from_file(cls, file: str) -> "FunctionFile"
 
-        static
-        function parse(cls, values: list, modes: list, info)
+            variable instance
 
-                        variable block
+                variable line
 
-                variable block
+        function __init__(self)
 
-                variable inventory
+            variable self.command_nodes
 
-                    variable block_instance
-
-        static
-        function get_help() -> list
+        function execute(self, info)

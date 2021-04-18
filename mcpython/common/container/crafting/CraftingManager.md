@@ -1,4 +1,4 @@
-***CraftingManager.py - documentation - last updated on 9.2.2021 by uuk***
+***CraftingManager.py - documentation - last updated on 18.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -12,6 +12,8 @@ ___
 
 
     class CraftingManager
+
+        variable RECIPE_VIEW_INVENTORY
 
         function __init__(self)
 
@@ -72,6 +74,12 @@ ___
 
             variable self.furnace_recipes
                 all smelting outputs sorted after ingredient
+
+        function show_to_player(self, recipe_name: str)
+
+            variable recipe
+
+                variable self.RECIPE_VIEW_INVENTORY
 
     variable shared.crafting_handler
 

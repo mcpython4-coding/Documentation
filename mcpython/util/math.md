@@ -1,4 +1,4 @@
-***math.py - documentation - last updated on 13.4.2021 by uuk***
+***math.py - documentation - last updated on 18.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -92,7 +92,11 @@ ___
         :return: the ceil-ed position
 
 
-    function position_to_chunk(position: typing.Union[typing.Tuple[float, float, float], typing.Tuple[float, float]]) -> typing.Tuple[int, int]
+    function position_to_chunk(
+            position: typing.Union[
+            typing.Tuple[float, float, float], typing.Tuple[float, float]
+            ]
+            ) -> typing.Tuple[int, int]:
         
         Returns a tuple representing the chunk for the given `position`.
         :param position: the position, as a two-tuple (x, z) or three-tuple (x, y, z)
@@ -156,3 +160,12 @@ ___
         Similar to sum(), will use * instead of +
         :param iterable: the iterable of add-ables
         :return: the product of all elements
+
+
+    function vector_offset(
+            vector: typing.Tuple[float, ...], base: typing.Tuple[float, ...]
+            ) -> typing.Tuple[float, ...]:
+
+    function vector_negate(vector: typing.Tuple[float, ...]) -> typing.Tuple[float, ...]
+
+    function sort_components(a: typing.Tuple[float, ...], b: typing.Tuple[float, ...])

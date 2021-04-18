@@ -1,4 +1,4 @@
-***PlayerEntity.py - documentation - last updated on 9.2.2021 by uuk***
+***PlayerEntity.py - documentation - last updated on 18.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -92,7 +92,8 @@ ___
 
         function set_gamemode(self, gamemode: typing.Union[int, str])
             
-            Sets the player gamemodes and the assigned properties
+            Sets the player game-modes and the assigned properties
+            todo: something better here?
 
 
                     variable self.flying
@@ -108,6 +109,8 @@ ___
         function add_xp(self, xp: int)
 
         function add_xp_level(self, xp_levels: int)
+
+        function clear_xp(self)
 
         function pick_up_item(
                 self,

@@ -1,4 +1,4 @@
-***Chunk.py - documentation - last updated on 11.2.2021 by uuk***
+***Chunk.py - documentation - last updated on 18.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -48,6 +48,8 @@ ___
 
             variable self.dirty
                 if the chunk was modified since last save
+
+        function entity_iterator(self) -> typing.Iterable
 
         function tick(self)
 

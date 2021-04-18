@@ -1,4 +1,4 @@
-***AbstractInterface.py - documentation - last updated on 11.2.2021 by uuk***
+***AbstractInterface.py - documentation - last updated on 18.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -29,7 +29,46 @@ ___
 
         function __iter__(self)
 
-    class IChunk extends ABC
+    class ISupportWorldInterface extends ABC
+        
+        Abstract intermediate common to chunk & dimension; Defines interaction with underlying world
+
+
+        function add_block(
+                self,
+                position: tuple,
+                block_name: typing.Union[str, typing.Any],
+                immediate=True,
+                block_update=True,
+                block_update_self=True,
+                lazy_setup: typing.Callable[[typing.Any], None] = None,
+                check_build_range=True,
+                block_state=None,
+                ) -> typing.Optional[typing.Any]:
+
+        function remove_block(
+                self,
+                position: typing.Union[
+                typing.Tuple[int, int, int],
+                typing.Any,
+                ],
+                immediate: bool = True,
+                block_update: bool = True,
+                block_update_self: bool = True,
+                reason=None,
+                ):
+
+        function check_neighbors(self, position: typing.Tuple[int, int, int])
+
+        function update_visible_block(self, position: typing.Tuple[int, int, int])
+
+        function exposed(self, position: typing.Tuple[int, int, int])
+
+        function get_block(
+                self, position: typing.Tuple[int, int, int], none_if_str=False
+                ) -> typing.Union[typing.Any, str, None]:
+
+    class IChunk extends ISupportWorldInterface,  ABC
         
         Abstract class for chunks
         Belows follows an API description
@@ -93,8 +132,15 @@ ___
 
 
         function get_dimension(self) -> "IDimension"
+            
+            Getter for the dimension of the chunk
+
 
         function get_position(self) -> typing.Tuple[int, int]
+            
+            Getter for the chunk position
+            :return:
+
 
         function get_maximum_y_coordinate_from_generation(self, x: int, z: int) -> int
             
@@ -175,18 +221,6 @@ ___
             Checks the visual state of adjusting blocks to the given position
             todo: rename to something fitting!
 
-        
-        #     Client-only visual show function
-        #     Unused internally
-        #     todo: remove
-        #     use block.face_state.update(True) instead
-
-        
-        #     Client-only visual hide function
-        #     Unused internally
-        #     todo: remove
-        #     use block.face_state.hide_all() instead
-
 
         function show(self)
             
@@ -263,7 +297,9 @@ ___
 
         function __hash__(self)
 
-    class IDimension extends ABC
+        function entity_iterator(self) -> typing.Iterable
+
+    class IDimension extends ISupportWorldInterface,  ABC
 
         function __init__(self)
 
@@ -328,6 +364,10 @@ ___
 
         function tick(self)
 
+        function entity_iterator(self) -> typing.Iterable
+
+        function get_world(self) -> "IDimension"
+
     class IWorld extends ABC
 
         function get_dimension_names(self) -> typing.Iterable[str]
@@ -337,6 +377,8 @@ ___
                 ):
 
         function get_active_player(self, create: bool = True) -> typing.Optional
+
+        function player_iterator(self) -> typing.Iterable
 
         function reset_config(self)
 
@@ -380,3 +422,5 @@ ___
         function cleanup(self, remove_dims=False, filename=None)
 
         function setup_by_filename(self, filename: str)
+
+        function entity_iterator(self) -> typing.Iterable

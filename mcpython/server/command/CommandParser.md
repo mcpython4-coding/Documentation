@@ -1,4 +1,4 @@
-***CommandParser.py - documentation - last updated on 9.2.2021 by uuk***
+***CommandParser.py - documentation - last updated on 18.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,112 +11,67 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class ParsingCommandInfo
-        
-        Info which stores information about the active executed command
-        Shared across commands wherever possible
-        todo: add reset system, so we don't need to copy every time
+    class CommandExecutionEnvironment
 
+        function __init__(
+                self,
+                position: typing.Tuple[float, float, float] = None,
+                dimension: IDimension = None,
+                this=None,
+                ):
 
-        function __init__(self, entity=None, position=None, dimension=None, chat=None)
-
-            variable self.entity
+            variable dimension: IDimension
 
             variable self.position
 
             variable self.dimension
 
-            variable self.local_variable_stack
-                for the future... todo: implement this
-                this will hold local variables
-                /execute store target-able and /execute set <name> <value> able
-                /execute if/unless var <name> defined
-                /execute if/unless var <name> >/</>=/<=/==
-                /execute with <name> copied <var name>
-                /execute with <name> static <value>
-                /variable <name> store result <expression>
-                /variable <name> store position x/y/z [<selector>/<position>]
-                /variable operate <target var> <expression name> <... args>
-                /return <value or variable>
-                /variable <name> delete
-                /variable <name> copy [to/from (default)] <var>
-                /function <name> [store <var name>] ...: <param name> copied <var name> / static <value>
-                access-able via something like <var name> in commands (-> custom entry parser!)
+            variable self.this
 
-        function copy(self, include_variables=False) -> "ParsingCommandInfo"
-            
-            :param include_variables: if the local variable table should be copied
-            :return: a copy of itself
+            variable self.chat
 
+        function get_dimension(self)
 
-                variable instance.local_variable_stack
+        function with_dimension(self, dimension)
 
-        function __str__(self)
+        function get_position(self)
+
+        function with_position(self, position)
+
+        function get_this(self)
+
+        function with_this(self, this)
+
+        function copy(self)
 
     class CommandParser
-        
-        Main class for parsing an command
-        todo: can we pre-parse data into python text and eval it? (If we do, we must make it very secure!)
-
 
         function __init__(self)
 
-            variable self.command_parsing - start -> (Command, ParseBridge)
+        function run(self, string: str, env: CommandExecutionEnvironment)
 
-        function add_command(self, command: mcpython.server.command.Command)
+        function run_function(self, name: str, info=None)
+
+        function parse(self, string: str)
+
+            variable command
+
+                variable node
+
+        function register_command(self, command: mcpython.server.command.Builder.Command)
             
-            register an command
-            :param command: the command to add
+            Helper method for registering a command into the system
+            :param command: the command instance
 
 
-                variable self.command_parsing[entry]
+            variable self.commands[command.name.removeprefix("/")]
 
-        function parse(self, command: str, info=None)
-            
-            Parse an command
-            :param command: the command to parse
-            :param info: the info to use. can be None if one should be generated
-            todo: check permission
+                variable instance
 
-
-        function _convert_to_values(
-                self, command, syntax, info, index=1
-                ) -> typing.Tuple[
-                typing.Optional[typing.List],
-                typing.Optional[typing.List[typing.Tuple[typing.Any, int]]],
-                ]:
-                """
-                Parse command into values that can be than executed
-                :param command: the command to parse
-                :param syntax: the command info to use
-                :param info: the info to use
-                :param index: the index to start on
-                :return: a tuple of the parsed values and the nodes iterated over, as (Node, node index)
-                """
-                if len(command) == 1 and not any(
-                [
-                subcommand.mode
-                == mcpython.server.command.Command.CommandArgumentMode.OPTIONAL
-                for subcommand in syntax.nodes
-                ]
-                ):
-            
-            Parse command into values that can be than executed
-            :param command: the command to parse
-            :param syntax: the command info to use
-            :param info: the info to use
-            :param index: the index to start on
-            :return: a tuple of the parsed values and the nodes iterated over, as (Node, node index)
-
-
-            variable active_entry
-
-            variable values
-
-            variable array
-
-            variable command_registry
-
-                        variable active_entry
+                variable instance.following_nodes
 
     variable shared.command_parser
+
+    function load_commands()
+
+        variable handler: CommandParser

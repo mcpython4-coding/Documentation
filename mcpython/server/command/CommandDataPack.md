@@ -1,4 +1,4 @@
-***CommandDataPack.py - documentation - last updated on 9.2.2021 by uuk***
+***CommandDatapack.py - documentation - last updated on 18.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,18 +11,4 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    @shared.registry class CommandDatapack extends mcpython.server.command.Command.Command
-        
-        Class holding the /datapack command
-
-
-        variable NAME
-
-        static
-        function insert_command_syntax_holder(command_syntax_holder: CommandSyntaxHolder)
-
-        static
-        function parse(cls, values: list, modes: list, info)
-
-        static
-        function get_help() -> list
+    variable datapack

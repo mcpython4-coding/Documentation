@@ -1,4 +1,4 @@
-***DataPack.py - documentation - last updated on 9.2.2021 by uuk***
+***DataPack.py - documentation - last updated on 18.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -37,7 +37,11 @@ ___
 
         function __init__(self)
 
-            variable self.loaded_data_packs
+            variable self.loaded_data_packs: typing.List["DataPack"]
+
+        function enable_pack(self, pack: str)
+
+        function disable_pack(self, pack: str)
 
         function schedule_datapack_load(self)
             
@@ -74,7 +78,7 @@ ___
         function try_call_function(
                 self,
                 name: str,
-                info: mcpython.server.command.CommandParser.ParsingCommandInfo = None,
+                info,
                 ):
             
             Will try to invoke a function in a datapack
@@ -82,8 +86,6 @@ ___
             :param info: the info-object to use; when None, one is constructed for this
             WARNING: will only invoke ONE function/tag from the datapacks, not all
 
-
-                variable info
 
                     variable tag
 

@@ -1,4 +1,4 @@
-***World.py - documentation - last updated on 9.2.2021 by uuk***
+***World.py - documentation - last updated on 18.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -51,6 +51,10 @@ ___
             :param create: if the player should be created or not
             :return: the player instance or None if no player is set
 
+
+        function player_iterator(self) -> typing.Iterable
+
+        function entity_iterator(self) -> typing.Iterable
 
         function reset_config(self)
             

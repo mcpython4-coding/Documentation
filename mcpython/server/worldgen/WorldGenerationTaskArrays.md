@@ -1,4 +1,4 @@
-***WorldGenerationTaskArrays.py - documentation - last updated on 9.2.2021 by uuk***
+***WorldGenerationTaskArrays.py - documentation - last updated on 18.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -150,15 +150,23 @@ ___
             todo: add some better sorting function!
 
 
+                variable start
+
+        function process_chunk(
+                self, chunk: mcpython.common.world.AbstractInterface.IChunk, timer=None
+                ):
+
+            variable start
+
+            variable flag
+
                 variable flag
 
-                    variable flag
+                variable chunk.generated
 
-                    variable chunk.generated
+                variable chunk.finished
 
-                    variable chunk.finished
-
-                    variable chunk.loaded
+                variable chunk.loaded
 
         function _process_0_array(
                 self, chunk: mcpython.common.world.AbstractInterface.IChunk
