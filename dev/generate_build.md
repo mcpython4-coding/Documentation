@@ -1,4 +1,4 @@
-***generate_build.py - documentation - last updated on 9.2.2021 by uuk***
+***generate_build.py - documentation - last updated on 25.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -321,6 +321,18 @@ ___
     class CustomCodePatcher extends AbstractBuildStage
 
         function execute_on(self, view: ProjectView, build_output_dir: str, build_manager)
+    
+        [
+            sys.executable,
+            home + "/__main__.py",
+            "--data-gen",
+            "--exit-after-data-gen",
+            "--no-window",
+        ],
+        stdout=sys.stdout,
+
+
+                    variable "IS_DEV
 
     variable PY_FILE_FILTER
 
