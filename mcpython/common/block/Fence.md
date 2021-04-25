@@ -1,4 +1,4 @@
-***BlockFence.py - documentation - last updated on 25.4.2021 by uuk***
+***Fence.py - documentation - last updated on 25.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,7 +11,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class IFence extends mcpython.common.block.AbstractBlock.AbstractBlock,  ABC
+    class AbstractFence extends mcpython.common.block.AbstractBlock.AbstractBlock,  ABC
         
         Abstract base class for every fence-like block
 
@@ -64,7 +64,7 @@ ___
         variable BLOCK_ITEM_GENERATOR_STATE
             the state the block item generator should use, this kinda looks nice
 
-    class IFenceGate extends mcpython.common.block.AbstractBlock.AbstractBlock,  ABC
+    class AbstractFenceGate extends mcpython.common.block.AbstractBlock.AbstractBlock,  ABC
         
         todo: implement behaviour
 
@@ -89,50 +89,51 @@ ___
 
         variable BLOCK_ITEM_GENERATOR_STATE
 
-    class IWoodenFence extends IFence
+    class AbstractWoodenFence extends AbstractFence
         
         Base class for every wooden fence; used to set the wooden fence flag for all children at ones
 
 
         variable FENCE_TYPE_NAME
 
-    class BirchFence extends IWoodenFence
+    class BirchFence extends AbstractWoodenFence
 
         variable NAME
 
-    class DarkOakFence extends IWoodenFence
+    class DarkOakFence extends AbstractWoodenFence
 
         variable NAME
 
-    class JungleFence extends IWoodenFence
+    class JungleFence extends AbstractWoodenFence
 
         variable NAME
 
-    class OakFence extends IWoodenFence
+    class OakFence extends AbstractWoodenFence
 
         variable NAME
 
-    class SpruceFence extends IWoodenFence
+    class SpruceFence extends AbstractWoodenFence
 
         variable NAME
 
-    class CrimsonFence extends IFence
+    class AcaciaFence extends AbstractWoodenFence
+
+        variable NAME
+
+    class CrimsonFence extends AbstractFence
 
         variable FENCE_TYPE_NAME
 
         variable NAME
 
-    class WarpedFence extends IFence
+    class WarpedFence extends AbstractFence
 
         variable FENCE_TYPE_NAME
 
         variable NAME
 
-    class NetherBrickFence extends IFence
+    class NetherBrickFence extends AbstractFence
 
         variable NAME
 
         variable FENCE_TYPE_NAME
-
-    @shared.mod_loader("minecraft", "stage:block:load")
-    function load()

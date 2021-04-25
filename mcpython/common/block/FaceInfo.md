@@ -1,4 +1,4 @@
-***BlockFaceState.py - documentation - last updated on 9.2.2021 by uuk***
+***FaceInfo.py - documentation - last updated on 25.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,7 +11,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class BlockFaceState
+    class FaceInfo
         
         Class for face state of the block
         todo: merge data into AbstractBlock & make this a static class

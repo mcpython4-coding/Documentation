@@ -1,4 +1,4 @@
-***BlockBarrel.py - documentation - last updated on 9.2.2021 by uuk***
+***EnderChest.py - documentation - last updated on 25.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,29 +11,30 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class BlockBarrel extends AbstractBlock.AbstractBlock
+    class EnderChest extends AbstractBlock.AbstractBlock
         
-        class for the Barrel-Block
+        class for the ender chest
+        todo: check if it can be opened like in chests
+        todo: fix renderer
 
 
-        variable NAME: str - the name of the block
+        variable NAME
 
-        variable DEBUG_WORLD_BLOCK_STATES
+        variable DEFAULT_FACE_SOLID
 
         variable HARDNESS
 
+        variable MINIMUM_TOOL_LEVEL
+
         variable ASSIGNED_TOOLS
 
+        variable DEBUG_WORLD_BLOCK_STATES
+
         function __init__(self)
-            
-            Creates an new BlockBarrel-class
 
-
-            variable self.opened: bool - if the barrel is open
+            variable self.front_side
 
             variable self.inventory
-
-            variable self.facing: str - the direction the block faces to
 
         function on_block_added(self)
 
@@ -43,18 +44,16 @@ ___
 
         function get_inventories(self)
 
-        function get_provided_slot_lists(self, side)
+        function get_provided_slots(self, side)
 
         function set_model_state(self, state: dict)
 
+                    variable self.front_side
+
+                    variable self.front_side
+
         function get_model_state(self) -> dict
 
-        static
-        function set_block_data(cls, item, block)
-
-        function on_request_item_for_block(self, itemstack)
+        function get_view_bbox(self)
 
         function on_block_remove(self, reason)
-
-    @shared.mod_loader("minecraft", "stage:block:load")
-    function load()

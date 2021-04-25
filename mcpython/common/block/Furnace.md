@@ -1,4 +1,4 @@
-***BlockFurnace.py - documentation - last updated on 9.2.2021 by uuk***
+***Furnace.py - documentation - last updated on 25.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,7 +11,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class BlockFurnace extends  mcpython.common.block.IHorizontalOrientableBlock.IHorizontalOrientableBlock 
+    class Furnace extends  mcpython.common.block.IHorizontalOrientableBlock.IHorizontalOrientableBlock 
         
         class for the furnace block
 
@@ -43,17 +43,14 @@ ___
 
         function on_block_remove(self, reason)
 
-    class BlastFurnace extends BlockFurnace
+    class BlastFurnace extends Furnace
 
         variable NAME: str
 
         variable FURNACE_RECIPES: list
 
-    class Smoker extends BlockFurnace
+    class Smoker extends Furnace
 
         variable NAME: str
 
         variable FURNACE_RECIPES: list
-
-    @shared.mod_loader("minecraft", "stage:block:load")
-    function load()

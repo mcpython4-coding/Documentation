@@ -1,4 +1,4 @@
-***BlockGrassBlock.py - documentation - last updated on 9.2.2021 by uuk***
+***ItemManager.py - documentation - last updated on 25.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,28 +11,20 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class BlockGrassBlock extends AbstractBlock.AbstractBlock
-        
-        Class for the grass block
+    variable COLLECTED_ITEMS
 
+    variable tag_holder
 
-        variable NAME
+    variable ITEM_ATLAS
 
-        variable HARDNESS
+    function build()
 
-        variable BLAST_RESISTANCE
+    function load_data()
 
-        variable ASSIGNED_TOOLS
+    function register_item(registry, cls)
 
-        variable ENABLE_RANDOM_TICKS
+    variable items
 
-        function get_model_state(self) -> dict
+    variable items.item_index_table
 
-        function on_random_update(self)
-
-                variable instance
-
-                variable instance
-
-    @shared.mod_loader("minecraft", "stage:block:load")
-    function load()
+    function load_items()

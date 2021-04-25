@@ -1,4 +1,4 @@
-***BlockDirt.py - documentation - last updated on 9.2.2021 by uuk***
+***Dirt.py - documentation - last updated on 25.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,7 +11,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class BlockDirt extends AbstractBlock.AbstractBlock
+    class Dirt extends AbstractBlock.AbstractBlock
         
         Base class for dirt
         todo: implement real -> grass convert
@@ -32,6 +32,3 @@ ___
                             variable position
 
                             variable instance
-
-    @shared.mod_loader("minecraft", "stage:block:load")
-    function load()

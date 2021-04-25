@@ -1,4 +1,4 @@
-***BlockCoralBlock.py - documentation - last updated on 9.2.2021 by uuk***
+***CoralBlocks.py - documentation - last updated on 25.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -55,5 +55,4 @@ ___
 
         variable NAME: str
 
-    @shared.mod_loader("minecraft", "stage:block:load")
     function load()

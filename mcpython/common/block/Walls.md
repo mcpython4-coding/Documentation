@@ -1,4 +1,4 @@
-***BlockWall.py - documentation - last updated on 9.2.2021 by uuk***
+***Walls.py - documentation - last updated on 25.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,7 +11,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class IWall extends mcpython.common.block.AbstractBlock.AbstractBlock
+    class AbstractWall extends mcpython.common.block.AbstractBlock.AbstractBlock,  ABC
 
         variable DEFAULT_FACE_SOLID
 
@@ -62,9 +62,8 @@ ___
         For internal usage only!
 
 
-        class GeneratedWall extends IWall
+        class GeneratedWall extends AbstractWall
 
             variable NAME
 
-    @shared.mod_loader("minecraft", "stage:block:load")
     function load()

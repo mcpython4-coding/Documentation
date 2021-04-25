@@ -1,4 +1,4 @@
-***BlockCarpet.py - documentation - last updated on 9.2.2021 by uuk***
+***Carpet.py - documentation - last updated on 25.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -13,7 +13,7 @@ ___
 
     variable carpet_bbox
 
-    class ICarpet extends mcpython.common.block.AbstractBlock.AbstractBlock
+    class AbstractCarpet extends mcpython.common.block.AbstractBlock.AbstractBlock,  ABC
         
         base class for every carpet
 
@@ -27,16 +27,15 @@ ___
         static
         function modify_block_item(cls, factory)
 
-    function create_carpet(carpet_color: str)
+    function create_carpet_block(carpet_color: str)
         
         generator function for carpets. Will create an new class for an carpet
         :param carpet_color: the color name of the carpet
         :return: the generated class
 
 
-        @shared.registry class Carpet extends ICarpet
+        @shared.registry class Carpet extends AbstractCarpet
 
             variable NAME: str - the name of the block
 
-    @shared.mod_loader("minecraft", "stage:block:load")
     function load()

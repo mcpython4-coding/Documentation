@@ -112,7 +112,7 @@ ___
 
             variable self.dimension - dimension instance
 
-            variable self.face_state: mcpython.common.block.BlockFaceState.BlockFaceState
+            variable self.face_state: mcpython.common.block.FaceInfo.FaceInfo
 
             variable self.block_state: typing.Optional[int]
 

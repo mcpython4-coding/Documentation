@@ -1,4 +1,4 @@
-***IAllDirectionOrientableBlock.py - documentation - last updated on 25.4.2021 by uuk***
+***CraftingTable.py - documentation - last updated on 25.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,19 +11,24 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class IAllDirectionOrientableBlock extends mcpython.common.block.AbstractBlock.AbstractBlock
+    class CraftingTable extends AbstractBlock.AbstractBlock
+        
+        Class for the crafting table
 
-        variable MODEL_FACE_NAME
 
-        function __init__(self)
+        variable NAME: str
 
-            variable self.face
+        variable HARDNESS
 
-        function on_block_added(self)
+        variable ASSIGNED_TOOLS
 
-        function get_model_state(self) -> dict
+        function on_player_interaction(
+                self, player, button: int, modifiers: int, hit_position: tuple
+                ):
 
-        function set_model_state(self, state: dict)
+        function get_inventories(self)
+
+        function on_block_remove(self, reason)
 
         static
-        function get_all_model_states(cls) -> list
+        function modify_block_item(cls, factory)
