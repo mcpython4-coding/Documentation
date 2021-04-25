@@ -1,4 +1,4 @@
-***BlockFactory.py - documentation - last updated on 9.2.2021 by uuk***
+***BlockFactory.py - documentation - last updated on 25.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -20,6 +20,10 @@ ___
     function set_slab(instance: FactoryBuilder.IFactory)
 
     function set_wall(instance: FactoryBuilder.IFactory)
+
+    function set_fence(instance: FactoryBuilder.IFactory, *types: str)
+
+    function set_fence_gate(instance: FactoryBuilder.IFactory)
 
     function set_horizontal_orientable(instance: FactoryBuilder.IFactory)
 
@@ -90,6 +94,8 @@ ___
 
             variable DEBUG_WORLD_BLOCK_STATES
 
+            variable FENCE_TYPE_NAME
+
     function build_class_default_state(
             cls: typing.Type[mcpython.common.block.AbstractBlock.AbstractBlock],
             instance: FactoryBuilder.IFactory,
@@ -146,7 +152,7 @@ ___
             function get_collision_bbox(self)
 
             function on_request_item_for_block(
-                    self, itemstack: mcpython.common.container.ItemStack.ItemStack
+                    self, itemstack: mcpython.common.container.ResourceStack.ItemStack
                     ):
 
             function inject_redstone_power(self, side: mcpython.util.enums.EnumSide, level: int)

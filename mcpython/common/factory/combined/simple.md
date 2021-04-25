@@ -1,4 +1,4 @@
-***simple.py - documentation - last updated on 9.2.2021 by uuk***
+***simple.py - documentation - last updated on 25.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -210,6 +210,8 @@ ___
                         variable data
 
         function create_wall(self, suffix=None, texture=None, color=None, **consumers)
+
+        function create_fence(self, suffix=None, texture=None, color=None, **consumers)
 
         function create_multipart_block(
                 self,

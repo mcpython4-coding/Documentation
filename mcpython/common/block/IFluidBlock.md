@@ -1,4 +1,4 @@
-***TagGenerator.py - documentation - last updated on 25.4.2021 by uuk***
+***IFluidBlock.py - documentation - last updated on 25.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,20 +11,20 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class TagGenerator extends IDataGenerator
+    class IFluidBlock extends mcpython.common.block.AbstractBlock.AbstractBlock,  ABC
+        
+        Base class for fluid blocks
+        Users need to simply extend this and set the UNDERLYING_FLUID property to their fluid instance
+        todo: implement source / flow logic
+        todo: implement renderer
 
-        function __init__(self, group: str, override=False)
 
-            variable self.group
+        variable UNDERLYING_FLUID
 
-            variable self.override
+        function __init__(self)
 
-            variable self.affected
+            variable self.is_flowing
 
-        function add_affected(self, *affected)
+            variable self.flow_direction
 
-        function dump(self, generator: "DataGeneratorInstance")
-
-        function get_default_location(self, generator: "DataGeneratorInstance", name: str)
-
-        function also(self, group: str, generator: DataGeneratorInstance, name: str)
+            variable self.height

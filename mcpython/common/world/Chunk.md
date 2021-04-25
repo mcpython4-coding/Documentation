@@ -1,4 +1,4 @@
-***Chunk.py - documentation - last updated on 18.4.2021 by uuk***
+***Chunk.py - documentation - last updated on 25.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -50,30 +50,50 @@ ___
                 if the chunk was modified since last save
 
         function entity_iterator(self) -> typing.Iterable
+            
+            Returns an iterable of entities in this chunk
+
 
         function tick(self)
+            
+            General chunk tick
+            todo: move random ticks & entity ticks here
+
 
         function save(self)
+            
+            Wrapper function for saving this file
+            Wraps SaveFile.dump around this chunk
+
 
         function as_shareable(self) -> mcpython.common.world.AbstractInterface.IChunk
 
         function mark_dirty(self)
 
-        function get_dimension(self)
+        function get_dimension(self) -> mcpython.common.world.AbstractInterface.IDimension
 
-        function get_position(self)
+        function get_position(self) -> typing.Tuple[int, int]
 
-        function get_maximum_y_coordinate_from_generation(self, x: int, z: int) -> int
+        function get_maximum_y_coordinate_from_generation(
+                self, x: int, z: int, default=None
+                ) -> int:
             
-            Helper function for getting the y height at the given xz generation based on the generation code
+            Helper function for getting the y height at the given xz generation based on the generation code, by looking
+                up the internal map
             :param x: the x coord
             :param z: the y coord
+            :param default: the default value when no value is set
             :return: the y value at that position
 
+
+            variable height_map
 
         function draw(self)
             
             Will draw the chunk with the content for it
+            Draws all entities
+            todo: for this, add a batch
+            will schedule a chunk load from saves when needed
 
 
         variable ALL_FACES_EXPOSED
@@ -107,7 +127,7 @@ ___
 
         function is_position_blocked(self, position: typing.Tuple[float, float, float]) -> bool
             
-            will return if at an given position is an block or an block is scheduled
+            Will return if at an given position is a block or a block is scheduled [e.g. by world generation]
             :param position: the position to check
             :return: if there is an block
 
@@ -122,6 +142,7 @@ ___
                 lazy_setup: typing.Callable[[Block.AbstractBlock], None] = None,
                 check_build_range=True,
                 block_state=None,
+                replace_existing=True,
                 ):
             
             Adds an block to the given position
@@ -133,6 +154,7 @@ ___
             :param lazy_setup: an callable for setting up the block instance
             :param check_build_range: if the build limits should be checked
             :param block_state: the block state to create in, or None if not set
+            :param replace_existing: if existing blocks should be replaced
             :return: the block instance or None if it could not be created
 
 
@@ -159,7 +181,7 @@ ___
                 self, position: typing.Tuple[int, int, int], include_itself=True
                 ):
             
-            will call to the neighbor blocks an block update
+            Will call to the neighbor blocks an block update
             :param position: the position in the center
             :param include_itself: if the block itself should be updated
 
@@ -193,6 +215,8 @@ ___
             is added or removed.
             :param position: the position as the center
 
+
+                variable block
 
         function show_block(
                 self,

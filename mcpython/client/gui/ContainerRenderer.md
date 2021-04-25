@@ -1,4 +1,4 @@
-***ContainerRenderer.py - documentation - last updated on 9.2.2021 by uuk***
+***ContainerRenderer.py - documentation - last updated on 25.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -46,6 +46,13 @@ ___
             variable self.slots
 
             variable self.config
+                todo: add special class holding this information with serializer for it
+
+            variable self.custom_name - the custom name; If set, rendered in the inventory
+
+            variable self.custom_name_label
+
+            variable self.custom_name_label.anchor_y
 
         function reload_config(self)
             

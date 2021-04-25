@@ -1,4 +1,4 @@
-***TagGenerator.py - documentation - last updated on 25.4.2021 by uuk***
+***WaterFluid.py - documentation - last updated on 25.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,20 +11,10 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class TagGenerator extends IDataGenerator
+    class WaterFluid extends mcpython.common.fluid.AbstractFluid.AbstractFluid
 
-        function __init__(self, group: str, override=False)
+        variable NAME
 
-            variable self.group
+        variable TEXTURE_FLOW: str
 
-            variable self.override
-
-            variable self.affected
-
-        function add_affected(self, *affected)
-
-        function dump(self, generator: "DataGeneratorInstance")
-
-        function get_default_location(self, generator: "DataGeneratorInstance", name: str)
-
-        function also(self, group: str, generator: DataGeneratorInstance, name: str)
+        variable TEXTURE_STILL: str

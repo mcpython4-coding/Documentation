@@ -1,4 +1,4 @@
-***BoxModel.py - documentation - last updated on 9.2.2021 by uuk***
+***BoxModel.py - documentation - last updated on 25.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -27,13 +27,13 @@ ___
         function __init__(self, data: dict, model=None, flip_y=True)
 
             variable self.atlas
-                todo: move most of the code here to the build function
+                todo: move most of the code here to the build function / decode function
 
             variable self.model
 
             variable self.data
 
-            variable self.boxposition
+            variable self.box_position
 
             variable self.box_size
 
@@ -51,7 +51,7 @@ ___
 
             variable self.texture_region_rotate
 
-                variable face_name
+                variable name: str
 
                     variable f
 
@@ -73,9 +73,9 @@ ___
 
             variable self.rotation
 
-            variable self.rotation_core
+            variable self.rotation_center
 
-                    variable self.rotation_core
+                    variable self.rotation_center
 
                 variable rot
 
@@ -98,6 +98,11 @@ ___
             variable self.raw_vertices
 
         function build(self, atlas=None)
+            
+            "Builds" the model by preparing internal data like preparing the texture atlas, the texture coordinates
+
+
+                variable atlas
 
             variable self.tex_data
 
@@ -107,7 +112,7 @@ ___
 
         function get_vertex_variant(self, rotation: tuple, position: tuple) -> list
             
-            implementation to get the vertex data for an rotated block
+            Implementation to get the vertex data for a rotated block
             :param rotation: the rotation to use
             :param position: the position of the vertex cube
 
@@ -144,9 +149,16 @@ ___
 
                 variable batch
 
-        function add_to_batch(self, position, batch, rotation, active_faces=None, uv_lock=False)
+        function add_to_batch(
+                self,
+                position: typing.Tuple[float, float, float],
+                batch,
+                rotation,
+                active_faces=None,
+                uv_lock=False,
+                ):
             
-            adds the box model to the batch
+            Adds the box model to the batch
             :param position: the position based on
             :param batch: the batches to select from
             :param rotation: the rotation to use
@@ -156,9 +168,17 @@ ___
             todo: make active_faces an dict of faces -> state, not an order-defined list
 
 
+            variable collected_data
+
         function draw_prepared_data(self, collected_data)
 
-        function draw(self, position, rotation, active_faces=None, uv_lock=False)
+        function draw(
+                self,
+                position: typing.Tuple[float, float, float],
+                rotation,
+                active_faces=None,
+                uv_lock=False,
+                ):
             
             draws the BoxModel direct into the world
             WARNING: use batches for better performance
@@ -167,6 +187,8 @@ ___
             :param uv_lock: if the uv's should be locked in place or not
             :param active_faces: which faces to draw
 
+
+            variable collected_data
 
         function add_face_to_batch(self, position, batch, rotation, face, uv_lock=False)
 

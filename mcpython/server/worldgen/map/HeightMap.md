@@ -1,4 +1,4 @@
-***HeightMap.py - documentation - last updated on 11.2.2021 by uuk***
+***HeightMap.py - documentation - last updated on 25.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -12,6 +12,12 @@ ___
 
 
     @shared.world_generation_handler class HeightMap extends mcpython.server.worldgen.map.AbstractChunkInfoMap.AbstractMap
+        
+        Representation of a heightmap in-code
+        Each chunk has one in the normal case
+        Contains also the serializer code
+        todo: implement better serializer
+
 
         variable NAME
 
@@ -24,3 +30,5 @@ ___
         function get_at_xz(self, x: int, z: int)
 
         function set_at_xz(self, x: int, z: int, height)
+
+        function __contains__(self, item)

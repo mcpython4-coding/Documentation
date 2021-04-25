@@ -1,4 +1,4 @@
-***BlockFence.py - documentation - last updated on 9.2.2021 by uuk***
+***BlockFence.py - documentation - last updated on 25.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -64,16 +64,37 @@ ___
         variable BLOCK_ITEM_GENERATOR_STATE
             the state the block item generator should use, this kinda looks nice
 
+    class IFenceGate extends mcpython.common.block.AbstractBlock.AbstractBlock,  ABC
+        
+        todo: implement behaviour
+
+
+        variable DEBUG_WORLD_BLOCK_STATES
+
+        function __init__(self)
+
+            variable self.facing
+
+            variable self.in_wall
+
+            variable self.open
+
+        function get_model_state(self) -> dict
+
+        function set_model_state(self, state: dict)
+
+                variable self.in_wall
+
+                variable self.open
+
+        variable BLOCK_ITEM_GENERATOR_STATE
+
     class IWoodenFence extends IFence
         
         Base class for every wooden fence; used to set the wooden fence flag for all children at ones
 
 
         variable FENCE_TYPE_NAME
-
-    class AcaciaFence extends IWoodenFence
-
-        variable NAME
 
     class BirchFence extends IWoodenFence
 

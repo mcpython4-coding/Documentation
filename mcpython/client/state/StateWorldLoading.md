@@ -1,4 +1,4 @@
-***StateWorldLoading.py - documentation - last updated on 9.2.2021 by uuk***
+***StateWorldLoading.py - documentation - last updated on 25.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -31,7 +31,18 @@ ___
 
         function on_update(self, dt)
 
+                variable shared.world.world_loaded
+
+            variable self.parts[1].text
+
         function activate(self)
+
+            variable shared.world_generation_handler.enable_generation
+
+            variable shared.world_generation_handler.enable_generation
+                todo: fix bug: something is wrong here...
+                shared.world.savefile.read("minecraft:chunk", dimension=shared.world.get_active_player().dimension.id, chunk=(cx, cz),
+                immediate=False)
 
         function deactivate(self)
 

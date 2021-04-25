@@ -1,4 +1,4 @@
-***Slot.py - documentation - last updated on 9.2.2021 by uuk***
+***Slot.py - documentation - last updated on 25.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -19,11 +19,11 @@ ___
 
         function get_capacity(self) -> int
 
-        function get_itemstack(self) -> mcpython.common.container.ItemStack.ItemStack
+        function get_itemstack(self) -> mcpython.common.container.ResourceStack.ItemStack
 
         function set_itemstack(
                 self,
-                stack: mcpython.common.container.ItemStack.ItemStack,
+                stack: mcpython.common.container.ResourceStack.ItemStack,
                 update=True,
                 player=False,
                 ):
@@ -39,7 +39,7 @@ ___
         function draw_label(self)
 
         function can_set_item(
-                self, itemstack: mcpython.common.container.ItemStack.ItemStack
+                self, itemstack: mcpython.common.container.ResourceStack.ItemStack
                 ) -> bool:
 
         function save(self)
@@ -129,11 +129,11 @@ ___
 
         function get_capacity(self) -> int
 
-        function get_itemstack(self) -> mcpython.common.container.ItemStack.ItemStack
+        function get_itemstack(self) -> mcpython.common.container.ResourceStack.ItemStack
 
         function set_itemstack(
                 self,
-                stack: mcpython.common.container.ItemStack.ItemStack,
+                stack: mcpython.common.container.ResourceStack.ItemStack,
                 update=True,
                 player=False,
                 ):
@@ -173,7 +173,7 @@ ___
                 variable self.amount_label.y
 
         function can_set_item(
-                self, itemstack: mcpython.common.container.ItemStack.ItemStack
+                self, itemstack: mcpython.common.container.ResourceStack.ItemStack
                 ) -> bool:
 
             variable flag1
@@ -310,7 +310,7 @@ ___
 
         function set_itemstack(
                 self,
-                stack: mcpython.common.container.ItemStack.ItemStack,
+                stack: mcpython.common.container.ResourceStack.ItemStack,
                 update=True,
                 player=False,
                 ):

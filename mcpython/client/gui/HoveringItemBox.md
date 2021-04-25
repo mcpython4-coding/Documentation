@@ -1,4 +1,4 @@
-***HoveringItemBox.py - documentation - last updated on 9.2.2021 by uuk***
+***HoveringItemBox.py - documentation - last updated on 25.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -21,7 +21,7 @@ ___
 
 
         function manipulateShownText(
-                self, slot: mcpython.common.container.ItemStack.ItemStack, text: list
+                self, slot: mcpython.common.container.ResourceStack.ItemStack, text: list
                 ):
 
     class IHoveringItemBoxDefinition
@@ -38,7 +38,7 @@ ___
 
 
         function getHoveringText(
-                self, itemstack: mcpython.common.container.ItemStack.ItemStack
+                self, itemstack: mcpython.common.container.ResourceStack.ItemStack
                 ) -> list:
 
         static
@@ -61,7 +61,7 @@ ___
             variable self.default_style
 
         function getHoveringText(
-                self, itemstack: mcpython.common.container.ItemStack.ItemStack
+                self, itemstack: mcpython.common.container.ResourceStack.ItemStack
                 ) -> list:
 
             variable item_name
@@ -111,7 +111,7 @@ ___
             variable self.bg_rectangle
 
         function renderFor(
-                self, itemstack: mcpython.common.container.ItemStack.ItemStack, position
+                self, itemstack: mcpython.common.container.ResourceStack.ItemStack, position
                 ):
             
             Will render the ItemBoxProvider for a given slot

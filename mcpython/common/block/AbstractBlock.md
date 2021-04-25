@@ -1,4 +1,4 @@
-***AbstractBlock.py - documentation - last updated on 18.4.2021 by uuk***
+***AbstractBlock.py - documentation - last updated on 25.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -290,7 +290,7 @@ ___
                 return self.get_view_bbox()
                 
                 def on_request_item_for_block(
-                self, itemstack: mcpython.common.container.ItemStack.ItemStack
+                self, itemstack: mcpython.common.container.ResourceStack.ItemStack
                 ):
             
             Used to get the bbox of the block for ray collision
@@ -310,7 +310,7 @@ ___
                 return self.get_view_bbox()
                 
                 def on_request_item_for_block(
-                self, itemstack: mcpython.common.container.ItemStack.ItemStack
+                self, itemstack: mcpython.common.container.ResourceStack.ItemStack
                 ):
             
             Used to get the bbox of the block for physical body collision
@@ -318,7 +318,7 @@ ___
 
 
         function on_request_item_for_block(
-                self, itemstack: mcpython.common.container.ItemStack.ItemStack
+                self, itemstack: mcpython.common.container.ResourceStack.ItemStack
                 ):
             
             Used when an item is requested exactly for this block. Useful for setting custom data to the itemstack

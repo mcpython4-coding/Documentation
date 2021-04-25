@@ -1,4 +1,4 @@
-***AbstractEntity.py - documentation - last updated on 18.4.2021 by uuk***
+***AbstractEntity.py - documentation - last updated on 25.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -110,7 +110,7 @@ ___
 
 
         function pick_up_item(
-                self, itemstack: mcpython.common.container.ItemStack.ItemStack
+                self, itemstack: mcpython.common.container.ResourceStack.ItemStack
                 ) -> bool:
             
             Let the entity pick up an item and insert it into its inventory

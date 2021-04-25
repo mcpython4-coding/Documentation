@@ -1,4 +1,4 @@
-***PlayerEntity.py - documentation - last updated on 18.4.2021 by uuk***
+***PlayerEntity.py - documentation - last updated on 25.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -115,7 +115,8 @@ ___
         function pick_up_item(
                 self,
                 itemstack: typing.Union[
-                mcpython.common.container.ItemStack.ItemStack, mcpython.client.gui.Slot.Slot
+                mcpython.common.container.ResourceStack.ItemStack,
+                mcpython.client.gui.Slot.Slot,
                 ],
                 ) -> bool:
             
@@ -199,6 +200,10 @@ ___
         function reset_moving_slot(self)
 
         function move_to_spawn_point(self)
+
+                variable h
+
+            variable self.position
 
         function tell(self, msg: str)
 

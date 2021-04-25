@@ -1,4 +1,4 @@
-***BlockChest.py - documentation - last updated on 9.2.2021 by uuk***
+***BlockChest.py - documentation - last updated on 25.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -38,7 +38,7 @@ ___
 
         function __init__(self)
             
-            Creates an new BlockChest
+            Creates a new BlockChest block
 
 
             variable self.front_side
@@ -49,11 +49,17 @@ ___
 
         function on_block_added(self)
 
+            variable self.face_solid
+
+            variable self.face_state.custom_renderer
+
         function can_open_inventory(self) -> bool
             
             Checks if the inventory can be opened
             :return: if the block can be opened
 
+
+            variable instance
 
         function on_player_interaction(
                 self, player, button: int, modifiers: int, hit_position: tuple

@@ -1,4 +1,4 @@
-***TagGenerator.py - documentation - last updated on 25.4.2021 by uuk***
+***LavaFluid.py - documentation - last updated on 25.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,20 +11,19 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class TagGenerator extends IDataGenerator
+    class LavaFluid extends mcpython.common.fluid.AbstractFluid.AbstractFluid
 
-        function __init__(self, group: str, override=False)
+        variable NAME
 
-            variable self.group
+        variable IS_FINITE
 
-            variable self.override
+        variable TEXTURE_FLOW: str
 
-            variable self.affected
+        variable TEXTURE_STILL: str
 
-        function add_affected(self, *affected)
+        variable DEFAULT_FLUID_TEMPERATURE: float
 
-        function dump(self, generator: "DataGeneratorInstance")
+        variable SOLIDIFICATION_POINT
+            Only for mods
 
-        function get_default_location(self, generator: "DataGeneratorInstance", name: str)
-
-        function also(self, group: str, generator: DataGeneratorInstance, name: str)
+        variable SOLIDIFIES_TO

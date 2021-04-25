@@ -1,4 +1,4 @@
-***Registry.py - documentation - last updated on 18.4.2021 by uuk***
+***Registry.py - documentation - last updated on 25.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -66,7 +66,11 @@ ___
 
         function is_valid(self, obj: IRegistryContent)
 
-        function register(self, obj: IRegistryContent, override_existing=True)
+        function register(
+                self,
+                obj: typing.Union[IRegistryContent, typing.Type[IRegistryContent]],
+                override_existing=True,
+                ):
             
             Registers an obj to this registry
 
@@ -120,9 +124,11 @@ ___
 
         function create_deferred(self, registry: str, mod_name: str)
 
-        function print_content(self, registry: str)
+        function print_content(self, registry: str, namespace=None)
 
-                variable element
+            variable r
+
+                    variable element
 
     variable shared.registry
 

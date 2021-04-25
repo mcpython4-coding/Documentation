@@ -1,4 +1,4 @@
-***TagGenerator.py - documentation - last updated on 25.4.2021 by uuk***
+***__init__.py - documentation - last updated on 25.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -9,22 +9,3 @@ ___
     (https://account.mojang.com/documents/minecraft_eula)
     Mod loader inspired by "Minecraft Forge" (https://github.com/MinecraftForge/MinecraftForge) and similar
     This project is not official by mojang and does not relate to it.
-
-
-    class TagGenerator extends IDataGenerator
-
-        function __init__(self, group: str, override=False)
-
-            variable self.group
-
-            variable self.override
-
-            variable self.affected
-
-        function add_affected(self, *affected)
-
-        function dump(self, generator: "DataGeneratorInstance")
-
-        function get_default_location(self, generator: "DataGeneratorInstance", name: str)
-
-        function also(self, group: str, generator: DataGeneratorInstance, name: str)
