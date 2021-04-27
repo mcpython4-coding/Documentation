@@ -1,4 +1,4 @@
-***AbstractInterface.py - documentation - last updated on 18.4.2021 by uuk***
+***AbstractInterface.py - documentation - last updated on 27.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -95,6 +95,8 @@ ___
                 todo: use something better...
 
             variable self.data_maps
+
+        function clear(self)
 
         function get_map(self, name: str)
 
@@ -221,6 +223,8 @@ ___
             Checks the visual state of adjusting blocks to the given position
             todo: rename to something fitting!
 
+
+        function update_all_rendering(self)
 
         function show(self)
             

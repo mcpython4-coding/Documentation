@@ -114,7 +114,7 @@ ___
                 event_name: str,
                 check_function: typing.Callable[[typing.Any], bool],
                 *args,
-                **kwargs
+                **kwargs,
                 ):
             
             Will call the event stack until an check_function returns True or all subscriptions where done

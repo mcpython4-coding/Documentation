@@ -1,4 +1,4 @@
-***mod.py - documentation - last updated on 9.2.2021 by uuk***
+***mod.py - documentation - last updated on 27.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -13,9 +13,20 @@ ___
 
     @shared.mod_loader("{NAME}", "stage:mod:init")
     function init()
+        
+        Main init method of {NAME}
+
+
+        @shared.mod_loader("{NAME}", "stage:combined_factory:blocks")
+        function load_combined_factories()
 
         @shared.mod_loader("{NAME}", "stage:block:factory_usage")
         function load_block_factories()
 
         @shared.mod_loader("{NAME}", "stage:item:factory_usage")
         function load_item_factories()
+
+        @shared.mod_loader("{NAME}", "special:datagen:configure")
+        function do_data_gen()
+
+            variable instance

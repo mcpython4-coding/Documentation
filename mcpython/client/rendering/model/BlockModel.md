@@ -1,4 +1,4 @@
-***BlockModel.py - documentation - last updated on 9.2.2021 by uuk***
+***BlockModel.py - documentation - last updated on 27.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -58,7 +58,7 @@ ___
 
                 variable self.texture_atlas
 
-            variable self.boxmodels
+            variable self.box_models
 
         function get_prepared_data_for(self, position, config, face)
 
@@ -68,7 +68,7 @@ ___
 
             variable collected_data
 
-            variable boxmodel
+            variable box_model
 
         function add_face_to_batch(
                 self,

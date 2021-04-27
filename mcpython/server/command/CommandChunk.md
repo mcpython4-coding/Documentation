@@ -1,4 +1,4 @@
-***CommandGenerate.py - documentation - last updated on 18.4.2021 by uuk***
+***CommandChunk.py - documentation - last updated on 27.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,4 +11,4 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    variable generate
+    variable chunk

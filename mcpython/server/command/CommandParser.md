@@ -1,4 +1,4 @@
-***CommandParser.py - documentation - last updated on 18.4.2021 by uuk***
+***CommandParser.py - documentation - last updated on 27.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -31,6 +31,8 @@ ___
             variable self.chat
 
         function get_dimension(self)
+
+        function get_current_chunk(self)
 
         function with_dimension(self, dimension)
 
