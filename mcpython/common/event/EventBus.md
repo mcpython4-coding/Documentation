@@ -1,4 +1,4 @@
-***EventBus.py - documentation - last updated on 9.2.2021 by uuk***
+***EventBus.py - documentation - last updated on 27.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -71,9 +71,11 @@ ___
             :param info: an info to give for the caller
 
 
+            variable signature
+
         function unsubscribe(self, event_name: str, function)
             
-            remove an function from the event bus
+            Remove an function from the event bus
             :param event_name: the event name the function was registered to
             :param function: the function itself
             :raise ValueError: when event name is unknown OR function was never assigned
@@ -81,12 +83,21 @@ ___
 
         function call(self, event_name: str, *args, **kwargs)
             
-            call an event on this event bus. also works when deactivated
+            Call an event on this event bus. Also works when deactivated
             :param event_name: the name of the event to call
             :param args: arguments to give
             :param kwargs: kwargs to give
-            :return: an list of tuple of (return value, info)
 
+
+            variable exception_occ
+
+                variable dif
+
+                    variable start
+
+                    variable dif
+
+                    variable exception_occ
 
         function call_cancelable(self, event_name: str, *args, **kwargs)
             

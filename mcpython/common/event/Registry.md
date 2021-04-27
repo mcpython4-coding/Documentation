@@ -1,4 +1,4 @@
-***Registry.py - documentation - last updated on 25.4.2021 by uuk***
+***Registry.py - documentation - last updated on 27.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -133,6 +133,9 @@ ___
     variable shared.registry
 
     class DeferredRegistryPipe
+        
+        Base class for deferred registries
+
 
         function __init__(self, registry: Registry, modname: str)
 

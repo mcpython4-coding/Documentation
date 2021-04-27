@@ -1,4 +1,4 @@
-***BiomeGenDebugGenerator.py - documentation - last updated on 9.2.2021 by uuk***
+***BiomeGenDebugGenerator.py - documentation - last updated on 27.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -40,6 +40,10 @@ ___
 
             variable biome_map
 
+            variable height_map
+
                     variable biome
 
                     variable block
+
+            variable shared.world.get_active_player().flying

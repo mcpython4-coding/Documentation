@@ -1,4 +1,4 @@
-***GridRecipeInstances.py - documentation - last updated on 9.2.2021 by uuk***
+***GridRecipeInstances.py - documentation - last updated on 27.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -111,3 +111,146 @@ ___
             variable stacks
 
             variable grid
+
+    @shared.crafting_handler class ArmorDyeRecipe extends AbstractCraftingGridRecipe
+
+        variable RECIPE_TYPE_NAMES
+
+        function as_grid_for_view(
+                self, size=(3, 3)
+                ) -> typing.Tuple[typing.List[typing.List[typing.List[ItemStack]]], ItemStack]:
+
+        static
+        function from_data(cls, data: dict, file: str)
+
+    @shared.crafting_handler class BannerDuplicateRecipe extends AbstractCraftingGridRecipe
+
+        variable RECIPE_TYPE_NAMES
+
+        function as_grid_for_view(
+                self, size=(3, 3)
+                ) -> typing.Tuple[typing.List[typing.List[typing.List[ItemStack]]], ItemStack]:
+
+        static
+        function from_data(cls, data: dict, file: str)
+
+    @shared.crafting_handler class BookCloningRecipe extends AbstractCraftingGridRecipe
+
+        variable RECIPE_TYPE_NAMES
+
+        function as_grid_for_view(
+                self, size=(3, 3)
+                ) -> typing.Tuple[typing.List[typing.List[typing.List[ItemStack]]], ItemStack]:
+
+        static
+        function from_data(cls, data: dict, file: str)
+
+    @shared.crafting_handler class FireworkRocketRecipe extends AbstractCraftingGridRecipe
+
+        variable RECIPE_TYPE_NAMES
+
+        function as_grid_for_view(
+                self, size=(3, 3)
+                ) -> typing.Tuple[typing.List[typing.List[typing.List[ItemStack]]], ItemStack]:
+
+        static
+        function from_data(cls, data: dict, file: str)
+
+    @shared.crafting_handler class FireworkStarRecipe extends AbstractCraftingGridRecipe
+
+        variable RECIPE_TYPE_NAMES
+
+        function as_grid_for_view(
+                self, size=(3, 3)
+                ) -> typing.Tuple[typing.List[typing.List[typing.List[ItemStack]]], ItemStack]:
+
+        static
+        function from_data(cls, data: dict, file: str)
+
+    @shared.crafting_handler class FireworkStarFadeRecipe extends AbstractCraftingGridRecipe
+
+        variable RECIPE_TYPE_NAMES
+
+        function as_grid_for_view(
+                self, size=(3, 3)
+                ) -> typing.Tuple[typing.List[typing.List[typing.List[ItemStack]]], ItemStack]:
+
+        static
+        function from_data(cls, data: dict, file: str)
+
+    @shared.crafting_handler class MapCloningRecipe extends AbstractCraftingGridRecipe
+
+        variable RECIPE_TYPE_NAMES
+
+        function as_grid_for_view(
+                self, size=(3, 3)
+                ) -> typing.Tuple[typing.List[typing.List[typing.List[ItemStack]]], ItemStack]:
+
+        static
+        function from_data(cls, data: dict, file: str)
+
+    @shared.crafting_handler class MapExtendingRecipe extends AbstractCraftingGridRecipe
+
+        variable RECIPE_TYPE_NAMES
+
+        function as_grid_for_view(
+                self, size=(3, 3)
+                ) -> typing.Tuple[typing.List[typing.List[typing.List[ItemStack]]], ItemStack]:
+
+        static
+        function from_data(cls, data: dict, file: str)
+
+    @shared.crafting_handler class RepairItemRecipe extends AbstractCraftingGridRecipe
+
+        variable RECIPE_TYPE_NAMES
+
+        function as_grid_for_view(
+                self, size=(3, 3)
+                ) -> typing.Tuple[typing.List[typing.List[typing.List[ItemStack]]], ItemStack]:
+
+        static
+        function from_data(cls, data: dict, file: str)
+
+    @shared.crafting_handler class ShieldDecoration extends AbstractCraftingGridRecipe
+
+        variable RECIPE_TYPE_NAMES
+
+        function as_grid_for_view(
+                self, size=(3, 3)
+                ) -> typing.Tuple[typing.List[typing.List[typing.List[ItemStack]]], ItemStack]:
+
+        static
+        function from_data(cls, data: dict, file: str)
+
+    @shared.crafting_handler class ShulkerboxColoringRecipe extends AbstractCraftingGridRecipe
+
+        variable RECIPE_TYPE_NAMES
+
+        function as_grid_for_view(
+                self, size=(3, 3)
+                ) -> typing.Tuple[typing.List[typing.List[typing.List[ItemStack]]], ItemStack]:
+
+        static
+        function from_data(cls, data: dict, file: str)
+
+    @shared.crafting_handler class SuspiciousStewRecipe extends AbstractCraftingGridRecipe
+
+        variable RECIPE_TYPE_NAMES
+
+        function as_grid_for_view(
+                self, size=(3, 3)
+                ) -> typing.Tuple[typing.List[typing.List[typing.List[ItemStack]]], ItemStack]:
+
+        static
+        function from_data(cls, data: dict, file: str)
+
+    @shared.crafting_handler class TippedArrowRecipe extends AbstractCraftingGridRecipe
+
+        variable RECIPE_TYPE_NAMES
+
+        function as_grid_for_view(
+                self, size=(3, 3)
+                ) -> typing.Tuple[typing.List[typing.List[typing.List[ItemStack]]], ItemStack]:
+
+        static
+        function from_data(cls, data: dict, file: str)

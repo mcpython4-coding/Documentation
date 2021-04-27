@@ -1,4 +1,4 @@
-***LaunchWrapper.py - documentation - last updated on 9.2.2021 by uuk***
+***LaunchWrapper.py - documentation - last updated on 27.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -113,6 +113,6 @@ ___
 
         function clean(self)
             
-            Helper function for normal cleanup
-            (not save)
+            Helper function for normal cleanup (not save, will hard-crash in some cases)
             MAY crash on non-fully stable systems
+            Also invokes the event for closing the game, stops the world generation process, ...

@@ -1,4 +1,4 @@
-***StateHandler.py - documentation - last updated on 9.2.2021 by uuk***
+***StateHandler.py - documentation - last updated on 27.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -21,7 +21,13 @@ ___
 
         function switch_to(self, state_name: str, immediate=True)
 
-        function _switch_to(self, statename: str)
+        function _switch_to(self, state_name: str)
+
+            variable previous
+
+            variable now
+
+            variable self.active_state: State.State
 
         function add_state(self, state_instance: State.State)
 

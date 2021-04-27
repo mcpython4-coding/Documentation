@@ -1,4 +1,4 @@
-***ResourceStack.py - documentation - last updated on 25.4.2021 by uuk***
+***ResourceStack.py - documentation - last updated on 27.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -45,6 +45,14 @@ ___
 
 
         function __init__(self, item_name_or_instance=None, amount=1)
+
+                    variable self.item
+
+                    variable self.item
+
+                variable self.item
+
+            variable self.amount
 
         function copy(self) -> "ItemStack"
             

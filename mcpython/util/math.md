@@ -1,4 +1,4 @@
-***math.py - documentation - last updated on 18.4.2021 by uuk***
+***math.py - documentation - last updated on 27.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -52,7 +52,7 @@ ___
         :param size: the size of the texture atlas used
         :param region: the texture region to use. (0, 0, 1, 1) is full texture atlas texture size
         :param rot: in steps of 90: how much to rotate the vertices
-        :return: an tuple representing the texture coordinates
+        :return: a tuple representing the texture coordinates
 
 
             variable reindex
@@ -62,13 +62,16 @@ ___
             variable positions
 
     function tex_coordinates_better(
-            *args, size=(32, 32), tex_region=None, rotation=(0, 0, 0, 0, 0, 0)
+            *args: typing.Tuple[int, int],
+            size=(32, 32),
+            tex_region=None,
+            rotation=(0, 0, 0, 0, 0, 0)
             ) -> list:
         
-        this is an better implementation of above tex_coords function. It will return an list of coords instead
-        of an list where you have to manually find entries
-        :param args: every face to calculate
-        :param size: the size of the texture group
+        This is an better implementation of above tex_coords function. It will return an list of coords instead
+            of an list where you have to manually find entries for drawing
+        :param args: for each face to calculate, the uv's as a tuple of size 2
+        :param size: the size of the texture group, as specified by the texture atlas
         :param tex_region: the region in the texture, where 0 is one end and 1 the other
         :param rotation: the rotation of the whole thing
         :return: an list of lists of texture coords

@@ -1,4 +1,4 @@
-***CraftingManager.py - documentation - last updated on 18.4.2021 by uuk***
+***CraftingManager.py - documentation - last updated on 27.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -37,13 +37,23 @@ ___
 
         function shuffle_data(self)
 
+            variable recipe_group_copy
+
+                    variable recipe_2
+
+                    variable self.recipe_relink_table[recipe.name]
+
         function check_relink(self, recipe: mcpython.common.container.crafting.IRecipe.IRecipe)
 
         function __call__(self, obj)
 
         function add_recipe(
-                self, recipe: mcpython.common.container.crafting.IRecipe.IRecipe, name: str
+                self,
+                recipe: mcpython.common.container.crafting.IRecipe.IRecipe,
+                name: str = None,
                 ):
+
+                variable name
 
             variable recipe.name
 

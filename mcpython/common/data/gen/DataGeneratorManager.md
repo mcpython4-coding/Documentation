@@ -1,4 +1,4 @@
-***DataGeneratorManager.py - documentation - last updated on 9.2.2021 by uuk***
+***DataGeneratorManager.py - documentation - last updated on 27.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -18,6 +18,8 @@ ___
         function dump(self, generator: "DataGeneratorInstance")
 
         function write(self, generator: "DataGeneratorInstance", name: str)
+
+                variable data
 
         function get_default_location(
                 self, generator: "DataGeneratorInstance", name: str

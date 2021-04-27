@@ -1,4 +1,4 @@
-***TextureAtlas.py - documentation - last updated on 9.2.2021 by uuk***
+***TextureAtlas.py - documentation - last updated on 27.4.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -54,12 +54,29 @@ ___
 
             variable self.images
 
-            variable self.imagelocations - an images[-parallel (x, y)-list
+            variable self.image_locations - an images[-parallel (x, y)-list
 
             variable self.group
 
         function add_image(self, image: PIL.Image.Image, ind=None, position=None) -> tuple
 
+                variable self.image_size
+
+                variable self.texture
+
+                variable image
+
+                variable old
+                    todo: export to separate function
+
+                variable self.size
+
+                variable self.texture
+
+            variable pos
+
         function is_free_for(self, images: list) -> bool
+
+        function is_free_for_slow(self, images: list) -> bool
 
     variable handler
