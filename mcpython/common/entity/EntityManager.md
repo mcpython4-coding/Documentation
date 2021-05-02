@@ -1,4 +1,4 @@
-***EntityManager.py - documentation - last updated on 25.4.2021 by uuk***
+***EntityManager.py - documentation - last updated on 2.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,7 +11,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class EntityHandler
+    class EntityManager
         
         Handler for entities in the current world
 
@@ -24,7 +24,7 @@ ___
 
         function spawn_entity(
                 self,
-                name,
+                name: typing.Union[str, typing.Any],
                 position,
                 *args,
                 dimension=None,
@@ -33,13 +33,15 @@ ___
                 **kwargs
                 ):
 
-                variable dimension
+                    variable dimension
 
-                variable dimension
+                    variable dimension
 
-            variable entity_cls
+                variable entity_cls
 
-            variable entity
+                variable entity
+
+                variable entity
 
                 variable entity.uuid
 
@@ -55,6 +57,6 @@ ___
 
         function clear(self)
 
-    variable shared.entity_handler
+    variable shared.entity_manager
 
     function load()

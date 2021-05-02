@@ -1,4 +1,4 @@
-***Dimension.py - documentation - last updated on 18.4.2021 by uuk***
+***Dimension.py - documentation - last updated on 2.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -138,7 +138,7 @@ ___
                 typing.Tuple[float, float, float],
                 mcpython.common.block.AbstractBlock.AbstractBlock,
                 ],
-                **kwargs
+                **kwargs,
                 ) -> typing.Optional[mcpython.common.world.AbstractInterface.IChunk]:
             
             Gets an chunk for an position
@@ -198,3 +198,7 @@ ___
         function set_world_generation_config_entry(self, name: str, value)
 
         function get_name(self) -> str
+
+        function dump_debug_maps_all_chunks(self, file_formatter: str)
+
+        function chunk_iterator(self)

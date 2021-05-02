@@ -1,4 +1,4 @@
-***EventBus.py - documentation - last updated on 27.4.2021 by uuk***
+***EventBus.py - documentation - last updated on 2.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -55,6 +55,8 @@ ___
 
             variable self.crash_on_error
 
+            variable self.close_on_error
+
             variable self.sub_buses
 
             variable self.id
@@ -91,11 +93,7 @@ ___
 
             variable exception_occ
 
-                variable dif
-
                     variable start
-
-                    variable dif
 
                     variable exception_occ
 

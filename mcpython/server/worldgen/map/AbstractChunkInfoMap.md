@@ -1,4 +1,4 @@
-***AbstractChunkInfoMap.py - documentation - last updated on 11.2.2021 by uuk***
+***AbstractChunkInfoMap.py - documentation - last updated on 2.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -29,3 +29,5 @@ ___
         function load_from_saves(self, data)
 
         function dump_for_saves(self)
+
+        function dump_debug_info(self, file: str)

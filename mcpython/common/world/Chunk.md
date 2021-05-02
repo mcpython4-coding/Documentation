@@ -1,4 +1,4 @@
-***Chunk.py - documentation - last updated on 25.4.2021 by uuk***
+***Chunk.py - documentation - last updated on 2.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -299,3 +299,5 @@ ___
         function is_generated(self) -> bool
 
         function get_entities(self)
+
+        function dump_debug_maps(self, file_formatter: str)

@@ -1,4 +1,4 @@
-***AbstractInterface.py - documentation - last updated on 27.4.2021 by uuk***
+***AbstractInterface.py - documentation - last updated on 2.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -303,6 +303,8 @@ ___
 
         function entity_iterator(self) -> typing.Iterable
 
+        function dump_debug_maps(self, file_formatter: str)
+
     class IDimension extends ISupportWorldInterface,  ABC
 
         function __init__(self)
@@ -371,6 +373,10 @@ ___
         function entity_iterator(self) -> typing.Iterable
 
         function get_world(self) -> "IDimension"
+
+        function dump_debug_maps_all_chunks(self, file_formatter: str)
+
+        function chunk_iterator(self)
 
     class IWorld extends ABC
 

@@ -1,4 +1,4 @@
-***shared.py - documentation - last updated on 9.2.2021 by uuk***
+***shared.py - documentation - last updated on 2.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -67,7 +67,7 @@ ___
 
     variable loot_table_handler - the loot table manager instance
 
-    variable entity_handler - the entity manager instance
+    variable entity_manager - the entity manager instance
 
     variable model_handler - the model handler instance, client-only
 

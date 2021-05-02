@@ -1,4 +1,4 @@
-***IWorldGenConfig.py - documentation - last updated on 9.2.2021 by uuk***
+***IWorldGenConfig.py - documentation - last updated on 2.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -28,6 +28,9 @@ ___
         function get_creation_args(self) -> typing.Tuple
 
     class DefaultBiomeSource extends IBiomeSource
+        
+        The default biome source
+
 
         static
         function get_biome_at(cls, x, z, noises, landmass, config, temperature) -> str

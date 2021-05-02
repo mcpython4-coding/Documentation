@@ -1,4 +1,4 @@
-***LandMassMap.py - documentation - last updated on 11.2.2021 by uuk***
+***LandMassMap.py - documentation - last updated on 2.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -34,3 +34,5 @@ ___
         function get_at_xz(self, x: int, z: int) -> str
 
         function set_at_xz(self, x: int, z: int, mass: str)
+
+        function dump_debug_info(self, file: str)
