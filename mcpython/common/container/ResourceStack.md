@@ -1,4 +1,4 @@
-***ResourceStack.py - documentation - last updated on 27.4.2021 by uuk***
+***ResourceStack.py - documentation - last updated on 13.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -44,7 +44,7 @@ ___
             Get an empty itemstack
 
 
-        function __init__(self, item_name_or_instance=None, amount=1)
+        function __init__(self, item_name_or_instance=None, amount=1, warn_if_unarrival=True)
 
                     variable self.item
 

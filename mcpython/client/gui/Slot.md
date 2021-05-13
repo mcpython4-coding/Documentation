@@ -1,4 +1,4 @@
-***Slot.py - documentation - last updated on 25.4.2021 by uuk***
+***Slot.py - documentation - last updated on 13.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -34,9 +34,9 @@ ___
 
         function deepCopy(self)
 
-        function draw(self, dx=0, dy=0, hovering=False)
+        function draw(self, dx=0, dy=0, hovering=False, center_position=None)
 
-        function draw_label(self)
+        function draw_label(self, x=None, y=None)
 
         function can_set_item(
                 self, itemstack: mcpython.common.container.ResourceStack.ItemStack
@@ -47,6 +47,8 @@ ___
         function load(self, data)
 
         function getParent(self) -> "ISlot"
+
+        function clean_itemstack(self)
 
     class Slot extends ISlot
         
@@ -156,12 +158,26 @@ ___
             This will copy the content of the slot into an Slot-object
 
 
-        function draw(self, dx=0, dy=0, hovering=False)
+        function draw(self, dx=0, dy=0, hovering=False, center_position=None)
             
-            draws the slot
+            Draws the slot
 
 
-        function draw_label(self)
+                variable PYGLET_IMAGE_HOVERING.position
+
+                variable image
+
+                variable self.sprite: pyglet.sprite.Sprite
+
+                variable self.sprite
+
+                    variable self.empty_image.position
+
+                variable self.sprite.position
+
+            variable self.__last_item_file
+
+        function draw_label(self, x=None, y=None)
             
             these code draws only the label, before, normal draw should be executed for correct setup
 
@@ -194,7 +210,11 @@ ___
 
         function getParent(self)
 
-    class SlotCopy
+    class SlotCopy extends ISlot
+
+        function get_capacity(self) -> int
+
+        function deepCopy(self)
 
         function __init__(
                 self,
@@ -235,6 +255,8 @@ ___
 
             variable self.on_button_press
 
+            variable self.slot_position
+
         function get_allowed_item_tags(self)
 
         function set_allowed_item_tags(self, tags: list)
@@ -251,12 +273,9 @@ ___
 
         function copy(self, position=(0, 0))
 
-        function draw(self, dx=0, dy=0, hovering=False)
-            
-            draws the slot
+        function draw(self, dx=0, dy=0, hovering=False, center_position=None)
 
-
-        function draw_label(self)
+        function draw_label(self, x=None, y=None)
 
         function can_set_item(self, itemstack) -> bool
 
@@ -270,6 +289,51 @@ ___
 
         function getParent(self)
 
+    class SlotCopyWithDynamicTarget extends SlotCopy
+
+        function __init__(
+                self,
+                getter: typing.Callable[[], ISlot],
+                position=(0, 0),
+                allow_player_remove=True,
+                allow_player_insert=True,
+                allow_player_add_to_free_place=True,
+                on_update=None,
+                allow_half_getting=True,
+                on_shift_click=None,
+                on_button_press=None,
+                ):
+
+            variable self.slot_position
+
+            variable self.getter
+
+            variable self.valid
+
+            variable self.cached_master
+
+            variable self.position
+
+            variable self.__last_item_file
+
+            variable self.interaction_mode
+
+            variable self.on_update
+
+            variable self.allow_half_getting
+
+            variable self.on_shift_click
+
+            variable self.amount_label
+
+            variable self.on_button_press
+
+        function invalidate(self)
+
+        function get_master(self)
+
+        variable master
+
     class SlotInfiniteStack extends Slot
 
         function __init__(
@@ -282,15 +346,24 @@ ___
                 on_update=None,
                 allow_half_getting=True,
                 on_shift_click=None,
+                allow_player_override_delete=True,
                 ):
 
             variable self.reference_stack
 
         function set_itemstack(self, stack, update=True, player=False)
 
+        function clean_itemstack(self)
+
+        function set_itemstack_force(self, stack)
+
         function call_update(self, player=False)
 
         variable itemstack
+
+        function __repr__(self)
+
+        function __str__(self)
 
     class SlotInfiniteStackExchangeable extends Slot
 

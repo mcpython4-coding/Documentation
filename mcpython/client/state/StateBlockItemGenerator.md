@@ -1,4 +1,4 @@
-***StateBlockItemGenerator.py - documentation - last updated on 9.2.2021 by uuk***
+***StateBlockItemGenerator.py - documentation - last updated on 13.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -21,7 +21,7 @@ ___
 
         function __init__(self)
 
-            variable self.blockindex
+            variable self.block_index
 
             variable self.tasks: typing.List[str]
 
@@ -37,11 +37,16 @@ ___
 
         function on_draw_2d_pre(self)
 
+            variable self.parts[2].text
+
         function bind_to_eventbus(self)
 
         function on_resize(self, w, h)
 
         function activate(self)
+
+            variable world
+                For faster access down the road
 
             variable item_registry
 
@@ -50,36 +55,44 @@ ___
                 variable shared.tick_handler.enable_random_ticks
 
             variable self.tasks
+                Fetch the list of all blocks
 
                         variable self.table
 
                 variable items
 
             variable shared.model_handler.hide_blockstate_errors
+                We want to hide this error messages
 
             variable self.parts[1].progress_max
+                Update the progress bar progress
 
             variable self.parts[1].progress
 
             variable window
-                setup the window
+                Sets up the window, make it not resize-able
 
             variable player
-                setup the player view, todo: make configurable by block
+                Setup the player view, todo: make configurable by block
 
             variable player.position
 
             variable player.rotation
 
-            variable self.blockindex
+            variable self.block_index
+                Which block we are currently working on
 
                 variable instance
 
-                variable self.blockindex
+                variable self.block_index
 
             variable mcpython.common.event.TickHandler.handler.enable_tick_skipping
+                We do not want to skip ticks, as this would be bad here...
 
         function deactivate(self)
+
+            variable shared.model_handler.hide_blockstate_errors
+                We want to enable this again
 
             variable window
                 only here for making resizing possible again

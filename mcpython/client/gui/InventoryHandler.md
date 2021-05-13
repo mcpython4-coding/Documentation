@@ -1,4 +1,4 @@
-***InventoryHandler.py - documentation - last updated on 9.2.2021 by uuk***
+***InventoryHandler.py - documentation - last updated on 13.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -38,9 +38,11 @@ ___
 
         function on_draw_2d(self)
 
-        function _get_slot_for(self, x, y) -> mcpython.client.gui.Slot.Slot
+                variable shared.inventory_handler.moving_slot.position
+
+        function _get_slot_for(self, x: int, y: int) -> mcpython.client.gui.Slot.Slot
             
-            get slot for position
+            Gets slot for position
             :param x: the x position
             :param y: the y position
             :return: the slot or None if none found
@@ -49,7 +51,7 @@ ___
 
         function _get_slot_inventory_for(self, x, y)
             
-            get slot for position
+            Gets inventory of the slot for the position
             :param x: the x position
             :param y: the y position
             :return: the slot and the inventory or None and None if none found
@@ -58,13 +60,51 @@ ___
 
         function on_mouse_press(self, x, y, button, modifiers)
 
+                    variable target
+
+                    variable self.mode
+
+                    variable amount
+
+                    variable self.mode
+
+                    variable self.mode
+
         function on_mouse_release(self, x, y, button, modifiers)
+
+                variable self.moving_itemstack
+
+                variable self.mode
+
+                variable self.moving_itemstack
+
+                variable self.mode
+
+                variable self.moving_itemstack
+
+                variable self.mode
 
         function deactivate(self)
 
         function on_mouse_drag(self, x, y, dx, dy, button, modifiers)
 
+            variable slot
+
+                variable slot
+
+                        variable flag
+
         function reorder_slot_list_stacks(self)
+
+                variable total
+
+                variable per_element
+
+                variable overhead
+
+                    variable x
+
+                variable overhead
 
         function on_mouse_scroll(self, x, y, dx, dy)
 

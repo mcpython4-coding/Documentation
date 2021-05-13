@@ -1,4 +1,4 @@
-***MatrixStack.py - documentation - last updated on 9.2.2021 by uuk***
+***MatrixStack.py - documentation - last updated on 13.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -13,7 +13,7 @@ ___
 
     @onlyInClient() class MatrixStack
         
-        class handling an configuration of transformations for applying
+        Class handling an configuration of transformations for applying
         todo: optimise
         todo: use pyglet.matrix instead [pyglet 2 needed]
 
@@ -92,4 +92,4 @@ ___
 
         function apply(self)
             
-            will apply the configuration onto the system. Will reset all present transformations
+            Will apply the configuration onto the system. Will reset all present transformations

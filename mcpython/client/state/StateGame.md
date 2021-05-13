@@ -1,4 +1,4 @@
-***StateGame.py - documentation - last updated on 9.2.2021 by uuk***
+***StateGame.py - documentation - last updated on 13.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -29,6 +29,8 @@ ___
         function bind_to_eventbus(self)
 
         function on_key_press(self, symbol, modifiers)
+
+                        variable self.parts[0].activate_mouse
 
         static
         function open_chat(enter="")

@@ -1,4 +1,4 @@
-***Mod.py - documentation - last updated on 9.2.2021 by uuk***
+***Mod.py - documentation - last updated on 13.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -85,6 +85,7 @@ ___
             variable self.eventbus: mcpython.common.event.EventBus.EventBus
 
             variable self.depend_info
+                need, possible, not possible, before, after, only with, only without
 
             variable self.path
 

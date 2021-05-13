@@ -1,4 +1,4 @@
-***ModLoadingStages.py - documentation - last updated on 25.4.2021 by uuk***
+***ModLoadingStages.py - documentation - last updated on 13.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -37,6 +37,10 @@ ___
         function update_order(self)
 
     class LoadingStage
+        
+        A single LoadingStage instance
+        Used for holding information about the stage
+
 
         function __init__(self, name: str, user_facing_name: str, *dependencies: str)
 
@@ -95,23 +99,22 @@ ___
 
                 variable astate.parts[2].progress_max
 
+        function prepare_next_stage(self, astate)
+
+            variable mod_instance
+
+            variable self.max_progress
+
+            variable astate.parts[2].progress_max
+
+            variable astate.parts[2].progress
+
         function call_one(self, astate)
             
             Will call one event from the stack
             :param astate: the state to use
+            todo: split into smaller parts!
 
-
-                variable self.active_mod_index
-
-                variable mod_instance
-
-                variable self.max_progress
-
-                variable astate.parts[2].progress_max
-
-                variable astate.parts[2].progress
-
-                variable self.active_mod_index
 
             variable modname
 

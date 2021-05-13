@@ -1,4 +1,4 @@
-***generate_build.py - documentation - last updated on 25.4.2021 by uuk***
+***generate_build.py - documentation - last updated on 13.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -154,7 +154,11 @@ ___
 
             variable view
 
-    class BlackCodeFormattingPreperation extends AbstractProjectPreparation
+    class BlackCodeFormattingPreparation extends AbstractProjectPreparation
+
+        function execute_in(self, directory: str, build_manager)
+
+    class ISortCodeFormattingPreperation extends AbstractProjectPreparation
 
         function execute_in(self, directory: str, build_manager)
 
@@ -334,6 +338,8 @@ ___
 
                     variable "IS_DEV
 
+            variable data
+
     variable PY_FILE_FILTER
 
     variable CLIENT_FILE_STRIPPER
@@ -341,8 +347,17 @@ ___
     variable DEFAULT_BUILD_INSTANCE
 
     function main(*argv)
+        
+        Launcher for the default build configuration for mcpython
+        :param argv: argv, as passed to sys.argv
+        First element may be build name, second may be output folder
 
-        variable output_folder
+
+                variable config
+
+            variable output_folder
+
+            variable output_folder
 
         variable version_id
 

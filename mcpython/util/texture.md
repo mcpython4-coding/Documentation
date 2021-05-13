@@ -1,4 +1,4 @@
-***texture.py - documentation - last updated on 9.2.2021 by uuk***
+***texture.py - documentation - last updated on 13.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -14,7 +14,8 @@ ___
     function colorize(
             mask: PIL.Image.Image,
             color: tuple,
-            colorizer=lambda color, mask: tuple(c * m // 255 for c, m in zip(color, mask)),
+            colorizer=lambda color, mask: tuple(c * mask // 255 for c in color[:3])
+            + (tuple() if len(color) == 3 else (color[-1])),
             ) -> PIL.Image.Image:
         
         Colorize an image-mask with a color using colorizer as the operator
@@ -33,6 +34,8 @@ ___
                 variable color_alpha
 
                     variable pixel_color
+
+    function layer_with_alpha(base: PIL.Image.Image, top: PIL.Image.Image)
 
     function to_pyglet_image(image: PIL.Image.Image) -> pyglet.image.AbstractImage
         
@@ -60,3 +63,10 @@ ___
     function hex_to_color(color: str) -> typing.Tuple[int, int, int]
         
         Helper method for transforming a hex string encoding a color into a tuple of color entries
+
+
+    function int_hex_to_color(color: int) -> typing.Tuple[int, int, int]
+
+    function resize_image_pyglet(
+            image: pyglet.image.AbstractImage, size: typing.Tuple[int, int]
+            ) -> pyglet.image.AbstractImage:

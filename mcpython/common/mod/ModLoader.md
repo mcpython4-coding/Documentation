@@ -1,4 +1,4 @@
-***ModLoader.py - documentation - last updated on 25.4.2021 by uuk***
+***ModLoader.py - documentation - last updated on 13.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -13,33 +13,48 @@ ___
 
     class ModLoader
         
-        The mod loader class
+        The ModLoader class
+        The mod loader is a system capable of loading code into the game, for actively modification
+        the behaviour and the content of the game.
+        WARNING: mods CAN damage your pc software-wise. They are small programs executed on your pc.
+            Use only mods from sources you trust!
+            DO  N E V E R  DOWNLOAD MODS FROM STRANGE SOURCES
+            We, the developers of mcpython, give NOT WARRANTIES for things mods do, including, but not limited to,
+            damage on the end user pc and/or direct or indirect stealing of valuable information about the user, including
+            the download of programs to do so.
 
 
         function __init__(self)
             
-            Creates an new mod-loader-instance
-            WARNING: only ONE instance should be present.
-            When creating a second instance, you should know what you are doing!
+            Creates a new mod-loader-instance
+            WARNING: only ONE instance should be present, otherwise, bad things might happen
 
 
             variable self.located_mods: typing.List[mcpython.common.mod.Mod.Mod]
+                the list of located mods
 
             variable self.mod_loading_order: typing.List[str]
+                the order of mod loading, by mod name
 
             variable self.active_directory: typing.Optional[str]
+                the directory currently loading from
 
             variable self.active_loading_stage: int
+                which stage we are in
 
             variable self.previous_mods
+                used for detecting mod changes between versions
 
             variable self.located_mod_instances
+                temporary list of mods, for setting stuff
 
                     variable self.previous_mods
 
             variable self.finished
+                if mod loading has finished
 
             variable self.reload_stages: typing.List[str]
+                the stages used during reload, todo: remove
 
             variable self.error_builder
 
@@ -65,7 +80,7 @@ ___
 
         function __getitem__(self, item: str)
 
-        function __contains__(self, item)
+        function __contains__(self, item: str)
 
         function __iter__(self)
 
@@ -121,16 +136,14 @@ ___
             Will check for changes between versions between this session and the one before
 
 
-                    variable shared.invalidate_cache
-
-                    variable shared.invalidate_cache
-                        we have an mod which was loaded not previous but now
-                        todo: include version of the mod
+                        variable shared.invalidate_cache
 
         function write_mod_info(self)
             
             Writes the data for the mod table into the file
 
+
+                variable m
 
         function load_mods_json(self, data: str, file: str)
             
@@ -232,7 +245,7 @@ ___
             :return: errors and mod-info-tuple
 
 
-                        variable errors
+                            variable errors
 
         function sort_mods(self)
             

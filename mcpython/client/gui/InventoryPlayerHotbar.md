@@ -1,4 +1,4 @@
-***InventoryPlayerHotbar.py - documentation - last updated on 9.2.2021 by uuk***
+***InventoryPlayerHotbar.py - documentation - last updated on 13.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -60,6 +60,11 @@ ___
         main inventory for the hotbar
 
 
+        variable INSTANCES: typing.List["InventoryPlayerHotbar"]
+
+        static
+        function create(cls, player)
+
         function __init__(self, player)
 
             variable self.player
@@ -73,6 +78,8 @@ ___
             variable self.time_since_last_change
 
             variable self.xp_level_lable
+
+        function free(self)
 
         static
         function get_config_file()

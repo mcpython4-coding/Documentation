@@ -1,4 +1,4 @@
-***Registry.py - documentation - last updated on 27.4.2021 by uuk***
+***Registry.py - documentation - last updated on 13.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -31,7 +31,7 @@ ___
                 self,
                 name: str,
                 registry_type_names: list,
-                phase: str,
+                phase: typing.Optional[str],
                 injection_function=None,
                 allow_argument_injection=False,
                 class_based=True,
@@ -82,6 +82,8 @@ ___
                 variable self.full_entries[obj.NAME.split(":")[-1]]
 
         function entries_iterator(self) -> typing.Iterable[IRegistryContent]
+
+        function elements_iterator(self) -> typing.Iterable[IRegistryContent]
 
         function lock(self)
 

@@ -1,4 +1,4 @@
-***StatePartConfigBackground.py - documentation - last updated on 9.2.2021 by uuk***
+***StatePartConfigBackground.py - documentation - last updated on 13.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -27,6 +27,12 @@ ___
 
         static
         function recreate(cls, wx, wy)
+
+            variable cls.old_win_size
+
+                    variable obj
+
+                    variable obj.position
 
     @onlyInClient() class StatePartConfigBackground extends mcpython.client.state.StatePart.StatePart
 

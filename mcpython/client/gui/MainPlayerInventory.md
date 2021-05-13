@@ -1,4 +1,4 @@
-***MainPlayerInventory.py - documentation - last updated on 9.2.2021 by uuk***
+***MainPlayerInventory.py - documentation - last updated on 13.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -19,6 +19,11 @@ ___
         variable TEXTURE
 
         variable TEXTURE_SIZE
+
+        variable INSTANCES: typing.List["MainPlayerInventory"]
+
+        static
+        function create(cls, hotbar)
 
         static
         function update_texture(cls)
@@ -42,6 +47,10 @@ ___
 
         function remove_items_from_crafting(self)
 
+        function on_activate(self)
+
         function on_deactivate(self)
 
         function update_shift_container(self)
+
+        function free(self)

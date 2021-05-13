@@ -1,4 +1,4 @@
-***StateModLoading.py - documentation - last updated on 9.2.2021 by uuk***
+***StateModLoading.py - documentation - last updated on 13.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -26,5 +26,7 @@ ___
         function on_draw_2d_pre(self)
 
         function on_update(self, dt)
+
+        function deactivate(self)
 
     variable modloading

@@ -1,4 +1,4 @@
-***PlayerEntity.py - documentation - last updated on 25.4.2021 by uuk***
+***PlayerEntity.py - documentation - last updated on 13.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -89,6 +89,8 @@ ___
             variable self.inventory_crafting_table
 
             variable self.inventory_order
+
+        function init_creative_tabs(self)
 
         function set_gamemode(self, gamemode: typing.Union[int, str])
             

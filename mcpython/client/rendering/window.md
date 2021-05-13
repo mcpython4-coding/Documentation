@@ -1,4 +1,4 @@
-***window.py - documentation - last updated on 2.5.2021 by uuk***
+***window.py - documentation - last updated on 13.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -83,6 +83,7 @@ ___
             variable self.label3
 
             variable self.cpu_usage
+                todo: move to separated class
 
             variable self.cpu_usage_timer - todo: move to separated class
 
@@ -106,13 +107,13 @@ ___
 
         function print_profiler(self, dt=None)
             
-            will print the enabled profiler(s)
+            Will print the enabled profiler(s)
             todo: move to separated Profiler class
 
 
         function reset_caption(self)
             
-            will set the caption of the window to the default one
+            Will set the caption of the window to the default one
 
 
         function set_exclusive_mouse(self, exclusive)
@@ -320,11 +321,11 @@ ___
 
         function on_text(self, text: str)
             
-            called by pyglet with decoded key values when an text is entered
+            Called by pyglet with decoded key values when an text is entered
             :param text: the text entered
 
 
         function on_close(self)
             
-            called when the window tries to close itself
+            Called when the window tries to close itself
             cleans up some stuff before closing
