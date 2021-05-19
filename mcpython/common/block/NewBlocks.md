@@ -1,4 +1,4 @@
-***NewBlocks.py - documentation - last updated on 25.4.2021 by uuk***
+***NewBlocks.py - documentation - last updated on 19.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -13,6 +13,8 @@ ___
 
     Missing:
     air
+    attached_melon_stem
+    attached_pumpkin_stem
 
 
     function plant(name: str)
@@ -33,19 +35,6 @@ ___
 
         variable instance
     
-    anvil
-    attached_melon_stem
-    attached_pumpkin_stem
-    azalea
-    azalea_leaves
-    azalea_leaves_flowers
-    azure_bluet
-    bamboo
-    bamboo_sapling
-    barrel
-    barrier
-    basalt
-    beacon
     bedrock
     beehive
     beetroots

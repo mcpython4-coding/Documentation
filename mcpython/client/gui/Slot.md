@@ -1,4 +1,4 @@
-***Slot.py - documentation - last updated on 13.5.2021 by uuk***
+***Slot.py - documentation - last updated on 19.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -364,6 +364,10 @@ ___
         function __repr__(self)
 
         function __str__(self)
+
+        function can_set_item(
+                self, itemstack: mcpython.common.container.ResourceStack.ItemStack
+                ) -> bool:
 
     class SlotInfiniteStackExchangeable extends Slot
 

@@ -1,4 +1,4 @@
-***EventBus.py - documentation - last updated on 2.5.2021 by uuk***
+***EventBus.py - documentation - last updated on 19.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -73,8 +73,6 @@ ___
             :param info: an info to give for the caller
 
 
-            variable signature
-
         function unsubscribe(self, event_name: str, function)
             
             Remove an function from the event bus
@@ -82,6 +80,10 @@ ___
             :param function: the function itself
             :raise ValueError: when event name is unknown OR function was never assigned
 
+
+            variable any_found
+
+                    variable any_found
 
         function call(self, event_name: str, *args, **kwargs)
             
@@ -92,8 +94,6 @@ ___
 
 
             variable exception_occ
-
-                    variable start
 
                     variable exception_occ
 
@@ -135,9 +135,17 @@ ___
 
         function create_sub_bus(self, *args, activate=True, **kwargs)
 
-        function call_as_stack(self, event_name, *args, amount=1, **kwargs)
+        function call_as_stack(self, event_name, *args, amount=1, store_stuff=True, **kwargs)
 
-        function resetEventStack(self, event_name: str)
+            variable exception_occ
+
+                variable start
+
+                    variable exception_occ
+
+                variable dif
+
+        function reset_event_stack(self, event_name: str)
             
             Will reset all event subscriptions which where popped from the normal list
             :param event_name: the name of the event to restore

@@ -1,4 +1,4 @@
-***ResourceStack.py - documentation - last updated on 13.5.2021 by uuk***
+***ResourceStack.py - documentation - last updated on 19.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -86,6 +86,18 @@ ___
         function has_more_than(self, other: "AbstractResourceStack") -> bool
 
         function get_difference(self, other: "AbstractResourceStack") -> "AbstractResourceStack"
+
+    class LazyClassLoadItemstack extends ItemStack
+
+        function __init__(self, item_name: str, amount=1)
+
+            variable self.lazy_amount
+
+            variable self.lazy_item_name
+
+        function lookup(self)
+
+        function __repr__(self)
 
     class FluidStack extends AbstractResourceStack
 

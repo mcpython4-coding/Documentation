@@ -1,4 +1,4 @@
-***LaunchWrapper.py - documentation - last updated on 27.4.2021 by uuk***
+***LaunchWrapper.py - documentation - last updated on 19.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -13,7 +13,7 @@ ___
 
     class LaunchWrapper
         
-        Class for launching the game in an certain configuration
+        Class for launching the game in a certain configuration
         Loads all needed part and executed the loading task cycle.
         todo: move shared.py content into here & remove shared.py
 
@@ -25,20 +25,34 @@ ___
             variable self.__side_prepared
 
         function prepare_client(self)
+            
+            Prepares a client setup
+            Sets up the OpenGL driver backend
+            Spawns a window
+
 
             variable self.__side_prepared
 
             variable shared.IS_CLIENT
 
             variable shared.NO_WINDOW
+
+            variable shared.CLIENT_NETWORK_HANDLER
 
         function prepare_server(self)
+            
+            Prepares a sever
+            Spawns a fake "window"
+            WARNING: currently, also initializes the OpenGL driver
+
 
             variable self.__side_prepared
 
             variable shared.IS_CLIENT
 
             variable shared.NO_WINDOW
+
+            variable shared.SERVER_NETWORK_HANDLER
 
         function inject_sys_argv(self, argv: typing.List[str])
             

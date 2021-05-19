@@ -1,4 +1,4 @@
-***shared.py - documentation - last updated on 2.5.2021 by uuk***
+***shared.py - documentation - last updated on 19.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -82,6 +82,8 @@ ___
     variable CLIENT_NETWORK_HANDLER
 
     variable SERVER_NETWORK_HANDLER
+
+    variable NETWORK_MANAGER
 
     variable ENABLE_MOD_LOADER
 

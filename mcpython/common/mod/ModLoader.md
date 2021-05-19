@@ -1,4 +1,4 @@
-***ModLoader.py - documentation - last updated on 13.5.2021 by uuk***
+***ModLoader.py - documentation - last updated on 19.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -240,7 +240,7 @@ ___
         function check_dependency_errors(self, errors: bool, mod_info: dict)
             
             Will iterate through all mods and check dependencies
-            :param errors: if errors occured
+            :param errors: if errors occurred
             :param mod_info: the mod info dict
             :return: errors and mod-info-tuple
 
