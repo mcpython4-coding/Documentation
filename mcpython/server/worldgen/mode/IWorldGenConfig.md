@@ -1,4 +1,4 @@
-***IWorldGenConfig.py - documentation - last updated on 2.5.2021 by uuk***
+***IWorldGenConfig.py - documentation - last updated on 22.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -50,7 +50,7 @@ ___
 
         variable BIOMES
 
-        variable BIOME_SOURCE: typing.Type[IBiomeSource]
+        variable BIOME_SOURCE: IBiomeSource
 
         variable LANDMASSES
 

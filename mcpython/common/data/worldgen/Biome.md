@@ -1,4 +1,4 @@
-***Biome.py - documentation - last updated on 9.2.2021 by uuk***
+***Biome.py - documentation - last updated on 22.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -133,6 +133,7 @@ ___
         function clear(cls)
 
     variable instance
+        todo: add modifier system
 
     variable instance.on_deserialize
 

@@ -1,4 +1,4 @@
-***SaveFile.py - documentation - last updated on 9.2.2021 by uuk***
+***SaveFile.py - documentation - last updated on 22.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -41,12 +41,17 @@ ___
         - re-write of data fixer system, old still fix-able
         - removed "version"-attribute out of region files and inventory files
         - data fixers are applied to the WHOLE world ON LOAD, not when needed
-    - 7: introduced: 12.12.2020, outdated since: -, not loadable since: -
+    - 7: introduced: 12.12.2020, outdated since: 21.05.2021, not loadable since: 21.05.2021
         - major code refactoring breaking nearly everything
         - player data reformat
+    - 10: introduced: 21.05.2021, outdated since: -, not loadable since: -
+        - improved block palette
+        - improved entity storage
+        - removed some sanity checks for backwards compatibility
 
 
-    variable shared.STORAGE_VERSION - the latest version, used for upgrading
+    variable shared.STORAGE_VERSION
+        the latest version, used for upgrading
 
     variable SAVE_DIRECTORY
         where the stuff should be saved
@@ -63,7 +68,7 @@ ___
 
     class SaveFile
         
-        Interface to an stored file on the disk
+        Interface to a stored file on the disk
         Used to load certain parts into the system & store them
 
 
@@ -98,24 +103,40 @@ ___
 
         function load_world(self)
             
-            loads all setup-data into the world
+            Loads all setup-data into the world
 
+
+                    variable fixers
+
+                        variable fixer
+                            search for the one fixing to the nearest version to the searched for
+
+                        variable fixer
+
+                    variable self.version
 
         function save_world(self, *_, override=False)
             
-            save all base-data into the system
+            Save all base-data into the system
             :param _: used when used by special event triggers
             :param override: flag for saving the chunks
 
 
+                variable shared.world_generation_handler.enable_generation
+                    And open the system again
+
+                variable self.save_in_progress
+
         function apply_storage_fixer(self, name: str, *args, **kwargs)
             
-            will apply an fixer to fix the storage version
+            Will apply an fixer to fix the storage version
             :param name: the name of the fixer to use
             :param args: the args to send
             :param kwargs: the kwargs to use
             :raises DataFixerNotFoundException: if the name is invalid
 
+
+            variable fixer: mcpython.common.world.datafixers.IDataFixer.IStorageVersionFixer
 
         function apply_group_fixer(self, name: str, *args, **kwargs)
             
@@ -126,24 +147,34 @@ ___
             :raises DataFixerNotFoundException: if the name is invalid
 
 
+            variable fixer: mcpython.common.world.datafixers.IDataFixer.IGroupFixer
+
         function apply_part_fixer(self, name: str, *args, **kwargs)
             
-            will apply an part fixer to the system
+            Will apply an part fixer to the system
             :param name: the name to use
             :param args: the args to send
             :param kwargs: the kwargs
             :raises DataFixerNotFoundException: if the name is invalid
 
 
+            variable fixer: mcpython.common.world.datafixers.IDataFixer.IPartFixer
+
         function apply_mod_fixer(self, modname: str, source_version: tuple, *args, **kwargs)
             
-            applies an mod fixer(list) to the system
+            Applies an mod fixer(list) to the system
             :param modname: the mod name
             :param source_version: where to start from
             :param args: args to call with
             :param kwargs: kwargs to call with
             :raises DataFixerNotFoundException: if the name is invalid
 
+
+            variable instance
+
+            variable fixers
+
+                variable possible_fixers
 
                     variable fixer: mcpython.common.world.datafixers.IDataFixer.IModVersionFixer
 
@@ -159,7 +190,7 @@ ___
 
         function read(self, part, **kwargs)
             
-            reads an part of the save-file
+            Reads an part of the save-file
             :param part: the part to load
             :param kwargs: kwargs given to the loader
             :return: whatever the loader returns
@@ -167,7 +198,7 @@ ___
 
         function dump(self, data, part, **kwargs)
             
-            similar to read(...), but the other way round.
+            Similar to read(...), but the other way round.
             :param data: the data to store, optional, may be None
             :param part: the part to save
             :param kwargs: the kwargs to give the saver
@@ -175,7 +206,7 @@ ___
 
         function access_file_json(self, file: str)
             
-            access save an json file
+            Access a saved json file
             :param file: the file to load
             :return: the data of the file or None if an error has occur
 

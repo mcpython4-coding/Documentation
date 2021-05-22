@@ -1,4 +1,4 @@
-***LaunchWrapper.py - documentation - last updated on 19.5.2021 by uuk***
+***LaunchWrapper.py - documentation - last updated on 22.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -15,7 +15,6 @@ ___
         
         Class for launching the game in a certain configuration
         Loads all needed part and executed the loading task cycle.
-        todo: move shared.py content into here & remove shared.py
 
 
         function __init__(self)

@@ -1,4 +1,4 @@
-***ModLoader.py - documentation - last updated on 19.5.2021 by uuk***
+***ModLoader.py - documentation - last updated on 22.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -42,30 +42,18 @@ ___
             variable self.active_loading_stage: int
                 which stage we are in
 
-            variable self.previous_mods
+            variable self.previous_mod_list
                 used for detecting mod changes between versions
 
             variable self.located_mod_instances
                 temporary list of mods, for setting stuff
 
-                    variable self.previous_mods
+                    variable self.previous_mod_list
 
             variable self.finished
                 if mod loading has finished
 
-            variable self.reload_stages: typing.List[str]
-                the stages used during reload, todo: remove
-
             variable self.error_builder
-
-        function register_reload_assigned_loading_stage(self, stage: str)
-            
-            Will register an loading stage as one to executed on every reload
-            :param stage: the event name of the stage
-            todo: remove -> resource pipe
-
-
-        function execute_reload_stages(self)
 
         function __call__(
                 self, modname: str, event_name: str, *args, **kwargs
@@ -74,8 +62,12 @@ ___
             Annotation to the event system
             :param modname: the mod name
             :param event_name: the event name
-            :param info: the info
-            :return: an ModLoaderAnnotation-instance for annotation
+            :param info: the info, as shown by EventBus during errors
+            :return: a callable, used for regisering
+            Example:
+            @shared.modloader("minecraft", "stage:mod:init")
+            def test():
+                print("Hello world!")
 
 
         function __getitem__(self, item: str)
@@ -86,8 +78,10 @@ ___
 
         function get_locations(self) -> list
             
-            Will return an list of mod locations found for loading
-            todo: split up into smaller portions
+            Will return a list of mod locations found for loading
+            Will parse sys.argv input
+            %home%/mods is searched by default
+            todo: add a way to disable the default location
 
 
                 variable element

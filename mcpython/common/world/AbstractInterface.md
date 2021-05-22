@@ -1,4 +1,4 @@
-***AbstractInterface.py - documentation - last updated on 2.5.2021 by uuk***
+***AbstractInterface.py - documentation - last updated on 22.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -156,6 +156,13 @@ ___
             
             Helper for getting exposed faces of a block
             todo: add iterating variant
+
+
+        function exposed_faces_iterator(
+                self, position: typing.Tuple[int, int, int]
+                ) -> typing.Iterator[mcpython.util.enums.EnumSide]:
+            
+            Variant of exposed_faces yielding the exposed faces instead of using a dict
 
 
         function is_position_blocked(self, position: typing.Tuple[float, float, float]) -> bool

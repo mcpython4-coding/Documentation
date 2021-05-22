@@ -1,4 +1,4 @@
-***Chunk.py - documentation - last updated on 2.5.2021 by uuk***
+***Chunk.py - documentation - last updated on 22.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -15,6 +15,8 @@ ___
         
         representation of an chunk in the world
 
+
+        variable BLOCK_REGISTRY
 
         variable now - when is now?
 
@@ -33,26 +35,25 @@ ___
             variable self.dimension
 
             variable self.position
+                The position of the chunk
 
             variable self.is_ready
-                used when the chunks gets invalid or is loaded at the moment
+                Used when the chunks gets invalid or is loaded at the moment
 
             variable self.visible
-                used when the chunk should be visible
+                Indicated that the chunk is shown to the player
+                todo: client-only
 
             variable self.loaded
-                used if load success
+                Indicated that the chunk is loaded
 
             variable self.generated
-                used if generation success
+                Indicates that the chunk is generated
 
             variable self.dirty
-                if the chunk was modified since last save
+                Indicated that the chunk was modified
 
         function entity_iterator(self) -> typing.Iterable
-            
-            Returns an iterable of entities in this chunk
-
 
         function tick(self)
             
@@ -61,10 +62,6 @@ ___
 
 
         function save(self)
-            
-            Wrapper function for saving this file
-            Wraps SaveFile.dump around this chunk
-
 
         function as_shareable(self) -> mcpython.common.world.AbstractInterface.IChunk
 
@@ -93,7 +90,7 @@ ___
             Will draw the chunk with the content for it
             Draws all entities
             todo: for this, add a batch
-            will schedule a chunk load from saves when needed
+            Will schedule a chunk load from saves when needed
 
 
         variable ALL_FACES_EXPOSED
@@ -125,9 +122,25 @@ ___
 
                     variable faces[face.normal_name]
 
+        function exposed_faces_iterator(
+                self, position: typing.Tuple[int, int, int]
+                ) -> typing.Iterator[mcpython.util.enums.EnumSide]:
+
+            variable instance
+
+                variable pos
+
+                variable chunk_position
+
+                    variable chunk
+
+                    variable chunk
+
+                    variable block
+
         function is_position_blocked(self, position: typing.Tuple[float, float, float]) -> bool
             
-            Will return if at an given position is a block or a block is scheduled [e.g. by world generation]
+            Will return if at a given position is a block or a block is scheduled [e.g. by world generation]
             :param position: the position to check
             :return: if there is an block
 
@@ -145,7 +158,7 @@ ___
                 replace_existing=True,
                 ):
             
-            Adds an block to the given position
+            Adds a block to the given position
             :param position: the position to add
             :param block_name: the name of the block or an instance of it
             :param immediate: if the block should be shown if needed
@@ -167,7 +180,7 @@ ___
 
                 variable block.dimension
 
-                variable table
+                variable block_cls
 
                 variable block
 
@@ -176,6 +189,7 @@ ___
                 variable block.dimension
 
             variable self._world[position]
+                store the block instance in the local world
 
         function on_block_updated(
                 self, position: typing.Tuple[int, int, int], include_itself=True

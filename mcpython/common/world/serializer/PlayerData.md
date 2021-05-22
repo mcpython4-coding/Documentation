@@ -1,4 +1,4 @@
-***PlayerData.py - documentation - last updated on 9.2.2021 by uuk***
+***PlayerData.py - documentation - last updated on 22.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -36,7 +36,14 @@ ___
         function apply_part_fixer(cls, save_file, fixer)
 
         static
-        function load(cls, save_file)
+        function load(cls, save_file, **_)
+
+                    variable player.in_nether_portal_since
+
+                variable player.should_leave_nether_portal_before_dim_change
 
         static
-        function save(cls, data, save_file)
+        function save(cls, data, save_file, **_)
+
+                variable data[player.name]
+                    todo: move to player custom save data

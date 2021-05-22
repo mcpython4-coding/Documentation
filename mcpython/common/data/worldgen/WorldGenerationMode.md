@@ -1,4 +1,4 @@
-***WorldGenerationMode.py - documentation - last updated on 9.2.2021 by uuk***
+***WorldGenerationMode.py - documentation - last updated on 22.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -41,7 +41,11 @@ ___
                 variable GENERATES_START_CHEST
 
         static
-        function serialize(cls, obj: typing.Type[ISerializeAble]) -> dict
+        function serialize(cls, obj) -> dict
+
+            variable data
+
+                variable data["display_name"]
 
                 variable biome_data
 

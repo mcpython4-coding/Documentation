@@ -1,4 +1,4 @@
-***PlayerEntity.py - documentation - last updated on 13.5.2021 by uuk***
+***PlayerEntity.py - documentation - last updated on 22.5.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -42,18 +42,22 @@ ___
 
             variable self.armor_toughness
 
-            variable self.in_nether_portal_since
+            variable self.in_nether_portal_since: typing.Optional[float]
 
             variable self.should_leave_nether_portal_before_dim_change
 
-            variable self.flying - are we currently flying?
+            variable self.flying
+                are we currently flying?
 
-            variable self.fallen_since_y - how far did we fall?
+            variable self.fallen_since_y: float
+                how far did we fall?
 
             variable self.active_inventory_slot: int
                 which slot is currently selected
 
             variable self.inventory_hotbar
+                the different parts of the player inventory
+                todo: use only containers here
 
             variable self.inventory_main
 
@@ -64,6 +68,7 @@ ___
             variable self.inventory_crafting_table
 
             variable self.inventory_order
+                the lookup order of inventory, todo: move to inventory handler
 
         function hotkey_get_position(self)
 
@@ -107,6 +112,9 @@ ___
                 variable self.gamemode
 
         function get_needed_xp_for_next_level(self) -> int
+            
+            :return: the xp amount needed to reach the next xp level
+
 
         function add_xp(self, xp: int)
 
@@ -140,6 +148,7 @@ ___
         function set_active_inventory_slot(self, slot: int)
             
             Sets the active inventory slot by ID (0-8)
+            Clamped in the range when out of range
 
 
         function get_active_inventory_slot(self)
@@ -160,6 +169,7 @@ ___
                 variable a
                     todo: add effects of totem
                     todo: add list to player of possible slots with possibility of being callable
+                    todo: add tag for this functionality
 
                 variable b
 
@@ -201,7 +211,7 @@ ___
 
         function reset_moving_slot(self)
 
-        function move_to_spawn_point(self)
+        function teleport_to_spawn_point(self)
 
                 variable h
 
@@ -210,6 +220,8 @@ ___
         function tell(self, msg: str)
 
         function draw(self, position=None, rotation=None, full=None)
+
+            variable rotation_whole
 
         function __str__(self)
 
