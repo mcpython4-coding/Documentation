@@ -96,4 +96,4 @@ ___
 
 
     @shared.mod_loader("minecraft", "stage:tag:group", info="adding tag group locations")
-    function on_group_add()
+    function load_default_tags()

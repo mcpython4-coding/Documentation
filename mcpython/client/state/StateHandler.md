@@ -21,9 +21,9 @@ ___
 
             variable self.global_key_bind_toggle
 
-        function switch_to(self, state_name: str, immediate=True)
+        function change_state(self, state_name: str, immediate=True)
 
-        function _switch_to(self, state_name: str)
+        function inner_change_state(self, state_name: str)
 
             variable previous
 
@@ -33,7 +33,7 @@ ___
 
         function add_state(self, state_instance: State.State)
 
-        function update_exclusive(self)
+        function update_mouse_exclusive_state(self)
 
     variable handler
 
