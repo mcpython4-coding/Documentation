@@ -23,7 +23,7 @@ ___
         Loading:
             __init__(data, BlockStateDefinition) -> Instance
         Baking:
-            bake() is called to bake references and do similar stuff, returning success or not
+            on_bake() is called to on_bake references and do similar stuff, returning success or not
         Drawing:
             add_face_to_batch() should add the given face to the batches given
             add_raw_face_to_batch() should add a face to the batch without the block instance, but instead the position
@@ -46,7 +46,7 @@ ___
 
             variable self.block_state
 
-        function bake(self) -> bool
+        function on_bake(self) -> bool
 
         function add_face_to_batch(
                 self,
@@ -123,7 +123,7 @@ ___
 
                 variable self.model_alias
 
-        function bake(self)
+        function on_bake(self)
 
                 variable self.parent
 
@@ -214,7 +214,7 @@ ___
 
                 variable self.model_alias
 
-        function bake(self)
+        function on_bake(self)
 
                 variable self.parent
 
@@ -310,7 +310,7 @@ ___
 
             variable self.baked
 
-        function bake(self)
+        function on_bake(self)
 
         function add_face_to_batch(
                 self,

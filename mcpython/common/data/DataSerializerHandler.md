@@ -79,4 +79,4 @@ ___
 
         function clear(self)
 
-        function bake(self)
+        function on_bake(self)

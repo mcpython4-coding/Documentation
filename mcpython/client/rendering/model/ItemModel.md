@@ -65,7 +65,7 @@ ___
 
         function addOverride(self, predicate, replacement: str)
 
-        function bake(self, helper: "ItemModelHandler")
+        function on_bake(self, helper: "ItemModelHandler")
 
         function add_to_batch(
                 self, position: tuple, batch, context: str, state: dict
@@ -94,7 +94,7 @@ ___
 
         function from_folder(self, folder: str, modname: str)
 
-        function bake(self)
+        function on_bake(self)
 
         function add_to_batch(
                 self, item_name, *args, **kwargs

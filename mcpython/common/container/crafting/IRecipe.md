@@ -15,7 +15,7 @@ ___
         
         Base class for recipes
         Data is matched by TYPE, than decoded by from_data() ['file' is for error messages]
-        Later run the loading pipe, bake() is called
+        Later run the loading pipe, on_bake() is called
         After all that, prepare() is called. This should create the needed lookups for the crafting systems
         [e.g. maps from input -> output, ...]
 
@@ -37,6 +37,6 @@ ___
 
         function get_outputs(self) -> typing.Iterable[ItemStack]
 
-        function bake(self)
+        function on_bake(self)
 
         function prepare(self)
