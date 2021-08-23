@@ -1,4 +1,4 @@
-***ResourcePipe.py - documentation - last updated on 13.5.2021 by uuk***
+***ResourcePipe.py - documentation - last updated on 23.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -32,6 +32,12 @@ ___
             variable self.bake_handlers
 
             variable self.data_processors
+
+            variable self.listeners: typing.List[typing.Type[AbstractReloadListener]]
+
+        function register_listener(self, listener: typing.Type[AbstractReloadListener])
+
+            function l()
 
         function register_for_mod(self, providing_mod: str, namespace: str = None)
             

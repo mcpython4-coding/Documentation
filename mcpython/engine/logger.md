@@ -1,4 +1,4 @@
-***logger.py - documentation - last updated on 9.2.2021 by uuk***
+***logger.py - documentation - last updated on 23.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -14,6 +14,7 @@ ___
     variable FUNNY_STRINGS
         adapted from mc version 1.15.2, decompiled with mc-forge located under net.minecraft.crash.CrashReport
         added some extra entries
+        todo: export to some other file
 
     variable log_file_path
 

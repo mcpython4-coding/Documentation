@@ -1,4 +1,4 @@
-***ModelHandler.py - documentation - last updated on 9.2.2021 by uuk***
+***ModelHandler.py - documentation - last updated on 23.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -60,6 +60,10 @@ ___
         function special_build(self, used: str)
 
         function process_models(self, immediate=False)
+
+            variable sorted_models
+
+                variable modname
 
         function load_model(self, name: str)
 

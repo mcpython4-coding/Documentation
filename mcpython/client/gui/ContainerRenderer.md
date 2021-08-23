@@ -1,4 +1,4 @@
-***ContainerRenderer.py - documentation - last updated on 25.4.2021 by uuk***
+***ContainerRenderer.py - documentation - last updated on 23.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -58,6 +58,12 @@ ___
             
             Reload the config file
 
+
+                    variable self.config
+
+                    variable self.config
+
+                variable self.config
 
                 variable slot_id
 

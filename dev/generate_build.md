@@ -1,4 +1,4 @@
-***generate_build.py - documentation - last updated on 13.5.2021 by uuk***
+***generate_build.py - documentation - last updated on 23.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -64,7 +64,7 @@ ___
         function write(self, file: str, data: bytes)
             
             Writes data into the local cache, overriding existing data, and overriding the original file data previously
-                accessable via read()
+                access-able via read()
             :param file: the file
             :param data: the data to write
 
@@ -149,7 +149,7 @@ ___
             Runs the build configuration onto the given directory and outputs the data at the given directory
             :param directory: the directory to use as a source
             :param build_output_dir: the directory to output to
-            :param project_view_consumer: a consumer for the project view, for additonal changes
+            :param project_view_consumer: a consumer for the project view, for additional changes
 
 
             variable view

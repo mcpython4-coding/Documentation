@@ -1,4 +1,4 @@
-***StateBlockItemGenerator.py - documentation - last updated on 13.5.2021 by uuk***
+***StateBlockItemGenerator.py - documentation - last updated on 23.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -63,6 +63,7 @@ ___
 
             variable shared.model_handler.hide_blockstate_errors
                 We want to hide this error messages
+                todo: add command line option to disable
 
             variable self.parts[1].progress_max
                 Update the progress bar progress

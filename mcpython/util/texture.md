@@ -1,4 +1,4 @@
-***texture.py - documentation - last updated on 13.5.2021 by uuk***
+***texture.py - documentation - last updated on 23.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -37,7 +37,7 @@ ___
 
     function layer_with_alpha(base: PIL.Image.Image, top: PIL.Image.Image)
 
-    function to_pyglet_image(image: PIL.Image.Image) -> pyglet.image.AbstractImage
+    function to_pyglet_image(image: PIL.Image.Image)
         
         Will transform the image into an pyglet image
         :param image: the image to transform
@@ -45,14 +45,14 @@ ___
         todo: can we do this in-memory? (less time consumed)
 
 
-    function to_pyglet_sprite(image: PIL.Image.Image) -> pyglet.sprite.Sprite
+    function to_pyglet_sprite(image: PIL.Image.Image)
         
         Will transform the pillow image into an pyglet sprite
         :param image: the image
         :return: the sprite
 
 
-    function to_pillow_image(image: pyglet.image.AbstractImage) -> PIL.Image.Image
+    function to_pillow_image(image) -> PIL.Image.Image
         
         Will transform the pyglet image into an pillow one
         :param image: the image to transform
@@ -67,6 +67,4 @@ ___
 
     function int_hex_to_color(color: int) -> typing.Tuple[int, int, int]
 
-    function resize_image_pyglet(
-            image: pyglet.image.AbstractImage, size: typing.Tuple[int, int]
-            ) -> pyglet.image.AbstractImage:
+    function resize_image_pyglet(image, size: typing.Tuple[int, int])

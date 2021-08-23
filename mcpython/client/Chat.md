@@ -1,4 +1,4 @@
-***Chat.py - documentation - last updated on 18.4.2021 by uuk***
+***Chat.py - documentation - last updated on 23.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -13,12 +13,13 @@ ___
 
     @onlyInClient() class ChatInventory extends mcpython.client.gui.ContainerRenderer.ContainerRenderer
         
-        main class for chat
+        Main class for chat inventory
+        Every player should have one
 
 
         function __init__(self)
             
-            creates an new Chat-instance
+            Creates a new Chat-inventory-instance
 
 
             variable self.label
@@ -31,36 +32,33 @@ ___
 
         function update_text(self, text: str, underline_index: int)
             
-            updates the text displayed by the chat
+            Updates the text displayed by the chat
             :param text: the text to use
             :param underline_index: the index where the "_" is
 
 
-        function on_activate(self)
-            
-            called by the system on activation of the inventory
+                variable self.label.text
 
+                variable self.label.text
+
+        function on_activate(self)
 
         function on_deactivate(self)
-            
-            called by the system on deactivation of the inventory
-
 
         function draw(self, hovering_slot=None)
 
+                variable self.label.text
+
     class Chat
         
-        main class for chat
+        Main class for chat
 
 
         function __init__(self)
-            
-            creates an new chat
 
+            variable self.text: str - the text currently shown
 
-            variable self.text: str
-
-            variable self.history: list
+            variable self.history: list - the previous commands
 
             variable self.history_index
 
@@ -88,8 +86,6 @@ ___
 
                 variable self.active_index
 
-                variable self.CANCEL_INPUT
-
                         variable self.executing_command_info
 
                         variable self.executing_command_info.chat
@@ -99,6 +95,8 @@ ___
                         variable self.executing_command_info.position
 
                         variable self.executing_command_info.dimension
+
+                variable self.history_index
 
                 variable self.text
 

@@ -1,4 +1,4 @@
-***DamageSource.py - documentation - last updated on 9.2.2021 by uuk***
+***DamageSource.py - documentation - last updated on 23.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -22,8 +22,6 @@ ___
             variable self.attributes
 
             variable self.__attributes
-
-            variable self.type
 
             variable self.bypasses_armor
 

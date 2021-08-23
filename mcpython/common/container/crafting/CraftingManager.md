@@ -1,4 +1,4 @@
-***CraftingManager.py - documentation - last updated on 27.4.2021 by uuk***
+***CraftingManager.py - documentation - last updated on 23.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -55,7 +55,7 @@ ___
 
                 variable name
 
-            variable recipe.name
+                variable recipe.name
 
             variable self.recipe_table[name]
 

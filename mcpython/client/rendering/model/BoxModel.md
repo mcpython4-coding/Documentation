@@ -1,4 +1,4 @@
-***BoxModel.py - documentation - last updated on 25.4.2021 by uuk***
+***BoxModel.py - documentation - last updated on 23.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -16,18 +16,49 @@ ___
     variable SIDE_ORDER
 
     variable UV_INDICES
+        representative for the order of uv insertion
 
-    variable SIMILAR_VERTEX
+    class AbstractBoxModel extends ABC
 
-    @onlyInClient() class BoxModel
+        function copy(self) -> "AbstractBoxModel"
+
+    @onlyInClient() class BoxModel extends AbstractBoxModel
 
         static
-        function new(cls, data: dict, model=None)
+        function new(cls, data: dict, model=None) -> "BoxModel"
 
-        function __init__(self, data: dict, model=None, flip_y=True)
+        function __init__(self, flip_y=True)
+
+            variable self.flip_y
+
+            variable self.vertex_provider: typing.Optional[VertexProvider]
 
             variable self.atlas
-                todo: move most of the code here to the build function / decode function
+
+            variable self.model
+
+            variable self.data
+
+            variable self.tex_data
+
+            variable self.inactive
+
+            variable self.box_position
+
+            variable self.box_size
+
+            variable self.faces
+
+            variable self.texture_region_rotate: typing.List[float]
+
+            variable self.enable_alpha
+
+        function parse_mc_data(self, data: dict, model=None)
+            
+            Parses the default "elements" tag from a vanilla model file
+            :param data: one element of the "elements" tag
+            :param model: the assigned model, or None if not arrival
+
 
             variable self.model
 
@@ -37,9 +68,16 @@ ___
 
             variable self.box_size
 
-            variable self.relative_position
+                    variable self.rotation_center
 
-            variable self.faces
+                variable rot
+                    todo: add a way to rotate around more than one axis
+
+                variable rot["xyz".index(data["rotation"]["axis"])]
+
+                variable self.rotation
+
+            variable self.vertex_provider
 
             variable UD
 
@@ -47,9 +85,7 @@ ___
 
             variable EW
 
-            variable self.texture_region
-
-            variable self.texture_region_rotate
+            variable self.texture_region[:]
 
                 variable name: str
 
@@ -71,44 +107,20 @@ ___
 
                         variable self.texture_region_rotate[index]
 
-            variable self.rotation
-
-            variable self.rotation_center
-
-                    variable self.rotation_center
-
-                variable rot
-
-                variable rot["xyz".index(data["rotation"]["axis"])]
-
-                variable self.rotation
-
-            variable status
-
-                variable self.rotated_vertices
-
-                variable self.rotated_vertices
-
-                variable SIMILAR_VERTEX[status]
-
-            variable self.tex_data
-
-            variable self.un_active
-
-            variable self.raw_vertices
-
         function build(self, atlas=None)
             
-            "Builds" the model by preparing internal data like preparing the texture atlas, the texture coordinates
+            "Builds" the model by preparing internal data like preparing the texture atlas, the texture coordinates, etc.
 
 
                 variable atlas
 
             variable self.tex_data
 
-            variable self.un_active
+            variable self.inactive
 
             variable self.atlas
+
+            variable self.enable_alpha
 
         function get_vertex_variant(self, rotation: tuple, position: tuple) -> list
             
@@ -117,23 +129,22 @@ ___
             :param position: the position of the vertex cube
 
 
-                variable vertex_r
-
-                variable vertex
-
-                variable vertex_r
-
-                    variable face_r
-
-                        variable v
-
-                        variable v
-
-                variable self.rotated_vertices[rotation]
-
         function get_prepared_box_data(
-                self, position, rotation, active_faces=None, uv_lock=False
+                self,
+                position: typing.Tuple[float, float, float],
+                rotation: typing.Tuple[float, float, float] = (0, 0, 0),
+                active_faces=None,
+                uv_lock=False,
+                previous=None,
                 ):
+            
+            Util method for getting the box data for a block (vertices and uv's)
+            :param position: the position of the block
+            :param rotation: the rotation
+            :param active_faces: the faces to get data for, None means all
+            :param uv_lock: ?
+            :param previous: previous data to add the new to, or None to create new
+
 
             variable vertex
 
@@ -145,20 +156,31 @@ ___
 
                 variable i2
 
-        function add_prepared_data_to_batch(self, collected_data, batch)
+        function add_prepared_data_to_batch(
+                self,
+                collected_data: typing.Tuple[typing.List[float], typing.List[float]],
+                batch: typing.Union[pyglet.graphics.Batch, typing.List[pyglet.graphics.Batch]],
+                ) -> typing.Iterable[VertexList]:
+            
+            Adds the data from get_prepared_box_data to a given batch
+            :param collected_data: the collected data
+            :param batch: the batch to add in
+
 
                 variable batch
 
         function add_to_batch(
                 self,
                 position: typing.Tuple[float, float, float],
-                batch,
-                rotation,
+                batch: typing.Union[pyglet.graphics.Batch, typing.List[pyglet.graphics.Batch]],
+                rotation: typing.Tuple[float, float, float],
                 active_faces=None,
                 uv_lock=False,
                 ):
             
             Adds the box model to the batch
+            Internally wraps a get_prepared_box_data call around the add_prepared_data_to_batch method
+            Use combined data where possible
             :param position: the position based on
             :param batch: the batches to select from
             :param rotation: the rotation to use
@@ -170,17 +192,25 @@ ___
 
             variable collected_data
 
-        function draw_prepared_data(self, collected_data)
+        function draw_prepared_data(
+                self, collected_data: typing.Tuple[typing.List[float], typing.List[float]]
+                ):
+            
+            Draws prepared data to the screen
+            WARNING: the invoker is required to set up OpenGL for rendering the stuff, including linking the textures
+            Use batches when possible
+            :param collected_data: the data
+
 
         function draw(
                 self,
                 position: typing.Tuple[float, float, float],
-                rotation,
-                active_faces=None,
-                uv_lock=False,
+                rotation: typing.Tuple[float, float, float],
+                active_faces: typing.List[bool] = None,
+                uv_lock: bool = False,
                 ):
             
-            draws the BoxModel direct into the world
+            Draws the BoxModel direct into the world
             WARNING: use batches for better performance
             :param position: the position to draw on
             :param rotation: the rotation to draw with
@@ -196,27 +226,29 @@ ___
 
         function copy(self, new_model=None)
 
-    @onlyInClient() class BaseBoxModel
+    @onlyInClient() class RawBoxModel extends AbstractBoxModel
         
-        An non-model-bound boxmodel class
+        A non-model-bound BoxModel class
 
+
+        function copy(self) -> "AbstractBoxModel"
 
         function __init__(
                 self,
-                relative_position: tuple,
-                size: tuple,
-                texture,
-                texture_region=None,
-                rotation=(0, 0, 0),
-                rotation_center=None,
+                relative_position: typing.Tuple[float, float, float],
+                size: typing.Tuple[float, float, float],
+                texture: typing.Union[str, pyglet.graphics.TextureGroup],
+                texture_region: typing.List[typing.Tuple[float, float, float, float]] = None,
+                rotation: typing.Tuple[float, float, float] = (0, 0, 0),
+                rotation_center: typing.Tuple[float, float, float] = None,
                 ):
             
-            Creates an new renderer for the box-model
-            :param relative_position: where to position the box relative to draw position
+            Creates a new renderer for the box-model
+            :param relative_position: where to draw the box, used in calculations of vertex coordinates
             :param size: the size of the box
             :param texture: which texture to use. May be str or pyglet.graphics.TextureGroup
             :param texture_region: which tex region to use, from (0, 0) to (1, 1)
-            :param rotation: how to rotate the bbox
+            :param rotation: how to rotate the box around rotation_center
             :param rotation_center: where to rotate the box around
 
 
@@ -242,6 +274,8 @@ ___
 
             variable self.rotation_center
 
+            variable self.vertex_provider: typing.Optional[VertexProvider]
+
         function auto_value_region(
                 self,
                 texture_start: typing.Tuple[float, float],
@@ -257,6 +291,9 @@ ___
 
         function recalculate_cache(self)
 
+            variable self.texture_cache
+                todo: this seems odd
+
         function get_rotation(self)
 
         function set_rotation(self, rotation: tuple)
@@ -269,31 +306,19 @@ ___
 
         variable texture_region
 
+        function get_vertices(self, position, rotation, rotation_center)
+
         function add_to_batch(
                 self, batch, position, rotation=(0, 0, 0), rotation_center=(0, 0, 0)
                 ):
 
-            variable vertex
-
-                variable vertex
-
-                variable self.rotated_vertex_cache[rotation]
-
-            variable result
-
-                variable t
-
-                variable v
+            variable vertices
 
         function add_face_to_batch(
                 self, batch, position, face, rotation=(0, 0, 0), rotation_center=(0, 0, 0)
                 ):
 
-            variable vertex
-
-                variable vertex
-
-                variable self.rotated_vertex_cache[rotation]
+            variable vertices
 
             variable result
 

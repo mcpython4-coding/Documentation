@@ -1,4 +1,4 @@
-***BiomeMap.py - documentation - last updated on 2.5.2021 by uuk***
+***BiomeMap.py - documentation - last updated on 23.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -18,6 +18,10 @@ ___
         function __init__(self, chunk)
 
         function load_from_saves(self, data)
+
+            variable steps
+
+                    variable previous_column
 
                         variable index
 

@@ -1,4 +1,4 @@
-***Mod.py - documentation - last updated on 13.5.2021 by uuk***
+***Mod.py - documentation - last updated on 23.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -71,9 +71,9 @@ ___
 
             variable version_name: str
             
-            creates an new mod
+            Creates a new mod
             :param name: the name of the mod
-            :param version: an tuple of CONSTANT length across ALL versions representing the version of the mod
+            :param version: a tuple of CONSTANT length across ALL versions representing the version of the mod
 
 
                     variable version
@@ -82,18 +82,22 @@ ___
 
             variable self.name
 
-            variable self.eventbus: mcpython.common.event.EventBus.EventBus
+            variable self.eventbus: mcpython.engine.event.EventBus.EventBus
 
             variable self.depend_info
                 need, possible, not possible, before, after, only with, only without
 
             variable self.path
 
+            variable self.container
+
             variable self.version - the version of the mod, as an tuple
 
             variable self.version_name
 
             variable self.package - the package where the mod-file was found
+
+            variable self.resource_access - where to load resources from
 
         function mod_string(self)
             

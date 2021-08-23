@@ -1,4 +1,4 @@
-***UIPartImage.py - documentation - last updated on 9.2.2021 by uuk***
+***UIPartImage.py - documentation - last updated on 23.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -19,7 +19,7 @@ ___
                 position,
                 anchor_window="WS",
                 on_press=None,
-                press=mcpython.common.event.EventInfo.MousePressEventInfo(
+                press=mcpython.engine.event.EventInfo.MousePressEventInfo(
                 pyglet.window.mouse.LEFT
                 ),
                 anchor_image="WS",
@@ -34,7 +34,7 @@ ___
 
             variable self.image
 
-            variable self.press: mcpython.common.event.EventInfo.MousePressEventInfo
+            variable self.press: mcpython.engine.event.EventInfo.MousePressEventInfo
 
             variable self.on_press
 

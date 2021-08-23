@@ -1,4 +1,4 @@
-***Language.py - documentation - last updated on 9.2.2021 by uuk***
+***Language.py - documentation - last updated on 23.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -86,3 +86,5 @@ ___
 
 
     function from_mod_name(modname: str)
+
+    function load()

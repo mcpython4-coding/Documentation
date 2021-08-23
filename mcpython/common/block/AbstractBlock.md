@@ -1,4 +1,4 @@
-***AbstractBlock.py - documentation - last updated on 25.4.2021 by uuk***
+***AbstractBlock.py - documentation - last updated on 23.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -93,6 +93,9 @@ ___
             internal helper properties; DO NOT CHANGE ON BASE CLASS!
 
         variable UNSOLID_FACE_SOLID
+
+        static
+        function __init_subclass__(cls, **kwargs)
 
         static
         function modify_block_item(cls, instance)

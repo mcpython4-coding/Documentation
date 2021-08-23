@@ -1,4 +1,4 @@
-***shared.py - documentation - last updated on 19.5.2021 by uuk***
+***shared.py - documentation - last updated on 23.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,9 +11,9 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    variable invalidate_cache
+    variable launch_wrapper
 
-    variable debug_events
+    variable invalidate_cache
 
     variable dev_environment - dynamical set on build
 
@@ -32,6 +32,13 @@ ___
     variable NO_WINDOW
 
     variable IS_CLIENT
+
+    variable IS_TEST_ENV
+
+    variable CURRENT_EVENT_SUB
+        used by fml to store which mod is currently working
+
+    variable CURRENT_REF_MAP
 
     variable STORAGE_VERSION - the version of the storage format
 

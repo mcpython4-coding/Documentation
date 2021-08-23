@@ -1,4 +1,4 @@
-***UIPartLabel.py - documentation - last updated on 9.2.2021 by uuk***
+***UIPartLabel.py - documentation - last updated on 23.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -17,7 +17,7 @@ ___
                 self,
                 text,
                 position,
-                press=mcpython.common.event.EventInfo.MousePressEventInfo(
+                press=mcpython.engine.event.EventInfo.MousePressEventInfo(
                 pyglet.window.mouse.LEFT
                 ),
                 anchor_lable="WS",
@@ -40,7 +40,7 @@ ___
 
             variable self.text
 
-            variable self.press: mcpython.common.event.EventInfo.MousePressEventInfo
+            variable self.press: mcpython.engine.event.EventInfo.MousePressEventInfo
 
             variable self.color
 

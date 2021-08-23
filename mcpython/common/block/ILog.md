@@ -1,4 +1,4 @@
-***ILog.py - documentation - last updated on 25.4.2021 by uuk***
+***ILog.py - documentation - last updated on 23.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -13,12 +13,14 @@ ___
 
     class ILog extends mcpython.common.block.AbstractBlock.AbstractBlock
         
-        base class for logs
+        Base class for log-like blocks
 
 
         function __init__(self)
 
             variable self.axis
+
+        function on_block_added(self)
 
         function get_model_state(self)
 

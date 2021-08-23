@@ -1,4 +1,4 @@
-***Slot.py - documentation - last updated on 19.5.2021 by uuk***
+***Slot.py - documentation - last updated on 23.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -13,7 +13,9 @@ ___
 
     variable SLOT_WIDTH
 
-    variable PYGLET_IMAGE_HOVERING
+        variable PYGLET_IMAGE_HOVERING
+
+        variable PYGLET_IMAGE_HOVERING
 
     class ISlot extends ABC
 

@@ -1,4 +1,4 @@
-***Barrel.py - documentation - last updated on 25.4.2021 by uuk***
+***Barrel.py - documentation - last updated on 23.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -26,7 +26,7 @@ ___
 
         function __init__(self)
             
-            Creates an new BlockBarrel-class
+            Creates a new BlockBarrel-class
 
 
             variable self.opened: bool - if the barrel is open

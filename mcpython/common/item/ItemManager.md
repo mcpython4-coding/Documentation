@@ -1,4 +1,4 @@
-***ItemManager.py - documentation - last updated on 25.4.2021 by uuk***
+***ItemManager.py - documentation - last updated on 23.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -15,11 +15,17 @@ ___
 
     variable tag_holder
 
-    variable ITEM_ATLAS
+        variable ITEM_ATLAS
+
+        variable ITEM_ATLAS
 
     function build()
 
     function load_data()
+
+                        variable model
+
+                        variable ItemModel.handler.models[name]
 
     function register_item(registry, cls)
 

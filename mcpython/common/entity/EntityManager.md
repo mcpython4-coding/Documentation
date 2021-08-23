@@ -1,4 +1,4 @@
-***EntityManager.py - documentation - last updated on 2.5.2021 by uuk***
+***EntityManager.py - documentation - last updated on 23.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -57,6 +57,6 @@ ___
 
         function clear(self)
 
-    variable shared.entity_manager
-
     function load()
+
+        variable shared.entity_manager

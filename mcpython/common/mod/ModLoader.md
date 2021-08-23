@@ -1,4 +1,4 @@
-***ModLoader.py - documentation - last updated on 22.5.2021 by uuk***
+***ModLoader.py - documentation - last updated on 23.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -10,6 +10,139 @@ ___
     Mod loader inspired by "Minecraft Forge" (https://github.com/MinecraftForge/MinecraftForge) and similar
     This project is not official by mojang and does not relate to it.
 
+
+    class LoadingInterruptException extends Exception
+
+    function cast_dependency(depend: dict)
+        
+        Will cast an dict-structure to the depend
+        :param depend: the depend dict
+        :return: the parsed mod.Mod.ModDependency-object
+
+
+            variable config["version_min"]
+
+            variable config["version_max"]
+
+            variable config["versions"]
+
+    function parse_provider_json(container: "ModContainer", data: dict)
+
+    class ModContainer
+        
+        Class holding information about a mod file
+
+
+        function __init__(self, path: str)
+
+            variable self.path
+
+            variable self.assigned_mod_loader: typing.Optional[AbstractModLoaderInstance]
+
+                variable self.resource_access
+
+                variable self.resource_access
+
+                variable self.resource_access
+                    In this case, it is a file, so we know what mod loader to use
+
+                variable self.assigned_mod_loader
+
+            variable self.loaded_mods
+
+        function add_resources(self)
+
+        function try_identify_mod_loader(self)
+            
+            Does some clever lookup for identifying the mod loader
+
+
+                    variable self.assigned_mod_loader
+
+        function load_meta_files(self)
+            
+            Looks out for some meta files
+
+
+        function __repr__(self)
+
+    class AbstractModLoaderInstance extends ABC
+
+        static
+        function match_container_loader(cls, container: ModContainer) -> bool
+
+        function __init__(self, container: ModContainer)
+
+            variable self.container
+
+            variable self.parent
+
+            variable self.raw_data
+
+        function on_select(self)
+            
+            Informal method called sometime after construction
+
+
+        function on_instance_bake(self, mod: mcpython.common.mod.Mod)
+
+    class PyFileModLoader extends AbstractModLoaderInstance
+
+    class DefaultModJsonBasedLoader extends AbstractModLoaderInstance
+
+        static
+        function match_container_loader(cls, container: ModContainer) -> bool
+
+        function on_select(self)
+
+            variable self.raw_data
+
+        function load_from_data(self, data)
+
+            variable version
+
+                    variable modname
+
+                    variable loader
+
+                        variable version
+
+                        variable instance
+
+                                variable t
+
+                        variable mod_loader
+
+                        variable mod_loader.parent
+
+    class TomlModLoader extends DefaultModJsonBasedLoader
+
+        static
+        function match_container_loader(cls, container: ModContainer) -> bool
+
+        function on_select(self)
+
+            variable data
+
+            variable self.raw_data
+
+        function load_from_data(self, data)
+
+                        variable mod_loader
+
+                        variable mod_loader.parent
+
+                            variable self.container.assigned_mod_loader
+
+                variable version
+
+                    variable mc_version - todo: implement
+
+                    variable mc_version
+
+                variable mc_version
+
+                    variable name
 
     class ModLoader
         
@@ -24,11 +157,18 @@ ___
             the download of programs to do so.
 
 
+        variable KNOWN_MOD_LOADERS: typing.List[typing.Type[AbstractModLoaderInstance]]
+            This stores a list of valid mod loader classes used during discovery
+
         function __init__(self)
             
             Creates a new mod-loader-instance
             WARNING: only ONE instance should be present, otherwise, bad things might happen
 
+
+            variable self.found_mod_files: typing.Set[str]
+
+            variable self.mod_containers: typing.List[ModContainer]
 
             variable self.located_mods: typing.List[mcpython.common.mod.Mod.Mod]
                 the list of located mods
@@ -38,6 +178,8 @@ ___
 
             variable self.active_directory: typing.Optional[str]
                 the directory currently loading from
+
+            variable self.current_container: typing.Optional[ModContainer]
 
             variable self.active_loading_stage: int
                 which stage we are in
@@ -76,61 +218,35 @@ ___
 
         function __iter__(self)
 
-        function get_locations(self) -> list
+        function look_for_mod_files(self)
             
-            Will return a list of mod locations found for loading
-            Will parse sys.argv input
-            %home%/mods is searched by default
-            todo: add a way to disable the default location
+            Scanner for mod files, parsing the parsed sys.argv stuff
+            Stores the resuolt in the found_mod_files attribute of this
 
 
-                variable element
+            variable folders
 
-            variable i
+            variable files
 
-                variable element
+        function parse_mod_files(self)
 
-                    variable file
+                variable self.current_container
 
-        function load_mod_json_from_locations(self, locations: typing.List[str])
-            
-            Will load the mod description files for the given locations and parse their content
-            :param locations: the locations found
+                variable self.current_container
 
+        function check_errors(self)
 
-                        variable self.active_directory
+        function load_missing_mods(self)
 
-                        variable self.active_directory
-
-                            variable data
-
-                            variable data
-
-                            variable instance.package
-
-                    variable self.active_directory
-
-                            variable content
-
-                    variable mod.path
-
-        function look_out(self, from_files=True)
-            
-            Will load all mods arrival
-
-
-            variable i
-
-                variable element
-
-                    variable name
-
-        function check_for_update(self)
+        function check_for_updates(self)
             
             Will check for changes between versions between this session and the one before
+            In case of a change, rebuild mode is entered
 
 
-                        variable shared.invalidate_cache
+                    variable shared.invalidate_cache
+
+                    variable shared.invalidate_cache
 
         function write_mod_info(self)
             
@@ -139,84 +255,19 @@ ___
 
                 variable m
 
-        function load_mods_json(self, data: str, file: str)
-            
-            Will parse the data to the correct system
-            :param data: the data to load
-            :param file: the file located under
-
-
-        function load_from_decoded_json(self, data: dict, file: str)
-            
-            Will parse the decoded json-data to the correct system
-            :param data: the data of the mod
-            :param file: the file allocated (used for warning messages)
-            todo: maybe a better format?
-
-                
-                example:
-                {
-                    "version": "1.2.0",
-                    "entries": [
-                        {
-                            "name": "TestMod",
-                            "version": "Some.Version",
-                            "load_resources": true,
-                            "load_files": ["some.package.to.load"]
-                        }
-                    ]
-                }
-
-
-                    variable modname
-
-                    variable loader
-
-                        variable version
-
-                        variable instance
-
-                                variable t
-
-        static
-        function cast_dependency(cls, depend: dict)
-            
-            will cast an dict-structure to the depend
-            :param depend: the depend dict
-            :return: the parsed mod.Mod.ModDependency-object
-
-
-                variable config["version_min"]
-
-                variable config["version_max"]
-
-                variable config["versions"]
-
-        function load_mods_toml(self, data: str, file: str)
-            
-            Will load a toml-data-object
-            :param data: the toml-representation
-            :param file: the file for debugging reasons
-
-
-                variable version
-
-                    variable mc_version - todo: implement
-
-                    variable mc_version
-
-                variable mc_version
-
-                    variable name
-
         function add_to_add(self, instance: mcpython.common.mod.Mod.Mod)
             
             Will add a mod-instance into the inner system
             :param instance: the mod instance to add
-            Use only when really needed. The system is designed for beeing data-driven!
+            Use only when really needed. The system is designed for being data-driven, and things might go wrong
+                when manually doing this
 
 
             variable self.mods[instance.name]
+
+                variable instance.container
+
+                variable instance.resource_access
 
                 variable instance.path
 
@@ -224,7 +275,7 @@ ___
             
             Will check for mod duplicates
             :return an tuple of errors as string and collected mod-info's as dict
-            todo: add config option for strategy: fail, load newest, load oldest, load all, load none
+            todo: add config option for strategy: fail, load newest, load oldest, [load all}, load none
 
 
                     variable errors

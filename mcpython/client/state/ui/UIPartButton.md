@@ -1,4 +1,4 @@
-***UIPartButton.py - documentation - last updated on 9.2.2021 by uuk***
+***UIPartButton.py - documentation - last updated on 23.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -31,7 +31,7 @@ ___
                 size,
                 text,
                 position,
-                press=mcpython.common.event.EventInfo.MousePressEventInfo(
+                press=mcpython.engine.event.EventInfo.MousePressEventInfo(
                 pyglet.window.mouse.LEFT
                 ),
                 anchor_button="WS",
@@ -43,7 +43,7 @@ ___
                 has_hovering_state=True,
                 ):
             
-            creates an new UIPartButton
+            Creates a new UIPartButton
             :param size: the size of the button
             :param text: the text of the button
             :param position: the position of the button
@@ -59,7 +59,7 @@ ___
 
             variable self.text
 
-            variable self.press: mcpython.common.event.EventInfo.MousePressEventInfo
+            variable self.press: mcpython.engine.event.EventInfo.MousePressEventInfo
 
             variable self.on_press
 
@@ -94,10 +94,10 @@ ___
                 size,
                 text_possibilities,
                 position,
-                toggle=mcpython.common.event.EventInfo.MousePressEventInfo(
+                toggle=mcpython.engine.event.EventInfo.MousePressEventInfo(
                 pyglet.window.mouse.LEFT
                 ),
-                retoggle=mcpython.common.event.EventInfo.MousePressEventInfo(
+                retoggle=mcpython.engine.event.EventInfo.MousePressEventInfo(
                 pyglet.window.mouse.RIGHT
                 ),
                 anchor_button="WS",
@@ -136,9 +136,9 @@ ___
 
             variable self.text
 
-            variable self.toggle: mcpython.common.event.EventInfo.MousePressEventInfo
+            variable self.toggle: mcpython.engine.event.EventInfo.MousePressEventInfo
 
-            variable self.retoggle: mcpython.common.event.EventInfo.MousePressEventInfo
+            variable self.retoggle: mcpython.engine.event.EventInfo.MousePressEventInfo
 
             variable self.on_toggle
 

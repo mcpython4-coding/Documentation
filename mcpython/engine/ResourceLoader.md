@@ -1,4 +1,4 @@
-***ResourceLoader.py - documentation - last updated on 9.2.2021 by uuk***
+***ResourceLoader.py - documentation - last updated on 23.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -18,56 +18,64 @@ ___
             static
             function open(cls, file: str)
     
-    specifications for the resource loader system
-    On startup / on reload, so called ResourceLocations are created for every archive / directory in resourcepack-folder
+    ---------------------------------------------
+    Specifications for the resource loader system
+    ---------------------------------------------
+    On startup / on reload, so called ResourceLocation's are created for every archive / directory in resourcepack-folder
+    and other asset sources (mod files)
     functions to access data:
         to_filename(representation: str) -> str: returns the transformed name (for example block/dirt gets 
             assets/minecraft/textures/block/dirt.png)
         exists(filename: str) -> bool: returns if an directory exists somewhere
-        read(filename: str, mode=select from None for bytes, "json", "pil", "pyglet") -> object: loads the file
+        read_<xy>(filename: str) -> object: loads the file in the speicified mode
     How mods do interact with these?
         Mod files are automatically added to these system to make it easier to add own resources
+    There is a special class for simulating files in-memory 
 
 
     class IResourceLoader extends ABC
         
-        Base class for an class holding an link to an resource source, like and directory or zip-file
+        Base class for a class holding a link to a resource source, like and directory or zip-file
+        (but in theory can be anything, even over network)
 
 
         static
         function is_valid(path: str) -> bool
             
-            checks if an location is valid as an source
+            Checks if a location is valid as a source to load via the constructor
             :param path: the path to check
             :return: if it is valid or not
 
 
         function get_path_info(self) -> str
+            
+            Returns a unique identifier for this loader, like a path loaded from, or some mod name
+
 
         function is_in_path(self, path: str) -> bool
             
-            checks if an local file-name is in the given path
+            Checks if a local file-name is in the given path, so it can be loaded
             :param path: the file path to check
             :return: if it is in the path
 
 
         function read_raw(self, path: str) -> bytes
             
-            will read an file into the system in binary mode
+            Will read a file in binary mode
             :param path: the file name to use
             :return: the content of the file loaded in binary
 
 
         function read_image(self, path: str) -> PIL_Image.Image
             
-            will read an file into the system as an PIL_Image.Image
+            Will read a file as a PIL.Image.Image
             :param path: the file name to use
             :return: the content of the file loaded as image
 
 
-        function read_decoding(self, path: str, encoding: str) -> str
+        function read_decoding(self, path: str, encoding: str = "utf-8") -> str
             
-            will read an file into the system as an string
+            Will read a file into the system as a string, decoding the raw bytes in the given encoding
             :param path: the file name to use
             :param encoding: the encoding to use
             :return: the content of the file loaded as string
@@ -76,16 +84,18 @@ ___
         function close(self)
             
             Called when the resource path should be closed
+            Should be used for cleanup
 
 
         function get_all_entries_in_directory(
                 self, directory: str, go_sub=True
                 ) -> typing.Iterator[str]:
             
-            Should return all entries in an local directory
+            Should return all entries in a local directory
             :param directory: the directory to check
             :param go_sub: if sub directories should be iterated or not
-            :return: an list of data
+            :return: a list of data
+            todo: add a regex variant
 
 
     class ResourceZipFile extends IResourceLoader
@@ -96,13 +106,15 @@ ___
         static
         function is_valid(path: str) -> bool
 
-        function __init__(self, path: str)
+        function __init__(self, path: str, close_when_scheduled=True)
 
             variable self.archive
 
             variable self.path
 
             variable self.namelist_cache
+
+            variable self.close_when_scheduled
 
         function get_path_info(self) -> str
 
@@ -191,12 +203,14 @@ ___
                         variable d
 
     variable RESOURCE_PACK_LOADERS
+        data loaders for the resource locations, SimulatedResourceLoader is not a default loader
 
-    variable RESOURCE_LOCATIONS - an list of all resource locations in the system
+    variable RESOURCE_LOCATIONS - a list of all resource locations in the system
 
     function load_resource_packs()
         
-        will load the resource packs found in the paths for it
+        Will load the resource packs found in the paths for it
+        todo: add a way to add resource locations persistent to reloads
 
 
                 variable file
@@ -213,17 +227,19 @@ ___
 
     function close_all_resources()
         
-        will close all opened resource locations
+        Will close all opened resource locations using <locator>.close()
+        Will call the resource:close event in the process
 
 
     variable MC_IMAGE_LOCATIONS
+        how mc locations look like
 
     function transform_name(file: str, raise_on_error=True) -> str
         
-        will transform an MC-ResourceLocation string into an local path
+        Will transform an MC-ResourceLocation string into a local path
         :param file: the thing to use
         :return: the transformed
-        :param raise_on_error: will raise downer exception, otherwise return the file iself
+        :param raise_on_error: will raise downer exception, otherwise return the file name
         :raises NotImplementedError: when the data is invalid
 
 
@@ -233,7 +249,7 @@ ___
 
     function exists(file: str, transform=True)
         
-        checks if an given file exists in the system
+        Checks if a given file exists in the system
         :param file: the file to check
         :param transform: if it should be transformed for check
         :return: if it exists or not
@@ -247,7 +263,7 @@ ___
 
     function read_raw(file: str)
         
-        will read the content of an file in binary mode
+        Will read the content of a file in binary mode
         :param file: the file to load
         :return: the content
 
@@ -283,7 +299,10 @@ ___
 
         variable loc
 
-    function read_json(file)
+    function read_json(file: str)
+        
+        Reads a .json file from the system
+
 
     function read_pyglet_image(file)
 

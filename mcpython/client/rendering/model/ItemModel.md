@@ -1,4 +1,4 @@
-***ItemModel.py - documentation - last updated on 9.2.2021 by uuk***
+***ItemModel.py - documentation - last updated on 23.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -65,11 +65,11 @@ ___
 
         function addOverride(self, predicate, replacement: str)
 
-        function on_bake(self, helper: "ItemModelHandler")
+        function bake(self, helper: "ItemModelHandler")
 
         function add_to_batch(
                 self, position: tuple, batch, context: str, state: dict
-                ) -> mcpython.client.rendering.BatchHelper.BatchReference:
+                ) -> mcpython.engine.rendering.BatchHelper.BatchReference:
 
         function draw(self, position: tuple, context: str, state: dict)
             
@@ -94,11 +94,11 @@ ___
 
         function from_folder(self, folder: str, modname: str)
 
-        function on_bake(self)
+        function bake(self)
 
         function add_to_batch(
                 self, item_name, *args, **kwargs
-                ) -> mcpython.client.rendering.BatchHelper.BatchReference:
+                ) -> mcpython.engine.rendering.BatchHelper.BatchReference:
 
         function draw(self, item_name, *args, **kwargs)
 

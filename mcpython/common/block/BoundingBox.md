@@ -1,4 +1,4 @@
-***BoundingBox.py - documentation - last updated on 25.4.2021 by uuk***
+***BoundingBox.py - documentation - last updated on 23.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -51,10 +51,14 @@ ___
 
             variable self.rotation
 
+            variable self.vertex_provider
+
+        function recalculate_vertices(self)
+
         function test_point_hit(
                 self,
                 point: typing.Tuple[float, float, float],
-                boxposition: typing.Tuple[float, float, float],
+                box_position: typing.Tuple[float, float, float],
                 ):
 
             variable point

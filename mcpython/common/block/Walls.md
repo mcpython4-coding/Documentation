@@ -1,4 +1,4 @@
-***Walls.py - documentation - last updated on 25.4.2021 by uuk***
+***Walls.py - documentation - last updated on 23.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -13,12 +13,12 @@ ___
 
     class AbstractWall extends mcpython.common.block.AbstractBlock.AbstractBlock,  ABC
 
-        variable DEFAULT_FACE_SOLID
-
         variable DEBUG_WORLD_BLOCK_STATES
             todo: up is not always allowed / depends on the configuration of the other stuff!
 
         function __init__(self)
+
+            variable self.face_solid
 
             variable self.connections
 

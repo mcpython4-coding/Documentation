@@ -1,4 +1,4 @@
-***StateHandler.py - documentation - last updated on 13.5.2021 by uuk***
+***StateHandler.py - documentation - last updated on 23.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -12,16 +12,27 @@ ___
 
 
     @onlyInClient() class StateHandler
+        
+        Manager for states of the game.
+        The game is a state machine, so we need somebody to keep track of it...
+        Seems to be this class
+        How does it work?
+        - One instance per game, more will break stuff
+        - stored @ shared.state_handler
+
 
         function __init__(self)
 
-            variable self.states
-
-            variable self.CANCEL_SWITCH_STATE
+            variable self.active_state: typing.Optional[State.State]
 
             variable self.global_key_bind_toggle
 
         function change_state(self, state_name: str, immediate=True)
+            
+            Will change the current state of the "machine"
+            :param state_name: the name to switch to
+            :param immediate: now or next scheduled event cycle (so afterwards), defaults to True
+
 
         function inner_change_state(self, state_name: str)
 
@@ -37,5 +48,4 @@ ___
 
     variable handler
 
-    @onlyInClient()
-    function load()
+    function load_states()

@@ -1,4 +1,4 @@
-***AbstractEntity.py - documentation - last updated on 25.4.2021 by uuk***
+***AbstractEntity.py - documentation - last updated on 23.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -52,6 +52,9 @@ ___
             variable self.child - the entity this is ridden by  todo: move into nbt
 
             variable self.nbt_data
+                dict holding entity data, automatically saved & loaded, when loading, data is put ontop of the existing dict
+
+            variable self.dead
 
         function __del__(self)
 
@@ -81,6 +84,18 @@ ___
             :param force_chunk_save_update: if the system should force to update were player data is stored
 
 
+                variable dimension_id
+
+                variable dimension_id
+
+            variable dimension
+
+            variable self.unsafe_position
+
+            variable sector_after
+
+                variable self.chunk
+
         function tell(self, msg: str)
             
             Tells the entity an message. Not intended to inter-mod com
@@ -108,6 +123,8 @@ ___
             todo: drop items if selected
             todo: play kill animation if selected
 
+
+            variable self.dead
 
         function pick_up_item(
                 self, itemstack: mcpython.common.container.ResourceStack.ItemStack

@@ -1,4 +1,4 @@
-***LaunchWrapper.py - documentation - last updated on 22.5.2021 by uuk***
+***LaunchWrapper.py - documentation - last updated on 23.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -21,49 +21,53 @@ ___
 
             variable self.is_client
 
-            variable self.__side_prepared
+            variable self.launch_config
 
-        function prepare_client(self)
+            variable shared.launch_wrapper
+
+        function set_client(self)
+
+        function set_server(self)
+
+        function full_launch(self)
             
-            Prepares a client setup
-            Sets up the OpenGL driver backend
-            Spawns a window
+            Method to launch everything at ones
+            General layout:
+            - logger & header
+            - argv
+            - modloader file lookup
+            - modloader file information lookup
+            - modloader loader lookup
+            - modloader mixin parse
 
-
-            variable self.__side_prepared
 
             variable shared.IS_CLIENT
 
-            variable shared.NO_WINDOW
+                variable shared.CLIENT_NETWORK_HANDLER
 
-            variable shared.CLIENT_NETWORK_HANDLER
+                variable shared.SERVER_NETWORK_HANDLER
 
-        function prepare_server(self)
-            
-            Prepares a sever
-            Spawns a fake "window"
-            WARNING: currently, also initializes the OpenGL driver
+        function parse_argv(self)
 
+                variable shared.ENABLE_MOD_LOADER
 
-            variable self.__side_prepared
+                variable shared.ENABLE_DATAPACK_LOADER
 
-            variable shared.IS_CLIENT
+                variable shared.ENABLE_RESOURCE_PACK_LOADER
 
-            variable shared.NO_WINDOW
+            variable current_arg: typing.Optional[str]
 
-            variable shared.SERVER_NETWORK_HANDLER
+            variable arg_collector: typing.List[str]
 
-        function inject_sys_argv(self, argv: typing.List[str])
-            
-            Helper function for loading the sys.argv config into the game
-            todo: all sys.argv parsing belongs here, with a general parser for options not specified
+                    variable current_arg
 
+                    variable self.launch_config[e.removeprefix("-")]
 
-                    variable shared.ENABLE_MOD_LOADER
+                    variable current_arg
 
-                    variable shared.ENABLE_DATAPACK_LOADER
+        function is_flag_arrival(self, flag: str)
 
-                    variable shared.ENABLE_RESOURCE_PACK_LOADER
+        function get_flag_status(self, flag: str, default=None)
 
         function setup(self)
             
@@ -100,12 +104,6 @@ ___
 
 
                 variable shared.invalidate_cache
-
-        function load_mods(self)
-            
-            Do ModLoader initial stuff
-            Looks for mods in the path only when shared.ENABLE_MOD_LOADER is True
-
 
         function launch(self)
             

@@ -1,4 +1,4 @@
-***BlockModel.py - documentation - last updated on 27.4.2021 by uuk***
+***BlockModel.py - documentation - last updated on 23.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -49,6 +49,7 @@ ___
                         variable self.texture_names[name]
 
             variable to_add
+                inform the texture bake system about our new textures we want to be in there
 
             variable add
 
@@ -59,8 +60,23 @@ ___
                 variable self.texture_atlas
 
             variable self.box_models
+                prepare the box models from parent
 
-        function get_prepared_data_for(self, position, config, face)
+        function get_prepared_data_for(
+                self,
+                position: typing.Tuple[float, float, float],
+                config: dict,
+                face: mcpython.util.enums.EnumSide,
+                previous: typing.Tuple[typing.List[float], typing.List[float]] = None,
+                ) -> typing.Tuple[typing.Tuple[typing.List[float], typing.List[float]], typing.Any]:
+            
+            Collects the vertex and texture data for a block at the given position with given configuration
+            :param position: the offset position
+            :param config: the configuration
+            :param face: the face
+            :param previous: previous collected data, as a tuple of vertices, texture coords
+            :return: a tuple of vertices and texture coords, and an underlying BoxModel for some identification stuff
+
 
             variable rotation
 
@@ -76,7 +92,11 @@ ___
                 batch: pyglet.graphics.Batch,
                 config: dict,
                 face: mcpython.util.enums.EnumSide,
-                ):
+                ) -> typing.Iterable[VertexList]:
+            
+            Adds a given face to the batch
+            Simply wraps a get_prepared_data_for call around the box_model.add_prepared_data_to_batch-call
+
 
         function draw_face(
                 self,
@@ -84,9 +104,18 @@ ___
                 config: dict,
                 face: mcpython.util.enums.EnumSide,
                 ):
+            
+            Similar to add_face_to_batch, but does it in-place without a batches
+            Use batches wherever possible!
+
 
         function get_texture_position(
                 self, name: str
                 ) -> typing.Optional[typing.Tuple[int, int]]:
+            
+            Helper method resolving a texture name to texture coords
+            :param name: the name of the texture
+            :return: a tuple of x, y of the texture location, defaults to 0, 0 in case of an error
+
 
                 variable n

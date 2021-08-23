@@ -1,4 +1,4 @@
-***TextureAtlas.py - documentation - last updated on 27.4.2021 by uuk***
+***TextureAtlas.py - documentation - last updated on 23.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -15,24 +15,53 @@ ___
 
     @onlyInClient() class TextureAtlasGenerator
         
-        generator system for an item atlas
+        Generator system for a multiple underlying ItemAtlas'
+        Based on some identifier
 
 
         function __init__(self)
 
-            variable self.atlases
+        function add_image(
+                self, image: PIL.Image.Image, identifier: typing.Hashable
+                ) -> typing.Tuple[typing.Tuple[int, int], "TextureAtlas"]:
+            
+            Adds a single pillow image to the underlying atlas system
 
-        function add_image(self, image: PIL.Image.Image, modname: str) -> tuple
 
-        function add_image_file(self, file: str, modname: str) -> tuple
+            variable image
 
-        function add_images(self, images: list, modname, one_atlased=True) -> list
+        function add_image_file(
+                self, file: str, identifier: str
+                ) -> typing.Tuple[typing.Tuple[int, int], "TextureAtlas"]:
+            
+            Adds a single image by file name (loadable by resource system!)
 
-        function add_image_files(self, files: list, modname: str, one_atlased=True) -> list
+
+        function add_images(
+                self, images: typing.List[PIL.Image.Image], identifier: str, single_atlas=True
+                ) -> typing.List[typing.Tuple[typing.Tuple[int, int], "TextureAtlas"]]:
+
+            variable images
+
+            variable m_size
+
+            variable atlas
+
+        function add_image_files(
+                self, files: list, identifier: str, single_atlas=True
+                ) -> typing.List[typing.Tuple[typing.Tuple[int, int], "TextureAtlas"]]:
 
         function output(self)
 
+                    variable location
+
+                    variable atlas.group
+
     @onlyInClient() class TextureAtlas
+        
+        One-texture atlas
+        Contains a single underlying texture, dynamically resized when needed
+
 
         function __init__(
                 self,
@@ -49,16 +78,22 @@ ___
             variable self.pyglet_special_pos
 
             variable self.texture
+                The underlying texture
 
             variable self.free_space
+                Where is space for images?
 
-            variable self.images
+            variable self.images: typing.List[PIL.Image.Image]
 
-            variable self.image_locations - an images[-parallel (x, y)-list
+            variable self.group: typing.Optional[pyglet.graphics.TextureGroup]
+                The pyglet texture group, only for storage reasons
 
-            variable self.group
+        function add_image(
+                self, image: PIL.Image.Image, position=None
+                ) -> typing.Tuple[int, int]:
+            
+            Adds an image to the atlas and returns the position of it in the atlas
 
-        function add_image(self, image: PIL.Image.Image, ind=None, position=None) -> tuple
 
                 variable self.image_size
 
@@ -72,8 +107,6 @@ ___
                 variable self.size
 
                 variable self.texture
-
-            variable pos
 
         function is_free_for(self, images: list) -> bool
 

@@ -1,4 +1,4 @@
-***Registry.py - documentation - last updated on 13.5.2021 by uuk***
+***Registry.py - documentation - last updated on 23.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,7 +11,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class IRegistryContent extends mcpython.common.data.tags.ITagTarget.ITagTarget
+    class IRegistryContent extends mcpython.common.data.serializer.tags.ITagTarget.ITagTarget
 
         variable NAME
 
@@ -91,7 +91,7 @@ ___
 
         function is_valid_key(self, key: str)
 
-        function get(self, key: str)
+        function get(self, key: str, default=False)
 
     class RegistryInjectionHolder
 

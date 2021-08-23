@@ -1,4 +1,4 @@
-***math.py - documentation - last updated on 27.4.2021 by uuk***
+***math.py - documentation - last updated on 23.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,6 +11,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
+    @deprecation.deprecated()
     function cube_vertices_better(
             x: float,
             y: float,
@@ -68,13 +69,13 @@ ___
             rotation=(0, 0, 0, 0, 0, 0)
             ) -> list:
         
-        This is an better implementation of above tex_coords function. It will return an list of coords instead
-            of an list where you have to manually find entries for drawing
+        This is a better implementation of above tex_coords function. It will return a list of coords instead
+            of a list where you have to manually find entries for drawing
         :param args: for each face to calculate, the uv's as a tuple of size 2
         :param size: the size of the texture group, as specified by the texture atlas
         :param tex_region: the region in the texture, where 0 is one end and 1 the other
         :param rotation: the rotation of the whole thing
-        :return: an list of lists of texture coords
+        :return: a list of lists of texture coords
 
 
             variable tex_region
@@ -86,13 +87,6 @@ ___
         Uses simply rounding on all components
         :param position: the position
         :return: the rounded position
-
-
-    function normalize_ceil(position: typing.Tuple[float, float, float])
-        
-        Same as normalize(position), but with math.ceil() instead of round()
-        :param position: the position
-        :return: the ceil-ed position
 
 
     function position_to_chunk(
@@ -158,11 +152,9 @@ ___
 
         variable nz
 
-    function product(iterable: typing.List[float])
+    function product(iterable: typing.List[typing.SupportsFloat])
         
-        Similar to sum(), will use * instead of +
-        :param iterable: the iterable of add-ables
-        :return: the product of all elements
+        Same as sum(), but will use * instead of +
 
 
     function vector_offset(
@@ -172,3 +164,9 @@ ___
     function vector_negate(vector: typing.Tuple[float, ...]) -> typing.Tuple[float, ...]
 
     function sort_components(a: typing.Tuple[float, ...], b: typing.Tuple[float, ...])
+        
+        Util method for sorting two vectors
+        :return: two tuples, one with the smallest x, y, z and one with the biggest x, y, z coordinate
+        Example:
+        sort_components((-1, 5, -7), (5, -10, 4)) == ((-1, -10, -7), (5, 5, 4))
+        Useful when user inputs two coordinates and usage requires this special order (for example, for range()-ing over them)

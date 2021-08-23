@@ -1,4 +1,4 @@
-***Builder.py - documentation - last updated on 18.4.2021 by uuk***
+***Builder.py - documentation - last updated on 23.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -118,6 +118,8 @@ ___
 
         function __init__(self, *strings: str)
 
+            variable self.strings
+
         function is_valid(self, node: "CommandNode", tracker: CommandExecutionTracker) -> bool
 
         function parse(self, node: "CommandNode", tracker: CommandExecutionTracker)
@@ -137,8 +139,8 @@ ___
                 value_range=None,
                 ):
             
-            :param only_positive: only positive integers
-            :param only_negative: only negative integers
+            :param only_positive: only positive integers allowed
+            :param only_negative: only negative integers allowed
             :param include_zero: zero allowed
             :param value_range: a range of (min, max) for the integer, or None for open range
 
@@ -152,6 +154,8 @@ ___
             variable self.only_positive
 
         function is_valid(self, node: "CommandNode", tracker: CommandExecutionTracker) -> bool
+
+            variable v
 
                 variable v
 
@@ -286,7 +290,7 @@ ___
 
             variable self.info_text
 
-            variable self.handles
+            variable self.exception_handlers
 
         function than(self, node: "CommandNode")
             

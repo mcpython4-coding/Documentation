@@ -1,4 +1,4 @@
-***BlockState.py - documentation - last updated on 9.2.2021 by uuk***
+***BlockState.py - documentation - last updated on 23.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -13,7 +13,7 @@ ___
 
     class BlockStateNotNeeded extends Exception
 
-    class IBlockStateDecoder extends mcpython.common.event.Registry.IRegistryContent
+    class IBlockStateDecoder extends mcpython.common.event.Registry.IRegistryContent,  ABC
         
         Abstract base class for block state decoders
         Identification of files to decode:
@@ -23,13 +23,11 @@ ___
         Loading:
             __init__(data, BlockStateDefinition) -> Instance
         Baking:
-            on_bake() is called to on_bake references and do similar stuff, returning success or not
+            bake() is called to on_bake references and do similar stuff, returning success or not
         Drawing:
             add_face_to_batch() should add the given face to the batches given
             add_raw_face_to_batch() should add a face to the batch without the block instance, but instead the position
             draw() should draw the block in-place
-        todo: add draw variant for raw
-        todo: add data getter functions for better performance
         todo: cache non-offset data from models per state for faster drawing
         todo: can we do something rendering wise which will make it efficient to draw multiple same blocks
         todo: block batches should be selected before, based on a property on block class
@@ -39,14 +37,23 @@ ___
 
         static
         function is_valid(cls, data: dict) -> bool
+            
+            Checker function if some data matches the loader
 
-        function __init__(self, data: dict, block_state: "BlockStateDefinition")
+
+        function __init__(self, block_state: "BlockStateDefinition")
 
             variable self.data
 
             variable self.block_state
 
-        function on_bake(self) -> bool
+        function parse_data(self, data: dict)
+
+        function bake(self) -> bool
+            
+            Bake method for doing some stuff after loading all block-states
+            :return: if successful or not
+
 
         function add_face_to_batch(
                 self,
@@ -64,7 +71,7 @@ ___
                 ):  # optional: draws the BlockState direct without an batch
                 pass
                 
-                def transform_to_hitbox(
+                def transform_to_bounding_box(
                 self,
                 instance: mcpython.client.rendering.model.api.IBlockStateRenderingTarget,
                 ):  # optional: transforms the BlockState into an BoundingBox-like objects
@@ -78,10 +85,9 @@ ___
                 )
                 
                 
-                @shared.registry
-                class MultiPartDecoder(IBlockStateDecoder):
+                def get_model_choice(data, instance):
 
-        function transform_to_hitbox(
+        function transform_to_bounding_box(
                 self,
                 instance: mcpython.client.rendering.model.api.IBlockStateRenderingTarget,
                 ):  # optional: transforms the BlockState into an BoundingBox-like objects
@@ -95,10 +101,11 @@ ___
                 )
                 
                 
-                @shared.registry
-                class MultiPartDecoder(IBlockStateDecoder):
+                def get_model_choice(data, instance):
 
     variable blockstate_decoder_registry
+
+    function get_model_choice(data, instance)
 
     @shared.registry class MultiPartDecoder extends IBlockStateDecoder
         
@@ -115,17 +122,25 @@ ___
         static
         function is_valid(cls, data: dict) -> bool
 
-        function __init__(self, data: dict, block_state)
+        function __init__(self, block_state)
+
+            variable self.parent
 
             variable self.model_alias
+
+        function parse_data(self, data: dict)
 
                 variable self.parent
 
                 variable self.model_alias
 
-        function on_bake(self)
+        function bake(self)
+
+                    variable self.parent
 
                 variable self.parent
+
+                variable self.model_alias
 
                 variable data
 
@@ -138,20 +153,17 @@ ___
                 instance: mcpython.client.rendering.model.api.IBlockStateRenderingTarget,
                 batch: pyglet.graphics.Batch,
                 face: mcpython.util.enums.EnumSide,
+                previous=None,
                 ):
 
             variable state
 
-                    variable data
-
-                            variable entries
-
-                            variable instance.block_state
+            variable box_model
 
         static
         function _test_for(cls, state, part, use_or=False)
 
-        function transform_to_hitbox(
+        function transform_to_bounding_box(
                 self, instance: mcpython.client.rendering.model.api.IBlockStateRenderingTarget
                 ):
 
@@ -163,25 +175,20 @@ ___
 
                         variable model
 
-                            variable entries
-
-                            variable instance.block_state
-
                         variable model
 
         function draw_face(
                 self,
                 instance: mcpython.client.rendering.model.api.IBlockStateRenderingTarget,
                 face: mcpython.util.enums.EnumSide,
+                previous=None,
                 ):
 
             variable state
 
-                    variable data
+            variable box_model
 
-                            variable entries
-
-                            variable instance.block_state
+        function prepare_rendering_data(self, box_model, face, instance, prepared_texture, prepared_vertex, state)
 
     @shared.registry class DefaultDecoder extends IBlockStateDecoder
         
@@ -196,9 +203,15 @@ ___
         static
         function is_valid(cls, data: dict) -> bool
 
-        function __init__(self, data: dict, block_state)
+        function __init__(self, block_state)
+
+            variable self.parent
+
+            variable self.model_alias
 
             variable self.states
+
+        function parse_data(self, data: dict)
 
                     variable keymap
 
@@ -214,7 +227,7 @@ ___
 
                 variable self.model_alias
 
-        function on_bake(self)
+        function bake(self)
 
                 variable self.parent
 
@@ -233,7 +246,7 @@ ___
 
         function add_raw_face_to_batch(self, position, state, batches, face)
 
-        function transform_to_hitbox(
+        function transform_to_bounding_box(
                 self, instance: mcpython.client.rendering.model.api.IBlockStateRenderingTarget
                 ):
 
@@ -298,7 +311,7 @@ ___
 
             variable data
 
-        function __init__(self, data: dict, name: str, immediate=False, force=False)
+        function __init__(self, name: str, immediate=False, force=False)
 
             variable self.name
 
@@ -306,11 +319,11 @@ ___
 
             variable self.loader
 
-                    variable self.loader
-
             variable self.baked
 
-        function on_bake(self)
+        function parse_data(self, data: dict)
+
+        function bake(self)
 
         function add_face_to_batch(
                 self,
@@ -332,11 +345,15 @@ ___
         static
         function decode_entry(data: typing.Dict[str, typing.Any])
 
-        function __init__(self, data: dict)
+        function __init__(self)
 
             variable self.data
 
             variable self.models - (model, config, weight)
+
+        function parse_data(self, data: dict)
+
+                variable models
 
         function copy(self)
 
