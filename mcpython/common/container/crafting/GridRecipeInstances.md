@@ -70,7 +70,7 @@ ___
 
             variable sy
 
-            variable self.bboxsize
+            variable self.bounding_box_size
 
         function prepare(self)
 

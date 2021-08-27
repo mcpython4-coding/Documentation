@@ -152,7 +152,7 @@ ___
 
                         variable old_itemstack
 
-        function _update(self, dt: float)
+        function physics_update_internal(self, dt: float)
             
             of the motion logic lives, along with gravity and collision detection.
             Parameters

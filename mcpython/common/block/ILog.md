@@ -1,4 +1,4 @@
-***ILog.py - documentation - last updated on 23.8.2021 by uuk***
+***ILog.py - documentation - last updated on 27.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -25,5 +25,7 @@ ___
         function get_model_state(self)
 
         function set_model_state(self, state: dict)
+
+                    variable self.axis
 
         variable DEBUG_WORLD_BLOCK_STATES

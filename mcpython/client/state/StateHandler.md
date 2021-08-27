@@ -1,4 +1,4 @@
-***StateHandler.py - documentation - last updated on 23.8.2021 by uuk***
+***StateHandler.py - documentation - last updated on 27.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -23,7 +23,7 @@ ___
 
         function __init__(self)
 
-            variable self.active_state: typing.Optional[State.State]
+            variable self.active_state: typing.Optional[AbstractState.AbstractState]
 
             variable self.global_key_bind_toggle
 
@@ -40,9 +40,9 @@ ___
 
             variable now
 
-            variable self.active_state: State.State
+            variable self.active_state: AbstractState.AbstractState
 
-        function add_state(self, state_instance: State.State)
+        function add_state(self, state_instance: AbstractState.AbstractState)
 
         function update_mouse_exclusive_state(self)
 

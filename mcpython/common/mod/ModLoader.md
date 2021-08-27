@@ -1,4 +1,4 @@
-***ModLoader.py - documentation - last updated on 23.8.2021 by uuk***
+***ModLoader.py - documentation - last updated on 27.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -10,8 +10,6 @@ ___
     Mod loader inspired by "Minecraft Forge" (https://github.com/MinecraftForge/MinecraftForge) and similar
     This project is not official by mojang and does not relate to it.
 
-
-    class LoadingInterruptException extends Exception
 
     function cast_dependency(depend: dict)
         
@@ -309,7 +307,7 @@ ___
 
             variable start
 
-            variable astate: mcpython.client.state.StateModLoading.StateModLoading
+            variable astate: mcpython.client.state.ModLoadingProgress.ModLoadingProgress
 
             variable astate.parts[0].progress_max
 
@@ -322,7 +320,7 @@ ___
             Will update the text of the pgb's in mod loading
 
 
-            variable astate: mcpython.client.state.StateModLoading.StateModLoading
+            variable astate: mcpython.client.state.ModLoadingProgress.ModLoadingProgress
 
             variable instance: mcpython.common.mod.Mod.Mod
 

@@ -1,4 +1,4 @@
-***AbstractWorldGenerationModeConfigState.py - documentation - last updated on 9.2.2021 by uuk***
+***AbstractWorldGenerationModeConfigState.py - documentation - last updated on 27.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -40,7 +40,7 @@ ___
 
         function serialize(self)
 
-    class AbstractState extends mcpython.client.state.State.State,  ABC
+    class AbstractState extends mcpython.client.state.AbstractState.AbstractState,  ABC
         
         Base class for a configuration screen for a world generator mode
         todo: add sub-class with factory system

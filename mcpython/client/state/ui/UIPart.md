@@ -1,4 +1,4 @@
-***UIPart.py - documentation - last updated on 9.2.2021 by uuk***
+***UIPart.py - documentation - last updated on 27.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,13 +11,15 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    @onlyInClient() class UIPart extends mcpython.client.state.StatePart.StatePart
+    @onlyInClient() class UIPart extends mcpython.client.state.AbstractStatePart.AbstractStatePart
 
-        function __init__(self, position, bboxsize, anchor_element="WS", anchor_window="WS")
+        function __init__(
+                self, position, bounding_box_size, anchor_element="WS", anchor_window="WS"
+                ):
 
             variable self.position
 
-            variable self.bboxsize
+            variable self.bounding_box_size
 
             variable self.anchor_element
 

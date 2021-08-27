@@ -1,4 +1,4 @@
-***ModelHandler.py - documentation - last updated on 23.8.2021 by uuk***
+***ModelHandler.py - documentation - last updated on 27.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -15,15 +15,9 @@ ___
 
         function __init__(self)
 
-            variable self.models
+            variable self.used_models: typing.Set[str]
 
-            variable self.used_models
-
-            variable self.found_models
-
-            variable self.blockstates
-
-            variable self.lookup_locations
+            variable self.lookup_locations: typing.Set[str]
 
             variable self.dependence_list
 
@@ -33,7 +27,7 @@ ___
 
         function add_from_mod(self, modname: str)
             
-            will add locations for an given mod name
+            Will add locations for a given mod name
             :param modname: the mod to use
 
 
@@ -47,7 +41,7 @@ ___
 
         function add_from_data(self, name: str, data: dict, store=True)
             
-            will inject data as an block-model file
+            Will inject data as a block-model file
             :param name: the name to use
             :param data: the data to inject
             :param store: if it should be stored and re-loaded on reload event
@@ -57,33 +51,57 @@ ___
 
         function let_subscribe_to_build(self, model, immediate=False)
 
+                variable modname
+
         function special_build(self, used: str)
 
-        function process_models(self, immediate=False)
+            variable file
 
-            variable sorted_models
+                    variable data
+
+                    variable data
+
+                variable data
+
+                variable depend
+
+                variable depend
+
+        function process_models(self, immediate=False)
 
                 variable modname
 
         function load_model(self, name: str)
 
-        function add_face_to_batch(self, block, face, batches) -> list
+            variable location
+
+                    variable model_data
+
+                        variable self.models[
+
+                        variable self.models[name]
+
+                        variable self.models[
+
+                        variable self.models[name]
+
+        function add_face_to_batch(self, block, face, batches) -> typing.Iterable
 
             variable blockstate
 
-                variable vertex
+                variable vertex_list
 
-                variable vertex
+                variable vertex_list
 
         function add_raw_face_to_batch(
                 self, position, state, block_state_name: str, batches, face
                 ):
 
-                variable vertex
+                variable vertex_list
 
                 variable blockstate
 
-                variable vertex
+                variable vertex_list
 
         function draw_face(self, block, face)
 

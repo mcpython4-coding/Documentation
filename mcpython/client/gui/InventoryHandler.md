@@ -1,4 +1,4 @@
-***InventoryHandler.py - documentation - last updated on 13.5.2021 by uuk***
+***InventoryHandler.py - documentation - last updated on 27.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,7 +11,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class OpenedInventoryStatePart extends mcpython.client.state.StatePart.StatePart
+    class OpenedInventoryStatePart extends mcpython.client.state.AbstractStatePart.AbstractStatePart
         
         class for inventories as state
         todo: make A LOT OF THINGS public and static

@@ -1,4 +1,4 @@
-***EntityBoxRenderingHelper.py - documentation - last updated on 19.5.2021 by uuk***
+***EntityBoxRenderingHelper.py - documentation - last updated on 27.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -14,6 +14,7 @@ ___
     class EntityBoxInstance
         
         The box rendered for entities [in the future]
+        WIP
 
 
         class MutableEntityBox

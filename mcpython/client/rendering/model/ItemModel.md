@@ -1,4 +1,4 @@
-***ItemModel.py - documentation - last updated on 23.8.2021 by uuk***
+***ItemModel.py - documentation - last updated on 27.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,14 +11,6 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class IItemModelLoader
-
-        static
-        function validate(cls, data: dict) -> bool
-
-        static
-        function decode(cls, data: dict, model: "ItemModel")
-
     class DefaultLoader extends IItemModelLoader
 
         static
@@ -27,9 +19,9 @@ ___
         static
         function decode(cls, data: dict, model: "ItemModel")
 
-    variable LOADERS
-
     class ItemModel
+
+        variable LOADERS
 
         static
         function from_file(cls, file: str, item: str)

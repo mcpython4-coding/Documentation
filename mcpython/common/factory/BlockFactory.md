@@ -1,4 +1,4 @@
-***BlockFactory.py - documentation - last updated on 25.4.2021 by uuk***
+***BlockFactory.py - documentation - last updated on 27.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -71,6 +71,8 @@ ___
             variable ASSIGNED_TOOLS
 
             variable IS_BREAKABLE
+
+                variable IS_BREAKABLE
 
             variable DEFAULT_FACE_SOLID
 

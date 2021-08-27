@@ -23,8 +23,8 @@ ___
                 cls,
                 state_instance,
                 data: dict,
-                existing: typing.Union[None, mcpython.client.state.StatePart.StatePart],
-                ) -> mcpython.client.state.StatePart.StatePart:
+                existing: typing.Union[None, mcpython.client.state.AbstractStatePart.StatePart],
+                ) -> mcpython.client.state.AbstractStatePart.StatePart:
 
     variable entry_registry
 
@@ -37,8 +37,8 @@ ___
                 cls,
                 state_instance,
                 data: dict,
-                existing: typing.Union[None, mcpython.client.state.StatePart.StatePart],
-                ) -> mcpython.client.state.StatePart.StatePart:
+                existing: typing.Union[None, mcpython.client.state.AbstractStatePart.StatePart],
+                ) -> mcpython.client.state.AbstractStatePart.StatePart:
 
             variable size
 
@@ -58,7 +58,7 @@ ___
 
                 variable on_press
 
-                variable existing.bboxsize
+                variable existing.bounding_box_size
 
                 variable existing.text
 
@@ -83,8 +83,8 @@ ___
                 cls,
                 state_instance,
                 data: dict,
-                existing: typing.Union[None, mcpython.client.state.StatePart.StatePart],
-                ) -> mcpython.client.state.StatePart.StatePart:
+                existing: typing.Union[None, mcpython.client.state.AbstractStatePart.StatePart],
+                ) -> mcpython.client.state.AbstractStatePart.StatePart:
 
             variable text
 
@@ -121,7 +121,7 @@ ___
         static
         function deserialize(
                 cls, state_instance, data: dict, existing
-                ) -> mcpython.client.state.StatePart.StatePart:
+                ) -> mcpython.client.state.AbstractStatePart.StatePart:
 
             variable position
 
@@ -164,8 +164,8 @@ ___
                 cls,
                 state_instance,
                 data: dict,
-                existing: typing.Union[None, mcpython.client.state.StatePart.StatePart],
-                ) -> mcpython.client.state.StatePart.StatePart:
+                existing: typing.Union[None, mcpython.client.state.AbstractStatePart.StatePart],
+                ) -> mcpython.client.state.AbstractStatePart.StatePart:
 
     variable configs
 
@@ -191,7 +191,7 @@ ___
         function inject(
                 self,
                 state_instance: typing.Union[
-                mcpython.client.state.State.State, mcpython.client.state.StatePart.StatePart
+                mcpython.client.state.State.State, mcpython.client.state.AbstractStatePart.StatePart
                 ],
                 ):
             

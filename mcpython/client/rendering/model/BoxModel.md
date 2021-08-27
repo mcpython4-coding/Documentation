@@ -1,4 +1,4 @@
-***BoxModel.py - documentation - last updated on 23.8.2021 by uuk***
+***BoxModel.py - documentation - last updated on 27.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -10,17 +10,6 @@ ___
     Mod loader inspired by "Minecraft Forge" (https://github.com/MinecraftForge/MinecraftForge) and similar
     This project is not official by mojang and does not relate to it.
 
-
-    variable UV_ORDER
-
-    variable SIDE_ORDER
-
-    variable UV_INDICES
-        representative for the order of uv insertion
-
-    class AbstractBoxModel extends ABC
-
-        function copy(self) -> "AbstractBoxModel"
 
     @onlyInClient() class BoxModel extends AbstractBoxModel
 

@@ -1,4 +1,4 @@
-***BlockModel.py - documentation - last updated on 23.8.2021 by uuk***
+***BlockModel.py - documentation - last updated on 27.8.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -13,7 +13,7 @@ ___
 
     class Model
         
-        Class representing an model from the file system
+        Class representing a (block) model from the file system
 
 
         function __init__(self, data: dict, name: str, modname: str)
