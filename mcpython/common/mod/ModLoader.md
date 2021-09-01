@@ -1,4 +1,4 @@
-***ModLoader.py - documentation - last updated on 27.8.2021 by uuk***
+***ModLoader.py - documentation - last updated on 1.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -13,7 +13,7 @@ ___
 
     function cast_dependency(depend: dict)
         
-        Will cast an dict-structure to the depend
+        Will cast a dict-structure to the depend
         :param depend: the depend dict
         :return: the parsed mod.Mod.ModDependency-object
 
@@ -120,7 +120,7 @@ ___
 
         function on_select(self)
 
-            variable data
+                variable data
 
             variable self.raw_data
 

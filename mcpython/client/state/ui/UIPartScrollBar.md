@@ -1,4 +1,4 @@
-***UIPartScrollBar.py - documentation - last updated on 9.2.2021 by uuk***
+***UIPartScrollBar.py - documentation - last updated on 1.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -17,9 +17,10 @@ ___
 
     variable scroll_inactive
 
-    @onlyInClient() class UIScrollBar extends mcpython.client.state.ui.UIPart.UIPart
+    @onlyInClient() class UIScrollBar extends AbstractUIPart
         
-        class representing an scroll bar
+        Class representing a scroll bar in a gui-state of the game
+        The user is needed to work with the values returned by this system (on_scroll)
 
 
         function __init__(self, position: tuple, scroll_distance: int, on_scroll=None)
@@ -42,15 +43,21 @@ ___
 
         function on_mouse_press(self, x, y, button, mod)
 
+                variable self.selected
+
         function on_mouse_release(self, x, y, button, mod)
 
         function on_mouse_drag(self, x, y, dx, dy, button, mod)
 
+                variable self.bar_position
+
         function on_draw(self)
+
+                variable self.bar_sprite.position
 
         function get_status(self) -> float
             
-            will return the status as an float between 0 and 1 where 0 is the downer end and 1 the upper
+            Will return the status as an float between 0 and 1 where 0 is the downer end and 1 the upper
 
 
         function set_status(self, status: float)

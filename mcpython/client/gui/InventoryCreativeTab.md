@@ -1,4 +1,4 @@
-***InventoryCreativeTab.py - documentation - last updated on 23.8.2021 by uuk***
+***InventoryCreativeTab.py - documentation - last updated on 1.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -184,6 +184,16 @@ ___
         function on_deactivate(self)
 
         function on_activate(self)
+
+        function on_mouse_button_press(
+                self,
+                relative_x: int,
+                relative_y: int,
+                button: int,
+                modifiers: int,
+                item_stack,
+                slot,
+                ) -> bool:
 
     class CreativeTabSearchBar extends CreativeItemTab
 

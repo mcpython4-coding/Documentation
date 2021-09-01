@@ -1,4 +1,4 @@
-***UIPartProgressBar.py - documentation - last updated on 9.2.2021 by uuk***
+***UIPartProgressBar.py - documentation - last updated on 1.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,7 +11,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    @onlyInClient() class UIPartProgressBar extends UIPart.UIPart
+    @onlyInClient() class UIPartProgressBar extends AbstractUIPart.AbstractUIPart
 
         function __init__(
                 self,

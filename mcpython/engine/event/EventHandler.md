@@ -1,4 +1,4 @@
-***EventHandler.py - documentation - last updated on 23.8.2021 by uuk***
+***EventHandler.py - documentation - last updated on 1.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -10,6 +10,8 @@ ___
     Mod loader inspired by "Minecraft Forge" (https://github.com/MinecraftForge/MinecraftForge) and similar
     This project is not official by mojang and does not relate to it.
 
+
+    variable __all__
 
     class EventHandler
 

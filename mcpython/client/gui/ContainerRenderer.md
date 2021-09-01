@@ -1,4 +1,4 @@
-***ContainerRenderer.py - documentation - last updated on 23.8.2021 by uuk***
+***ContainerRenderer.py - documentation - last updated on 1.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -43,7 +43,9 @@ ___
 
             variable self.uuid
 
-            variable self.slots
+            variable self.slots: typing.List[ISlot]
+
+                variable slot.assigned_inventory
 
             variable self.config
                 todo: add special class holding this information with serializer for it
@@ -53,6 +55,16 @@ ___
             variable self.custom_name_label
 
             variable self.custom_name_label.anchor_y
+
+        function on_mouse_button_press(
+                self,
+                relative_x: int,
+                relative_y: int,
+                button: int,
+                modifiers: int,
+                item_stack,
+                slot,
+                ) -> bool:
 
         function reload_config(self)
             

@@ -1,4 +1,4 @@
-***Slot.py - documentation - last updated on 23.8.2021 by uuk***
+***Slot.py - documentation - last updated on 1.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -18,6 +18,10 @@ ___
         variable PYGLET_IMAGE_HOVERING
 
     class ISlot extends ABC
+
+        function __init__(self)
+
+            variable self.assigned_inventory
 
         function get_capacity(self) -> int
 
@@ -76,7 +80,7 @@ ___
                 check_function=None,
                 ):
             
-            creates an new slot
+            Creates a new slot
             :param itemstack: the itemstack to use
             :param position: the position to create at
             :param allow_player_remove: if the player is allowed to remove items out of it

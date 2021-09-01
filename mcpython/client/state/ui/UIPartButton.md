@@ -1,4 +1,4 @@
-***UIPartButton.py - documentation - last updated on 23.8.2021 by uuk***
+***UIPartButton.py - documentation - last updated on 1.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -13,18 +13,26 @@ ___
 
     variable image
 
-    variable disabled
-
-    variable enabled
-
-    variable hovering
-
     variable IMAGES
+
+    function load_images()
+
+        variable image
+
+        variable disabled
+
+        variable enabled
+
+        variable hovering
 
     @onlyInClient()
     function draw_button(position, size, mode)
 
-    @onlyInClient() class UIPartButton extends UIPart.UIPart
+            variable i
+
+                variable ii
+
+    @onlyInClient() class UIPartButton extends AbstractUIPart.AbstractUIPart
 
         function __init__(
                 self,
@@ -39,7 +47,7 @@ ___
                 on_press=None,
                 on_hover=None,
                 on_try_press=None,
-                enabled=True,
+                enable=True,
                 has_hovering_state=True,
                 ):
             
@@ -53,7 +61,7 @@ ___
             :param on_press: called together with x and y on press on the button  todo: change to include button
             :param on_hover: called on every mouse move on the button with the mouse x and y
             :param on_try_press: called when the button is pressed during an in-active phase of the button with x and y
-            :param enabled: if the button should be enabled from the start
+            :param enable: if the button should be enabled from the start
             :param has_hovering_state: if the button has an state different from normal when the mouse is over it
 
 
@@ -87,6 +95,15 @@ ___
 
         function on_draw_2d(self)
 
+            variable self.lable.text
+                todo: reconsider language only on reload & text change
+
+            variable self.lable.x
+
+            variable self.lable.y
+
+            variable self.lable.font_size
+
     @onlyInClient() class UIPartToggleButton extends UIPartButton
 
         function __init__(
@@ -97,7 +114,7 @@ ___
                 toggle=mcpython.engine.event.EventInfo.MousePressEventInfo(
                 pyglet.window.mouse.LEFT
                 ),
-                retoggle=mcpython.engine.event.EventInfo.MousePressEventInfo(
+                toggle_back=mcpython.engine.event.EventInfo.MousePressEventInfo(
                 pyglet.window.mouse.RIGHT
                 ),
                 anchor_button="WS",
@@ -105,7 +122,7 @@ ___
                 on_toggle=None,
                 on_hover=None,
                 on_try_press=None,
-                enabled=True,
+                enable=True,
                 has_hovering_state=True,
                 text_constructor="{}",
                 start=0,
@@ -116,13 +133,13 @@ ___
             :param text_possibilities: the texts of the button
             :param position: the position of the button
             :param toggle: the EventInfo for mouse buttons and mods, no area to define, toggle forward
-            :param retoggle: the EventInfo for mouse buttons and mods, no area to define, toggle backwards
+            :param toggle_back: the EventInfo for mouse buttons and mods, no area to define, toggle backwards
             :param anchor_button: the anchor on the button
             :param anchor_window: the anchor on the window
             :param on_toggle: called when the button toggles, parameters: (from: str, to: str, direction: int, position:tuple)
             :param on_hover: called when the mouse is over the button
             :param on_try_press: called when button is disabled and the user presses the button
-            :param enabled: button should be clickable?
+            :param enable: button should be clickable?
             :param has_hovering_state: if the button gets blue when mouse is over it
             :param text_constructor: an string.format(item) or an function(item: str) -> str entry
             :param start: where in the array to start from
@@ -138,7 +155,7 @@ ___
 
             variable self.toggle: mcpython.engine.event.EventInfo.MousePressEventInfo
 
-            variable self.retoggle: mcpython.engine.event.EventInfo.MousePressEventInfo
+            variable self.toggle_back: mcpython.engine.event.EventInfo.MousePressEventInfo
 
             variable self.on_toggle
 

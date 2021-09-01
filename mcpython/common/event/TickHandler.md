@@ -1,4 +1,4 @@
-***TickHandler.py - documentation - last updated on 9.2.2021 by uuk***
+***TickHandler.py - documentation - last updated on 1.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -42,6 +42,8 @@ ___
             execute ticks
             :param dt: the time that came after the last event
 
+
+                        variable self.lost_time
 
         function schedule_once(self, function, *args, **kwargs)
             
