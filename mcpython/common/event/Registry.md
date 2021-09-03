@@ -122,7 +122,7 @@ ___
 
         function register(self, *args, **kwargs)
 
-        function async_register(self, mod: str, phase: str)
+        function delayed_register(self, mod: str, phase: str)
 
         function create_deferred(self, registry: str, mod_name: str)
 
@@ -145,4 +145,4 @@ ___
 
             variable self.modname
 
-        function run_later(self, lazy: typing.Callable[[], IRegistryContent])
+        function register_later(self, lazy: typing.Callable[[], IRegistryContent])
