@@ -63,4 +63,4 @@ ___
 
                 variable thread
 
-        function single_client_thread(self, conn, addr, client_id: int)
+        function single_client_thread_recv(self, conn, addr, client_id: int)
