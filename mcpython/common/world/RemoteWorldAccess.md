@@ -150,9 +150,9 @@ ___
 
             variable self.chunk_cache
 
-        function get_dimension_range(self) -> typing.Tuple[int, int]
+        function get_world_height_range(self) -> typing.Tuple[int, int]
 
-        function get_id(self)
+        function get_dimension_id(self)
 
         function get_name(self) -> str
 

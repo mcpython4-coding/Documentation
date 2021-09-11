@@ -80,7 +80,7 @@ ___
 
             variable kwargs["immediate"]
 
-            variable self.data_maps[1].setdefault(chunk.get_dimension().get_id(),
+            variable self.data_maps[1].setdefault(chunk.get_dimension().get_dimension_id(),
 
         function schedule_block_remove(
                 self,
@@ -99,7 +99,7 @@ ___
             :param kwargs: the kwargs to call the remove_block-function with
 
 
-            variable self.data_maps[1].setdefault(chunk.get_dimension().get_id(),
+            variable self.data_maps[1].setdefault(chunk.get_dimension().get_dimension_id(),
 
         function schedule_block_show(
                 self, chunk: mcpython.common.world.AbstractInterface.IChunk, position: tuple
@@ -110,7 +110,7 @@ ___
             :param position: the position of the block
 
 
-            variable self.data_maps[2].setdefault(chunk.get_dimension().get_id(),
+            variable self.data_maps[2].setdefault(chunk.get_dimension().get_dimension_id(),
 
         function schedule_block_hide(
                 self, chunk: mcpython.common.world.AbstractInterface.IChunk, position: tuple
@@ -121,7 +121,7 @@ ___
             :param position: the position of the block
 
 
-            variable self.data_maps[2].setdefault(chunk.get_dimension().get_id(),
+            variable self.data_maps[2].setdefault(chunk.get_dimension().get_dimension_id(),
 
         function schedule_visual_update(
                 self, chunk: mcpython.common.world.AbstractInterface.IChunk, position: tuple
@@ -132,7 +132,7 @@ ___
             :param position: the position of the block
 
 
-            variable self.data_maps[2].setdefault(chunk.get_dimension().get_id(),
+            variable self.data_maps[2].setdefault(chunk.get_dimension().get_dimension_id(),
 
         function process_one_task(self, chunk=None, log_msg=False) -> int
             
