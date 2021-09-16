@@ -1,4 +1,4 @@
-***LootTableCondition.py - documentation - last updated on 23.8.2021 by uuk***
+***LootTableCondition.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,7 +11,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class ILootTableCondition extends mcpython.common.event.Registry.IRegistryContent
+    class ILootTableCondition extends mcpython.common.event.api.IRegistryContent
 
         variable TYPE
 

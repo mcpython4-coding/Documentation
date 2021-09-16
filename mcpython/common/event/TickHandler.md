@@ -1,4 +1,4 @@
-***TickHandler.py - documentation - last updated on 1.9.2021 by uuk***
+***TickHandler.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -13,7 +13,7 @@ ___
 
     class TickHandler
         
-        main handler for ticks
+        Main handler for ticks
 
 
         function __init__(self)
@@ -39,7 +39,7 @@ ___
 
         function tick(self, dt)
             
-            execute ticks
+            Execute ticks
             :param dt: the time that came after the last event
 
 
@@ -74,6 +74,8 @@ ___
         function bind_redstone_tick(self, function, tick, *args, **kwargs)
 
         function send_random_ticks(self, *args, **kwargs)
+
+            variable dimension
 
             variable random_tick_speed
 

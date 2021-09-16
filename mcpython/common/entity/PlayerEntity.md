@@ -1,4 +1,4 @@
-***PlayerEntity.py - documentation - last updated on 22.5.2021 by uuk***
+***PlayerEntity.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -26,21 +26,23 @@ ___
 
         function __init__(self, name="unknown", dimension=None)
 
+            variable self.is_in_init
+
             variable self.name: str - the name of the player
 
             variable self.gamemode: int - the current gamemode
 
             variable self.hearts: int
 
-            variable self.hunger: int
+            variable self.hunger: float
 
             variable self.xp: int
 
             variable self.xp_level: int
 
-            variable self.armor_level
+            variable self.armor_level: float
 
-            variable self.armor_toughness
+            variable self.armor_toughness: float
 
             variable self.in_nether_portal_since: typing.Optional[float]
 
@@ -55,9 +57,11 @@ ___
             variable self.active_inventory_slot: int
                 which slot is currently selected
 
-            variable self.inventory_hotbar
+            variable self.inventories_created
                 the different parts of the player inventory
                 todo: use only containers here
+
+            variable self.inventory_hotbar
 
             variable self.inventory_main
 
@@ -69,6 +73,40 @@ ___
 
             variable self.inventory_order
                 the lookup order of inventory, todo: move to inventory handler
+
+            variable self.is_in_init
+
+        function write_to_network_buffer(self, buffer: WriteBuffer)
+
+        function read_from_network_buffer(self, buffer: ReadBuffer)
+
+            variable self.name
+
+            variable self.gamemode
+
+            variable self.hearts
+
+            variable self.hunger
+
+            variable self.xp
+
+            variable self.xp_level
+
+            variable self.armor_level
+
+            variable self.armor_toughness
+
+            variable self.flying
+
+            variable self.fallen_since_y
+
+            variable self.active_inventory_slot
+
+        function create_update_package(self) -> PlayerUpdatePackage
+
+        function write_update_package(self, package: PlayerUpdatePackage)
+
+        function send_update_package_when_client(self)
 
         function hotkey_get_position(self)
 
@@ -181,7 +219,7 @@ ___
 
             variable self.active_inventory_slot
 
-            variable shared.window.dy
+                variable shared.window.dy
 
             variable self.xp
                 todo: drop parts of the xp
@@ -198,7 +236,7 @@ ___
 
             variable self.armor_toughness
 
-            variable sector
+                variable sector
 
         function _get_position(self)
 
@@ -212,6 +250,8 @@ ___
         function reset_moving_slot(self)
 
         function teleport_to_spawn_point(self)
+
+            variable h
 
                 variable h
 

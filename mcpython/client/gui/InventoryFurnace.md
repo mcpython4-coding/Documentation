@@ -1,4 +1,4 @@
-***InventoryFurnace.py - documentation - last updated on 25.4.2021 by uuk***
+***InventoryFurnace.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -62,7 +62,7 @@ ___
 
             variable cls.TEXTURE_ARROW_SIZE
 
-        function __init__(self, block, types)
+        function __init__(self, block, types: typing.List[str])
 
             variable self.block
 
@@ -83,6 +83,10 @@ ___
             variable self.types
 
                 variable self.custom_name
+
+        function write_to_network_buffer(self, buffer: WriteBuffer)
+
+        function read_from_network_buffer(self, buffer: ReadBuffer)
 
         static
         function get_config_file() -> str or None

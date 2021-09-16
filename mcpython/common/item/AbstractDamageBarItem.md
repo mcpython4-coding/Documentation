@@ -1,4 +1,4 @@
-***AbstractDamageBarItem.py - documentation - last updated on 9.2.2021 by uuk***
+***AbstractDamageBarItem.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -16,6 +16,10 @@ ___
         function __init__(self)
 
             variable self.unbreakable
+
+        function write_to_network_buffer(self, buffer: WriteBuffer)
+
+        function read_from_network_buffer(self, buffer: ReadBuffer)
 
         function get_damage_info(
                 self,

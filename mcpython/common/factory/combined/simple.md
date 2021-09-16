@@ -1,4 +1,4 @@
-***simple.py - documentation - last updated on 25.4.2021 by uuk***
+***simple.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -40,6 +40,7 @@ ___
                 ],
                 PIL.Image.Image,
                 ] = colorize_texture,
+                deferred_registry: DeferredRegistry = None,
                 ):
 
             variable default_texture: str
@@ -58,6 +59,8 @@ ___
             variable self.color
 
             variable self.color_texture_consumer
+
+            variable self.deferred_registry
 
         function create_colored_texture(
                 self, texture: typing.Union[PIL.Image.Image, str], color=None

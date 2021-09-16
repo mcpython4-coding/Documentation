@@ -1,4 +1,4 @@
-***General.py - documentation - last updated on 9.2.2021 by uuk***
+***General.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,40 +11,9 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class WorldConfigFixer extends mcpython.common.world.datafixers.IDataFixer.IPartFixer
-        
-        Class representing an fix for the config-entry
-
-
-        variable TARGET_SERIALIZER_NAME
-
-        static
-        function fix(cls, save_file, data: dict) -> dict
-
-    class WorldGeneralFixer extends mcpython.common.world.datafixers.IDataFixer.IPartFixer
-        
-        Class representing an fix for the config-entry
-
-
-        variable TARGET_SERIALIZER_NAME
-
-        static
-        function fix(cls, save_file, data: dict) -> dict
-
     @shared.registry class General extends mcpython.common.world.serializer.IDataSerializer.IDataSerializer
 
         variable PART
-
-        static
-        function apply_part_fixer(cls, save_file, fixer)
-
-                variable data
-
-                variable data["config"]
-
-                variable data
-
-                variable data
 
         static
         function load(cls, save_file)

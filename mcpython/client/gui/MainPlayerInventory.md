@@ -1,4 +1,4 @@
-***MainPlayerInventory.py - documentation - last updated on 13.5.2021 by uuk***
+***MainPlayerInventory.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -42,6 +42,8 @@ ___
         function create_slot_renderers(self) -> list
 
         function armor_update(self, player=None)
+
+                variable shared.world.get_active_player().armor_level
 
         function draw(self, hovering_slot=None)
 

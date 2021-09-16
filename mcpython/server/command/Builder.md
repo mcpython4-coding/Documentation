@@ -1,4 +1,4 @@
-***Builder.py - documentation - last updated on 23.8.2021 by uuk***
+***Builder.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -278,9 +278,21 @@ ___
         A node in the tree of a command
 
 
-        function __init__(self, inner_identifier: ICommandElementIdentifier)
+        function __init__(
+                self,
+                inner_identifier: ICommandElementIdentifier,
+                execute_on_client=False,
+                valid_on_dedicated=True,
+                valid_on_integrated=True,
+                ):
 
             variable self.inner_identifier
+
+            variable self.execute_on_client
+
+            variable self.valid_on_dedicated
+
+            variable self.valid_on_integrated
 
             variable self.following_nodes: typing.List["CommandNode"]
 
@@ -339,7 +351,13 @@ ___
         <name> is without the / in front
 
 
-        function __init__(self, name: str)
+        function __init__(
+                self,
+                name: str,
+                execute_on_client=False,
+                valid_on_dedicated=True,
+                valid_on_integrated=True,
+                ):
 
             variable self.name
 

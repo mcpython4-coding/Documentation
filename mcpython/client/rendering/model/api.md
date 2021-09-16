@@ -1,4 +1,4 @@
-***api.py - documentation - last updated on 27.8.2021 by uuk***
+***api.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -25,7 +25,7 @@ ___
 
         function get_model_state(self)
 
-    class IBlockStateDecoder extends mcpython.common.event.Registry.IRegistryContent,  ABC
+    class IBlockStateDecoder extends mcpython.common.event.api.IRegistryContent,  ABC
         
         Abstract base class for block state decoders
         Identification of files to decode:

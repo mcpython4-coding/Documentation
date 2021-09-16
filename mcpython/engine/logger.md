@@ -1,4 +1,4 @@
-***logger.py - documentation - last updated on 23.8.2021 by uuk***
+***logger.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -51,7 +51,7 @@ ___
             style=("+", "-", "|"),
             header=None,
             outer_line_distance=2,
-            empty_lines_before_separate=1
+            empty_lines_before_separate=1,
             ):
         
         will print the given data into an container-like structure

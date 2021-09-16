@@ -1,4 +1,4 @@
-***ModLoadingStages.py - documentation - last updated on 13.5.2021 by uuk***
+***ModLoadingStages.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -68,6 +68,10 @@ ___
 
         function next_event(self)
 
+            variable self.active_event
+
+            variable self.active_mod_index
+
         function finished(self)
 
         function add_event_stage(self, event_name: str, *inner_depends: str)
@@ -86,12 +90,6 @@ ___
             Will finish up the system
             :param astate: the state to use
 
-
-                    variable player
-
-                    variable player.position
-
-                    variable player.rotation
 
                 variable shared.mod_loader.finished
 

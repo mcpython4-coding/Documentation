@@ -1,4 +1,4 @@
-***abstract.py - documentation - last updated on 23.8.2021 by uuk***
+***abstract.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,7 +11,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class ISerializeAble extends ABC
+    class ISerializeAble extends IBufferSerializeAble,  ABC
 
         variable SERIALIZER: typing.Optional[typing.Type["ISerializer"]]
 

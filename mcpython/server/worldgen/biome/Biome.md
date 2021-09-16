@@ -1,4 +1,4 @@
-***Biome.py - documentation - last updated on 9.2.2021 by uuk***
+***Biome.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,7 +11,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class Biome extends mcpython.common.event.Registry.IRegistryContent,  ABC
+    class Biome extends mcpython.common.event.api.IRegistryContent,  ISerializeAble,  ABC
         
         Abstract base class for biomes
         Defines the look of the biome

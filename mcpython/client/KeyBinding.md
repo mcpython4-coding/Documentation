@@ -1,4 +1,4 @@
-***KeyBinding.py - documentation - last updated on 9.2.2021 by uuk***
+***KeyBinding.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -13,7 +13,7 @@ ___
 
     @onlyInClient() class KeyMouseBinding
         
-        class holding an key or mouse binding
+        Class holding a key or mouse binding
 
 
         function __init__(

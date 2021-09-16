@@ -1,4 +1,4 @@
-***Chest.py - documentation - last updated on 25.4.2021 by uuk***
+***Chest.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -47,6 +47,14 @@ ___
 
             variable self.loot_table_link
 
+        function write_to_network_buffer(self, buffer: WriteBuffer)
+
+        function read_from_network_buffer(self, buffer: ReadBuffer)
+
+            variable self.loot_table_link
+
+                variable self.loot_table_link
+
         function on_block_added(self)
 
             variable self.face_solid
@@ -90,5 +98,3 @@ ___
         function get_save_data(self)
 
         function load_data(self, data)
-
-                variable self.loot_table_link

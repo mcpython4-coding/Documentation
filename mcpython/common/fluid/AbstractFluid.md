@@ -1,4 +1,4 @@
-***AbstractFluid.py - documentation - last updated on 25.4.2021 by uuk***
+***AbstractFluid.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,7 +11,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class AbstractFluid extends mcpython.common.event.Registry.IRegistryContent,  ABC
+    class AbstractFluid extends mcpython.common.event.api.IRegistryContent,  ABC
         
         Abstract class defining fluid behaviour
         This is the stuff referenced by FluidStacks
@@ -42,14 +42,14 @@ ___
 
         variable CRITICAL_AMOUNT
             A FluidStack size which is "critical", that means that this class wants to be informed about it
-            Set to -1 if no amount is critical
+            Set to -1 if the smallest amount is critical
 
         variable CAN_BE_CRITICAL_ON_CONTACT
             Set this to detect fluids touching with each other by the on_fluids_touching function
             This can be used by e.g. lava for cobble gen
 
         variable SOLIDIFICATION_POINT
-            When the fluid solidifies, in K
+            When the fluid solidifies, in K; Only for inter-mod information
 
         variable SOLIDIFIES_TO
             What does it solidify to?

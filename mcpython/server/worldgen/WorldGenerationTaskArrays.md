@@ -1,4 +1,4 @@
-***WorldGenerationTaskArrays.py - documentation - last updated on 23.8.2021 by uuk***
+***WorldGenerationTaskArrays.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -80,8 +80,6 @@ ___
 
             variable kwargs["immediate"]
 
-            variable self.data_maps[1].setdefault(chunk.get_dimension().get_dimension_id(),
-
         function schedule_block_remove(
                 self,
                 chunk: mcpython.common.world.AbstractInterface.IChunk,
@@ -99,8 +97,6 @@ ___
             :param kwargs: the kwargs to call the remove_block-function with
 
 
-            variable self.data_maps[1].setdefault(chunk.get_dimension().get_dimension_id(),
-
         function schedule_block_show(
                 self, chunk: mcpython.common.world.AbstractInterface.IChunk, position: tuple
                 ):
@@ -109,8 +105,6 @@ ___
             :param chunk: the chunk
             :param position: the position of the block
 
-
-            variable self.data_maps[2].setdefault(chunk.get_dimension().get_dimension_id(),
 
         function schedule_block_hide(
                 self, chunk: mcpython.common.world.AbstractInterface.IChunk, position: tuple
@@ -121,8 +115,6 @@ ___
             :param position: the position of the block
 
 
-            variable self.data_maps[2].setdefault(chunk.get_dimension().get_dimension_id(),
-
         function schedule_visual_update(
                 self, chunk: mcpython.common.world.AbstractInterface.IChunk, position: tuple
                 ):
@@ -131,8 +123,6 @@ ___
             :param chunk: the chunk
             :param position: the position of the block
 
-
-            variable self.data_maps[2].setdefault(chunk.get_dimension().get_dimension_id(),
 
         function process_one_task(self, chunk=None, log_msg=False) -> int
             

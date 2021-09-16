@@ -1,4 +1,4 @@
-***NewBlocks.py - documentation - last updated on 19.5.2021 by uuk***
+***NewBlocks.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -16,6 +16,8 @@ ___
     attached_melon_stem
     attached_pumpkin_stem
 
+
+    variable DEFERRED_PIPE: DeferredRegistry
 
     function plant(name: str)
 
@@ -35,32 +37,6 @@ ___
 
         variable instance
     
-    bedrock
-    beehive
-    beetroots
-    bee_nest
-    bell
-    big_dripleaf
-    big_dripleaf_stem
-    birch_button
-    birch_door
-    birch_fence
-    birch_fence_gate
-    birch_leaves
-    birch_log
-    birch_planks
-    birch_pressure_plate
-    birch_sapling
-    birch_sign
-    birch_slab
-    birch_stairs
-    birch_trapdoor
-    birch_wall_sign
-    birch_wood
-    blackstone
-    blackstone_slab
-    blackstone_stairs
-    blackstone_wall
     black_banner
     black_bed
     black_candle

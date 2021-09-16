@@ -1,4 +1,4 @@
-***IFeature.py - documentation - last updated on 9.2.2021 by uuk***
+***IFeature.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -50,7 +50,7 @@ ___
 
             variable self.config
 
-    class IFeature extends mcpython.common.event.Registry.IRegistryContent
+    class IFeature extends mcpython.common.event.api.IRegistryContent
 
         variable TYPE
 

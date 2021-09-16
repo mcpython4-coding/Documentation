@@ -1,4 +1,4 @@
-***AbstractItem.py - documentation - last updated on 9.2.2021 by uuk***
+***AbstractItem.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,9 +11,11 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class AbstractItem extends mcpython.common.event.Registry.IRegistryContent
+    class AbstractItem extends  mcpython.common.event.api.IRegistryContent,  ICapabilityContainer,  IBufferSerializeAble,  ABC,  
 
         variable TYPE
+
+        variable CAPABILITY_CONTAINER_NAME
 
         variable STACK_SIZE
 
@@ -46,6 +48,14 @@ ___
             variable self.can_destroy
 
             variable self.can_be_set_on
+
+        function read_from_network_buffer(self, buffer: ReadBuffer)
+
+                variable self.can_destroy
+
+                variable self.can_be_set_on
+
+        function write_to_network_buffer(self, buffer: WriteBuffer)
 
         function check_can_be_set_on(self, block, player)
 

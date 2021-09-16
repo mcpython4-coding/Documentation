@@ -1,4 +1,4 @@
-***GameRule.py - documentation - last updated on 9.2.2021 by uuk***
+***GameRule.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -61,7 +61,7 @@ ___
 
         function load(self, data)
 
-    class GameRule extends mcpython.common.event.Registry.IRegistryContent
+    class GameRule extends mcpython.common.event.api.IRegistryContent
 
         variable TYPE
 

@@ -1,4 +1,4 @@
-***ResourceLoader.py - documentation - last updated on 23.8.2021 by uuk***
+***ResourceLoader.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -176,6 +176,12 @@ ___
             variable self.images
 
             variable self.id
+
+        function debug_dump(self, directory: str)
+
+                variable file
+
+                variable d
 
         function provide_raw(self, name: str, raw: bytes)
 

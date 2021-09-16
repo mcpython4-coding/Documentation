@@ -1,4 +1,4 @@
-***ConfigFile.py - documentation - last updated on 9.2.2021 by uuk***
+***ConfigFile.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -35,6 +35,10 @@ ___
         :return: an IDataMapper-instance
         WARNING: in case of non normal data mapper found, an StringDataMapper is used
 
+
+            variable obj
+
+            variable obj
 
     class IDataMapper
         

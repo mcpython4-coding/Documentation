@@ -1,4 +1,4 @@
-***AbstractInterface.py - documentation - last updated on 22.5.2021 by uuk***
+***AbstractInterface.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -394,6 +394,8 @@ ___
                 ):
 
         function get_active_player(self, create: bool = True) -> typing.Optional
+
+        function get_player_by_name(self, name: str)
 
         function player_iterator(self) -> typing.Iterable
 

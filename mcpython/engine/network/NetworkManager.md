@@ -1,4 +1,4 @@
-***NetworkManager.py - documentation - last updated on 23.8.2021 by uuk***
+***NetworkManager.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -20,11 +20,16 @@ ___
             [3B-2Bi package type id][1Bi has id, 1Bi has answer id]
             [4B package id, if answering or answer is expected]
             [4B previous package id, if answer]
+            [1B package compression enable]
             [3B package size]
             [package data, encoded by the package]
 
 
         function __init__(self)
+
+            variable self.custom_package_handlers
+
+            variable self.general_package_handlers
 
             variable self.next_package_type_id
 
@@ -32,8 +37,30 @@ ___
 
             variable self.client_id
 
+            variable self.valid_client_ids
+
             variable self.valid_package_ids
                 Filled during handshake
+
+            variable self.client_profiles
+
+        function reset_package_registry(self)
+
+        function get_dynamic_id_info(self) -> typing.List[typing.Tuple[str, int]]
+
+        function set_dynamic_id_info(self, data: typing.List[typing.Tuple[str, int]])
+
+                variable package_type
+
+                variable package_id_here
+
+                variable self.package_types[package_id]
+
+                    variable self.general_package_handlers[
+
+        function disconnect(self, target=-1)
+
+        function send_package_to_all(self, package, not_including=-1)
 
         function send_package(
                 self,
@@ -41,15 +68,13 @@ ___
                 destination: int = 0,
                 ):
 
-            variable encoded_head
+            variable data
 
-                variable package.package_id
+        function encode_package(self, destination, package) -> bytes
 
-            variable package_id_data
+            variable compress_data
 
-            variable previous_package_id_data
-
-            variable package_data
+                variable package_data
 
             variable package_size_data
 
@@ -69,7 +94,7 @@ ___
                 self,
                 previous_package: mcpython.engine.network.AbstractPackage.AbstractPackage,
                 handler: typing.Callable[
-                [mcpython.engine.network.AbstractPackage.AbstractPackage], None
+                [mcpython.engine.network.AbstractPackage.AbstractPackage, int], None
                 ],
                 ):
 
@@ -88,15 +113,21 @@ ___
 
             variable self.package_types[t.PACKAGE_TYPE_ID]
 
+            variable self.name2package_type[t.PACKAGE_NAME]
+
         function clean_network_graph(self)
 
         function fetch_as_client(self)
 
-                variable package
+            variable buffer
+
+                    variable package
+
+                variable package.sender_id
 
         function fetch_as_server(self)
 
-                variable package
+                    variable package.sender_id
 
         function fetch_package_from_buffer(self, buffer)
 
@@ -116,12 +147,20 @@ ___
 
                     variable previous_id
 
+                variable package_compressed
+
                 variable package_size
 
                 variable package_data
 
-            variable package: mcpython.engine.network.AbstractPackage.AbstractPackage
+                    variable package_data
+
+            variable buffer
+
+            variable package
 
             variable package.package_id
 
     variable shared.NETWORK_MANAGER
+
+    function load_packages()

@@ -1,4 +1,4 @@
-***shared.py - documentation - last updated on 23.8.2021 by uuk***
+***shared.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -32,6 +32,8 @@ ___
     variable NO_WINDOW
 
     variable IS_CLIENT
+
+    variable IS_NETWORKING
 
     variable IS_TEST_ENV
 
@@ -75,6 +77,8 @@ ___
     variable loot_table_handler - the loot table manager instance
 
     variable entity_manager - the entity manager instance
+
+    variable capability_manager
 
     variable model_handler - the model handler instance, client-only
 

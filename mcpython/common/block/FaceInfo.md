@@ -1,4 +1,4 @@
-***FaceInfo.py - documentation - last updated on 22.5.2021 by uuk***
+***FaceInfo.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -27,6 +27,8 @@ ___
 
 
             variable self.block
+
+        function is_shown(self) -> bool
 
         function show_face(self, face: mcpython.util.enums.EnumSide)
             

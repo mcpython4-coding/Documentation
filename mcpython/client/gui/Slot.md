@@ -1,4 +1,4 @@
-***Slot.py - documentation - last updated on 1.9.2021 by uuk***
+***Slot.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -17,7 +17,7 @@ ___
 
         variable PYGLET_IMAGE_HOVERING
 
-    class ISlot extends ABC
+    class ISlot extends IBufferSerializeAble,  ABC
 
         function __init__(self)
 
@@ -134,6 +134,10 @@ ___
             variable self.__capacity
 
             variable self.check_function
+
+        function read_from_network_buffer(self, buffer: ReadBuffer)
+
+        function write_to_network_buffer(self, buffer: WriteBuffer)
 
         function get_capacity(self) -> int
 

@@ -1,4 +1,4 @@
-***UIPartLabel.py - documentation - last updated on 1.9.2021 by uuk***
+***UIPartLabel.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -27,13 +27,13 @@ ___
                 text_size=20,
                 ):
             
-            creates an new UIPartButton
-            :param text: the text of the lable
-            :param position: the position of the lable
-            :param press: the EventInfo for mouse lables and mods, no area
-            :param anchor_lable: the anchor on the lable
+            Creates a new label
+            :param text: the text of the label
+            :param position: the position of the label
+            :param press: the EventInfo for mouse labels and mods, no area
+            :param anchor_label: the anchor on the label
             :param anchor_window: the anchor on the window
-            :param on_press: called when the mouse presses on the lable together with x and y
+            :param on_press: called when the mouse presses on the label together with x and y
             :param color: the color of the text to use
             :param text_size: the size of the text
 

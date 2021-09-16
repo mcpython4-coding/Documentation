@@ -1,4 +1,4 @@
-***FallingBlockEntity.py - documentation - last updated on 23.8.2021 by uuk***
+***FallingBlockEntity.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -15,6 +15,7 @@ ___
         
         Class for the falling block entity
         todo: can we replicate some original block behaviour, like inventories, interaction, ...?
+            -> Capability mirror?
 
 
         variable NAME

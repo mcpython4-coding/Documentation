@@ -1,4 +1,4 @@
-***LootTable.py - documentation - last updated on 23.8.2021 by uuk***
+***LootTable.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -113,6 +113,22 @@ ___
 
         static
         function from_data(cls, pool, data: dict)
+
+            variable obj.pool
+
+                variable obj.conditions
+
+                variable obj.functions
+
+                variable obj.name
+
+                variable obj.children
+
+                variable obj.expand
+
+                variable obj.weight
+
+                variable obj.quality
 
         function __init__(self, entry_type=LootTablePoolEntryType.UNSET)
 

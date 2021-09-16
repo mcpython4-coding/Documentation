@@ -1,4 +1,4 @@
-***ShulkerBox.py - documentation - last updated on 25.4.2021 by uuk***
+***ShulkerBox.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -13,23 +13,27 @@ ___
 
     function create_shulker_box(name)
 
-                variable self.inventory
-
-            variable NAME
-
             variable DEFAULT_FACE_SOLID
-
-            function on_player_interaction(
-                    self, player, button: int, modifiers: int, hit_position: tuple
-                    ):
-
-            function get_inventories(self)
 
             variable HARDNESS
 
             variable MINIMUM_TOOL_LEVEL
 
             variable ASSIGNED_TOOLS
+
+            function __init__(self)
+
+                variable self.inventory
+
+            function write_to_network_buffer(self, buffer: WriteBuffer)
+
+            function read_from_network_buffer(self, buffer: ReadBuffer)
+
+            function on_player_interaction(
+                    self, player, button: int, modifiers: int, hit_position: tuple
+                    ):
+
+            function get_inventories(self)
 
             function get_provided_slot_lists(self, side)
 

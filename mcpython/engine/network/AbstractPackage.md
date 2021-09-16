@@ -1,4 +1,4 @@
-***AbstractPackage.py - documentation - last updated on 23.8.2021 by uuk***
+***AbstractPackage.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -20,6 +20,8 @@ ___
         a list of valid package id's, other ones will be ignored
 
 
+        variable ALLOW_PACKAGE_COMPRESSION
+
         variable PACKAGE_NAME: typing.Optional[str]
             A unique package name, used during handshake for package type comparison
             Can include version of the package
@@ -32,23 +34,24 @@ ___
 
         variable CAN_GET_ANSWER
 
-        static
-        function from_data(cls, package_data: bytes)
-
         function __init__(self)
 
             variable self.package_id - set during send process
+
+            variable self.sender_id - set on the server to the client ID this package came from
+
+            variable self.target_id
 
             variable self.previous_packages - set only during receiving or calling answer()
 
         function send(self, destination=0)
 
-        function encode(self) -> bytes
+        function read_from_buffer(self, buffer: ReadBuffer)
+
+        function write_to_buffer(self, buffer: WriteBuffer)
 
         function answer(self, package: "AbstractPackage")
 
-            variable package.previous_packages
+                variable package.previous_packages
 
         function handle_inner(self)
-
-        function on_answer_received(self, package)

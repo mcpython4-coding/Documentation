@@ -1,4 +1,4 @@
-***Registry.py - documentation - last updated on 23.8.2021 by uuk***
+***Registry.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,32 +11,28 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class IRegistryContent extends mcpython.common.data.serializer.tags.ITagTarget.ITagTarget
+    class Registry extends AbstractRegistry
+        
+        One registry for one object-type
+        Holds information about it and does some magic to handle it
+        Supports "XY" in registry and registry["XY"], but no write this way
 
-        variable NAME
-
-        variable TYPE
-
-        static
-        function on_register(cls, registry)
-
-        variable INFO - can be used to display any special info in e.g. /registryinfo-command
-
-        static
-        function compressed_info(cls)
-
-    class Registry
 
         function __init__(
                 self,
                 name: str,
                 registry_type_names: list,
-                phase: typing.Optional[str],
+                phase: typing.Optional[str] = None,
                 injection_function=None,
                 allow_argument_injection=False,
                 class_based=True,
                 dump_content_in_saves=True,
+                register_to_shared_registry=True,
+                sync_via_network=True,
+                registry_sync_package_class=None,
                 ):
+
+            variable phase: typing.Optional[str]
 
             variable self.name
 
@@ -52,13 +48,15 @@ ___
 
             variable self.full_entries
 
-            variable self.locked
-
             variable self.class_based
 
-            variable shared.registry.registries[name]
-
             variable self.dump_content_in_saves
+
+            variable self.sync_via_network
+
+            variable self.registry_sync_package_class
+
+                variable shared.registry.registries[name]
 
         function __contains__(self, item)
 
@@ -69,10 +67,14 @@ ___
         function register(
                 self,
                 obj: typing.Union[IRegistryContent, typing.Type[IRegistryContent]],
-                override_existing=True,
+                overwrite_existing=True,
                 ):
             
             Registers an obj to this registry
+            When locked, a RuntimeError is raised
+            When an object with the name exists, and overwrite_existing is False, a RuntimeError is raised
+            When the object does not extend IRegistryContent, a ValueError is raised
+            When the object NAME-attribute is not set, a ValueError is raised
 
 
             variable self.entries[obj.NAME]
@@ -92,6 +94,8 @@ ___
         function is_valid_key(self, key: str)
 
         function get(self, key: str, default=False)
+
+        function create_deferred(self, mod_name: str, *args, **kwargs)
 
     class RegistryInjectionHolder
 
@@ -116,7 +120,7 @@ ___
 
             variable self.registries
 
-        function __call__(self, *args, **kwargs)
+        function __call__(self, obj)
 
         function get_by_name(self, name: str) -> typing.Optional[Registry]
 
@@ -133,16 +137,3 @@ ___
                     variable element
 
     variable shared.registry
-
-    class DeferredRegistryPipe
-        
-        Base class for deferred registries
-
-
-        function __init__(self, registry: Registry, modname: str)
-
-            variable self.registry
-
-            variable self.modname
-
-        function register_later(self, lazy: typing.Callable[[], IRegistryContent])

@@ -1,4 +1,4 @@
-***InventoryCreativeTab.py - documentation - last updated on 1.9.2021 by uuk***
+***InventoryCreativeTab.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -10,62 +10,6 @@ ___
     Mod loader inspired by "Minecraft Forge" (https://github.com/MinecraftForge/MinecraftForge) and similar
     This project is not official by mojang and does not relate to it.
 
-
-    variable TAB_TEXTURE
-
-    class CreativeTabScrollbar
-        
-        Creative tab scrollbar
-        Feel free to re-use for other stuff
-        todo: use batches
-
-
-        variable SCROLLBAR_SIZE
-
-        variable NON_SELECTED_SCROLLBAR
-
-        variable SELECTED_SCROLLBAR
-
-        static
-        function reload(cls)
-
-        function __init__(self, callback: typing.Callable[[int], None], scroll_until: int = 1)
-
-            variable self.callback
-
-            variable self.scroll_until
-
-            variable self.currently_scrolling
-
-            variable self.underlying_event_bus: mcpython.engine.event.EventBus.EventBus
-
-            variable self.position
-
-            variable self.height
-
-            variable self.is_hovered
-
-        function on_mouse_drag(self, x, y, dx, dy, buttons, modifiers)
-
-        function on_mouse_move(self, x, y, dx, dy)
-
-        function on_mouse_scroll(self, x, y, sx, sy)
-
-        function on_key_press(self, symbol, modifiers)
-
-        function get_scrollbar_position(self)
-
-        function draw_at(self, lower_left: typing.Tuple[int, int], height: int)
-
-        function activate(self)
-
-        function deactivate(self)
-
-        function set_max_value(self, value: int)
-
-            variable self.scroll_until
-
-            variable self.currently_scrolling
 
     class ICreativeView extends mcpython.client.gui.ContainerRenderer.ContainerRenderer,  ABC
         
@@ -195,6 +139,8 @@ ___
                 slot,
                 ) -> bool:
 
+        function __repr__(self)
+
     class CreativeTabSearchBar extends CreativeItemTab
 
         static
@@ -212,9 +158,15 @@ ___
 
             variable self.tab_icon_selected
 
+            variable self.need_reload
+
+            function setNeedReload()
+
         function on_deactivate(self)
 
         function on_activate(self)
+
+                variable self.need_reload
 
     class CreativePlayerInventory extends ICreativeView
 
@@ -389,6 +341,3 @@ ___
 
     @shared.mod_loader("minecraft", "stage:item_groups:load")
     function init()
-        
-        for item in shared.registry.get_by_name("minecraft:item").entries_iterator():
-            AllTestTab.add_item(ItemStack(item))

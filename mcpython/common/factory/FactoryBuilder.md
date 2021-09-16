@@ -1,4 +1,4 @@
-***FactoryBuilder.py - documentation - last updated on 27.8.2021 by uuk***
+***FactoryBuilder.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -192,7 +192,7 @@ ___
         function __init__(
                 self,
                 name: str,
-                base_class: typing.Type[mcpython.common.event.Registry.IRegistryContent],
+                base_class: typing.Type[mcpython.common.event.api.IRegistryContent],
                 do_with_results=shared.registry.__call__,
                 ):
 

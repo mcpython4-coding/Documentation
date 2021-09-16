@@ -1,4 +1,4 @@
-***Barrel.py - documentation - last updated on 23.8.2021 by uuk***
+***Barrel.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -34,6 +34,10 @@ ___
             variable self.inventory
 
             variable self.facing: str - the direction the block faces to
+
+        function write_to_network_buffer(self, buffer: WriteBuffer)
+
+        function read_from_network_buffer(self, buffer: ReadBuffer)
 
         function on_block_added(self)
 

@@ -1,4 +1,4 @@
-***config.py - documentation - last updated on 13.5.2021 by uuk***
+***config.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -20,6 +20,14 @@ ___
     variable MC_VERSION_BASE
 
     variable VERSION_TYPE
+
+            variable repo
+
+            variable sha
+
+            variable VERSION_NAME
+
+            variable VERSION_TYPE
 
     variable FULL_VERSION_NAME
 

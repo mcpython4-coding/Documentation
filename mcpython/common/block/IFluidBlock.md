@@ -1,4 +1,4 @@
-***IFluidBlock.py - documentation - last updated on 25.4.2021 by uuk***
+***IFluidBlock.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -28,3 +28,7 @@ ___
             variable self.flow_direction
 
             variable self.height
+
+        function write_to_network_buffer(self, buffer: WriteBuffer)
+
+        function read_from_network_buffer(self, buffer: ReadBuffer)

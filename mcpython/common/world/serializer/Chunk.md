@@ -1,4 +1,4 @@
-***Chunk.py - documentation - last updated on 22.5.2021 by uuk***
+***Chunk.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,240 +11,9 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    function chunk2region(cx, cz)
-
-    function access_region_data(
-            save_file,
-            dimension: int,
-            region: tuple,
-            ):
-
-    function write_region_data(
-            save_file,
-            dimension: int,
-            region,
-            data,
-            ):
-
-    class BlockPartFixer extends mcpython.common.world.datafixers.IDataFixer.IPartFixer
-        
-        Fixer for fixing special block data
-        Applied only ONES per block-palette entry, not ones per block. Will change all blocks of the same kind
-        in that chunk
-
-
-        variable TARGET_SERIALIZER_NAME
-
-        variable TARGET_BLOCK_NAME - on which block(s) to apply
-
-        static
-        function fix(
-                cls,
-                save_file,
-                dimension: int,
-                region,
-                chunk: typing.Tuple[int, int],
-                data,
-                ) -> dict:
-            
-            called to apply the fix
-            :param save_file: the save-file-instance to use
-            :param dimension: the dim in
-            :param region: the region in
-            :param chunk: the chunk in
-            :param data: the block data
-            :return: the transformed data
-
-
-    class ChunkDataFixer extends mcpython.common.world.datafixers.IDataFixer.IPartFixer
-        
-        Fixer targeting an whole chunk-data dict
-
-
-        variable TARGET_SERIALIZER_NAME
-
-        static
-        function fix(
-                cls,
-                save_file,
-                dimension: int,
-                region,
-                chunk: typing.Tuple[int, int],
-                data,
-                ) -> dict:
-            
-            will apply the fix
-            :param save_file: the save-file to use
-            :param dimension: the dimension in
-            :param region: the region in
-            :param chunk: the chunk position
-            :param data: the chunk data
-            :return: the transformed chunk data
-
-
-    class RegionDataFixer extends mcpython.common.world.datafixers.IDataFixer.IPartFixer
-        
-        Fixer for fixing an whole .region file
-
-
-        variable TARGET_SERIALIZER_NAME
-
-        static
-        function fix(
-                cls,
-                save_file,
-                dimension: int,
-                region,
-                data,
-                ) -> dict:
-            
-            will apply the fix
-            :param save_file: the save-file to use
-            :param dimension: the dimension in
-            :param region: the region in
-            :param data: the region data
-            :return: the transformed region data
-
-
-    class BlockRemovalFixer extends mcpython.common.world.datafixers.IDataFixer.IPartFixer
-        
-        Fixer for removing block-data from special blocks from the chunk system
-        Will replace the block data with REPLACE (default: air-block)
-
-
-        variable TARGET_SERIALIZER_NAME
-
-        variable TARGET_BLOCK_NAMES - on which block(s) to apply
-
-        variable REPLACE
-
-        static
-        function on_replace(
-                cls,
-                save_file,
-                dimension: int,
-                chunk: typing.Tuple[int, int],
-                source,
-                target,
-                ):
-
-    class EntityDataFixer extends mcpython.common.world.datafixers.IDataFixer.IPartFixer
-        
-        Fixer for fixing entity data from storage
-
-
-        variable TARGET_SERIALIZER_NAME
-
-        variable TARGET_ENTITY_NAME - which entity to apply to
-
-        static
-        function fix(
-                cls,
-                save_file,
-                dimension: int,
-                region,
-                chunk: typing.Tuple[int, int],
-                data,
-                ):
-            
-            will apply the fix
-            :param save_file: the save-file to use
-            :param dimension: the dimension in
-            :param region: the region in
-            :param chunk: the chunk in
-            :param data: the entity data
-
-
-    class EntityRemovalFixer extends mcpython.common.world.datafixers.IDataFixer.IPartFixer
-        
-        Fixer for removing an entity type from saves
-
-
-        variable TARGET_SERIALIZER_NAME
-
-        variable TARGET_ENTITY_NAME - which entity to apply to
-
-        static
-        function on_replace(
-                cls,
-                save_file,
-                dimension: int,
-                chunk: typing.Tuple[int, int],
-                previous,
-                chunk_data,
-                ):
-
-    class ChunkMapDataFixer extends mcpython.common.world.datafixers.IDataFixer.IPartFixer
-        
-        Fixer for changing the map data of the chunk
-
-
-        variable TARGET_SERIALIZER_NAME
-
-        static
-        function fix(
-                cls,
-                save_file,
-                dimension: int,
-                region,
-                chunk: typing.Tuple[int, int],
-                data,
-                ):
-            
-            will apply the fix
-            :param save_file: the save-file to use
-            :param dimension: the dimension in
-            :param region: the region in
-            :param chunk: the chunk in
-            :param data: the map data
-
-
     @shared.registry class Chunk extends mcpython.common.world.serializer.IDataSerializer.IDataSerializer
 
         variable PART
-
-        static
-        function apply_part_fixer(
-                cls,
-                save_file,
-                fixer: typing.Type[mcpython.common.world.datafixers.IDataFixer.IPartFixer],
-                ):
-
-                variable blocks
-
-                    variable data
-
-                        variable palette
-
-                                variable palette[i]
-
-                    variable data
-
-                    variable data
-
-                    variable data
-
-                        variable data[chunk]
-
-                variable blocks
-
-                    variable data
-
-                        variable palette
-
-                                variable palette[i]
-
-                    variable data
-
-                        variable cdata
-
-                    variable data
-
-                        variable cdata
-
-                    variable data
-
-                        variable cdata
 
         static
         function load(
@@ -258,12 +27,14 @@ ___
             variable chunk_instance: mcpython.common.world.AbstractInterface.IChunk
 
             variable shared.world_generation_handler.enable_generation
+                Don't do this when we are saving stuff
 
             variable data
 
             variable chunk_instance.generated
 
             variable inv_file
+                This file stores the inventory data
 
                     variable data["block_palette"][i]
 
@@ -271,21 +42,13 @@ ___
 
                 variable d
 
-                function add(instance)
-
-                        variable inventories
-
-                variable flag
-
-            variable positions
-
                     variable data_map_data
 
                     variable entity_instance
 
                 variable entity_instance.rotation
 
-                variable entity_instance.harts
+                variable entity_instance.hearts
 
             variable chunk_instance.loaded
 
@@ -294,6 +57,17 @@ ___
             variable chunk_instance.visible
 
             variable shared.world_generation_handler.enable_generation
+
+        static
+        function add_block_to_world(
+                cls, chunk_instance, d, immediate, position, save_file, inv_file
+                ):
+
+            function add(instance)
+
+                    variable inventories
+
+            variable flag
 
         static
         function save(cls, data, save_file, dimension: int, chunk: tuple, override=False)
@@ -318,12 +92,15 @@ ___
 
             variable palette
                 Load the block palette
+                list of {"custom": <some stuff>, "name": <name>, "shown": <shown>, ...}
 
             variable inv_file
+                where to dump inventory stuff
 
             variable overridden
 
                 variable rel_position
+                    the relative position to the chunk
 
                 variable block
 

@@ -1,4 +1,4 @@
-***Dimension.py - documentation - last updated on 2.5.2021 by uuk***
+***Dimension.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -78,19 +78,24 @@ ___
         
         Class holding a whole dimension
         Default cross-side implementation
-        todo: add network synced variant
         todo: add save/load/delete methods
         todo: better config system for world gen
-        todo: move rendering to separated structure only created on client
+        todo: move rendering to separated structure only created on client!
 
 
         variable BATCH_COUNT
             normal, alpha; mods are free to add more; todo: add better API
 
-        function __init__(self, world_in, dim_id: int, name: str, gen_config=None)
+        function __init__(
+                self,
+                world_in: mcpython.common.world.AbstractInterface.IWorld,
+                dim_id: int,
+                name: str,
+                gen_config=None,
+                ):
             
             Creates a new dimension. Should be registered to the world instance.
-            Can be automated by using the appropriate function at dimension
+            Can be automated by using the appropriate function at world
             :param world_in: the world instance to use
             :param dim_id: the id for it
             :param name: the name for it
@@ -99,10 +104,26 @@ ___
 
                 variable gen_config
 
+            variable self.id
+
+            variable self.world
+
+            variable self.chunks
+
+            variable self.name
+
+            variable self.world_generation_config
+
+            variable self.world_generation_config_objects
+
             variable self.batches
                 batches, see above for usages
 
             variable self.height_range
+
+        function update_visible_block(self, position: typing.Tuple[int, int, int])
+
+        function exposed(self, position: typing.Tuple[int, int, int])
 
         function get_world(self)
 
@@ -124,12 +145,13 @@ ___
                 create: bool = True,
                 ) -> typing.Optional[mcpython.common.world.AbstractInterface.IChunk]:
             
-            Used to get an chunk instance with an given position
-            :param cx: the chunk x position or an tuple of (x, z)
-            :param cz: the chunk z position or None íf cx is tuple
+            Used to get a chunk instance with a given chunk-position
+            :param cx: the chunk x position or a tuple of (x, z)
+            :param cz: the chunk z position or None íf cx is a tuple
             :param generate: if the chunk should be scheduled for generation if it is not generated
             :param create: if the chunk instance should be created when it does not exist
             :return: the chunk instance or None
+            :raises ValueError: if cz is None and cx is now tuple
 
 
         function get_chunk_for_position(
@@ -141,10 +163,11 @@ ___
                 **kwargs,
                 ) -> typing.Optional[mcpython.common.world.AbstractInterface.IChunk]:
             
-            Gets an chunk for an position
+            Gets a chunk for a block-position
             :param position: the position to use or the block instance to use
             :param kwargs: same as get_chunk()
             :return: the chunk instance or None
+            :raises: ValueError: if position is not tuple or block
 
 
                 variable position

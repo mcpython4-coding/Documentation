@@ -1,4 +1,4 @@
-***enums.py - documentation - last updated on 9.2.2021 by uuk***
+***enums.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -168,3 +168,29 @@ ___
         function __repr__(self)
 
     function all_woods()
+
+    class BlockRotationType extends enum.Enum
+
+        variable ROTATE_Y_90
+
+        variable ROTATE_Y_180
+
+        variable ROTATE_Y_270
+
+        variable FLIP_Y
+
+        variable ROTATE_X_90
+
+        variable ROTATE_X_180
+
+        variable ROTATE_X_270
+
+        variable FLIP_X
+
+        variable ROTATE_Z_90
+
+        variable ROTATE_Z_180
+
+        variable ROTATE_Z_270
+
+        variable FLIP_Z

@@ -1,4 +1,4 @@
-***IFactoryModifier.py - documentation - last updated on 2.5.2021 by uuk***
+***IFactoryModifier.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -20,15 +20,15 @@ ___
         function on_apply(
                 self,
                 target: typing.Callable[
-                [typing.Any, mcpython.common.event.Registry.IRegistryContent],
-                mcpython.common.event.Registry.IRegistryContent,
+                [typing.Any, mcpython.common.event.api.IRegistryContent],
+                mcpython.common.event.api.IRegistryContent,
                 ],
                 ):
 
         function apply(
                 self,
                 factory,
-                instance: mcpython.common.event.Registry.IRegistryContent,
-                ) -> mcpython.common.event.Registry.IRegistryContent:
+                instance: mcpython.common.event.api.IRegistryContent,
+                ) -> mcpython.common.event.api.IRegistryContent:
 
                 variable instance

@@ -1,4 +1,4 @@
-***Backend.py - documentation - last updated on 23.8.2021 by uuk***
+***Backend.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -17,21 +17,35 @@ ___
         It wraps the socket in a set of helper functions
 
 
-        function __init__(self, ip="localhost", port=8080)
+        function __init__(self, ip="127.0.0.1", port=8088)
 
-            variable self.socket
+            variable self.socket: typing.Optional[socket.socket]
 
             variable self.scheduled_packages
 
             variable self.data_stream
 
+            variable self.connected
+
         function send_package(self, data: bytes)
 
-        function connect(self)
+        function connect(self) -> bool
+
+            variable self.socket
+
+            variable self.connected
+
+            variable shared.IS_NETWORKING
+
+        function disconnect(self)
+
+            variable self.connected
+
+            variable shared.IS_NETWORKING
 
         function work(self)
 
-                variable d
+                    variable d
 
     class ServerBackend
         
@@ -39,11 +53,11 @@ ___
         Contains threading code for each client
 
 
-        function __init__(self, ip="0.0.0.0", port=8080)
+        function __init__(self, ip="0.0.0.0", port=8088)
 
             variable self.socket
 
-            variable self.scheduled_packages
+            variable self.scheduled_packages_by_client
 
             variable self.data_by_client
 
@@ -51,16 +65,46 @@ ___
 
             variable self.pending_stops
 
+            variable self.next_client_id
+
+            variable self.threads
+
+            variable self.pending_thread_stops
+
+            variable self.handle_lock
+
+        function disconnect_client(self, client_id: int)
+
+        function disconnect_all(self)
+
+            variable client_ids
+
+        function get_package_streams(self)
+
         function send_package(self, data: bytes, client: int)
 
         function connect(self)
 
         function enable_server(self)
 
+            variable shared.IS_NETWORKING
+
         function inner_server_thread(self)
 
-                variable self.data_by_client[addr]
+                variable client_id
 
-                variable thread
+                variable shared.NETWORK_MANAGER.client_profiles[client_id]
 
-        function single_client_thread_recv(self, conn, addr, client_id: int)
+                variable self.data_by_client[client_id]
+
+                variable self.client_locks[client_id]
+
+                variable recv_thread
+
+                variable send_thread
+
+                variable self.threads[client_id]
+
+        function single_client_thread_recv(self, conn, client_id: int)
+
+        function single_client_thread_send(self, conn, client_id: int)

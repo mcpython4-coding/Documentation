@@ -1,4 +1,4 @@
-***ItemGroup.py - documentation - last updated on 19.5.2021 by uuk***
+***ItemGroup.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,7 +11,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class ItemGroup
+    class ItemGroup extends IBufferSerializeAble
 
         function __init__(self)
 
@@ -19,7 +19,11 @@ ___
 
             variable self.has_lazy
 
-        function add(self, entry: ItemStack)
+        function write_to_network_buffer(self, buffer: WriteBuffer)
+
+        function read_from_network_buffer(self, buffer: ReadBuffer)
+
+        function add(self, entry: typing.Union[ItemStack, str])
 
                 variable self.has_lazy
 
@@ -46,6 +50,10 @@ ___
             variable self.raw_filter: str
 
             variable self.filter: re.Pattern
+
+        function write_to_network_buffer(self, buffer: WriteBuffer)
+
+        function read_from_network_buffer(self, buffer: ReadBuffer)
 
         function view(self) -> typing.Iterator[ItemStack]
 

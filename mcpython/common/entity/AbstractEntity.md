@@ -1,4 +1,4 @@
-***AbstractEntity.py - documentation - last updated on 23.8.2021 by uuk***
+***AbstractEntity.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,39 +11,63 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class AbstractEntity extends mcpython.common.event.Registry.IRegistryContent
+    class AbstractEntity extends  mcpython.common.event.api.IRegistryContent,  ICapabilityContainer,  IBufferSerializeAble,  ABC,  
         
-        Dummy class for every entity,
-        only used by the player at the moment (as no more entities are implemented)
-        feel free to use, general functions for cross-mod work
+        Base class for every entity in the game
+        MUST be implemented by all entities scheduled to be used with the EntityManager system
+        Allows capability injects & lookups via the capability API
+        DO NOT CHANGE STUFF AT THE FILE HEAD BY SUBCLASSES. IT WILL BREAK THE UNDERLYING STUFF
+        Capabilities are auto-saved and this behaviour cannot be disabled currently.
 
+
+        variable CAPABILITY_CONTAINER_NAME
 
         variable TYPE
 
         variable SUMMON_ABLE - if the entity can be used in /summom-command
 
         static
-        function create_new(cls, position, *args, **kwargs)
+        function create_new(cls, position, *args, dimension=None, **kwargs)
             
-            creates an new entity and set up it correctly for later use
+            Creates a new entity and set up it correctly for later use
             :param position: the position to create at
             :param args: args to send to the constructor
+            :param dimension: the dimension to spawn in
             :param kwargs: kwargs to send to the constructor
             :return: the created entity
-            todo: make added to world
             for moder: use this rather than raw constructor as it is the more "safe" way of doing it
+            Does not spawn the entity in the real dimension
 
+
+            variable entity
+
+            variable entity.position
 
         static
         function init_renderers(cls)
+            
+            Use this to create your entity renderers
+            Invoked only on client
+
 
         function __init__(self, dimension=None)
             
-            creates an new entity for the world
-            for moder: you SHOULD implement an custom constructor which set the bellow values to an "good" value
+            Creates a new entity for the world
+            for moder: you SHOULD implement a custom constructor which set the bellow values to "good" values
+            For creating entities, use create_new() - it is far more saver and does some internal stuff
 
 
             variable self.dimension
+
+            variable self.unsafe_position - todo: move to nbt
+
+            variable self.rotation - todo: move to nbt
+
+            variable self.hearts - todo: move to nbt
+
+            variable self.chunk
+
+            variable self.uuid
 
             variable self.entity_height
 
@@ -55,6 +79,27 @@ ___
                 dict holding entity data, automatically saved & loaded, when loading, data is put ontop of the existing dict
 
             variable self.dead
+
+        function read_from_network_buffer(self, buffer: ReadBuffer)
+
+            variable self.rotation
+
+            variable self.uuid
+
+            variable parent_uuid
+                todo: do something with this!
+
+            variable child_uuid
+
+            variable self.nbt_data["motion"]
+
+            variable self.nbt_data["invulnerable"]
+
+        function write_to_network_buffer(self, buffer: WriteBuffer)
+
+        function add_to_chunk(self)
+
+        function remove_from_chunk(self)
 
         function __del__(self)
 
@@ -88,13 +133,11 @@ ___
 
                 variable dimension_id
 
-            variable dimension
-
-            variable self.unsafe_position
-
             variable sector_after
 
-                variable self.chunk
+                variable self.unsafe_position
+
+                variable self.unsafe_position
 
         function tell(self, msg: str)
             

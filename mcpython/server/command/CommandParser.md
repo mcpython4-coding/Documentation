@@ -1,4 +1,4 @@
-***CommandParser.py - documentation - last updated on 27.4.2021 by uuk***
+***CommandParser.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -50,7 +50,7 @@ ___
 
         function __init__(self)
 
-        function run(self, string: str, env: CommandExecutionEnvironment)
+        function run(self, string: str, env: CommandExecutionEnvironment) -> bool
 
         function run_function(self, name: str, info=None)
 

@@ -1,4 +1,4 @@
-***ContainerRenderer.py - documentation - last updated on 1.9.2021 by uuk***
+***ContainerRenderer.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,7 +11,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class ContainerRenderer extends ABC
+    class ContainerRenderer extends IBufferSerializeAble,  ABC
         
         Base class for rendering a container at the client
         Client-only code
@@ -55,6 +55,18 @@ ___
             variable self.custom_name_label
 
             variable self.custom_name_label.anchor_y
+
+        function write_to_network_buffer(self, buffer: WriteBuffer)
+
+        function read_from_network_buffer(self, buffer: ReadBuffer)
+
+            variable self.custom_name
+
+                variable self.custom_name
+
+                variable self.custom_name_label.text
+
+            variable size
 
         function on_mouse_button_press(
                 self,

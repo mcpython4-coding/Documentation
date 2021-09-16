@@ -1,4 +1,4 @@
-***World.py - documentation - last updated on 18.4.2021 by uuk***
+***World.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -20,9 +20,26 @@ ___
 
             variable shared.world
 
+            variable self.dimensions
+
+            variable self.active_dimension: int
+                todo: change to str; todo: move to player; todo: make property
+
+            variable self.gamerule_handler
+
+            variable self.hide_faces_to_not_generated_chunks: bool
+                todo: move to configs / game rules
+
+            variable self.filename: str
+                the file-name to use, todo: make None if not needed
+
+            variable self.save_file: mcpython.common.world.SaveFile.SaveFile
+                the save file instance
+
             variable self.players
 
-            variable self.active_player: str - todo: make property, make None-able & set default None when not in world
+            variable self.local_player: str
+                The name of the local player; None on dedicated servers
 
             variable self.world_loaded - describes if the world is loaded or not
 
@@ -34,7 +51,7 @@ ___
                 self, name: str, add_inventories: bool = True, override: bool = True
                 ):
             
-            will add an new player into the world
+            Will add a new player into the world
             :param name: the name of the player to create
             :param add_inventories: if the inventories should be created
             :param override: if the player should be re-created if it exists in memory
@@ -47,10 +64,12 @@ ___
                 self, create: bool = True
                 ) -> typing.Union[mcpython.common.entity.PlayerEntity.PlayerEntity, None]:
             
-            returns the player instance for this client
-            :param create: if the player should be created or not
-            :return: the player instance or None if no player is set
+            Returns the player instance for this client
+            :param create: if the player should be created or not (by calling add_player())
+            :return: the player instance or None if no player with the name is arrival
 
+
+        function get_player_by_name(self, name: str)
 
         function player_iterator(self) -> typing.Iterable
 
@@ -105,6 +124,12 @@ ___
             :param dim_id: the dimension to change to todo: make str
             todo: move to player
 
+
+            variable sector
+
+            variable old
+
+            variable self.active_dimension
 
         function get_dimension(
                 self, dim_id: int
@@ -242,6 +267,10 @@ ___
             :param filename: the new filename if it changes
             todo: make split up into smaller functions
 
+
+                variable shared.world.get_active_player().flying
+
+            variable self.spawn_point
 
         function setup_by_filename(self, filename: str)
             

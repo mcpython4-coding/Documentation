@@ -1,4 +1,4 @@
-***ResourceStack.py - documentation - last updated on 19.5.2021 by uuk***
+***ResourceStack.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,7 +11,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class AbstractResourceStack extends ABC
+    class AbstractResourceStack extends IBufferSerializeAble,  ABC
         
         Abstract class for stack like objects
 
@@ -33,6 +33,8 @@ ___
 
         function get_difference(self, other: "AbstractResourceStack") -> "AbstractResourceStack"
 
+        function set_amount(self, amount) -> "AbstractResourceStack"
+
     class ItemStack extends AbstractResourceStack
         
         Default implementation for item stacks
@@ -53,6 +55,10 @@ ___
                 variable self.item
 
             variable self.amount
+
+        function write_to_network_buffer(self, buffer: WriteBuffer)
+
+        function read_from_network_buffer(self, buffer: ReadBuffer)
 
         function copy(self) -> "ItemStack"
             
@@ -104,13 +110,15 @@ ___
         static
         function create_empty(cls)
 
-        function __init__(self, fluid: typing.Optional[str], amount: float = 0)
+        function __init__(self, fluid: typing.Optional[str], amount: float = 0, nbt=None)
 
             variable self.fluid
 
             variable self.amount
 
-        function copy(self) -> "AbstractResourceStack"
+            variable self.nbt
+
+        function copy(self) -> "FluidStack"
 
         function copy_from(self, other: "FluidStack")
 
@@ -118,8 +126,14 @@ ___
 
         function is_empty(self) -> bool
 
-        function contains_same_resource(self, other: "AbstractResourceStack") -> bool
+        function contains_same_resource(self, other: "FluidStack") -> bool
 
-        function has_more_than(self, other: "AbstractResourceStack") -> bool
+        function has_more_than(self, other: "FluidStack") -> bool
 
-        function get_difference(self, other: "AbstractResourceStack") -> "AbstractResourceStack"
+        function get_difference(self, other: "FluidStack") -> "FluidStack"
+
+        function set_amount(self, amount: float) -> "FluidStack"
+
+        function write_to_network_buffer(self, buffer: WriteBuffer)
+
+        function read_from_network_buffer(self, buffer: ReadBuffer)
