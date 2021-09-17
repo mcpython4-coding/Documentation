@@ -34,7 +34,7 @@ ___
 
                     variable obj.position
 
-    @onlyInClient() class StatePartConfigBackground extends mcpython.client.state.AbstractStatePart.StatePart
+    @onlyInClient() class StatePartConfigBackground extends mcpython.common.state.AbstractStatePart.StatePart
 
         function activate(self)
 

@@ -20,7 +20,7 @@ ___
 
         function __init__(self)
 
-        function get_parts(self) -> list
+        function create_state_parts(self) -> list
 
         function activate(self)
 

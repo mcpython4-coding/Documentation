@@ -27,7 +27,7 @@ ___
 
         function load_world_from(self, name: str)
 
-        function get_parts(self) -> list
+        function create_state_parts(self) -> list
 
         function on_update(self, dt)
 

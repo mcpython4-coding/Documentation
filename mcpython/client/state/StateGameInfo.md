@@ -14,14 +14,14 @@ ___
     variable sprite
         todo: use pyglet.image.Image.get_region(area)
 
-    @onlyInClient() class StateGameInfo extends mcpython.client.state.State.State
+    @onlyInClient() class StateGameInfo extends mcpython.common.state.State.State
 
         variable NAME
 
         static
         function is_mouse_exclusive()
 
-        function get_parts(self) -> list
+        function create_state_parts(self) -> list
 
         function bind_to_eventbus(self)
 

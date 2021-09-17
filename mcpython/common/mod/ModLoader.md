@@ -307,7 +307,7 @@ ___
 
             variable start
 
-            variable astate: mcpython.client.state.ModLoadingProgress.ModLoadingProgress
+            variable astate: mcpython.common.state.ModLoadingProgress.ModLoadingProgress
 
             variable astate.parts[0].progress_max
 
@@ -320,7 +320,7 @@ ___
             Will update the text of the pgb's in mod loading
 
 
-            variable astate: mcpython.client.state.ModLoadingProgress.ModLoadingProgress
+            variable astate: mcpython.common.state.ModLoadingProgress.ModLoadingProgress
 
             variable instance: mcpython.common.mod.Mod.Mod
 

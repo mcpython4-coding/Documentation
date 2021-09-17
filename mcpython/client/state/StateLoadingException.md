@@ -23,7 +23,7 @@ ___
 
         function set_text(self, text: str)
 
-        function get_parts(self) -> list
+        function create_state_parts(self) -> list
 
         function resume(self, *_)
 

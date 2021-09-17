@@ -11,7 +11,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    @onlyInClient() class UIPart extends mcpython.client.state.AbstractStatePart.AbstractStatePart
+    @onlyInClient() class UIPart extends mcpython.common.state.AbstractStatePart.AbstractStatePart
 
         function __init__(
                 self, position, bounding_box_size, anchor_element="WS", anchor_window="WS"

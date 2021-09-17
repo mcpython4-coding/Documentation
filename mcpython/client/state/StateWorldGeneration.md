@@ -27,7 +27,7 @@ ___
 
         function generate_from_user_input(self, state=None)
 
-        function get_parts(self) -> list
+        function create_state_parts(self) -> list
 
         function on_update(self, dt)
 

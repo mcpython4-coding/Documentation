@@ -40,7 +40,7 @@ ___
 
         function serialize(self)
 
-    class AbstractConfigState extends mcpython.client.state.AbstractState.AbstractState,  ABC
+    class AbstractConfigState extends mcpython.common.state.AbstractState.AbstractState,  ABC
         
         Base class for a configuration screen for a world generator mode
         todo: add sub-class with factory system

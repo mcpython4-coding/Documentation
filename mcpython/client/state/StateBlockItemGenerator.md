@@ -33,7 +33,7 @@ ___
 
             variable self.failed_counter
 
-        function get_parts(self) -> list
+        function create_state_parts(self) -> list
 
         function on_draw_2d_pre(self)
 

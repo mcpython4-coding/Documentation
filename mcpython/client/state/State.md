@@ -40,4 +40,4 @@ ___
 
         function bind_to_eventbus(self)
 
-        function get_parts(self) -> list
+        function create_state_parts(self) -> list

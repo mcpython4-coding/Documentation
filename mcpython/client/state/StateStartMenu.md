@@ -11,7 +11,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    @onlyInClient() class StateStartMenu extends mcpython.client.state.State.State
+    @onlyInClient() class StateStartMenu extends mcpython.common.state.State.State
 
         variable NAME
 

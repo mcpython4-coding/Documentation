@@ -11,7 +11,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class OpenedInventoryStatePart extends mcpython.client.state.AbstractStatePart.AbstractStatePart
+    class OpenedInventoryStatePart extends mcpython.common.state.AbstractStatePart.AbstractStatePart
         
         class for inventories as state
         todo: make A LOT OF THINGS public and static

@@ -63,7 +63,7 @@ ___
 
         function reset(self)
 
-    @onlyInClient() class TextInputTabHandler extends mcpython.client.state.AbstractStatePart.AbstractStatePart
+    @onlyInClient() class TextInputTabHandler extends mcpython.common.state.AbstractStatePart.AbstractStatePart
 
         function __init__(self, textinputs: list)
 

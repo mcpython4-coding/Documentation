@@ -29,7 +29,7 @@ ___
 
         function on_resize(self, wx, wy)
 
-        function get_parts(self) -> list
+        function create_state_parts(self) -> list
 
         function on_mouse_press(self, x, y, button, modifiers)
 
