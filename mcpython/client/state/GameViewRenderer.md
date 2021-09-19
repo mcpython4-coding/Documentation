@@ -1,4 +1,4 @@
-***__init__.py - documentation - last updated on 19.9.2021 by uuk***
+***GameViewRenderer.py - documentation - last updated on 19.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -9,3 +9,14 @@ ___
     (https://account.mojang.com/documents/minecraft_eula)
     Mod loader inspired by "Minecraft Forge" (https://github.com/MinecraftForge/MinecraftForge) and similar
     This project is not official by mojang and does not relate to it.
+
+
+    class GameViewRenderer extends AbstractStateRenderer
+
+        variable ASSIGNED_DRAW_STAGE
+
+        function init(self)
+
+        function draw(self)
+
+        function draw_3d(self)

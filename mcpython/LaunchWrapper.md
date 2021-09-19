@@ -1,4 +1,4 @@
-***LaunchWrapper.py - documentation - last updated on 23.8.2021 by uuk***
+***LaunchWrapper.py - documentation - last updated on 19.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -24,6 +24,8 @@ ___
             variable self.launch_config
 
             variable shared.launch_wrapper
+
+        function check_py_version(self)
 
         function set_client(self)
 

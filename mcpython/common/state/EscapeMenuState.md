@@ -1,4 +1,4 @@
-***__init__.py - documentation - last updated on 19.9.2021 by uuk***
+***EscapeMenuState.py - documentation - last updated on 19.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -9,3 +9,27 @@ ___
     (https://account.mojang.com/documents/minecraft_eula)
     Mod loader inspired by "Minecraft Forge" (https://github.com/MinecraftForge/MinecraftForge) and similar
     This project is not official by mojang and does not relate to it.
+
+
+    @onlyInClient() class EscapeMenu extends AbstractState.AbstractState
+
+        variable NAME
+
+        function __init__(self)
+
+        function create_state_parts(self) -> list
+
+        function bind_to_eventbus(self)
+
+        static
+        function start_menu_press(x, y)
+
+        static
+        function on_key_press(symbol, modifiers)
+
+        function activate(self)
+
+    variable escape
+
+    @onlyInClient()
+    function create()

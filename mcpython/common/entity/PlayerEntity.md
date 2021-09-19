@@ -1,4 +1,4 @@
-***PlayerEntity.py - documentation - last updated on 16.9.2021 by uuk***
+***PlayerEntity.py - documentation - last updated on 19.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -72,9 +72,10 @@ ___
             variable self.inventory_crafting_table
 
             variable self.inventory_order
-                the lookup order of inventory, todo: move to inventory handler
 
             variable self.is_in_init
+
+        function __repr__(self)
 
         function write_to_network_buffer(self, buffer: WriteBuffer)
 
@@ -104,9 +105,13 @@ ___
 
         function create_update_package(self) -> PlayerUpdatePackage
 
+                variable package.gamemode
+
         function write_update_package(self, package: PlayerUpdatePackage)
 
         function send_update_package_when_client(self)
+
+        function send_update_package_when_server(self, update_flags=-1)
 
         function hotkey_get_position(self)
 
@@ -130,8 +135,6 @@ ___
             variable self.inventory_enderchest
 
             variable self.inventory_crafting_table
-
-            variable self.inventory_order
 
         function init_creative_tabs(self)
 

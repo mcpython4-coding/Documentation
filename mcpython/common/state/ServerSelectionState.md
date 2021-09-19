@@ -1,4 +1,4 @@
-***__init__.py - documentation - last updated on 19.9.2021 by uuk***
+***ServerSelectionState.py - documentation - last updated on 19.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -9,3 +9,26 @@ ___
     (https://account.mojang.com/documents/minecraft_eula)
     Mod loader inspired by "Minecraft Forge" (https://github.com/MinecraftForge/MinecraftForge) and similar
     This project is not official by mojang and does not relate to it.
+
+
+    @onlyInClient() class ServerSelectionState extends AbstractState
+
+        variable NAME
+
+        function __init__(self)
+
+            variable self.config_background
+
+            variable self.back_button
+
+            variable self.join_button
+
+            variable self.server_ip_input
+
+        function create_state_parts(self) -> list
+
+            variable self.server_ip_input
+
+        function open_server_connection(self, *_)
+
+    variable server_selection

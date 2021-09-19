@@ -1,4 +1,4 @@
-***__init__.py - documentation - last updated on 19.9.2021 by uuk***
+***CapabilityManager.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -9,3 +9,14 @@ ___
     (https://account.mojang.com/documents/minecraft_eula)
     Mod loader inspired by "Minecraft Forge" (https://github.com/MinecraftForge/MinecraftForge) and similar
     This project is not official by mojang and does not relate to it.
+
+
+    class CapabilityManager
+
+        function __init__(self)
+
+        function get_by_name(self, name: str) -> AbstractCapability
+
+        function register(self, name: str, capability: AbstractCapability)
+
+    variable shared.capability_manager

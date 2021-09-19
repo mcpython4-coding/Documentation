@@ -1,4 +1,4 @@
-***window.py - documentation - last updated on 16.9.2021 by uuk***
+***window.py - documentation - last updated on 19.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -245,6 +245,32 @@ ___
             Draw the label in the top left of the screen.
             todo: move to special helper class
 
+
+            variable vector
+
+                variable blockname
+
+                    variable blockname
+
+                variable self.label2.text
+
+                variable self.label3.y
+
+                variable self.label3.y
+
+                variable biomemap
+
+                variable biome
+
+            variable process
+
+            variable mem_info
+
+            variable used_m
+
+            variable total_m
+
+                variable self.label3.text
 
         function get_block_entity_info(self)
             

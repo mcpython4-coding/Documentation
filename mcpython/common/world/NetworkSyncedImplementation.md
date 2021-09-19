@@ -1,4 +1,4 @@
-***__init__.py - documentation - last updated on 19.9.2021 by uuk***
+***NetworkSyncedImplementation.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -9,3 +9,19 @@ ___
     (https://account.mojang.com/documents/minecraft_eula)
     Mod loader inspired by "Minecraft Forge" (https://github.com/MinecraftForge/MinecraftForge) and similar
     This project is not official by mojang and does not relate to it.
+
+
+    class NetworkSyncedDimension extends Dimension
+        
+        Class holding a whole dimension on a client connected to a dedicated server
+
+
+        function get_chunk(
+                self,
+                cx: typing.Union[int, typing.Tuple[int, int]],
+                cz: int = None,
+                generate: bool = True,
+                create: bool = True,
+                ) -> typing.Optional["NetworkSyncedChunk"]:
+
+    class NetworkSyncedChunk extends Chunk

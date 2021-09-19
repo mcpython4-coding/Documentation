@@ -1,4 +1,4 @@
-***NewBlocks.py - documentation - last updated on 16.9.2021 by uuk***
+***NewBlocks.py - documentation - last updated on 19.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -36,70 +36,9 @@ ___
         variable fname
 
         variable instance
+
+    function colored(name: str)
     
-    black_banner
-    black_bed
-    black_candle
-    black_candle_cake
-    black_carpet
-    black_concrete
-    black_concrete_powder
-    black_glazed_terracotta
-    black_shulker_box
-    black_stained_glass
-    black_stained_glass_pane
-    black_terracotta
-    black_wall_banner
-    black_wool
-    blast_furnace
-    blue_banner
-    blue_bed
-    blue_candle
-    blue_candle_cake
-    blue_carpet
-    blue_concrete
-    blue_concrete_powder
-    blue_glazed_terracotta
-    blue_ice
-    blue_orchid
-    blue_shulker_box
-    blue_stained_glass
-    blue_stained_glass_pane
-    blue_terracotta
-    blue_wall_banner
-    blue_wool
-    bone_block
-    bookshelf
-    brain_coral
-    brain_coral_block
-    brain_coral_fan
-    brain_coral_wall_fan
-    brewing_stand
-    bricks
-    brick_slab
-    brick_stairs
-    brick_wall
-    brown_banner
-    brown_bed
-    brown_candle
-    brown_candle_cake
-    brown_carpet
-    brown_concrete
-    brown_concrete_powder
-    brown_glazed_terracotta
-    brown_mushroom
-    brown_mushroom_block
-    brown_shulker_box
-    brown_stained_glass
-    brown_stained_glass_pane
-    brown_terracotta
-    brown_wall_banner
-    brown_wool
-    bubble_column
-    bubble_coral
-    bubble_coral_block
-    bubble_coral_fan
-    bubble_coral_wall_fan
     budding_amethyst
     cactus
     cake

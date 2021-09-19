@@ -1,4 +1,4 @@
-***__init__.py - documentation - last updated on 19.9.2021 by uuk***
+***PackageIDSync.py - documentation - last updated on 16.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -9,3 +9,25 @@ ___
     (https://account.mojang.com/documents/minecraft_eula)
     Mod loader inspired by "Minecraft Forge" (https://github.com/MinecraftForge/MinecraftForge) and similar
     This project is not official by mojang and does not relate to it.
+
+
+    class PackageIDSync extends AbstractPackage
+        
+        Package client -> server for syncing up package id's
+
+
+        variable PACKAGE_TYPE_ID
+
+        variable PACKAGE_NAME
+
+        function __init__(self)
+
+            variable self.data
+
+        function setup(self)
+
+        function write_to_buffer(self, buffer: WriteBuffer)
+
+        function read_from_buffer(self, buffer: ReadBuffer)
+
+        function handle_inner(self)

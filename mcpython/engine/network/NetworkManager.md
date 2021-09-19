@@ -1,4 +1,4 @@
-***NetworkManager.py - documentation - last updated on 16.9.2021 by uuk***
+***NetworkManager.py - documentation - last updated on 19.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -43,6 +43,14 @@ ___
                 Filled during handshake
 
             variable self.client_profiles
+
+            variable self.playername2connectionID
+
+        function request_chunk(self, chunk: IChunk)
+
+        function send_to_player_chat(self, player: typing.Union[str, int], msg: str)
+
+                variable player
 
         function reset_package_registry(self)
 
