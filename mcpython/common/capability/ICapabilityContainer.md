@@ -25,7 +25,7 @@ ___
 
         function forceAttachmentOfCapability(self, name: str)
 
-        function prepare_container(self)
+        function prepare_capability_container(self)
 
         function init_container(self)
 
