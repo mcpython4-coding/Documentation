@@ -1,4 +1,4 @@
-***OffProcessWorldAccess.py - documentation - last updated on 16.9.2021 by uuk***
+***OffProcessWorldAccess.py - documentation - last updated on 27.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -21,14 +21,14 @@ ___
         class OffProcessWorldContext
 
             function __init__(
-                    self, world: mcpython.common.world.AbstractInterface.IWorld, helper
+                    self, world: mcpython.engine.world.AbstractInterface.IWorld, helper
                     ):
 
                 variable self.world
 
                 variable self.helper
 
-            function get_world(self) -> mcpython.common.world.AbstractInterface.IWorld
+            function get_world(self) -> mcpython.engine.world.AbstractInterface.IWorld
 
             function get_helper(self) -> "OffProcessWorldHelper"
 
@@ -38,7 +38,7 @@ ___
                     self,
                     instance: "OffProcessWorldHelper",
                     process: multiprocessing.Process,
-                    world: mcpython.common.world.AbstractInterface.IWorld,
+                    world: mcpython.engine.world.AbstractInterface.IWorld,
                     ):
 
                 variable self.instance
@@ -57,7 +57,7 @@ ___
 
         static
         function spawn_process(
-                cls, world: mcpython.common.world.AbstractInterface.IWorld
+                cls, world: mcpython.engine.world.AbstractInterface.IWorld
                 ) -> "OffProcessWorldHelper.OffProcessWorldHelperReference":
 
             variable instance
@@ -114,7 +114,7 @@ ___
 
         function run_on_process(self, func, *args, **kwargs)
 
-    class OffProcessWorld extends mcpython.common.world.AbstractInterface.IWorld
+    class OffProcessWorld extends mcpython.engine.world.AbstractInterface.IWorld
 
         function __init__(self, helper: OffProcessWorldHelper)
 
@@ -132,7 +132,7 @@ ___
 
             variable max_distance: int
 
-    class OffProcessDimension extends mcpython.common.world.AbstractInterface.IDimension
+    class OffProcessDimension extends mcpython.engine.world.AbstractInterface.IDimension
 
         function __init__(
                 self, helper: OffProcessWorldHelper, dimension_id: int, world: OffProcessWorld
@@ -168,7 +168,7 @@ ___
 
             variable pos
 
-    class OffProcessChunk extends mcpython.common.world.AbstractInterface.IChunk
+    class OffProcessChunk extends mcpython.engine.world.AbstractInterface.IChunk
 
         function __init__(
                 self, helper: OffProcessWorldHelper, position, dimension: OffProcessDimension

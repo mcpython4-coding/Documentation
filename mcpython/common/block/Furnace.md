@@ -1,4 +1,4 @@
-***Furnace.py - documentation - last updated on 16.9.2021 by uuk***
+***Furnace.py - documentation - last updated on 27.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -24,7 +24,7 @@ ___
 
         function __init__(self)
             
-            creates an furnace block in the world
+            Creates a furnace block
 
 
             variable self.active

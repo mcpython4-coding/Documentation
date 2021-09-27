@@ -1,4 +1,4 @@
-***EnderChest.py - documentation - last updated on 25.4.2021 by uuk***
+***EnderChest.py - documentation - last updated on 27.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,7 +11,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class EnderChest extends AbstractBlock.AbstractBlock
+    class EnderChest extends IHorizontalOrientableBlock.IHorizontalOrientableBlock
         
         class for the ender chest
         todo: check if it can be opened like in chests
@@ -30,27 +30,15 @@ ___
 
         variable DEBUG_WORLD_BLOCK_STATES
 
-        function __init__(self)
-
-            variable self.front_side
-
-            variable self.inventory
-
-        function on_block_added(self)
-
         function on_player_interaction(
                 self, player, button: int, modifiers: int, hit_position: tuple
                 ):
 
-        function get_inventories(self)
-
-        function get_provided_slots(self, side)
-
         function set_model_state(self, state: dict)
 
-                    variable self.front_side
+                    variable self.face
 
-                    variable self.front_side
+                    variable self.face
 
         function get_model_state(self) -> dict
 

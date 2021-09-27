@@ -1,4 +1,4 @@
-***AbstractBlock.py - documentation - last updated on 16.9.2021 by uuk***
+***AbstractBlock.py - documentation - last updated on 27.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -34,7 +34,7 @@ ___
 
         variable parent
 
-    class AbstractBlock extends parent,  ICapabilityContainer,  IBufferSerializeAble
+    class AbstractBlock extends parent,  ICapabilityContainer,  IBufferSerializeAble,  ABC
         
         Abstract base class for all blocks
         All block classes should extend from this
@@ -44,6 +44,9 @@ ___
                 called). This is used for getting runtime-specific properties.
         todo: add custom properties to set_creation_properties() -> injected by add_block() call
 
+
+        static
+        function bind_block_item_to_creative_tab(cls, tab_getter: typing.Callable)
 
         variable CAPABILITY_CONTAINER_NAME
             Internal registry type name & capability buffer name; DO NOT CHANGE
@@ -117,15 +120,22 @@ ___
 
             variable self.dimension - dimension instance
 
-            variable self.face_state: mcpython.common.block.FaceInfo.FaceInfo
-
-            variable self.block_state: typing.Optional[int]
-
             variable self.set_by - optional player
 
-            variable self.face_solid
+            variable self.face_info: mcpython.common.block.FaceInfo.FaceInfo
+                Reference to the FaceInfo instance; Only present on server
+
+            variable self.block_state: typing.Optional[int]
+                The block state id, for deciding which model to use
+                todo: make position based
+
+            variable self.face_solid: typing.Tuple[bool]
+                Which faces are solid
 
             variable self.injected_redstone_power
+                The redstone power values
+
+        function is_face_solid(self, face: EnumSide)
 
         function write_to_network_buffer(self, buffer: WriteBuffer)
 
@@ -355,12 +365,14 @@ ___
             :return: the value, as an integer between 0 and 15
 
 
-        function get_redstone_source_power(self, side: mcpython.util.enums.EnumSide)
+        function get_redstone_source_power(self, side: mcpython.util.enums.EnumSide) -> int
             
             Gets source power of an given side
             :param side: the side to use
             :return: an value between 0 and 15 representing the redstone value
 
+
+        function get_real_redstone_output(self, side: mcpython.util.enums.EnumSide) -> int
 
         function __repr__(self)
 

@@ -1,4 +1,4 @@
-***ExtensionPoint.py - documentation - last updated on 23.8.2021 by uuk***
+***ExtensionPoint.py - documentation - last updated on 27.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -14,6 +14,12 @@ ___
     class AbstractExtensionPoint extends ABC
 
     class ModLoaderExtensionPoint extends AbstractExtensionPoint
+        
+        Definition of a mod loader extension point
+        Allows you to define custom mod loaders
+        NAME: the name of the loader
+        The correct loading method will be invoked with the data; The extension point should do the needed stuff
+
 
         variable NAME: str
 

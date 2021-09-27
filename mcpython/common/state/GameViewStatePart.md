@@ -1,4 +1,4 @@
-***GameViewStatePart.py - documentation - last updated on 19.9.2021 by uuk***
+***GameViewStatePart.py - documentation - last updated on 27.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -19,7 +19,7 @@ ___
 
         variable tool_level
 
-    @onlyInClient() class GameView extends AbstractStatePart.AbstractStatePart
+    class GameView extends AbstractStatePart.AbstractStatePart
 
         variable NAME
 

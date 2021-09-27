@@ -1,4 +1,4 @@
-***Biome.py - documentation - last updated on 16.9.2021 by uuk***
+***Biome.py - documentation - last updated on 27.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -49,7 +49,7 @@ ___
         function get_top_layer_height_range(
                 cls,
                 position: typing.Tuple[int, int],
-                dimension: mcpython.common.world.AbstractInterface.IDimension,
+                dimension: mcpython.engine.world.AbstractInterface.IDimension,
                 ) -> typing.Tuple[int, int]:
 
         static
@@ -57,5 +57,5 @@ ___
                 cls,
                 height: int,
                 position: typing.Tuple[int, int],
-                dimension: mcpython.common.world.AbstractInterface.IDimension,
+                dimension: mcpython.engine.world.AbstractInterface.IDimension,
                 ) -> typing.List[str]:

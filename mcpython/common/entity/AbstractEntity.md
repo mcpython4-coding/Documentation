@@ -1,4 +1,4 @@
-***AbstractEntity.py - documentation - last updated on 16.9.2021 by uuk***
+***AbstractEntity.py - documentation - last updated on 27.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -24,7 +24,8 @@ ___
 
         variable TYPE
 
-        variable SUMMON_ABLE - if the entity can be used in /summom-command
+        variable SUMMON_ABLE
+            If the entity can be used in /summon-command
 
         static
         function create_new(cls, position, *args, dimension=None, **kwargs)
@@ -86,10 +87,9 @@ ___
 
             variable self.uuid
 
-            variable parent_uuid
-                todo: do something with this!
+                variable parent_uuid
 
-            variable child_uuid
+                variable child_uuid
 
             variable self.nbt_data["motion"]
 
@@ -173,7 +173,7 @@ ___
                 self, itemstack: mcpython.common.container.ResourceStack.ItemStack
                 ) -> bool:
             
-            Let the entity pick up an item and insert it into its inventory
+            Let the entity pick up a item and insert it into its inventory
             :param itemstack: the itemstack to use
             :return: if it was successful or not
             for moder: see world/player.py as an example how this could work
@@ -186,38 +186,40 @@ ___
             
             Applies damage to the entity
             FOR MODER:
-                this function is an default implementation. for an working example, see the player entity
+                This function is a default implementation. For a working example, see the player entity
                 - you may want to apply armor calculation code
-                - you may want to override this method for an custom implementation
+                - you may want to override this method for a custom implementation
             :param damage: the damage to apply
-            :param reason: the reason for the damage, as an DamageSource-instance
+            :param reason: the reason for the damage, as a DamageSource-instance, or None
 
 
-        function on_interact(self, player, button, modifiers, itemstack)
+        function on_interact(self, player, button: int, modifiers: int, itemstack) -> bool
             
-            Called when the player tries to interact with the entity
+            Called when the player tries to interact with the entity by clicking on it
+            Damage should not be calculated here
             :param player: the player doing so, WARNING: only type-hinted for entity, not world/player.py:Player
             :param button: the button used
             :param modifiers: the modifiers used
             :param itemstack: the itemstack held in hand
+            :return: if the normal behaviour should be canceled or not
             todo: make called
-            todo: damage entity when needed
-            for moder: should damage entity if needed
 
 
-        function get_inventories(self) -> list
+        function get_inventories(self) -> typing.Iterable
             
             Will return an list of all currently arrival inventories for this entity
 
 
         function on_inventory_cleared(self)
             
-            Called by /clear when the inventory of the entity should be cleared
+            Called when the entity inventory should be cleared
+            Defaults to clearing all inventories from get_inventories()
 
 
         function draw(self)
             
-            Called to draw the entity
+            Called to draw the entity in the world
+            Invoked in the correct rendering phase
 
 
         function tick(self, dt: float)
@@ -239,6 +241,7 @@ ___
             
             Loads data into the entity, previous saved
             For Moder:
-                you CAN include an version entry to make sure you can fix the data version
+                you CAN include a version entry to make sure you can fix the data version
             :param data: the data to load from
             The nbt data is auto-loaded before this event is called
+            WARNING: data may be None when dump() was at some point not implemented

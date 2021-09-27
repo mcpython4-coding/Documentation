@@ -1,4 +1,4 @@
-***util.py - documentation - last updated on 16.9.2021 by uuk***
+***util.py - documentation - last updated on 27.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -43,6 +43,8 @@ ___
 
         function read_const_bytes(self, count: int)
 
+        function read_uuid(self)
+
     class WriteBuffer
 
         function __init__(self)
@@ -72,6 +74,8 @@ ___
         function write_bytes(self, data: bytes, size_size=2)
 
         function write_const_bytes(self, data: bytes)
+
+        function write_uuid(self, uid: uuid.UUID)
 
     class IBufferSerializeAble extends ABC
 

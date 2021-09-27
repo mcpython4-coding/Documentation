@@ -1,4 +1,4 @@
-***BlockState.py - documentation - last updated on 27.8.2021 by uuk***
+***BlockState.py - documentation - last updated on 27.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -44,9 +44,7 @@ ___
 
                     variable self.parent
 
-                variable self.parent
-
-                variable self.model_alias
+                    variable self.model_alias
 
                 variable data
 

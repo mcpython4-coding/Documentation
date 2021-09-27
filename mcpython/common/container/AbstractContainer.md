@@ -1,4 +1,4 @@
-***AbstractContainer.py - documentation - last updated on 9.2.2021 by uuk***
+***AbstractContainer.py - documentation - last updated on 27.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,25 +11,41 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class AbstractContainer extends ABC
+    class AbstractContainer extends IBufferSerializeAble,  ABC
         
         Base class for containers
-        Currently, unused
-        Later planned to be part of the inventory system; the shared part [the inventory is client-only]
-        Currently, the API is only a copy of Inventory parts for shared
-        todo: do more here!
-
-
-        static
-        function create_renderer(cls)
-            
-            Called when loading a client to create the renderer; this is the only part which should interact
-            with client-only code in this class
+        Can assign a certain ContainerRenderer to render stuff here
 
 
         function __init__(self)
 
             variable self.slots
+
+            variable self.custom_name
+
+            variable self.uuid
+
+                variable slot.assigned_inventory
+
+                variable self.renderer
+
+                variable self.renderer
+
+        function create_slots(self)
+            
+            Invoked during construction of the object; should fill the slots array with slot instances
+
+
+        function write_to_network_buffer(self, buffer: WriteBuffer)
+
+        function read_from_network_buffer(self, buffer: ReadBuffer)
+
+        function create_renderer(self) -> typing.Any
+            
+            Called when loading a client to create the renderer; this is the only part which should interact
+            with client-only code in this class
+            :return: A ContainerRenderer instance
+
 
         function tick(self, dt: float)
 
@@ -86,4 +102,4 @@ ___
 
         function update_shift_container(self)
             
-            called when the inventory should update the content of the ShiftContainer of the inventory-handler
+            Called when the inventory should update the content of the ShiftContainer of the inventory-handler

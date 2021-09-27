@@ -1,4 +1,4 @@
-***Dimension.py - documentation - last updated on 16.9.2021 by uuk***
+***Dimension.py - documentation - last updated on 27.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -74,7 +74,7 @@ ___
 
     variable shared.dimension_handler
 
-    class Dimension extends mcpython.common.world.AbstractInterface.IDimension
+    class Dimension extends mcpython.engine.world.AbstractInterface.IDimension
         
         Class holding a whole dimension
         Default cross-side implementation
@@ -88,7 +88,7 @@ ___
 
         function __init__(
                 self,
-                world_in: mcpython.common.world.AbstractInterface.IWorld,
+                world_in: mcpython.engine.world.AbstractInterface.IWorld,
                 dim_id: int,
                 name: str,
                 gen_config=None,
@@ -131,7 +131,7 @@ ___
 
         function tick(self)
 
-        function unload_chunk(self, chunk: mcpython.common.world.AbstractInterface.IChunk)
+        function unload_chunk(self, chunk: mcpython.engine.world.AbstractInterface.IChunk)
 
         function get_world_height_range(self) -> typing.Tuple[int, int]
 
@@ -143,7 +143,7 @@ ___
                 cz: int = None,
                 generate: bool = True,
                 create: bool = True,
-                ) -> typing.Optional[mcpython.common.world.AbstractInterface.IChunk]:
+                ) -> typing.Optional[mcpython.engine.world.AbstractInterface.IChunk]:
             
             Used to get a chunk instance with a given chunk-position
             :param cx: the chunk x position or a tuple of (x, z)
@@ -161,7 +161,7 @@ ___
                 mcpython.common.block.AbstractBlock.AbstractBlock,
                 ],
                 **kwargs,
-                ) -> typing.Optional[mcpython.common.world.AbstractInterface.IChunk]:
+                ) -> typing.Optional[mcpython.engine.world.AbstractInterface.IChunk]:
             
             Gets a chunk for a block-position
             :param position: the position to use or the block instance to use

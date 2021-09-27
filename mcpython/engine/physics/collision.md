@@ -1,4 +1,4 @@
-***collision.py - documentation - last updated on 16.9.2021 by uuk***
+***collision.py - documentation - last updated on 27.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -22,6 +22,10 @@ ___
         todo: make player based
         todo: make account player & block hit box
 
+
+        variable dimension
+
+        variable player
 
         variable previous_positions
 
@@ -50,11 +54,11 @@ ___
 
                             variable shared.window.dy
 
-                        variable shared.world.get_active_player().flying
+                        variable player.flying
 
                             variable dy
 
-                            variable shared.world.get_active_player().fallen_since_y
+                            variable player.fallen_since_y
 
     function get_colliding_blocks(position: tuple, height: int) -> tuple
         

@@ -1,4 +1,4 @@
-***Chest.py - documentation - last updated on 16.9.2021 by uuk***
+***Chest.py - documentation - last updated on 27.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -57,9 +57,7 @@ ___
 
         function on_block_added(self)
 
-            variable self.face_solid
-
-            variable self.face_state.custom_renderer
+            variable self.face_info.custom_renderer
 
         function can_open_inventory(self) -> bool
             

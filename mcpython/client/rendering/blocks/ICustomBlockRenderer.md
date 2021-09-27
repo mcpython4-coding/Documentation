@@ -1,4 +1,4 @@
-***ICustomBlockRenderer.py - documentation - last updated on 9.2.2021 by uuk***
+***ICustomBlockRenderer.py - documentation - last updated on 27.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -18,6 +18,8 @@ ___
         function remove(self, position: typing.Tuple[int, int, int], block, data, face)
 
     @onlyInClient() class ICustomDrawMethodRenderer
+
+        variable DRAW_PHASE
 
         function draw(self, position: typing.Tuple[int, int, int], block)
 

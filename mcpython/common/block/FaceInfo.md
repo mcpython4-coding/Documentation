@@ -1,4 +1,4 @@
-***FaceInfo.py - documentation - last updated on 16.9.2021 by uuk***
+***FaceInfo.py - documentation - last updated on 27.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -14,7 +14,6 @@ ___
     class FaceInfo
         
         Class for face state of the block
-        todo: merge data into AbstractBlock & make this a static class
 
 
         variable DEFAULT_FACE_STATE
@@ -23,7 +22,7 @@ ___
 
         function __init__(self, block)
             
-            Block face state
+            Block face state, client-sided container holding information for rendering
 
 
             variable self.block
@@ -32,7 +31,7 @@ ___
 
         function show_face(self, face: mcpython.util.enums.EnumSide)
             
-            Shows an face
+            Shows a face
             :param face: the face of the block
 
 
@@ -82,4 +81,8 @@ ___
         function hide_all(self)
             
             Will hide all faces
-            todo: can we optimize it
+
+
+                    variable self.faces[face.normal_name]
+
+                variable self.face_data

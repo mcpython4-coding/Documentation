@@ -1,4 +1,4 @@
-***World.py - documentation - last updated on 16.9.2021 by uuk***
+***World.py - documentation - last updated on 27.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,7 +11,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class World extends mcpython.common.world.AbstractInterface.IWorld
+    class World extends mcpython.engine.world.AbstractInterface.IWorld
         
         Class holding all data of the world
 
@@ -88,7 +88,7 @@ ___
 
         function get_active_dimension(
                 self,
-                ) -> typing.Union[mcpython.common.world.AbstractInterface.IDimension, None]:
+                ) -> typing.Union[mcpython.engine.world.AbstractInterface.IDimension, None]:
             
             will return the dimension the player is in
             :return: the dimension or None if no dimension is set
@@ -99,11 +99,11 @@ ___
 
         function get_dimension_by_name(
                 self, name: str
-                ) -> mcpython.common.world.AbstractInterface.IDimension:
+                ) -> mcpython.engine.world.AbstractInterface.IDimension:
 
         function add_dimension(
                 self, dim_id: int, name: str, dim_config=None
-                ) -> mcpython.common.world.AbstractInterface.IDimension:
+                ) -> mcpython.engine.world.AbstractInterface.IDimension:
             
             will add an new dimension into the system
             :param dim_id: the id to create under
@@ -133,7 +133,7 @@ ___
 
         function get_dimension(
                 self, dim_id: int
-                ) -> mcpython.common.world.AbstractInterface.IDimension:
+                ) -> mcpython.engine.world.AbstractInterface.IDimension:
             
             will get an dimension with an special id
             :param dim_id: the id to use
@@ -208,7 +208,7 @@ ___
         function show_chunk(
                 self,
                 chunk: typing.Union[
-                typing.Tuple[int, int], mcpython.common.world.AbstractInterface.IChunk
+                typing.Tuple[int, int], mcpython.engine.world.AbstractInterface.IChunk
                 ],
                 ):
             
@@ -222,7 +222,7 @@ ___
         function hide_chunk(
                 self,
                 chunk: typing.Union[
-                typing.Tuple[int, int], mcpython.common.world.AbstractInterface.IChunk
+                typing.Tuple[int, int], mcpython.engine.world.AbstractInterface.IChunk
                 ],
                 ):
             

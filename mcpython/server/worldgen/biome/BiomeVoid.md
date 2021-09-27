@@ -1,4 +1,4 @@
-***BiomeVoid.py - documentation - last updated on 9.2.2021 by uuk***
+***BiomeVoid.py - documentation - last updated on 27.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -24,12 +24,12 @@ ___
         static
         function get_top_layer_height_range(
                 position: typing.Tuple[int, int],
-                dimension: mcpython.common.world.AbstractInterface.IDimension,
+                dimension: mcpython.engine.world.AbstractInterface.IDimension,
                 ) -> typing.Tuple[int, int]:
 
         static
         function get_top_layer_configuration(
                 height: int,
                 position: typing.Tuple[int, int],
-                dimension: mcpython.common.world.AbstractInterface.IDimension,
+                dimension: mcpython.engine.world.AbstractInterface.IDimension,
                 ) -> typing.List[str]:

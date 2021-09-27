@@ -1,4 +1,4 @@
-***AbstractFluid.py - documentation - last updated on 16.9.2021 by uuk***
+***AbstractFluid.py - documentation - last updated on 27.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -64,7 +64,7 @@ ___
         static
         function get_flow_rate_at(
                 cls,
-                dimension: mcpython.common.world.AbstractInterface.IDimension,
+                dimension: mcpython.engine.world.AbstractInterface.IDimension,
                 position: typing.Tuple[int, int, int],
                 ) -> int:
             
@@ -87,7 +87,7 @@ ___
         function on_fluids_touching(
                 cls,
                 other: typing.Type["AbstractFluid"],
-                dimension: mcpython.common.world.AbstractInterface.IDimension,
+                dimension: mcpython.engine.world.AbstractInterface.IDimension,
                 position_this: typing.Optional[typing.Tuple[float, float, float]],
                 position_that: typing.Optional[typing.Tuple[float, float, float]],
                 is_fluid_block=(True, True),

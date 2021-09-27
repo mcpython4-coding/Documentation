@@ -1,4 +1,4 @@
-***ContainerRenderer.py - documentation - last updated on 16.9.2021 by uuk***
+***ContainerRenderer.py - documentation - last updated on 27.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -10,6 +10,50 @@ ___
     Mod loader inspired by "Minecraft Forge" (https://github.com/MinecraftForge/MinecraftForge) and similar
     This project is not official by mojang and does not relate to it.
 
+
+    @onlyInClient() class AbstractContainerRenderer extends ABC
+        
+        Base class for a rendering adapter for an AbstractContainer
+        Create only on CLIENT! We do not guarantee the existence of pyglet on servers in the future!
+
+
+        function __init__(self)
+
+            variable self.container
+
+            variable self.bg_sprite: typing.Optional[pyglet.sprite.Sprite]
+
+            variable self.bg_anchor
+
+            variable self.window_anchor
+
+            variable self.position
+
+            variable self.bg_image_pos
+
+            variable self.custom_name_label
+
+            variable self.custom_name_label.anchor_y
+
+            variable self.slot_rendering_information
+
+        function create_slot_rendering_information(self)
+
+        function get_position(self)
+
+                variable x
+
+                variable y
+
+        function bind_container(self, container: AbstractContainer)
+            
+            Invoked when a new container should be bound to this renderer
+            When multiple containers use the same renderer, this may get invoked more than one time
+
+
+        function draw(self)
+
+                variable self.bg_sprite.position
 
     class ContainerRenderer extends IBufferSerializeAble,  ABC
         

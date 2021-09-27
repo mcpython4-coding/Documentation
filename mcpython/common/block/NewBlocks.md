@@ -1,4 +1,4 @@
-***NewBlocks.py - documentation - last updated on 19.9.2021 by uuk***
+***NewBlocks.py - documentation - last updated on 27.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -31,270 +31,25 @@ ___
             existing_stairs=True,
             existing_fence=False,
             texture=None,
+            consumer=lambda _, __: None,
             ):
 
         variable fname
 
         variable instance
 
+            variable obj
+
+            variable obj
+
+            variable obj
+
+            variable obj
+
+            variable obj
+
     function colored(name: str)
     
-    budding_amethyst
-    cactus
-    cake
-    calcite
-    campfire
-    candle
-    candle_cake
-    carrots
-    cartography_table
-    carved_pumpkin
-    cauldron
-    cave_air
-    cave_vines
-    cave_vines_body
-    cave_vines_head
-    cave_vines_plant
-    chain
-    chain_command_block
-    chest
-    chipped_anvil
-    chiseled_deepslate
-    chiseled_grimstone
-    chiseled_nether_bricks
-    chiseled_polished_blackstone
-    chiseled_quartz_block
-    chiseled_red_sandstone
-    chiseled_sandstone
-    chiseled_stone_bricks
-    chorus_flower
-    chorus_plant
-    clay
-    coal_block
-    coal_ore
-    coarse_dirt
-    cobbled_deepslate
-    cobbled_deepslate_slab
-    cobbled_deepslate_stairs
-    cobbled_deepslate_wall
-    cobblestone
-    cobblestone_slab
-    cobblestone_stairs
-    cobblestone_wall
-    cobweb
-    cocoa
-    command_block
-    comparator
-    composter
-    conduit
-    copper_block
-    copper_ore
-    cornflower
-    cracked_deepslate_bricks
-    cracked_deepslate_tiles
-    cracked_nether_bricks
-    cracked_polished_blackstone_bricks
-    cracked_stone_bricks
-    crafting_table
-    creeper_head
-    creeper_wall_head
-    crimson_button
-    crimson_door
-    crimson_fence
-    crimson_fence_gate
-    crimson_fungus
-    crimson_hyphae
-    crimson_nylium
-    crimson_planks
-    crimson_pressure_plate
-    crimson_roots
-    crimson_sign
-    crimson_slab
-    crimson_stairs
-    crimson_stem
-    crimson_trapdoor
-    crimson_wall_sign
-    crying_obsidian
-    cut_copper
-    cut_copper_slab
-    cut_copper_stairs
-    cut_red_sandstone
-    cut_red_sandstone_slab
-    cut_sandstone
-    cut_sandstone_slab
-    cyan_banner
-    cyan_bed
-    cyan_candle
-    cyan_candle_cake
-    cyan_carpet
-    cyan_concrete
-    cyan_concrete_powder
-    cyan_glazed_terracotta
-    cyan_shulker_box
-    cyan_stained_glass
-    cyan_stained_glass_pane
-    cyan_terracotta
-    cyan_wall_banner
-    cyan_wool
-    damaged_anvil
-    dandelion
-    dark_oak_button
-    dark_oak_door
-    dark_oak_fence
-    dark_oak_fence_gate
-    dark_oak_leaves
-    dark_oak_log
-    dark_oak_planks
-    dark_oak_pressure_plate
-    dark_oak_sapling
-    dark_oak_sign
-    dark_oak_slab
-    dark_oak_stairs
-    dark_oak_trapdoor
-    dark_oak_wall_sign
-    dark_oak_wood
-    dark_prismarine
-    dark_prismarine_slab
-    dark_prismarine_stairs
-    daylight_detector
-    dead_brain_coral
-    dead_brain_coral_block
-    dead_brain_coral_fan
-    dead_brain_coral_wall_fan
-    dead_bubble_coral
-    dead_bubble_coral_block
-    dead_bubble_coral_fan
-    dead_bubble_coral_wall_fan
-    dead_bush
-    dead_fire_coral
-    dead_fire_coral_block
-    dead_fire_coral_fan
-    dead_fire_coral_wall_fan
-    dead_horn_coral
-    dead_horn_coral_block
-    dead_horn_coral_fan
-    dead_horn_coral_wall_fan
-    dead_tube_coral
-    dead_tube_coral_block
-    dead_tube_coral_fan
-    dead_tube_coral_wall_fan
-    deepslate
-    deepslate_bricks
-    deepslate_brick_slab
-    deepslate_brick_stairs
-    deepslate_brick_wall
-    deepslate_coal_ore
-    deepslate_copper_ore
-    deepslate_diamond_ore
-    deepslate_emerald_ore
-    deepslate_gold_ore
-    deepslate_iron_ore
-    deepslate_lapis_ore
-    deepslate_redstone_ore
-    deepslate_tiles
-    deepslate_tile_slab
-    deepslate_tile_stairs
-    deepslate_tile_wall
-    detector_rail
-    diamond_block
-    diamond_ore
-    diorite
-    diorite_slab
-    diorite_stairs
-    diorite_wall
-    dirt
-    dirt_path
-    dispenser
-    dragon_egg
-    dragon_head
-    dragon_wall_head
-    dried_kelp_block
-    dripstone_block
-    dropper
-    emerald_block
-    emerald_ore
-    enchanting_table
-    ender_chest
-    end_gateway
-    end_portal
-    end_portal_frame
-    end_rod
-    end_stone
-    end_stone_bricks
-    end_stone_brick_slab
-    end_stone_brick_stairs
-    end_stone_brick_wall
-    exposed_copper
-    exposed_cut_copper
-    exposed_cut_copper_slab
-    exposed_cut_copper_stairs
-    farmland
-    fern
-    fire
-    fire_coral
-    fire_coral_block
-    fire_coral_fan
-    fire_coral_wall_fan
-    fletching_table
-    flowering_azalea
-    flower_pot
-    frosted_ice
-    furnace
-    gilded_blackstone
-    glass
-    glass_pane
-    glowstone
-    glow_item_frame
-    glow_lichen
-    gold_block
-    gold_ore
-    granite
-    granite_slab
-    granite_stairs
-    granite_wall
-    grass
-    grass_block
-    gravel
-    gray_banner
-    gray_bed
-    gray_candle
-    gray_candle_cake
-    gray_carpet
-    gray_concrete
-    gray_concrete_powder
-    gray_glazed_terracotta
-    gray_shulker_box
-    gray_stained_glass
-    gray_stained_glass_pane
-    gray_terracotta
-    gray_wall_banner
-    gray_wool
-    green_banner
-    green_bed
-    green_candle
-    green_candle_cake
-    green_carpet
-    green_concrete
-    green_concrete_powder
-    green_glazed_terracotta
-    green_shulker_box
-    green_stained_glass
-    green_stained_glass_pane
-    green_terracotta
-    green_wall_banner
-    green_wool
-    grimstone
-    grimstone_bricks
-    grimstone_brick_slab
-    grimstone_brick_stairs
-    grimstone_brick_wall
-    grimstone_slab
-    grimstone_stairs
-    grimstone_tiles
-    grimstone_tile_slab
-    grimstone_tile_stairs
-    grimstone_tile_wall
-    grimstone_wall
     grindstone
     hanging_roots
     hay_block

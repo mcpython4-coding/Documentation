@@ -1,4 +1,4 @@
-***IWorldGenConfig.py - documentation - last updated on 23.8.2021 by uuk***
+***IWorldGenConfig.py - documentation - last updated on 27.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -67,11 +67,11 @@ ___
         static
         function on_chunk_prepare_generation(
                 cls,
-                chunk: mcpython.common.world.AbstractInterface.IChunk,
+                chunk: mcpython.engine.world.AbstractInterface.IChunk,
                 array: mcpython.server.worldgen.WorldGenerationTaskArrays.WorldGenerationTaskHandlerReference,
                 ):
 
         static
         function on_chunk_generation_finished(
-                cls, chunk: mcpython.common.world.AbstractInterface.IChunk
+                cls, chunk: mcpython.engine.world.AbstractInterface.IChunk
                 ):

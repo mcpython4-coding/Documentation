@@ -1,4 +1,4 @@
-***util.py - documentation - last updated on 18.4.2021 by uuk***
+***util.py - documentation - last updated on 27.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -84,7 +84,7 @@ ___
     function area_iterator(start: typing.Tuple[int, int, int], end: typing.Tuple[int, int, int])
 
     function fill_area(
-            access: mcpython.common.world.AbstractInterface.ISupportWorldInterface,
+            access: mcpython.engine.world.AbstractInterface.ISupportWorldInterface,
             start: typing.Tuple[int, int, int],
             end: typing.Tuple[int, int, int],
             block: typing.Union[str, BlockSource],
@@ -93,7 +93,7 @@ ___
         variable block
 
     function fill_area_replacing(
-            access: mcpython.common.world.AbstractInterface.ISupportWorldInterface,
+            access: mcpython.engine.world.AbstractInterface.ISupportWorldInterface,
             start: typing.Tuple[int, int, int],
             end: typing.Tuple[int, int, int],
             block: typing.Union[str, BlockSource],
@@ -107,7 +107,7 @@ ___
             variable previous
 
     function get_content(
-            access: mcpython.common.world.AbstractInterface.ISupportWorldInterface,
+            access: mcpython.engine.world.AbstractInterface.ISupportWorldInterface,
             start: typing.Tuple[int, int, int],
             end: typing.Tuple[int, int, int],
             ) -> typing.Dict[typing.Tuple[int, int, int], typing.Any]:
@@ -121,7 +121,7 @@ ___
             variable data[
 
     function get_content_list(
-            access: mcpython.common.world.AbstractInterface.ISupportWorldInterface,
+            access: mcpython.engine.world.AbstractInterface.ISupportWorldInterface,
             start: typing.Tuple[int, int, int],
             end: typing.Tuple[int, int, int],
             ) -> typing.Iterable:
@@ -131,7 +131,7 @@ ___
                 variable b
 
     function paste_content(
-            access: mcpython.common.world.AbstractInterface.ISupportWorldInterface,
+            access: mcpython.engine.world.AbstractInterface.ISupportWorldInterface,
             start: typing.Tuple[int, int, int],
             data: typing.Dict[typing.Tuple[int, int, int], typing.Any],
             insert_air=True,
@@ -145,7 +145,7 @@ ___
             variable p2
 
     function paste_content_list(
-            access: mcpython.common.world.AbstractInterface.ISupportWorldInterface,
+            access: mcpython.engine.world.AbstractInterface.ISupportWorldInterface,
             start: typing.Tuple[int, int, int],
             end: typing.Tuple[int, int, int],
             data: typing.List[typing.Any],
@@ -158,7 +158,7 @@ ___
             variable p2
 
     function clone(
-            access: mcpython.common.world.AbstractInterface.ISupportWorldInterface,
+            access: mcpython.engine.world.AbstractInterface.ISupportWorldInterface,
             start: typing.Tuple[int, int, int],
             end: typing.Tuple[int, int, int],
             to: typing.Tuple[int, int, int],
@@ -177,7 +177,7 @@ ___
         variable block_list
 
     function create_hollow_structure(
-            access: mcpython.common.world.AbstractInterface.ISupportWorldInterface,
+            access: mcpython.engine.world.AbstractInterface.ISupportWorldInterface,
             start: typing.Tuple[int, int, int],
             end: typing.Tuple[int, int, int],
             block: typing.Union[str, BlockSource],

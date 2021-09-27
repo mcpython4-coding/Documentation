@@ -1,4 +1,4 @@
-***WorldGenerationTaskArrays.py - documentation - last updated on 16.9.2021 by uuk***
+***WorldGenerationTaskArrays.py - documentation - last updated on 27.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -20,7 +20,7 @@ ___
 
         function __init__(self)
 
-            variable self.chunks: typing.Set[mcpython.common.world.AbstractInterface.IChunk]
+            variable self.chunks: typing.Set[mcpython.engine.world.AbstractInterface.IChunk]
 
             variable self.data_maps - invoke, world_changes, shown_updates
 
@@ -30,7 +30,7 @@ ___
 
 
         function get_task_count_for_chunk(
-                self, chunk: mcpython.common.world.AbstractInterface.IChunk
+                self, chunk: mcpython.engine.world.AbstractInterface.IChunk
                 ) -> int:
             
             Gets the total count of tasks for an given chunk as an int
@@ -46,7 +46,7 @@ ___
 
         function schedule_invoke(
                 self,
-                chunk: mcpython.common.world.AbstractInterface.IChunk,
+                chunk: mcpython.engine.world.AbstractInterface.IChunk,
                 method,
                 *args,
                 **kwargs,
@@ -61,7 +61,7 @@ ___
 
         function schedule_block_add(
                 self,
-                chunk: mcpython.common.world.AbstractInterface.IChunk,
+                chunk: mcpython.engine.world.AbstractInterface.IChunk,
                 position: tuple,
                 name: str,
                 *args,
@@ -82,7 +82,7 @@ ___
 
         function schedule_block_remove(
                 self,
-                chunk: mcpython.common.world.AbstractInterface.IChunk,
+                chunk: mcpython.engine.world.AbstractInterface.IChunk,
                 position: tuple,
                 *args,
                 on_remove=None,
@@ -98,7 +98,7 @@ ___
 
 
         function schedule_block_show(
-                self, chunk: mcpython.common.world.AbstractInterface.IChunk, position: tuple
+                self, chunk: mcpython.engine.world.AbstractInterface.IChunk, position: tuple
                 ):
             
             schedules an show of an block
@@ -107,7 +107,7 @@ ___
 
 
         function schedule_block_hide(
-                self, chunk: mcpython.common.world.AbstractInterface.IChunk, position: tuple
+                self, chunk: mcpython.engine.world.AbstractInterface.IChunk, position: tuple
                 ):
             
             schedules an hide of an block
@@ -116,7 +116,7 @@ ___
 
 
         function schedule_visual_update(
-                self, chunk: mcpython.common.world.AbstractInterface.IChunk, position: tuple
+                self, chunk: mcpython.engine.world.AbstractInterface.IChunk, position: tuple
                 ):
             
             schedules an visual update of an block (-> show/hide as needed)
@@ -143,7 +143,7 @@ ___
                 variable start
 
         function process_chunk(
-                self, chunk: mcpython.common.world.AbstractInterface.IChunk, timer=None
+                self, chunk: mcpython.engine.world.AbstractInterface.IChunk, timer=None
                 ):
 
             variable start
@@ -159,7 +159,7 @@ ___
                 variable chunk.loaded
 
         function _process_0_array(
-                self, chunk: mcpython.common.world.AbstractInterface.IChunk
+                self, chunk: mcpython.engine.world.AbstractInterface.IChunk
                 ) -> bool:
 
                 variable dim_map
@@ -169,7 +169,7 @@ ___
                     variable data
 
         function _process_1_array(
-                self, chunk: mcpython.common.world.AbstractInterface.IChunk
+                self, chunk: mcpython.engine.world.AbstractInterface.IChunk
                 ) -> bool:
 
                 variable dim_map
@@ -179,7 +179,7 @@ ___
                         variable block
 
         function _process_2_array(
-                self, chunk: mcpython.common.world.AbstractInterface.IChunk
+                self, chunk: mcpython.engine.world.AbstractInterface.IChunk
                 ) -> bool:
 
                 variable dim_map
@@ -189,7 +189,7 @@ ___
                     variable block
 
         function get_block(
-                self, position: tuple, chunk: mcpython.common.world.AbstractInterface.IChunk
+                self, position: tuple, chunk: mcpython.engine.world.AbstractInterface.IChunk
                 ):
             
             Gets an generated block from the array
@@ -200,7 +200,7 @@ ___
 
             variable dimension
 
-        function clear_chunk(self, chunk: mcpython.common.world.AbstractInterface.IChunk)
+        function clear_chunk(self, chunk: mcpython.engine.world.AbstractInterface.IChunk)
             
             Will remove all scheduled tasks from an given chunk
             :param chunk: the chunk
@@ -263,7 +263,7 @@ ___
         function __init__(
                 self,
                 handler: WorldGenerationTaskHandler,
-                chunk: mcpython.common.world.AbstractInterface.IChunk,
+                chunk: mcpython.engine.world.AbstractInterface.IChunk,
                 ):
 
             variable self.handler
@@ -334,7 +334,7 @@ ___
 
         function create(
                 self,
-                chunk: mcpython.common.world.AbstractInterface.IChunk,
+                chunk: mcpython.engine.world.AbstractInterface.IChunk,
                 default: WorldGenerationTaskHandlerReference,
                 ) -> typing.Tuple[
                 "ProcessSeparatedWorldGenerationTaskHandlerReference", OffProcessTaskHelper
@@ -370,7 +370,7 @@ ___
         function __init__(
                 self,
                 shared_helper: OffProcessTaskHelper.OffProcessTaskHelperShared,
-                chunk: mcpython.common.world.AbstractInterface.IChunk,
+                chunk: mcpython.engine.world.AbstractInterface.IChunk,
                 ):
 
             variable self.shared_helper

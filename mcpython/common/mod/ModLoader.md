@@ -1,4 +1,4 @@
-***ModLoader.py - documentation - last updated on 1.9.2021 by uuk***
+***ModLoader.py - documentation - last updated on 27.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -287,8 +287,6 @@ ___
             :param mod_info: the mod info dict
             :return: errors and mod-info-tuple
 
-
-                            variable errors
 
         function sort_mods(self)
             

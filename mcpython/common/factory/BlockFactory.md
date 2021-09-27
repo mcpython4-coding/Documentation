@@ -1,4 +1,4 @@
-***BlockFactory.py - documentation - last updated on 27.8.2021 by uuk***
+***BlockFactory.py - documentation - last updated on 27.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -25,7 +25,11 @@ ___
 
     function set_fence_gate(instance: FactoryBuilder.IFactory)
 
+    function set_all_direction_orientable(instance: FactoryBuilder.IFactory)
+
     function set_horizontal_orientable(instance: FactoryBuilder.IFactory)
+
+    function set_button(instance: FactoryBuilder.IFactory)
 
     function set_strength(
             instance: FactoryBuilder.IFactory, hardness: float, blast_resistance: float = None
@@ -38,6 +42,8 @@ ___
     function set_assigned_tools(instance: FactoryBuilder.IFactory, *tools, tool_level=None)
 
     function set_all_side_solid(instance: FactoryBuilder.IFactory, solid: bool)
+
+    function set_side_solid(instance: FactoryBuilder.IFactory, side: EnumSide, solid: bool)
 
     function set_default_model_state(
             instance: FactoryBuilder.IFactory, state: typing.Union[dict, str]

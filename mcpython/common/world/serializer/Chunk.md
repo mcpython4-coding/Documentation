@@ -1,4 +1,4 @@
-***Chunk.py - documentation - last updated on 16.9.2021 by uuk***
+***Chunk.py - documentation - last updated on 27.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -24,7 +24,7 @@ ___
 
                 variable data
 
-            variable chunk_instance: mcpython.common.world.AbstractInterface.IChunk
+            variable chunk_instance: mcpython.engine.world.AbstractInterface.IChunk
 
             variable shared.world_generation_handler.enable_generation
                 Don't do this when we are saving stuff
@@ -74,7 +74,7 @@ ___
 
             variable region
 
-            variable chunk_instance: mcpython.common.world.AbstractInterface.IChunk
+            variable chunk_instance: mcpython.engine.world.AbstractInterface.IChunk
 
             variable data
 

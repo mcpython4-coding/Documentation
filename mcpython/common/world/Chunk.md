@@ -1,4 +1,4 @@
-***Chunk.py - documentation - last updated on 22.5.2021 by uuk***
+***Chunk.py - documentation - last updated on 27.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,9 +11,10 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class Chunk extends mcpython.common.world.AbstractInterface.IChunk
+    class Chunk extends mcpython.engine.world.AbstractInterface.IChunk
         
-        representation of an chunk in the world
+        Default representation of a chunk in the world
+        Defines the default behaviour
 
 
         variable BLOCK_REGISTRY
@@ -22,7 +23,7 @@ ___
 
         function __init__(
                 self,
-                dimension: mcpython.common.world.AbstractInterface.IDimension,
+                dimension: mcpython.engine.world.AbstractInterface.IDimension,
                 position: typing.Tuple[int, int],
                 ):
             
@@ -63,11 +64,11 @@ ___
 
         function save(self)
 
-        function as_shareable(self) -> mcpython.common.world.AbstractInterface.IChunk
+        function as_shareable(self) -> mcpython.engine.world.AbstractInterface.IChunk
 
         function mark_dirty(self)
 
-        function get_dimension(self) -> mcpython.common.world.AbstractInterface.IDimension
+        function get_dimension(self) -> mcpython.engine.world.AbstractInterface.IDimension
 
         function get_position(self) -> typing.Tuple[int, int]
 
@@ -211,12 +212,13 @@ ___
                 reason=Block.BlockRemovalReason.UNKNOWN,
                 ):
             
-            Remove the block at the given `position`.
-            :param position: The (x, y, z) position of the block to remove.
+            Remove the block at the given position. When no block is there, nothing happens
+            :param position: The (x, y, z) position of the block to remove, or the block instance
             :param immediate: Whether or not to immediately remove block from canvas.
             :param block_update: Whether an block-update should be called or not
             :param block_update_self: Whether the block to remove should get an block-update or not
             :param reason: the reason why the block was removed
+            todo: remove from scheduled world generation if needed
 
 
                 variable position

@@ -1,4 +1,4 @@
-***simple.py - documentation - last updated on 16.9.2021 by uuk***
+***simple.py - documentation - last updated on 27.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -23,6 +23,7 @@ ___
         This is the simple variant, allowing for configuration and than single block construction
         todo: add a variant with template system for defining e.g. wood which than construct all needed wood items for
             it
+        todo: add a system to auto-add to creative tabs
 
 
         variable FILE_COUNTER
