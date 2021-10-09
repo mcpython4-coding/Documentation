@@ -1,4 +1,4 @@
-***ICustomBlockRenderer.py - documentation - last updated on 27.9.2021 by uuk***
+***ICustomBlockRenderer.py - documentation - last updated on 9.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,18 +11,34 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    @onlyInClient() class ICustomBatchBlockRenderer
+    class ICustomBlockRenderer extends ABC
+
+        function __init__(self)
+
+            variable self.block
+
+        function on_block_exposed(self, block)
+
+        function on_block_fully_hidden(self, block)
+
+    class ICustomBatchBlockRenderer extends ICustomBlockRenderer,  ABC
 
         function add(self, position: typing.Tuple[int, int, int], block, face, batches)
 
         function remove(self, position: typing.Tuple[int, int, int], block, data, face)
 
-    @onlyInClient() class ICustomDrawMethodRenderer
+    class ICustomDrawMethodRenderer extends ICustomBlockRenderer,  ABC
 
         variable DRAW_PHASE
 
+        function on_block_exposed(self, block)
+
+            variable block.face_info.bound_rendering_info
+
+        function on_block_fully_hidden(self, block)
+
         function draw(self, position: typing.Tuple[int, int, int], block)
 
-    @onlyInClient() class ICustomBlockVertexManager
+    class ICustomBlockVertexManager extends ICustomBlockRenderer
 
         function handle(self, block, vertices, face, blockstate)

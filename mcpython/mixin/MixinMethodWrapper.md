@@ -1,7 +1,7 @@
 ***MixinMethodWrapper.py - documentation - last updated on 9.10.2021 by uuk***
 ___
 
-    mcpython - a minecraft clone written in python licenced under the MIT-licence
+    mcpython - a minecraft clone written in python licenced under the MIT-licence 
     (https://github.com/mcpython4-coding/core)
     Contributors: uuk, xkcdjerry (inactive)
     Based on the game of fogleman (https://github.com/fogleman/Minecraft), licenced under the MIT-licence
@@ -96,7 +96,12 @@ ___
 
             variable method
 
-        function insertMethodMultipleTimesAt(self, start: typing.List[int], method: FunctionPatcher, force_multiple_inlines=False)
+        function insertMethodMultipleTimesAt(
+                self,
+                start: typing.List[int],
+                method: FunctionPatcher,
+                force_multiple_inlines=False,
+                ):
 
         static
         function prepare_method_for_insert(method: FunctionPatcher) -> FunctionPatcher

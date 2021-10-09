@@ -1,4 +1,4 @@
-***Chest.py - documentation - last updated on 27.9.2021 by uuk***
+***Chest.py - documentation - last updated on 9.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -13,7 +13,7 @@ ___
 
     variable BBOX
 
-    class Chest extends AbstractBlock.AbstractBlock
+    class Chest extends  IHorizontalOrientableBlock,  mcpython.client.rendering.blocks.ChestRenderer.IChestRendererSupport,  
         
         The Chest block class
 
@@ -21,10 +21,11 @@ ___
         variable now: datetime - now
 
         variable is_christmas: bool
+            if Christmas is today
 
-        variable NAME: str - the name of the chest
+        variable NAME: str
 
-        variable IS_SOLID
+        variable MODEL_FACE_NAME
 
         variable HARDNESS
 
@@ -32,16 +33,18 @@ ___
 
         variable ASSIGNED_TOOLS
 
-        variable DEBUG_WORLD_BLOCK_STATES
+        variable IS_SOLID
 
         variable DEFAULT_FACE_SOLID
+
+        variable CHEST_BLOCK_RENDERER
+
+        variable CHEST_BLOCK_RENDERER_CHRISTMAS
 
         function __init__(self)
             
             Creates a new BlockChest block
 
-
-            variable self.front_side
 
             variable self.inventory
 
@@ -55,9 +58,9 @@ ___
 
                 variable self.loot_table_link
 
-        function on_block_added(self)
+            function on_block_added(self)
 
-            variable self.face_info.custom_renderer
+            function on_block_added(self)
 
         function can_open_inventory(self) -> bool
             
@@ -76,10 +79,6 @@ ___
         function get_inventories(self)
 
         function get_provided_slot_lists(self, side)
-
-        function set_model_state(self, state: dict)
-
-        function get_model_state(self) -> dict
 
         function get_view_bbox(self)
 

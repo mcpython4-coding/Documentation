@@ -1,4 +1,4 @@
-***AbstractEntity.py - documentation - last updated on 27.9.2021 by uuk***
+***AbstractEntity.py - documentation - last updated on 9.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -80,6 +80,8 @@ ___
                 dict holding entity data, automatically saved & loaded, when loading, data is put ontop of the existing dict
 
             variable self.dead
+
+        function get_collision_box(self)
 
         function read_from_network_buffer(self, buffer: ReadBuffer)
 

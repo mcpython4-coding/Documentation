@@ -1,4 +1,4 @@
-***BlockModel.py - documentation - last updated on 27.8.2021 by uuk***
+***BlockModel.py - documentation - last updated on 9.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -64,13 +64,37 @@ ___
 
         function get_prepared_data_for(
                 self,
+                instance: IBlockStateRenderingTarget,
                 position: typing.Tuple[float, float, float],
                 config: dict,
                 face: mcpython.util.enums.EnumSide,
                 previous: typing.Tuple[typing.List[float], typing.List[float]] = None,
-                ) -> typing.Tuple[typing.Tuple[typing.List[float], typing.List[float]], typing.Any]:
+                ) -> typing.Tuple[
+                typing.Tuple[typing.List[float], typing.List[float], typing.List[float]],
+                typing.Any,
+                ]:
+                """
+                Collects the vertex and texture data for a block at the given position with given configuration
+                :param instance: the instance to draw
+                :param position: the offset position
+                :param config: the configuration
+                :param face: the face
+                :param previous: previous collected data, as a tuple of vertices, texture coords
+                :return: a tuple of vertices and texture coords, and an underlying BoxModel for some identification stuff
+                """
+                
+                # If this is true, we cannot render this model as stuff is not fully linked
+                if not self.drawable:
+                logger.println(
+                f"[BLOCK MODEL][FATAL] can't draw an model '{self.name}' which has not defined textures at {position}"
+                )
+                return ([], [], []), None
+                
+                rotation = config["rotation"]
+                if rotation == (90, 90, 0):
             
             Collects the vertex and texture data for a block at the given position with given configuration
+            :param instance: the instance to draw
             :param position: the offset position
             :param config: the configuration
             :param face: the face
@@ -88,6 +112,7 @@ ___
 
         function add_face_to_batch(
                 self,
+                instance: IBlockStateRenderingTarget,
                 position: typing.Tuple[float, float, float],
                 batch: pyglet.graphics.Batch,
                 config: dict,

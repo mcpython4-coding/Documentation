@@ -1,4 +1,4 @@
-***api.py - documentation - last updated on 16.9.2021 by uuk***
+***api.py - documentation - last updated on 9.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -23,7 +23,13 @@ ___
 
             variable self.position
 
+            variable self.face_info
+
         function get_model_state(self)
+
+        function get_tint_for_index(
+                self, index: int
+                ) -> typing.Tuple[float, float, float, float]:
 
     class IBlockStateDecoder extends mcpython.common.event.api.IRegistryContent,  ABC
         
@@ -74,7 +80,9 @@ ___
                 face: mcpython.util.enums.EnumSide,
                 ) -> list:
 
-        function add_raw_face_to_batch(self, position, state, batches, faces)
+        function add_raw_face_to_batch(
+                self, instance: IBlockStateRenderingTarget, position, state, batches, faces
+                ):
 
         function draw_face(
                 self,

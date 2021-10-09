@@ -1,4 +1,4 @@
-***NewBlocks.py - documentation - last updated on 27.9.2021 by uuk***
+***NewBlocks.py - documentation - last updated on 9.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -364,7 +364,6 @@ ___
     redstone_ore
     redstone_torch
     redstone_wall_torch
-    redstone_wire
     red_banner
     red_bed
     red_candle

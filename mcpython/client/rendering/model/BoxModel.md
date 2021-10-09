@@ -1,4 +1,4 @@
-***BoxModel.py - documentation - last updated on 27.8.2021 by uuk***
+***BoxModel.py - documentation - last updated on 9.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -37,6 +37,8 @@ ___
             variable self.box_size
 
             variable self.faces
+
+            variable self.face_tint_index
 
             variable self.texture_region_rotate: typing.List[float]
 
@@ -82,7 +84,7 @@ ___
 
                     variable var
 
-                    variable self.faces[face]
+                    variable self.faces[face.index]
 
                     variable index
 
@@ -95,6 +97,8 @@ ___
                             variable self.texture_region[index]
 
                         variable self.texture_region_rotate[index]
+
+                        variable self.face_tint_index[index]
 
         function build(self, atlas=None)
             
@@ -120,14 +124,18 @@ ___
 
         function get_prepared_box_data(
                 self,
+                instance: IBlockStateRenderingTarget,
                 position: typing.Tuple[float, float, float],
                 rotation: typing.Tuple[float, float, float] = (0, 0, 0),
                 active_faces=None,
                 uv_lock=False,
-                previous=None,
-                ):
+                previous: typing.Tuple[
+                typing.List[float], typing.List[float], typing.List[float]
+                ] = None,
+                ) -> typing.Tuple[typing.List[float], typing.List[float], typing.List[float]]:
             
             Util method for getting the box data for a block (vertices and uv's)
+            :param instance: the instance to get information from to render
             :param position: the position of the block
             :param rotation: the rotation
             :param active_faces: the faces to get data for, None means all
@@ -147,7 +155,9 @@ ___
 
         function add_prepared_data_to_batch(
                 self,
-                collected_data: typing.Tuple[typing.List[float], typing.List[float]],
+                collected_data: typing.Tuple[
+                typing.List[float], typing.List[float], typing.List[float]
+                ],
                 batch: typing.Union[pyglet.graphics.Batch, typing.List[pyglet.graphics.Batch]],
                 ) -> typing.Iterable[VertexList]:
             
@@ -160,6 +170,7 @@ ___
 
         function add_to_batch(
                 self,
+                instance: IBlockStateRenderingTarget,
                 position: typing.Tuple[float, float, float],
                 batch: typing.Union[pyglet.graphics.Batch, typing.List[pyglet.graphics.Batch]],
                 rotation: typing.Tuple[float, float, float],
@@ -170,6 +181,7 @@ ___
             Adds the box model to the batch
             Internally wraps a get_prepared_box_data call around the add_prepared_data_to_batch method
             Use combined data where possible
+            :param instance: the instance to use for rendering
             :param position: the position based on
             :param batch: the batches to select from
             :param rotation: the rotation to use
@@ -193,6 +205,7 @@ ___
 
         function draw(
                 self,
+                instance: IBlockStateRenderingTarget,
                 position: typing.Tuple[float, float, float],
                 rotation: typing.Tuple[float, float, float],
                 active_faces: typing.List[bool] = None,
@@ -201,6 +214,7 @@ ___
             
             Draws the BoxModel direct into the world
             WARNING: use batches for better performance
+            :param instance: the instance to ues for rendering
             :param position: the position to draw on
             :param rotation: the rotation to draw with
             :param uv_lock: if the uv's should be locked in place or not
@@ -209,9 +223,32 @@ ___
 
             variable collected_data
 
-        function add_face_to_batch(self, position, batch, rotation, face, uv_lock=False)
+        function add_face_to_batch(
+                self,
+                instance: IBlockStateRenderingTarget,
+                position: typing.Tuple[float, float, float],
+                batch,
+                rotation: typing.Tuple[float, float, float],
+                face: EnumSide,
+                uv_lock=False,
+                ):
 
-        function draw_face(self, position, rotation, face, uv_lock=False)
+                variable rotation
+
+            variable face
+
+        function draw_face(
+                self,
+                instance: IBlockStateRenderingTarget,
+                position: typing.Tuple[float, float, float],
+                rotation: typing.Tuple[float, float, float],
+                face: EnumSide,
+                uv_lock=False,
+                ):
+
+                variable rotation
+
+            variable face
 
         function copy(self, new_model=None)
 
@@ -298,13 +335,22 @@ ___
         function get_vertices(self, position, rotation, rotation_center)
 
         function add_to_batch(
-                self, batch, position, rotation=(0, 0, 0), rotation_center=(0, 0, 0)
+                self,
+                batch: pyglet.graphics.Batch,
+                position: typing.Tuple[float, float, float],
+                rotation=(0, 0, 0),
+                rotation_center=(0, 0, 0),
                 ):
 
             variable vertices
 
         function add_face_to_batch(
-                self, batch, position, face, rotation=(0, 0, 0), rotation_center=(0, 0, 0)
+                self,
+                batch: pyglet.graphics.Batch,
+                position: typing.Tuple[float, float, float],
+                face: typing.Union[int, EnumSide],
+                rotation=(0, 0, 0),
+                rotation_center=(0, 0, 0),
                 ):
 
             variable vertices
@@ -315,4 +361,67 @@ ___
 
                 variable v
 
-        function draw(self, position, rotation=(0, 0, 0), rotation_center=(0, 0, 0))
+        function draw(
+                self,
+                position: typing.Tuple[float, float, float],
+                rotation=(0, 0, 0),
+                rotation_center=(0, 0, 0),
+                ):
+
+            variable vertices
+
+    class MutableRawBoxModel extends RawBoxModel
+
+        function add_to_batch(
+                self,
+                batch: pyglet.graphics.Batch,
+                position: typing.Tuple[float, float, float],
+                rotation=(0, 0, 0),
+                rotation_center=(0, 0, 0),
+                ):
+
+            variable vertices
+
+        function mutate_add_to_batch(
+                self,
+                previous: pyglet.graphics.vertexdomain.VertexList,
+                position: typing.Tuple[float, float, float],
+                rotation=(0, 0, 0),
+                rotation_center=(0, 0, 0),
+                ):
+
+            variable vertices
+
+            variable previous.vertices[:]
+
+        function add_face_to_batch(
+                self,
+                batch: pyglet.graphics.Batch,
+                position: typing.Tuple[float, float, float],
+                face: typing.Union[int, EnumSide],
+                rotation=(0, 0, 0),
+                rotation_center=(0, 0, 0),
+                ):
+
+            variable vertices
+
+            variable result
+
+                variable t
+
+                variable v
+
+        function mutate_add_face_to_batch(
+                self,
+                previous: typing.List[pyglet.graphics.vertexdomain.VertexList],
+                position: typing.Tuple[float, float, float],
+                face: typing.Union[int, EnumSide],
+                rotation=(0, 0, 0),
+                rotation_center=(0, 0, 0),
+                ):
+
+            variable vertices
+
+                variable v
+
+                variable previous.pop(0).vertices[:]

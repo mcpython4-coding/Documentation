@@ -1,4 +1,4 @@
-***ModelHandler.py - documentation - last updated on 27.9.2021 by uuk***
+***ModelHandler.py - documentation - last updated on 9.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -85,7 +85,13 @@ ___
 
                         variable self.models[name]
 
-        function add_face_to_batch(self, block, face, batches) -> typing.Iterable
+        function add_face_to_batch(
+                self, block: IBlockStateRenderingTarget, face: EnumSide, batches
+                ) -> typing.Iterable:
+            
+            Adds a single face of a block-like thing to a batch
+            :return: a list of vertex lists
+
 
             variable blockstate
 
@@ -104,7 +110,13 @@ ___
                 variable vertex_list
 
         function add_raw_face_to_batch(
-                self, position, state, block_state_name: str, batches, face
+                self,
+                instance: IBlockStateRenderingTarget,
+                position,
+                state,
+                block_state_name: str,
+                batches,
+                face,
                 ):
 
                 variable vertex_list

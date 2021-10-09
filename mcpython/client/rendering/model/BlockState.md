@@ -1,4 +1,4 @@
-***BlockState.py - documentation - last updated on 27.9.2021 by uuk***
+***BlockState.py - documentation - last updated on 9.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -93,7 +93,14 @@ ___
             variable box_model
 
         function prepare_rendering_data(
-                self, box_model, face, instance, prepared_texture, prepared_vertex, state
+                self,
+                box_model,
+                face,
+                instance: IBlockStateRenderingTarget,
+                prepared_texture,
+                prepared_vertex,
+                prepared_tint,
+                state,
                 ):
 
                     variable data
@@ -152,7 +159,11 @@ ___
 
             variable data
 
-        function add_raw_face_to_batch(self, position, state, batches, face)
+        function add_raw_face_to_batch(
+                self, instance: IBlockStateRenderingTarget, position, state, batches, face
+                ):
+
+            variable state
 
         function transform_to_bounding_box(
                 self, instance: mcpython.client.rendering.model.api.IBlockStateRenderingTarget
@@ -176,7 +187,7 @@ ___
 
             variable data
 
-    class BlockStateDefinition
+    class BlockStateContainer
 
         variable TO_CREATE
 
@@ -213,7 +224,7 @@ ___
                 variable instance
 
         static
-        function get_or_load(cls, name: str) -> "BlockStateDefinition"
+        function get_or_load(cls, name: str) -> "BlockStateContainer"
 
             variable file
 
@@ -240,7 +251,14 @@ ___
                 face: mcpython.util.enums.EnumSide,
                 ):
 
-        function add_raw_face_to_batch(self, position: tuple, state, batches, face)
+        function add_raw_face_to_batch(
+                self,
+                instance: IBlockStateRenderingTarget,
+                position: tuple,
+                state,
+                batches,
+                face,
+                ):
 
         function draw_face(
                 self,
@@ -273,7 +291,13 @@ ___
 
             variable result
 
-        function add_raw_face_to_batch(self, position, batches, face)
+        function add_raw_face_to_batch(
+                self, instance: IBlockStateRenderingTarget, position, batches, face
+                ):
+
+            variable block_state
+
+            variable result
 
         function draw_face(
                 self,

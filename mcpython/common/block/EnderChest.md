@@ -1,4 +1,4 @@
-***EnderChest.py - documentation - last updated on 27.9.2021 by uuk***
+***EnderChest.py - documentation - last updated on 9.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -20,6 +20,10 @@ ___
 
         variable NAME
 
+        variable DEFAULT_DISPLAY_NAME
+
+        variable MODEL_FACE_NAME
+
         variable DEFAULT_FACE_SOLID
 
         variable HARDNESS
@@ -28,11 +32,15 @@ ___
 
         variable ASSIGNED_TOOLS
 
-        variable DEBUG_WORLD_BLOCK_STATES
+        variable CHEST_BLOCK_RENDERER
+
+        function on_block_added(self)
 
         function on_player_interaction(
                 self, player, button: int, modifiers: int, hit_position: tuple
                 ):
+
+                variable player.inventory_enderchest.block
 
         function set_model_state(self, state: dict)
 

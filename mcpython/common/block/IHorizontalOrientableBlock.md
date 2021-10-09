@@ -1,4 +1,4 @@
-***IHorizontalOrientableBlock.py - documentation - last updated on 25.4.2021 by uuk***
+***IHorizontalOrientableBlock.py - documentation - last updated on 9.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -26,3 +26,5 @@ ___
         function set_model_state(self, state: dict)
 
         variable DEBUG_WORLD_BLOCK_STATES
+
+        function __init_subclass__(cls, **kwargs)

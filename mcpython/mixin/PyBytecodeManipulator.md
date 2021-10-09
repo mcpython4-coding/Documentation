@@ -13,20 +13,7 @@ ___
 
     variable __all__
 
-    function null(): pass
-            
-            
-            class FunctionPatcher:
-            """
-            Code inspired by https://rushter.com/blog/python-bytecode-patch/
-            
-            Wrapped class for handling __code__ objects at runtime,
-            and writing the modified code back into the source function
-            
-            See https://docs.python.org/3.10/library/inspect.html
-            """
-            
-            def __init__(self, target: FunctionType):
+    function null()
 
     class FunctionPatcher
         

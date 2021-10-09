@@ -1,4 +1,4 @@
-***PlayerEntity.py - documentation - last updated on 19.9.2021 by uuk***
+***PlayerEntity.py - documentation - last updated on 9.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -23,6 +23,8 @@ ___
         variable SUMMON_ABLE
 
         variable GAMEMODE_DICT: dict
+
+        variable BOUNDING_BOX
 
         function __init__(self, name="unknown", dimension=None)
 
@@ -74,6 +76,8 @@ ___
             variable self.inventory_order
 
             variable self.is_in_init
+
+        function get_collision_box(self)
 
         function __repr__(self)
 

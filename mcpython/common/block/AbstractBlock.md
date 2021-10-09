@@ -1,4 +1,4 @@
-***AbstractBlock.py - documentation - last updated on 27.9.2021 by uuk***
+***AbstractBlock.py - documentation - last updated on 9.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -288,33 +288,7 @@ ___
 
         function get_view_bbox(
                 self,
-                ) -> typing.Union[
-                mcpython.common.block.BoundingBox.BoundingBox,
-                mcpython.common.block.BoundingBox.BoundingArea,
-                ]:
-                """
-                Used to get the bbox of the block for ray collision
-                :return: the bbox instance
-                """
-                return (
-                mcpython.common.block.BoundingBox.FULL_BLOCK_BOUNDING_BOX
-                )  # per default, every block is full
-                
-                def get_collision_bbox(
-                self,
-                ) -> typing.Union[
-                mcpython.common.block.BoundingBox.BoundingBox,
-                mcpython.common.block.BoundingBox.BoundingArea,
-                ]:
-                """
-                Used to get the bbox of the block for physical body collision
-                :return: the bbox instance
-                """
-                return self.get_view_bbox()
-                
-                def on_request_item_for_block(
-                self, itemstack: mcpython.common.container.ResourceStack.ItemStack
-                ):
+                ) -> mcpython.engine.physics.BoundingBox.AbstractBoundingBox:
             
             Used to get the bbox of the block for ray collision
             :return: the bbox instance
@@ -322,19 +296,7 @@ ___
 
         function get_collision_bbox(
                 self,
-                ) -> typing.Union[
-                mcpython.common.block.BoundingBox.BoundingBox,
-                mcpython.common.block.BoundingBox.BoundingArea,
-                ]:
-                """
-                Used to get the bbox of the block for physical body collision
-                :return: the bbox instance
-                """
-                return self.get_view_bbox()
-                
-                def on_request_item_for_block(
-                self, itemstack: mcpython.common.container.ResourceStack.ItemStack
-                ):
+                ) -> mcpython.engine.physics.BoundingBox.AbstractBoundingBox:
             
             Used to get the bbox of the block for physical body collision
             :return: the bbox instance
@@ -353,7 +315,7 @@ ___
 
         function inject_redstone_power(self, side: mcpython.util.enums.EnumSide, level: int)
             
-            Used to inject an redstone value into the system
+            Used to inject a redstone value into the system
             :param side: the side from which the redstone value comes
             :param level: the level of redstone, between 0 and 15
 
@@ -367,12 +329,14 @@ ___
 
         function get_redstone_source_power(self, side: mcpython.util.enums.EnumSide) -> int
             
-            Gets source power of an given side
+            Gets source power of a given side
             :param side: the side to use
-            :return: an value between 0 and 15 representing the redstone value
+            :return: a value between 0 and 15 representing the redstone value
 
 
         function get_real_redstone_output(self, side: mcpython.util.enums.EnumSide) -> int
+
+        function is_connecting_to_redstone(self, side: mcpython.util.enums.EnumSide) -> bool
 
         function __repr__(self)
 

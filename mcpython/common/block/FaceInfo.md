@@ -1,4 +1,4 @@
-***FaceInfo.py - documentation - last updated on 27.9.2021 by uuk***
+***FaceInfo.py - documentation - last updated on 9.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -39,9 +39,9 @@ ___
 
             variable self.faces[face.normal_name]
 
-                    variable self.face_data[face.normal_name]
+                    variable self.subscribed_renderer
 
-                        variable self.subscribed_renderer
+                    variable self.face_data[face.normal_name]
 
                     variable self.face_data[face.normal_name]
 
@@ -53,7 +53,7 @@ ___
 
             variable self.faces[face.normal_name]
 
-                        variable self.subscribed_renderer
+                    variable self.subscribed_renderer
 
             variable self.face_data[face.normal_name]
 

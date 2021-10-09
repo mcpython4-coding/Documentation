@@ -1,4 +1,4 @@
-***InventoryChest.py - documentation - last updated on 9.2.2021 by uuk***
+***InventoryChest.py - documentation - last updated on 9.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -27,11 +27,15 @@ ___
         static
         function get_config_file() -> str or None
 
-        function __init__(self)
+        function __init__(self, block=None)
+
+            variable self.block
 
                 variable self.custom_name
 
         function on_activate(self)
+
+                    variable self.custom_name
 
         function on_deactivate(self)
 
