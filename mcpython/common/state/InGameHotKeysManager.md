@@ -1,4 +1,4 @@
-***InGameHotKeysManager.py - documentation - last updated on 19.9.2021 by uuk***
+***InGameHotKeysManager.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,7 +11,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    @onlyInClient() class HotKeyDefinitions extends enum.Enum
+    class HotKeyDefinitions extends enum.Enum
 
         variable RELOAD_CHUNKS
 

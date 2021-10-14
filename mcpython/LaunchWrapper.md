@@ -1,4 +1,4 @@
-***LaunchWrapper.py - documentation - last updated on 19.9.2021 by uuk***
+***LaunchWrapper.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -25,7 +25,8 @@ ___
 
             variable shared.launch_wrapper
 
-        function check_py_version(self)
+        static
+        function check_py_version(cls)
 
         function set_client(self)
 
@@ -124,7 +125,8 @@ ___
             Will enforce cleanup when possible
 
 
-        function clean(self)
+        static
+        function clean(cls)
             
             Helper function for normal cleanup (not save, will hard-crash in some cases)
             MAY crash on non-fully stable systems

@@ -1,4 +1,4 @@
-***FaceInfo.py - documentation - last updated on 9.10.2021 by uuk***
+***FaceInfo.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,7 +11,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class FaceInfo
+    @onlyInClient() class FaceInfo
         
         Class for face state of the block
 
@@ -27,12 +27,17 @@ ___
 
             variable self.block
 
+            variable self.multi_data
+
+            variable self.multi_faces
+
         function is_shown(self) -> bool
 
-        function show_face(self, face: mcpython.util.enums.EnumSide)
+        function show_face(self, face: EnumSide, force=False)
             
             Shows a face
             :param face: the face of the block
+            :param force: force the show, WARNING: internal only
 
 
                 variable self.face_data
@@ -45,7 +50,25 @@ ___
 
                     variable self.face_data[face.normal_name]
 
-        function hide_face(self, face: mcpython.util.enums.EnumSide)
+        function show_faces(self, faces: typing.List[str])
+            
+            Optimised show_face() for more than one face
+            Will do only something optimal when more than one face is passed in
+
+
+                variable self.face_data
+
+                    variable self.subscribed_renderer
+
+                    variable self.multi_data
+
+                variable self.multi_data
+
+        function hide_multi_data(self)
+
+            variable self.multi_data
+
+        function hide_face(self, face: EnumSide)
             
             Will hide an face
             :param face: the face to hide
@@ -75,8 +98,6 @@ ___
             variable chunk
 
             variable state
-
-                    variable face
 
         function hide_all(self)
             

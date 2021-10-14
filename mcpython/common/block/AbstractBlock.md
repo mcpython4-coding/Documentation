@@ -1,4 +1,4 @@
-***AbstractBlock.py - documentation - last updated on 9.10.2021 by uuk***
+***AbstractBlock.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -39,14 +39,19 @@ ___
         Abstract base class for all blocks
         All block classes should extend from this
         Defines interaction thingies for blocks with the environment
-        WARNING:
-            - During registration, one block instance is created but NEVER assigned to a world (so on_block_added is never
-                called). This is used for getting runtime-specific properties.
         todo: add custom properties to set_creation_properties() -> injected by add_block() call
+        todo: cache somehow the block state for rendering here (-> also custom relinking)
+        todo: optimise block state lookup by using a array internally & using integers for references
 
 
         static
         function bind_block_item_to_creative_tab(cls, tab_getter: typing.Callable)
+            
+            Util method for registering this block item to a specific CreativeTab
+            Will be removed when BlockItem's must be registered manually somewhere in the future
+
+
+            function add()
 
         variable CAPABILITY_CONTAINER_NAME
             Internal registry type name & capability buffer name; DO NOT CHANGE
@@ -86,9 +91,11 @@ ___
         variable ENABLE_RANDOM_TICKS: bool
             if the random tick function should be called if needed or not
 
-        variable NO_ENTITY_COLLISION: bool - if entities should not collide with this block todo: make method with entity
+        variable NO_ENTITY_COLLISION: bool
+            if entities should not collide with this block todo: make method with entity
 
         variable ENTITY_FALL_MULTIPLIER: float
+            entity gravity multiplier while in the block todo: merge with above
 
         variable DEBUG_WORLD_BLOCK_STATES: typing.List[dict]
             a list of block states used in debug world

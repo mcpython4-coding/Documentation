@@ -1,4 +1,4 @@
-***BlockFactory.py - documentation - last updated on 27.9.2021 by uuk***
+***BlockFactory.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -24,6 +24,8 @@ ___
     function set_fence(instance: FactoryBuilder.IFactory, *types: str)
 
     function set_fence_gate(instance: FactoryBuilder.IFactory)
+
+    function set_fluid_block(instance: FactoryBuilder.IFactory)
 
     function set_all_direction_orientable(instance: FactoryBuilder.IFactory)
 

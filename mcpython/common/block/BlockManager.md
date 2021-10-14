@@ -1,4 +1,4 @@
-***BlockManager.py - documentation - last updated on 25.4.2021 by uuk***
+***BlockManager.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -20,10 +20,6 @@ ___
             variable block_registry.full_table[name]
 
             variable block_registry.full_table[name.split(":")[-1]]
-
-            variable instance
-
-                variable cls.IS_SOLID
 
                 variable cls.CAN_CONDUCT_REDSTONE_POWER
 

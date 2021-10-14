@@ -1,4 +1,4 @@
-***NewBlocks.py - documentation - last updated on 9.10.2021 by uuk***
+***NewBlocks.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -50,31 +50,6 @@ ___
 
     function colored(name: str)
     
-    grindstone
-    hanging_roots
-    hay_block
-    heavy_weighted_pressure_plate
-    honeycomb_block
-    honey_block
-    hopper
-    horn_coral
-    horn_coral_block
-    horn_coral_fan
-    horn_coral_wall_fan
-    ice
-    infested_chiseled_stone_bricks
-    infested_cobblestone
-    infested_cracked_stone_bricks
-    infested_deepslate
-    infested_mossy_stone_bricks
-    infested_stone
-    infested_stone_bricks
-    iron_bars
-    iron_block
-    iron_door
-    iron_ore
-    iron_trapdoor
-    item_frame
     jack_o_lantern
     jigsaw
     jukebox

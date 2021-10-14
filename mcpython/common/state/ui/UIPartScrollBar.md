@@ -1,4 +1,4 @@
-***UIPartScrollBar.py - documentation - last updated on 19.9.2021 by uuk***
+***UIPartScrollBar.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -17,7 +17,7 @@ ___
 
     variable scroll_inactive
 
-    @onlyInClient() class UIScrollBar extends AbstractUIPart
+    class UIScrollBar extends AbstractUIPart
         
         Class representing a scroll bar in a gui-state of the game
         The user is needed to work with the values returned by this system (on_scroll)

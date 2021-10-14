@@ -1,4 +1,4 @@
-***annotation.py - documentation - last updated on 9.2.2021 by uuk***
+***annotation.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -12,3 +12,12 @@ ___
 
 
     function onlyInClient() -> typing.Callable
+        
+        Marks an object to be only arrival on the client, not on the server
+
+
+            function annotate(obj)
+
+                    function replace(*_, **__)
+
+                    class Replacement

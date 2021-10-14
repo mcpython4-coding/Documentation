@@ -1,4 +1,4 @@
-***WorldListState.py - documentation - last updated on 19.9.2021 by uuk***
+***WorldListState.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -17,13 +17,20 @@ ___
 
     variable WORLD_SELECTION_SELECT
 
-    @onlyInClient() class WorldList extends AbstractState.AbstractState
+    class WorldList extends AbstractState.AbstractState
 
         variable NAME
 
         function __init__(self)
 
             variable self.world_data
+                the data representing the world list; first goes in list from above
+
+            variable self.selected_world
+
+                variable self.selection_sprite
+
+                variable self.scissor_group
 
         function create_state_renderer(self) -> typing.Any
 
@@ -61,5 +68,4 @@ ___
 
     variable world_selection
 
-    @onlyInClient()
     function create()

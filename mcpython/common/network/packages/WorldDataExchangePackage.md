@@ -1,4 +1,4 @@
-***WorldDataExchangePackage.py - documentation - last updated on 19.9.2021 by uuk***
+***WorldDataExchangePackage.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -71,8 +71,6 @@ ___
 
                     variable new_dim.world_generation_config_objects
 
-                    variable new_dim.batches
-
                         variable entity.dimension
 
     class DimensionInfoPackage extends AbstractPackage
@@ -112,8 +110,6 @@ ___
                 variable name
 
                     variable instance
-
-                    variable visible
 
         function handle_inner(self)
 

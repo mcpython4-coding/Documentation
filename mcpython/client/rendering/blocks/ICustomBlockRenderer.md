@@ -1,4 +1,4 @@
-***ICustomBlockRenderer.py - documentation - last updated on 9.10.2021 by uuk***
+***ICustomBlockRenderer.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -25,7 +25,11 @@ ___
 
         function add(self, position: typing.Tuple[int, int, int], block, face, batches)
 
+        function add_multi(self, position: typing.Tuple[int, int, int], block, faces, batches)
+
         function remove(self, position: typing.Tuple[int, int, int], block, data, face)
+
+        function remove_multi(self, position: typing.Tuple[int, int, int], block, data)
 
     class ICustomDrawMethodRenderer extends ICustomBlockRenderer,  ABC
 

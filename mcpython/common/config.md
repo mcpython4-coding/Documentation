@@ -1,4 +1,4 @@
-***config.py - documentation - last updated on 16.9.2021 by uuk***
+***config.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -70,28 +70,24 @@ ___
     variable RANDOM_TICK_RANGE - how far to execute random ticks away from player
 
     variable USE_MISSING_TEXTURES_ON_MISS_TEXTURE
+        if missing texture should be used when no texture was selected for an face
 
     variable USE_MIP_MAPPING
 
     variable CPU_USAGE_REFRESH_TIME - how often to refresh cpu usage indicator
 
     variable FOG_DISTANCE
+        something like view distance, but will not force the chunks to generate
 
     variable BIOME_HEIGHT_RANGE_MAP
+        a dict of biome name: height range storing the internal height range
 
     variable CHUNK_GENERATION_RANGE
         how far to generate chunks on sector change, in chunks from the chunk the player is in, in an square with
         CHUNK_GENERATION_RANGE * 2 + 1 -size
 
     variable WRITE_NOT_FORMATTED_EXCEPTION
-
-    variable ENABLE_PROFILING
-
-    variable ENABLE_PROFILER_DRAW
-
-    variable ENABLE_PROFILER_TICK
-
-    variable ENABLE_PROFILER_GENERATION
+        if exceptions should be not formatted-printed to console by logger
 
     variable SHUFFLE_DATA
 
@@ -160,14 +156,6 @@ ___
             variable WRITE_NOT_FORMATTED_EXCEPTION
 
             variable BIOME_HEIGHT_RANGE_MAP["minecraft:plains"]
-
-            variable ENABLE_PROFILING
-
-            variable ENABLE_PROFILER_DRAW
-
-            variable ENABLE_PROFILER_TICK
-
-            variable ENABLE_PROFILER_GENERATION
 
             variable SHUFFLE_DATA
 

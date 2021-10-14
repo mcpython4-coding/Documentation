@@ -1,4 +1,4 @@
-***Furnace.py - documentation - last updated on 27.9.2021 by uuk***
+***Furnace.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,12 +11,13 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class Furnace extends  mcpython.common.block.IHorizontalOrientableBlock.IHorizontalOrientableBlock 
+    class Furnace extends IHorizontalOrientableBlock
         
-        class for the furnace block
+        Class for the furnace block
 
 
-        variable FURNACE_RECIPES: list
+        variable FURNACE_RECIPES
+            the list of recipe groups to use for this furnace
 
         variable NAME: str
 
@@ -51,10 +52,10 @@ ___
 
         variable NAME: str
 
-        variable FURNACE_RECIPES: list
+        variable FURNACE_RECIPES
 
     class Smoker extends Furnace
 
         variable NAME: str
 
-        variable FURNACE_RECIPES: list
+        variable FURNACE_RECIPES

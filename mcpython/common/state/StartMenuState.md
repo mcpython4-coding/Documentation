@@ -1,4 +1,4 @@
-***StartMenuState.py - documentation - last updated on 19.9.2021 by uuk***
+***StartMenuState.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,7 +11,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    @onlyInClient() class StartMenu extends mcpython.common.state.AbstractState.AbstractState
+    class StartMenu extends mcpython.common.state.AbstractState.AbstractState
 
         variable NAME
 
@@ -37,5 +37,4 @@ ___
 
     variable start_menu
 
-    @onlyInClient()
     function create()

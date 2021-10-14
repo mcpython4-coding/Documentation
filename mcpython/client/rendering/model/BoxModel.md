@@ -1,4 +1,4 @@
-***BoxModel.py - documentation - last updated on 9.10.2021 by uuk***
+***BoxModel.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -348,7 +348,7 @@ ___
                 self,
                 batch: pyglet.graphics.Batch,
                 position: typing.Tuple[float, float, float],
-                face: typing.Union[int, EnumSide],
+                face: typing.Union[typing.Iterable[int], EnumSide],
                 rotation=(0, 0, 0),
                 rotation_center=(0, 0, 0),
                 ):
@@ -370,7 +370,7 @@ ___
 
             variable vertices
 
-    class MutableRawBoxModel extends RawBoxModel
+    @onlyInClient() class MutableRawBoxModel extends RawBoxModel
 
         function add_to_batch(
                 self,
@@ -398,7 +398,7 @@ ___
                 self,
                 batch: pyglet.graphics.Batch,
                 position: typing.Tuple[float, float, float],
-                face: typing.Union[int, EnumSide],
+                face: typing.Union[typing.Iterable[int], EnumSide],
                 rotation=(0, 0, 0),
                 rotation_center=(0, 0, 0),
                 ):
@@ -425,3 +425,44 @@ ___
                 variable v
 
                 variable previous.pop(0).vertices[:]
+
+    @onlyInClient() class ColoredRawBoxModel extends RawBoxModel
+
+        function add_to_batch(
+                self,
+                batch: pyglet.graphics.Batch,
+                position: typing.Tuple[float, float, float],
+                rotation=(0, 0, 0),
+                rotation_center=(0, 0, 0),
+                color=(1, 1, 1, 1),
+                ):
+
+            variable vertices
+
+        function add_face_to_batch(
+                self,
+                batch: pyglet.graphics.Batch,
+                position: typing.Tuple[float, float, float],
+                face: typing.Union[typing.Iterable[int], EnumSide],
+                rotation=(0, 0, 0),
+                rotation_center=(0, 0, 0),
+                color=(1, 1, 1, 1),
+                ):
+
+            variable vertices
+
+            variable result
+
+                variable t
+
+                variable v
+
+        function draw(
+                self,
+                position: typing.Tuple[float, float, float],
+                rotation=(0, 0, 0),
+                rotation_center=(0, 0, 0),
+                color=(1, 1, 1, 1),
+                ):
+
+            variable vertices

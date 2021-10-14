@@ -1,4 +1,4 @@
-***shared.py - documentation - last updated on 16.9.2021 by uuk***
+***shared.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -16,6 +16,8 @@ ___
     variable invalidate_cache
 
     variable dev_environment - dynamical set on build
+
+    variable NO_LOG_ESCAPE
 
     variable local
 
@@ -38,19 +40,21 @@ ___
     variable IS_TEST_ENV
 
     variable CURRENT_EVENT_SUB
-        used by fml to store which mod is currently working
+        Used by the mod loading system to store the name of the mod doing stuff currently
+        Only updated when currently loading the game
 
     variable CURRENT_REF_MAP
+        The current mixin ref map, used by the JVM when needed
 
     variable STORAGE_VERSION - the version of the storage format
 
-    variable NO_LOG_ESCAPE
+    variable window
+        the window instance, client-only
 
-    variable window - the window instance, client-only
+    variable chat
+        the chat instance, client only todo: migrate to player
 
     variable world - the world instance
-
-    variable chat - the chat instance todo: migrate to player
 
     variable event_handler - the global event handler
 
@@ -78,7 +82,7 @@ ___
 
     variable entity_manager - the entity manager instance
 
-    variable capability_manager
+    variable capability_manager - the capability manager instance
 
     variable model_handler - the model handler instance, client-only
 

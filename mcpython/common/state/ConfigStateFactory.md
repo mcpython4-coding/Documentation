@@ -1,4 +1,4 @@
-***ConfigStateFactory.py - documentation - last updated on 19.9.2021 by uuk***
+***ConfigStateFactory.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,7 +11,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    @onlyInClient() class IStateConfigEntry extends mcpython.common.event.api.IRegistryContent
+    class IStateConfigEntry extends mcpython.common.event.api.IRegistryContent
         
         base class for every entry in an config file
 
@@ -30,7 +30,7 @@ ___
 
     variable entry_registry
 
-    @shared.registry @onlyInClient() class UIButtonDefaultStateConfigEntry extends IStateConfigEntry
+    @shared.registry class UIButtonDefaultStateConfigEntry extends IStateConfigEntry
 
         variable NAME
 
@@ -78,7 +78,7 @@ ___
 
                 variable existing.on_press
 
-    @shared.registry @onlyInClient() class UILableStateConfigEntry extends IStateConfigEntry
+    @shared.registry class UILableStateConfigEntry extends IStateConfigEntry
 
         variable NAME
 
@@ -120,7 +120,7 @@ ___
 
                 variable existing.text_size
 
-    @shared.registry @onlyInClient() class UIProgressBarConfigEntry extends IStateConfigEntry
+    @shared.registry class UIProgressBarConfigEntry extends IStateConfigEntry
 
         variable NAME
 
@@ -161,7 +161,7 @@ ___
 
                 variable existing.text
 
-    @shared.registry @onlyInClient() class ConfigBackground extends IStateConfigEntry
+    @shared.registry class ConfigBackground extends IStateConfigEntry
 
         variable NAME
 
@@ -177,10 +177,9 @@ ___
 
     variable configs
 
-    @onlyInClient()
     function get_config(file: str)
 
-    @onlyInClient() class StateConfigFile
+    class StateConfigFile
         
         Class for deserialize an config file for an state into an state
 

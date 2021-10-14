@@ -1,4 +1,4 @@
-***InventoryFurnace.py - documentation - last updated on 16.9.2021 by uuk***
+***InventoryFurnace.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -95,6 +95,16 @@ ___
 
         function update_status(self)
 
+                variable self.old_item_name
+
+                variable self.smelt_start
+
+                        variable recipe
+
+                variable self.recipe: mcpython.common.container.crafting.FurnaceCraftingHelper.FurnaceRecipe
+
+                variable self.block.active
+
         function create_slot_renderers(self) -> list
 
         static
@@ -125,6 +135,8 @@ ___
         function on_tick(self, dt)
 
         function finish(self)
+
+            variable self.smelt_start
 
         function load(self, data: dict) -> bool
 

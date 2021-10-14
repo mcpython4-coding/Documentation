@@ -1,4 +1,4 @@
-***BlockItemGeneratorState.py - documentation - last updated on 19.9.2021 by uuk***
+***BlockItemGeneratorState.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -13,7 +13,7 @@ ___
 
     variable __all__
 
-    @onlyInClient() class BlockItemGenerator extends AbstractState.AbstractState
+    class BlockItemGenerator extends AbstractState.AbstractState
 
         variable SETUP_TIME
 
@@ -146,5 +146,4 @@ ___
 
     variable block_item_generator
 
-    @onlyInClient()
     function create()

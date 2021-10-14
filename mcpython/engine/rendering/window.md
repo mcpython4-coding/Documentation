@@ -1,4 +1,4 @@
-***window.py - documentation - last updated on 19.9.2021 by uuk***
+***window.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -57,15 +57,7 @@ ___
                 write window instance to globals.py for sharing
 
             variable self.exclusive
-                Whether or not the window exclusively captures the mouse.
-
-            variable self.strafe
-                Strafing is moving lateral to the direction you are facing,
-                e.g. moving to the left or right while continuing to face forward.
-                
-                First element is -1 when moving forward, 1 when moving back, and 0
-                otherwise. The second element is -1 when moving left, 1 when moving
-                right, and 0 otherwise. todo: move to player's movement-attribute
+                Whether the window exclusively captures the mouse.
 
             variable self.sector - todo: move to player
                 Which sector the player is currently in.
@@ -93,10 +85,6 @@ ___
 
             variable self.mouse_position
 
-            variable self.draw_profiler - todo: move to separated class
-
-            variable self.tick_profiler - todo: move to separated class
-
             variable self.keys - key handler from pyglet
 
             variable self.CROSSHAIRS_TEXTURE
@@ -105,12 +93,6 @@ ___
         function load(self)
 
             variable self.CROSSHAIRS_TEXTURE
-
-        function print_profiler(self, dt=None)
-            
-            Will print the enabled profiler(s)
-            todo: move to separated Profiler class
-
 
         function reset_caption(self)
             
@@ -129,14 +111,6 @@ ___
             Returns the current line of sight vector indicating the direction
             the player is looking.
             todo: move to player or some util system
-
-
-        function get_motion_vector(self) -> tuple
-            
-            Returns the current motion vector indicating the velocity of the
-            player.
-            :return: vector: Tuple containing the velocity in x, y, and z respectively.
-            todo: integrate into player movement
 
 
         function update(self, dt: float)

@@ -1,4 +1,4 @@
-***Chest.py - documentation - last updated on 9.10.2021 by uuk***
+***Chest.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -37,9 +37,13 @@ ___
 
         variable DEFAULT_FACE_SOLID
 
-        variable CHEST_BLOCK_RENDERER
+            variable CHEST_BLOCK_RENDERER
 
-        variable CHEST_BLOCK_RENDERER_CHRISTMAS
+            variable CHEST_BLOCK_RENDERER_CHRISTMAS
+
+                function on_block_added(self)
+
+                function on_block_added(self)
 
         function __init__(self)
             
@@ -57,10 +61,6 @@ ___
             variable self.loot_table_link
 
                 variable self.loot_table_link
-
-            function on_block_added(self)
-
-            function on_block_added(self)
 
         function can_open_inventory(self) -> bool
             

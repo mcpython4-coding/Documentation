@@ -1,4 +1,4 @@
-***util.py - documentation - last updated on 27.9.2021 by uuk***
+***util.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -24,6 +24,8 @@ ___
             variable self.stream
 
         function read_bool(self)
+
+        function read_bool_group(self, count: int)
 
         function read_struct(self, structure: struct.Struct)
 
@@ -54,6 +56,8 @@ ___
         function get_data(self)
 
         function write_bool(self, state: bool)
+
+        function write_bool_group(self, bools: typing.List[bool])
 
         function write_struct(self, structure: struct.Struct, *data)
 

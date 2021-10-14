@@ -1,4 +1,4 @@
-***Walls.py - documentation - last updated on 23.8.2021 by uuk***
+***Walls.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -16,9 +16,11 @@ ___
         variable DEBUG_WORLD_BLOCK_STATES
             todo: up is not always allowed / depends on the configuration of the other stuff!
 
-        function __init__(self)
+        variable IS_SOLID
 
-            variable self.face_solid
+        variable DEFAULT_FACE_SOLID
+
+        function __init__(self)
 
             variable self.connections
 

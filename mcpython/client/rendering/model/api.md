@@ -1,4 +1,4 @@
-***api.py - documentation - last updated on 9.10.2021 by uuk***
+***api.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,9 +11,9 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class BlockStateNotNeeded extends Exception
+    @onlyInClient() class BlockStateNotNeeded extends Exception
 
-    class IBlockStateRenderingTarget
+    @onlyInClient() class IBlockStateRenderingTarget
 
         variable NAME
 
@@ -31,7 +31,7 @@ ___
                 self, index: int
                 ) -> typing.Tuple[float, float, float, float]:
 
-    class IBlockStateDecoder extends mcpython.common.event.api.IRegistryContent,  ABC
+    @onlyInClient() class IBlockStateDecoder extends mcpython.common.event.api.IRegistryContent,  ABC
         
         Abstract base class for block state decoders
         Identification of files to decode:
@@ -95,7 +95,7 @@ ___
                 instance: IBlockStateRenderingTarget,
                 ):
 
-    class IItemModelLoader
+    @onlyInClient() class IItemModelLoader
 
         static
         function validate(cls, data: dict) -> bool
@@ -103,6 +103,6 @@ ___
         static
         function decode(cls, data: dict, model)
 
-    class AbstractBoxModel extends ABC
+    @onlyInClient() class AbstractBoxModel extends ABC
 
         function copy(self) -> "AbstractBoxModel"

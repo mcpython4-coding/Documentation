@@ -1,4 +1,4 @@
-***UIPartTextInput.py - documentation - last updated on 19.9.2021 by uuk***
+***UIPartTextInput.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -17,7 +17,7 @@ ___
 
     variable INT_PATTERN_POSITIVE
 
-    @onlyInClient() class UIPartTextInput extends AbstractUIPart.AbstractUIPart
+    class UIPartTextInput extends AbstractUIPart.AbstractUIPart
 
         function __init__(
                 self,
@@ -63,7 +63,7 @@ ___
 
         function reset(self)
 
-    @onlyInClient() class TextInputTabHandler extends mcpython.common.state.AbstractStatePart.AbstractStatePart
+    class TextInputTabHandler extends mcpython.common.state.AbstractStatePart.AbstractStatePart
 
         function __init__(self, textinputs: list)
 

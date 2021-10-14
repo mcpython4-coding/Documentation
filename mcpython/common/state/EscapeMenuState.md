@@ -1,4 +1,4 @@
-***EscapeMenuState.py - documentation - last updated on 19.9.2021 by uuk***
+***EscapeMenuState.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,7 +11,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    @onlyInClient() class EscapeMenu extends AbstractState.AbstractState
+    class EscapeMenu extends AbstractState.AbstractState
 
         variable NAME
 
@@ -31,5 +31,4 @@ ___
 
     variable escape
 
-    @onlyInClient()
     function create()

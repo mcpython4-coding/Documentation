@@ -1,4 +1,4 @@
-***UIPartButton.py - documentation - last updated on 19.9.2021 by uuk***
+***UIPartButton.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -25,14 +25,13 @@ ___
 
         variable hovering
 
-    @onlyInClient()
     function draw_button(position, size, mode)
 
             variable i
 
                 variable ii
 
-    @onlyInClient() class UIPartButton extends AbstractUIPart.AbstractUIPart
+    class UIPartButton extends AbstractUIPart.AbstractUIPart
 
         function __init__(
                 self,
@@ -104,7 +103,7 @@ ___
 
             variable self.lable.font_size
 
-    @onlyInClient() class UIPartToggleButton extends UIPartButton
+    class UIPartToggleButton extends UIPartButton
 
         function __init__(
                 self,

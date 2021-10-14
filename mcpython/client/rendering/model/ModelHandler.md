@@ -1,4 +1,4 @@
-***ModelHandler.py - documentation - last updated on 9.10.2021 by uuk***
+***ModelHandler.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -104,8 +104,6 @@ ___
                 ) -> typing.Iterable:
 
             variable blockstate
-
-                variable vertex_list
 
                 variable vertex_list
 

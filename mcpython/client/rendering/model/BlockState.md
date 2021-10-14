@@ -1,4 +1,4 @@
-***BlockState.py - documentation - last updated on 9.10.2021 by uuk***
+***BlockState.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -13,7 +13,7 @@ ___
 
     variable blockstate_decoder_registry
 
-    @shared.registry class MultiPartDecoder extends IBlockStateDecoder
+    class MultiPartDecoder extends IBlockStateDecoder
         
         Decoder for mc multipart state files.
         WARNING: the following decoder has some extended features:
@@ -105,7 +105,7 @@ ___
 
                     variable data
 
-    @shared.registry class DefaultDecoder extends IBlockStateDecoder
+    class DefaultDecoder extends IBlockStateDecoder
         
         Decoder for mc block state files.
         WARNING: the following decoder has some extended features:

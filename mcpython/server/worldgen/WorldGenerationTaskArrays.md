@@ -1,4 +1,4 @@
-***WorldGenerationTaskArrays.py - documentation - last updated on 27.9.2021 by uuk***
+***WorldGenerationTaskArrays.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -19,10 +19,6 @@ ___
 
 
         function __init__(self)
-
-            variable self.chunks: typing.Set[mcpython.engine.world.AbstractInterface.IChunk]
-
-            variable self.data_maps - invoke, world_changes, shown_updates
 
         function get_total_task_stats(self) -> list
             

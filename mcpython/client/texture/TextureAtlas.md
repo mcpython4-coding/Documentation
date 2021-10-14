@@ -1,4 +1,4 @@
-***TextureAtlas.py - documentation - last updated on 23.8.2021 by uuk***
+***TextureAtlas.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,7 +11,9 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    variable MISSING_TEXTURE
+        variable MISSING_TEXTURE
+
+        variable MISSING_TEXTURE
 
     @onlyInClient() class TextureAtlasGenerator
         
@@ -22,23 +24,31 @@ ___
         function __init__(self)
 
         function add_image(
-                self, image: PIL.Image.Image, identifier: typing.Hashable
+                self,
+                image: PIL.Image.Image,
+                identifier: typing.Hashable = None,
                 ) -> typing.Tuple[typing.Tuple[int, int], "TextureAtlas"]:
             
             Adds a single pillow image to the underlying atlas system
+            identifier is a 'namespace' this texture should be stored in
 
 
             variable image
 
         function add_image_file(
-                self, file: str, identifier: str
+                self,
+                file: str,
+                identifier: typing.Hashable = None,
                 ) -> typing.Tuple[typing.Tuple[int, int], "TextureAtlas"]:
             
             Adds a single image by file name (loadable by resource system!)
 
 
         function add_images(
-                self, images: typing.List[PIL.Image.Image], identifier: str, single_atlas=True
+                self,
+                images: typing.List[PIL.Image.Image],
+                identifier: typing.Hashable = None,
+                single_atlas=True,
                 ) -> typing.List[typing.Tuple[typing.Tuple[int, int], "TextureAtlas"]]:
 
             variable images
@@ -48,7 +58,7 @@ ___
             variable atlas
 
         function add_image_files(
-                self, files: list, identifier: str, single_atlas=True
+                self, files: list, identifier: typing.Hashable = None, single_atlas=True
                 ) -> typing.List[typing.Tuple[typing.Tuple[int, int], "TextureAtlas"]]:
 
         function output(self)

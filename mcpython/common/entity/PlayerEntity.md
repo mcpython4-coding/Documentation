@@ -1,4 +1,4 @@
-***PlayerEntity.py - documentation - last updated on 9.10.2021 by uuk***
+***PlayerEntity.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -56,6 +56,14 @@ ___
             variable self.fallen_since_y: float
                 how far did we fall?
 
+            variable self.strafe
+                Strafing is moving lateral to the direction you are facing,
+                e.g. moving to the left or right while continuing to face forward.
+                
+                First element is -1 when moving forward, 1 when moving back, and 0
+                otherwise. The second element is -1 when moving left, 1 when moving
+                right, and 0 otherwise.
+
             variable self.active_inventory_slot: int
                 which slot is currently selected
 
@@ -77,7 +85,17 @@ ___
 
             variable self.is_in_init
 
+        function get_jump_speed(self)
+
         function get_collision_box(self)
+
+        function get_motion_vector(self) -> tuple
+            
+            Returns the current motion vector indicating the velocity of the
+            player.
+            :return: vector: Tuple containing the velocity in x, y, and z respectively.
+            todo: integrate into player movement
+
 
         function __repr__(self)
 

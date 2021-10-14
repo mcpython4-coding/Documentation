@@ -1,4 +1,4 @@
-***GameViewStatePart.py - documentation - last updated on 27.9.2021 by uuk***
+***GameViewStatePart.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -199,15 +199,15 @@ ___
 
         function on_key_press(self, symbol: int, modifiers: int)
 
-                variable shared.window.strafe[0]
+                variable player.strafe[0]
 
-                variable shared.window.strafe[0]
+                variable player.strafe[0]
 
-                variable shared.window.strafe[1]
+                variable player.strafe[1]
 
-                variable shared.window.strafe[1]
+                variable player.strafe[1]
 
-                    variable shared.world.get_active_player().flying
+                    variable player.flying
 
                     variable self.double_space_cooldown
 
@@ -217,14 +217,18 @@ ___
 
         function on_key_release(self, symbol: int, modifiers: int)
 
-                variable shared.window.strafe[0]
+            variable player
 
-                variable shared.window.strafe[0]
+                variable player.strafe[0]
 
-                variable shared.window.strafe[1]
+                variable player.strafe[0]
 
-                variable shared.window.strafe[1]
+                variable player.strafe[1]
+
+                variable player.strafe[1]
 
                 variable self.double_space_cooldown
 
         function on_mouse_scroll(self, x: int, y: int, scroll_x: int, scroll_y: int)
+
+                variable player.active_inventory_slot

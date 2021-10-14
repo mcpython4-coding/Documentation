@@ -1,4 +1,4 @@
-***ItemModel.py - documentation - last updated on 27.8.2021 by uuk***
+***ItemModel.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -19,6 +19,20 @@ ___
         static
         function decode(cls, data: dict, model: "ItemModel")
 
+                    variable e
+
+            variable textures
+
+                        variable model.texture_variables[name]
+
+                variable model.textures[e[0]]
+
+                variable model.texture_atlas
+
+                variable model.drawable
+
+                variable model.lighting
+
     class ItemModel
 
         variable LOADERS
@@ -31,7 +45,7 @@ ___
 
         function __init__(self, item: str)
 
-            variable self.item
+            variable self.name
 
             variable self.parents
 
@@ -43,9 +57,25 @@ ___
 
             variable self.overrides
 
+            variable self.texture_variables
+
+            variable self.textures
+
+            variable self.is_layered
+
+            variable self.drawable
+
+            variable self.texture_atlas
+
         function __repr__(self)
 
         function addParent(self, parent: str)
+
+        function add_box(self, box: BoxModel)
+
+        function get_texture_position(self, name: str)
+
+                variable n
 
         function addDisplayTransform(
                 self, name: str, rotation=(0, 0, 0), translation=(0, 0, 0), scale=(1, 1, 1)

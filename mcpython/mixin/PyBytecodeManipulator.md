@@ -1,4 +1,4 @@
-***PyBytecodeManipulator.py - documentation - last updated on 9.10.2021 by uuk***
+***PyBytecodeManipulator.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -95,3 +95,5 @@ ___
         function get_instruction_list(self) -> typing.List[dis.Instruction]
 
         function instructionList2Code(self, instruction_list: typing.List[dis.Instruction])
+
+        function ensure_name(self, name: str) -> int

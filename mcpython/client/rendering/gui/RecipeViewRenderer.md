@@ -1,4 +1,4 @@
-***RecipeViewRenderer.py - documentation - last updated on 9.2.2021 by uuk***
+***RecipeViewRenderer.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -14,6 +14,9 @@ ___
     class NotEnoughItemsException extends Exception
 
     class AbstractRecipeViewRenderer extends ABC
+        
+        Renderer system for displaying a recipe to the player in a JEI-like style
+
 
         function prepare_for_recipe(
                 self, recipe: mcpython.common.container.crafting.IRecipe.IRecipe

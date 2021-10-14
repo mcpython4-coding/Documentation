@@ -1,4 +1,4 @@
-***BlockModel.py - documentation - last updated on 9.10.2021 by uuk***
+***BlockModel.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -86,9 +86,10 @@ ___
                 # If this is true, we cannot render this model as stuff is not fully linked
                 if not self.drawable:
                 logger.println(
-                f"[BLOCK MODEL][FATAL] can't draw an model '{self.name}' which has not defined textures at {position}"
+                f"[BLOCK MODEL][FATAL] can't draw the model '{self.name}' "
+                f"(which has not defined textures) at {position}"
                 )
-                return ([], [], []), None
+                return ([], [], []) if previous is None else previous, None
                 
                 rotation = config["rotation"]
                 if rotation == (90, 90, 0):

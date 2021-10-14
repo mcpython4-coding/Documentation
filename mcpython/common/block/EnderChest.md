@@ -1,4 +1,4 @@
-***EnderChest.py - documentation - last updated on 9.10.2021 by uuk***
+***EnderChest.py - documentation - last updated on 14.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -32,9 +32,9 @@ ___
 
         variable ASSIGNED_TOOLS
 
-        variable CHEST_BLOCK_RENDERER
+            variable CHEST_BLOCK_RENDERER
 
-        function on_block_added(self)
+            function on_block_added(self)
 
         function on_player_interaction(
                 self, player, button: int, modifiers: int, hit_position: tuple
