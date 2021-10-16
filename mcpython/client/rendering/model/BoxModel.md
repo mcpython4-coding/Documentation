@@ -1,4 +1,4 @@
-***BoxModel.py - documentation - last updated on 14.10.2021 by uuk***
+***BoxModel.py - documentation - last updated on 16.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -348,7 +348,7 @@ ___
                 self,
                 batch: pyglet.graphics.Batch,
                 position: typing.Tuple[float, float, float],
-                face: typing.Union[typing.Iterable[int], EnumSide],
+                face: typing.Optional[typing.Union[typing.Iterable[int], EnumSide]],
                 rotation=(0, 0, 0),
                 rotation_center=(0, 0, 0),
                 ):
@@ -398,7 +398,7 @@ ___
                 self,
                 batch: pyglet.graphics.Batch,
                 position: typing.Tuple[float, float, float],
-                face: typing.Union[typing.Iterable[int], EnumSide],
+                face: typing.Optional[typing.Union[typing.Iterable[int], EnumSide]],
                 rotation=(0, 0, 0),
                 rotation_center=(0, 0, 0),
                 ):
@@ -415,7 +415,7 @@ ___
                 self,
                 previous: typing.List[pyglet.graphics.vertexdomain.VertexList],
                 position: typing.Tuple[float, float, float],
-                face: typing.Union[int, EnumSide],
+                face: typing.Optional[typing.Union[typing.Iterable[int], EnumSide]],
                 rotation=(0, 0, 0),
                 rotation_center=(0, 0, 0),
                 ):

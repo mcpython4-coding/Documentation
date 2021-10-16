@@ -1,4 +1,4 @@
-***Blocks.py - documentation - last updated on 25.4.2021 by uuk***
+***Blocks.py - documentation - last updated on 16.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,54 +11,45 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    function remove_if_downer_block_not_solid(instance)
-        
-        Helper function for downer implementation.
-        Will remove THIS block when the block below is air or an not-generated block
-        :param instance: the block-instance to check
+    Missing:
+    air
+    attached_melon_stem
+    attached_pumpkin_stem
 
 
-    function load_blocks()
+    variable DEFERRED_PIPE: DeferredRegistry
 
-    @shared.mod_loader("minecraft", "stage:combined_factory:blocks")
-    function combined_load()
+    function plant(name: str)
 
-    function load_misc(generator: DataGeneratorInstance)
+    function large_plant(name: str)
 
-        function set_purpur_block(_, factory)
+    function wood(name: str, normal=True)
 
-    function load_wood(generator: DataGeneratorInstance)
+    function stone_like(
+            name: str,
+            existing_full=True,
+            existing_slab=True,
+            existing_wall=True,
+            existing_stairs=True,
+            existing_fence=False,
+            existing_button=False,
+            existing_pressure_plate=False,
+            texture=None,
+            consumer=lambda _, __: None,
+            ):
 
-        function set_stem(_, factory)
+        variable fname
 
-        function set_leaves(_, factory)
+        variable instance
 
-    function load_value_ables(generator: DataGeneratorInstance)
+            variable obj
 
-        function set_material_block(_, factory)
+            variable obj
 
-    function load_stones(generator: DataGeneratorInstance)
+            variable obj
 
-        function set_basalt(_, factory)
+            variable obj
 
-        function set_bedrock(_, factory)
+            variable obj
 
-        function set_end_stone(_, factory)
-
-        function set_dirt(_, factory)
-
-        function set_obsidian(_, factory)
-
-        function set_fall_able(_, factory)
-
-    function load_colored(generator: DataGeneratorInstance)
-
-        function set_concrete_powder(_, factory)
-
-        function set_terracotta(_, factory)
-
-        function set_wool(_, factory)
-
-        function set_stained_glass(_, factory)
-
-        function set_brick(_, factory)
+    function colored(name: str)

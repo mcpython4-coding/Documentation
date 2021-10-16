@@ -1,4 +1,4 @@
-***BlockFactory.py - documentation - last updated on 14.10.2021 by uuk***
+***BlockFactory.py - documentation - last updated on 16.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -32,6 +32,8 @@ ___
     function set_horizontal_orientable(instance: FactoryBuilder.IFactory)
 
     function set_button(instance: FactoryBuilder.IFactory)
+
+    function set_flower_like(instance: FactoryBuilder.IFactory)
 
     function set_strength(
             instance: FactoryBuilder.IFactory, hardness: float, blast_resistance: float = None

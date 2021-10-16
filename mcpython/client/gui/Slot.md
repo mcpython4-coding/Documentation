@@ -44,7 +44,7 @@ ___
 
         function draw_label(self, x=None, y=None)
 
-        function can_set_item(
+        function is_item_allowed(
                 self, itemstack: mcpython.common.container.ResourceStack.ItemStack
                 ) -> bool:
 
@@ -198,7 +198,7 @@ ___
 
                 variable self.amount_label.y
 
-        function can_set_item(
+        function is_item_allowed(
                 self, itemstack: mcpython.common.container.ResourceStack.ItemStack
                 ) -> bool:
 
@@ -287,7 +287,7 @@ ___
 
         function draw_label(self, x=None, y=None)
 
-        function can_set_item(self, itemstack) -> bool
+        function is_item_allowed(self, itemstack) -> bool
 
         function save(self)
 
@@ -375,7 +375,7 @@ ___
 
         function __str__(self)
 
-        function can_set_item(
+        function is_item_allowed(
                 self, itemstack: mcpython.common.container.ResourceStack.ItemStack
                 ) -> bool:
 

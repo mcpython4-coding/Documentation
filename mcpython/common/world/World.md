@@ -1,4 +1,4 @@
-***World.py - documentation - last updated on 27.9.2021 by uuk***
+***World.py - documentation - last updated on 16.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -257,6 +257,10 @@ ___
 
             variable hide
                 show = after_set - before_set
+
+                variable c
+
+                variable c
 
                         variable chunk
 

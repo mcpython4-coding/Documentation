@@ -1,4 +1,4 @@
-***Chest.py - documentation - last updated on 14.10.2021 by uuk***
+***Chest.py - documentation - last updated on 16.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -95,3 +95,7 @@ ___
         function get_save_data(self)
 
         function load_data(self, data)
+
+    class TrappedChest extends Chest
+
+        variable NAME

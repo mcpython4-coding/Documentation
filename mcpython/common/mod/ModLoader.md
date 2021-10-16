@@ -1,4 +1,4 @@
-***ModLoader.py - documentation - last updated on 27.9.2021 by uuk***
+***ModLoader.py - documentation - last updated on 16.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -230,7 +230,7 @@ ___
 
                 variable self.current_container
 
-                variable self.current_container
+                    variable self.current_container
 
         function check_errors(self)
 

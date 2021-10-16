@@ -1,4 +1,4 @@
-***simple.py - documentation - last updated on 27.9.2021 by uuk***
+***simple.py - documentation - last updated on 16.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -42,6 +42,7 @@ ___
                 PIL.Image.Image,
                 ] = colorize_texture,
                 deferred_registry: DeferredRegistry = None,
+                block_phase="stage:block:factory_usage",
                 ):
 
             variable default_texture: str
@@ -62,6 +63,8 @@ ___
             variable self.color_texture_consumer
 
             variable self.deferred_registry
+
+            variable self.block_phase
 
         function create_colored_texture(
                 self, texture: typing.Union[PIL.Image.Image, str], color=None
@@ -125,7 +128,7 @@ ___
 
             variable model_name
 
-            @shared.mod_loader(mod_name, "stage:block:factory_usage")
+            @shared.mod_loader(mod_name, self.block_phase)
             function block_instance()
 
                 variable instance
@@ -196,7 +199,7 @@ ___
 
             variable model_name
 
-            @shared.mod_loader(mod_name, "stage:block:factory_usage")
+            @shared.mod_loader(mod_name, self.block_phase)
             function block_instance()
 
                 variable instance
@@ -214,6 +217,12 @@ ___
                         variable data
 
         function create_wall(self, suffix=None, texture=None, color=None, **consumers)
+
+            variable name
+
+            variable texture
+
+            variable wall_textures
 
         function create_fence(self, suffix=None, texture=None, color=None, **consumers)
 
@@ -235,7 +244,7 @@ ___
 
             variable model_name
 
-            @shared.mod_loader(mod_name, "stage:block:factory_usage")
+            @shared.mod_loader(mod_name, self.block_phase)
             function block_instance()
 
                 variable instance

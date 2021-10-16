@@ -1,4 +1,4 @@
-***WorldDataExchangePackage.py - documentation - last updated on 14.10.2021 by uuk***
+***WorldDataExchangePackage.py - documentation - last updated on 16.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -107,7 +107,7 @@ ___
 
             variable self.position
 
-                variable name
+                    variable name
 
                     variable instance
 

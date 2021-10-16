@@ -1,4 +1,4 @@
-***TextureAtlas.py - documentation - last updated on 14.10.2021 by uuk***
+***TextureAtlas.py - documentation - last updated on 16.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -51,7 +51,9 @@ ___
                 single_atlas=True,
                 ) -> typing.List[typing.Tuple[typing.Tuple[int, int], "TextureAtlas"]]:
 
-            variable images
+                    variable images[i]
+
+                    variable images[i]
 
             variable m_size
 
