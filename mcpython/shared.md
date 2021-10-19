@@ -1,4 +1,4 @@
-***shared.py - documentation - last updated on 14.10.2021 by uuk***
+***shared.py - documentation - last updated on 19.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -12,6 +12,8 @@ ___
 
 
     variable launch_wrapper
+
+    variable profiler
 
     variable invalidate_cache
 

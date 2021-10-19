@@ -1,4 +1,4 @@
-***World.py - documentation - last updated on 16.10.2021 by uuk***
+***World.py - documentation - last updated on 19.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -132,7 +132,7 @@ ___
             variable self.active_dimension
 
         function get_dimension(
-                self, dim_id: int
+                self, dim_id: typing.Union[int, str]
                 ) -> mcpython.engine.world.AbstractInterface.IDimension:
             
             will get an dimension with an special id
@@ -154,15 +154,16 @@ ___
                 typing.Tuple[None, None, None],
                 ]:
                 """
-                Line of sight search from current position. If a block is
-                intersected it is returned, along with the block previously in the line
-                of sight. If no block is found, return None, None, None
+                Line of sight search from current position.
+                If a block is intersected it is returned, along with the block previously in the line of sight.
+                If no block is found, return None, None, None
                 
-                Will check for bounding boxes of blocks
+                Will check for bounding boxes of blocks (get_view_bbox())
                 
                 :param position: The (x, y, z) position to check visibility from
-                :param vector: The line of sight vector
-                :param max_distance: How many blocks away to search for a hit
+                :param vector: The line of sight vector, as (dx, dy, dz)
+                :param max_distance: How many blocks away at max to search for a hit, will stop the ray after
+                the amount of blocks
                 
                 todo: cache the bbox of the block
                 todo: move to dimension
@@ -170,24 +171,26 @@ ___
                 todo: cache when possible
                 todo: add variant for entities
                 """
-                m = shared.world.gamerule_handler.table[
-                "hitTestSteps"
-                ].status.status  # get m from the gamerule
+                # get m from the gamerule
+                m = shared.world.gamerule_handler.table["hitTestSteps"].status.status
+                
                 x, y, z = position
                 dx, dy, dz = vector
                 dx /= m
                 dy /= m
                 dz /= m
                 previous = None
+                
                 for _ in range(max_distance * m):
             
-            Line of sight search from current position. If a block is
-            intersected it is returned, along with the block previously in the line
-            of sight. If no block is found, return None, None, None
-            Will check for bounding boxes of blocks
+            Line of sight search from current position.
+            If a block is intersected it is returned, along with the block previously in the line of sight.
+            If no block is found, return None, None, None
+            Will check for bounding boxes of blocks (get_view_bbox())
             :param position: The (x, y, z) position to check visibility from
-            :param vector: The line of sight vector
-            :param max_distance: How many blocks away to search for a hit
+            :param vector: The line of sight vector, as (dx, dy, dz)
+            :param max_distance: How many blocks away at max to search for a hit, will stop the ray after
+                the amount of blocks
             todo: cache the bbox of the block
             todo: move to dimension
             todo: add variant only taking the player
@@ -196,6 +199,7 @@ ___
 
 
             variable m
+                get m from the gamerule
 
             variable previous
 

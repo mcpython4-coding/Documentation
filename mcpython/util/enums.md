@@ -1,4 +1,4 @@
-***enums.py - documentation - last updated on 27.9.2021 by uuk***
+***enums.py - documentation - last updated on 19.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -39,7 +39,7 @@ ___
 
         function __init__(self, dx: int, dy: int, dz: int, normal_name: str, index: int)
             
-            Constructs an new enum instance
+            Constructs a new enum instance
             :param dx: the delta in x
             :param dy: the delta in y
             :param dz: the delta in z

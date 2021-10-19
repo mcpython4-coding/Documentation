@@ -1,4 +1,4 @@
-***FactoryBuilder.py - documentation - last updated on 16.9.2021 by uuk***
+***FactoryBuilder.py - documentation - last updated on 19.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -237,3 +237,5 @@ ___
                 variable self.config_access_table[
 
         function register_direct_copy_attributes(self, *attributes, operation=copy.deepcopy)
+
+    function create_operation(operation, default)

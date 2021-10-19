@@ -1,4 +1,4 @@
-***Barrel.py - documentation - last updated on 16.9.2021 by uuk***
+***Barrel.py - documentation - last updated on 19.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -50,6 +50,8 @@ ___
         function get_provided_slot_lists(self, side)
 
         function set_model_state(self, state: dict)
+
+                variable self.opened
 
         function get_model_state(self) -> dict
 

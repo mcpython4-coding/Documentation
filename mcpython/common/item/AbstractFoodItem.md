@@ -1,4 +1,4 @@
-***AbstractFoodItem.py - documentation - last updated on 9.2.2021 by uuk***
+***AbstractFoodItem.py - documentation - last updated on 19.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -15,9 +15,10 @@ ___
 
         variable HUNGER_ADDITION
 
-        function on_eat(self)
+        function on_eat(self, itemstack)
             
-            called when the player eats the item
+            Called when the player eats the item
+            :param itemstack: the itemstack to eat from
             :return: if the item was eaten or not
 
 

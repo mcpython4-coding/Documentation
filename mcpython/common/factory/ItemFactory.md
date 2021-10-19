@@ -1,4 +1,4 @@
-***ItemFactory.py - documentation - last updated on 2.5.2021 by uuk***
+***ItemFactory.py - documentation - last updated on 19.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -62,7 +62,7 @@ ___
 
             function get_tooltip_provider(self)
 
-                function on_eat(self)
+                function on_eat(self, itemstack)
 
                 variable DURABILITY
 

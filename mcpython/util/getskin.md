@@ -1,4 +1,4 @@
-***getskin.py - documentation - last updated on 16.9.2021 by uuk***
+***getskin.py - documentation - last updated on 19.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -27,7 +27,7 @@ ___
 
     function download_skin(username: str, store: str)
         
-        will download skin data for an user name
+        Will download skin data for a username
         :param username: the user to download for
         :param store: where to store the data
         :raises ValueError: raised when an error occurred during retrieving the data

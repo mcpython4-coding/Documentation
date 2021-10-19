@@ -1,4 +1,4 @@
-***WorldDataExchangePackage.py - documentation - last updated on 16.10.2021 by uuk***
+***WorldDataExchangePackage.py - documentation - last updated on 19.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -91,9 +91,11 @@ ___
 
             variable self.position
 
+            variable self.force
+
             variable self.blocks
 
-        function setup(self, dim: str, position: typing.Tuple[int, int])
+        function setup(self, dim: str, position: typing.Tuple[int, int], force=False)
 
             variable chunk
 
@@ -107,6 +109,8 @@ ___
 
             variable self.position
 
+            variable self.force
+
                     variable name
 
                     variable instance
@@ -119,6 +123,42 @@ ___
 
             variable chunk.loaded
 
-    class ChunkUpdatePackage extends AbstractPackage
+    class ChunkBlockChangePackage extends AbstractPackage
 
         variable PACKAGE_NAME
+
+        function __init__(self)
+
+            variable self.dimension
+
+            variable self.data
+
+        function set_dimension(self, dimension: str)
+
+        function change_position(
+                self, position: typing.Tuple[int, int, int], block, update_only=False
+                ):
+            
+            Updates the block data at a given position
+            :param position: the position
+            :param block: the block instance
+            :param update_only: if to only update the block, not add a new one
+
+
+        function write_to_network_buffer(self, buffer: WriteBuffer)
+
+            function write(e)
+
+        function read_from_network_buffer(self, buffer: ReadBuffer)
+
+            variable dimension
+
+            function read()
+
+                    variable name
+
+                        variable b
+
+                        variable instance
+
+        function handle_inner(self)

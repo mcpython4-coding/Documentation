@@ -1,4 +1,4 @@
-***HandShakePackage.py - documentation - last updated on 19.9.2021 by uuk***
+***HandShakePackage.py - documentation - last updated on 19.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -59,6 +59,8 @@ ___
         function setup_deny(self, reason: str)
 
         function setup_accept(self)
+
+            variable self.mod_list
 
         function read_from_buffer(self, buffer: ReadBuffer)
 

@@ -1,4 +1,4 @@
-***GameViewStatePart.py - documentation - last updated on 14.10.2021 by uuk***
+***GameViewStatePart.py - documentation - last updated on 19.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -106,35 +106,55 @@ ___
 
         function on_left_click_interaction_update(self, dt: float)
 
-            variable player
-
-            variable selected_itemstack: mcpython.common.container.ResourceStack.ItemStack
+                variable player
 
                 variable vector
 
-                    variable block
-
                     variable chunk
+
+                        variable selected_itemstack: mcpython.common.container.ResourceStack.ItemStack
+
+                        variable block
 
                                 variable items
 
         function on_right_click_interaction_update(self, dt: float)
 
+            variable player
+
+            variable slot
+
+            variable active_itemstack
+
+                    variable food
+
+                        variable self.set_cooldown
+
                 variable vector
 
-                        variable slot
+                        variable py
 
-                            variable py
-
-                                variable chunk
-
-                                    variable self.mouse_press_time
-
-                                variable instance
+                            variable chunk
 
                                 variable self.mouse_press_time
 
+                            variable instance
+
+                            variable self.mouse_press_time
+
         function on_middle_click_interaction_update(self, dt: float)
+
+                    variable chunk
+
+                    variable self.mouse_press_time
+
+                    variable block
+
+                    variable itemstack
+
+                    variable block
+
+                    variable selected_slot
 
                         variable slots
 

@@ -1,4 +1,4 @@
-***window.py - documentation - last updated on 14.10.2021 by uuk***
+***window.py - documentation - last updated on 19.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -185,6 +185,12 @@ ___
             :param symbol: Number representing the key that was pressed.
             :param modifiers: Number representing any modifying keys that were pressed.
 
+
+                    variable shared.profiler
+
+                    variable shared.profiler
+                        os.makedirs(shared.build+"/profiles", exist_ok=True)
+                        shared.profiler.dump_stats(shared.build+"/profiles/"+str(time.time())+".txt")
 
         function on_key_release(self, symbol, modifiers)
             

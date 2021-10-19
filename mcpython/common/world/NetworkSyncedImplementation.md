@@ -1,4 +1,4 @@
-***NetworkSyncedImplementation.py - documentation - last updated on 16.9.2021 by uuk***
+***NetworkSyncedImplementation.py - documentation - last updated on 19.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -25,3 +25,14 @@ ___
                 ) -> typing.Optional["NetworkSyncedChunk"]:
 
     class NetworkSyncedChunk extends Chunk
+
+        function add_block(
+                self,
+                *args,
+                network_sync=True,
+                **kwargs,
+                ):
+
+            variable b
+
+        function remove_block(self, *args, network_sync=True, **kwargs)

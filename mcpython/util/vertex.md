@@ -1,4 +1,4 @@
-***vertex.py - documentation - last updated on 23.8.2021 by uuk***
+***vertex.py - documentation - last updated on 19.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -56,7 +56,13 @@ ___
             variable key
                 This key defines the VertexProvider instance, so look up this key in the cache
 
-        function __init__(self, offset, size, base_rotation_center, base_rotation)
+        function __init__(
+                self,
+                offset: typing.Tuple[float, float, float],
+                size: typing.Tuple[float, float, float],
+                base_rotation_center: typing.Tuple[float, float, float],
+                base_rotation: typing.Tuple[float, float, float],
+                ):
 
             variable self.offset
 

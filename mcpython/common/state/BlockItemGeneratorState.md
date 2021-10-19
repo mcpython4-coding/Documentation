@@ -1,4 +1,4 @@
-***BlockItemGeneratorState.py - documentation - last updated on 14.10.2021 by uuk***
+***BlockItemGeneratorState.py - documentation - last updated on 19.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -51,6 +51,8 @@ ___
 
         function on_resize(self, w, h)
 
+        function tick(self, _)
+
         function activate(self)
 
             variable world
@@ -65,12 +67,12 @@ ___
                 todo: add command line option to disable
 
             variable self.status_bar.progress_max
-                Update the progress bar progress
+                Update the progress bar
 
             variable self.status_bar.progress
 
             variable player
-                Setup the player view, todo: make configurable by block
+                Setup the player view, todo: make configurable by block model / state
 
             variable player.position
 

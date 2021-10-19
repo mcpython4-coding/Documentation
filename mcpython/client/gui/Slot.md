@@ -1,4 +1,4 @@
-***Slot.py - documentation - last updated on 16.9.2021 by uuk***
+***Slot.py - documentation - last updated on 19.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -202,13 +202,13 @@ ___
                 self, itemstack: mcpython.common.container.ResourceStack.ItemStack
                 ) -> bool:
 
-            variable flag1
+            variable any_tag_set
 
-            variable flag2
+            variable has_correct_tag
 
-            variable flag3
+            variable has_allowed_func
 
-            variable flag4
+            variable check_allowed_func
 
         function save(self)
 

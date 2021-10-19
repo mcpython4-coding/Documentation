@@ -1,4 +1,4 @@
-***Dimension.py - documentation - last updated on 27.9.2021 by uuk***
+***Dimension.py - documentation - last updated on 19.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -188,12 +188,18 @@ ___
                 lazy_setup: typing.Callable = None,
                 check_build_range=True,
                 block_state=None,
+                network_sync=True,
                 ):
 
             variable chunk
 
         function remove_block(
-                self, position: tuple, immediate=True, block_update=True, block_update_self=True
+                self,
+                position: tuple,
+                immediate=True,
+                block_update=True,
+                block_update_self=True,
+                network_sync=True,
                 ):
 
             variable chunk

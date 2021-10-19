@@ -1,4 +1,4 @@
-***ContainerRenderingManager.py - documentation - last updated on 16.9.2021 by uuk***
+***ContainerRenderingManager.py - documentation - last updated on 19.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -13,9 +13,8 @@ ___
 
     class OpenedInventoryStatePart extends  mcpython.common.state.AbstractStatePart.AbstractStatePart 
         
-        class for inventories as state
-        todo: make A LOT OF THINGS public and static
-        todo: move inventory interaction handling to separated class
+        Class for inventories as state
+        todo: more control to the inventories themselves
 
 
         function __init__(self)
@@ -24,17 +23,18 @@ ___
 
             variable self.slot_list
 
-            variable self.moving_itemstack
+            variable self.moving_itemstack: typing.Optional[ItemStack]
 
-            variable self.mode - possible: 0 - None, 1: equal on all slots, 2: on every slot one more, 3: fill up slots
+            variable self.mode
+                The mode for dragging; Possible: 0 - None, 1: equal on all slots, 2: on every slot one more, 3: fill up slots
 
-            variable self.original_amount
+            variable self.original_amount: typing.List[int]
 
             variable self.tool_tip_renderer
 
         function bind_to_eventbus(self)
 
-        function on_key_press(self, symbol, modifiers)
+        function on_key_press(self, symbol: int, modifiers: int)
 
         function on_draw_2d(self)
 
@@ -49,7 +49,9 @@ ___
             todo: move to InventoryHandler
 
 
-        function _get_slot_inventory_for(self, x, y)
+        function _get_slot_inventory_for(
+                self, x: int, y: int
+                ) -> typing.Union[mcpython.client.gui.Slot.Slot, typing.Any]:
             
             Gets inventory of the slot for the position
             :param x: the x position
@@ -58,7 +60,7 @@ ___
             todo: move to InventoryHandler
 
 
-        function on_mouse_press(self, x, y, button, modifiers)
+        function on_mouse_press(self, x: int, y: int, button: int, modifiers: int)
 
             variable self.moving_itemstack
 
@@ -66,23 +68,49 @@ ___
 
             variable slot: mcpython.client.gui.Slot.Slot
 
-        function handle_shift_click(self, button, modifiers, slot, x, y)
+        function handle_shift_click(self, button: int, modifiers: int, slot, x: int, y: int)
 
-        function handle_middle_click(self, button, modifiers, moving_itemstack, slot, x, y)
+        function handle_middle_click(
+                self,
+                button: int,
+                modifiers: int,
+                moving_itemstack: ItemStack,
+                slot,
+                x: int,
+                y: int,
+                ):
 
-        function handle_right_click(self, button, modifiers, moving_itemstack, slot, x, y)
+                variable self.mode
+
+        function handle_right_click(
+                self,
+                button: int,
+                modifiers: int,
+                moving_itemstack: ItemStack,
+                slot,
+                x: int,
+                y: int,
+                ):
 
                 variable amount
 
                 variable self.mode
 
-        function handle_left_click(self, button, modifiers, moving_itemstack, slot, x, y)
-
-                variable target
+        function handle_left_click(
+                self,
+                button: int,
+                modifiers: int,
+                moving_itemstack: ItemStack,
+                slot,
+                x: int,
+                y: int,
+                ):
 
                 variable self.mode
 
-        function on_mouse_release(self, x, y, button, modifiers)
+                variable stack_a
+
+        function on_mouse_release(self, x: int, y: int, button: int, modifiers: int)
 
                 variable self.moving_itemstack
 
@@ -118,16 +146,19 @@ ___
 
                 variable overhead
 
-        function on_mouse_scroll(self, x, y, dx, dy)
+        function on_mouse_scroll(self, x: int, y: int, dx: int, dy: int)
+
+            variable slot
 
     variable inventory_part
 
     class InventoryHandler
         
-        main class for registration of inventories
+        Main class for registration of inventories
         Will handle every inventory created at any time. Will keep track of which inventories are open and to send the
             events to their event bus.
         Please do not mess around with the internal lists as they are representing the state of the inventory system.
+        As such, this stuff is not API and may change at any point
 
 
         function __init__(self)
@@ -136,7 +167,7 @@ ___
 
             variable self.always_open_containers
 
-            variable self.containers
+            variable self.containers - todo: can we make this weak?
 
             variable self.moving_slot: mcpython.client.gui.Slot.Slot
 
@@ -146,7 +177,7 @@ ___
 
         function add(self, inventory)
             
-            Adds a new inventory to the intenal handling system
+            Adds a new inventory to the internal handling system
             :param inventory: the inventory to add
 
 
@@ -158,10 +189,11 @@ ___
             :param inventory: the inventory to show
 
 
-        function hide(self, inventory)
+        function hide(self, inventory, force=False)
             
-            Hides a inventory
+            Hides an inventory
             :param inventory: the inventory to hide
+            :param force: if force hide, skipping flag check for always active
 
 
         function remove_one_from_stack(self, is_escape=True)
@@ -174,7 +206,7 @@ ___
 
         function close_all_inventories(self)
             
-            close all inventories
+            Close all inventories currently open, excluding inventories marked for always being open
 
 
     variable shared.inventory_handler

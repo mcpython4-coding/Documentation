@@ -1,4 +1,4 @@
-***AbstractBlock.py - documentation - last updated on 14.10.2021 by uuk***
+***AbstractBlock.py - documentation - last updated on 19.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -75,7 +75,8 @@ ___
 
         variable MINIMUM_TOOL_LEVEL: int
 
-        variable ASSIGNED_TOOLS - the tools best to break
+        variable ASSIGNED_TOOLS: typing.Set[mcpython.util.enums.ToolType]
+            the tools best to break
 
         variable IS_SOLID: typing.Optional[bool]
             If the block is solid; None is unset and set by system by checking face_solid on a default block instance
@@ -147,6 +148,8 @@ ___
         function write_to_network_buffer(self, buffer: WriteBuffer)
 
         function read_from_network_buffer(self, buffer: ReadBuffer)
+
+        function schedule_network_update(self)
 
         function set_creation_properties(
                 self, set_to=None, real_hit=None, player=None, state=None

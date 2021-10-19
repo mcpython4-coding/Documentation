@@ -1,4 +1,4 @@
-***RegistrySyncPackage.py - documentation - last updated on 16.9.2021 by uuk***
+***RegistrySyncPackage.py - documentation - last updated on 19.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -12,6 +12,10 @@ ___
 
 
     class RegistrySyncInitPackage extends AbstractPackage
+        
+        Sync init package send during the Server2ClientHandshake-handle
+        Send client -> server
+
 
         variable PACKAGE_NAME
 
@@ -32,6 +36,10 @@ ___
                 variable package
 
     class RegistrySyncPackage extends AbstractPackage
+        
+        Package send server -> client as a response on the RegistrySyncInitPackage
+        Send for each requested registry
+
 
         variable PACKAGE_NAME
 
@@ -69,8 +77,8 @@ ___
 
         function handle_inner(self)
 
-                    function handle(*_)
+                        function handle(*_)
 
-                    variable package
+                        variable package
 
             variable shared.NETWORK_MANAGER.client_profiles[self.sender_id]["registry_sync"][

@@ -1,4 +1,4 @@
-***Blocks.py - documentation - last updated on 16.10.2021 by uuk***
+***Blocks.py - documentation - last updated on 19.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -9,12 +9,6 @@ ___
     (https://account.mojang.com/documents/minecraft_eula)
     Mod loader inspired by "Minecraft Forge" (https://github.com/MinecraftForge/MinecraftForge) and similar
     This project is not official by mojang and does not relate to it.
-
-
-    Missing:
-    air
-    attached_melon_stem
-    attached_pumpkin_stem
 
 
     variable DEFERRED_PIPE: DeferredRegistry

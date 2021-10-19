@@ -1,4 +1,4 @@
-***picklemagic.py - documentation - last updated on 16.9.2021 by uuk***
+***picklemagic.py - documentation - last updated on 19.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -10,10 +10,6 @@ ___
     Mod loader inspired by "Minecraft Forge" (https://github.com/MinecraftForge/MinecraftForge) and similar
     This project is not official by mojang and does not relate to it.
 
-
-    variable PY3
-
-    variable PY2
 
     variable __all__
 
@@ -221,7 +217,7 @@ ___
         unpickling process completely. It inherits from :exc:`pickle.UnpicklingError`.
 
 
-    class FakeUnpickler extends pickle.Unpickler if PY2 else pickle._Unpickler
+    class FakeUnpickler extends pickle._Unpickler
         
         A forgiving unpickler. On uncountering references to class definitions
         in the pickle stream which it cannot locate, it will create fake classes
@@ -240,11 +236,9 @@ ___
         ``pickle._Unpickler``)
 
 
-            function __init__(self, file, class_factory=None, encoding="bytes", errors="strict")
+        function __init__(self, file, class_factory=None, encoding="bytes", errors="strict")
 
-            function __init__(self, file, class_factory=None, encoding="bytes", errors="strict")
-
-                variable self.class_factory
+            variable self.class_factory
 
         function find_class(self, module, name)
 
@@ -300,7 +294,7 @@ ___
 
         function get_extension(self, code)
 
-    class SafePickler extends pickle.Pickler if PY2 else pickle._Pickler
+    class SafePickler extends pickle._Pickler
         
         A pickler which can repickle object hierarchies containing objects created by SafeUnpickler.
         Due to reasons unknown, pythons pickle implementation will normally check if a given class

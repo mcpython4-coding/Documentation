@@ -1,4 +1,4 @@
-***Chunk.py - documentation - last updated on 27.9.2021 by uuk***
+***Chunk.py - documentation - last updated on 19.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -157,6 +157,7 @@ ___
                 check_build_range=True,
                 block_state=None,
                 replace_existing=True,
+                network_sync=True,
                 ):
             
             Adds a block to the given position
@@ -169,6 +170,7 @@ ___
             :param check_build_range: if the build limits should be checked
             :param block_state: the block state to create in, or None if not set
             :param replace_existing: if existing blocks should be replaced
+            :param network_sync: do network sync or not
             :return: the block instance or None if it could not be created
 
 
@@ -209,6 +211,7 @@ ___
                 immediate: bool = True,
                 block_update: bool = True,
                 block_update_self: bool = True,
+                network_sync=True,
                 reason=Block.BlockRemovalReason.UNKNOWN,
                 ):
             
@@ -218,6 +221,7 @@ ___
             :param block_update: Whether an block-update should be called or not
             :param block_update_self: Whether the block to remove should get an block-update or not
             :param reason: the reason why the block was removed
+            :param network_sync: if to send an update over the network or not
             todo: remove from scheduled world generation if needed
 
 
