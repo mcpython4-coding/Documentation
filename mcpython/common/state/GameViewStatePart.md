@@ -1,4 +1,4 @@
-***GameViewStatePart.py - documentation - last updated on 19.10.2021 by uuk***
+***GameViewStatePart.py - documentation - last updated on 30.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -183,6 +183,12 @@ ___
 
         function calculate_player_hearts(self, dt, player)
 
+                variable self.hunger_heart_cooldown
+
+            variable ny
+
+            variable block
+
         function update_player_chunks(self, before, player)
 
         function calculate_motion(self, dt: float, player) -> typing.Tuple[float, float, float]
@@ -216,6 +222,18 @@ ___
                 variable shared.window.mouse_pressing[button]
 
         function on_mouse_motion(self, x: int, y: int, dx: int, dy: int)
+
+                variable m
+
+                variable y
+
+                variable shared.world.get_active_player().rotation
+
+                variable vector
+
+                variable new_block
+
+                    variable self.mouse_press_time
 
         function on_key_press(self, symbol: int, modifiers: int)
 

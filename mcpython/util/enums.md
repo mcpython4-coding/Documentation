@@ -1,4 +1,4 @@
-***enums.py - documentation - last updated on 19.10.2021 by uuk***
+***enums.py - documentation - last updated on 30.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -99,9 +99,13 @@ ___
 
         variable SHEAR
 
-        variable SWORD - not real an tool, but internally handled as one of it
+        variable SWORD - not real a tool, but internally handled as one of it
 
-        variable HOE - not real an tool, but internally handled as one of it
+        variable HOE - not real a tool, but internally handled as one of it
+
+        function __hash__(self)
+
+        function __eq__(self, other)
 
     class SlabModes extends enum.Enum
 

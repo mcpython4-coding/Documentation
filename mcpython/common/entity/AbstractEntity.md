@@ -1,4 +1,4 @@
-***AbstractEntity.py - documentation - last updated on 9.10.2021 by uuk***
+***AbstractEntity.py - documentation - last updated on 30.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -125,10 +125,10 @@ ___
 
         function teleport(self, position, dimension=None, force_chunk_save_update=False)
             
-            called when the entity should be teleported
+            Called when the entity should be teleported
             :param position: the position to teleport to
             :param dimension: to which dimension-id to teleport to, if None, no dimension change is used
-            :param force_chunk_save_update: if the system should force to update were player data is stored
+            :param force_chunk_save_update: if the system should force updating were player data is stored
 
 
                 variable dimension_id

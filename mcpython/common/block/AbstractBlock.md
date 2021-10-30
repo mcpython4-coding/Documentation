@@ -1,4 +1,4 @@
-***AbstractBlock.py - documentation - last updated on 19.10.2021 by uuk***
+***AbstractBlock.py - documentation - last updated on 30.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -57,6 +57,8 @@ ___
             Internal registry type name & capability buffer name; DO NOT CHANGE
 
         variable TYPE: str
+
+        variable NETWORK_BUFFER_SERIALIZER_VERSION
 
         variable CUSTOM_WALING_SPEED_MULTIPLIER: typing.Optional[float]
             Used when the player walks in a different speed when on this block
@@ -147,7 +149,19 @@ ___
 
         function write_to_network_buffer(self, buffer: WriteBuffer)
 
+            variable state: dict
+
         function read_from_network_buffer(self, buffer: ReadBuffer)
+
+                    variable fixer
+
+                    variable write
+
+                    variable buffer
+
+                    variable version
+
+            variable state
 
         function schedule_network_update(self)
 
@@ -203,7 +217,12 @@ ___
 
 
         function on_player_interaction(
-                self, player, button: int, modifiers: int, hit_position: tuple
+                self,
+                player,
+                button: int,
+                modifiers: int,
+                hit_position: tuple,
+                itemstack,
                 ):
             
             Called when the player pressed on mouse button on the block.
@@ -211,6 +230,7 @@ ___
             :param button: the button pressed
             :param modifiers: the modifiers hold during press
             :param hit_position: where the block was hit at
+            :param itemstack: the itemstack hit with
             :return: if default logic should be interrupted or not
 
 
@@ -220,35 +240,6 @@ ___
             :param entity: the entity entering the block
             :param previous: if the player was in the block before
 
-
-        function get_save_data(self)
-            
-            Helper function for saving pickle-able data on block save
-
-
-        function dump_data(self)
-            
-            API function for chunk serialization
-            :return: bytes representing the whole block, not including inventories
-
-
-        function load_data(self, data: typing.Optional)
-            
-            Loads block data
-            :param data:  the data saved by get_save_data()
-            WARNING: if not providing DataFixers for old mod versions, these data may get very old and lead into errors!
-            todo: add an saver way of doing this!
-
-
-        function inject(self, data)
-            
-            Loads block data from bytes
-            :param data:  the data saved by dump_data()
-            WARNING: if not providing DataFixers for old mod versions, these data may get very old and lead into errors!
-            todo: way to disable the pickle load as it is unsafe
-
-
-                variable data
 
         function get_item_saved_state(self) -> typing.Any
             

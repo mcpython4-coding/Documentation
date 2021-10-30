@@ -1,4 +1,4 @@
-***Slot.py - documentation - last updated on 19.10.2021 by uuk***
+***Slot.py - documentation - last updated on 30.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -211,6 +211,8 @@ ___
             variable check_allowed_func
 
         function save(self)
+
+                variable d["data"]
 
         function load(self, data)
 

@@ -1,4 +1,4 @@
-***AbstractFluidContainer.py - documentation - last updated on 23.8.2021 by uuk***
+***AbstractFluidContainer.py - documentation - last updated on 30.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -18,8 +18,8 @@ ___
 
         static
         function get_underlying_fluid_stacks(
-                cls, itemstack: mcpython.common.container.ResourceStack.ItemStack
-                ) -> typing.Iterable[mcpython.common.container.ResourceStack.FluidStack]:
+                cls, itemstack: ItemStack
+                ) -> typing.Iterable[FluidStack]:
             
             Informal method for getting the fluids in the container [All of them]
 
@@ -27,8 +27,8 @@ ___
         static
         function could_accept(
                 cls,
-                itemstack: mcpython.common.container.ResourceStack.ItemStack,
-                fluidstack: mcpython.common.container.ResourceStack.FluidStack,
+                itemstack: ItemStack,
+                fluidstack: FluidStack,
                 ) -> bool:
             
             Checks if the container could in theory accept the fluid given.
@@ -38,8 +38,8 @@ ___
         static
         function accept(
                 cls,
-                itemstack: mcpython.common.container.ResourceStack.ItemStack,
-                fluidstack: mcpython.common.container.ResourceStack.FluidStack,
+                itemstack: ItemStack,
+                fluidstack: FluidStack,
                 insert_parts=True,
                 ) -> bool:
             
@@ -50,8 +50,8 @@ ___
         static
         function can_provide(
                 cls,
-                itemstack: mcpython.common.container.ResourceStack.ItemStack,
-                fluidstack: mcpython.common.container.ResourceStack.FluidStack,
+                itemstack: ItemStack,
+                fluidstack: FluidStack,
                 ) -> bool:
             
             Checks if the given fluid container can provide the given fluid with the given amount
@@ -60,8 +60,8 @@ ___
         static
         function provide(
                 cls,
-                itemstack: mcpython.common.container.ResourceStack.ItemStack,
-                fluidstack: mcpython.common.container.ResourceStack.FluidStack,
+                itemstack: ItemStack,
+                fluidstack: FluidStack,
                 extract_parts=True,
                 ) -> bool:
             

@@ -1,4 +1,4 @@
-***BlockModel.py - documentation - last updated on 14.10.2021 by uuk***
+***BlockModel.py - documentation - last updated on 30.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -16,11 +16,11 @@ ___
         Class representing a (block) model from the file system
 
 
-        function __init__(self, data: dict, name: str, modname: str)
-
-            variable self.data
+        function __init__(self, name: str, modname: str)
 
             variable self.name
+
+            variable self.modname
 
             variable self.parent
 
@@ -31,6 +31,12 @@ ___
             variable self.texture_names
 
             variable self.drawable
+
+            variable self.texture_atlas
+
+            variable self.box_models
+
+        function parse_from_data(self, data: dict)
 
                     variable self.parent
 
@@ -52,8 +58,6 @@ ___
                 inform the texture bake system about our new textures we want to be in there
 
             variable add
-
-            variable self.texture_atlas
 
                 variable self.texture_addresses[name]
 

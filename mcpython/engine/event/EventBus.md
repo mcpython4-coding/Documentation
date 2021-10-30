@@ -1,4 +1,4 @@
-***EventBus.py - documentation - last updated on 23.8.2021 by uuk***
+***EventBus.py - documentation - last updated on 30.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -37,7 +37,7 @@ ___
             variable crash_on_error: bool
             
             Creates a new EventBus instance
-            :param crash_on_error: if an crash should be triggered on an exception of an func
+            :param crash_on_error: if an crash should be triggered on an exception of a function
 
 
             variable self.id
@@ -58,8 +58,8 @@ ___
             
             Adds a function to the event bus by event name. Dynamically creates underlying data structure for new
             event names
-            :param event_name: the event to listen to on this bis
-            :param function: the function that should be called when event is send
+            :param event_name: the event to listen to on this bus
+            :param function: the function that should be called when event is sent
             :param args: the args to give
             :param kwargs: the kwargs to give
             :param info: an info to give for the caller

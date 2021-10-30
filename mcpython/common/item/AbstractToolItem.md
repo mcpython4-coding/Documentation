@@ -1,4 +1,4 @@
-***AbstractToolItem.py - documentation - last updated on 9.2.2021 by uuk***
+***AbstractToolItem.py - documentation - last updated on 30.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -43,3 +43,5 @@ ___
         function get_data(self)
 
         function set_data(self, data)
+
+        function add_damage(self, damage: int) -> bool

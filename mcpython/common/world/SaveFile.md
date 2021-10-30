@@ -1,4 +1,4 @@
-***SaveFile.py - documentation - last updated on 22.5.2021 by uuk***
+***SaveFile.py - documentation - last updated on 30.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -44,10 +44,12 @@ ___
     - 7: introduced: 12.12.2020, outdated since: 21.05.2021, not loadable since: 21.05.2021
         - major code refactoring breaking nearly everything
         - player data reformat
-    - 10: introduced: 21.05.2021, outdated since: -, not loadable since: -
+    - 10: introduced: 21.05.2021, outdated since: 26.10.2021, not loadable since: 26.10.2021
         - improved block palette
         - improved entity storage
         - removed some sanity checks for backwards compatibility
+    - 11: introduced: 26.10.2021, outdated since: -, not loadable since: -
+        - chunk block data is now serialized via the network API, not the old storage API
 
 
     variable shared.STORAGE_VERSION

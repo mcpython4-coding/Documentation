@@ -1,4 +1,4 @@
-***GameViewRenderer.py - documentation - last updated on 19.9.2021 by uuk***
+***GameViewRenderer.py - documentation - last updated on 30.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -20,3 +20,6 @@ ___
         function draw(self)
 
         function draw_3d(self)
+
+                    variable block
+                        todo: move this method to player

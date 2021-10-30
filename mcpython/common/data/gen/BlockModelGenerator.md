@@ -1,4 +1,4 @@
-***BlockModelGenerator.py - documentation - last updated on 9.2.2021 by uuk***
+***BlockModelGenerator.py - documentation - last updated on 30.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -216,7 +216,7 @@ ___
 
     class BlockModel extends IDataGenerator
         
-        Generator for an block model
+        Generator for a block model
 
 
         function __init__(

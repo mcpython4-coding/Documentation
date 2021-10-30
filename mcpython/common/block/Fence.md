@@ -1,4 +1,4 @@
-***Fence.py - documentation - last updated on 14.10.2021 by uuk***
+***Fence.py - documentation - last updated on 30.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -24,6 +24,10 @@ ___
 
         variable DEBUG_WORLD_BLOCK_STATES
             the debug world states, constructed by a builder, using all possible combinations
+
+        variable HARDNESS
+
+        variable BLAST_RESISTANCE
 
         variable IS_SOLID
 

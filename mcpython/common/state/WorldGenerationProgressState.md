@@ -1,4 +1,4 @@
-***WorldGenerationProgressState.py - documentation - last updated on 14.10.2021 by uuk***
+***WorldGenerationProgressState.py - documentation - last updated on 30.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -31,6 +31,8 @@ ___
 
         function on_update(self, dt)
 
+            variable overworld
+
                 variable c
 
                     variable self.status_table[chunk]
@@ -58,6 +60,8 @@ ___
             variable shared.world.config["seed"]
 
         function finish(self)
+
+            variable overworld
 
                 variable chunk
 

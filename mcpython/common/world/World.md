@@ -1,4 +1,4 @@
-***World.py - documentation - last updated on 19.10.2021 by uuk***
+***World.py - documentation - last updated on 30.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -48,7 +48,11 @@ ___
         function tick(self)
 
         function add_player(
-                self, name: str, add_inventories: bool = True, override: bool = True
+                self,
+                name: str,
+                add_inventories: bool = True,
+                override: bool = True,
+                dimension=0,
                 ):
             
             Will add a new player into the world
@@ -60,6 +64,7 @@ ___
 
             variable self.players[name]
 
+        @onlyInClient()
         function get_active_player(
                 self, create: bool = True
                 ) -> typing.Union[mcpython.common.entity.PlayerEntity.PlayerEntity, None]:
@@ -86,13 +91,13 @@ ___
 
             variable self.gamerule_handler
 
+        @onlyInClient()
         function get_active_dimension(
                 self,
                 ) -> typing.Union[mcpython.engine.world.AbstractInterface.IDimension, None]:
             
-            will return the dimension the player is in
+            Will return the dimension the current player is in
             :return: the dimension or None if no dimension is set
-            todo: move to player
 
 
         function get_dimension_names(self) -> typing.Iterable[str]
@@ -243,6 +248,7 @@ ___
                 after: typing.Union[typing.Tuple[int, int], None],
                 generate_chunks=True,
                 load_immediate=True,
+                dimension=None,
                 ):
             
             Move from chunk `before` to chunk `after`
@@ -252,6 +258,8 @@ ___
             :param load_immediate: if chunks should be loaded immediate if needed
             todo: move to dimension
 
+
+                variable dimension
 
             variable before_set
 
@@ -266,11 +274,13 @@ ___
 
                 variable c
 
+                variable c
+
                         variable chunk
 
         function cleanup(self, remove_dims=False, filename=None)
             
-            will clean up the world
+            Will clean up the world
             :param remove_dims: if dimensions should be cleared
             :param filename: the new filename if it changes
             todo: make split up into smaller functions

@@ -1,4 +1,4 @@
-***BlockFactory.py - documentation - last updated on 16.10.2021 by uuk***
+***BlockFactory.py - documentation - last updated on 30.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -36,7 +36,9 @@ ___
     function set_flower_like(instance: FactoryBuilder.IFactory)
 
     function set_strength(
-            instance: FactoryBuilder.IFactory, hardness: float, blast_resistance: float = None
+            instance: FactoryBuilder.IFactory,
+            hardness: float | typing.Tuple[float, float],
+            blast_resistance: float = None,
             ):
 
         variable instance.config_table["hardness"]
@@ -44,6 +46,8 @@ ___
         variable instance.config_table["blast_resistance"]
 
     function set_assigned_tools(instance: FactoryBuilder.IFactory, *tools, tool_level=None)
+
+        variable instance.config_table["assigned_tools"]
 
     function set_all_side_solid(instance: FactoryBuilder.IFactory, solid: bool)
 
@@ -138,14 +142,6 @@ ___
             function on_player_interaction(self, *args, **kwargs)
 
             function on_no_collision_collide(self, *args, **kwargs)
-
-            function get_save_data(self)
-
-            function dump_data(self)
-
-            function load_data(self, data)
-
-            function inject(self, data: bytes)
 
             function get_item_saved_state(self)
 

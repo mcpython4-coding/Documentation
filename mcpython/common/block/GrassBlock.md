@@ -1,4 +1,4 @@
-***GrassBlock.py - documentation - last updated on 9.10.2021 by uuk***
+***GrassBlock.py - documentation - last updated on 30.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -20,8 +20,6 @@ ___
 
         variable HARDNESS
 
-        variable BLAST_RESISTANCE
-
         variable ASSIGNED_TOOLS
 
         variable ENABLE_RANDOM_TICKS
@@ -36,3 +34,12 @@ ___
 
         static
         function get_tint_for_index(index: int) -> typing.Tuple[float, float, float, float]
+
+        function on_player_interaction(
+                self,
+                player,
+                button: int,
+                modifiers: int,
+                hit_position: tuple,
+                itemstack,
+                ):

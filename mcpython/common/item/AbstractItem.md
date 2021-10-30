@@ -1,4 +1,4 @@
-***AbstractItem.py - documentation - last updated on 16.9.2021 by uuk***
+***AbstractItem.py - documentation - last updated on 30.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -23,21 +23,29 @@ ___
 
         variable ITEM_NAME_COLOR
 
+        variable BOUND_ITEM_RENDERER
+            Attribute storing an AbstractItemRenderer instance for rendering this item
+            May only be set on client due to loading pyglet
+
         static
         function get_used_texture_files(
                 cls,
                 ):  # WARNING: will be removed during item rendering update; todo: make attribute
                 return [cls.get_default_item_image_location()]
                 
-                @staticmethod
-                def get_default_item_image_location() -> str:  # WARNING: will be removed during item rendering update
-                raise NotImplementedError()
+                @classmethod
+                def get_default_item_image_location(
+                cls,
+                ) -> str:  # WARNING: will be removed during item rendering update
+                return "assets/{}/textures/item/{}.png".format(*cls.NAME.split(":"))
                 
                 def __init__(self):
 
         static
-        function get_default_item_image_location() -> str:  # WARNING: will be removed during item rendering update
-                raise NotImplementedError()
+        function get_default_item_image_location(
+                cls,
+                ) -> str:  # WARNING: will be removed during item rendering update
+                return "assets/{}/textures/item/{}.png".format(*cls.NAME.split(":"))
                 
                 def __init__(self):
 
@@ -76,15 +84,19 @@ ___
 
         function get_block(self) -> str
 
-        function on_player_interact(self, player, block, button, modifiers) -> bool
+        function on_player_interact(
+                self, player, block, button: int, modifiers: int, itemstack, previous
+                ) -> bool:
             
-            called when the player tries to use the item
+            Called when the player tries to use the item by pressing a mouse button
             :param player: the player interacting
-            :param block: the block in focus, may be None
+            :param block: the block in focus, may be None if no block is in range
             :param button: the button used
             :param modifiers: the modifiers used
+            :param itemstack: the itemstack used
+            :param previous: the precious block position hit with, or None if no block was hit
             :return: if default logic should be interrupted
-            todo: add an exact_hit-parameter
+            todo: pass full hit info into here
 
 
         function on_block_broken_with(self, itemstack, player, block)

@@ -1,4 +1,4 @@
-***Chest.py - documentation - last updated on 16.10.2021 by uuk***
+***Chest.py - documentation - last updated on 30.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -28,8 +28,6 @@ ___
         variable MODEL_FACE_NAME
 
         variable HARDNESS
-
-        variable BLAST_RESISTANCE
 
         variable ASSIGNED_TOOLS
 
@@ -71,7 +69,12 @@ ___
             variable instance
 
         function on_player_interaction(
-                self, player, button: int, modifiers: int, hit_position: tuple
+                self,
+                player,
+                button: int,
+                modifiers: int,
+                hit_position: tuple,
+                itemstack,
                 ):
 
                     variable self.loot_table_link
@@ -91,10 +94,6 @@ ___
 
         static
         function modify_block_item(cls, factory)
-
-        function get_save_data(self)
-
-        function load_data(self, data)
 
     class TrappedChest extends Chest
 

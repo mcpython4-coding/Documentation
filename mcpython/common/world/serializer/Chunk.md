@@ -1,4 +1,4 @@
-***Chunk.py - documentation - last updated on 27.9.2021 by uuk***
+***Chunk.py - documentation - last updated on 30.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -65,7 +65,7 @@ ___
 
             function add(instance)
 
-                    variable inventories
+                    variable buffer
 
             variable flag
 
@@ -104,14 +104,9 @@ ___
 
                 variable block
 
+                variable buffer
+
                 variable block_data
-
-                    variable block_data
-
-                            variable overridden
-
-                        variable path
-                            were to locate in the file
 
                     variable cdata["blocks"][rel_position]
 

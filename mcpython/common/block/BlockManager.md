@@ -1,4 +1,4 @@
-***BlockManager.py - documentation - last updated on 14.10.2021 by uuk***
+***BlockManager.py - documentation - last updated on 30.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -31,4 +31,5 @@ ___
 
     function load()
         
-        loads all blocks that should be loaded, only the ones for blocks may be loaded somewhere else
+        Loads all blocks that should be loaded into the game
+        Most registration should happen here so mods cannot load stuff too early into registries

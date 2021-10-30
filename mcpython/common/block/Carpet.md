@@ -1,4 +1,4 @@
-***Carpet.py - documentation - last updated on 25.4.2021 by uuk***
+***Carpet.py - documentation - last updated on 30.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -19,6 +19,8 @@ ___
 
 
         variable DEFAULT_FACE_SOLID
+
+        variable HARDNESS
 
         function on_block_update(self)
 

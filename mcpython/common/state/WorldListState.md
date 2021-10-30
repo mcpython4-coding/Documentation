@@ -1,4 +1,4 @@
-***WorldListState.py - documentation - last updated on 14.10.2021 by uuk***
+***WorldListState.py - documentation - last updated on 30.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -42,6 +42,10 @@ ___
 
         function on_mouse_press(self, x, y, button, modifiers)
 
+                            variable self.selected_world
+
+            variable self.selected_world
+
         function on_scroll(self, x, y, dx, dy, button, mod, status)
 
         function on_mouse_scroll(self, x, y, dx, dy)
@@ -55,6 +59,28 @@ ___
         function activate(self)
 
         function reload_world_icons(self)
+
+                variable path
+
+                        variable icon
+
+                        variable icon
+
+                    variable sprite
+
+                        variable data
+
+                    variable edit_date
+
+                    variable diff
+
+                        variable edit
+
+                        variable edit
+
+                    variable labels
+
+            variable self.parts[-1].active
 
         function on_back_press(self, *_)
 

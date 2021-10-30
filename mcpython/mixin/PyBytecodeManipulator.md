@@ -1,4 +1,4 @@
-***PyBytecodeManipulator.py - documentation - last updated on 14.10.2021 by uuk***
+***PyBytecodeManipulator.py - documentation - last updated on 30.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -21,6 +21,7 @@ ___
         Wrapped class for handling __code__ objects at runtime,
         and writing the modified code back into the source function
         See https://docs.python.org/3.10/library/inspect.html
+        todo: add different wrapper types for different versions
 
 
         function __init__(self, target: FunctionType)

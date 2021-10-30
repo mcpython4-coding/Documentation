@@ -1,4 +1,4 @@
-***ShulkerBox.py - documentation - last updated on 14.10.2021 by uuk***
+***ShulkerBox.py - documentation - last updated on 30.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -17,8 +17,6 @@ ___
 
             variable HARDNESS
 
-            variable MINIMUM_TOOL_LEVEL
-
             variable ASSIGNED_TOOLS
 
                 variable RENDERER
@@ -34,7 +32,12 @@ ___
             function read_from_network_buffer(self, buffer: ReadBuffer)
 
             function on_player_interaction(
-                    self, player, button: int, modifiers: int, hit_position: tuple
+                    self,
+                    player,
+                    button: int,
+                    modifiers: int,
+                    hit_position: tuple,
+                    itemstack,
                     ):
 
             function get_inventories(self)

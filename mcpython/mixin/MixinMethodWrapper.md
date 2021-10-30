@@ -1,4 +1,4 @@
-***MixinMethodWrapper.py - documentation - last updated on 14.10.2021 by uuk***
+***MixinMethodWrapper.py - documentation - last updated on 30.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -45,6 +45,8 @@ ___
         function walk(self) -> typing.Iterable[typing.Tuple[int, dis.Instruction]]
 
         function store(self)
+
+        function re_eval_instructions(self)
 
         function deleteRegion(self, start: int, end: int, safety=True)
             

@@ -1,4 +1,4 @@
-***ModelHandler.py - documentation - last updated on 14.10.2021 by uuk***
+***ModelHandler.py - documentation - last updated on 30.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -24,6 +24,9 @@ ___
             variable self.hide_blockstate_errors
 
             variable self.raw_models
+
+            variable self.break_stages
+                todo: reload these textures on normal reload
 
         function add_from_mod(self, modname: str)
             
@@ -132,5 +135,13 @@ ___
         function get_bbox(self, block)
 
         function reload_models(self)
+
+        function draw_block_break_overlay(
+                self, position: typing.Tuple[float, float, float], progress: float
+                ):
+
+            variable stage
+
+            variable model
 
     variable shared.model_handler

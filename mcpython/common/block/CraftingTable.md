@@ -1,4 +1,4 @@
-***CraftingTable.py - documentation - last updated on 25.4.2021 by uuk***
+***CraftingTable.py - documentation - last updated on 30.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -23,7 +23,7 @@ ___
         variable ASSIGNED_TOOLS
 
         function on_player_interaction(
-                self, player, button: int, modifiers: int, hit_position: tuple
+                self, player, button: int, modifiers: int, hit_position: tuple, itemstack
                 ):
 
         function get_inventories(self)

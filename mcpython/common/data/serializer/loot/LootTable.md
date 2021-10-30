@@ -1,4 +1,4 @@
-***LootTable.py - documentation - last updated on 16.9.2021 by uuk***
+***LootTable.py - documentation - last updated on 30.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -152,10 +152,26 @@ ___
 
         function roll(self, *args, **kwargs)
 
+            variable items
+
+                    variable item
+
+                    variable item
+
     class LootTablePool
 
         static
         function from_data(cls, table, data: dict)
+
+                variable obj.functions
+
+                variable obj.entries
+
+                variable obj.entry_weights
+
+                    variable obj.roll_range
+
+                    variable obj.roll_range
 
         function __init__(self)
 

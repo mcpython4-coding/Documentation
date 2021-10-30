@@ -1,4 +1,4 @@
-***CoralBlocks.py - documentation - last updated on 19.10.2021 by uuk***
+***CoralBlocks.py - documentation - last updated on 30.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -17,6 +17,10 @@ ___
 
 
         variable ENABLE_RANDOM_TICKS
+
+        variable HARDNESS
+
+        variable BLAST_RESISTANCE
 
         variable ASSIGNED_TOOLS
 

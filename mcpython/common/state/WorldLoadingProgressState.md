@@ -1,4 +1,4 @@
-***WorldLoadingProgressState.py - documentation - last updated on 14.10.2021 by uuk***
+***WorldLoadingProgressState.py - documentation - last updated on 30.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -30,6 +30,10 @@ ___
         function create_state_parts(self) -> list
 
         function on_update(self, dt)
+
+                    variable c
+
+                    variable self.status_table[chunk]
 
                 variable shared.world.world_loaded
 

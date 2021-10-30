@@ -1,4 +1,4 @@
-***window.py - documentation - last updated on 19.10.2021 by uuk***
+***window.py - documentation - last updated on 30.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -123,10 +123,6 @@ ___
                 variable self.cpu_usage
 
                 variable self.cpu_usage_timer
-
-            variable sector
-
-                variable self.sector
 
         function on_mouse_press(self, x: int, y: int, button: int, modifiers: int)
             

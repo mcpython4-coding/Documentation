@@ -1,4 +1,4 @@
-***LootTableFunction.py - documentation - last updated on 16.9.2021 by uuk***
+***LootTableFunction.py - documentation - last updated on 30.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -77,6 +77,10 @@ ___
 
         function apply(self, items: list, *args, **kwargs)
 
+                    variable result
+
+                    variable items[i]
+
     @shared.registry class FillPlayerHead extends ILootTableFunction
 
         variable NAME
@@ -120,5 +124,9 @@ ___
         variable NAME
 
     @shared.registry class SetStewEffect extends ILootTableFunction
+
+        variable NAME
+
+    @shared.registry class SetPotion extends ILootTableFunction
 
         variable NAME

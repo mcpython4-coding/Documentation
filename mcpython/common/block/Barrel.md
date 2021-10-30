@@ -1,4 +1,4 @@
-***Barrel.py - documentation - last updated on 19.10.2021 by uuk***
+***Barrel.py - documentation - last updated on 30.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -42,7 +42,7 @@ ___
         function on_block_added(self)
 
         function on_player_interaction(
-                self, player, button: int, modifiers: int, hit_position: tuple
+                self, player, button: int, modifiers: int, hit_position: tuple, itemstack
                 ):
 
         function get_inventories(self)

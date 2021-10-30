@@ -1,4 +1,4 @@
-***Blocks.py - documentation - last updated on 19.10.2021 by uuk***
+***Blocks.py - documentation - last updated on 30.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -30,7 +30,11 @@ ___
             existing_pressure_plate=False,
             texture=None,
             consumer=lambda _, __: None,
+            strength: typing.Union[float, typing.Tuple[float, float]] = 2,
+            tool=ToolType.PICKAXE,
             ):
+
+        variable consumer
 
         variable fname
 

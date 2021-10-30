@@ -1,4 +1,4 @@
-***IDataFixer.py - documentation - last updated on 16.9.2021 by uuk***
+***IDataFixer.py - documentation - last updated on 30.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -29,6 +29,7 @@ ___
         variable TYPE
 
         variable GROUP_FIXER_NAMES
+            a list of (name_of_group_fixer, args, kwargs) to apply when trying to load
 
     class IModVersionFixer extends IDataFixer,  ABC
         
@@ -44,8 +45,10 @@ ___
         variable MOD_NAME - the mod name to fix under
 
         variable GROUP_FIXER_NAMES
+            a list of (name_of_group_fixer, args, kwargs) to apply when trying to load
 
         variable PART_FIXER_NAMES
+            a list of (name_of_part_fixer, args, kwargs) to apply when trying to load
 
     class IGroupFixer extends IDataFixer,  ABC
         

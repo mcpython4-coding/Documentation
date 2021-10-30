@@ -1,4 +1,4 @@
-***Furnace.py - documentation - last updated on 14.10.2021 by uuk***
+***Furnace.py - documentation - last updated on 30.10.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -23,6 +23,10 @@ ___
 
         variable DEBUG_WORLD_BLOCK_STATES
 
+        variable HARDNESS
+
+        variable ASSIGNED_TOOLS
+
         function __init__(self)
             
             Creates a furnace block
@@ -40,7 +44,9 @@ ___
 
         function set_model_state(self, state: dict)
 
-        function on_player_interaction(self, player, button, modifiers, exact_hit) -> bool
+        function on_player_interaction(
+                self, player, button, modifiers, exact_hit, itemstack
+                ) -> bool:
 
         function get_inventories(self)
 
