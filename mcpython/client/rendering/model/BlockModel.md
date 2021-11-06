@@ -1,4 +1,4 @@
-***BlockModel.py - documentation - last updated on 30.10.2021 by uuk***
+***BlockModel.py - documentation - last updated on 6.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -115,6 +115,58 @@ ___
 
             variable box_model
 
+        function get_prepared_data_for_scaled(
+                self,
+                instance: IBlockStateRenderingTarget,
+                position: typing.Tuple[float, float, float],
+                config: dict,
+                face: mcpython.util.enums.EnumSide,
+                scale: float,
+                previous: typing.Tuple[typing.List[float], typing.List[float]] = None,
+                ) -> typing.Tuple[
+                typing.Tuple[typing.List[float], typing.List[float], typing.List[float]],
+                typing.Any,
+                ]:
+                """
+                Collects the vertex and texture data for a block at the given position with given configuration
+                :param instance: the instance to draw
+                :param position: the offset position
+                :param config: the configuration
+                :param face: the face
+                :param scale: the scale to get the data for
+                :param previous: previous collected data, as a tuple of vertices, texture coords
+                :return: a tuple of vertices and texture coords, and an underlying BoxModel for some identification stuff
+                """
+                
+                # If this is true, we cannot render this model as stuff is not fully linked
+                if not self.drawable:
+                logger.println(
+                f"[BLOCK MODEL][FATAL] can't draw the model '{self.name}' "
+                f"(which has not defined textures) at {position}"
+                )
+                return ([], [], []) if previous is None else previous, None
+                
+                rotation = config["rotation"]
+                if rotation == (90, 90, 0):
+            
+            Collects the vertex and texture data for a block at the given position with given configuration
+            :param instance: the instance to draw
+            :param position: the offset position
+            :param config: the configuration
+            :param face: the face
+            :param scale: the scale to get the data for
+            :param previous: previous collected data, as a tuple of vertices, texture coords
+            :return: a tuple of vertices and texture coords, and an underlying BoxModel for some identification stuff
+
+
+            variable rotation
+
+                variable rotation
+
+            variable collected_data
+
+            variable box_model
+
         function add_face_to_batch(
                 self,
                 instance: IBlockStateRenderingTarget,
@@ -130,9 +182,23 @@ ___
 
         function draw_face(
                 self,
+                instance,
                 position: typing.Tuple[float, float, float],
                 config: dict,
                 face: mcpython.util.enums.EnumSide,
+                ):
+            
+            Similar to add_face_to_batch, but does it in-place without a batches
+            Use batches wherever possible!
+
+
+        function draw_face_scaled(
+                self,
+                instance,
+                position: typing.Tuple[float, float, float],
+                config: dict,
+                face: mcpython.util.enums.EnumSide,
+                scale: float,
                 ):
             
             Similar to add_face_to_batch, but does it in-place without a batches

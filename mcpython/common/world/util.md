@@ -1,4 +1,4 @@
-***util.py - documentation - last updated on 27.9.2021 by uuk***
+***util.py - documentation - last updated on 6.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -164,9 +164,24 @@ ___
             to: typing.Tuple[int, int, int],
             block_filter=AnyBlock.INSTANCE,
             replaces=AnyBlock.INSTANCE,
+            source_access: mcpython.engine.world.AbstractInterface.ISupportWorldInterface = None,
             insert_air=True,
             remove_start=False,
             ):
+        
+        Clones a specific block region
+        :param access: the access to clone into
+        :param start: where to start
+        :param end: where to end
+        :param to: where to paste to
+        :param block_filter: a block filter for the blocks to clone
+        :param replaces: if to replace non-air blocks in the target
+        :param source_access: optional, set if not equal to access, the access to clone from
+        :param insert_air: if to add air blocks into target where source is air
+        :param remove_start: if source region should be filled with air afterwards
+
+
+            variable source_access
 
         variable replaces
 

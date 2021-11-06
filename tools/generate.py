@@ -202,6 +202,8 @@ ___""".format(raw_file, now, user)
 def main():
     found_files = []
     for root, dirs, files in os.walk(path):
+        if "venv" in root: continue
+
         for file in files:
             found_files.append((root, file))
 

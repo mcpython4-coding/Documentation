@@ -1,4 +1,4 @@
-***vertex.py - documentation - last updated on 19.10.2021 by uuk***
+***vertex.py - documentation - last updated on 6.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -27,6 +27,8 @@ ___
             origin: typing.Tuple[float, float, float],
             rotation: typing.Tuple[float, float, float],
             ):
+
+    function scale_data(data, scale: float)
 
     class VertexProvider
         
@@ -81,12 +83,14 @@ ___
                 element_position: typing.Tuple[float, float, float],
                 element_rotation: typing.Tuple[float, float, float] = (0, 0, 0),
                 element_rotation_center: typing.Tuple[float, float, float] = None,
+                scale: float = 1,
                 ):
 
         function ensure_prepared_rotation(
                 self,
                 rotation: typing.Tuple[float, float, float],
                 center: typing.Tuple[float, float, float] = None,
+                scale: float = 1,
                 ):
 
                 variable center

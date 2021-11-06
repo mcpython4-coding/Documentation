@@ -1,4 +1,4 @@
-***ModelHandler.py - documentation - last updated on 30.10.2021 by uuk***
+***ModelHandler.py - documentation - last updated on 6.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -24,6 +24,8 @@ ___
             variable self.hide_blockstate_errors
 
             variable self.raw_models
+
+            variable SIZE
 
             variable self.break_stages
                 todo: reload these textures on normal reload
@@ -130,7 +132,13 @@ ___
 
             variable blockstate
 
+        function draw_face_scaled(self, block, face, scale: float)
+
+            variable blockstate
+
         function draw_block(self, block)
+
+        function draw_block_scaled(self, block, scale: float)
 
         function get_bbox(self, block)
 

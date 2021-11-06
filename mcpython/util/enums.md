@@ -1,4 +1,4 @@
-***enums.py - documentation - last updated on 30.10.2021 by uuk***
+***enums.py - documentation - last updated on 6.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -37,6 +37,9 @@ ___
             Iterator for the faces
 
 
+        static
+        function by_index(cls, index: int)
+
         function __init__(self, dx: int, dy: int, dz: int, normal_name: str, index: int)
             
             Constructs a new enum instance
@@ -71,6 +74,8 @@ ___
         function as_bit(self) -> int
 
     variable FACE_ORDER: typing.List[EnumSide]
+
+    variable FACE_ORDER_BY_INDEX: typing.List[EnumSide]
 
     variable FACE_ORDER_HORIZONTAL
 

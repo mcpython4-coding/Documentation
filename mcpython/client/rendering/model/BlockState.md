@@ -1,4 +1,4 @@
-***BlockState.py - documentation - last updated on 14.10.2021 by uuk***
+***BlockState.py - documentation - last updated on 6.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -85,6 +85,18 @@ ___
                 self,
                 instance: mcpython.client.rendering.model.api.IBlockStateRenderingTarget,
                 face: mcpython.util.enums.EnumSide,
+                previous=None,
+                ):
+
+            variable state
+
+            variable box_model
+
+        function draw_face_scaled(
+                self,
+                instance: mcpython.client.rendering.model.api.IBlockStateRenderingTarget,
+                face: mcpython.util.enums.EnumSide,
+                scale: float,
                 previous=None,
                 ):
 
@@ -187,6 +199,15 @@ ___
 
             variable data
 
+        function draw_face_scaled(
+                self,
+                instance: mcpython.client.rendering.model.api.IBlockStateRenderingTarget,
+                face: mcpython.util.enums.EnumSide,
+                scale: float,
+                ):
+
+            variable data
+
     class BlockStateContainer
 
         variable TO_CREATE
@@ -266,6 +287,13 @@ ___
                 face: mcpython.util.enums.EnumSide,
                 ):
 
+        function draw_face_scaled(
+                self,
+                block: mcpython.client.rendering.model.api.IBlockStateRenderingTarget,
+                face: mcpython.util.enums.EnumSide,
+                scale: float,
+                ):
+
     class BlockState
 
         function __init__(self)
@@ -303,6 +331,15 @@ ___
                 self,
                 instance: mcpython.client.rendering.model.api.IBlockStateRenderingTarget,
                 face: mcpython.util.enums.EnumSide,
+                ):
+
+                variable instance.block_state
+
+        function draw_face_scaled(
+                self,
+                instance: mcpython.client.rendering.model.api.IBlockStateRenderingTarget,
+                face: mcpython.util.enums.EnumSide,
+                scale: float,
                 ):
 
                 variable instance.block_state

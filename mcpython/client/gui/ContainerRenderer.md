@@ -1,4 +1,4 @@
-***ContainerRenderer.py - documentation - last updated on 27.9.2021 by uuk***
+***ContainerRenderer.py - documentation - last updated on 6.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -187,6 +187,8 @@ ___
                 variable x
 
                 variable y
+
+        function is_mouse_in_range(self, x: int, y: int) -> bool
 
         function on_activate(self)
             

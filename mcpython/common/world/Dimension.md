@@ -1,4 +1,4 @@
-***Dimension.py - documentation - last updated on 19.10.2021 by uuk***
+***Dimension.py - documentation - last updated on 6.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -231,3 +231,12 @@ ___
         function dump_debug_maps_all_chunks(self, file_formatter: str)
 
         function chunk_iterator(self)
+
+        function spawn_itemstack_in_world(
+                self,
+                itemstack: ItemStack,
+                position: typing.Tuple[float, float, float],
+                pickup_delay=0,
+                ):
+
+            variable entity

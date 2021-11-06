@@ -1,4 +1,4 @@
-***BoxModel.py - documentation - last updated on 16.10.2021 by uuk***
+***BoxModel.py - documentation - last updated on 6.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -115,12 +115,17 @@ ___
 
             variable self.enable_alpha
 
-        function get_vertex_variant(self, rotation: tuple, position: tuple) -> list
+        function get_vertex_variant(
+                self, rotation: tuple, position: tuple, scale: float = 1
+                ) -> list:
             
             Implementation to get the vertex data for a rotated block
             :param rotation: the rotation to use
             :param position: the position of the vertex cube
+            :param scale: the scale to use
 
+
+            variable vertices
 
         function get_prepared_box_data(
                 self,
@@ -138,6 +143,39 @@ ___
             :param instance: the instance to get information from to render
             :param position: the position of the block
             :param rotation: the rotation
+            :param active_faces: the faces to get data for, None means all
+            :param uv_lock: ?
+            :param previous: previous data to add the new to, or None to create new
+
+
+            variable vertex
+
+            variable collected_data
+
+                    variable face
+
+                variable i
+
+                variable i2
+
+        function get_prepared_box_data_scaled(
+                self,
+                instance: IBlockStateRenderingTarget,
+                position: typing.Tuple[float, float, float],
+                rotation: typing.Tuple[float, float, float] = (0, 0, 0),
+                scale: float = 1,
+                active_faces=None,
+                uv_lock=False,
+                previous: typing.Tuple[
+                typing.List[float], typing.List[float], typing.List[float]
+                ] = None,
+                ) -> typing.Tuple[typing.List[float], typing.List[float], typing.List[float]]:
+            
+            Util method for getting the box data for a block (vertices and uv's)
+            :param instance: the instance to get information from to render
+            :param position: the position of the block
+            :param rotation: the rotation
+            :param scale: the scale to draw with
             :param active_faces: the faces to get data for, None means all
             :param uv_lock: ?
             :param previous: previous data to add the new to, or None to create new
@@ -194,7 +232,10 @@ ___
             variable collected_data
 
         function draw_prepared_data(
-                self, collected_data: typing.Tuple[typing.List[float], typing.List[float]]
+                self,
+                collected_data: typing.Tuple[
+                typing.List[float], typing.List[float], typing.List[float]
+                ],
                 ):
             
             Draws prepared data to the screen
@@ -223,6 +264,28 @@ ___
 
             variable collected_data
 
+        function draw_scaled(
+                self,
+                instance: IBlockStateRenderingTarget,
+                position: typing.Tuple[float, float, float],
+                rotation: typing.Tuple[float, float, float],
+                scale: float,
+                active_faces: typing.List[bool] = None,
+                uv_lock: bool = False,
+                ):
+            
+            Draws the BoxModel direct into the world
+            WARNING: use batches for better performance
+            :param instance: the instance to ues for rendering
+            :param position: the position to draw on
+            :param rotation: the rotation to draw with
+            :param scale: the scale to draw in
+            :param uv_lock: if the uv's should be locked in place or not
+            :param active_faces: which faces to draw
+
+
+            variable collected_data
+
         function add_face_to_batch(
                 self,
                 instance: IBlockStateRenderingTarget,
@@ -243,6 +306,20 @@ ___
                 position: typing.Tuple[float, float, float],
                 rotation: typing.Tuple[float, float, float],
                 face: EnumSide,
+                uv_lock=False,
+                ):
+
+                variable rotation
+
+            variable face
+
+        function draw_face_scaled(
+                self,
+                instance: IBlockStateRenderingTarget,
+                position: typing.Tuple[float, float, float],
+                rotation: typing.Tuple[float, float, float],
+                face: EnumSide,
+                scale: float,
                 uv_lock=False,
                 ):
 

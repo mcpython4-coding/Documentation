@@ -1,4 +1,4 @@
-***ContainerRenderingManager.py - documentation - last updated on 19.10.2021 by uuk***
+***ContainerRenderingManager.py - documentation - last updated on 6.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -40,7 +40,7 @@ ___
 
                 variable shared.inventory_handler.moving_slot.position
 
-        function _get_slot_for(self, x: int, y: int) -> mcpython.client.gui.Slot.Slot
+        function _get_slot_for(self, x: int, y: int) -> mcpython.client.gui.Slot.Slot | None
             
             Gets slot for position
             :param x: the x position
@@ -49,9 +49,11 @@ ___
             todo: move to InventoryHandler
 
 
+        function get_inventory_for(self, x: int, y: int)
+
         function _get_slot_inventory_for(
                 self, x: int, y: int
-                ) -> typing.Union[mcpython.client.gui.Slot.Slot, typing.Any]:
+                ) -> typing.Tuple[mcpython.client.gui.Slot.Slot | None, typing.Any]:
             
             Gets inventory of the slot for the position
             :param x: the x position
@@ -67,6 +69,10 @@ ___
             variable moving_itemstack
 
             variable slot: mcpython.client.gui.Slot.Slot
+
+                variable player
+
+                variable dimension
 
         function handle_shift_click(self, button: int, modifiers: int, slot, x: int, y: int)
 

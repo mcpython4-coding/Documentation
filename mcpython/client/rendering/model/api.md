@@ -1,4 +1,4 @@
-***api.py - documentation - last updated on 14.10.2021 by uuk***
+***api.py - documentation - last updated on 6.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -88,6 +88,13 @@ ___
                 self,
                 instance: IBlockStateRenderingTarget,
                 face: mcpython.util.enums.EnumSide,
+                ):
+
+        function draw_face_scaled(
+                self,
+                instance: IBlockStateRenderingTarget,
+                face: mcpython.util.enums.EnumSide,
+                scale: float,
                 ):
 
         function transform_to_bounding_box(

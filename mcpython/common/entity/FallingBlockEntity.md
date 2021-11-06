@@ -1,4 +1,4 @@
-***FallingBlockEntity.py - documentation - last updated on 16.9.2021 by uuk***
+***FallingBlockEntity.py - documentation - last updated on 6.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,7 +11,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    @shared.registry class FallingBlockEntity extends mcpython.common.entity.AbstractEntity.AbstractEntity
+    class FallingBlockEntity extends mcpython.common.entity.AbstractEntity.AbstractEntity
         
         Class for the falling block entity
         todo: can we replicate some original block behaviour, like inventories, interaction, ...?
@@ -31,3 +31,11 @@ ___
         function tick(self, dt)
 
             variable block
+
+        function write_to_network_buffer(self, buffer: WriteBuffer)
+
+        function read_from_network_buffer(self, buffer: ReadBuffer)
+
+            variable has_block
+
+                variable self.block

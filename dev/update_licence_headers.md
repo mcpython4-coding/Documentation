@@ -1,4 +1,4 @@
-***update_licence_headers.py - documentation - last updated on 9.2.2021 by uuk***
+***update_licence_headers.py - documentation - last updated on 6.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -12,8 +12,12 @@ ___
 
 
     function update_licence_headers_in_project(project_home, header)
+
+                            variable data
                             
 
+
+                            variable data
     
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
     (https://github.com/mcpython4-coding/core)

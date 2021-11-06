@@ -1,4 +1,4 @@
-***IAllDirectionOrientableBlock.py - documentation - last updated on 6.11.2021 by uuk***
+***IButton.py - documentation - last updated on 27.9.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,30 +11,26 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class IAllDirectionOrientableBlock extends mcpython.common.block.AbstractBlock.AbstractBlock
-
-        variable MODEL_FACE_NAME
+    class IButton extends IAllDirectionOrientableBlock
 
         variable DEBUG_WORLD_BLOCK_STATES
 
         function __init__(self)
 
-            variable self.face
+            variable self.powered
 
-        function on_block_added(self)
+        function check_block_behind(self)
 
-                    variable self.face
+            variable dimension
 
-                    variable self.face
+            variable block
 
-                    variable self.face
-
-                    variable self.face
-
-                    variable self.face
-
-                    variable self.face
+        function on_block_update(self)
 
         function get_model_state(self) -> dict
 
+            variable d["powered"]
+
         function set_model_state(self, state: dict)
+
+                variable self.powered

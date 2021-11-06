@@ -1,4 +1,4 @@
-***GameViewStatePart.py - documentation - last updated on 30.10.2021 by uuk***
+***GameViewStatePart.py - documentation - last updated on 6.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -117,6 +117,8 @@ ___
                         variable block
 
                                 variable items
+
+                                variable dimension
 
         function on_right_click_interaction_update(self, dt: float)
 
@@ -252,6 +254,10 @@ ___
                         variable shared.window.dy
 
                 variable index
+
+                variable slot
+
+                variable itemstack
 
         function on_key_release(self, symbol: int, modifiers: int)
 

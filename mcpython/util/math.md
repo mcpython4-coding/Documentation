@@ -1,4 +1,4 @@
-***math.py - documentation - last updated on 23.8.2021 by uuk***
+***math.py - documentation - last updated on 6.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -162,6 +162,8 @@ ___
             ) -> typing.Tuple[float, ...]:
 
     function vector_negate(vector: typing.Tuple[float, ...]) -> typing.Tuple[float, ...]
+
+    function vector_distance(a, b)
 
     function sort_components(a: typing.Tuple[float, ...], b: typing.Tuple[float, ...])
         

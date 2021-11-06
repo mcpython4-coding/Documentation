@@ -1,4 +1,4 @@
-***OffProcessWorldAccess.py - documentation - last updated on 27.9.2021 by uuk***
+***OffProcessWorldAccess.py - documentation - last updated on 6.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -13,7 +13,7 @@ ___
 
     class OffProcessWorldHelper
         
-        Some really big, complex system for asynchronous world-access-able multiprocessing.
+        Some huge, complex system for asynchronous world-access-able multiprocessing.
         Use OffProcessWorldHelper.spawn_process(World) for creating a new process linke to the given world.
         You MUST call run_tasks() regular on your RemoteWorldHelperReference to process tasks to run on main!
 

@@ -1,4 +1,4 @@
-***EventBus.py - documentation - last updated on 30.10.2021 by uuk***
+***EventBus.py - documentation - last updated on 6.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -53,7 +53,12 @@ ___
             variable self.sub_buses
 
         function subscribe(
-                self, event_name: str, function: typing.Callable, *args, info=None, **kwargs
+                self,
+                event_name: str,
+                function: typing.Callable = None,
+                *args,
+                info=None,
+                **kwargs,
                 ):
             
             Adds a function to the event bus by event name. Dynamically creates underlying data structure for new

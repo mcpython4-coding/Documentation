@@ -1,4 +1,4 @@
-***Barrel.py - documentation - last updated on 30.10.2021 by uuk***
+***Barrel.py - documentation - last updated on 6.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,7 +11,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class Barrel extends AbstractBlock.AbstractBlock
+    class Barrel extends IAllDirectionOrientableBlock
         
         Class for the Barrel-Block
 
@@ -33,13 +33,9 @@ ___
 
             variable self.inventory
 
-            variable self.facing: str - the direction the block faces to
-
         function write_to_network_buffer(self, buffer: WriteBuffer)
 
         function read_from_network_buffer(self, buffer: ReadBuffer)
-
-        function on_block_added(self)
 
         function on_player_interaction(
                 self, player, button: int, modifiers: int, hit_position: tuple, itemstack
