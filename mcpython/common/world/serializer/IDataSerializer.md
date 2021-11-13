@@ -1,4 +1,4 @@
-***IDataSerializer.py - documentation - last updated on 16.9.2021 by uuk***
+***IDataSerializer.py - documentation - last updated on 13.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -24,16 +24,10 @@ ___
         variable TYPE
 
         variable PART - which part it can serialize
-
-        static
-        function load(cls, save_file, *args, **kwargs)
             
             Loads stuff into the game
             :param save_file: the SaveFile object to use
 
-
-        static
-        function save(cls, data, save_file, *args, **kwargs)
             
             Saves data into the storage file
             :param data: the data to save

@@ -1,4 +1,4 @@
-***FeatureMap.py - documentation - last updated on 11.2.2021 by uuk***
+***FeatureMap.py - documentation - last updated on 13.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -21,6 +21,6 @@ ___
 
         function dump_for_saves(self)
 
-        function get_at_xz(self, x: int, z: int, group: str) -> str
+        function get_at_xz(self, x: int, z: int, group: str) -> bool
 
-        function set_at_xz(self, x: int, z: int, biome: str, group: str)
+        function set_at_xz(self, x: int, z: int, group: str)

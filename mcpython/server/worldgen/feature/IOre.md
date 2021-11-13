@@ -1,4 +1,4 @@
-***IOre.py - documentation - last updated on 27.9.2021 by uuk***
+***IOre.py - documentation - last updated on 13.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -44,7 +44,7 @@ ___
         static
         function get_ore_block() -> str or list
             
-            :return: an orename or an list of orenames or an {orename: chance} table
+            :return: an ore-name or a list of ore-names or a {ore-name: chance} table
 
 
         static

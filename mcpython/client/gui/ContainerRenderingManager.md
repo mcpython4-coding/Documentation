@@ -1,4 +1,4 @@
-***ContainerRenderingManager.py - documentation - last updated on 6.11.2021 by uuk***
+***ContainerRenderingManager.py - documentation - last updated on 13.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -35,6 +35,12 @@ ___
         function bind_to_eventbus(self)
 
         function on_key_press(self, symbol: int, modifiers: int)
+
+                variable player
+
+                variable dimension
+
+                variable itemstack
 
         function on_draw_2d(self)
 
@@ -149,6 +155,10 @@ ___
                 variable overhead
 
                     variable x
+
+                    variable count
+
+                    variable off
 
                 variable overhead
 

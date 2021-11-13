@@ -1,4 +1,4 @@
-***PlayerData.py - documentation - last updated on 16.9.2021 by uuk***
+***PlayerData.py - documentation - last updated on 13.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -15,15 +15,30 @@ ___
 
         variable PART
 
-        static
-        function load(cls, save_file, **_)
+            variable data
+                todo: gather
 
                     variable player
 
                     variable player
 
-        static
-        function load_player_data(cls, data, player, save_file)
+            variable pd
+
+            variable player.hearts
+
+            variable player.hunger
+
+            variable player.xp
+
+            variable player.xp_level
+
+            variable player.fallen_since_y
+
+            variable player.active_inventory_slot
+
+            variable player.position
+
+            variable player.rotation
 
             variable player.flying
 
@@ -31,8 +46,9 @@ ___
 
             variable player.should_leave_nether_portal_before_dim_change
 
-        static
-        function save(cls, data, save_file, **_)
+            variable data
+
+                variable data
 
                 variable data[player.name]
                     todo: move to player custom save data

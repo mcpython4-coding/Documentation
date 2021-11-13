@@ -1,4 +1,4 @@
-***FlowerLikeBlock.py - documentation - last updated on 30.10.2021 by uuk***
+***FlowerLikeBlock.py - documentation - last updated on 13.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -19,5 +19,7 @@ ___
         variable SUPPORT_BLOCK_TAG - inecraft:plant_support"
 
         variable HARDNESS
+
+        variable IS_SOLID
 
         function on_block_update(self)

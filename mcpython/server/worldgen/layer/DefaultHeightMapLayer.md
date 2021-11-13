@@ -1,4 +1,4 @@
-***DefaultHeightMapLayer.py - documentation - last updated on 11.2.2021 by uuk***
+***DefaultHeightMapLayer.py - documentation - last updated on 13.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -24,8 +24,11 @@ ___
         static
         function normalize_config(config: LayerConfig)
 
-        static
-        function add_generate_functions_to_chunk(cls, config: LayerConfig, reference)
+            variable chunk
+
+            variable height_map
+
+            variable biome_map
 
             variable noise_map
 

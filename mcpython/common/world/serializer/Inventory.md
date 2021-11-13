@@ -1,4 +1,4 @@
-***Inventory.py - documentation - last updated on 9.2.2021 by uuk***
+***Inventory.py - documentation - last updated on 13.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -22,15 +22,6 @@ ___
 
 
         variable PART
-
-        static
-        function load(
-                cls,
-                save_file,
-                inventory: mcpython.client.gui.ContainerRenderer.ContainerRenderer,
-                path: str,
-                file=None,
-                ):
             
             :param save_file: the save file instance
             :param inventory: The inventory to save
@@ -47,17 +38,6 @@ ___
             variable inventory.uuid
 
             variable status
-
-        static
-        function save(
-                cls,
-                data,
-                save_file,
-                inventory: mcpython.client.gui.ContainerRenderer.ContainerRenderer,
-                path: str,
-                file=None,
-                override=False,
-                ):
 
                 variable file
 

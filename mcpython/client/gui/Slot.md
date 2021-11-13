@@ -1,4 +1,4 @@
-***Slot.py - documentation - last updated on 30.10.2021 by uuk***
+***Slot.py - documentation - last updated on 13.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -22,6 +22,8 @@ ___
         function __init__(self)
 
             variable self.assigned_inventory
+
+        function handle_click(self, button: int, modifiers: int) -> bool
 
         function get_capacity(self) -> int
 
@@ -68,14 +70,16 @@ ___
                 allow_player_remove=True,
                 allow_player_insert=True,
                 allow_player_add_to_free_place=True,
-                on_update=None,
                 allow_half_getting=True,
-                on_shift_click=None,
-                empty_image=None,
                 allowed_item_tags=None,
                 disallowed_item_tags=None,
                 allowed_item_test=None,
+                on_update=None,
+                on_shift_click=None,
                 on_button_press=None,
+                on_click_on_slot=None,
+                empty_image=None,
+                enable_hovering_background=True,
                 capacity=None,
                 check_function=None,
                 ):
@@ -91,7 +95,8 @@ ___
             :param on_shift_click: called when shift-clicked on the block, should return if normal logic should go on or not
             :param on_button_press: called when an button is pressed when hovering above the slot
             :param capacity: the max item count for the slot
-            :param check_function: an function to check if the item is valid, signature: (Slot, ItemStack) -> bool
+            :param check_function: a function to check if the item is valid, signature: (Slot, ItemStack) -> bool
+            :param on_click_on_slot: a function invoked with button & modifiers when the player pressed on the slot
 
 
             variable self.__itemstack
@@ -123,17 +128,23 @@ ___
 
             variable self.empty_image
 
+            variable self.on_click_on_slot
+
             variable self.allowed_item_tags
 
             variable self.disallowed_item_tags
 
             variable self.allowed_item_func
 
+            variable self.enable_hovering_background
+
             variable self.on_button_press
 
             variable self.__capacity
 
             variable self.check_function
+
+        function handle_click(self, button: int, modifiers: int) -> bool
 
         function read_from_network_buffer(self, buffer: ReadBuffer)
 
@@ -165,7 +176,7 @@ ___
 
         function deepCopy(self)
             
-            This will copy the content of the slot into an Slot-object
+            This will copy the content of the slot into a Slot-object
 
 
         function draw(self, dx=0, dy=0, hovering=False, center_position=None)
@@ -239,6 +250,7 @@ ___
                 allow_half_getting=True,
                 on_shift_click=None,
                 on_button_press=None,
+                on_click_on_slot=None,
                 ):
 
             variable self.master: Slot
@@ -259,6 +271,8 @@ ___
 
             variable self.on_update
 
+            variable self.on_click_on_slot
+
             variable self.allow_half_getting
 
             variable self.on_shift_click
@@ -268,6 +282,8 @@ ___
             variable self.on_button_press
 
             variable self.slot_position
+
+        function handle_click(self, button: int, modifiers: int) -> bool
 
         function get_allowed_item_tags(self)
 
@@ -311,6 +327,7 @@ ___
                 allow_player_insert=True,
                 allow_player_add_to_free_place=True,
                 on_update=None,
+                on_click_on_slot=None,
                 allow_half_getting=True,
                 on_shift_click=None,
                 on_button_press=None,
@@ -331,6 +348,8 @@ ___
             variable self.interaction_mode
 
             variable self.on_update
+
+            variable self.on_click_on_slot
 
             variable self.allow_half_getting
 

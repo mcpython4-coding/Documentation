@@ -1,4 +1,4 @@
-***EventBus.py - documentation - last updated on 6.11.2021 by uuk***
+***EventBus.py - documentation - last updated on 13.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -55,7 +55,7 @@ ___
         function subscribe(
                 self,
                 event_name: str,
-                function: typing.Callable = None,
+                function: typing.Callable | typing.Awaitable = None,
                 *args,
                 info=None,
                 **kwargs,
@@ -70,7 +70,9 @@ ___
             :param info: an info to give for the caller
 
 
-        function unsubscribe(self, event_name: str, function: typing.Callable)
+        function unsubscribe(
+                self, event_name: str, function: typing.Callable | typing.Awaitable
+                ):
             
             Remove a function from the event bus from a given event
             :param event_name: the event name the function was registered to
@@ -91,6 +93,10 @@ ___
 
 
             variable exception_occ
+
+                        variable function
+
+                        variable ex
 
                     variable exception_occ
 
@@ -120,7 +126,13 @@ ___
             :return: the result in the moment of True or None
 
 
-                    variable result
+                        variable function
+
+                        variable result
+
+                        variable ex
+
+                        variable result
 
         function activate(self)
 
@@ -133,6 +145,10 @@ ___
                 ):
 
             variable result
+
+                        variable function
+
+                        variable ex
 
         function reset_event_stack(self, event_name: str)
             

@@ -1,4 +1,4 @@
-***DefaultBiomeLayer.py - documentation - last updated on 11.2.2021 by uuk***
+***DefaultBiomeLayer.py - documentation - last updated on 13.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -22,8 +22,7 @@ ___
 
         variable ]
 
-        static
-        function add_generate_functions_to_chunk(cls, config: LayerConfig, reference)
+            variable chunk
 
             variable biome_map
                 The various chunk maps needed

@@ -1,4 +1,4 @@
-***GridRecipeInstances.py - documentation - last updated on 27.4.2021 by uuk***
+***GridRecipeInstances.py - documentation - last updated on 13.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,7 +11,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    function transform_to_item_stack(item, file: str) -> list
+    function transform_to_item_stack(item, file: str) -> typing.List[typing.Tuple[str, int]]
         
         Transforms an item name from recipe to a valid item list to compare with
         :param item: the item name given
@@ -58,7 +58,9 @@ ___
 
         function __init__(
                 self,
-                inputs: typing.Dict[typing.Tuple[int, int], typing.Tuple[str, int]],
+                inputs: typing.Dict[
+                typing.Tuple[int, int], typing.List[typing.Tuple[str, int]]
+                ],
                 output: typing.Tuple[str, int],
                 ):
 

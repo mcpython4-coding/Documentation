@@ -64,7 +64,7 @@ ___
 
                 variable self.multi_data
 
-        function hide_multi_data(self)
+        function _hide_data(self)
 
             variable self.multi_data
 

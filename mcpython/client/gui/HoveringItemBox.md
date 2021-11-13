@@ -1,4 +1,4 @@
-***HoveringItemBox.py - documentation - last updated on 25.4.2021 by uuk***
+***HoveringItemBox.py - documentation - last updated on 13.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -66,7 +66,9 @@ ___
 
             variable item_name
 
-            variable raw
+                variable raw
+
+                variable raw
 
             variable localized_name
 

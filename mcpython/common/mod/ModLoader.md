@@ -1,4 +1,4 @@
-***ModLoader.py - documentation - last updated on 16.10.2021 by uuk***
+***ModLoader.py - documentation - last updated on 13.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -205,7 +205,7 @@ ___
             :param info: the info, as shown by EventBus during errors
             :return: a callable, used for regisering
             Example:
-            @shared.modloader("minecraft", "stage:mod:init")
+            @shared.mod_loader("minecraft", "stage:mod:init")
             def test():
                 print("Hello world!")
 

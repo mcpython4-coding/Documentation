@@ -1,4 +1,4 @@
-***callbacks.py - documentation - last updated on 9.2.2021 by uuk***
+***callbacks.py - documentation - last updated on 13.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -12,3 +12,5 @@ ___
 
 
     function open_github_project()
+
+    function wrap_method(method, *args, **kwargs)

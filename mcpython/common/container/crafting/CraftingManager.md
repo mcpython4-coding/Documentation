@@ -1,4 +1,4 @@
-***CraftingManager.py - documentation - last updated on 23.8.2021 by uuk***
+***CraftingManager.py - documentation - last updated on 13.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -80,16 +80,26 @@ ___
                 all shapeless recipes sorted after item count
 
             variable self.crafting_recipes_shaped
-                all shaped recipes sorted after item count and than size
+                all shaped recipes sorted after item count and then size
 
             variable self.furnace_recipes
                 all smelting outputs sorted after ingredient
 
-        function show_to_player(self, recipe_name: str)
+        function show_to_player(self, recipe_name: str | IRecipe.IRecipe)
 
-            variable recipe
+                variable recipe
+
+                variable recipe
 
                 variable self.RECIPE_VIEW_INVENTORY
+
+        function show_to_player_from_input(self, input_name: str)
+
+        function show_to_player_from_output(self, output_name: str)
+
+        function show_recipe_list(self, recipes: typing.List[IRecipe.IRecipe])
+
+                    variable self.RECIPE_VIEW_INVENTORY
 
     variable shared.crafting_handler
 

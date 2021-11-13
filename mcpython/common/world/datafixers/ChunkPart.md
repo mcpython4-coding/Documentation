@@ -1,4 +1,4 @@
-***ChunkPart.py - documentation - last updated on 16.9.2021 by uuk***
+***ChunkPart.py - documentation - last updated on 13.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -21,16 +21,6 @@ ___
         variable TARGET_SERIALIZER_NAME
 
         variable TARGET_BLOCK_NAME - on which block(s) to apply
-
-        static
-        function fix(
-                cls,
-                save_file,
-                dimension: int,
-                region,
-                chunk: typing.Tuple[int, int],
-                data,
-                ) -> dict:
             
             called to apply the fix
             :param save_file: the save-file-instance to use
@@ -41,8 +31,13 @@ ___
             :return: the transformed data
 
 
-        static
-        function apply(cls, save_file, *args, **kwargs)
+            variable blocks
+
+                variable data
+
+                    variable palette
+
+                            variable palette[i]
 
     class ChunkDataFixer extends IPartFixer
         
@@ -50,16 +45,6 @@ ___
 
 
         variable TARGET_SERIALIZER_NAME
-
-        static
-        function fix(
-                cls,
-                save_file,
-                dimension: int,
-                region,
-                chunk: typing.Tuple[int, int],
-                data,
-                ) -> dict:
             
             will apply the fix
             :param save_file: the save-file to use
@@ -70,8 +55,9 @@ ___
             :return: the transformed chunk data
 
 
-        static
-        function apply(cls, save_file, *args)
+                variable data
+
+                    variable data[chunk]
 
     class RegionDataFixer extends IPartFixer
         
@@ -79,15 +65,6 @@ ___
 
 
         variable TARGET_SERIALIZER_NAME
-
-        static
-        function fix(
-                cls,
-                save_file,
-                dimension: int,
-                region,
-                data,
-                ) -> dict:
             
             will apply the fix
             :param save_file: the save-file to use
@@ -97,8 +74,9 @@ ___
             :return: the transformed region data
 
 
-        static
-        function apply(cls, save_file, *args)
+                variable data
+
+                variable data
 
     class BlockRemovalFixer extends IPartFixer
         
@@ -112,18 +90,13 @@ ___
 
         variable REPLACE
 
-        static
-        function on_replace(
-                cls,
-                save_file,
-                dimension: int,
-                chunk: typing.Tuple[int, int],
-                source,
-                target,
-                ):
+            variable blocks
 
-        static
-        function apply(cls, save_file, *args)
+                variable data
+
+                    variable palette
+
+                            variable palette[i]
 
     class EntityDataFixer extends IPartFixer
         
@@ -133,16 +106,6 @@ ___
         variable TARGET_SERIALIZER_NAME
 
         variable TARGET_ENTITY_NAME - which entity to apply to
-
-        static
-        function fix(
-                cls,
-                save_file,
-                dimension: int,
-                region,
-                chunk: typing.Tuple[int, int],
-                data,
-                ):
             
             will apply the fix
             :param save_file: the save-file to use
@@ -152,8 +115,9 @@ ___
             :param data: the entity data
 
 
-        static
-        function apply(cls, save_file, *args)
+                variable data
+
+                    variable cdata
 
     class EntityRemovalFixer extends IPartFixer
         
@@ -164,18 +128,9 @@ ___
 
         variable TARGET_ENTITY_NAME - which entity to apply to
 
-        static
-        function on_replace(
-                cls,
-                save_file,
-                dimension: int,
-                chunk: typing.Tuple[int, int],
-                previous,
-                chunk_data,
-                ):
+                variable data
 
-        static
-        function apply(cls, save_file, *args)
+                    variable cdata
 
     class ChunkMapDataFixer extends IPartFixer
         
@@ -183,18 +138,8 @@ ___
 
 
         variable TARGET_SERIALIZER_NAME
-
-        static
-        function fix(
-                cls,
-                save_file,
-                dimension: int,
-                region,
-                chunk: typing.Tuple[int, int],
-                data,
-                ):
             
-            will apply the fix
+            Will apply the fix
             :param save_file: the save-file to use
             :param dimension: the dimension in
             :param region: the region in
@@ -202,5 +147,6 @@ ___
             :param data: the map data
 
 
-        static
-        function apply(cls, save_file, *args)
+                variable data
+
+                    variable cdata

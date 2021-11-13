@@ -1,4 +1,4 @@
-***RecipeViewRenderer.py - documentation - last updated on 14.10.2021 by uuk***
+***RecipeViewRenderer.py - documentation - last updated on 13.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -17,6 +17,8 @@ ___
         
         Renderer system for displaying a recipe to the player in a JEI-like style
 
+
+        function copy(self)
 
         function prepare_for_recipe(
                 self, recipe: mcpython.common.container.crafting.IRecipe.IRecipe

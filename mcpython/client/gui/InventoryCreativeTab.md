@@ -1,4 +1,4 @@
-***InventoryCreativeTab.py - documentation - last updated on 16.9.2021 by uuk***
+***InventoryCreativeTab.py - documentation - last updated on 13.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -339,5 +339,20 @@ ___
 
     variable Test
 
-    @shared.mod_loader("minecraft", "stage:item_groups:load")
-    function init()
+        variable BuildingBlocks
+
+        variable Decoration
+
+        variable Redstone
+
+        variable Transportation
+
+        variable Miscellaneous
+
+        variable Food
+
+        variable Tools
+
+        variable Weapons
+
+        variable Brewing

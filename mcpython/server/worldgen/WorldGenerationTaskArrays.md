@@ -1,4 +1,4 @@
-***WorldGenerationTaskArrays.py - documentation - last updated on 14.10.2021 by uuk***
+***WorldGenerationTaskArrays.py - documentation - last updated on 13.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -43,12 +43,12 @@ ___
         function schedule_invoke(
                 self,
                 chunk: mcpython.engine.world.AbstractInterface.IChunk,
-                method,
+                method: typing.Callable | typing.Awaitable,
                 *args,
                 **kwargs,
                 ):
             
-            Schedules an callable-invoke for the future
+            Schedules a callable-invoke for the future or an await on such a task
             :param chunk: the chunk to link to
             :param method: the method to call
             :param args: the args to call with
@@ -106,7 +106,7 @@ ___
                 self, chunk: mcpython.engine.world.AbstractInterface.IChunk, position: tuple
                 ):
             
-            schedules an hide of an block
+            Schedules hiding a block
             :param chunk: the chunk
             :param position: the position of the block
 
@@ -115,17 +115,23 @@ ___
                 self, chunk: mcpython.engine.world.AbstractInterface.IChunk, position: tuple
                 ):
             
-            schedules an visual update of an block (-> show/hide as needed)
+            Schedules a visual update of a block (-> show/hide as needed)
             :param chunk: the chunk
             :param position: the position of the block
 
 
         function process_one_task(self, chunk=None, log_msg=False) -> int
             
-            processes one task from an semi-random chunk or an given one
+            Processes one task from a semi-random chunk or a given one
             :param chunk: the chunk or None to select one
             :param log_msg: if messages for extra info should be logged
 
+
+                variable chunk.generated
+
+                variable chunk.finished
+
+                variable chunk.loaded
 
         function process_tasks(self, chunks=None, timer=None)
             
@@ -136,7 +142,7 @@ ___
             todo: add some better sorting function!
 
 
-                variable start
+                    variable start
 
         function process_chunk(
                 self, chunk: mcpython.engine.world.AbstractInterface.IChunk, timer=None
@@ -158,11 +164,17 @@ ___
                 self, chunk: mcpython.engine.world.AbstractInterface.IChunk
                 ) -> bool:
 
+            variable dimension
+
                 variable dim_map
 
-                    variable m: list
+        function unsafe_process_0_array(self, chunk, dim_map: dict = None) -> bool
 
-                    variable data
+            variable m: list
+
+            variable data
+
+                    variable task
 
         function _process_1_array(
                 self, chunk: mcpython.engine.world.AbstractInterface.IChunk
@@ -252,7 +264,7 @@ ___
     class WorldGenerationTaskHandlerReference extends IWorldGenerationTaskHandlerReference
         
         reference class to an WorldGenerationTaskHandler for setting the chunk globally
-        all scheduling functions are the same of WorldGenerationTaskHandler exept the chunk-parameter is missing.
+        all scheduling functions are the same of WorldGenerationTaskHandler except the chunk-parameter is missing.
         It is set on construction
 
 

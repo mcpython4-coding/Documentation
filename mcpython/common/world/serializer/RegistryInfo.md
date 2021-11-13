@@ -1,4 +1,4 @@
-***RegistryInfo.py - documentation - last updated on 9.2.2021 by uuk***
+***RegistryInfo.py - documentation - last updated on 13.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -18,8 +18,7 @@ ___
 
         variable PART
 
-        static
-        function load(cls, save_file)
+            variable data
 
             variable type_change_builder
 
@@ -31,5 +30,8 @@ ___
 
                         variable compressed
 
-        static
-        function save(cls, data, save_file)
+            variable data
+
+                variable rdata
+
+                variable data[registry.name]

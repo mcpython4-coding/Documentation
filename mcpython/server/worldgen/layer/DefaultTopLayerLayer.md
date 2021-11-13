@@ -1,4 +1,4 @@
-***DefaultTopLayerLayer.py - documentation - last updated on 11.2.2021 by uuk***
+***DefaultTopLayerLayer.py - documentation - last updated on 13.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -19,8 +19,9 @@ ___
 
         variable noise
 
-        static
-        function add_generate_functions_to_chunk(cls, config: LayerConfig, reference)
+            variable chunk
+
+            variable noise_map
 
             variable height_map
 
