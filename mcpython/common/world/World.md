@@ -1,4 +1,4 @@
-***World.py - documentation - last updated on 30.10.2021 by uuk***
+***World.py - documentation - last updated on 13.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -123,11 +123,24 @@ ___
 
             variable self.dim_to_id[dim.name]
 
+        @deprecation.deprecated()
         function join_dimension(self, dim_id: int)
             
             will change the dimension of the active player
             :param dim_id: the dimension to change to todo: make str
             todo: move to player
+
+
+            variable sector
+
+            variable old
+
+            variable self.active_dimension
+            
+            Will change the dimension of the active player
+            :param dim_id: the dimension to change to todo: make str
+            todo: move to player
+            todo: event calls must be async-ed
 
 
             variable sector
@@ -242,6 +255,7 @@ ___
 
                 variable chunk
 
+        @deprecation.deprecated()
         function change_chunks(
                 self,
                 before: typing.Union[typing.Tuple[int, int], None],
@@ -250,6 +264,33 @@ ___
                 load_immediate=True,
                 dimension=None,
                 ):
+            
+            Move from chunk `before` to chunk `after`
+            :param before: the chunk before
+            :param after: the chunk after
+            :param generate_chunks: if chunks should be generated
+            :param load_immediate: if chunks should be loaded immediate if needed
+            todo: move to dimension
+
+
+                variable dimension
+
+            variable before_set
+
+            variable after_set
+
+            variable pad
+
+            variable hide
+                show = after_set - before_set
+
+                variable c
+
+                variable c
+
+                variable c
+
+                        variable chunk
             
             Move from chunk `before` to chunk `after`
             :param before: the chunk before

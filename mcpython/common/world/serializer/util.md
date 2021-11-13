@@ -1,4 +1,4 @@
-***util.py - documentation - last updated on 16.9.2021 by uuk***
+***util.py - documentation - last updated on 13.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -12,16 +12,3 @@ ___
 
 
     function chunk2region(cx, cz)
-
-    function access_region_data(
-            save_file,
-            dimension: int,
-            region: tuple,
-            ):
-
-    function write_region_data(
-            save_file,
-            dimension: int,
-            region,
-            data,
-            ):

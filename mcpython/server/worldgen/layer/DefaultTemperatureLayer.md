@@ -1,4 +1,4 @@
-***DefaultTemperatureLayer.py - documentation - last updated on 9.2.2021 by uuk***
+***DefaultTemperatureLayer.py - documentation - last updated on 13.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -20,8 +20,7 @@ ___
         static
         function normalize_config(config: LayerConfig)
 
-        static
-        function add_generate_functions_to_chunk(cls, config: LayerConfig, reference)
+            variable chunk
 
             variable temperature_map
 

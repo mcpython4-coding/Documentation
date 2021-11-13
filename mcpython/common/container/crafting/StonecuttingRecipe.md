@@ -1,4 +1,4 @@
-***StonecuttingRecipe.py - documentation - last updated on 27.4.2021 by uuk***
+***StonecuttingRecipe.py - documentation - last updated on 13.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -14,10 +14,17 @@ ___
     @shared.crafting_handler class StoneCuttingRecipe extends mcpython.common.container.crafting.IRecipe.IRecipe
 
         variable RECIPE_TYPE_NAMES
-            todo: implement
             The list of type descriptors to decode
 
         static
         function from_data(cls, data: dict, file: str) -> "StoneCuttingRecipe"
 
-        function __init__(self)
+        function __init__(self, ingredient: str, result: str, count: int = 1)
+
+            variable self.ingredient
+
+            variable self.result
+
+            variable self.count
+
+        function prepare(self)

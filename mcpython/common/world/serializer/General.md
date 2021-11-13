@@ -1,4 +1,4 @@
-***General.py - documentation - last updated on 16.9.2021 by uuk***
+***General.py - documentation - last updated on 13.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -15,8 +15,7 @@ ___
 
         variable PART
 
-        static
-        function load(cls, save_file)
+            variable data
 
             variable save_file.version
 
@@ -28,5 +27,4 @@ ___
 
             variable mcpython.server.worldgen.noise.NoiseManager.manager.default_implementation
 
-        static
-        function save(cls, data, save_file)
+            variable data

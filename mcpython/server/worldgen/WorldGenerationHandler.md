@@ -1,4 +1,4 @@
-***WorldGenerationHandler.py - documentation - last updated on 27.9.2021 by uuk***
+***WorldGenerationHandler.py - documentation - last updated on 13.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -19,9 +19,6 @@ ___
 
         function __init__(self)
 
-            variable self.layers
-                registry table for layers
-
             variable self.configs
                 a config table: dimension name -> config list
 
@@ -40,7 +37,7 @@ ___
 
             variable self.chunk_maps
 
-        function setup_chunk_maps(self, chunk)
+        function setup_chunk_maps(self, chunk: mcpython.engine.world.AbstractInterface.IChunk)
 
         function register_chunk_map(
                 self,
@@ -67,7 +64,7 @@ ___
             Will set the loaded-flag of the chunk during the process
             Will schedule the internal inner_add_chunk function
             :param chunk: the chunk
-            :param dimension: optional: if chunk is tuple, if another dim than active should be used
+            :param dimension: optional: if chunk is tuple, and another dimension than the active one should be used
             :param force_generate: if generation should take place also when auto-gen is disabled
             :param immediate: if inner_add_chunk should be called immediate or not [can help in cases where TaskHandler stops
                 running tasks when in-generation progress]

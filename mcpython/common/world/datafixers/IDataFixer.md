@@ -1,4 +1,4 @@
-***IDataFixer.py - documentation - last updated on 30.10.2021 by uuk***
+***IDataFixer.py - documentation - last updated on 13.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -16,9 +16,6 @@ ___
         variable FIXES_FROM
 
         variable FIXES_TO
-
-        static
-        function apply(cls, save_file, *args)
 
     class IStorageVersionFixer extends IDataFixer,  ABC
         
@@ -69,9 +66,6 @@ ___
         variable TYPE
 
         variable TARGET_SERIALIZER_NAME - the name of the fixer dedicated to these part
-
-        static
-        function apply(cls, save_file, *args, **kwargs)
             
             default implementation of the IPartFixer apply() calling apply_part_fixer(cls) on the SERIALIZER specified
             by TARGET_SERIALIZER_NAME

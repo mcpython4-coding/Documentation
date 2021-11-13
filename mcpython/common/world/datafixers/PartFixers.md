@@ -1,4 +1,4 @@
-***PartFixers.py - documentation - last updated on 16.9.2021 by uuk***
+***PartFixers.py - documentation - last updated on 13.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -20,11 +20,9 @@ ___
 
         variable TARGET_GAMERULE_NAME - which game rules to apply to
 
-        static
-        function fix(cls, save_file, data) -> dict
+            variable data
 
-        static
-        function apply(cls, save_file, *args)
+                    variable data[name]
 
     class GameRuleRemovalFixer extends IPartFixer
         
@@ -35,8 +33,7 @@ ___
 
         variable TARGET_GAMERULE_NAME - which game rules to apply to
 
-        static
-        function apply(cls, save_file, *args)
+            variable data
 
     class WorldConfigFixer extends IPartFixer
         
@@ -45,11 +42,9 @@ ___
 
         variable TARGET_SERIALIZER_NAME
 
-        static
-        function fix(cls, save_file, data: dict) -> dict
+            variable data
 
-        static
-        function apply(cls, save_file, *args)
+            variable data["config"]
 
     class WorldGeneralFixer extends IPartFixer
         
@@ -58,11 +53,9 @@ ___
 
         variable TARGET_SERIALIZER_NAME
 
-        static
-        function fix(cls, save_file, data: dict) -> dict
+            variable data
 
-        static
-        function apply(cls, save_file, *args)
+            variable data
 
     class PlayerDataFixer extends IPartFixer
         
@@ -70,9 +63,6 @@ ___
 
 
         variable TARGET_SERIALIZER_NAME
-
-        static
-        function fix(cls, savefile, player, data) -> dict
             
             will apply the fix
             :param savefile: the savefile to use
@@ -81,5 +71,12 @@ ___
             :return: the fixed data
 
 
-        static
-        function apply(cls, save_file, *args)
+            variable data
+
+                variable player_data
+
+                variable player
+
+                variable player_data
+
+                variable data[name]

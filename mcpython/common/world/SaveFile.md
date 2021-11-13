@@ -1,4 +1,4 @@
-***SaveFile.py - documentation - last updated on 30.10.2021 by uuk***
+***SaveFile.py - documentation - last updated on 13.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -103,6 +103,7 @@ ___
             Iterator iterating over ALL region files from an save file
 
 
+        @deprecation.deprecated()
         function load_world(self)
             
             Loads all setup-data into the world
@@ -117,6 +118,7 @@ ___
 
                     variable self.version
 
+        @deprecation.deprecated()
         function save_world(self, *_, override=False)
             
             Save all base-data into the system
@@ -124,14 +126,20 @@ ___
             :param override: flag for saving the chunks
 
 
+                variable self.save_in_progress
+                    Make sure that nothing else is going on...
+
+                variable shared.world_generation_handler.enable_generation
+
                 variable shared.world_generation_handler.enable_generation
                     And open the system again
 
                 variable self.save_in_progress
 
+        @deprecation.deprecated()
         function apply_storage_fixer(self, name: str, *args, **kwargs)
             
-            Will apply an fixer to fix the storage version
+            Will apply a fixer to fix the storage version
             :param name: the name of the fixer to use
             :param args: the args to send
             :param kwargs: the kwargs to use
@@ -140,9 +148,10 @@ ___
 
             variable fixer: mcpython.common.world.datafixers.IDataFixer.IStorageVersionFixer
 
+        @deprecation.deprecated()
         function apply_group_fixer(self, name: str, *args, **kwargs)
             
-            will apply an group fixer to the system
+            Will apply a group fixer to the system
             :param name: the name of the group fixer to use
             :param args: the args to use
             :param kwargs: the kwargs to use
@@ -151,9 +160,10 @@ ___
 
             variable fixer: mcpython.common.world.datafixers.IDataFixer.IGroupFixer
 
+        @deprecation.deprecated()
         function apply_part_fixer(self, name: str, *args, **kwargs)
             
-            Will apply an part fixer to the system
+            Will apply a part fixer to the system
             :param name: the name to use
             :param args: the args to send
             :param kwargs: the kwargs
@@ -162,6 +172,7 @@ ___
 
             variable fixer: mcpython.common.world.datafixers.IDataFixer.IPartFixer
 
+        @deprecation.deprecated()
         function apply_mod_fixer(self, modname: str, source_version: tuple, *args, **kwargs)
             
             Applies an mod fixer(list) to the system
@@ -190,15 +201,31 @@ ___
         static
         function get_serializer_for(cls, part)
 
+        @deprecation.deprecated()
         function read(self, part, **kwargs)
             
-            Reads an part of the save-file
+            Reads a part of the save-file
+            :param part: the part to load
+            :param kwargs: kwargs given to the loader
+            :return: whatever the loader returns
+            todo: use async variant when possible!!!!
+
+            
+            Reads a part of the save-file
             :param part: the part to load
             :param kwargs: kwargs given to the loader
             :return: whatever the loader returns
 
 
+        @deprecation.deprecated()
         function dump(self, data, part, **kwargs)
+            
+            Similar to read(...), but the other way round.
+            :param data: the data to store, optional, may be None
+            :param part: the part to save
+            :param kwargs: the kwargs to give the saver
+            todo: use async variant when possible!!!!
+
             
             Similar to read(...), but the other way round.
             :param data: the data to store, optional, may be None
@@ -206,47 +233,105 @@ ___
             :param kwargs: the kwargs to give the saver
 
 
+        @deprecation.deprecated()
         function access_file_json(self, file: str)
             
             Access a saved json file
             :param file: the file to load
             :return: the data of the file or None if an error has occur
 
+            
+            Access a saved json file
+            :param file: the file to load
+            :return: the data of the file or None if an error has occur
 
+
+            variable file
+
+        @deprecation.deprecated()
         function access_file_pickle(self, file: str)
             
             Access save a pickle file
             :param file: the file to load
             :return: the data of the file or None if an error has occur
 
+            
+            Access save a pickle file
+            :param file: the file to load
+            :return: the data of the file or None if an error has occurred
 
+
+            variable file
+
+        @deprecation.deprecated()
         function access_raw(self, file: str)
             
             Access save a file in binary mode
             :param file: the file to load
             :return: the data of the file or None if an error has occur
 
+            
+            Access save a file in binary mode
+            :param file: the file to load
+            :return: the data of the file or None if an error has occurred
 
+
+            variable file
+
+        @deprecation.deprecated()
         function dump_file_json(self, file: str, data)
             
             saves stuff with json into the system
             :param file: the file to save to
             :param data: the data to save
 
+            
+            saves stuff with json into the system
+            :param file: the file to save to
+            :param data: the data to save
 
+
+            variable file
+
+            variable d
+
+                variable data
+
+        @deprecation.deprecated()
         function dump_file_pickle(self, file: str, data)
             
             saves stuff with pickle into the system
             :param file: the file to save to
             :param data: the data to save
 
+            
+            Saves stuff with pickle into the system
+            :param file: the file to save to
+            :param data: the data to save
 
+
+            variable file
+
+            variable d
+
+                variable data
+
+        @deprecation.deprecated()
         function dump_raw(self, file: str, data: bytes)
             
             saves bytes into the system
             :param file: the file to save to
             :param data: the data to save
 
+            
+            saves bytes into the system
+            :param file: the file to save to
+            :param data: the data to save
+
+
+            variable file
+
+            variable d
 
     @shared.mod_loader("minecraft", "stage:datafixer:general")
     function load_elements()

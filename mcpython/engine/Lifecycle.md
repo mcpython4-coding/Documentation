@@ -1,4 +1,4 @@
-***Lifecycle.py - documentation - last updated on 30.10.2021 by uuk***
+***Lifecycle.py - documentation - last updated on 13.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,6 +11,10 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
+    function schedule_task(task)
+
+    variable ASYNC_INVOKE_QUEUE
+
     class Lifecycle extends pyglet.app.EventLoop
 
         function run(self)
@@ -22,3 +26,9 @@ ___
                 variable timeout
 
             variable self.is_running
+
+        function handle_some_async(self)
+
+                variable task: asyncio.Task
+
+                variable ex

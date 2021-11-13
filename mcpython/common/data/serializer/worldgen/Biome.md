@@ -1,4 +1,4 @@
-***Biome.py - documentation - last updated on 27.9.2021 by uuk***
+***Biome.py - documentation - last updated on 13.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -88,7 +88,11 @@ ___
 
                 variable GRASS_COLOR
 
+                        variable GRASS_COLOR
+
                 variable WATER_COLOR
+
+                        variable WATER_COLOR
 
                 variable FEATURES
 

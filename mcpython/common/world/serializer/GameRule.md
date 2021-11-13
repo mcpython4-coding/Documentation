@@ -1,4 +1,4 @@
-***GameRule.py - documentation - last updated on 16.9.2021 by uuk***
+***GameRule.py - documentation - last updated on 13.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -15,8 +15,6 @@ ___
 
         variable PART
 
-        static
-        function load(cls, save_file)
+            variable data
 
-        static
-        function save(cls, data, save_file)
+            variable data

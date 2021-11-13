@@ -1,4 +1,4 @@
-***Chunk.py - documentation - last updated on 30.10.2021 by uuk***
+***Chunk.py - documentation - last updated on 13.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -15,11 +15,6 @@ ___
 
         variable PART
 
-        static
-        function load(
-                cls, save_file, dimension: int, chunk: typing.Tuple[int, int], immediate=False
-                ):
-
             variable region
 
                 variable data
@@ -27,7 +22,7 @@ ___
             variable chunk_instance: mcpython.engine.world.AbstractInterface.IChunk
 
             variable shared.world_generation_handler.enable_generation
-                Don't do this when we are saving stuff
+                Don't generate stuff while we are saving stuff
 
             variable data
 
@@ -68,9 +63,6 @@ ___
                     variable buffer
 
             variable flag
-
-        static
-        function save(cls, data, save_file, dimension: int, chunk: tuple, override=False)
 
             variable region
 

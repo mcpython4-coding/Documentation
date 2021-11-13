@@ -1,4 +1,4 @@
-***GrassBlock.py - documentation - last updated on 30.10.2021 by uuk***
+***GrassBlock.py - documentation - last updated on 13.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,7 +11,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class GrassBlock extends AbstractBlock.AbstractBlock
+    class GrassBlock extends IFoliageColoredBlock.IFoliageColoredBlock
         
         Class for the grass block
 
@@ -31,9 +31,6 @@ ___
                 variable instance
 
                 variable instance
-
-        static
-        function get_tint_for_index(index: int) -> typing.Tuple[float, float, float, float]
 
         function on_player_interaction(
                 self,

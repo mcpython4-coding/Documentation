@@ -1,4 +1,4 @@
-***ILayer.py - documentation - last updated on 16.9.2021 by uuk***
+***ILayer.py - documentation - last updated on 13.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -45,6 +45,3 @@ ___
         function normalize_config(config: LayerConfig)
 
         variable NAME
-
-        static
-        function add_generate_functions_to_chunk(config: LayerConfig, reference)
