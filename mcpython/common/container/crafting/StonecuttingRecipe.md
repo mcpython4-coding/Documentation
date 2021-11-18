@@ -1,4 +1,4 @@
-***StonecuttingRecipe.py - documentation - last updated on 13.11.2021 by uuk***
+***StonecuttingRecipe.py - documentation - last updated on 18.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -15,6 +15,8 @@ ___
 
         variable RECIPE_TYPE_NAMES
             The list of type descriptors to decode
+
+        variable CRAFTING_SUPPORT
 
         static
         function from_data(cls, data: dict, file: str) -> "StoneCuttingRecipe"

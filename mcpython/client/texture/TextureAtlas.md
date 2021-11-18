@@ -1,4 +1,4 @@
-***TextureAtlas.py - documentation - last updated on 16.10.2021 by uuk***
+***TextureAtlas.py - documentation - last updated on 18.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -123,5 +123,7 @@ ___
         function is_free_for(self, images: list) -> bool
 
         function is_free_for_slow(self, images: list) -> bool
+
+        function get_pyglet_texture(self)
 
     variable handler

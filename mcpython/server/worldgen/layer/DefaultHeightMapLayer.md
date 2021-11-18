@@ -1,4 +1,4 @@
-***DefaultHeightMapLayer.py - documentation - last updated on 13.11.2021 by uuk***
+***DefaultHeightMapLayer.py - documentation - last updated on 18.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -28,9 +28,7 @@ ___
 
             variable height_map
 
-            variable biome_map
-
             variable noise_map
+                todo: can we optimize this preparation by sending prepared noise values directly to the async part
 
-        static
-        function get_height_at(cls, config, chunk, x, z, v, biome_map) -> list
+            variable info - todo: do some more special stuff here!

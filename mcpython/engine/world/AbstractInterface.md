@@ -1,4 +1,4 @@
-***AbstractInterface.py - documentation - last updated on 6.11.2021 by uuk***
+***AbstractInterface.py - documentation - last updated on 18.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -401,6 +401,10 @@ ___
         function dump_debug_maps_all_chunks(self, file_formatter: str)
 
         function chunk_iterator(self)
+
+        function show_chunk(self, chunk: typing.Union[typing.Tuple[int, int], IChunk])
+
+        function hide_chunk(self, chunk: typing.Union[typing.Tuple[int, int], IChunk])
 
     class IWorld extends ABC
 

@@ -1,4 +1,4 @@
-***Slot.py - documentation - last updated on 13.11.2021 by uuk***
+***Slot.py - documentation - last updated on 18.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -20,6 +20,8 @@ ___
     class ISlot extends IBufferSerializeAble,  ABC
 
         function __init__(self)
+
+            variable self.on_update
 
             variable self.assigned_inventory
 

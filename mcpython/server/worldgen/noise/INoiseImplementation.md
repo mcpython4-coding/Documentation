@@ -1,4 +1,4 @@
-***INoiseImplementation.py - documentation - last updated on 9.2.2021 by uuk***
+***INoiseImplementation.py - documentation - last updated on 18.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -28,6 +28,18 @@ ___
 
         static
         function merge(cls, implementation: "INoiseImplementation", values)
+
+    class WeightedEqualMerger extends IOctaveMerger
+
+        function __init__(self, weights: typing.Iterable[float])
+
+            variable self.weights
+
+            variable s
+
+            variable self.normalized_weights
+
+        function merge(self, implementation: "INoiseImplementation", values)
 
     class GEO_EQUAL_MERGER extends IOctaveMerger
 

@@ -1,4 +1,4 @@
-***Blocks.py - documentation - last updated on 30.10.2021 by uuk***
+***Blocks.py - documentation - last updated on 18.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -44,7 +44,11 @@ ___
 
             variable obj
 
+            variable key
+
             variable obj
+
+            variable key
 
             variable obj
 

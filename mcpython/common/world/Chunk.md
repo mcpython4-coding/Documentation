@@ -1,4 +1,4 @@
-***Chunk.py - documentation - last updated on 6.11.2021 by uuk***
+***Chunk.py - documentation - last updated on 18.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -122,6 +122,42 @@ ___
                     variable block
 
                     variable faces[face.normal_name]
+
+        function exposed_faces_list(
+                self, position: typing.Tuple[int, int, int]
+                ) -> typing.List[bool]:
+
+            variable instance
+
+            variable faces
+
+                variable pos
+
+                variable chunk_position
+
+                    variable chunk
+
+                    variable chunk
+
+                    variable faces[face.index]
+
+                    variable block
+
+                    variable faces[face.index]
+
+        function exposed_faces_flag(self, block) -> int
+
+            variable faces
+
+                variable pos
+
+                variable chunk_position
+
+                    variable chunk
+
+                    variable chunk
+
+                    variable new_block
 
         function exposed_faces_iterator(
                 self, position: typing.Tuple[int, int, int]

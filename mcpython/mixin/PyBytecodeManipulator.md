@@ -1,4 +1,4 @@
-***PyBytecodeManipulator.py - documentation - last updated on 30.10.2021 by uuk***
+***PyBytecodeManipulator.py - documentation - last updated on 18.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -67,12 +67,35 @@ ___
 
             variable self.cell_vars
 
-        function applyPatches(self)
-            
-            Writes the data this container holds back to the function
+                variable self.columntable
+
+                variable self.exceptiontable
+
+                variable self.end_line_table
+
+                variable self.qual_name
+
+            function applyPatches(self)
+                
+                Writes the data this container holds back to the function
 
 
-            variable self.target.__code__
+                variable self.target.__code__
+
+            function applyPatches(self)
+                
+                Writes the data this container holds back to the function
+                code_new_impl(PyTypeObject *type, int argcount, int posonlyargcount,
+                int kwonlyargcount, int nlocals, int stacksize, int flags,
+                PyObject *code, PyObject *consts, PyObject *names,
+                PyObject *varnames, PyObject *filename, PyObject *name,
+                PyObject *qualname, int firstlineno, PyObject *linetable,
+                PyObject *endlinetable, PyObject *columntable,
+                PyObject *exceptiontable, PyObject *freevars,
+                PyObject *cellvars);
+
+
+                variable self.target.__code__
 
         function create_method_from(self)
 

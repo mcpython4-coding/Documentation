@@ -1,4 +1,4 @@
-***FurnaceCraftingHelper.py - documentation - last updated on 27.4.2021 by uuk***
+***FurnaceCraftingHelper.py - documentation - last updated on 18.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -15,6 +15,8 @@ ___
         
         Interface for decoding an furnace-like recipe
 
+
+        variable CRAFTING_SUPPORT
 
         variable RECIPE_TYPE_NAMES
             The list of type descriptors to decode

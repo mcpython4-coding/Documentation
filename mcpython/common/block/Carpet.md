@@ -1,4 +1,4 @@
-***Carpet.py - documentation - last updated on 30.10.2021 by uuk***
+***Carpet.py - documentation - last updated on 18.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -28,16 +28,3 @@ ___
 
         static
         function modify_block_item(cls, factory)
-
-    function create_carpet_block(carpet_color: str)
-        
-        generator function for carpets. Will create an new class for an carpet
-        :param carpet_color: the color name of the carpet
-        :return: the generated class
-
-
-        @shared.registry class Carpet extends AbstractCarpet
-
-            variable NAME: str - the name of the block
-
-    function load()

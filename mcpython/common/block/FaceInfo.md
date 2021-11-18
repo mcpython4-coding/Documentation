@@ -1,4 +1,4 @@
-***FaceInfo.py - documentation - last updated on 14.10.2021 by uuk***
+***FaceInfo.py - documentation - last updated on 18.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -16,9 +16,7 @@ ___
         Class for face state of the block
 
 
-        variable DEFAULT_FACE_STATE
-
-        variable DEFAULT_FACE_DATA
+        variable __slots__
 
         function __init__(self, block)
             
@@ -27,36 +25,23 @@ ___
 
             variable self.block
 
-            variable self.multi_data
+            variable self.faces
 
-            variable self.multi_faces
+            variable self.custom_renderer - holds a custom block renderer
+
+            variable self.subscribed_renderer: bool
+
+            variable self.bound_rendering_info
+
+            variable self.multi_data
 
         function is_shown(self) -> bool
 
-        function show_face(self, face: EnumSide, force=False)
-            
-            Shows a face
-            :param face: the face of the block
-            :param force: force the show, WARNING: internal only
-
-
-                variable self.face_data
-
-            variable self.faces[face.normal_name]
-
-                    variable self.subscribed_renderer
-
-                    variable self.face_data[face.normal_name]
-
-                    variable self.face_data[face.normal_name]
-
-        function show_faces(self, faces: typing.List[str])
+        function show_faces(self, faces: int)
             
             Optimised show_face() for more than one face
             Will do only something optimal when more than one face is passed in
 
-
-                variable self.face_data
 
                     variable self.subscribed_renderer
 
@@ -68,19 +53,15 @@ ___
 
             variable self.multi_data
 
-        function hide_face(self, face: EnumSide)
+        function hide_faces(self, faces: int)
             
-            Will hide an face
-            :param face: the face to hide
+            Will hide a face
+            :param faces: the faces to hide
 
 
-            variable self.faces[face.normal_name]
+            variable faces
 
                     variable self.subscribed_renderer
-
-            variable self.face_data[face.normal_name]
-
-                variable self.face_data
 
         function _draw_custom_render(self)
             
@@ -104,6 +85,4 @@ ___
             Will hide all faces
 
 
-                    variable self.faces[face.normal_name]
-
-                variable self.face_data
+            variable self.faces

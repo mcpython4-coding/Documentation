@@ -1,4 +1,4 @@
-***ChestRenderer.py - documentation - last updated on 19.10.2021 by uuk***
+***ChestRenderer.py - documentation - last updated on 18.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -59,7 +59,7 @@ ___
                 self,
                 position: typing.Tuple[int, int, int],
                 block: IChestRendererSupport,
-                faces,
+                faces: int,
                 batches,
                 ):
 

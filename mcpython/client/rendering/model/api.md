@@ -1,4 +1,4 @@
-***api.py - documentation - last updated on 6.11.2021 by uuk***
+***api.py - documentation - last updated on 18.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -73,12 +73,20 @@ ___
             :return: if successful or not
 
 
+        @deprecation.deprecated()
         function add_face_to_batch(
                 self,
                 instance: IBlockStateRenderingTarget,
                 batch: pyglet.graphics.Batch,
                 face: mcpython.util.enums.EnumSide,
-                ) -> list:
+                ) -> typing.Iterable:
+
+        function add_faces_to_batch(
+                self,
+                instance: IBlockStateRenderingTarget,
+                batch: pyglet.graphics.Batch,
+                faces: int,
+                ) -> typing.Iterable:
 
         function add_raw_face_to_batch(
                 self, instance: IBlockStateRenderingTarget, position, state, batches, faces

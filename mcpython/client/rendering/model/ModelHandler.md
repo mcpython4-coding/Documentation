@@ -1,4 +1,4 @@
-***ModelHandler.py - documentation - last updated on 6.11.2021 by uuk***
+***ModelHandler.py - documentation - last updated on 18.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -90,27 +90,25 @@ ___
 
                         variable self.models[name]
 
+        @deprecation.deprecated()
         function add_face_to_batch(
                 self, block: IBlockStateRenderingTarget, face: EnumSide, batches
                 ) -> typing.Iterable:
+
+            variable blockstate
+
+        function add_faces_to_batch(
+                self, block, faces: int, batches: typing.List
+                ) -> typing.Iterable:
             
-            Adds a single face of a block-like thing to a batch
+            Adds a collection of faces to a batch
+            :param block: the thing to get rendering information from
+            :param faces: n bitmap describing the faces
+            :param batches: the batches to render into  todo: make single-atlas able
             :return: a list of vertex lists
 
 
             variable blockstate
-
-                variable vertex_list
-
-                variable vertex_list
-
-        function add_faces_to_batch(
-                self, block, faces: typing.Iterable, batches: typing.List
-                ) -> typing.Iterable:
-
-            variable blockstate
-
-                variable vertex_list
 
         function add_raw_face_to_batch(
                 self,

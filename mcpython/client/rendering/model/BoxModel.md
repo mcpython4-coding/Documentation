@@ -1,4 +1,4 @@
-***BoxModel.py - documentation - last updated on 6.11.2021 by uuk***
+***BoxModel.py - documentation - last updated on 18.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -37,6 +37,8 @@ ___
             variable self.box_size
 
             variable self.faces
+
+            variable self.animated_texture_coords
 
             variable self.face_tint_index
 
@@ -84,7 +86,11 @@ ___
 
                     variable var
 
-                    variable self.faces[face.index]
+                    variable position
+
+                        variable self.animated_faces[face.index]
+
+                        variable self.faces[face.index]
 
                     variable index
 
@@ -107,6 +113,16 @@ ___
 
                 variable atlas
 
+            variable data
+
+                    variable data[i]
+
+                    variable coords
+
+                    variable size
+
+                    variable self.animated_texture_coords[i]
+
             variable self.tex_data
 
             variable self.inactive
@@ -127,36 +143,65 @@ ___
 
             variable vertices
 
+        @deprecation.deprecated()
         function get_prepared_box_data(
+                self,
+                instance,
+                position,
+                rotation=(0, 0, 0),
+                active_faces=None,
+                uv_lock=False,
+                previous=None,
+                ) -> typing.Tuple[typing.List[float], typing.List[float], typing.List[float]]:
+
+                variable active_faces
+
+                variable active_faces
+
+                variable active_faces
+
+                variable active_faces
+
+        function prepare_rendering_data_multi_face(
                 self,
                 instance: IBlockStateRenderingTarget,
                 position: typing.Tuple[float, float, float],
                 rotation: typing.Tuple[float, float, float] = (0, 0, 0),
-                active_faces=None,
+                faces: int = 0,
                 uv_lock=False,
                 previous: typing.Tuple[
                 typing.List[float], typing.List[float], typing.List[float]
                 ] = None,
+                batch: pyglet.graphics.Batch | typing.List[pyglet.graphics.Batch] = None,
                 ) -> typing.Tuple[typing.List[float], typing.List[float], typing.List[float]]:
             
             Util method for getting the box data for a block (vertices and uv's)
             :param instance: the instance to get information from to render
             :param position: the position of the block
             :param rotation: the rotation
-            :param active_faces: the faces to get data for, None means all
+            :param faces: the faces to get data for, None means all
             :param uv_lock: ?
             :param previous: previous data to add the new to, or None to create new
+            :param batch: the batch to use
 
 
             variable vertex
 
             variable collected_data
 
+            variable faces
+
                     variable face
 
                 variable i
 
                 variable i2
+
+                            variable group
+
+                                variable batch2
+
+                                variable batch2
 
         function get_prepared_box_data_scaled(
                 self,
@@ -421,11 +466,29 @@ ___
 
             variable vertices
 
+        @deprecation.deprecated()
         function add_face_to_batch(
                 self,
                 batch: pyglet.graphics.Batch,
                 position: typing.Tuple[float, float, float],
                 face: typing.Optional[typing.Union[typing.Iterable[int], EnumSide]],
+                rotation=(0, 0, 0),
+                rotation_center=(0, 0, 0),
+                ):
+
+            variable vertices
+
+            variable result
+
+                variable t
+
+                variable v
+
+        function add_faces_to_batch(
+                self,
+                batch: pyglet.graphics.Batch,
+                position: typing.Tuple[float, float, float],
+                faces: int,
                 rotation=(0, 0, 0),
                 rotation_center=(0, 0, 0),
                 ):
@@ -471,11 +534,29 @@ ___
 
             variable previous.vertices[:]
 
+        @deprecation.deprecated()
         function add_face_to_batch(
                 self,
                 batch: pyglet.graphics.Batch,
                 position: typing.Tuple[float, float, float],
                 face: typing.Optional[typing.Union[typing.Iterable[int], EnumSide]],
+                rotation=(0, 0, 0),
+                rotation_center=(0, 0, 0),
+                ):
+
+            variable vertices
+
+            variable result
+
+                variable t
+
+                variable v
+
+        function add_faces_to_batch(
+                self,
+                batch: pyglet.graphics.Batch,
+                position: typing.Tuple[float, float, float],
+                faces: int,
                 rotation=(0, 0, 0),
                 rotation_center=(0, 0, 0),
                 ):
@@ -516,11 +597,30 @@ ___
 
             variable vertices
 
+        @deprecation.deprecated()
         function add_face_to_batch(
                 self,
                 batch: pyglet.graphics.Batch,
                 position: typing.Tuple[float, float, float],
                 face: typing.Union[typing.Iterable[int], EnumSide],
+                rotation=(0, 0, 0),
+                rotation_center=(0, 0, 0),
+                color=(1, 1, 1, 1),
+                ):
+
+            variable vertices
+
+            variable result
+
+                variable t
+
+                variable v
+
+        function add_faces_to_batch(
+                self,
+                batch: pyglet.graphics.Batch,
+                position: typing.Tuple[float, float, float],
+                faces: int,
                 rotation=(0, 0, 0),
                 rotation_center=(0, 0, 0),
                 color=(1, 1, 1, 1),

@@ -1,4 +1,4 @@
-***InventoryFurnace.py - documentation - last updated on 14.10.2021 by uuk***
+***InventoryFurnace.py - documentation - last updated on 18.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -72,7 +72,7 @@ ___
 
             variable self.xp_stored
 
-            variable self.smelt_start
+            variable self.smelt_start: typing.Optional[float]
 
             variable self.old_item_name
 

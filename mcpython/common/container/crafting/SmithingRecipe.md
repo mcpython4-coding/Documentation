@@ -1,4 +1,4 @@
-***SmithingRecipe.py - documentation - last updated on 27.4.2021 by uuk***
+***SmithingRecipe.py - documentation - last updated on 18.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -16,6 +16,8 @@ ___
         variable RECIPE_TYPE_NAMES
             todo: implement
             The list of type descriptors to decode
+
+        variable CRAFTING_SUPPORT
 
         static
         function from_data(cls, data: dict, file: str) -> "SmithingRecipe"

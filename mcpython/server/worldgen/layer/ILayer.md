@@ -1,4 +1,4 @@
-***ILayer.py - documentation - last updated on 13.11.2021 by uuk***
+***ILayer.py - documentation - last updated on 18.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -12,6 +12,10 @@ ___
 
 
     class LayerConfig
+        
+        The configuration object for world generation layers.
+        Should be read / written to by the Layers,
+
 
         function __init__(self, *config, **attr_config)
 
@@ -34,14 +38,16 @@ ___
     class ILayer extends mcpython.common.event.api.IRegistryContent
         
         Implementation for each layer in generation code.
-        An layer is an step in the generation code
-        DEPENDS_ON should be an list of other layer names this layer depends on,
-        currently not used, but later for parallel world gen
+        A layer is a step in the generation code
+        DEPENDS_ON should be a list of other layer names this layer depends on,
+        currently not used, but later for parallel world gen (You see that the generation function itself is async)
 
+
+        variable TYPE
+
+        variable NAME
 
         variable DEPENDS_ON
 
         static
         function normalize_config(config: LayerConfig)
-
-        variable NAME

@@ -1,4 +1,4 @@
-***installer.py - documentation - last updated on 19.5.2021 by uuk***
+***installer.py - documentation - last updated on 18.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -22,3 +22,11 @@ ___
         variable home
 
         variable version_data
+
+    subprocess.call(
+        [
+            sys.executable,
+            home + "/__main__.py",
+            "--no-window",
+        ],
+        stdout=sys.stdout,

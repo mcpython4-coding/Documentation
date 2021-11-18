@@ -1,4 +1,4 @@
-***BlockState.py - documentation - last updated on 13.11.2021 by uuk***
+***BlockState.py - documentation - last updated on 18.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -52,6 +52,7 @@ ___
 
                             variable data[i]["model"]
 
+        @deprecation.deprecated()
         function add_face_to_batch(
                 self,
                 instance: mcpython.client.rendering.model.api.IBlockStateRenderingTarget,
@@ -61,6 +62,20 @@ ___
                 ):
 
             variable state
+
+            variable box_model
+
+        function add_faces_to_batch(
+                self,
+                instance: IBlockStateRenderingTarget,
+                batch: pyglet.graphics.Batch,
+                faces: int,
+                previous=None,
+                ) -> typing.Iterable:
+
+            variable state
+
+            variable (
 
             variable box_model
 
@@ -113,6 +128,21 @@ ___
                 prepared_vertex,
                 prepared_tint,
                 state,
+                ):
+
+                    variable data
+
+        function prepare_rendering_data_multi_face(
+                self,
+                box_model,
+                faces: int,
+                instance: IBlockStateRenderingTarget,
+                prepared_texture,
+                prepared_vertex,
+                prepared_tint,
+                prepare_vertex_elements,
+                state,
+                batch: pyglet.graphics.Batch = None,
                 ):
 
                     variable data
@@ -176,12 +206,22 @@ ___
 
                         variable model
 
+        @deprecation.deprecated()
         function add_face_to_batch(
                 self,
                 instance: mcpython.client.rendering.model.api.IBlockStateRenderingTarget,
                 batch: pyglet.graphics.Batch,
                 face: mcpython.util.enums.EnumSide,
                 ):
+
+            variable data
+
+        function add_faces_to_batch(
+                self,
+                instance: IBlockStateRenderingTarget,
+                batch: pyglet.graphics.Batch,
+                faces: int,
+                ) -> typing.Iterable:
 
             variable data
 
@@ -279,11 +319,14 @@ ___
 
         function bake(self)
 
-        function add_face_to_batch(
+        @deprecation.deprecated()
+        function add_face_to_batch(self, block, batch, face)
+
+        function add_faces_to_batch(
                 self,
                 block: mcpython.client.rendering.model.api.IBlockStateRenderingTarget,
                 batch: pyglet.graphics.Batch,
-                face: mcpython.util.enums.EnumSide,
+                faces: int,
                 ):
 
         function add_raw_face_to_batch(
@@ -322,11 +365,19 @@ ___
 
         function copy(self)
 
+        @deprecation.deprecated()
         function add_face_to_batch(
                 self,
                 instance: mcpython.client.rendering.model.api.IBlockStateRenderingTarget,
                 batch: pyglet.graphics.Batch,
                 face: mcpython.util.enums.EnumSide,
+                ):
+
+        function add_faces_to_batch(
+                self,
+                instance: mcpython.client.rendering.model.api.IBlockStateRenderingTarget,
+                batch: pyglet.graphics.Batch,
+                faces: int,
                 ):
 
                 variable instance.block_state

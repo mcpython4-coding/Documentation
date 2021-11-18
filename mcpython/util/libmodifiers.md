@@ -1,4 +1,4 @@
-***libmodifiers.py - documentation - last updated on 13.11.2021 by uuk***
+***libmodifiers.py - documentation - last updated on 18.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -36,3 +36,21 @@ ___
         variable method.code_string[2] - return value
 
         variable method.code_string[3]
+
+        function replacement_update_draw_list(self)
+
+            function visit(group)
+
+                variable domain_map
+                    Draw domains using this group
+
+                variable children
+                    Sort and visit child groups of this group
+
+            variable self._draw_list
+
+            variable self._draw_list_dirty
+
+        function patchPygletRendering()
+
+            variable method

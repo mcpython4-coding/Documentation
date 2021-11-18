@@ -1,4 +1,4 @@
-***enums.py - documentation - last updated on 6.11.2021 by uuk***
+***enums.py - documentation - last updated on 18.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -38,9 +38,20 @@ ___
 
 
         static
+        function side_list_to_bit_map(cls, sides: typing.List["EnumSide"])
+
+        static
+        function bitmap_to_side_list(cls, bitflag: int)
+
+        static
+        function rotate_bitmap(cls, bitmap: int, rotation)
+
+        static
         function by_index(cls, index: int)
 
-        function __init__(self, dx: int, dy: int, dz: int, normal_name: str, index: int)
+        function __init__(
+                self, dx: int, dy: int, dz: int, normal_name: str, index: int, bitflag: int
+                ):
             
             Constructs a new enum instance
             :param dx: the delta in x
@@ -54,6 +65,8 @@ ___
             variable self.normal_name
 
             variable self.index
+
+            variable self.bitflag
 
         function invert(self)
             

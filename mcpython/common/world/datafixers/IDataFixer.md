@@ -1,4 +1,4 @@
-***IDataFixer.py - documentation - last updated on 13.11.2021 by uuk***
+***IDataFixer.py - documentation - last updated on 18.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -67,6 +67,6 @@ ___
 
         variable TARGET_SERIALIZER_NAME - the name of the fixer dedicated to these part
             
-            default implementation of the IPartFixer apply() calling apply_part_fixer(cls) on the SERIALIZER specified
+            default implementation of the IPartFixer apply() calling apply_part_fixer_async(cls) on the SERIALIZER specified
             by TARGET_SERIALIZER_NAME
             Mods may want to override this method when doing other special stuff

@@ -1,4 +1,4 @@
-***FluidRenderer.py - documentation - last updated on 19.10.2021 by uuk***
+***FluidRenderer.py - documentation - last updated on 18.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -12,7 +12,6 @@ ___
 
 
     variable SOME_SMALL_VALUES
-        Used to prevent z-fighting with neighbor blocks on transparent fluids
 
     class FluidRenderer extends  mcpython.client.rendering.blocks.ICustomBlockRenderer.ICustomBatchBlockRenderer 
         
@@ -23,7 +22,11 @@ ___
 
             variable self.texture_location
 
-            variable self.texture
+                variable self.texture
+
+                variable self.texture
+
+                variable self.texture_location
 
             variable self.texture
 
@@ -35,4 +38,6 @@ ___
 
         function add(self, position: typing.Tuple[int, int, int], block, face, batches)
 
-        function add_multi(self, position: typing.Tuple[int, int, int], block, faces, batches)
+        function add_multi(
+                self, position: typing.Tuple[int, int, int], block, faces: int, batches
+                ):

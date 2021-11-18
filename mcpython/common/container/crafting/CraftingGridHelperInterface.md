@@ -1,4 +1,4 @@
-***CraftingGridHelperInterface.py - documentation - last updated on 9.2.2021 by uuk***
+***CraftingGridHelperInterface.py - documentation - last updated on 18.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -32,8 +32,8 @@ ___
 
         function __init__(
                 self,
-                slot_input_map,
-                slot_output_map,
+                slot_input_map: typing.List[typing.List[ISlot]],
+                slot_output_map: ISlot,
                 maxsize=None,
                 minsize=None,
                 enabled=True,
@@ -55,7 +55,7 @@ ___
 
             variable self.slot_input_map
 
-            variable self.slot_output_map: mcpython.client.gui.Slot.Slot
+            variable self.slot_output_map: mcpython.client.gui.Slot.ISlot
 
             variable self.grid_size
 
@@ -67,7 +67,7 @@ ___
 
             variable slot_output_map.on_shift_click
 
-            variable self.active_recipe
+            variable self.active_recipe: typing.Optional[IRecipe]
 
             variable self.shaped_enabled
 
@@ -107,6 +107,19 @@ ___
             Helper function for minimizing the map stored by pos -> entry
 
 
+            variable minx
+                check if everything in the top left corner
+
+            variable miny
+
+                    variable transform[i]
+
+                    variable transform[i]
+
+            variable new_map
+
+                variable new_map[transform[i]]
+
         static
         function check_shaped(
                 cls,
@@ -143,3 +156,15 @@ ___
         function on_output_update(self, player=False)
 
         function on_output_shift_click(self, slot, x, y, button, modifiers, player)
+
+            variable old_recipe
+
+            variable count
+
+            variable itemstack
+
+                variable itemstack
+
+            variable max_size
+
+                variable self.active_recipe

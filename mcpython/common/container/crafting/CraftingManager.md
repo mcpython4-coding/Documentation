@@ -1,4 +1,4 @@
-***CraftingManager.py - documentation - last updated on 13.11.2021 by uuk***
+***CraftingManager.py - documentation - last updated on 18.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -35,6 +35,8 @@ ___
 
             variable self.loaded_mod_dirs
 
+            variable self.static_recipes
+
         function shuffle_data(self)
 
             variable recipe_group_copy
@@ -57,7 +59,7 @@ ___
 
                 variable recipe.name
 
-            variable self.recipe_table[name]
+                variable self.recipe_table[name]
 
         function add_recipe_from_data(self, data: dict, name: str, file: str = None)
 

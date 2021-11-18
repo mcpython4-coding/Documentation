@@ -1,4 +1,4 @@
-***ModLoader.py - documentation - last updated on 13.11.2021 by uuk***
+***ModLoader.py - documentation - last updated on 18.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,10 +11,10 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    function cast_dependency(depend: dict)
+    function cast_dependency(dependency: dict) -> mcpython.common.mod.Mod.ModDependency
         
-        Will cast a dict-structure to the depend
-        :param depend: the depend dict
+        Will cast a dict-structure to the dependency
+        :param dependency: the dependency dict describing the data
         :return: the parsed mod.Mod.ModDependency-object
 
 
@@ -25,10 +25,16 @@ ___
             variable config["versions"]
 
     function parse_provider_json(container: "ModContainer", data: dict)
+        
+        Parser for the provider.json information file mods and other containers are
+        allowed to provide in order to do stuff before mod loading
+
 
     class ModContainer
         
-        Class holding information about a mod file
+        Class holding information about a mod file/directory
+        (Not a single mod, but more a load location)
+        Is similar to sys.path-entries, but only for mods
 
 
         function __init__(self, path: str)
@@ -52,7 +58,7 @@ ___
 
         function try_identify_mod_loader(self)
             
-            Does some clever lookup for identifying the mod loader
+            Does some lookup for identifying the mod loader
 
 
                     variable self.assigned_mod_loader
@@ -219,7 +225,7 @@ ___
         function look_for_mod_files(self)
             
             Scanner for mod files, parsing the parsed sys.argv stuff
-            Stores the resuolt in the found_mod_files attribute of this
+            Stores the result in the found_mod_files attribute of this
 
 
             variable folders
@@ -240,6 +246,7 @@ ___
             
             Will check for changes between versions between this session and the one before
             In case of a change, rebuild mode is entered
+            todo: add a way for mods to decide if a rebuild is needed when they are added / removed
 
 
                     variable shared.invalidate_cache
@@ -303,13 +310,13 @@ ___
             If on client, the renderer is also updated
 
 
-            variable start
-
-            variable astate: mcpython.common.state.ModLoadingProgress.ModLoadingProgress
+            variable astate
 
             variable astate.parts[0].progress_max
 
             variable astate.parts[1].progress_max
+
+            variable start
 
                 variable stage
 
@@ -318,9 +325,9 @@ ___
             Will update the text of the pgb's in mod loading
 
 
-            variable astate: mcpython.common.state.ModLoadingProgress.ModLoadingProgress
+            variable astate
 
-            variable instance: mcpython.common.mod.Mod.Mod
+            variable instance
 
             variable astate.parts[2].text
 

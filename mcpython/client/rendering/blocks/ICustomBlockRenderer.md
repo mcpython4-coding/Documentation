@@ -1,4 +1,4 @@
-***ICustomBlockRenderer.py - documentation - last updated on 14.10.2021 by uuk***
+***ICustomBlockRenderer.py - documentation - last updated on 18.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -25,7 +25,11 @@ ___
 
         function add(self, position: typing.Tuple[int, int, int], block, face, batches)
 
-        function add_multi(self, position: typing.Tuple[int, int, int], block, faces, batches)
+        function add_multi(
+                self, position: typing.Tuple[int, int, int], block, faces: int, batches
+                ):
+
+            variable d
 
         function remove(self, position: typing.Tuple[int, int, int], block, data, face)
 
@@ -42,7 +46,3 @@ ___
         function on_block_fully_hidden(self, block)
 
         function draw(self, position: typing.Tuple[int, int, int], block)
-
-    class ICustomBlockVertexManager extends ICustomBlockRenderer
-
-        function handle(self, block, vertices, face, blockstate)

@@ -1,4 +1,4 @@
-***Biome.py - documentation - last updated on 13.11.2021 by uuk***
+***Biome.py - documentation - last updated on 18.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -43,6 +43,12 @@ ___
                 variable self.top_extension
 
                 variable self.bottom_extension
+
+                variable self.top_extension
+
+                variable self.bottom_extension
+
+            variable self.height_range
 
         function get_top_layer_height_range(
                 self,

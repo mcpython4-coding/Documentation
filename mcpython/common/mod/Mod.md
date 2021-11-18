@@ -1,4 +1,4 @@
-***Mod.py - documentation - last updated on 19.10.2021 by uuk***
+***Mod.py - documentation - last updated on 18.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -61,8 +61,7 @@ ___
     class Mod
         
         Class for mods. For creating a new mod, create an instance of this or define an entry in the latest version in your
-        mod.json file.
-        Can be subclassed for custom mod specs
+        mod.json file. Can be subclassed for custom mod specs
 
 
         function __init__(
@@ -107,7 +106,7 @@ ___
 
             variable self.server_only
 
-        function mod_string(self)
+        function mod_string(self) -> str
             
             Will transform the mod into a string for display purposes
 
@@ -164,4 +163,4 @@ ___
             :param depend: the mod to check for
 
 
-        function check_dependencies(self, mod_loader, mod_info)
+        function check_dependencies(self, mod_loader, mod_info) -> bool

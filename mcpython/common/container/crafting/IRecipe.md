@@ -1,4 +1,4 @@
-***IRecipe.py - documentation - last updated on 16.9.2021 by uuk***
+***IRecipe.py - documentation - last updated on 18.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -26,6 +26,9 @@ ___
 
         variable RECIPE_VIEW
 
+        variable CRAFTING_SUPPORT
+            item names supporting crafting operations of this recipe
+
         static
         function from_data(cls, data: dict, file: str)
 
@@ -40,3 +43,5 @@ ___
         function bake(self)
 
         function prepare(self)
+
+        function prepare_static(self)

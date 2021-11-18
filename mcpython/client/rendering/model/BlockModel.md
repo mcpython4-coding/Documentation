@@ -1,4 +1,4 @@
-***BlockModel.py - documentation - last updated on 6.11.2021 by uuk***
+***BlockModel.py - documentation - last updated on 18.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -26,6 +26,8 @@ ___
 
             variable self.used_textures
 
+            variable self.animated_textures
+
             variable self.texture_addresses
 
             variable self.texture_names
@@ -48,6 +50,14 @@ ___
 
                     variable texture
 
+                            variable texture_f
+
+                            variable texture_f
+
+                            variable texture_f
+
+                            variable self.animated_textures[
+
                         variable self.used_textures[name]
 
                         variable self.drawable
@@ -59,7 +69,7 @@ ___
 
             variable add
 
-                variable self.texture_addresses[name]
+                    variable self.texture_addresses[name]
 
                 variable self.texture_atlas
 
@@ -74,7 +84,9 @@ ___
                 face: mcpython.util.enums.EnumSide,
                 previous: typing.Tuple[typing.List[float], typing.List[float]] = None,
                 ) -> typing.Tuple[
-                typing.Tuple[typing.List[float], typing.List[float], typing.List[float]],
+                typing.Tuple[
+                typing.List[float], typing.List[float], typing.List[float], typing.List
+                ],
                 typing.Any,
                 ]:
                 """
@@ -93,7 +105,7 @@ ___
                 f"[BLOCK MODEL][FATAL] can't draw the model '{self.name}' "
                 f"(which has not defined textures) at {position}"
                 )
-                return ([], [], []) if previous is None else previous, None
+                return ([], [], [], []) if previous is None else previous, None
                 
                 rotation = config["rotation"]
                 if rotation == (90, 90, 0):
@@ -115,6 +127,60 @@ ___
 
             variable box_model
 
+        function prepare_rendering_data_multi_face(
+                self,
+                instance: IBlockStateRenderingTarget,
+                position: typing.Tuple[float, float, float],
+                config: dict,
+                faces: int,
+                previous: typing.Tuple[typing.List[float], typing.List[float]] = None,
+                batch: pyglet.graphics.Batch = None,
+                ) -> typing.Tuple[
+                typing.Tuple[
+                typing.List[float], typing.List[float], typing.List[float], typing.List
+                ],
+                typing.Any,
+                ]:
+                """
+                Collects the vertex and texture data for a block at the given position with given configuration
+                :param instance: the instance to draw
+                :param position: the offset position
+                :param config: the configuration
+                :param faces: the faces
+                :param previous: previous collected data, as a tuple of vertices, texture coords
+                :param batch: the batch to use
+                :return: a tuple of vertices and texture coords, and an underlying BoxModel for some identification stuff
+                """
+                
+                # If this is true, we cannot render this model as stuff is not fully linked
+                if not self.drawable:
+                logger.println(
+                f"[BLOCK MODEL][FATAL] can't draw the model '{self.name}' "
+                f"(which has not defined textures) at {position}"
+                )
+                return ([], [], [], []) if previous is None else previous, None
+                
+                rotation = config["rotation"]
+                if rotation == (90, 90, 0):
+            
+            Collects the vertex and texture data for a block at the given position with given configuration
+            :param instance: the instance to draw
+            :param position: the offset position
+            :param config: the configuration
+            :param faces: the faces
+            :param previous: previous collected data, as a tuple of vertices, texture coords
+            :param batch: the batch to use
+            :return: a tuple of vertices and texture coords, and an underlying BoxModel for some identification stuff
+
+
+            variable rotation
+
+                variable rotation
+
+            variable collected_data
+
+            variable box_model
+
         function get_prepared_data_for_scaled(
                 self,
                 instance: IBlockStateRenderingTarget,
@@ -124,7 +190,9 @@ ___
                 scale: float,
                 previous: typing.Tuple[typing.List[float], typing.List[float]] = None,
                 ) -> typing.Tuple[
-                typing.Tuple[typing.List[float], typing.List[float], typing.List[float]],
+                typing.Tuple[
+                typing.List[float], typing.List[float], typing.List[float], typing.List
+                ],
                 typing.Any,
                 ]:
                 """
@@ -144,7 +212,7 @@ ___
                 f"[BLOCK MODEL][FATAL] can't draw the model '{self.name}' "
                 f"(which has not defined textures) at {position}"
                 )
-                return ([], [], []) if previous is None else previous, None
+                return ([], [], [], []) if previous is None else previous, None
                 
                 rotation = config["rotation"]
                 if rotation == (90, 90, 0):
@@ -167,6 +235,7 @@ ___
 
             variable box_model
 
+        @deprecation.deprecated()
         function add_face_to_batch(
                 self,
                 instance: IBlockStateRenderingTarget,
@@ -174,6 +243,15 @@ ___
                 batch: pyglet.graphics.Batch,
                 config: dict,
                 face: mcpython.util.enums.EnumSide,
+                ):
+
+        function add_faces_to_batch(
+                self,
+                instance: IBlockStateRenderingTarget,
+                position: typing.Tuple[float, float, float],
+                batch: pyglet.graphics.Batch,
+                config: dict,
+                faces: int,
                 ) -> typing.Iterable[VertexList]:
             
             Adds a given face to the batch

@@ -1,4 +1,4 @@
-***ConfigFile.py - documentation - last updated on 16.9.2021 by uuk***
+***ConfigFile.py - documentation - last updated on 18.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -13,7 +13,7 @@ ___
 
     class InvalidMapperData extends Exception
 
-    class StringParsingPool
+    @deprecation.deprecated() class StringParsingPool
         
         An system dedicated to handling an file context with the ability to pop and get lines.
 
@@ -28,6 +28,7 @@ ___
 
         function get_line(self) -> str
 
+    @deprecation.deprecated()
     function toDataMapper(value)
         
         will 'map' the given value to an IDataMapper-object
@@ -45,33 +46,39 @@ ___
         base class for every serialize-able content in config files
 
 
+        @deprecation.deprecated()
         function __init__(self, default_value)
 
             variable self.value
 
+        @deprecation.deprecated()
         function read(self)
             
             will return an pythonic representation of the content
 
 
+        @deprecation.deprecated()
         function write(self, value)
             
             will write to the internal buffer the data
             :param value: the value to write
 
 
+        @deprecation.deprecated()
         function serialize(self) -> str
             
             will compress the mapper into an string-representation
             :return: the stringified version
 
 
+        @deprecation.deprecated()
         function deserialize(self, d: StringParsingPool)
             
             will write certain data into the mapper
             :param d: the pool to read from
 
 
+        @deprecation.deprecated()
         function integrate(self, other)
             
             will integrate the data from other into this
@@ -85,9 +92,11 @@ ___
         WARNING: lower priority than normal aata mappers beside string mapper. Overriding with this not possible
 
 
+        @deprecation.deprecated()
         static
         function valid_value_to_parse(cls, data) -> bool
 
+        @deprecation.deprecated()
         static
         function parse(cls, data) -> IDataMapper
 
@@ -96,60 +105,85 @@ ___
         implementation of an mapper mapping dict-objects
 
 
+        @deprecation.deprecated()
         function __init__(self)
 
+        @deprecation.deprecated()
         function add_entry(self, key: str, default_mapper=None, description=None)
 
+        @deprecation.deprecated()
         function __getitem__(self, item)
 
+        @deprecation.deprecated()
         function __setitem__(self, key, value)
 
+        @deprecation.deprecated()
         function __contains__(self, item)
 
+        @deprecation.deprecated()
         function read(self) -> dict
 
+        @deprecation.deprecated()
         function write(self, value: dict)
 
+        @deprecation.deprecated()
         function serialize(self) -> str
 
+        @deprecation.deprecated()
         static
         function deserialize(cls, d: StringParsingPool)
 
+        @deprecation.deprecated()
         function integrate(self, other)
 
     class ListDataMapper extends IDataMapper
 
+        @deprecation.deprecated()
         function __init__(self, default=[])
 
+        @deprecation.deprecated()
         function __getitem__(self, item)
 
+        @deprecation.deprecated()
         function __setitem__(self, key, value)
 
+        @deprecation.deprecated()
         function __contains__(self, item)
 
+        @deprecation.deprecated()
         function append(self, item)
 
+        @deprecation.deprecated()
         function add(self, items: list)
 
+        @deprecation.deprecated()
         function read(self)
 
+        @deprecation.deprecated()
         function write(self, value)
 
+        @deprecation.deprecated()
         function serialize(self) -> str
 
+        @deprecation.deprecated()
         static
         function deserialize(cls, d: StringParsingPool)
 
     class IntDataMapper extends IDataMapper
 
+        @deprecation.deprecated()
         function __init__(self, value=0)
 
+        @deprecation.deprecated()
         function read(self)
 
+        @deprecation.deprecated()
         function write(self, value)
 
+        @deprecation.deprecated()
         function serialize(self) -> str
 
+        @deprecation.deprecated()
         static
         function deserialize(cls, d: StringParsingPool)
 
@@ -157,47 +191,64 @@ ___
 
     class FloatDataMapper extends IDataMapper
 
+        @deprecation.deprecated()
         function __init__(self, value=0.0)
 
+        @deprecation.deprecated()
         function read(self)
 
+        @deprecation.deprecated()
         function write(self, value)
 
+        @deprecation.deprecated()
         function serialize(self) -> str
 
+        @deprecation.deprecated()
         static
         function deserialize(cls, d: StringParsingPool)
 
     class StringDataMapper extends IDataMapper
 
+        @deprecation.deprecated()
         function __init__(self, value="")
 
+        @deprecation.deprecated()
         function read(self)
 
+        @deprecation.deprecated()
         function write(self, value)
 
+        @deprecation.deprecated()
         function serialize(self) -> str
 
+        @deprecation.deprecated()
         static
         function deserialize(cls, d: StringParsingPool)
 
     class BooleanDataMapper extends IDataMapper
 
+        @deprecation.deprecated()
         function __init__(self, value=False)
 
+        @deprecation.deprecated()
         function read(self)
 
+        @deprecation.deprecated()
         function write(self, value)
 
+        @deprecation.deprecated()
         function serialize(self) -> str
 
+        @deprecation.deprecated()
         static
         function deserialize(cls, d: StringParsingPool)
 
     variable MAPPERS
 
+    @deprecation.deprecated()
     function stringToMapper(d: str) -> IDataMapper
 
+    @deprecation.deprecated()
     function bufferToMapper(d: StringParsingPool) -> IDataMapper
 
     class ConfigFile
@@ -205,6 +256,7 @@ ___
         class representation of an config file. Process of config reading MUST be started by mod
 
 
+        @deprecation.deprecated()
         function __init__(self, file_name: str, assigned_mod: str)
 
             variable self.file_name
@@ -215,19 +267,27 @@ ___
 
             variable self.file
 
+        @deprecation.deprecated()
         function add_entry(self, key: str, default_mapper=None, description=None)
 
+        @deprecation.deprecated()
         function __getitem__(self, item)
 
+        @deprecation.deprecated()
         function __setitem__(self, key, value)
 
+        @deprecation.deprecated()
         function __contains__(self, item)
 
+        @deprecation.deprecated()
         function build(self)
 
+        @deprecation.deprecated()
         function read(self)
 
+        @deprecation.deprecated()
         function write(self)
 
+    @deprecation.deprecated()
     @shared.mod_loader("minecraft", "stage:mod:config:define")
     function load()

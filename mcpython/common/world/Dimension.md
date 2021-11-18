@@ -1,4 +1,4 @@
-***Dimension.py - documentation - last updated on 6.11.2021 by uuk***
+***Dimension.py - documentation - last updated on 18.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -120,6 +120,34 @@ ___
                 batches, see above for usages
 
             variable self.height_range
+
+        function show_chunk(
+                self,
+                chunk: typing.Union[
+                typing.Tuple[int, int], mcpython.engine.world.AbstractInterface.IChunk
+                ],
+                ):
+            
+            Ensure all blocks in the given chunk that should be shown are
+            drawn to the canvas.
+            :param chunk: the chunk to show
+
+
+                variable chunk
+
+        function hide_chunk(
+                self,
+                chunk: typing.Union[
+                typing.Tuple[int, int], mcpython.engine.world.AbstractInterface.IChunk
+                ],
+                ):
+            
+            Ensure all blocks in the given chunk that should be hidden are
+            removed from the canvas.
+            :param chunk: the chunk to hide
+
+
+                variable chunk
 
         function update_visible_block(self, position: typing.Tuple[int, int, int])
 

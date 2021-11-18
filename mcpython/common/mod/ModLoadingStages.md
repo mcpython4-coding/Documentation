@@ -1,4 +1,4 @@
-***ModLoadingStages.py - documentation - last updated on 16.9.2021 by uuk***
+***ModLoadingStages.py - documentation - last updated on 18.11.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -24,7 +24,7 @@ ___
 
             variable self.current_stage: typing.Optional[str]
 
-            variable self.ready: typing.List[str] - todo: can we use queue?
+            variable self.ready: typing.List[str]
 
         function get_new_ready(self)
 
