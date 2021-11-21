@@ -120,4 +120,4 @@ ___
 
         function instructionList2Code(self, instruction_list: typing.List[dis.Instruction])
 
-        function ensure_name(self, name: str) -> int
+        function ensureName(self, name: str) -> int
