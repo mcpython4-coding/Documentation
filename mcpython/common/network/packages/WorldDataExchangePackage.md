@@ -1,4 +1,4 @@
-***WorldDataExchangePackage.py - documentation - last updated on 19.10.2021 by uuk***
+***WorldDataExchangePackage.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -33,11 +33,13 @@ ___
 
         function request_player_info(self)
 
-        function write_to_buffer(self, buffer: WriteBuffer)
+            variable self.request_world_info_state
 
-        function read_from_buffer(self, buffer: ReadBuffer)
+            variable self.request_player_info_state
 
-        function handle_inner(self)
+            variable self.requested_dimensions
+
+            variable self.requested_chunks
 
     class WorldInfoPackage extends AbstractPackage
         
@@ -55,13 +57,11 @@ ___
 
         function setup(self)
 
-        function write_to_buffer(self, buffer: WriteBuffer)
-
-        function read_from_buffer(self, buffer: ReadBuffer)
+            variable self.spawn_point
 
             variable self.dimensions
 
-        function handle_inner(self)
+            variable shared.world.spawn_point
 
                 variable dim
 
@@ -101,9 +101,11 @@ ___
 
                 variable b
 
-        function write_to_buffer(self, buffer: WriteBuffer)
+            variable start
 
-        function read_from_buffer(self, buffer: ReadBuffer)
+            variable chunk
+
+            variable start
 
             variable self.dimension
 
@@ -115,7 +117,9 @@ ___
 
                     variable instance
 
-        function handle_inner(self)
+            variable start
+
+            variable chunk
 
             variable i
 
@@ -145,15 +149,11 @@ ___
             :param update_only: if to only update the block, not add a new one
 
 
-        function write_to_network_buffer(self, buffer: WriteBuffer)
-
-            function write(e)
-
-        function read_from_network_buffer(self, buffer: ReadBuffer)
+            variable self.dimension
 
             variable dimension
 
-            function read()
+                variable position
 
                     variable name
 
@@ -161,4 +161,6 @@ ___
 
                         variable instance
 
-        function handle_inner(self)
+            variable self.data
+
+            variable dimension

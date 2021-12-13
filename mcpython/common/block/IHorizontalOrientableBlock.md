@@ -1,4 +1,4 @@
-***IHorizontalOrientableBlock.py - documentation - last updated on 9.10.2021 by uuk***
+***IHorizontalOrientableBlock.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -18,6 +18,20 @@ ___
         function __init__(self)
 
             variable self.face
+
+                    variable self.face
+
+                    variable self.face
+
+                    variable self.face
+
+                    variable self.face
+
+                        variable self.face
+
+                        variable self.face
+
+                        variable self.face
 
                         variable self.face
 

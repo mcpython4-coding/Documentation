@@ -1,4 +1,4 @@
-***PlayerEntity.py - documentation - last updated on 14.10.2021 by uuk***
+***PlayerEntity.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -99,10 +99,6 @@ ___
 
         function __repr__(self)
 
-        function write_to_network_buffer(self, buffer: WriteBuffer)
-
-        function read_from_network_buffer(self, buffer: ReadBuffer)
-
             variable self.name
 
             variable self.gamemode
@@ -129,11 +125,25 @@ ___
 
                 variable package.gamemode
 
-        function write_update_package(self, package: PlayerUpdatePackage)
+                variable self.dimension
 
-        function send_update_package_when_client(self)
+                variable self.active_inventory_slot
 
-        function send_update_package_when_server(self, update_flags=-1)
+                variable self.gamemode
+
+                variable flag
+
+                    variable self.position
+
+                    variable self.rotation
+
+                    variable self.nbt_data["motion"]
+
+                    variable self.dimension
+
+                variable package
+
+                variable package.update_flags
 
         function hotkey_get_position(self)
 
@@ -141,12 +151,12 @@ ___
             
             Toggles between gamemode 1 and 3, used internally for the hotkey F3+N
 
-
-        function create_inventories(self)
             
             Helper method for setting up the player inventory
             todo: can we re-use inventories from previous players?
 
+
+            variable self.inventories_created
 
             variable self.inventory_hotbar
 
@@ -179,19 +189,13 @@ ___
             :return: the xp amount needed to reach the next xp level
 
 
-        function add_xp(self, xp: int)
+                variable needed
 
-        function add_xp_level(self, xp_levels: int)
+                    variable xp
 
-        function clear_xp(self)
+            variable self.xp_level
 
-        function pick_up_item(
-                self,
-                itemstack: typing.Union[
-                mcpython.common.container.ResourceStack.ItemStack,
-                mcpython.client.gui.Slot.Slot,
-                ],
-                ) -> bool:
+            variable self.xp
             
             Adds the item onto the itemstack
             :param itemstack: the itemstack to add
@@ -207,27 +211,19 @@ ___
                             variable delta
 
                 variable slots
-
-        function set_active_inventory_slot(self, slot: int)
             
             Sets the active inventory slot by ID (0-8)
             Clamped in the range when out of range
 
+
+            variable self.active_inventory_slot
 
         function get_active_inventory_slot(self)
             
             Gets the slot of the selected slot
 
 
-        function kill(
-                self,
-                drop_items=True,
-                kill_animation=True,
-                damage_source: mcpython.common.entity.DamageSource.DamageSource = None,
-                test_totem=True,
-                force=False,
-                internal=False,
-                ):
+            variable damage_source: mcpython.common.entity.DamageSource.DamageSource
 
                 variable a
                     todo: add effects of totem
@@ -272,7 +268,7 @@ ___
             Damage the player and removes the given amount of hearts (two hearts are one full displayed hart)
 
 
-        function reset_moving_slot(self)
+            variable stack
 
         function teleport_to_spawn_point(self)
 

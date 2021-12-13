@@ -1,4 +1,4 @@
-***BlockState.py - documentation - last updated on 18.11.2021 by uuk***
+***BlockState.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -40,7 +40,11 @@ ___
 
                 variable self.model_alias
 
-        function bake(self)
+                    variable parent: BlockStateContainer
+
+                    variable self.parent
+
+                        variable self.parent
 
                     variable self.parent
 
@@ -75,7 +79,7 @@ ___
 
             variable state
 
-            variable (
+            variable )
 
             variable box_model
 
@@ -198,7 +202,7 @@ ___
 
                 variable self.model_alias
 
-        function bake(self)
+                variable parent: BlockStateContainer
 
                 variable self.parent
 
@@ -272,34 +276,11 @@ ___
 
         variable NEEDED - for parent <-> child connection
 
-        static
-        function from_directory(cls, directory: str, modname: str, immediate=False)
+                variable s
 
-        static
-        function from_file(cls, file: str, modname: str, immediate=False)
-
-        static
-        function unsafe_from_file(cls, file: str)
-
-        static
-        function from_data(
-                cls,
-                name: str,
-                data: typing.Dict[str, typing.Any],
-                immediate=False,
-                store=True,
-                force=False,
-                ):
-
-        static
-        function unsafe_from_data(
-                cls, name: str, data: typing.Dict[str, typing.Any], immediate=False, force=False
-                ):
+                variable modname
 
                 variable instance
-
-        static
-        function get_or_load(cls, name: str) -> "BlockStateContainer"
 
             variable file
 
@@ -315,9 +296,11 @@ ___
 
             variable self.baked
 
-        function parse_data(self, data: dict)
+                    variable self.loader: IBlockStateDecoder
 
-        function bake(self)
+                    variable self.baked
+
+                variable self.baked
 
         @deprecation.deprecated()
         function add_face_to_batch(self, block, batch, face)
@@ -381,6 +364,8 @@ ___
                 ):
 
                 variable instance.block_state
+
+            variable m
 
             variable result
 

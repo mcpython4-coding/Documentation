@@ -1,4 +1,4 @@
-***SaveFile.py - documentation - last updated on 18.11.2021 by uuk***
+***SaveFile.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -292,6 +292,3 @@ ___
 
         @deprecation.deprecated()
         function dump_raw(self, file: str, data: bytes)
-
-    @shared.mod_loader("minecraft", "stage:datafixer:general")
-    function load_elements()

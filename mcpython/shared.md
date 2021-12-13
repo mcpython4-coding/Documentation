@@ -1,4 +1,4 @@
-***shared.py - documentation - last updated on 19.10.2021 by uuk***
+***shared.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -40,6 +40,8 @@ ___
     variable IS_NETWORKING
 
     variable IS_TEST_ENV
+
+    variable ENABLE_ANIMATED_TEXTURES
 
     variable CURRENT_EVENT_SUB
         Used by the mod loading system to store the name of the mod doing stuff currently

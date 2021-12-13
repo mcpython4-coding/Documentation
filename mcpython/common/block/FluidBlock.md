@@ -1,4 +1,4 @@
-***FluidBlock.py - documentation - last updated on 30.10.2021 by uuk***
+***FluidBlock.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -44,11 +44,13 @@ ___
 
             variable self.height
 
-        function on_block_added(self)
+                variable self.face_info.custom_renderer
 
-        function write_to_network_buffer(self, buffer: WriteBuffer)
+            variable self.is_flowing
 
-        function read_from_network_buffer(self, buffer: ReadBuffer)
+            variable self.flow_direction
+
+            variable self.height
 
     class WaterFluidBlock extends IFluidBlock
 

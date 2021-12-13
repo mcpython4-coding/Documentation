@@ -1,4 +1,4 @@
-***BlockManager.py - documentation - last updated on 30.10.2021 by uuk***
+***BlockManager.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -28,8 +28,6 @@ ___
     variable block_registry
 
     variable block_registry.full_table - an table of localized & un-localized block names
-
-    function load()
         
         Loads all blocks that should be loaded into the game
         Most registration should happen here so mods cannot load stuff too early into registries

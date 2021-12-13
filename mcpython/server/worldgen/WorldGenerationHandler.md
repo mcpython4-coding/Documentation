@@ -1,4 +1,4 @@
-***WorldGenerationHandler.py - documentation - last updated on 13.11.2021 by uuk***
+***WorldGenerationHandler.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -118,14 +118,7 @@ ___
 
                 variable layer_config.layer
 
-        function generate_chunk(
-                self,
-                chunk: typing.Union[mcpython.engine.world.AbstractInterface.IChunk, tuple],
-                dimension: typing.Union[
-                mcpython.engine.world.AbstractInterface.IDimension, int, str, None
-                ] = None,
-                check_chunk=True,
-                ):
+            variable dimension
             
             Generates the chunk in-place
             :param chunk: the chunk, as an instance, or a tuple
@@ -155,12 +148,14 @@ ___
             :param dimension: the dimension
             :param config: the config name
 
-
-        function mark_finished(self, chunk: mcpython.engine.world.AbstractInterface.IChunk)
             
             Internal helper for marking a chunk as finished. Will call the needed events.
             :param chunk: the chunk instance
 
+
+            variable config_name
+
+            variable config
 
         function register_layer(
                 self, layer: typing.Type[mcpython.server.worldgen.layer.ILayer.ILayer]
@@ -185,11 +180,3 @@ ___
                 ):
 
     variable shared.world_generation_handler
-
-    function load_layers()
-
-    function load_modes()
-
-    function load_features()
-
-    function load_maps()

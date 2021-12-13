@@ -1,4 +1,4 @@
-***Backend.py - documentation - last updated on 16.9.2021 by uuk***
+***Backend.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -26,8 +26,6 @@ ___
             variable self.data_stream
 
             variable self.connected
-
-        function send_package(self, data: bytes)
 
         function connect(self) -> bool
 
@@ -80,8 +78,6 @@ ___
             variable client_ids
 
         function get_package_streams(self)
-
-        function send_package(self, data: bytes, client: int)
 
         function connect(self)
 

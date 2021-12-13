@@ -1,4 +1,4 @@
-***Slot.py - documentation - last updated on 18.11.2021 by uuk***
+***Slot.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -148,13 +148,11 @@ ___
 
         function handle_click(self, button: int, modifiers: int) -> bool
 
-        function read_from_network_buffer(self, buffer: ReadBuffer)
-
-        function write_to_network_buffer(self, buffer: WriteBuffer)
-
         function get_capacity(self) -> int
 
         function get_itemstack(self) -> mcpython.common.container.ResourceStack.ItemStack
+
+        function get_linked_itemstack_for_sift_clicking(self)
 
         function set_itemstack(
                 self,
@@ -285,6 +283,8 @@ ___
 
             variable self.slot_position
 
+        function get_linked_itemstack_for_sift_clicking(self)
+
         function handle_click(self, button: int, modifiers: int) -> bool
 
         function get_allowed_item_tags(self)
@@ -391,6 +391,8 @@ ___
         function set_itemstack_force(self, stack)
 
         function call_update(self, player=False)
+
+        function get_linked_itemstack_for_sift_clicking(self)
 
         variable itemstack
 

@@ -1,4 +1,4 @@
-***test_PackageIDSync.py - documentation - last updated on 16.9.2021 by uuk***
+***test_PackageIDSync.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -15,11 +15,9 @@ ___
 
         function test_module_import(self)
 
-        function test_setup(self)
-
             variable package
 
-        function test_serialize(self)
+            variable shared.IS_TEST_ENV
 
             variable package
 
@@ -27,7 +25,7 @@ ___
 
             variable package2
 
-        function test_handle_inner(self)
+            variable shared.IS_TEST_ENV
 
             variable package
 

@@ -1,4 +1,4 @@
-***ItemEntity.py - documentation - last updated on 6.11.2021 by uuk***
+***ItemEntity.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -39,11 +39,17 @@ ___
             variable self.pickup_delay
 
             variable self.test_block
-                only for test reasons here
+                todo: fetch real item model here
+
+            variable self.test_block.dimension
+                Set the block dimension so the block can do cool stuff with rendering if it wants to
 
         function draw(self)
 
-        function tick(self, dt)
+            variable self.test_block.position
+                Set the block position so it knows where it is
+
+                variable self.test_block
 
                 variable self.pickup_delay
 
@@ -59,6 +65,6 @@ ___
 
                         variable self.position
 
-        function write_to_network_buffer(self, buffer: WriteBuffer)
+                variable self.item_stack
 
-        function read_from_network_buffer(self, buffer: ReadBuffer)
+            variable self.pickup_delay

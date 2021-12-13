@@ -1,4 +1,4 @@
-***EnderChest.py - documentation - last updated on 30.10.2021 by uuk***
+***EnderChest.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -36,16 +36,7 @@ ___
 
             variable CHEST_BLOCK_RENDERER
 
-            function on_block_added(self)
-
-        function on_player_interaction(
-                self,
-                player,
-                button: int,
-                modifiers: int,
-                hit_position: tuple,
-                itemstack,
-                ):
+                variable self.face_info.custom_renderer
 
                 variable player.inventory_enderchest.block
 
@@ -58,5 +49,3 @@ ___
         function get_model_state(self) -> dict
 
         function get_view_bbox(self)
-
-        function on_block_remove(self, reason)

@@ -1,4 +1,4 @@
-***ResourceLoader.py - documentation - last updated on 27.9.2021 by uuk***
+***ResourceLoader.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -303,7 +303,9 @@ ___
 
                 variable file
 
-            variable file
+                variable file
+
+                variable file
 
         variable loc
 

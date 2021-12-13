@@ -1,4 +1,4 @@
-***WorldGenerationTaskArrays.py - documentation - last updated on 13.11.2021 by uuk***
+***WorldGenerationTaskArrays.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -132,8 +132,6 @@ ___
                 variable chunk.finished
 
                 variable chunk.loaded
-
-        function process_tasks(self, chunks=None, timer=None)
             
             Process tasks in chunks [default to all scheduled chunks] until more time than timer is left behind
                 [Defaults to no limit]
@@ -142,11 +140,12 @@ ___
             todo: add some better sorting function!
 
 
-                    variable start
+            variable start
 
-        function process_chunk(
-                self, chunk: mcpython.engine.world.AbstractInterface.IChunk, timer=None
-                ):
+                variable chunks
+                    todo: optimize this!
+
+                    variable start
 
             variable start
 
@@ -160,25 +159,15 @@ ___
 
                 variable chunk.loaded
 
-        function _process_0_array(
-                self, chunk: mcpython.engine.world.AbstractInterface.IChunk
-                ) -> bool:
-
             variable dimension
 
                 variable dim_map
 
-        function unsafe_process_0_array(self, chunk, dim_map: dict = None) -> bool
+                variable dim_map
 
             variable m: list
 
             variable data
-
-                    variable task
-
-        function _process_1_array(
-                self, chunk: mcpython.engine.world.AbstractInterface.IChunk
-                ) -> bool:
 
                 variable dim_map
 
@@ -186,9 +175,7 @@ ___
 
                         variable block
 
-        function _process_2_array(
-                self, chunk: mcpython.engine.world.AbstractInterface.IChunk
-                ) -> bool:
+                            variable result
 
                 variable dim_map
 

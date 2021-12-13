@@ -1,4 +1,4 @@
-***StateHandler.py - documentation - last updated on 14.10.2021 by uuk***
+***StateHandler.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -26,15 +26,11 @@ ___
             variable self.active_state: typing.Optional[AbstractState.AbstractState]
 
             variable self.global_key_bind_toggle
-
-        function change_state(self, state_name: str, immediate=True)
             
             Will change the current state of the "machine"
             :param state_name: the name to switch to
             :param immediate: now or next scheduled event cycle (so afterwards), defaults to True
 
-
-        function inner_change_state(self, state_name: str)
             
             Internal change_state
             DO NOT USE!

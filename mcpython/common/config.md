@@ -1,4 +1,4 @@
-***config.py - documentation - last updated on 14.10.2021 by uuk***
+***config.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -148,8 +148,13 @@ ___
 
         variable block_config
 
-        @shared.mod_loader("minecraft", "stage:mod:config:work")
-        function load_data()
+            variable SPEED_DICT[0]
+
+            variable SPEED_DICT[1]
+
+            variable SPEED_DICT[2]
+
+            variable SPEED_DICT[3]
 
             variable USE_MISSING_TEXTURES_ON_MISS_TEXTURE
 

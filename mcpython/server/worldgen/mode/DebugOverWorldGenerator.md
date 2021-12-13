@@ -1,4 +1,4 @@
-***DebugOverWorldGenerator.py - documentation - last updated on 9.2.2021 by uuk***
+***DebugOverWorldGenerator.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -15,8 +15,7 @@ ___
 
         variable TABLE - {chunk: tuple<x, z> -> {position<x,z> -> blockname}}
 
-        static
-        function construct(cls)
+            variable BLOCKS: mcpython.common.event.Registry.Registry
 
             variable block_table
 

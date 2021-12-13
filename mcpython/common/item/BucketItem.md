@@ -1,4 +1,4 @@
-***BucketItem.py - documentation - last updated on 30.10.2021 by uuk***
+***BucketItem.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -32,10 +32,6 @@ ___
                 insert_parts=True,
                 ) -> bool:
 
-        function on_player_interact(
-                self, player, block, button: int, modifiers: int, itemstack, previous
-                ) -> bool:
-
                 variable bucket
 
     class FilledBucketItem extends AbstractFluidContainer,  ABC
@@ -62,10 +58,6 @@ ___
                 itemstack: ItemStack,
                 fluidstack: FluidStack,
                 extract_parts=True,
-                ) -> bool:
-
-        function on_player_interact(
-                self, player, block, button: int, modifiers: int, itemstack, previous
                 ) -> bool:
 
     @shared.registry class WaterBucket extends FilledBucketItem

@@ -1,4 +1,4 @@
-***ICapabilityContainer.py - documentation - last updated on 16.9.2021 by uuk***
+***ICapabilityContainer.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -17,9 +17,11 @@ ___
 
         function __init__(self)
 
-        function write_to_network_buffer(self, buffer: WriteBuffer)
+            variable flag
 
-        function read_from_network_buffer(self, buffer: ReadBuffer)
+            variable flag
+
+                variable self.capability_data
 
             variable self.capability_data
 

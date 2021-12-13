@@ -1,4 +1,4 @@
-***AbstractEntity.py - documentation - last updated on 6.11.2021 by uuk***
+***AbstractEntity.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -83,7 +83,9 @@ ___
 
         function get_collision_box(self)
 
-        function read_from_network_buffer(self, buffer: ReadBuffer)
+            variable dim_name
+
+            variable self.dimension
 
             variable self.rotation
 
@@ -96,8 +98,6 @@ ___
             variable self.nbt_data["motion"]
 
             variable self.nbt_data["invulnerable"]
-
-        function write_to_network_buffer(self, buffer: WriteBuffer)
 
         function add_to_chunk(self)
 
@@ -152,14 +152,7 @@ ___
             :param msg: the msg to tell
 
 
-        function kill(
-                self,
-                drop_items=True,
-                kill_animation=True,
-                damage_source: mcpython.common.entity.DamageSource.DamageSource = None,
-                force=False,
-                internal=False,
-                ):
+            variable damage_source: mcpython.common.entity.DamageSource.DamageSource
             
             Called to kill the entity [remove the entity from world]
             THIS IS THE FINAL REMOVAL METHOD. THIS DOES NOT HAVE MUCH CHECKS IF IT SHOULD BE ABLE TO BE KILLED!
@@ -174,10 +167,6 @@ ___
 
 
             variable self.dead
-
-        function pick_up_item(
-                self, itemstack: mcpython.common.container.ResourceStack.ItemStack
-                ) -> bool:
             
             Let the entity pick up a item and insert it into its inventory
             :param itemstack: the itemstack to use
@@ -227,8 +216,6 @@ ___
             Called to draw the entity in the world
             Invoked in the correct rendering phase
 
-
-        function tick(self, dt: float)
             
             Called every tick to update the entity
             Can be used to update animations, movement, do path finding stuff, damage other entities, ...

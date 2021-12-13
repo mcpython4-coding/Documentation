@@ -1,4 +1,4 @@
-***ItemManager.py - documentation - last updated on 16.9.2021 by uuk***
+***ItemManager.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -21,7 +21,7 @@ ___
 
     function build()
 
-    function load_data()
+                    variable data
 
             variable builder
 
@@ -42,5 +42,3 @@ ___
     variable items
 
     variable items.item_index_table
-
-    function load_items()

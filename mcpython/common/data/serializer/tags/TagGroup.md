@@ -1,4 +1,4 @@
-***TagGroup.py - documentation - last updated on 23.8.2021 by uuk***
+***TagGroup.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -36,11 +36,14 @@ ___
             :param replace: if the existing tag should be removed
             :return:
 
-
-        function build(self)
             
             Will "build" the tag group
 
+
+            variable depend_list
+                we need to sort after dependency
+
+            variable sort
 
         function get_tags_for(self, obj: str, cache=False) -> typing.List[str]
             

@@ -1,4 +1,4 @@
-***AbstractItem.py - documentation - last updated on 30.10.2021 by uuk***
+***AbstractItem.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -57,13 +57,17 @@ ___
 
             variable self.can_be_set_on
 
-        function read_from_network_buffer(self, buffer: ReadBuffer)
+            variable can_destroy_flag
+
+            variable can_be_set_on_flag
 
                 variable self.can_destroy
 
                 variable self.can_be_set_on
 
-        function write_to_network_buffer(self, buffer: WriteBuffer)
+            variable can_destroy_flag
+
+            variable can_be_set_on_flag
 
         function check_can_be_set_on(self, block, player)
 

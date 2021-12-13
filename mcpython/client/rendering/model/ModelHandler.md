@@ -1,4 +1,4 @@
-***ModelHandler.py - documentation - last updated on 18.11.2021 by uuk***
+***ModelHandler.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -29,18 +29,26 @@ ___
 
             variable self.break_stages
                 todo: reload these textures on normal reload
-
-        function add_from_mod(self, modname: str)
             
             Will add locations for a given mod name
             :param modname: the mod to use
 
-
-        function search(self)
             
             Will search all locations for new stuff
             todo: add datapack locations
 
+
+                variable found_models
+
+                    variable s
+
+                    variable mod_fix
+
+                    variable address_fix
+
+                    variable name
+
+                    variable self.found_models[name]
 
                     variable self.found_models[name]
 
@@ -52,13 +60,11 @@ ___
             :param store: if it should be stored and re-loaded on reload event
 
 
-        function build(self, immediate=False)
-
-        function let_subscribe_to_build(self, model, immediate=False)
+            variable modname
 
                 variable modname
 
-        function special_build(self, used: str)
+                variable used
 
             variable file
 
@@ -72,19 +78,19 @@ ___
 
                 variable depend
 
-        function process_models(self, immediate=False)
+                variable sorted_models
 
-                variable modname
-
-        function load_model(self, name: str)
+                variable name
 
             variable location
 
-                    variable model_data
-
-                        variable self.models[
+                        variable model_data
 
                         variable self.models[name]
+
+                            variable self.models[
+
+                            variable self.models[name]
 
                         variable self.models[
 
@@ -139,8 +145,6 @@ ___
         function draw_block_scaled(self, block, scale: float)
 
         function get_bbox(self, block)
-
-        function reload_models(self)
 
         function draw_block_break_overlay(
                 self, position: typing.Tuple[float, float, float], progress: float

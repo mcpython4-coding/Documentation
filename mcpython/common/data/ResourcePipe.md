@@ -1,4 +1,4 @@
-***ResourcePipe.py - documentation - last updated on 23.8.2021 by uuk***
+***ResourcePipe.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -10,18 +10,6 @@ ___
     Mod loader inspired by "Minecraft Forge" (https://github.com/MinecraftForge/MinecraftForge) and similar
     This project is not official by mojang and does not relate to it.
 
-
-    function recipe_mapper(modname, pathname)
-
-    function model_mapper(modname, pathname)
-
-    function model_bake()
-
-    function tag_mapper(modname, pathname)
-
-    function language_mapper(modname, pathname)
-
-    function loot_table_mapper(modname, pathname)
 
     class ResourcePipeHandler
 
@@ -36,16 +24,16 @@ ___
             variable self.listeners: typing.List[typing.Type[AbstractReloadListener]]
 
         function register_listener(self, listener: typing.Type[AbstractReloadListener])
-
-            function l()
-
-        function register_for_mod(self, providing_mod: str, namespace: str = None)
             
             Used internally to add new namespaces to the loading system
 
 
+                variable namespace
+
         function register_mapper(
-                self, mapper: typing.Callable[[str, str], None], on_dedicated_server=True
+                self,
+                mapper: typing.Callable[[str, str], None | typing.Awaitable],
+                on_dedicated_server=True,
                 ):
             
             To use in "stage:resources:pipe:add_mapper"
@@ -56,8 +44,6 @@ ___
         function register_bake_listener(self, listener)
 
         function register_data_processor(self, listener)
-
-        function reload_content(self)
 
     variable handler
 

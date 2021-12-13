@@ -1,4 +1,4 @@
-***Language.py - documentation - last updated on 1.9.2021 by uuk***
+***Language.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -34,22 +34,20 @@ ___
         Base class for language data
         Handles all translations of the language set
 
-
-        static
-        function from_file(cls, file: str, name=None)
             
-            will load an file into the system
+            will load a file into the system
             :param file: the file to load, as ResourceLocate-able
             :param name: the name of the language to use or None for generation from file name
 
 
-        static
-        function from_old_data(cls, file: str, name=None)
+                    variable data
             
             will load an file from the old format into the system
             :param file: the file to load
             :param name: the name to load under, or None if to read from the file name
 
+
+            variable name
 
                 variable LANGUAGES[name]
 
@@ -58,9 +56,6 @@ ___
                 variable lines
 
                 variable language.table[pre]
-
-        static
-        function from_data(cls, name: str, data: dict)
             
             will load data into the system
             :param name: the name to load under

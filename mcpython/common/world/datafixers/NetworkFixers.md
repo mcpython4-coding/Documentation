@@ -1,4 +1,4 @@
-***NetworkFixers.py - documentation - last updated on 6.11.2021 by uuk***
+***NetworkFixers.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -40,7 +40,7 @@ ___
         the fixer will be automatically bound to the block class
         Use the Block.NETWORK_BUFFER_DATA_FIXERS for manual registration
         WARNING: returning True from apply2stream() will intercept any further buffer loading, so also the stuff
-                you don't need to do yourself, but instead you use super().read_from_network_buffer(...)
+                you don't need to do yourself, but instead you use await super().read_from_network_buffer(...)
 
 
         static

@@ -1,4 +1,4 @@
-***BiomeGenDebugGenerator.py - documentation - last updated on 27.4.2021 by uuk***
+***BiomeGenDebugGenerator.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -29,14 +29,11 @@ ___
 
         variable BIOME_TO_BLOCK
 
-        static
-        function generate_table(cls)
+            variable blocks
 
-        static
-        function on_chunk_generation_finished(
-                cls,
-                chunk,
-                ):
+            variable i
+
+                        variable cls.BIOME_TO_BLOCK[biome]
 
             variable biome_map
 

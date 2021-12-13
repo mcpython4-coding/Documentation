@@ -1,4 +1,4 @@
-***DataSerializationManager.py - documentation - last updated on 23.8.2021 by uuk***
+***DataSerializationManager.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -63,9 +63,7 @@ ___
 
         function register_serializer(self, serializer: typing.Type[ISerializer])
 
-        function on_reload(self, is_first_load=False)
-
-        function load_file(self, file: str, is_first_load=False)
+                variable data
 
                     variable data
 

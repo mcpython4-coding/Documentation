@@ -1,4 +1,4 @@
-***RegistrySyncPackage.py - documentation - last updated on 19.10.2021 by uuk***
+***RegistrySyncPackage.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -23,13 +23,9 @@ ___
 
             variable self.registries
 
-        function setup(self)
+            variable self.registries
 
-        function read_from_buffer(self, buffer: ReadBuffer)
-
-        function write_to_buffer(self, buffer: WriteBuffer)
-
-        function handle_inner(self)
+            variable shared.NETWORK_MANAGER.client_profiles[self.sender_id]["registry_sync"]
 
                 variable registry
 
@@ -49,13 +45,15 @@ ___
 
             variable self.name
 
-        function setup(self, name: str)
+            variable self.name
 
-        function read_from_buffer(self, buffer: ReadBuffer)
+            variable self.name
 
-        function write_to_buffer(self, buffer: WriteBuffer)
+            variable self.content
 
-        function handle_inner(self)
+            variable entries_there
+
+            variable entries_here
 
     class RegistrySyncResultPackage extends AbstractPackage
 
@@ -71,13 +69,9 @@ ___
 
         function setup(self, name: str, status: bool)
 
-        function write_to_buffer(self, buffer: WriteBuffer)
+            variable self.name
 
-        function read_from_buffer(self, buffer: ReadBuffer)
-
-        function handle_inner(self)
-
-                        function handle(*_)
+            variable self.status
 
                         variable package
 

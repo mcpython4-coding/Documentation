@@ -1,4 +1,4 @@
-***EntityManager.py - documentation - last updated on 23.8.2021 by uuk***
+***EntityManager.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -47,16 +47,10 @@ ___
 
             variable self.entity_map[entity.uuid]
 
-        function tick(self, dt: float)
-
                     variable child
 
                         variable child.position
 
                         variable child
-
-        function clear(self)
-
-    function load()
 
         variable shared.entity_manager

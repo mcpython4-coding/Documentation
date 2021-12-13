@@ -1,4 +1,4 @@
-***Buttons.py - documentation - last updated on 23.8.2021 by uuk***
+***Buttons.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -49,9 +49,7 @@ ___
 
         function over_button(self, x: int, y: int)
 
-        function activate(self)
-
-        function deactivate(self)
+            variable self.hovering
 
         function draw(self)
 

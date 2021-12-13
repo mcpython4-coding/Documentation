@@ -1,4 +1,4 @@
-***NetworkManager.py - documentation - last updated on 19.9.2021 by uuk***
+***NetworkManager.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -46,17 +46,11 @@ ___
 
             variable self.playername2connectionID
 
-        function request_chunk(self, chunk: IChunk)
-
-        function send_to_player_chat(self, player: typing.Union[str, int], msg: str)
-
                 variable player
 
         function reset_package_registry(self)
 
         function get_dynamic_id_info(self) -> typing.List[typing.Tuple[str, int]]
-
-        function set_dynamic_id_info(self, data: typing.List[typing.Tuple[str, int]])
 
                 variable package_type
 
@@ -66,19 +60,25 @@ ___
 
                     variable self.general_package_handlers[
 
-        function disconnect(self, target=-1)
-
-        function send_package_to_all(self, package, not_including=-1)
-
-        function send_package(
-                self,
-                package: mcpython.engine.network.AbstractPackage.AbstractPackage,
-                destination: int = 0,
-                ):
+            variable destination: int
 
             variable data
 
-        function encode_package(self, destination, package) -> bytes
+            variable package.target_id
+
+            variable bit_map
+
+            variable encoded_head
+
+                variable package.package_id
+
+            variable package_id_data
+
+            variable previous_package_id_data
+
+            variable buffer
+
+            variable package_data
 
             variable compress_data
 
@@ -125,19 +125,25 @@ ___
 
         function clean_network_graph(self)
 
-        function fetch_as_client(self)
-
             variable buffer
 
                     variable package
 
                 variable package.sender_id
 
-        function fetch_as_server(self)
+                        variable result
+
+                        variable result
+
+                        variable package
 
                     variable package.sender_id
 
-        function fetch_package_from_buffer(self, buffer)
+                            variable result
+
+                            variable result
+
+                variable head
 
                 variable package_type
 
@@ -170,5 +176,3 @@ ___
             variable package.package_id
 
     variable shared.NETWORK_MANAGER
-
-    function load_packages()

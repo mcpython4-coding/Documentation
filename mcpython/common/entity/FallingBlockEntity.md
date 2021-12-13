@@ -1,4 +1,4 @@
-***FallingBlockEntity.py - documentation - last updated on 6.11.2021 by uuk***
+***FallingBlockEntity.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -28,13 +28,7 @@ ___
 
         function draw(self)
 
-        function tick(self, dt)
-
             variable block
-
-        function write_to_network_buffer(self, buffer: WriteBuffer)
-
-        function read_from_network_buffer(self, buffer: ReadBuffer)
 
             variable has_block
 

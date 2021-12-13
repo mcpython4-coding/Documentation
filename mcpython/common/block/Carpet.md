@@ -1,4 +1,4 @@
-***Carpet.py - documentation - last updated on 18.11.2021 by uuk***
+***Carpet.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -22,7 +22,9 @@ ___
 
         variable HARDNESS
 
-        function on_block_update(self)
+            variable dim
+
+            variable instance: mcpython.common.block.AbstractBlock.AbstractBlock
 
         function get_view_bbox(self)
 

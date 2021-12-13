@@ -1,4 +1,4 @@
-***InventoryRecipeView.py - documentation - last updated on 13.11.2021 by uuk***
+***InventoryRecipeView.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -26,8 +26,6 @@ ___
 
             variable self.renderer
 
-        function on_activate(self)
-
         function draw(self, hovering_slot=None)
 
         function get_interaction_slots(self)
@@ -51,7 +49,9 @@ ___
                 renderer: mcpython.client.rendering.gui.RecipeViewRenderer.AbstractRecipeViewRenderer,
                 ):
 
-        function on_activate(self)
+            variable self.bg_anchor
+
+            variable self.window_anchor
 
         function draw(self, hovering_slot=None)
 

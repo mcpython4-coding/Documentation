@@ -1,4 +1,4 @@
-***MainPlayerInventory.py - documentation - last updated on 16.9.2021 by uuk***
+***MainPlayerInventory.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -47,11 +47,9 @@ ___
 
         function draw(self, hovering_slot=None)
 
-        function remove_items_from_crafting(self)
+                variable itemstack
 
-        function on_activate(self)
-
-        function on_deactivate(self)
+            variable shared.state_handler.active_state.parts[0].activate_mouse
 
         function update_shift_container(self)
 

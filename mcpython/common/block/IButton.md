@@ -1,4 +1,4 @@
-***IButton.py - documentation - last updated on 27.9.2021 by uuk***
+***IButton.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -15,17 +15,15 @@ ___
 
         variable DEBUG_WORLD_BLOCK_STATES
 
+        variable IS_SOLID
+
         function __init__(self)
 
             variable self.powered
 
-        function check_block_behind(self)
-
             variable dimension
 
             variable block
-
-        function on_block_update(self)
 
         function get_model_state(self) -> dict
 

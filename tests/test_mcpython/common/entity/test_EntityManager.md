@@ -1,4 +1,4 @@
-***test_EntityManager.py - documentation - last updated on 16.9.2021 by uuk***
+***test_EntityManager.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -33,12 +33,6 @@ ___
 
         static
         function teleport(cls, position, force_chunk_save_update=False)
-
-        static
-        function tick(cls, dt: float)
-
-        static
-        function kill(cls, *_, **__)
 
     class TestEntityManager extends TestCase
 
@@ -78,29 +72,21 @@ ___
 
             variable instance
 
-        function test_tick(self)
-
             variable ticked
 
             class TestEntity extends BaseTestEntity
 
-                static
-                function tick(cls, dt: float)
+                    variable ticked
 
             variable instance
-
-        function test_tick_kill(self)
 
             variable killed
 
             class TestEntity extends BaseTestEntity
 
-                static
-                function kill(cls)
+                    variable killed
 
             variable instance
-
-        function test_tick_child_handling(self)
             
             Checks if passenger handling works as it is expected
             Spawns to entities, links them and ticks the handler ones
@@ -113,7 +99,5 @@ ___
             variable parent.child
 
             variable child.parent
-
-        function test_clear(self)
 
             variable instance

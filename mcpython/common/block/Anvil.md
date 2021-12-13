@@ -1,4 +1,4 @@
-***Anvil.py - documentation - last updated on 6.11.2021 by uuk***
+***Anvil.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -46,27 +46,23 @@ ___
 
             variable self.broken_count
 
-        function on_block_added(self)
+                    variable self.facing
 
-        function on_anvil_use(self)
+                    variable self.facing
 
-        function write_to_network_buffer(self, buffer: WriteBuffer)
+                    variable self.facing
 
-        function read_from_network_buffer(self, buffer: ReadBuffer)
+                    variable self.facing
 
             variable self.broken_count
-                self.inventory.read_from_network_buffer(buffer)
+                await self.inventory.read_from_network_buffer(buffer)
 
             variable self.facing
-
-        function on_player_interaction(
-                self, player, button: int, modifiers: int, hit_position: tuple, itemstack
-                ):
                 
             if button == mouse.RIGHT and not modifiers & (
                 key.MOD_SHIFT | key.MOD_ALT | key.MOD_CTRL
             ):
-                shared.inventory_handler.show(self.inventory)
+                await shared.inventory_handler.show(self.inventory)
                 return True
             else:
 
@@ -87,8 +83,6 @@ ___
         function set_block_data(cls, item, block)
 
         function on_request_item_for_block(self, itemstack)
-
-        function on_block_remove(self, reason)
 
     class Anvil extends AbstractAnvil
 

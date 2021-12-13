@@ -1,4 +1,4 @@
-***WorldLoadingProgressState.py - documentation - last updated on 30.10.2021 by uuk***
+***WorldLoadingProgressState.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -23,13 +23,9 @@ ___
 
             variable self.finished_chunks
 
-        function load_or_generate(self, name: str)
-
-        function load_world_from(self, name: str)
+            variable save_file
 
         function create_state_parts(self) -> list
-
-        function on_update(self, dt)
 
                     variable c
 
@@ -39,16 +35,12 @@ ___
 
             variable self.parts[1].text
 
-        function activate(self)
-
             variable shared.world_generation_handler.enable_generation
 
             variable shared.world_generation_handler.enable_generation
                 todo: fix bug: something is wrong here...
                 shared.world.savefile.read("minecraft:chunk", dimension=shared.world.get_active_player().dimension.id, chunk=(cx, cz),
                 immediate=False)
-
-        function deactivate(self)
 
                 variable player
 
@@ -72,4 +64,4 @@ ___
 
     variable world_loading
 
-    function create()
+        variable world_loading

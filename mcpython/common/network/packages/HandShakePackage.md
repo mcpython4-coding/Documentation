@@ -1,4 +1,4 @@
-***HandShakePackage.py - documentation - last updated on 19.10.2021 by uuk***
+***HandShakePackage.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -30,11 +30,9 @@ ___
 
         function setup(self, player_name: str)
 
-        function read_from_buffer(self, buffer: ReadBuffer)
+            variable self.game_version
 
-        function write_to_buffer(self, buffer: WriteBuffer)
-
-        function handle_inner(self)
+            variable self.player_name
 
             variable shared.NETWORK_MANAGER.client_profiles.setdefault(self.sender_id,
 
@@ -58,18 +56,14 @@ ___
 
         function setup_deny(self, reason: str)
 
-        function setup_accept(self)
+            variable mod_info
 
             variable self.mod_list
 
-        function read_from_buffer(self, buffer: ReadBuffer)
+            variable self.accept_connection
 
                 variable self.deny_reason
 
             variable self.mod_list
-
-        function write_to_buffer(self, buffer: WriteBuffer)
-
-        function handle_inner(self)
 
             variable miss_matches

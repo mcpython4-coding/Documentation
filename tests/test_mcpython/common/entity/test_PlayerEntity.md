@@ -1,4 +1,4 @@
-***test_PlayerEntity.py - documentation - last updated on 27.9.2021 by uuk***
+***test_PlayerEntity.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -54,8 +54,6 @@ ___
 
             variable instance
 
-        function test_set_active_inventory_slot(self)
-
             variable shared.IS_CLIENT
 
             variable shared.mod_loader
@@ -73,8 +71,6 @@ ___
             variable instance.xp
 
             variable instance.xp_level
-
-        function test_pickup_item(self)
 
             variable shared.IS_CLIENT
 

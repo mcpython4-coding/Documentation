@@ -1,4 +1,4 @@
-***PackageReroutingPackage.py - documentation - last updated on 16.9.2021 by uuk***
+***PackageReroutingPackage.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -23,8 +23,6 @@ ___
 
         function set_package(self, target: int, package: AbstractPackage)
 
-        function read_from_buffer(self, buffer: ReadBuffer)
+            variable self.route_target
 
-        function write_to_buffer(self, buffer: WriteBuffer)
-
-        function handle_inner(self)
+            variable self.inner_package

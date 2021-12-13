@@ -1,4 +1,4 @@
-***FunctionFile.py - documentation - last updated on 18.4.2021 by uuk***
+***FunctionFile.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -23,5 +23,3 @@ ___
         function __init__(self)
 
             variable self.command_nodes
-
-        function execute(self, info)

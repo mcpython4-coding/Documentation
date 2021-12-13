@@ -1,4 +1,4 @@
-***InventoryCreativeTab.py - documentation - last updated on 13.11.2021 by uuk***
+***InventoryCreativeTab.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -45,9 +45,7 @@ ___
 
                 variable self.custom_name_label.y
 
-        function on_activate(self)
-
-        function on_deactivate(self)
+            variable shared.state_handler.active_state.parts[0].activate_mouse
 
     class CreativeItemTab extends ICreativeView
 
@@ -121,13 +119,7 @@ ___
 
         function draw_at(self, position: typing.Tuple[int, int], hovering_slot=None)
 
-        function draw(self, hovering_slot=None)
-
         function clear(self)
-
-        function on_deactivate(self)
-
-        function on_activate(self)
 
         function on_mouse_button_press(
                 self,
@@ -140,6 +132,8 @@ ___
                 ) -> bool:
 
         function __repr__(self)
+
+        function update_shift_container(self)
 
     class CreativeTabSearchBar extends CreativeItemTab
 
@@ -161,10 +155,6 @@ ___
             variable self.need_reload
 
             function setNeedReload()
-
-        function on_deactivate(self)
-
-        function on_activate(self)
 
                 variable self.need_reload
 
@@ -247,8 +237,6 @@ ___
 
         function is_multi_page(self)
 
-        function on_key_press(self, button, mod)
-
                 variable self.current_page
 
                 variable self.current_page
@@ -258,12 +246,6 @@ ___
         function init_tabs_if_needed(self)
 
                 variable self.search_instance
-
-        function activate(self)
-
-        function deactivate(self)
-
-        function on_mouse_press(self, mx, my, button, modifiers)
 
             variable tab
 
@@ -303,11 +285,9 @@ ___
 
                 variable self.page_label.position
 
-        function open(self)
-
         function increase_page(self, count: int)
 
-        function switch_to_tab(self, tab: ICreativeView)
+                variable self.current_tab.is_selected
 
             variable self.current_tab
 

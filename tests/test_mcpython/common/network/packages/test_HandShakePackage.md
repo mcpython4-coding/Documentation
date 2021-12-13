@@ -1,4 +1,4 @@
-***test_HandShakePackage.py - documentation - last updated on 19.10.2021 by uuk***
+***test_HandShakePackage.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -13,8 +13,7 @@ ___
 
     class FakeWorld
 
-        static
-        function add_player(cls, *_, **__)
+        variable entities
 
     class FakeModLoader
 
@@ -41,7 +40,7 @@ ___
 
             variable package
 
-        function test_serialize(self)
+            variable shared.IS_TEST_ENV
 
             variable mcpython.common.config.VERSION_ID
 
@@ -51,11 +50,11 @@ ___
 
             variable package2
 
-        function test_handle_inner_compatible(self)
+            variable shared.IS_TEST_ENV
 
             variable handshake_back
 
-            function answer(p)
+                    variable handshake_back
 
             variable shared.world
 
@@ -65,11 +64,11 @@ ___
 
             variable package.answer
 
-        function test_handle_inner_incompatible(self)
+            variable shared.IS_TEST_ENV
 
             variable handshake_back
 
-            function answer(p)
+                    variable handshake_back
 
             variable shared.world
 
@@ -89,15 +88,11 @@ ___
 
             variable package
 
-        function test_setup_accept(self)
-
             variable shared.mod_loader
 
             variable FakeModLoader.mods
 
             variable package
-
-        function test_serialize_deny(self)
 
             variable shared.mod_loader
 
@@ -109,7 +104,7 @@ ___
 
             variable package
 
-        function test_serialize_accept(self)
+            variable shared.IS_TEST_ENV
 
             variable shared.mod_loader
 

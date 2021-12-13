@@ -1,4 +1,4 @@
-***DataPacks.py - documentation - last updated on 23.8.2021 by uuk***
+***DataPacks.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -42,8 +42,6 @@ ___
         function enable_pack(self, pack: str)
 
         function disable_pack(self, pack: str)
-
-        function schedule_datapack_load(self)
             
             Will load all data packs in the default locations and call an event for
             subsequent systems to register them (datapack:search)
@@ -60,26 +58,18 @@ ___
 
 
                 variable datapack
-
-        function reload(self)
             
             Reloads all loaded data packs
             todo: look out for new ones at special locations
 
 
-                        variable datapack.status
+            variable old_status_table
 
-        function cleanup(self)
+                        variable datapack.status
             
             Removes all data packs from the system
             Used during reload for cleaning the list of datapacks
 
-
-        function try_call_function(
-                self,
-                name: str,
-                info,
-                ):
             
             Will try to invoke a function in a datapack
             :param name: the name of the function, e.g. "minecraft:test"

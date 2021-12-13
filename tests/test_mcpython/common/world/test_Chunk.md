@@ -1,4 +1,4 @@
-***test_Chunk.py - documentation - last updated on 14.10.2021 by uuk***
+***test_Chunk.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -51,23 +51,17 @@ ___
 
             variable instance
 
-        function test_add_block_by_str(self)
-
             variable dim
 
             variable instance
 
             variable b
 
-        function test_add_block_by_instance(self)
-
             variable dim
 
             variable instance
 
             variable b
-
-        function test_add_block_out_of_bounds(self)
 
             variable dim
 
@@ -79,45 +73,31 @@ ___
 
             variable instance
 
-        function test_add_block_air_via_None(self)
+            variable dim
+
+            variable instance
 
             variable dim
 
             variable instance
 
-        function test_add_block_air_via_name(self)
+            variable dim
+
+            variable instance
 
             variable dim
 
             variable instance
 
-        function test_add_block_air_via_namespaced_name(self)
-
             variable dim
 
             variable instance
-
-        function test_add_block_invalid_name(self)
-
-            variable dim
-
-            variable instance
-
-        function test_remove_block_by_position(self)
-
-            variable dim
-
-            variable instance
-
-        function test_remove_block_by_instance(self)
 
             variable dim
 
             variable instance
 
             variable b
-
-        function test_safe_removal_when_not_in_world(self)
 
             variable dim
 

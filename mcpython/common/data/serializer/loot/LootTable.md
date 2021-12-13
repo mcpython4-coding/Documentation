@@ -1,4 +1,4 @@
-***LootTable.py - documentation - last updated on 30.10.2021 by uuk***
+***LootTable.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -63,8 +63,6 @@ ___
 
             variable self.mod_names_to_load
 
-        function reload(self)
-
         function shuffle_data(self)
 
         function __getitem__(self, item)
@@ -87,11 +85,9 @@ ___
 
         function get_drop_for_block(self, block, player=None, relink=True)
 
-        function for_mod_name(self, modname: str, path_name: str = None, immediate=False)
+                variable path_name
 
-        function _add_load(self, mod, path: str, immediate=False)
-
-        function from_file(self, file: str)
+            variable mod
 
         static
         function parse_function(

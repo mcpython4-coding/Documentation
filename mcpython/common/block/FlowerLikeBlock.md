@@ -1,4 +1,4 @@
-***FlowerLikeBlock.py - documentation - last updated on 13.11.2021 by uuk***
+***FlowerLikeBlock.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -22,4 +22,6 @@ ___
 
         variable IS_SOLID
 
-        function on_block_update(self)
+            variable dimension
+
+            variable block_under

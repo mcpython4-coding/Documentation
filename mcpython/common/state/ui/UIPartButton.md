@@ -1,4 +1,4 @@
-***UIPartButton.py - documentation - last updated on 14.10.2021 by uuk***
+***UIPartButton.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -86,11 +86,13 @@ ___
 
         function bind_to_eventbus(self)
 
-        function deactivate(self)
+            variable self.hovering
 
-        function on_mouse_press(self, x, y, button, modifiers)
+            variable self.press.area
 
-        function on_mouse_motion(self, x, y, dx, dy)
+                variable self.hovering
+
+                variable self.hovering
 
         function on_draw_2d(self)
 

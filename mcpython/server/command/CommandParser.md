@@ -1,4 +1,4 @@
-***CommandParser.py - documentation - last updated on 16.9.2021 by uuk***
+***CommandParser.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -50,9 +50,7 @@ ___
 
         function __init__(self)
 
-        function run(self, string: str, env: CommandExecutionEnvironment) -> bool
-
-        function run_function(self, name: str, info=None)
+            variable parsed
 
         function parse(self, string: str)
 
@@ -73,7 +71,5 @@ ___
                 variable instance.following_nodes
 
     variable shared.command_parser
-
-    function load_commands()
 
         variable handler: CommandParser

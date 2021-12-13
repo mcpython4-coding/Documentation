@@ -1,4 +1,4 @@
-***WorldGenerationConfigState.py - documentation - last updated on 14.10.2021 by uuk***
+***WorldGenerationConfigState.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -33,17 +33,15 @@ ___
 
         function get_seed_source(self)
 
-        function on_back_press(self, x, y)
+            variable filename
 
-        function on_generate_press(self, x, y)
-
-        function generate(self)
+                variable filename
 
         function bind_to_eventbus(self)
 
-        function on_key_press(self, symbol, modifiers)
+                variable part.index
 
-        function activate(self)
+                variable part.text
 
                 variable part.index
 
@@ -51,4 +49,4 @@ ___
 
     variable world_generation_config
 
-    function create()
+        variable world_generation_config

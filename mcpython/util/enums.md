@@ -1,4 +1,4 @@
-***enums.py - documentation - last updated on 18.11.2021 by uuk***
+***enums.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -218,3 +218,20 @@ ___
         variable ROTATE_Z_270
 
         variable FLIP_Z
+
+    class BlockRemovalReason extends enum.Enum
+        
+        Helper enum storing reasons for a block removed from world
+
+
+        variable UNKNOWN - default
+
+        variable PLAYER_REMOVAL - the player removed it
+
+        variable PISTON_MOTION - caused by an piston (move or destroy)
+
+        variable EXPLOSION - destroyed during an explosion
+
+        variable ENTITY_PICKUP - An entity was removing it
+
+        variable COMMANDS - command based

@@ -1,4 +1,4 @@
-***AbstractState.py - documentation - last updated on 19.9.2021 by uuk***
+***AbstractState.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -83,8 +83,3 @@ ___
             
             Helper method for binding to the internal EventBus
             Invoked somewhere during state construction; Not further defined by API
-
-
-        function activate(self)
-
-        function deactivate(self)

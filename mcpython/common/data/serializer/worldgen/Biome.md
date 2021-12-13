@@ -1,4 +1,4 @@
-***Biome.py - documentation - last updated on 18.11.2021 by uuk***
+***Biome.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -76,9 +76,6 @@ ___
         static
         function register_helper(cls, obj: typing.Type)
 
-        static
-        function deserialize(cls, data: dict) -> typing.Type[ISerializeAble]
-
             variable layer_config: ITopLayerConfigurator
 
             class Biome extends mcpython.server.worldgen.biome.Biome.Biome
@@ -132,12 +129,6 @@ ___
 
         static
         function decode_feature(cls, data: dict)
-
-        static
-        function serialize(cls, obj: typing.Type[ISerializeAble]) -> dict
-
-        static
-        function register(cls, obj)
 
         static
         function clear(cls)

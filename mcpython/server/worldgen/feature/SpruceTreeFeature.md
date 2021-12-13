@@ -1,4 +1,4 @@
-***SpruceTreeFeature.py - documentation - last updated on 9.2.2021 by uuk***
+***SpruceTreeFeature.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -15,8 +15,11 @@ ___
 
         variable NAME
 
-        static
-        function place(cls, dimension, x, y, z, config)
+            variable height_range
+
+            variable height
+
+                        variable chunk
 
         static
         function place_array(cls, array, x: int, y: int, z: int, config)

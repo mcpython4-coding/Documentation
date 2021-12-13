@@ -1,4 +1,4 @@
-***test_NetworkManager.py - documentation - last updated on 16.9.2021 by uuk***
+***test_NetworkManager.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -15,13 +15,7 @@ ___
 
         function test_module_import(self)
 
-        function test_reset_package_registry(self)
-
-        function test_dynamic_id_info(self)
-
             variable data
-
-        function test_serialize_package(self)
 
             variable package
 

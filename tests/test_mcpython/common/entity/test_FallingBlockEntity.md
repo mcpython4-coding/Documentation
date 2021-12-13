@@ -1,4 +1,4 @@
-***test_FallingBlockEntity.py - documentation - last updated on 16.9.2021 by uuk***
+***test_FallingBlockEntity.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -30,11 +30,9 @@ ___
 
         function test_module_import(self)
 
-        function test_tick_despawn(self)
-
             variable instance
 
-        function test_tick_fall(self)
+            variable instance.chunk
 
             variable instance
 

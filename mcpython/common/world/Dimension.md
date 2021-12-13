@@ -1,4 +1,4 @@
-***Dimension.py - documentation - last updated on 18.11.2021 by uuk***
+***Dimension.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -50,13 +50,13 @@ ___
             variable self.dimensions
 
             variable self.unfinished_dims
-
-        function finish(self)
             
             Called to finish up and assign ids to dynamic dimensions
 
 
-        function add_default_dimensions(self)
+            variable i
+
+                variable dim.id
             
             Implementation for mcpython: will add the dimensions used by the core into the system
 
@@ -220,15 +220,6 @@ ___
                 ):
 
             variable chunk
-
-        function remove_block(
-                self,
-                position: tuple,
-                immediate=True,
-                block_update=True,
-                block_update_self=True,
-                network_sync=True,
-                ):
 
             variable chunk
 

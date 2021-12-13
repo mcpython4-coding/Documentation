@@ -1,4 +1,4 @@
-***ItemModel.py - documentation - last updated on 14.10.2021 by uuk***
+***ItemModel.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -108,15 +108,9 @@ ___
 
             variable self.atlas
 
-        @shared.mod_loader("minecraft", "stage:model:item:search")
-        static
-        function load()
-
         function from_data(self, data: dict, name: str)
 
         function from_folder(self, folder: str, modname: str)
-
-        function bake(self)
 
         function add_to_batch(
                 self, item_name, *args, **kwargs

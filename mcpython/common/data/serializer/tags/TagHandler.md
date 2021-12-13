@@ -1,4 +1,4 @@
-***TagHandler.py - documentation - last updated on 23.8.2021 by uuk***
+***TagHandler.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -40,19 +40,15 @@ ___
             Will add possible tag locations for later loading
             :param locations: the locations to add
 
-
-        function reload(self)
             
             Will reload all tag-related data
 
-
-        function load_tags(self, direct_call=False)
             
             Will load the tags
             :param direct_call: if build now or in the loading stage for it
 
 
-                    variable data
+                        variable data
 
                     variable s
 
@@ -102,13 +98,7 @@ ___
 
 
     variable shared.tag_handler
-
-    function add_from_location(loc: str)
         
         Adds tags from an given scope for an given namespace where loc is the name of the namespace
         :param loc: the namespace
         WARNING: when adding outside normal build period, errors may occur
-
-
-    @shared.mod_loader("minecraft", "stage:tag:group", info="adding tag group locations")
-    function load_default_tags()

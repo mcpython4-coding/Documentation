@@ -1,4 +1,4 @@
-***InventoryFurnace.py - documentation - last updated on 18.11.2021 by uuk***
+***InventoryFurnace.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -84,9 +84,17 @@ ___
 
                 variable self.custom_name
 
-        function write_to_network_buffer(self, buffer: WriteBuffer)
+            variable self.fuel_left
 
-        function read_from_network_buffer(self, buffer: ReadBuffer)
+            variable self.fuel_max
+
+            variable self.xp_stored
+
+            variable self.smelt_start
+
+            variable self.progress
+
+            variable self.types
 
         static
         function get_config_file() -> str or None
@@ -119,18 +127,12 @@ ___
 
         function on_output_update(self, player=False)
 
-        function on_activate(self)
-
-        function on_deactivate(self)
-
         function draw(self, hovering_slot=None)
             
             Draws the inventory
 
 
         function get_interaction_slots(self)
-
-        function on_key_press(self, symbol, modifiers)
 
         function on_tick(self, dt)
 

@@ -1,4 +1,4 @@
-***CommandGive.py - documentation - last updated on 18.4.2021 by uuk***
+***CommandGive.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -10,8 +10,6 @@ ___
     Mod loader inspired by "Minecraft Forge" (https://github.com/MinecraftForge/MinecraftForge) and similar
     This project is not official by mojang and does not relate to it.
 
-
-    function give_helper(entities, item, count)
 
             variable stack
 

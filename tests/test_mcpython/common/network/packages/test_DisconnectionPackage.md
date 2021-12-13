@@ -1,4 +1,4 @@
-***test_DisconnectionPackage.py - documentation - last updated on 16.9.2021 by uuk***
+***test_DisconnectionPackage.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -15,8 +15,6 @@ ___
 
         function test_module_import(self)
 
-        function test_buffer_io(self)
-
             variable package
 
             variable buffer
@@ -25,13 +23,11 @@ ___
 
             variable package2
 
-        function test_handle_inner(self)
-
             variable shared.IS_CLIENT
 
             variable status_a
 
-            function a(p)
+                variable status_a
 
             variable package
 

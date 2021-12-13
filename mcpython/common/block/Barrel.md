@@ -1,4 +1,4 @@
-***Barrel.py - documentation - last updated on 6.11.2021 by uuk***
+***Barrel.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -14,6 +14,7 @@ ___
     class Barrel extends IAllDirectionOrientableBlock
         
         Class for the Barrel-Block
+        Barrels are container blocks, with one front face
 
 
         variable NAME
@@ -25,21 +26,12 @@ ___
         variable ASSIGNED_TOOLS
 
         function __init__(self)
-            
-            Creates a new BlockBarrel-class
 
-
-            variable self.opened: bool - if the barrel is open
+            variable self.opened: bool
+                if the barrel is open
 
             variable self.inventory
-
-        function write_to_network_buffer(self, buffer: WriteBuffer)
-
-        function read_from_network_buffer(self, buffer: ReadBuffer)
-
-        function on_player_interaction(
-                self, player, button: int, modifiers: int, hit_position: tuple, itemstack
-                ):
+                the inventory instance
 
         function get_inventories(self)
 
@@ -56,4 +48,4 @@ ___
 
         function on_request_item_for_block(self, itemstack)
 
-        function on_block_remove(self, reason)
+                variable dimension

@@ -1,4 +1,4 @@
-***test_util.py - documentation - last updated on 16.9.2021 by uuk***
+***test_util.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -15,18 +15,16 @@ ___
 
         function __init__(self)
 
+            variable self.entities
+
             variable self.world
 
-        function add_block(self, position, block)
+            variable self.world[position]
 
         function get_block(self, position)
 
     class Test extends TestCase
 
-        function test_fill_area(self)
-
             variable world
-
-        function test_fill_area_replacing(self)
 
             variable world

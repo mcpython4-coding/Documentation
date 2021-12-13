@@ -1,4 +1,4 @@
-***OakTreeFeature.py - documentation - last updated on 9.2.2021 by uuk***
+***OakTreeFeature.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -15,8 +15,9 @@ ___
 
         variable NAME
 
-        static
-        function place(cls, dimension, x, y, z, config)
+            variable height_range
+
+            variable height
 
                         variable chunk
 

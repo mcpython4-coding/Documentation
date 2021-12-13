@@ -1,4 +1,4 @@
-***NetherPortal.py - documentation - last updated on 25.4.2021 by uuk***
+***NetherPortal.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -37,11 +37,9 @@ ___
 
         variable DEBUG_WORLD_BLOCK_STATES
 
-        function on_block_update(self)
+            variable chunk
 
-        function check_valid_surrounding(self)
-
-        function check_valid_block(self, position: tuple, chunk=None)
+                variable chunk
 
             variable block
 

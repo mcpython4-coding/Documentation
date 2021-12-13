@@ -1,4 +1,4 @@
-***WorldListState.py - documentation - last updated on 30.10.2021 by uuk***
+***WorldListState.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -40,8 +40,6 @@ ___
 
         function create_state_parts(self) -> list
 
-        function on_mouse_press(self, x, y, button, modifiers)
-
                             variable self.selected_world
 
             variable self.selected_world
@@ -53,10 +51,6 @@ ___
         function recalculate_sprite_position(self)
 
                 variable self.parts[-1].active
-
-        function on_key_press(self, symbol, modifiers)
-
-        function activate(self)
 
         function reload_world_icons(self)
 
@@ -82,16 +76,8 @@ ___
 
             variable self.parts[-1].active
 
-        function on_back_press(self, *_)
-
-        function on_new_world_press(self, *_)
-
         function on_delete_press(self, *_)
-
-        function on_world_load_press(self, *_)
-
-        function enter_world(self, number: int)
 
     variable world_selection
 
-    function create()
+        variable world_selection

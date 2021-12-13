@@ -1,4 +1,4 @@
-***simple.py - documentation - last updated on 16.10.2021 by uuk***
+***simple.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -128,16 +128,15 @@ ___
 
             variable model_name
 
-            @shared.mod_loader(mod_name, self.block_phase)
-            function block_instance()
-
                 variable instance
 
-                @shared.mod_loader(mod_name, "stage:model:model_search")
-                function block_model()
+                    variable data
 
-                @shared.mod_loader(mod_name, "stage:model:blockstate_search")
-                function block_state()
+                        variable data
+
+                    variable data
+
+                        variable data
 
         function generate_log_like(
                 self,
@@ -199,16 +198,9 @@ ___
 
             variable model_name
 
-            @shared.mod_loader(mod_name, self.block_phase)
-            function block_instance()
-
                 variable instance
 
-                @shared.mod_loader(mod_name, "stage:model:model_search")
-                function block_model()
-
-                @shared.mod_loader(mod_name, "stage:model:blockstate_search")
-                function block_state()
+                    variable data
 
                         variable data["parent"]
 
@@ -244,16 +236,11 @@ ___
 
             variable model_name
 
-            @shared.mod_loader(mod_name, self.block_phase)
-            function block_instance()
-
                 variable instance
 
-                @shared.mod_loader(mod_name, "stage:model:model_search")
-                function block_model()
+                    variable data
 
-                @shared.mod_loader(mod_name, "stage:model:blockstate_search")
-                function block_state()
+                        variable data
 
         function inner_generate_model(self, variant, model_name: str)
 

@@ -1,4 +1,4 @@
-***util.py - documentation - last updated on 14.10.2021 by uuk***
+***util.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -39,7 +39,9 @@ ___
 
         function read_string(self, size_size=2, encoding="utf-8")
 
-        function read_list(self, handling: typing.Callable[[], typing.Any])
+            variable size
+
+                variable result
 
         function read_bytes(self, size_size=2)
 
@@ -71,9 +73,7 @@ ___
 
         function write_string(self, value: str, size_size=2, encoding="utf-8")
 
-        function write_list(
-                self, data: typing.List, handling: typing.Callable[[typing.Any], typing.Any]
-                ):
+                variable result
 
         function write_bytes(self, data: bytes, size_size=2)
 
@@ -82,7 +82,3 @@ ___
         function write_uuid(self, uid: uuid.UUID)
 
     class IBufferSerializeAble extends ABC
-
-        function write_to_network_buffer(self, buffer: WriteBuffer)
-
-        function read_from_network_buffer(self, buffer: ReadBuffer)

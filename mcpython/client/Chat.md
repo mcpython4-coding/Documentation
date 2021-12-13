@@ -1,4 +1,4 @@
-***Chat.py - documentation - last updated on 23.8.2021 by uuk***
+***Chat.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -41,9 +41,11 @@ ___
 
                 variable self.label.text
 
-        function on_activate(self)
+            variable shared.chat.text
 
-        function on_deactivate(self)
+            variable shared.chat.active_index
+
+            variable shared.chat.has_entered_t
 
         function draw(self, hovering_slot=None)
 
@@ -71,14 +73,14 @@ ___
             called when text is entered
             :param text: the text that is entered
 
-
-        function on_key_press(self, symbol: int, modifiers: int)
             
             called when an key is pressed
             :param symbol: the symbol that is pressed
             :param modifiers: the modifiers that are used
             todo: split up into parts
 
+
+                variable self.text
 
                 variable self.text
 

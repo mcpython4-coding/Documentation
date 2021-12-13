@@ -1,4 +1,4 @@
-***ContainerRenderer.py - documentation - last updated on 6.11.2021 by uuk***
+***ContainerRenderer.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -95,14 +95,13 @@ ___
                 todo: add special class holding this information with serializer for it
 
             variable self.custom_name - the custom name; If set, rendered in the inventory
+                asyncio.get_event_loop().run_until_complete(self.reload_config())
 
             variable self.custom_name_label
 
             variable self.custom_name_label.anchor_y
 
-        function write_to_network_buffer(self, buffer: WriteBuffer)
-
-        function read_from_network_buffer(self, buffer: ReadBuffer)
+            variable self.active
 
             variable self.custom_name
 
@@ -121,8 +120,6 @@ ___
                 item_stack,
                 slot,
                 ) -> bool:
-
-        function reload_config(self)
             
             Reload the config file
 
@@ -189,13 +186,9 @@ ___
                 variable y
 
         function is_mouse_in_range(self, x: int, y: int) -> bool
-
-        function on_activate(self)
             
             Called when the inventory is shown
 
-
-        function on_deactivate(self)
             
             Called when the inventory is hidden
 
@@ -222,8 +215,6 @@ ___
                 variable self.custom_name_label.x
 
                 variable self.custom_name_label.y
-
-        function on_world_cleared(self)
 
         function get_interaction_slots(self)
 

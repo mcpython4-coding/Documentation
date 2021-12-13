@@ -1,4 +1,4 @@
-***GameViewStatePart.py - documentation - last updated on 6.11.2021 by uuk***
+***GameViewStatePart.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -96,15 +96,11 @@ ___
 
                             variable self.mouse_press_time
 
-        function on_physics_update(self, dt: float)
-
             variable m
 
             variable dt
 
                 variable player
-
-        function on_left_click_interaction_update(self, dt: float)
 
                 variable player
 
@@ -119,8 +115,6 @@ ___
                                 variable items
 
                                 variable dimension
-
-        function on_right_click_interaction_update(self, dt: float)
 
             variable player
 
@@ -144,7 +138,9 @@ ___
 
                             variable self.mouse_press_time
 
-        function on_middle_click_interaction_update(self, dt: float)
+            variable player
+
+                variable vector
 
                     variable chunk
 
@@ -163,8 +159,6 @@ ___
                                     variable ref_itemstack
 
                         variable old_itemstack
-
-        function physics_update_internal(self, dt: float, player)
             
             Internal implementation of the `update()` method. This is where most
             of the motion logic lives, along with gravity and collision detection.
@@ -174,8 +168,6 @@ ___
             dt : float
                 The change in time since the last call.
 
-
-            variable before
 
                 variable player.fallen_since_y
 
@@ -205,7 +197,7 @@ ___
 
                 variable dy
 
-        function on_mouse_press(self, x: int, y: int, button: int, modifiers: int)
+            variable player
 
             variable slot
 
@@ -237,7 +229,7 @@ ___
 
                     variable self.mouse_press_time
 
-        function on_key_press(self, symbol: int, modifiers: int)
+            variable player
 
                 variable player.strafe[0]
 

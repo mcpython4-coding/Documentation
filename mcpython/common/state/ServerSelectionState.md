@@ -1,4 +1,4 @@
-***ServerSelectionState.py - documentation - last updated on 14.10.2021 by uuk***
+***ServerSelectionState.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -29,6 +29,6 @@ ___
 
             variable self.server_ip_input
 
-        function open_server_connection(self, *_)
+            variable pair
 
     variable server_selection

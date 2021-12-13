@@ -1,4 +1,4 @@
-***abstract.py - documentation - last updated on 23.8.2021 by uuk***
+***abstract.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -16,9 +16,6 @@ ___
         variable NAME
 
         variable DEPENDS_ON
-
-        static
-        function on_reload(cls, is_first_load=False)
             
             Invoked when it is time to load resources
             :param is_first_load: indicates if this is the first resource load or not
@@ -44,8 +41,9 @@ ___
 
         variable DIRECTORY
 
-        static
-        function on_reload(cls, is_first_load=False)
+                variable entries
+
+                variable entries
 
         static
         function load_file(cls, file: str, is_first_load=False)
@@ -65,9 +63,9 @@ ___
 
             variable self.DIRECTORY
 
-        function on_reload(self, is_first_load=False)
+                variable entries
 
-        function load_file(self, file: str, is_first_load=False)
+                variable entries
             
             Similar to on_reload, but it invoked for each matching file
             :param file: the file to load

@@ -1,4 +1,4 @@
-***StoneCutter.py - documentation - last updated on 18.11.2021 by uuk***
+***StoneCutter.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -38,11 +38,7 @@ ___
 
                 variable self.inventory
 
-        function on_player_interaction(
-                self, player, button: int, modifiers: int, hit_position: tuple, itemstack
-                ):
-
-        function on_block_remove(self, reason)
+            variable self.inventory
 
         function get_inventories(self)
 

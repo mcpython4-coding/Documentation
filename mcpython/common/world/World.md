@@ -1,4 +1,4 @@
-***World.py - documentation - last updated on 13.11.2021 by uuk***
+***World.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -47,13 +47,9 @@ ___
 
         function tick(self)
 
-        function add_player(
-                self,
-                name: str,
-                add_inventories: bool = True,
-                override: bool = True,
-                dimension=0,
-                ):
+            variable add_inventories: bool
+
+            variable override: bool
             
             Will add a new player into the world
             :param name: the name of the player to create
@@ -73,14 +69,17 @@ ___
             :param create: if the player should be created or not (by calling add_player())
             :return: the player instance or None if no player with the name is arrival
 
+            
+            Returns the player instance for this client
+            :param create: if the player should be created or not (by calling add_player())
+            :return: the player instance or None if no player with the name is arrival
+
 
         function get_player_by_name(self, name: str)
 
         function player_iterator(self) -> typing.Iterable
 
         function entity_iterator(self) -> typing.Iterable
-
-        function reset_config(self)
             
             Will reset the internal config of the system.
             todo: change game rule handler reset to an non-new-instance
@@ -318,8 +317,6 @@ ___
                 variable c
 
                         variable chunk
-
-        function cleanup(self, remove_dims=False, filename=None)
             
             Will clean up the world
             :param remove_dims: if dimensions should be cleared
@@ -327,7 +324,11 @@ ___
             todo: make split up into smaller functions
 
 
-                variable shared.world.get_active_player().flying
+            variable self.active_dimension
+
+                variable player
+
+                    variable player.flying
 
             variable self.spawn_point
 

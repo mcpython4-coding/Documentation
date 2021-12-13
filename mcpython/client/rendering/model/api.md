@@ -1,4 +1,4 @@
-***api.py - documentation - last updated on 18.11.2021 by uuk***
+***api.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -66,8 +66,6 @@ ___
             variable self.block_state
 
         function parse_data(self, data: dict)
-
-        function bake(self) -> bool
             
             Bake method for doing some stuff after loading all block-states
             :return: if successful or not

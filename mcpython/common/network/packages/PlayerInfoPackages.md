@@ -1,4 +1,4 @@
-***PlayerInfoPackages.py - documentation - last updated on 19.9.2021 by uuk***
+***PlayerInfoPackages.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -21,13 +21,9 @@ ___
 
         function setup(self)
 
-        function write_to_buffer(self, buffer: WriteBuffer)
-
-        function read_from_buffer(self, buffer: ReadBuffer)
-
             variable self.players
 
-        function handle_inner(self)
+                variable shared.world.players[player.name]
 
     class PlayerUpdatePackage extends AbstractPackage
 
@@ -51,10 +47,22 @@ ___
 
             variable self.update_flags
 
-        function write_to_buffer(self, buffer: WriteBuffer)
+            variable self.name
 
-        function read_from_buffer(self, buffer: ReadBuffer)
+            variable self.position
 
-        function handle_inner(self)
+            variable self.rotation
+
+            variable self.motion
+
+            variable self.dimension
+
+            variable self.selected_slot
+
+            variable self.gamemode
+
+            variable self.update_flags
+
+            variable player
 
                 variable self.gamemode

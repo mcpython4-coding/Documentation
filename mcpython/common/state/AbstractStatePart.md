@@ -1,4 +1,4 @@
-***AbstractStatePart.py - documentation - last updated on 19.9.2021 by uuk***
+***AbstractStatePart.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -42,10 +42,6 @@ ___
                 variable self.state_renderer.batch
 
         function create_state_renderer(self) -> typing.Any
-
-        function activate(self)
-
-        function deactivate(self)
 
         function get_sub_parts(self) -> typing.List["AbstractStatePart"]
 

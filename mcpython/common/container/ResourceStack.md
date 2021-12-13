@@ -1,4 +1,4 @@
-***ResourceStack.py - documentation - last updated on 16.9.2021 by uuk***
+***ResourceStack.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -56,9 +56,11 @@ ___
 
             variable self.amount
 
-        function write_to_network_buffer(self, buffer: WriteBuffer)
+                variable self.amount
 
-        function read_from_network_buffer(self, buffer: ReadBuffer)
+                variable item_name
+
+                variable self.item
 
         function copy(self) -> "ItemStack"
             
@@ -134,6 +136,6 @@ ___
 
         function set_amount(self, amount: float) -> "FluidStack"
 
-        function write_to_network_buffer(self, buffer: WriteBuffer)
+                variable self.amount
 
-        function read_from_network_buffer(self, buffer: ReadBuffer)
+                variable self.fluid

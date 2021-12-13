@@ -1,4 +1,4 @@
-***EscapeMenuState.py - documentation - last updated on 14.10.2021 by uuk***
+***EscapeMenuState.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -21,14 +21,8 @@ ___
 
         function bind_to_eventbus(self)
 
-        static
-        function start_menu_press(x, y)
-
-        static
-        function on_key_press(symbol, modifiers)
-
-        function activate(self)
+            variable shared.world.world_loaded
 
     variable escape
 
-    function create()
+        variable escape

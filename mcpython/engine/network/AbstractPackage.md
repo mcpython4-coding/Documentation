@@ -1,4 +1,4 @@
-***AbstractPackage.py - documentation - last updated on 16.9.2021 by uuk***
+***AbstractPackage.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -44,14 +44,4 @@ ___
 
             variable self.previous_packages - set only during receiving or calling answer()
 
-        function send(self, destination=0)
-
-        function read_from_buffer(self, buffer: ReadBuffer)
-
-        function write_to_buffer(self, buffer: WriteBuffer)
-
-        function answer(self, package: "AbstractPackage")
-
                 variable package.previous_packages
-
-        function handle_inner(self)

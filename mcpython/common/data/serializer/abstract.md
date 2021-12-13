@@ -1,4 +1,4 @@
-***abstract.py - documentation - last updated on 16.9.2021 by uuk***
+***abstract.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -15,18 +15,4 @@ ___
 
         variable SERIALIZER: typing.Optional[typing.Type["ISerializer"]]
 
-        static
-        function deserialize(cls, data: bytes) -> "ISerializeAble"
-
-        function serialize(self) -> bytes
-
     class ISerializer
-
-        static
-        function check(cls, data: bytes) -> bool
-
-        static
-        function deserialize(cls, data: bytes) -> ISerializeAble
-
-        static
-        function serialize(cls, obj: ISerializeAble) -> bytes

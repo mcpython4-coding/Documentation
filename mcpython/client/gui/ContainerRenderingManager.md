@@ -1,4 +1,4 @@
-***ContainerRenderingManager.py - documentation - last updated on 13.11.2021 by uuk***
+***ContainerRenderingManager.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -33,8 +33,6 @@ ___
             variable self.tool_tip_renderer
 
         function bind_to_eventbus(self)
-
-        function on_key_press(self, symbol: int, modifiers: int)
 
                 variable player
 
@@ -136,8 +134,6 @@ ___
 
                 variable self.mode
 
-        function deactivate(self)
-
         function on_mouse_drag(self, x, y, dx, dy, button, modifiers)
 
             variable slot
@@ -190,35 +186,27 @@ ___
         function tick(self, dt: float)
 
         function update_shift_container(self)
-
-        function add(self, inventory)
             
             Adds a new inventory to the internal handling system
             :param inventory: the inventory to add
 
-
-        function reload_config(self)
-
-        function show(self, inventory)
             
             Shows a inventory by adding it to the corresponding structure
             :param inventory: the inventory to show
 
-
-        function hide(self, inventory, force=False)
             
             Hides an inventory
             :param inventory: the inventory to hide
             :param force: if force hide, skipping flag check for always active
 
-
-        function remove_one_from_stack(self, is_escape=True)
             
             Removes one inventory from stack which can be removed
             :param is_escape: if to handle like it is an escape press, so we skip containers not wanting to be closed that
                 way
             :return: the inventory removed or None if no is active
 
+
+            variable stack
 
         function close_all_inventories(self)
             

@@ -1,4 +1,4 @@
-***Chest.py - documentation - last updated on 30.10.2021 by uuk***
+***Chest.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -39,9 +39,9 @@ ___
 
             variable CHEST_BLOCK_RENDERER_CHRISTMAS
 
-                function on_block_added(self)
+                    variable self.face_info.custom_renderer
 
-                function on_block_added(self)
+                    variable self.face_info.custom_renderer
 
         function __init__(self)
             
@@ -51,10 +51,6 @@ ___
             variable self.inventory
 
             variable self.loot_table_link
-
-        function write_to_network_buffer(self, buffer: WriteBuffer)
-
-        function read_from_network_buffer(self, buffer: ReadBuffer)
 
             variable self.loot_table_link
 
@@ -67,15 +63,6 @@ ___
 
 
             variable instance
-
-        function on_player_interaction(
-                self,
-                player,
-                button: int,
-                modifiers: int,
-                hit_position: tuple,
-                itemstack,
-                ):
 
                     variable self.loot_table_link
 
@@ -90,7 +77,7 @@ ___
 
         function on_request_item_for_block(self, itemstack)
 
-        function on_block_remove(self, reason)
+                variable dimension
 
         static
         function modify_block_item(cls, factory)

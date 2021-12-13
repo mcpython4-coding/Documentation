@@ -1,4 +1,4 @@
-***annotation.py - documentation - last updated on 14.10.2021 by uuk***
+***annotation.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -21,3 +21,8 @@ ___
                     function replace(*_, **__)
 
                     class Replacement
+
+                        function __getattr__(self, item)
+
+                        static
+                        function __class_getitem__(cls, item)

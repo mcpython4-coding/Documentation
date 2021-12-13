@@ -1,4 +1,4 @@
-***ModMcpython.py - documentation - last updated on 9.2.2021 by uuk***
+***ModMcpython.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -15,5 +15,3 @@ ___
 
     variable mcpython
         create the mod
-
-    function init()

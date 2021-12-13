@@ -1,4 +1,4 @@
-***Chunk.py - documentation - last updated on 18.11.2021 by uuk***
+***Chunk.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -182,27 +182,15 @@ ___
             :return: if there is an block
 
 
-        function add_block(
-                self,
-                position: tuple,
-                block_name: typing.Union[str, Block.AbstractBlock],
-                immediate=True,
-                block_update=True,
-                block_update_self=True,
-                lazy_setup: typing.Callable[[Block.AbstractBlock], None] = None,
-                check_build_range=True,
-                block_state=None,
-                replace_existing=True,
-                network_sync=True,
-                ):
+        function add_block_unsafe(self, *args, **kwargs)
             
             Adds a block to the given position
             :param position: the position to add
             :param block_name: the name of the block or an instance of it
             :param immediate: if the block should be shown if needed
-            :param block_update: if an block-update should be send to neighbors blocks
+            :param block_update: if an block-update should be sent to neighbor blocks
             :param block_update_self: if the block should get an block-update
-            :param lazy_setup: an callable for setting up the block instance
+            :param lazy_setup: a callable for setting up the block instance
             :param check_build_range: if the build limits should be checked
             :param block_state: the block state to create in, or None if not set
             :param replace_existing: if existing blocks should be replaced
@@ -229,27 +217,21 @@ ___
 
             variable self._world[position]
                 store the block instance in the local world
-
-        function on_block_updated(
-                self, position: typing.Tuple[int, int, int], include_itself=True
-                ):
             
             Will call to the neighbor blocks an block update
             :param position: the position in the center
             :param include_itself: if the block itself should be updated
 
 
+            variable to_invoke
+
                             variable b: Block.AbstractBlock
 
-        function remove_block(
-                self,
-                position: typing.Union[typing.Tuple[int, int, int], Block.AbstractBlock],
-                immediate: bool = True,
-                block_update: bool = True,
-                block_update_self: bool = True,
-                network_sync=True,
-                reason=Block.BlockRemovalReason.UNKNOWN,
-                ):
+            variable immediate: bool
+
+            variable block_update: bool
+
+            variable block_update_self: bool
             
             Remove the block at the given position. When no block is there, nothing happens
             :param position: The (x, y, z) position of the block to remove, or the block instance

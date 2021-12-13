@@ -1,4 +1,4 @@
-***PlayerChatPackage.py - documentation - last updated on 16.9.2021 by uuk***
+***PlayerChatPackage.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -21,11 +21,11 @@ ___
 
         function setup(self, text: str)
 
-        function write_to_buffer(self, buffer: WriteBuffer)
+            variable self.text
 
-        function read_from_buffer(self, buffer: ReadBuffer)
+                variable player
 
-        function handle_inner(self)
+                variable env
 
                 variable text
 
@@ -39,11 +39,7 @@ ___
 
         function setup(self, text: str)
 
-        function write_to_buffer(self, buffer: WriteBuffer)
-
-        function read_from_buffer(self, buffer: ReadBuffer)
-
-        function handle_inner(self)
+            variable self.text
 
     class PlayerClientCommandExecution extends AbstractPackage
 
@@ -55,8 +51,6 @@ ___
 
         function setup(self, text: str)
 
-        function write_to_buffer(self, buffer: WriteBuffer)
+            variable self.text
 
-        function read_from_buffer(self, buffer: ReadBuffer)
-
-        function handle_inner(self)
+            variable env

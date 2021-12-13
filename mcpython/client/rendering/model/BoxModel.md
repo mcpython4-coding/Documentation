@@ -1,4 +1,4 @@
-***BoxModel.py - documentation - last updated on 18.11.2021 by uuk***
+***BoxModel.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -82,29 +82,25 @@ ___
 
                 variable name: str
 
-                    variable f
+        function _parse_face(self, f: dict, face: EnumSide)
 
-                    variable var
+                variable self.animated_faces[face.index]
 
-                    variable position
+                variable self.faces[face.index]
 
-                        variable self.animated_faces[face.index]
+            variable index
 
-                        variable self.faces[face.index]
+                variable uvs
 
-                    variable index
+                variable uvs
 
-                        variable uvs
+                    variable self.texture_region[index]
 
-                        variable uvs
+                    variable self.texture_region[index]
 
-                            variable self.texture_region[index]
+                variable self.texture_region_rotate[index]
 
-                            variable self.texture_region[index]
-
-                        variable self.texture_region_rotate[index]
-
-                        variable self.face_tint_index[index]
+                variable self.face_tint_index[index]
 
         function build(self, atlas=None)
             
@@ -152,7 +148,7 @@ ___
                 active_faces=None,
                 uv_lock=False,
                 previous=None,
-                ) -> typing.Tuple[typing.List[float], typing.List[float], typing.List[float]]:
+                ) -> typing.Tuple[typing.List[float], typing.List[float], typing.List[float], list]:
 
                 variable active_faces
 
@@ -173,7 +169,8 @@ ___
                 typing.List[float], typing.List[float], typing.List[float]
                 ] = None,
                 batch: pyglet.graphics.Batch | typing.List[pyglet.graphics.Batch] = None,
-                ) -> typing.Tuple[typing.List[float], typing.List[float], typing.List[float]]:
+                scale: float = 1,
+                ) -> typing.Tuple[typing.List[float], typing.List[float], typing.List[float], list]:
             
             Util method for getting the box data for a block (vertices and uv's)
             :param instance: the instance to get information from to render
@@ -183,11 +180,18 @@ ___
             :param uv_lock: ?
             :param previous: previous data to add the new to, or None to create new
             :param batch: the batch to use
+            :param scale: a scale to use, passed to VertexProvider
 
 
             variable vertex
 
             variable collected_data
+
+                variable batch
+
+                variable batch
+
+            variable enable_animated
 
             variable faces
 
@@ -199,10 +203,7 @@ ___
 
                             variable group
 
-                                variable batch2
-
-                                variable batch2
-
+        @deprecation.deprecated()
         function get_prepared_box_data_scaled(
                 self,
                 instance: IBlockStateRenderingTarget,
@@ -214,32 +215,17 @@ ___
                 previous: typing.Tuple[
                 typing.List[float], typing.List[float], typing.List[float]
                 ] = None,
-                ) -> typing.Tuple[typing.List[float], typing.List[float], typing.List[float]]:
-            
-            Util method for getting the box data for a block (vertices and uv's)
-            :param instance: the instance to get information from to render
-            :param position: the position of the block
-            :param rotation: the rotation
-            :param scale: the scale to draw with
-            :param active_faces: the faces to get data for, None means all
-            :param uv_lock: ?
-            :param previous: previous data to add the new to, or None to create new
+                batch=None,
+                ) -> typing.Tuple[typing.List[float], typing.List[float], typing.List[float], list]:
 
+                variable active_faces
 
-            variable vertex
-
-            variable collected_data
-
-                    variable face
-
-                variable i
-
-                variable i2
+                variable active_faces
 
         function add_prepared_data_to_batch(
                 self,
                 collected_data: typing.Tuple[
-                typing.List[float], typing.List[float], typing.List[float]
+                typing.List[float], typing.List[float], typing.List[float], list
                 ],
                 batch: typing.Union[pyglet.graphics.Batch, typing.List[pyglet.graphics.Batch]],
                 ) -> typing.Iterable[VertexList]:
@@ -279,7 +265,7 @@ ___
         function draw_prepared_data(
                 self,
                 collected_data: typing.Tuple[
-                typing.List[float], typing.List[float], typing.List[float]
+                typing.List[float], typing.List[float], typing.List[float], list
                 ],
                 ):
             

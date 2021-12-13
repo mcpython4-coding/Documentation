@@ -1,4 +1,4 @@
-***NBTStructureHelper.py - documentation - last updated on 13.11.2021 by uuk***
+***NBTStructureHelper.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -44,7 +44,7 @@ ___
 
                 variable self.blocks[pos]
 
-        function place(self, dimension, x: int, y: int, z: int, config)
+                variable block
 
         function place_array(
                 self,

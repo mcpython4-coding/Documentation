@@ -1,4 +1,4 @@
-***WorldGenerationProgressState.py - documentation - last updated on 30.10.2021 by uuk***
+***WorldGenerationProgressState.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -23,13 +23,13 @@ ___
 
             variable self.world_gen_config
 
-        function generate_world(self, config=None)
+                variable config
 
-        function generate_from_user_input(self, state=None)
+                variable config["seed"]
+
+                variable state
 
         function create_state_parts(self) -> list
-
-        function on_update(self, dt)
 
             variable overworld
 
@@ -40,8 +40,6 @@ ___
                     variable count
 
                     variable self.status_table[chunk]
-
-        function activate(self)
 
             variable mcpython.server.worldgen.noise.NoiseManager.manager.default_implementation
 
@@ -58,8 +56,6 @@ ___
             variable seed
 
             variable shared.world.config["seed"]
-
-        function finish(self)
 
             variable overworld
 
@@ -95,12 +91,10 @@ ___
 
         function bind_to_eventbus(self)
 
-        function on_key_press(self, symbol, modifiers)
-
         function calculate_percentage_of_progress(self)
 
         function create_state_renderer(self) -> typing.Any
 
     variable world_generation
 
-    function create()
+        variable world_generation

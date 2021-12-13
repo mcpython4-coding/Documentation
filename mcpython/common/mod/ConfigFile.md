@@ -1,4 +1,4 @@
-***ConfigFile.py - documentation - last updated on 18.11.2021 by uuk***
+***ConfigFile.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -279,15 +279,12 @@ ___
         @deprecation.deprecated()
         function __contains__(self, item)
 
-        @deprecation.deprecated()
-        function build(self)
+                variable old_buffer
+
+                    variable self.main_tag
 
         @deprecation.deprecated()
         function read(self)
 
         @deprecation.deprecated()
         function write(self)
-
-    @deprecation.deprecated()
-    @shared.mod_loader("minecraft", "stage:mod:config:define")
-    function load()

@@ -1,4 +1,4 @@
-***FluidManager.py - documentation - last updated on 25.4.2021 by uuk***
+***FluidManager.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -12,6 +12,3 @@ ___
 
 
     variable fluid_manager
-
-    @shared.mod_loader("minecraft", "stage:fluids:register")
-    function register_fluids()

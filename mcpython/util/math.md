@@ -1,4 +1,4 @@
-***math.py - documentation - last updated on 6.11.2021 by uuk***
+***math.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -21,17 +21,6 @@ ___
             nz: float,
             faces=(True, True, True, True, True, True),
             ) -> typing.Iterable[typing.List[float]]:
-        
-        Similar to cube_vertices, but will return it per-face instead of an whole array of data
-        :param x: the x position
-        :param y: the y position
-        :param z: the z position
-        :param nx: the size in x direction
-        :param ny: the size in y direction
-        :param nz: the size in z direction
-        :param faces: which faces to generate
-        :return: a tuple of length 6 representing each face
-
 
         variable top
 
@@ -100,6 +89,7 @@ ___
         :return: the chunk position, as (x, z)
 
 
+    @deprecation.deprecated()
     function topological_sort(items)
         
         'items' is an iterable of (item, dependencies) pairs, where 'dependencies'
@@ -112,17 +102,7 @@ ___
         todo: replace with native sorting system
 
 
-        variable provided
-
-        variable items
-
-        variable missing
-
-        variable previous_missing
-
-        variable result
-
-                variable previous_missing
+        variable generator
 
     function rotate_point(point, origin, rotation)
         

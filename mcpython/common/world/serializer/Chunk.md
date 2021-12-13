@@ -1,4 +1,4 @@
-***Chunk.py - documentation - last updated on 13.11.2021 by uuk***
+***Chunk.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,7 +11,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    @shared.registry class Chunk extends mcpython.common.world.serializer.IDataSerializer.IDataSerializer
+    @shared.registry class Chunk extends IDataSerializer.IDataSerializer
 
         variable PART
 
@@ -52,13 +52,6 @@ ___
             variable chunk_instance.visible
 
             variable shared.world_generation_handler.enable_generation
-
-        static
-        function add_block_to_world(
-                cls, chunk_instance, d, immediate, position, save_file, inv_file
-                ):
-
-            function add(instance)
 
                     variable buffer
 

@@ -1,4 +1,4 @@
-***BlockModel.py - documentation - last updated on 18.11.2021 by uuk***
+***BlockModel.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -14,6 +14,7 @@ ___
     class Model
         
         Class representing a (block) model from the file system
+        Contains the needed API functions to render the model
 
 
         function __init__(self, name: str, modname: str)
@@ -38,34 +39,16 @@ ___
 
             variable self.box_models
 
-        function parse_from_data(self, data: dict)
+            variable self.parent
 
-                    variable self.parent
+            variable self.box_models
+                prepare the box models from parent
 
-                variable self.parent
+        function bake_textures(self)
+            
+            Informs the texture bake system about our new textures we want to be in there
+            Prepares the texture_addresses attribute with the location of the texture
 
-                variable self.used_textures
-
-                variable self.texture_names
-
-                    variable texture
-
-                            variable texture_f
-
-                            variable texture_f
-
-                            variable texture_f
-
-                            variable self.animated_textures[
-
-                        variable self.used_textures[name]
-
-                        variable self.drawable
-
-                        variable self.texture_names[name]
-
-            variable to_add
-                inform the texture bake system about our new textures we want to be in there
 
             variable add
 
@@ -73,59 +56,31 @@ ___
 
                 variable self.texture_atlas
 
-            variable self.box_models
-                prepare the box models from parent
+                variable self.parent
 
-        function get_prepared_data_for(
-                self,
-                instance: IBlockStateRenderingTarget,
-                position: typing.Tuple[float, float, float],
-                config: dict,
-                face: mcpython.util.enums.EnumSide,
-                previous: typing.Tuple[typing.List[float], typing.List[float]] = None,
-                ) -> typing.Tuple[
-                typing.Tuple[
-                typing.List[float], typing.List[float], typing.List[float], typing.List
-                ],
-                typing.Any,
-                ]:
-                """
-                Collects the vertex and texture data for a block at the given position with given configuration
-                :param instance: the instance to draw
-                :param position: the offset position
-                :param config: the configuration
-                :param face: the face
-                :param previous: previous collected data, as a tuple of vertices, texture coords
-                :return: a tuple of vertices and texture coords, and an underlying BoxModel for some identification stuff
-                """
-                
-                # If this is true, we cannot render this model as stuff is not fully linked
-                if not self.drawable:
-                logger.println(
-                f"[BLOCK MODEL][FATAL] can't draw the model '{self.name}' "
-                f"(which has not defined textures) at {position}"
-                )
-                return ([], [], [], []) if previous is None else previous, None
-                
-                rotation = config["rotation"]
-                if rotation == (90, 90, 0):
-            
-            Collects the vertex and texture data for a block at the given position with given configuration
-            :param instance: the instance to draw
-            :param position: the offset position
-            :param config: the configuration
-            :param face: the face
-            :param previous: previous collected data, as a tuple of vertices, texture coords
-            :return: a tuple of vertices and texture coords, and an underlying BoxModel for some identification stuff
+                variable self.parent
 
+            variable self.parent
 
-            variable rotation
+                variable self.used_textures
 
-                variable rotation
+                variable self.texture_names
 
-            variable collected_data
+        function parse_texture(self, texture: str, name: str)
 
-            variable box_model
+                    variable texture_f
+
+                    variable texture_f
+
+                    variable texture_f
+
+                    variable self.animated_textures[
+
+                variable self.used_textures[name]
+
+                variable self.drawable
+
+                variable self.texture_names[name]
 
         function prepare_rendering_data_multi_face(
                 self,
@@ -135,6 +90,7 @@ ___
                 faces: int,
                 previous: typing.Tuple[typing.List[float], typing.List[float]] = None,
                 batch: pyglet.graphics.Batch = None,
+                scale: float = 1,
                 ) -> typing.Tuple[
                 typing.Tuple[
                 typing.List[float], typing.List[float], typing.List[float], typing.List
@@ -149,8 +105,11 @@ ___
                 :param faces: the faces
                 :param previous: previous collected data, as a tuple of vertices, texture coords
                 :param batch: the batch to use
+                :param scale: the scale to use
                 :return: a tuple of vertices and texture coords, and an underlying BoxModel for some identification stuff
                 """
+                
+                collected_data = ([], [], [], []) if previous is None else previous
                 
                 # If this is true, we cannot render this model as stuff is not fully linked
                 if not self.drawable:
@@ -158,8 +117,12 @@ ___
                 f"[BLOCK MODEL][FATAL] can't draw the model '{self.name}' "
                 f"(which has not defined textures) at {position}"
                 )
-                return ([], [], [], []) if previous is None else previous, None
+                return collected_data, None
                 
+                if not self.box_models:
+                return collected_data, None
+                
+                # todo: can we parse this beforehand and store as an attribute?
                 rotation = config["rotation"]
                 if rotation == (90, 90, 0):
             
@@ -170,80 +133,16 @@ ___
             :param faces: the faces
             :param previous: previous collected data, as a tuple of vertices, texture coords
             :param batch: the batch to use
+            :param scale: the scale to use
             :return: a tuple of vertices and texture coords, and an underlying BoxModel for some identification stuff
 
 
-            variable rotation
-
-                variable rotation
-
             variable collected_data
 
-            variable box_model
-
-        function get_prepared_data_for_scaled(
-                self,
-                instance: IBlockStateRenderingTarget,
-                position: typing.Tuple[float, float, float],
-                config: dict,
-                face: mcpython.util.enums.EnumSide,
-                scale: float,
-                previous: typing.Tuple[typing.List[float], typing.List[float]] = None,
-                ) -> typing.Tuple[
-                typing.Tuple[
-                typing.List[float], typing.List[float], typing.List[float], typing.List
-                ],
-                typing.Any,
-                ]:
-                """
-                Collects the vertex and texture data for a block at the given position with given configuration
-                :param instance: the instance to draw
-                :param position: the offset position
-                :param config: the configuration
-                :param face: the face
-                :param scale: the scale to get the data for
-                :param previous: previous collected data, as a tuple of vertices, texture coords
-                :return: a tuple of vertices and texture coords, and an underlying BoxModel for some identification stuff
-                """
-                
-                # If this is true, we cannot render this model as stuff is not fully linked
-                if not self.drawable:
-                logger.println(
-                f"[BLOCK MODEL][FATAL] can't draw the model '{self.name}' "
-                f"(which has not defined textures) at {position}"
-                )
-                return ([], [], [], []) if previous is None else previous, None
-                
-                rotation = config["rotation"]
-                if rotation == (90, 90, 0):
-            
-            Collects the vertex and texture data for a block at the given position with given configuration
-            :param instance: the instance to draw
-            :param position: the offset position
-            :param config: the configuration
-            :param face: the face
-            :param scale: the scale to get the data for
-            :param previous: previous collected data, as a tuple of vertices, texture coords
-            :return: a tuple of vertices and texture coords, and an underlying BoxModel for some identification stuff
-
-
             variable rotation
+                todo: can we parse this beforehand and store as an attribute?
 
                 variable rotation
-
-            variable collected_data
-
-            variable box_model
-
-        @deprecation.deprecated()
-        function add_face_to_batch(
-                self,
-                instance: IBlockStateRenderingTarget,
-                position: typing.Tuple[float, float, float],
-                batch: pyglet.graphics.Batch,
-                config: dict,
-                face: mcpython.util.enums.EnumSide,
-                ):
 
         function add_faces_to_batch(
                 self,
@@ -252,10 +151,11 @@ ___
                 batch: pyglet.graphics.Batch,
                 config: dict,
                 faces: int,
+                scale: float = 1,
                 ) -> typing.Iterable[VertexList]:
             
-            Adds a given face to the batch
-            Simply wraps a get_prepared_data_for call around the box_model.add_prepared_data_to_batch-call
+            Adds given faces to the given batch system
+            Parameters same as prepare_rendering_data_multi_face
 
 
         function draw_face(
@@ -263,25 +163,15 @@ ___
                 instance,
                 position: typing.Tuple[float, float, float],
                 config: dict,
-                face: mcpython.util.enums.EnumSide,
+                face: mcpython.util.enums.EnumSide | int,
+                scale: float = 1,
                 ):
             
             Similar to add_face_to_batch, but does it in-place without a batches
             Use batches wherever possible!
 
 
-        function draw_face_scaled(
-                self,
-                instance,
-                position: typing.Tuple[float, float, float],
-                config: dict,
-                face: mcpython.util.enums.EnumSide,
-                scale: float,
-                ):
-            
-            Similar to add_face_to_batch, but does it in-place without a batches
-            Use batches wherever possible!
-
+                variable face
 
         function get_texture_position(
                 self, name: str
@@ -293,3 +183,88 @@ ___
 
 
                 variable n
+
+        @deprecation.deprecated()
+        function get_prepared_data_for_scaled(
+                self,
+                instance: IBlockStateRenderingTarget,
+                position: typing.Tuple[float, float, float],
+                config: dict,
+                face: mcpython.util.enums.EnumSide,
+                scale: float,
+                previous: typing.Tuple[typing.List[float], typing.List[float]] = None,
+                batch=None,
+                ) -> typing.Tuple[
+                typing.Tuple[
+                typing.List[float], typing.List[float], typing.List[float], typing.List
+                ],
+                typing.Any,
+                ]:
+                return self.prepare_rendering_data_multi_face(
+                instance,
+                position,
+                config,
+                face.bitflag,
+                scale=scale,
+                previous=previous,
+                batch=batch,
+                )
+                
+                @deprecation.deprecated()
+                def add_face_to_batch(
+                self,
+                instance: IBlockStateRenderingTarget,
+                position: typing.Tuple[float, float, float],
+                batch: pyglet.graphics.Batch,
+                config: dict,
+                face: mcpython.util.enums.EnumSide,
+                ):
+
+        @deprecation.deprecated()
+        function add_face_to_batch(
+                self,
+                instance: IBlockStateRenderingTarget,
+                position: typing.Tuple[float, float, float],
+                batch: pyglet.graphics.Batch,
+                config: dict,
+                face: mcpython.util.enums.EnumSide,
+                ):
+
+        @deprecation.deprecated()
+        function get_prepared_data_for(
+                self,
+                instance: IBlockStateRenderingTarget,
+                position: typing.Tuple[float, float, float],
+                config: dict,
+                face: mcpython.util.enums.EnumSide,
+                previous: typing.Tuple[typing.List[float], typing.List[float]] = None,
+                batch=None,
+                ) -> typing.Tuple[
+                typing.Tuple[
+                typing.List[float], typing.List[float], typing.List[float], typing.List
+                ],
+                typing.Any,
+                ]:
+                return self.prepare_rendering_data_multi_face(
+                instance, position, config, face.bitflag, previous=previous, batch=batch
+                )
+                
+                @deprecation.deprecated()
+                def draw_face_scaled(
+                self,
+                instance,
+                position: typing.Tuple[float, float, float],
+                config: dict,
+                face: mcpython.util.enums.EnumSide,
+                scale: float,
+                ):
+
+        @deprecation.deprecated()
+        function draw_face_scaled(
+                self,
+                instance,
+                position: typing.Tuple[float, float, float],
+                config: dict,
+                face: mcpython.util.enums.EnumSide,
+                scale: float,
+                ):

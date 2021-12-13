@@ -1,4 +1,4 @@
-***EntityRenderer.py - documentation - last updated on 13.5.2021 by uuk***
+***EntityRenderer.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -30,8 +30,6 @@ ___
             variable self.states
 
             variable self.texture_size
-
-        function reload(self)
             
             reloads from file
             concept: every entity has an state which can be rendered (similar to blockstates). Every state contains multiple
@@ -64,6 +62,32 @@ ___
                 }
             }
 
+
+            variable self.data
+
+            variable reloaded
+
+                variable box
+
+                variable texture
+
+                variable self.texture_size
+
+                    variable group
+
+                        variable group
+
+                        variable group
+
+                    variable uv
+
+                    variable uv
+
+                variable self.box_models[
+
+                variable d
+
+                variable self.states[state]
 
         function draw(self, entity_or_position, state, rotation=(0, 0, 0), part_rotation=None)
             

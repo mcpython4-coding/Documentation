@@ -1,4 +1,4 @@
-***LaunchWrapper.py - documentation - last updated on 30.10.2021 by uuk***
+***LaunchWrapper.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -84,9 +84,6 @@ ___
             
             Helper functions for loading the modules which create registries and do similar stuff
 
-
-            @shared.mod_loader("minecraft", "special:exit")
-            function exit()
 
         function setup_opengl(self)
             

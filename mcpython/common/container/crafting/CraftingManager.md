@@ -1,4 +1,4 @@
-***CraftingManager.py - documentation - last updated on 18.11.2021 by uuk***
+***CraftingManager.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -63,7 +63,7 @@ ___
 
         function add_recipe_from_data(self, data: dict, name: str, file: str = None)
 
-        function add_recipe_from_file(self, file: str)
+                variable data
 
                 variable data
 
@@ -73,10 +73,6 @@ ___
 
             variable result
                 todo: add option to run later
-
-        function load(self, modname: str, check_mod_dirs=True, load_direct=False)
-
-        function reload_crafting_recipes(self)
 
             variable self.crafting_recipes_shapeless
                 all shapeless recipes sorted after item count
@@ -104,5 +100,3 @@ ___
                     variable self.RECIPE_VIEW_INVENTORY
 
     variable shared.crafting_handler
-
-    function load_recipe_providers()

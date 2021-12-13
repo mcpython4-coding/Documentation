@@ -1,4 +1,4 @@
-***Items.py - documentation - last updated on 19.10.2021 by uuk***
+***Items.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,6 +11,6 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    function load_item()
+        variable template
 
         function lambda_add_random_xp(instance, itemstack)

@@ -1,4 +1,4 @@
-***BlockItemGeneratorState.py - documentation - last updated on 19.10.2021 by uuk***
+***BlockItemGeneratorState.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -53,8 +53,6 @@ ___
 
         function tick(self, _)
 
-        function activate(self)
-
             variable world
 
             variable item_registry
@@ -92,9 +90,9 @@ ___
 
         function load_previous_data(self)
 
-        function clean_world(self, world)
+                variable world.hide_faces_to_not_generated_chunks
 
-        function deactivate(self)
+                variable shared.tick_handler.enable_random_ticks
 
             variable shared.model_handler.hide_blockstate_errors
                 We want to enable this again
@@ -108,9 +106,11 @@ ___
 
             variable item_registry
 
-        function bake_items(self)
+            variable player
 
-        function close(self)
+                variable player.position
+
+                variable player.rotation
 
         function add_new_screen(self, *args)
 
@@ -148,4 +148,4 @@ ___
 
     variable block_item_generator
 
-    function create()
+        variable block_item_generator

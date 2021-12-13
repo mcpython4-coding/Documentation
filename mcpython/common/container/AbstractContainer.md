@@ -1,4 +1,4 @@
-***AbstractContainer.py - documentation - last updated on 27.9.2021 by uuk***
+***AbstractContainer.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -36,9 +36,9 @@ ___
             Invoked during construction of the object; should fill the slots array with slot instances
 
 
-        function write_to_network_buffer(self, buffer: WriteBuffer)
+            variable self.custom_name
 
-        function read_from_network_buffer(self, buffer: ReadBuffer)
+            variable self.uuid
 
         function create_renderer(self) -> typing.Any
             
@@ -54,8 +54,6 @@ ___
         function is_always_open(self) -> bool
 
         function is_blocking_interactions(self) -> bool
-
-        function on_world_cleared(self)
 
         function get_interaction_slots(self)
 

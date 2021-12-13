@@ -1,4 +1,4 @@
-***ModLoadingProgressState.py - documentation - last updated on 14.10.2021 by uuk***
+***ModLoadingProgressState.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -34,9 +34,5 @@ ___
             variable self.parts[3].position
 
         function on_draw_2d_pre(self)
-
-        function on_update(self, dt)
-
-        function deactivate(self)
 
     variable mod_loading

@@ -1,4 +1,4 @@
-***ServerChangePackage.py - documentation - last updated on 27.9.2021 by uuk***
+***ServerChangePackage.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -26,10 +26,8 @@ ___
 
         function set_new_address(self, ip: str, port: int)
 
-        function write_to_buffer(self, buffer: WriteBuffer)
+            variable self.new_server_ip
 
-        function read_from_buffer(self, buffer: ReadBuffer)
+            variable self.new_server_port
 
-        function handle_inner(self)
-
-        function reconnect(self)
+            variable pair

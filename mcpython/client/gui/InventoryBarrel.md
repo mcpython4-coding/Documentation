@@ -1,4 +1,4 @@
-***InventoryBarrel.py - documentation - last updated on 9.2.2021 by uuk***
+***InventoryBarrel.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -25,16 +25,14 @@ ___
         static
         function get_config_file() -> str or None
 
-        function on_activate(self)
+            variable self.block.opened
 
-        function on_deactivate(self)
+            variable self.block.opened
 
         function create_slot_renderers(self) -> list
 
         function draw(self, hovering_slot=None)
 
         function get_interaction_slots(self)
-
-        function on_key_press(self, symbol, modifiers)
 
         function update_shift_container(self)

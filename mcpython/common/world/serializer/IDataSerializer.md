@@ -1,4 +1,4 @@
-***IDataSerializer.py - documentation - last updated on 13.11.2021 by uuk***
+***IDataSerializer.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -35,6 +35,3 @@ ___
 
 
     variable data_serializer_registry
-
-    @shared.mod_loader("minecraft", "stage:serializer:parts")
-    function load()

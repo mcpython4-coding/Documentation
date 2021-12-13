@@ -1,4 +1,4 @@
-***EventBus.py - documentation - last updated on 13.11.2021 by uuk***
+***EventBus.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -84,31 +84,23 @@ ___
 
                     variable any_found
 
-        function call(self, event_name: str, *args, **kwargs)
-            
-            Call an event on this event bus. Also works when deactivated
-            :param event_name: the name of the event to call
-            :param args: arguments to give
-            :param kwargs: kwargs to give
-
-
             variable exception_occ
 
-                        variable function
-
-                        variable ex
+                        variable result
 
                     variable exception_occ
 
-        function call_cancelable(self, event_name: str, *args, **kwargs)
-            
-            Will call a cancel able event.
-            Works the same way as call, but will use call_until() with an CancelAbleEvent as first parameter which is checked after each call
-            :param event_name: the name to call
-            :param args: args to call with
-            :param kwargs:  kwargs to call with
-            :return: if it was canceled or not
+        function call(self, event_name: str, *args, **kwargs)
 
+            variable handler
+
+        function call_cancelable(self, event_name: str, *args, **kwargs)
+
+                        variable result
+
+                        variable result
+
+                            variable result
 
         function call_until(
                 self,
@@ -117,22 +109,6 @@ ___
                 *args,
                 **kwargs,
                 ):
-            
-            Will call the event stack until an check_function returns True or all subscriptions where done
-            :param event_name: the name of the event
-            :param check_function: the check function to call with
-            :param args: the args to call with
-            :param kwargs: the kwargs to call with
-            :return: the result in the moment of True or None
-
-
-                        variable function
-
-                        variable result
-
-                        variable ex
-
-                        variable result
 
         function activate(self)
 

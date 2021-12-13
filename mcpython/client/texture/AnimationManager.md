@@ -1,4 +1,4 @@
-***AnimationManager.py - documentation - last updated on 18.11.2021 by uuk***
+***AnimationManager.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,7 +11,22 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class AnimationController
+    @onlyInClient() class AnimatedTexture extends TextureGroup
+
+        function __init__(self, hash_texture, texture, parent=None)
+
+            variable self.hash_texture
+
+        function __hash__(self)
+
+        function __eq__(self, other)
+
+    @onlyInClient() class AnimationController
+        
+        Manager class for the animation group, identified by frame count and ticks needed for one frame.
+        Animation controllers are shared by AnimationManager when possible.
+        WARNING: This system is highly unstable currently, and may never be fully stable
+
 
         function __init__(self, frames: int, timing: int)
 
@@ -39,7 +54,15 @@ ___
 
             variable pos
 
+        function add_textures(self, textures: typing.List[PIL.Image.Image])
+
+            variable atlas
+
+            variable pos
+
         function bake(self)
+
+            variable self.group
 
         function tick(self, ticks: float)
 
@@ -47,13 +70,25 @@ ___
 
             variable self.group.texture
 
-    class AnimationManager
+    @onlyInClient() class AnimationManager
+        
+        Manager for any block animations
+        Handles all AnimationController's, use get_atlas_for_spec() when needing your own one.
+        Use prepare_animated_texture() when wanting stuff from a texture on resources.
+        Use the get_...() methods to get the needed data for animations
+
 
         function __init__(self)
 
             variable self.texture2controller: typing.List[AnimationController]
 
         function prepare_animated_texture(self, location: str) -> int
+            
+            Prepares a texture for later animation; Internally loads the .mcmeta file for the image,
+            and does some parsing for knowing how the animation should play
+            :param location: a location to look at
+            :return: the texture id, for later lookup operations
+
 
             variable texture
 
@@ -71,7 +106,23 @@ ___
 
             variable self.texture_lookup[location]
 
+        function prepare_texture_series_as_animation(
+                self, textures: typing.List[PIL.Image.Image], timing_per_frame: int = 1
+                ) -> int:
+            
+            Prepares a set of textures with some ticks in between for rendering as an animation
+            :param textures: the textures to use
+            :param timing_per_frame: how many ticks per frame to use
+            :return: the animation id
+
+
+            variable controller
+
         function get_atlas_for_spec(self, frames: int, timing: int) -> AnimationController
+            
+            Returns or creates the AnimationController for the given configuration
+            Use prepare_texture_series_as_animation for fully registering it into the system
+
 
             variable controller
 
@@ -85,4 +136,4 @@ ___
 
         function bake(self)
 
-    variable animation_manager
+        variable animation_manager

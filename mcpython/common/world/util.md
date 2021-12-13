@@ -1,4 +1,4 @@
-***util.py - documentation - last updated on 6.11.2021 by uuk***
+***util.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -83,22 +83,7 @@ ___
 
     function area_iterator(start: typing.Tuple[int, int, int], end: typing.Tuple[int, int, int])
 
-    function fill_area(
-            access: mcpython.engine.world.AbstractInterface.ISupportWorldInterface,
-            start: typing.Tuple[int, int, int],
-            end: typing.Tuple[int, int, int],
-            block: typing.Union[str, BlockSource],
-            ):
-
         variable block
-
-    function fill_area_replacing(
-            access: mcpython.engine.world.AbstractInterface.ISupportWorldInterface,
-            start: typing.Tuple[int, int, int],
-            end: typing.Tuple[int, int, int],
-            block: typing.Union[str, BlockSource],
-            replacing: typing.Union[str, BlockSource],
-            ):
 
         variable block
 
@@ -130,28 +115,11 @@ ___
 
                 variable b
 
-    function paste_content(
-            access: mcpython.engine.world.AbstractInterface.ISupportWorldInterface,
-            start: typing.Tuple[int, int, int],
-            data: typing.Dict[typing.Tuple[int, int, int], typing.Any],
-            insert_air=True,
-            replaces=AnyBlock.INSTANCE,
-            ):
-
         variable replaces
 
         variable start
 
             variable p2
-
-    function paste_content_list(
-            access: mcpython.engine.world.AbstractInterface.ISupportWorldInterface,
-            start: typing.Tuple[int, int, int],
-            end: typing.Tuple[int, int, int],
-            data: typing.List[typing.Any],
-            insert_air=True,
-            replaces=AnyBlock.INSTANCE,
-            ):
 
         variable replaces
 

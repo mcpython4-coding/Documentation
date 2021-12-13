@@ -1,4 +1,4 @@
-***TickHandler.py - documentation - last updated on 16.9.2021 by uuk***
+***TickHandler.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -37,13 +37,19 @@ ___
             variable self.execute_array
                 an array of (function, args, kwargs) for functions which should be executed in near future
 
-        function tick(self, dt)
+        function schedule_tick(self, dt: float)
             
             Execute ticks
             :param dt: the time that came after the last event
 
 
+                        variable result
+
+                            variable self.results[ticket_id]
+
                         variable self.lost_time
+
+                        variable result
 
         function schedule_once(self, function, *args, **kwargs)
             
@@ -73,20 +79,20 @@ ___
 
         function bind_redstone_tick(self, function, tick, *args, **kwargs)
 
-        function send_random_ticks(self, *args, **kwargs)
-
             variable dimension
 
             variable random_tick_speed
 
             variable r
 
-                        variable x
+            variable blocks
 
-                        variable z
+                            variable x
 
-                                variable position
+                            variable z
 
-                                variable instance
+                                    variable position
+
+                                    variable instance
 
     variable handler

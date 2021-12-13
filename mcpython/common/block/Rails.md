@@ -1,4 +1,4 @@
-***Rails.py - documentation - last updated on 30.10.2021 by uuk***
+***Rails.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -25,7 +25,7 @@ ___
 
         variable NO_ENTITY_COLLISION
 
-        function is_currently_orientated_for_side(self, side: EnumSide) -> bool
+        function is_currently_orientated_for_side(self, side: EnumSide, up: bool) -> bool
 
     class IStraightRail extends IRail,  ABC
 
@@ -37,7 +37,7 @@ ___
 
         function set_model_state(self, state: dict)
 
-        function on_block_update(self)
+            variable dimension
 
             variable connecting_faces
 
@@ -46,6 +46,8 @@ ___
                     variable self.shape
 
                     variable self.shape
+
+        function is_currently_orientated_for_side(self, side: EnumSide, up: bool) -> bool
 
     class ActivatorRail extends IStraightRail
 
@@ -68,6 +70,14 @@ ___
                 variable self.force_active
 
     class PoweredRail extends ActivatorRail
+
+        variable NAME
+
+        variable BLAST_RESISTANCE
+
+        variable ASSIGNED_TOOLS
+
+    class DetectorRail extends ActivatorRail
 
         variable NAME
 

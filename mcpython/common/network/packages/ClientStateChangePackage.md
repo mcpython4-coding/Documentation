@@ -1,4 +1,4 @@
-***ClientStateChangePackage.py - documentation - last updated on 27.9.2021 by uuk***
+***ClientStateChangePackage.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -26,8 +26,4 @@ ___
 
         function set_state(self, new_state: str)
 
-        function write_to_buffer(self, buffer: WriteBuffer)
-
-        function read_from_buffer(self, buffer: ReadBuffer)
-
-        function handle_inner(self)
+            variable self.new_state

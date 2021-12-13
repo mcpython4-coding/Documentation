@@ -1,4 +1,4 @@
-***ItemGroup.py - documentation - last updated on 16.9.2021 by uuk***
+***ItemGroup.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -19,9 +19,7 @@ ___
 
             variable self.has_lazy
 
-        function write_to_network_buffer(self, buffer: WriteBuffer)
-
-        function read_from_network_buffer(self, buffer: ReadBuffer)
+            variable self.entries
 
         function add(self, entry: typing.Union[ItemStack, str])
 
@@ -50,10 +48,6 @@ ___
             variable self.raw_filter: str
 
             variable self.filter: re.Pattern
-
-        function write_to_network_buffer(self, buffer: WriteBuffer)
-
-        function read_from_network_buffer(self, buffer: ReadBuffer)
 
         function view(self) -> typing.Iterator[ItemStack]
 

@@ -1,4 +1,4 @@
-***CactusFeature.py - documentation - last updated on 9.2.2021 by uuk***
+***CactusFeature.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -14,9 +14,3 @@ ___
     @shared.registry class CactusFeature extends mcpython.server.worldgen.feature.IFeature.IFeature
 
         variable NAME
-
-        static
-        function place(cls, dimension, x: int, y: int, z: int, config)
-
-        static
-        function place_array(cls, array, x: int, y: int, z: int, config)

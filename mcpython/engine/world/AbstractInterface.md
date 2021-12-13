@@ -1,4 +1,4 @@
-***AbstractInterface.py - documentation - last updated on 18.11.2021 by uuk***
+***AbstractInterface.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -34,31 +34,11 @@ ___
         Abstract intermediate common to chunk & dimension; Defines interaction with underlying world
 
 
-        function add_block(
-                self,
-                position: tuple,
-                block_name: typing.Union[str, typing.Any],
-                immediate=True,
-                block_update=True,
-                block_update_self=True,
-                lazy_setup: typing.Callable[[typing.Any], None] = None,
-                check_build_range=True,
-                block_state=None,
-                network_sync=True,
-                ) -> typing.Optional[typing.Any]:
+            variable immediate: bool
 
-        function remove_block(
-                self,
-                position: typing.Union[
-                typing.Tuple[int, int, int],
-                typing.Any,
-                ],
-                immediate: bool = True,
-                block_update: bool = True,
-                block_update_self: bool = True,
-                network_sync=True,
-                reason=None,
-                ):
+            variable block_update: bool
+
+            variable block_update_self: bool
 
         function check_neighbors(self, position: typing.Tuple[int, int, int])
 
@@ -175,19 +155,6 @@ ___
             
             Checks if the given position is not air
 
-
-        function add_block(
-                self,
-                position: typing.Tuple[int, int, int],
-                block_name: typing.Union[str, typing.Any],
-                immediate=True,
-                block_update=True,
-                block_update_self=True,
-                lazy_setup: typing.Callable[[typing.Any], None] = None,
-                check_build_range=True,
-                block_state=None,
-                network_sync=True,
-                ) -> typing.Optional[typing.Any]:
             
             Adds a block to the given position
             :param position: the position to add at
@@ -202,26 +169,15 @@ ___
             :return: the block instance or None if it could not be created for some reason
             todo: add method which raises an exception on fail
 
-
-        function on_block_updated(
-                self, position: typing.Tuple[float, float, float], itself=True
-                ):
             
             Updates the block at the given position with a block update
 
 
-        function remove_block(
-                self,
-                position: typing.Union[
-                typing.Tuple[int, int, int],
-                typing.Any,
-                ],
-                immediate: bool = True,
-                block_update: bool = True,
-                block_update_self: bool = True,
-                network_sync=True,
-                reason=None,
-                ):
+            variable immediate: bool
+
+            variable block_update: bool
+
+            variable block_update_self: bool
             
             Removes a block from a given position
             :param position: the position to remove at
@@ -354,27 +310,7 @@ ___
                 self, position: typing.Tuple[int, int, int], none_if_str=False
                 ) -> typing.Union[typing.Any, str, None]:
 
-        function add_block(
-                self,
-                position: tuple,
-                block_name: str,
-                immediate=True,
-                block_update=True,
-                block_update_self=True,
-                lazy_setup: typing.Callable = None,
-                check_build_range=True,
-                block_state=None,
-                network_sync=True,
-                ):
-
-        function remove_block(
-                self,
-                position: tuple,
-                immediate=True,
-                block_update=True,
-                block_update_self=True,
-                network_sync=True,
-                ):
+            variable lazy_setup: typing.Callable
 
         function check_neighbors(self, position: typing.Tuple[int, int, int])
 

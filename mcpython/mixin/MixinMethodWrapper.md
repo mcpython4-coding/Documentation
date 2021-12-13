@@ -1,4 +1,4 @@
-***MixinMethodWrapper.py - documentation - last updated on 30.10.2021 by uuk***
+***MixinMethodWrapper.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -146,3 +146,5 @@ ___
             variable helper
 
                 variable instr
+
+        function print_stats(self)

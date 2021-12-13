@@ -1,4 +1,4 @@
-***FaceInfo.py - documentation - last updated on 18.11.2021 by uuk***
+***FaceInfo.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -24,23 +24,24 @@ ___
 
 
             variable self.block
+                A reference to the super block
 
             variable self.faces
-
-            variable self.custom_renderer - holds a custom block renderer
+                Holds which faces are visible
 
             variable self.subscribed_renderer: bool
+                If the custom_renderer was bound to a rendering event or not
 
             variable self.bound_rendering_info
 
             variable self.multi_data
+                The data from the normal add_to_batch() calls, should be a list of VertexList's
 
         function is_shown(self) -> bool
 
         function show_faces(self, faces: int)
             
-            Optimised show_face() for more than one face
-            Will do only something optimal when more than one face is passed in
+            Shows the faces indicating by the bit flag (See EnumSide.bitflag)
 
 
                     variable self.subscribed_renderer
@@ -55,8 +56,9 @@ ___
 
         function hide_faces(self, faces: int)
             
-            Will hide a face
+            Will hide the faces indicated by the face
             :param faces: the faces to hide
+            Will hide all faces and re-render the still visible ones
 
 
             variable faces

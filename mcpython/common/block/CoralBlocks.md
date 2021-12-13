@@ -1,4 +1,4 @@
-***CoralBlocks.py - documentation - last updated on 30.10.2021 by uuk***
+***CoralBlocks.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -23,8 +23,6 @@ ___
         variable BLAST_RESISTANCE
 
         variable ASSIGNED_TOOLS
-
-        function on_random_update(self)
 
     class BrainCoralBlock extends ICoralBlock
         

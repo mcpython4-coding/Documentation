@@ -1,4 +1,4 @@
-***RedstoneWire.py - documentation - last updated on 30.10.2021 by uuk***
+***RedstoneWire.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -37,13 +37,13 @@ ___
 
         function set_model_state(self, state: dict)
 
-        function on_block_update(self)
-
             variable dimension
 
             variable block
 
-        function send_level_update(self)
+            variable level
+
+                variable self.level
 
         function update_visual(self)
 

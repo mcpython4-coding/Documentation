@@ -1,4 +1,4 @@
-***PyBytecodeManipulator.py - documentation - last updated on 18.11.2021 by uuk***
+***PyBytecodeManipulator.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -21,6 +21,7 @@ ___
         Wrapped class for handling __code__ objects at runtime,
         and writing the modified code back into the source function
         See https://docs.python.org/3.10/library/inspect.html
+        and http://unpyc.sourceforge.net/Opcodes.html
         todo: add different wrapper types for different versions
 
 
@@ -67,6 +68,8 @@ ___
 
             variable self.cell_vars
 
+            variable self.can_be_reattached
+
                 variable self.columntable
 
                 variable self.exceptiontable
@@ -85,14 +88,6 @@ ___
             function applyPatches(self)
                 
                 Writes the data this container holds back to the function
-                code_new_impl(PyTypeObject *type, int argcount, int posonlyargcount,
-                int kwonlyargcount, int nlocals, int stacksize, int flags,
-                PyObject *code, PyObject *consts, PyObject *names,
-                PyObject *varnames, PyObject *filename, PyObject *name,
-                PyObject *qualname, int firstlineno, PyObject *linetable,
-                PyObject *endlinetable, PyObject *columntable,
-                PyObject *exceptiontable, PyObject *freevars,
-                PyObject *cellvars);
 
 
                 variable self.target.__code__
@@ -121,3 +116,7 @@ ___
         function instructionList2Code(self, instruction_list: typing.List[dis.Instruction])
 
         function ensureName(self, name: str) -> int
+
+        function ensureFreeVar(self, name: str)
+
+        function ensureCellVar(self, name: str)

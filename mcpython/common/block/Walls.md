@@ -1,4 +1,4 @@
-***Walls.py - documentation - last updated on 14.10.2021 by uuk***
+***Walls.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -24,11 +24,7 @@ ___
 
             variable self.connections
 
-        function on_block_added(self)
-
         function get_model_state(self) -> dict
-
-        function on_block_update(self)
 
             variable dim
 

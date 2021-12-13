@@ -1,4 +1,4 @@
-***ModLoader.py - documentation - last updated on 18.11.2021 by uuk***
+***ModLoader.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -302,8 +302,6 @@ ___
 
 
             variable self.mod_loading_order
-
-        function process(self)
             
             Will process some loading tasks scheduled
             Used internally during mod loading state

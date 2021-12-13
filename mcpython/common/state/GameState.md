@@ -1,4 +1,4 @@
-***GameState.py - documentation - last updated on 14.10.2021 by uuk***
+***GameState.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -22,25 +22,20 @@ ___
 
         function create_state_parts(self) -> list
 
-        function activate(self)
-
                 variable shared.window.mouse_pressing
 
             variable shared.world_generation_handler.enable_auto_gen
 
-        function deactivate(self)
+            variable shared.world_generation_handler.enable_auto_gen
 
                 variable shared.window.mouse_pressing
 
         function bind_to_eventbus(self)
 
-        function on_key_press(self, symbol, modifiers)
-
                         variable self.parts[0].activate_mouse
 
-        static
-        function open_chat(enter="")
+            variable shared.chat.text
 
     variable game
 
-    function create()
+        variable game

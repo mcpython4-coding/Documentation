@@ -1,4 +1,4 @@
-***StartMenuState.py - documentation - last updated on 14.10.2021 by uuk***
+***StartMenuState.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -21,20 +21,13 @@ ___
 
         function bind_to_eventbus(self)
 
-        function activate(self)
+            variable shared.world.world_loaded
 
-        static
-        function on_new_game_press(x, y)
+            variable shared.ENABLE_ANIMATED_TEXTURES
 
         static
         function on_quit_game_press(x, y)
 
-        static
-        function on_key_press(key, modifier)
-
-        static
-        function on_multiplayer_press(x, y)
-
     variable start_menu
 
-    function create()
+        variable start_menu

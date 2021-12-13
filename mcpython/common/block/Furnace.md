@@ -1,4 +1,4 @@
-***Furnace.py - documentation - last updated on 30.10.2021 by uuk***
+***Furnace.py - documentation - last updated on 13.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -36,23 +36,15 @@ ___
 
             variable self.inventory
 
-        function write_to_network_buffer(self, buffer: WriteBuffer)
-
-        function read_from_network_buffer(self, buffer: ReadBuffer)
-
         function get_model_state(self) -> dict
 
         function set_model_state(self, state: dict)
-
-        function on_player_interaction(
-                self, player, button, modifiers, exact_hit, itemstack
-                ) -> bool:
 
         function get_inventories(self)
 
         function get_provided_slot_lists(self, side)
 
-        function on_block_remove(self, reason)
+                variable dimension
 
     class BlastFurnace extends Furnace
 
