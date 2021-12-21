@@ -1,4 +1,4 @@
-***SmithingRecipe.py - documentation - last updated on 18.11.2021 by uuk***
+***SmithingRecipe.py - documentation - last updated on 20.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -13,8 +13,9 @@ ___
 
     @shared.crafting_handler class SmithingRecipe extends mcpython.common.container.crafting.IRecipe.IRecipe
 
+        variable __slots__
+
         variable RECIPE_TYPE_NAMES
-            todo: implement
             The list of type descriptors to decode
 
         variable CRAFTING_SUPPORT
@@ -22,4 +23,10 @@ ___
         static
         function from_data(cls, data: dict, file: str) -> "SmithingRecipe"
 
-        function __init__(self)
+        function __init__(self, base: typing.List[str], addition: typing.List[str], output: str)
+
+            variable self.base
+
+            variable self.addition
+
+            variable self.output

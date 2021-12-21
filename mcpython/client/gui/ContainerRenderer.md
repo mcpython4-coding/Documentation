@@ -1,4 +1,4 @@
-***ContainerRenderer.py - documentation - last updated on 13.12.2021 by uuk***
+***ContainerRenderer.py - documentation - last updated on 20.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -101,6 +101,12 @@ ___
 
             variable self.custom_name_label.anchor_y
 
+            variable self.created_slots
+
+            variable self.created_slots
+
+            variable self.slots
+
             variable self.active
 
             variable self.custom_name
@@ -167,8 +173,6 @@ ___
         function on_reload(self)
 
         function tick(self, dt: float)
-
-        function create_slot_renderers(self) -> list
             
             Creates the slots
             :return: the slots the inventory uses

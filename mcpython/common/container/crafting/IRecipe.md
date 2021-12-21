@@ -1,4 +1,4 @@
-***IRecipe.py - documentation - last updated on 18.11.2021 by uuk***
+***IRecipe.py - documentation - last updated on 20.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -20,6 +20,8 @@ ___
         [e.g. maps from input -> output, ...]
 
 
+        variable __slots__
+
         variable TYPE
 
         variable RECIPE_TYPE_NAMES
@@ -39,9 +41,3 @@ ___
         function get_inputs(self) -> typing.Iterable[ItemStack]
 
         function get_outputs(self) -> typing.Iterable[ItemStack]
-
-        function bake(self)
-
-        function prepare(self)
-
-        function prepare_static(self)

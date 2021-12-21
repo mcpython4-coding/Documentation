@@ -1,4 +1,4 @@
-***InventoryChest.py - documentation - last updated on 13.12.2021 by uuk***
+***InventoryChest.py - documentation - last updated on 20.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -34,8 +34,6 @@ ___
                 variable self.custom_name
 
                     variable self.custom_name
-
-        function create_slot_renderers(self) -> list
 
         function draw(self, hovering_slot=None)
 

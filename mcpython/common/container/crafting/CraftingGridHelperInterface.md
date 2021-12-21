@@ -1,4 +1,4 @@
-***CraftingGridHelperInterface.py - documentation - last updated on 13.12.2021 by uuk***
+***CraftingGridHelperInterface.py - documentation - last updated on 20.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -154,8 +154,6 @@ ___
         function on_input_update(self, player=False)
 
                     variable self.active_recipe
-
-        function on_output_shift_click(self, slot, x, y, button, modifiers, player)
 
             variable old_recipe
 

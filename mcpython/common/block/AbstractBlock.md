@@ -1,4 +1,4 @@
-***AbstractBlock.py - documentation - last updated on 13.12.2021 by uuk***
+***AbstractBlock.py - documentation - last updated on 20.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -133,7 +133,15 @@ ___
 
             variable state: dict
 
+                variable state
+
+            variable state: dict
+
+                variable state
+
             variable version
+
+            variable original_buffer
 
                     variable fixer
 
@@ -142,6 +150,11 @@ ___
                     variable buffer
 
                     variable version
+
+                variable original_buffer.stream
+                    Our fixed stream belongs now here...
+
+            variable state
 
             variable state
 

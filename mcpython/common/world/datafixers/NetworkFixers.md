@@ -1,4 +1,4 @@
-***NetworkFixers.py - documentation - last updated on 13.12.2021 by uuk***
+***NetworkFixers.py - documentation - last updated on 20.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -16,14 +16,6 @@ ___
         variable BEFORE_VERSION: int
 
         variable AFTER_VERSION: int
-
-        static
-        function apply2stream(
-                cls,
-                target: IBufferSerializeAble,
-                source_buffer: ReadBuffer,
-                target_buffer: WriteBuffer,
-                ) -> bool:
             
             Applies this data fixer to a specific object with data
             :param target: the target obj

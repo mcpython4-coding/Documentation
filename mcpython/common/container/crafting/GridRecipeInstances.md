@@ -1,4 +1,4 @@
-***GridRecipeInstances.py - documentation - last updated on 18.11.2021 by uuk***
+***GridRecipeInstances.py - documentation - last updated on 20.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -19,13 +19,13 @@ ___
         :return: an transformed name list of (item name, amount)
 
 
-            variable itemname
-
             variable values
 
             variable value
 
     class AbstractCraftingGridRecipe extends  mcpython.common.container.crafting.IRecipe.IRecipe,  ABC 
+
+        variable __slots__
 
         variable RECIPE_VIEW
 
@@ -43,13 +43,20 @@ ___
 
         function as_grid_for_view(
                 self, size=(3, 3)
-                ) -> typing.Tuple[typing.List[typing.List[typing.List[ItemStack]]], ItemStack]:
+                ) -> typing.Tuple[
+                typing.List[typing.List[typing.List[ItemStack]]], ItemStack | None
+                ]:
+                raise NotImplementedError()
+                
+                def __repr__(self):
 
         function __repr__(self)
 
     @shared.crafting_handler class GridShaped extends AbstractCraftingGridRecipe
 
         variable RECIPE_TYPE_NAMES
+
+        variable __slots__
 
         static
         function from_data(cls, data: dict, file: str)
@@ -76,8 +83,6 @@ ___
 
             variable self.bounding_box_size
 
-        function prepare(self)
-
         function as_grid(self, size=(3, 3))
 
         function as_grid_for_view(
@@ -93,6 +98,8 @@ ___
 
         variable RECIPE_TYPE_NAMES
 
+        variable __slots__
+
         static
         function from_data(cls, data: dict, file: str)
 
@@ -105,8 +112,6 @@ ___
             variable self.inputs
 
             variable self.output
-
-        function prepare(self)
 
         function as_grid_for_view(
                 self, size=(3, 3)
@@ -122,7 +127,13 @@ ___
 
         function as_grid_for_view(
                 self, size=(3, 3)
-                ) -> typing.Tuple[typing.List[typing.List[typing.List[ItemStack]]], ItemStack]:
+                ) -> typing.Tuple[
+                typing.List[typing.List[typing.List[ItemStack]]], ItemStack | None
+                ]:
+                return [], None
+                
+                @classmethod
+                def from_data(cls, data: dict, file: str):
 
         static
         function from_data(cls, data: dict, file: str)
@@ -133,7 +144,13 @@ ___
 
         function as_grid_for_view(
                 self, size=(3, 3)
-                ) -> typing.Tuple[typing.List[typing.List[typing.List[ItemStack]]], ItemStack]:
+                ) -> typing.Tuple[
+                typing.List[typing.List[typing.List[ItemStack]]], ItemStack | None
+                ]:
+                return [], None
+                
+                @classmethod
+                def from_data(cls, data: dict, file: str):
 
         static
         function from_data(cls, data: dict, file: str)
@@ -144,7 +161,13 @@ ___
 
         function as_grid_for_view(
                 self, size=(3, 3)
-                ) -> typing.Tuple[typing.List[typing.List[typing.List[ItemStack]]], ItemStack]:
+                ) -> typing.Tuple[
+                typing.List[typing.List[typing.List[ItemStack]]], ItemStack | None
+                ]:
+                return [], None
+                
+                @classmethod
+                def from_data(cls, data: dict, file: str):
 
         static
         function from_data(cls, data: dict, file: str)
@@ -155,7 +178,13 @@ ___
 
         function as_grid_for_view(
                 self, size=(3, 3)
-                ) -> typing.Tuple[typing.List[typing.List[typing.List[ItemStack]]], ItemStack]:
+                ) -> typing.Tuple[
+                typing.List[typing.List[typing.List[ItemStack]]], ItemStack | None
+                ]:
+                return [], None
+                
+                @classmethod
+                def from_data(cls, data: dict, file: str):
 
         static
         function from_data(cls, data: dict, file: str)
@@ -166,7 +195,13 @@ ___
 
         function as_grid_for_view(
                 self, size=(3, 3)
-                ) -> typing.Tuple[typing.List[typing.List[typing.List[ItemStack]]], ItemStack]:
+                ) -> typing.Tuple[
+                typing.List[typing.List[typing.List[ItemStack]]], ItemStack | None
+                ]:
+                return [], None
+                
+                @classmethod
+                def from_data(cls, data: dict, file: str):
 
         static
         function from_data(cls, data: dict, file: str)
@@ -177,7 +212,13 @@ ___
 
         function as_grid_for_view(
                 self, size=(3, 3)
-                ) -> typing.Tuple[typing.List[typing.List[typing.List[ItemStack]]], ItemStack]:
+                ) -> typing.Tuple[
+                typing.List[typing.List[typing.List[ItemStack]]], ItemStack | None
+                ]:
+                return [], None
+                
+                @classmethod
+                def from_data(cls, data: dict, file: str):
 
         static
         function from_data(cls, data: dict, file: str)
@@ -188,7 +229,13 @@ ___
 
         function as_grid_for_view(
                 self, size=(3, 3)
-                ) -> typing.Tuple[typing.List[typing.List[typing.List[ItemStack]]], ItemStack]:
+                ) -> typing.Tuple[
+                typing.List[typing.List[typing.List[ItemStack]]], ItemStack | None
+                ]:
+                return [], None
+                
+                @classmethod
+                def from_data(cls, data: dict, file: str):
 
         static
         function from_data(cls, data: dict, file: str)
@@ -199,7 +246,13 @@ ___
 
         function as_grid_for_view(
                 self, size=(3, 3)
-                ) -> typing.Tuple[typing.List[typing.List[typing.List[ItemStack]]], ItemStack]:
+                ) -> typing.Tuple[
+                typing.List[typing.List[typing.List[ItemStack]]], ItemStack | None
+                ]:
+                return [], None
+                
+                @classmethod
+                def from_data(cls, data: dict, file: str):
 
         static
         function from_data(cls, data: dict, file: str)
@@ -210,7 +263,13 @@ ___
 
         function as_grid_for_view(
                 self, size=(3, 3)
-                ) -> typing.Tuple[typing.List[typing.List[typing.List[ItemStack]]], ItemStack]:
+                ) -> typing.Tuple[
+                typing.List[typing.List[typing.List[ItemStack]]], ItemStack | None
+                ]:
+                return [], None
+                
+                @classmethod
+                def from_data(cls, data: dict, file: str):
 
         static
         function from_data(cls, data: dict, file: str)
@@ -221,7 +280,13 @@ ___
 
         function as_grid_for_view(
                 self, size=(3, 3)
-                ) -> typing.Tuple[typing.List[typing.List[typing.List[ItemStack]]], ItemStack]:
+                ) -> typing.Tuple[
+                typing.List[typing.List[typing.List[ItemStack]]], ItemStack | None
+                ]:
+                return [], None
+                
+                @classmethod
+                def from_data(cls, data: dict, file: str):
 
         static
         function from_data(cls, data: dict, file: str)
@@ -232,7 +297,13 @@ ___
 
         function as_grid_for_view(
                 self, size=(3, 3)
-                ) -> typing.Tuple[typing.List[typing.List[typing.List[ItemStack]]], ItemStack]:
+                ) -> typing.Tuple[
+                typing.List[typing.List[typing.List[ItemStack]]], ItemStack | None
+                ]:
+                return [], None
+                
+                @classmethod
+                def from_data(cls, data: dict, file: str):
 
         static
         function from_data(cls, data: dict, file: str)

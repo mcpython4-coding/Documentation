@@ -1,4 +1,4 @@
-***ItemModel.py - documentation - last updated on 13.12.2021 by uuk***
+***ItemModel.py - documentation - last updated on 20.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -86,8 +86,6 @@ ___
         function addTextureLayer(self, number: int, file: str)
 
         function addOverride(self, predicate, replacement: str)
-
-        function bake(self, helper: "ItemModelHandler")
 
         function add_to_batch(
                 self, position: tuple, batch, context: str, state: dict

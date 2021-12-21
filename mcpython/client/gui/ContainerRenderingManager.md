@@ -1,4 +1,4 @@
-***ContainerRenderingManager.py - documentation - last updated on 13.12.2021 by uuk***
+***ContainerRenderingManager.py - documentation - last updated on 20.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -66,8 +66,6 @@ ___
             todo: move to InventoryHandler
 
 
-        function on_mouse_press(self, x: int, y: int, button: int, modifiers: int)
-
             variable self.moving_itemstack
 
             variable moving_itemstack
@@ -78,49 +76,25 @@ ___
 
                 variable dimension
 
-        function handle_shift_click(self, button: int, modifiers: int, slot, x: int, y: int)
-
-        function handle_middle_click(
-                self,
-                button: int,
-                modifiers: int,
-                moving_itemstack: ItemStack,
-                slot,
-                x: int,
-                y: int,
-                ):
+                    variable flag
 
                 variable self.mode
-
-        function handle_right_click(
-                self,
-                button: int,
-                modifiers: int,
-                moving_itemstack: ItemStack,
-                slot,
-                x: int,
-                y: int,
-                ):
 
                 variable amount
 
                 variable self.mode
 
-        function handle_left_click(
-                self,
-                button: int,
-                modifiers: int,
-                moving_itemstack: ItemStack,
-                slot,
-                x: int,
-                y: int,
-                ):
-
                 variable self.mode
 
                 variable stack_a
 
-        function on_mouse_release(self, x: int, y: int, button: int, modifiers: int)
+                variable self.moving_itemstack
+
+                variable self.mode
+
+            variable player
+
+            variable dimension
 
                 variable self.moving_itemstack
 
@@ -133,16 +107,12 @@ ___
                 variable self.moving_itemstack
 
                 variable self.mode
-
-        function on_mouse_drag(self, x, y, dx, dy, button, modifiers)
 
             variable slot
 
                 variable slot
 
-                        variable flag
-
-        function reorder_slot_list_stacks(self)
+                    variable flag
 
                 variable total
 
@@ -157,8 +127,6 @@ ___
                     variable off
 
                 variable overhead
-
-        function on_mouse_scroll(self, x: int, y: int, dx: int, dy: int)
 
             variable slot
 

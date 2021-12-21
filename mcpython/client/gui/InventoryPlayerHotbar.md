@@ -1,4 +1,4 @@
-***InventoryPlayerHotbar.py - documentation - last updated on 13.12.2021 by uuk***
+***InventoryPlayerHotbar.py - documentation - last updated on 20.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -87,8 +87,6 @@ ___
         function get_config_file()
 
         function is_blocking_interactions(self) -> bool
-
-        function create_slot_renderers(self) -> list
 
         function draw(self, hovering_slot=None)
 

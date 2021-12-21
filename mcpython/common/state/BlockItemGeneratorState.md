@@ -1,4 +1,4 @@
-***BlockItemGeneratorState.py - documentation - last updated on 13.12.2021 by uuk***
+***BlockItemGeneratorState.py - documentation - last updated on 20.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -89,6 +89,8 @@ ___
         function prepare_window(self)
 
         function load_previous_data(self)
+
+            variable items
 
                 variable world.hide_faces_to_not_generated_chunks
 

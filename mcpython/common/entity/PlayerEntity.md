@@ -1,4 +1,4 @@
-***PlayerEntity.py - documentation - last updated on 13.12.2021 by uuk***
+***PlayerEntity.py - documentation - last updated on 20.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -162,7 +162,7 @@ ___
 
             variable self.inventory_main
 
-            variable self.inventory_chat
+                variable self.inventory_chat
 
             variable self.inventory_enderchest
 
@@ -218,7 +218,11 @@ ___
 
             variable self.active_inventory_slot
 
+        @deprecation.deprecated()
         function get_active_inventory_slot(self)
+            
+            Gets the slot of the selected slot
+
             
             Gets the slot of the selected slot
 

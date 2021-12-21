@@ -1,4 +1,4 @@
-***InventoryCraftingTable.py - documentation - last updated on 13.12.2021 by uuk***
+***InventoryCraftingTable.py - documentation - last updated on 20.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -28,11 +28,17 @@ ___
 
         function __init__(self, *args, **kwargs)
 
+            variable self.recipe_interface
+
+                variable self.custom_name
+
+            variable slots
+                36 slots of main, 9 crafting grid, 1 crafting output
+                base_slots = shared.world.get_active_player().inventory_main.slots[:36]
+
             variable inputs
 
-            variable self.recipeinterface
-
-        function create_slot_renderers(self) -> list
+            variable self.recipe_interface
 
         function draw(self, hovering_slot=None)
             

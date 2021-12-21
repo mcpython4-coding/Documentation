@@ -1,4 +1,4 @@
-***test_EventBus.py - documentation - last updated on 16.9.2021 by uuk***
+***test_EventBus.py - documentation - last updated on 20.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -41,7 +41,19 @@ ___
 
             variable bus
 
+            variable state
+
+            function test()
+
+            variable bus
+
         function test_call_args(self)
+
+            variable state
+
+            function test(flag)
+
+            variable bus
 
             variable state
 
@@ -57,7 +69,19 @@ ___
 
             variable bus
 
+            variable state
+
+            function test(flag)
+
+            variable bus
+
         function test_call_with_args_and_subscriber_args(self)
+
+            variable state
+
+            function test(flag1, flag2)
+
+            variable bus
 
             variable state
 
@@ -75,7 +99,35 @@ ___
 
             variable result
 
+            variable calls
+
+            function test(cancel: CancelAbleEvent)
+
+            variable bus
+
+            variable result
+
         function test_call_as_stack(self)
+
+            variable invoked
+
+            function test()
+
+            variable bus
+
+            variable invoked
+
+            function test()
+
+            variable bus
+
+        function test_call_as_stack_no_result(self)
+
+            variable invoked
+
+            function test()
+
+            variable bus
 
             variable invoked
 
@@ -91,7 +143,31 @@ ___
 
             variable bus
 
+            variable invoke_times
+
+            function test()
+
+            variable bus
+
+        function test_call_as_stack_multi_2(self)
+
+            variable invoke_times
+
+            function test()
+
+            variable bus
+
+            variable invoke_times
+
+            function test()
+
+            variable bus
+
         function test_reset_event_stack(self)
+
+            function test()
+
+            variable bus
 
             function test()
 

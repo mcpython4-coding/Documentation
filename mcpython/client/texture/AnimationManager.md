@@ -1,4 +1,4 @@
-***AnimationManager.py - documentation - last updated on 13.12.2021 by uuk***
+***AnimationManager.py - documentation - last updated on 20.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -60,7 +60,7 @@ ___
 
             variable pos
 
-        function bake(self)
+                variable self.textures[i]
 
             variable self.group
 
@@ -133,7 +133,5 @@ ___
         function get_atlas_size_for_texture(self, texture: int)
 
         function tick(self, ticks: float)
-
-        function bake(self)
 
         variable animation_manager

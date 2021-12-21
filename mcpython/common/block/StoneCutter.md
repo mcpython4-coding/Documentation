@@ -1,4 +1,4 @@
-***StoneCutter.py - documentation - last updated on 13.12.2021 by uuk***
+***StoneCutter.py - documentation - last updated on 20.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -41,6 +41,21 @@ ___
             variable self.inventory
 
         function get_inventories(self)
+
+        function insert_items_from(
+                self,
+                recipe: StoneCuttingRecipe,
+                item_source: typing.List[ItemStack],
+                items_to_remove_consumer: typing.Callable[[ItemStack], None],
+                ) -> bool:
+
+            variable previous
+
+            variable recipe_index_key
+
+            variable index
+
+            variable self.inventory.currently_selected
 
         static
         function set_block_data(cls, item, block)

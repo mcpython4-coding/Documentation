@@ -1,4 +1,4 @@
-***MainPlayerInventory.py - documentation - last updated on 13.12.2021 by uuk***
+***MainPlayerInventory.py - documentation - last updated on 20.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -35,11 +35,18 @@ ___
 
             variable self.hotbar
 
-            variable inputs
-
             variable self.recipe_interface
 
-        function create_slot_renderers(self) -> list
+                variable self.custom_name
+
+            variable slots
+                9x hotbar, 27x main, 4x armor, 5x crafting, 1x offhand
+
+            variable inputs
+
+            variable output
+
+            variable self.recipe_interface
 
         function armor_update(self, player=None)
 

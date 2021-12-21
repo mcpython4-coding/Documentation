@@ -1,4 +1,4 @@
-***ModLoadingStages.py - documentation - last updated on 13.12.2021 by uuk***
+***ModLoadingStages.py - documentation - last updated on 20.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -98,7 +98,7 @@ ___
 
                 variable astate.parts[2].progress_max
 
-        function prepare_next_stage(self, astate)
+            variable self.active_mod_index
 
             variable mod_instance
 

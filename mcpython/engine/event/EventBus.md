@@ -1,4 +1,4 @@
-***EventBus.py - documentation - last updated on 13.12.2021 by uuk***
+***EventBus.py - documentation - last updated on 20.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -125,6 +125,22 @@ ___
                         variable function
 
                         variable ex
+
+        function call_as_stack_no_result(
+                self, event_name: str, *args, amount=1, store_stuff=True, **kwargs
+                ):
+
+                        variable result
+
+            variable result
+
+                        variable r
+
+                            variable r
+
+                        variable r
+
+                            variable r
 
         function reset_event_stack(self, event_name: str)
             

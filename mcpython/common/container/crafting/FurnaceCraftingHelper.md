@@ -1,4 +1,4 @@
-***FurnaceCraftingHelper.py - documentation - last updated on 18.11.2021 by uuk***
+***FurnaceCraftingHelper.py - documentation - last updated on 20.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -41,5 +41,3 @@ ___
             variable self.time
 
             variable self.type
-
-        function register(self)

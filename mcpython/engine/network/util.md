@@ -1,4 +1,4 @@
-***util.py - documentation - last updated on 13.12.2021 by uuk***
+***util.py - documentation - last updated on 20.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -43,6 +43,8 @@ ___
 
                 variable result
 
+            variable size
+
         function read_bytes(self, size_size=2)
 
         function read_const_bytes(self, count: int)
@@ -74,6 +76,10 @@ ___
         function write_string(self, value: str, size_size=2, encoding="utf-8")
 
                 variable result
+
+                variable k
+
+                variable v
 
         function write_bytes(self, data: bytes, size_size=2)
 

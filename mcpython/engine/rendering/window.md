@@ -1,4 +1,4 @@
-***window.py - documentation - last updated on 30.10.2021 by uuk***
+***window.py - documentation - last updated on 20.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -203,6 +203,8 @@ ___
         function set_2d(self)
 
         function set_3d(self, position=None, rotation=None)
+
+                variable shared.rendering_helper.default_3d_stack
 
         function on_draw(self)
             

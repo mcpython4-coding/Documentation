@@ -1,4 +1,4 @@
-***Slot.py - documentation - last updated on 13.12.2021 by uuk***
+***Slot.py - documentation - last updated on 20.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -38,6 +38,8 @@ ___
                 player=False,
                 ):
 
+        function set_itemstack_force(self, *args, **kwargs)
+
         function call_update(self, player=False)
 
         function copy(self, position=(0, 0))
@@ -59,6 +61,8 @@ ___
         function getParent(self) -> "ISlot"
 
         function clean_itemstack(self)
+
+        function invalidate(self)
 
     class Slot extends ISlot
         
@@ -148,6 +152,8 @@ ___
 
         function handle_click(self, button: int, modifiers: int) -> bool
 
+                variable result
+
         function get_capacity(self) -> int
 
         function get_itemstack(self) -> mcpython.common.container.ResourceStack.ItemStack
@@ -164,6 +170,8 @@ ___
             variable self.__itemstack
 
         function call_update(self, player=False)
+
+                    variable result
 
         variable itemstack
 

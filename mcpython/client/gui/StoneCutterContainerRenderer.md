@@ -1,4 +1,4 @@
-***StoneCutterContainerRenderer.py - documentation - last updated on 13.12.2021 by uuk***
+***StoneCutterContainerRenderer.py - documentation - last updated on 20.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -62,8 +62,6 @@ ___
 
         static
         function get_config_file() -> str or None
-
-        function create_slot_renderers(self) -> list
 
         function handle_slot_click(self, slot, button, modifiers)
 

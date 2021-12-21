@@ -1,4 +1,4 @@
-***IRecipeUser.py - documentation - last updated on 16.9.2021 by uuk***
+***IRecipeUser.py - documentation - last updated on 20.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -35,4 +35,5 @@ ___
                 self,
                 recipe: mcpython.common.container.crafting.IRecipe.IRecipe,
                 item_source: typing.List[ItemStack],
+                items_to_remove_consumer: typing.Callable[[ItemStack], None],
                 ) -> bool:

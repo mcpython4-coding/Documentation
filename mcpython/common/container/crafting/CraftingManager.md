@@ -1,4 +1,4 @@
-***CraftingManager.py - documentation - last updated on 13.12.2021 by uuk***
+***CraftingManager.py - documentation - last updated on 20.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -37,6 +37,8 @@ ___
 
             variable self.static_recipes
 
+            variable self.prepare_for_loading_lock
+
         function shuffle_data(self)
 
             variable recipe_group_copy
@@ -49,11 +51,7 @@ ___
 
         function __call__(self, obj)
 
-        function add_recipe(
-                self,
-                recipe: mcpython.common.container.crafting.IRecipe.IRecipe,
-                name: str = None,
-                ):
+            variable name: str
 
                 variable name
 
@@ -61,7 +59,11 @@ ___
 
                 variable self.recipe_table[name]
 
-        function add_recipe_from_data(self, data: dict, name: str, file: str = None)
+            variable recipe_type
+
+                    variable recipe
+
+                    variable recipe
 
                 variable data
 
@@ -83,19 +85,17 @@ ___
             variable self.furnace_recipes
                 all smelting outputs sorted after ingredient
 
-        function show_to_player(self, recipe_name: str | IRecipe.IRecipe)
-
                 variable recipe
 
                 variable recipe
 
                 variable self.RECIPE_VIEW_INVENTORY
 
-        function show_to_player_from_input(self, input_name: str)
+            variable recipes
 
-        function show_to_player_from_output(self, output_name: str)
+            variable recipes
 
-        function show_recipe_list(self, recipes: typing.List[IRecipe.IRecipe])
+            variable self.RECIPE_VIEW_INVENTORY
 
                     variable self.RECIPE_VIEW_INVENTORY
 
