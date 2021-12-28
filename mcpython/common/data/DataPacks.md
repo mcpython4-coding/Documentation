@@ -1,4 +1,4 @@
-***DataPacks.py - documentation - last updated on 13.12.2021 by uuk***
+***DataPacks.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -47,10 +47,6 @@ ___
             subsequent systems to register them (datapack:search)
             WARNING: this function is called also on each reload
 
-
-        function load_datapack_from_directory(
-                self, directory: str, raise_on_error=False
-                ) -> typing.Optional["DataPack"]:
             
             Will try to load the data pack in the given directory/file
             :param directory: the directory or file to load from

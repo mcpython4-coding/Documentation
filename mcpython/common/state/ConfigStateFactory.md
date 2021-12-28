@@ -1,4 +1,4 @@
-***ConfigStateFactory.py - documentation - last updated on 14.10.2021 by uuk***
+***ConfigStateFactory.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -181,12 +181,12 @@ ___
 
     class StateConfigFile
         
-        Class for deserialize an config file for an state into an state
+        Class for deserialize a config file for a state into a state
 
 
         function __init__(self, file: str)
             
-            Constructs an new deserializer for an file
+            Constructs n new deserializer for a file
 
 
             variable self.file
@@ -201,10 +201,12 @@ ___
                 mcpython.common.state.AbstractState.AbstractState,
                 mcpython.common.state.AbstractStatePart.AbstractStatePart,
                 ],
+                retry: bool = True,
                 ):
             
-            will make the given state an state of the kind specified by this file
+            Will make the given state an state of the kind specified by this file
             :param state_instance: the state to inject the data into
+            :param retry: internal flag if to schedule a reload if the data is not arrival
             WARNING: will override ALL existing data from state parts and their config
 
 
@@ -219,12 +221,12 @@ ___
                     variable state_instance.part_dict[name]
 
                         variable part.master
-
-        function reload(self)
             
             Will reload the context and parse into the previous injected states
             Called by the system on data reload
             Will internally re-call the inject()-function on every state
 
+
+            variable self.data
 
         function __del__(self)

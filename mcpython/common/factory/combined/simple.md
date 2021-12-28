@@ -1,4 +1,4 @@
-***simple.py - documentation - last updated on 13.12.2021 by uuk***
+***simple.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -65,10 +65,6 @@ ___
             variable self.deferred_registry
 
             variable self.block_phase
-
-        function create_colored_texture(
-                self, texture: typing.Union[PIL.Image.Image, str], color=None
-                ):
             
             Helper function for colorizing the texture at runtime
             :param texture: the texture to transform
@@ -80,8 +76,6 @@ ___
             variable file
 
                 variable color
-
-        function create_full_block(self, suffix=None, texture=None, color=None, **consumers)
             
             Creates a full block using the "minecraft:block/cube_all"-model
             :param suffix: suffix for the name, when None, the name itself is used, when not None, a _ is inserted in
@@ -90,6 +84,10 @@ ___
             :param color: color to use for colorizing; None for default
             :param consumers: the consumers send to create_block_simple()
 
+
+                variable texture
+
+            variable name
 
         function create_block_simple(
                 self,
@@ -137,15 +135,6 @@ ___
                     variable data
 
                         variable data
-
-        function generate_log_like(
-                self,
-                suffix=None,
-                front_texture=None,
-                side_texture=None,
-                color=None,
-                **consumers,
-                ):
             
             Creates a set for a log like block
             :param suffix: the name suffix
@@ -167,7 +156,13 @@ ___
 
             variable textures
 
-        function create_button_block(self, suffix=None, texture=None, color=None, **consumers)
+                variable texture
+
+            variable name
+
+            variable normal_model
+
+            variable pressed_model
 
                 variable mod_name
 
@@ -176,7 +171,13 @@ ___
                 @shared.mod_loader(mod_name, "stage:model:model_search")
                 function generate_models()
 
-        function create_slab_block(self, suffix=None, texture=None, color=None, **consumers)
+                variable texture
+
+            variable name
+
+            variable texture
+
+            variable slab_data
 
         function create_multi_variant_block(
                 self,
@@ -208,7 +209,7 @@ ___
 
                         variable data
 
-        function create_wall(self, suffix=None, texture=None, color=None, **consumers)
+                variable texture
 
             variable name
 
@@ -216,7 +217,13 @@ ___
 
             variable wall_textures
 
-        function create_fence(self, suffix=None, texture=None, color=None, **consumers)
+                variable texture
+
+            variable name
+
+            variable texture
+
+            variable fence_textures
 
         function create_multipart_block(
                 self,

@@ -1,4 +1,4 @@
-***MixinMethodWrapper.py - documentation - last updated on 13.12.2021 by uuk***
+***MixinMethodWrapper.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -41,6 +41,8 @@ ___
             variable self.patcher
 
             variable self.instruction_listing
+
+            variable self.is_async
 
         function walk(self) -> typing.Iterable[typing.Tuple[int, dis.Instruction]]
 
@@ -114,6 +116,13 @@ ___
                 optimise stuff
 
 
+        function makeMethodAsync(self)
+            
+            Simply makes this method async, like it was declared by "async def"
+
+
+            variable self.is_async
+
         function insertStaticMethodCallAt(self, offset: int, method: str, *args)
             
             Injects a static method call into another method
@@ -132,6 +141,39 @@ ___
                 variable real_module
 
             variable instructions
+
+        function insertAsyncStaticMethodCallAt(self, offset: int, method: str, *args)
+            
+            Injects a static method call to an async method into another method
+            :param offset: the offset to inject at, from function head
+            :param method: the method address to inject, by module:path
+            :param args: the args to invoke with
+            WARNING: due to the need of a dynamic import instruction, the method to inject into cannot lie in the same
+                package as the method call to inject
+            todo: add option to load the method beforehand and inject as constant
+
+
+            variable real_name
+
+                variable real_module
+
+                variable real_module
+
+            variable instructions
+
+        function identify_call_instruction(
+                self, target_method_name: str
+                ) -> typing.Iterable[int]:
+
+            function identify(info)
+
+        function identify_call_instruction_custom(
+                self, comparator: typing.Callable[[typing.Any], bool]
+                ) -> typing.Iterable[int]:
+
+            variable stack_analyser
+
+                    variable context
 
         static
         function prepare_method_for_insert(method: FunctionPatcher) -> FunctionPatcher

@@ -1,4 +1,4 @@
-***ItemModel.py - documentation - last updated on 20.12.2021 by uuk***
+***ItemModel.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -16,8 +16,9 @@ ___
         static
         function validate(cls, data: dict) -> bool
 
-        static
-        function decode(cls, data: dict, model: "ItemModel")
+                variable parent
+
+                    variable model.is_layered
 
                     variable e
 
@@ -37,11 +38,9 @@ ___
 
         variable LOADERS
 
-        static
-        function from_file(cls, file: str, item: str)
+            variable data
 
-        static
-        function from_data(cls, data, item)
+            variable model
 
         function __init__(self, item: str)
 
@@ -108,7 +107,9 @@ ___
 
         function from_data(self, data: dict, name: str)
 
-        function from_folder(self, folder: str, modname: str)
+                variable item
+
+                variable self.models[item]
 
         function add_to_batch(
                 self, item_name, *args, **kwargs

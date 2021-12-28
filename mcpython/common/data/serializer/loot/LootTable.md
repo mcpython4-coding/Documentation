@@ -1,4 +1,4 @@
-***LootTable.py - documentation - last updated on 13.12.2021 by uuk***
+***LootTable.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -189,8 +189,11 @@ ___
 
     class LootTable
 
-        static
-        function from_file(cls, file: str, name=None)
+                variable s
+
+                variable name
+
+                variable data
 
         static
         function from_data(cls, data: dict, name: str)

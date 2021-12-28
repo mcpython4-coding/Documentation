@@ -1,4 +1,4 @@
-***InventoryCraftingTable.py - documentation - last updated on 20.12.2021 by uuk***
+***InventoryCraftingTable.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -20,8 +20,19 @@ ___
 
         variable TEXTURE_SIZE
 
-        static
-        function update_texture(cls)
+            variable texture
+
+            variable size
+
+            variable texture
+
+            variable size
+
+            variable texture
+
+            variable cls.TEXTURE
+
+            variable cls.TEXTURE_SIZE
 
         static
         function get_config_file() -> str or None

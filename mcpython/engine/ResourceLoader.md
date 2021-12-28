@@ -1,4 +1,4 @@
-***ResourceLoader.py - documentation - last updated on 13.12.2021 by uuk***
+***ResourceLoader.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,12 +11,12 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-        class PIL_Image
+            class PIL_Image
 
-            class Image
+                class Image
 
-            static
-            function open(cls, file: str)
+                static
+                function open(cls, file: str | io.BytesIO)
     
     ---------------------------------------------
     Specifications for the resource loader system
@@ -51,29 +51,23 @@ ___
             
             Returns a unique identifier for this loader, like a path loaded from, or some mod name
 
-
-        function is_in_path(self, path: str) -> bool
             
             Checks if a local file-name is in the given path, so it can be loaded
             :param path: the file path to check
             :return: if it is in the path
 
-
-        function read_raw(self, path: str) -> bytes
             
             Will read a file in binary mode
             :param path: the file name to use
             :return: the content of the file loaded in binary
 
-
-        function read_image(self, path: str) -> PIL_Image.Image
             
             Will read a file as a PIL.Image.Image
             :param path: the file name to use
             :return: the content of the file loaded as image
 
 
-        function read_decoding(self, path: str, encoding: str = "utf-8") -> str
+            variable data
             
             Will read a file into the system as a string, decoding the raw bytes in the given encoding
             :param path: the file name to use
@@ -118,11 +112,7 @@ ___
 
         function get_path_info(self) -> str
 
-        function is_in_path(self, filename: str) -> bool
-
-        function read_raw(self, path: str) -> bytes
-
-        function read_image(self, path: str) -> PIL_Image.Image
+            variable data
 
         function close(self)
 
@@ -146,11 +136,9 @@ ___
 
         function get_path_info(self) -> str
 
-        function is_in_path(self, filename: str) -> bool
+                variable path
 
-        function read_raw(self, path: str) -> bytes
-
-        function read_image(self, path: str) -> PIL_Image.Image
+                variable data: bytes
 
         function get_all_entries_in_directory(
                 self, directory: str, go_sub=True
@@ -194,12 +182,6 @@ ___
 
         function get_path_info(self) -> str
 
-        function is_in_path(self, path: str) -> bool
-
-        function read_raw(self, path: str) -> bytes
-
-        function read_image(self, path: str) -> PIL_Image.Image
-
         function close(self)
 
         function get_all_entries_in_directory(
@@ -241,8 +223,6 @@ ___
 
     variable MC_IMAGE_LOCATIONS
         how mc locations look like
-
-    function transform_name(file: str, raise_on_error=True) -> str
         
         Will transform an MC-ResourceLocation string into a local path
         :param file: the thing to use
@@ -251,11 +231,11 @@ ___
         :raises NotImplementedError: when the data is invalid
 
 
-                variable f
+        variable f
 
                 variable f
 
-    function exists(file: str, transform=True)
+                variable f
         
         Checks if a given file exists in the system
         :param file: the file to check
@@ -263,19 +243,21 @@ ___
         :return: if it exists or not
 
 
+            variable file
+
             variable data
 
             variable resource
 
             variable file
-
-    function read_raw(file: str)
         
         Will read the content of a file in binary mode
         :param file: the file to load
         :return: the content
 
 
+            variable file
+
             variable data
 
             variable resource
@@ -287,14 +269,14 @@ ___
             variable file
 
         variable loc
-
-    function read_image(file: str)
         
-        will read the content of an file in binary mode
+        Will read the content of a file in binary mode
         :param file: the file to load
         :return: the content
 
 
+            variable file
+
             variable data
 
             variable resource
@@ -308,23 +290,19 @@ ___
                 variable file
 
         variable loc
-
-    function read_json(file: str)
         
         Reads a .json file from the system
 
 
-    function read_pyglet_image(file)
-
-    function get_all_entries(directory: str) -> typing.Iterator[str]
+            variable data
         
         Will get all files & directories [ending with an "/"] of an given directory across all resource locations
         :param directory: the directory to use
-        :return: an list of all found files
+        :return: a list of all found files
 
 
-    function get_all_entries_special(directory: str) -> typing.Iterator[str]
+        variable loc
         
         Returns all entries found with their corresponding '@<path>:<file>'-notation
         :param directory: the directory to search from
-        :return: an list of found resources
+        :return: a list of found resources

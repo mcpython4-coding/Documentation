@@ -1,4 +1,4 @@
-***HoveringItemBox.py - documentation - last updated on 13.11.2021 by uuk***
+***HoveringItemBox.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -48,6 +48,8 @@ ___
         
         Class representing an normal translate-able-configure-able tooltip with an given default style and layout
         Uses the default Item-class-methods to render certain stuff
+        Subclasses can safely override getAdditionalText() to insert informal text, without breaking
+        mods mixin into the getHoveringText() method
 
 
         function __init__(
@@ -60,9 +62,11 @@ ___
 
             variable self.default_style
 
+        function getAdditionalText(self, itemstack: ItemStack) -> typing.List[str]
+
         function getHoveringText(
                 self, itemstack: mcpython.common.container.ResourceStack.ItemStack
-                ) -> list:
+                ) -> typing.List[str]:
 
             variable item_name
 

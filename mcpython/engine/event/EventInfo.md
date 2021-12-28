@@ -1,4 +1,4 @@
-***EventInfo.py - documentation - last updated on 23.8.2021 by uuk***
+***EventInfo.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,27 +11,10 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class IEventInfo
-        
-        Base class for every event info declared here
-
-
-        function equals(self, *args)
-
-    class KeyPressEventInfo extends IEventInfo
-        
-        info for key press
-
-
-        function __init__(self, symbol: int, modifier=None)
-
-                variable modifier
-
-        function equals(self, symbol, modifiers)
-
-    class MousePressEventInfo extends IEventInfo
+    class MousePressEventInfo
         
         Info for mouse press
+        todo: remove this
 
 
         function __init__(self, mouse: int, modifier=None, area=None)

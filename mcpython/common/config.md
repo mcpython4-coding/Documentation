@@ -1,4 +1,4 @@
-***config.py - documentation - last updated on 13.12.2021 by uuk***
+***config.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -165,8 +165,6 @@ ___
             variable SHUFFLE_DATA
 
             variable SHUFFLE_INTERVAL
-
-                function on_shuffle(dt)
 
                     variable ENABLED_EXTRA_BLOCKS[key]
 

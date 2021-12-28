@@ -1,4 +1,4 @@
-***Tag.py - documentation - last updated on 23.8.2021 by uuk***
+***Tag.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -39,10 +39,14 @@ ___
             Will return a list of tags these tag links to
             todo: use some dependency resolving for the order of inits
 
-
-        function build(self)
             
             Will build the tag
 
+
+            variable raw
+
+            variable old_entries
+
+                            variable self.load_tries
 
                         variable self.entries

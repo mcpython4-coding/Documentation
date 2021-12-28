@@ -1,4 +1,4 @@
-***Chest.py - documentation - last updated on 13.12.2021 by uuk***
+***Chest.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -38,6 +38,10 @@ ___
             variable CHEST_BLOCK_RENDERER
 
             variable CHEST_BLOCK_RENDERER_CHRISTMAS
+
+                variable cls.CHEST_BLOCK_RENDERER
+
+                variable cls.CHEST_BLOCK_RENDERER_CHRISTMAS
 
                     variable self.face_info.custom_renderer
 

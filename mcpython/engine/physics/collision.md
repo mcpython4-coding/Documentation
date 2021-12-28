@@ -1,4 +1,4 @@
-***collision.py - documentation - last updated on 27.9.2021 by uuk***
+***collision.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -10,9 +10,7 @@ ___
     Mod loader inspired by "Minecraft Forge" (https://github.com/MinecraftForge/MinecraftForge) and similar
     This project is not official by mojang and does not relate to it.
 
-
-    function collide(position: tuple, height: int, previous=None)
-        
+    
         Checks to see if the player at the given `position` and `height`
         is colliding with any blocks in the world.
         :param position: The (x, y, z) position to check for collisions at.
@@ -50,8 +48,6 @@ ___
 
                     variable blockstate
 
-                            variable blockstate
-
                             variable shared.window.dy
 
                         variable player.flying
@@ -60,13 +56,28 @@ ___
 
                             variable player.fallen_since_y
 
-    function get_colliding_blocks(position: tuple, height: int) -> tuple
+    function get_colliding_blocks(
+            position: tuple, height: int
+            ) -> typing.Tuple[typing.List, typing.List]:
         
-        Similar to collide(), but will simply return an list of block-positions the player collides with and an list of blocks the player is in, but should not collide
+        Similar to collide(), but will simply return a list of block-positions the player collides with and
+        a list of blocks the player is in, but should not collide
         :param position: the position to use as center
         :param height: the height of the player
         :return: a tuple of colliding full blocks and colliding no collision blocks
 
+
+        variable positions_colliding
+
+        variable positions_no_colliding
+
+        variable pad
+
+        variable p
+
+        variable np
+
+        variable dimension
 
                 variable d
                     How much overlap you have with this dimension.

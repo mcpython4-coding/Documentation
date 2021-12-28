@@ -1,4 +1,4 @@
-***FluidRenderer.py - documentation - last updated on 18.11.2021 by uuk***
+***FluidRenderer.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -22,6 +22,14 @@ ___
 
             variable self.texture_location
 
+            variable self.texture
+
+            variable self.group
+
+            variable self.color
+
+            variable self.layered_models
+
                 variable self.texture
 
                 variable self.texture
@@ -32,9 +40,7 @@ ___
 
             variable self.group
 
-            variable self.color
-
-            variable self.layered_models
+                variable layer.texture
 
         function add(self, position: typing.Tuple[int, int, int], block, face, batches)
 

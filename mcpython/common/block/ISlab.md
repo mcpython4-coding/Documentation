@@ -1,4 +1,4 @@
-***ISlab.py - documentation - last updated on 13.12.2021 by uuk***
+***ISlab.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -35,9 +35,5 @@ ___
         function set_model_state(self, state: dict)
 
         variable DEBUG_WORLD_BLOCK_STATES
-
-        function on_player_interact(
-                self, player, itemstack, button, modifiers, exact_hit
-                ) -> bool:
 
         function get_view_bbox(self)

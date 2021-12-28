@@ -1,4 +1,4 @@
-***ConfigBackgroundRenderer.py - documentation - last updated on 19.9.2021 by uuk***
+***ConfigBackgroundRenderer.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -17,11 +17,13 @@ ___
 
         function __init__(self)
 
-            variable background_raw: PIL.Image.Image
-
             variable self.background_image
 
             variable self.objects
+
+            variable background_raw
+
+            variable self.background_image
 
         function recreate(self, wx, wy)
 

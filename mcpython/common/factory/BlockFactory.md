@@ -1,4 +1,4 @@
-***BlockFactory.py - documentation - last updated on 13.12.2021 by uuk***
+***BlockFactory.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -128,8 +128,6 @@ ___
             function __init__(self)
 
             function set_creation_properties(self, *args, **kwargs)
-
-            function on_no_collision_collide(self, *args, **kwargs)
 
             function get_item_saved_state(self)
 

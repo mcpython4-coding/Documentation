@@ -1,4 +1,4 @@
-***Slot.py - documentation - last updated on 20.12.2021 by uuk***
+***Slot.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -18,14 +18,16 @@ ___
         variable PYGLET_IMAGE_HOVERING
 
     class ISlot extends IBufferSerializeAble,  ABC
+        
+        Base class for everything slot-like
+        Provides some API for interaction with the user
+
 
         function __init__(self)
 
             variable self.on_update
 
             variable self.assigned_inventory
-
-        function handle_click(self, button: int, modifiers: int) -> bool
 
         function get_capacity(self) -> int
 
@@ -66,29 +68,49 @@ ___
 
     class Slot extends ISlot
         
-        slot class
+        Basic slot class
 
 
         function __init__(
                 self,
-                itemstack=None,
-                position=(0, 0),
+                itemstack: ItemStack = None,
+                position: typing.Tuple[int, int] = (0, 0),
                 allow_player_remove=True,
                 allow_player_insert=True,
                 allow_player_add_to_free_place=True,
                 allow_half_getting=True,
-                allowed_item_tags=None,
-                disallowed_item_tags=None,
-                allowed_item_test=None,
-                on_update=None,
-                on_shift_click=None,
-                on_button_press=None,
-                on_click_on_slot=None,
-                empty_image=None,
+                allowed_item_tags: typing.Optional[typing.List[str]] = None,
+                disallowed_item_tags: typing.Optional[typing.List[str]] = None,
+                allowed_item_test: typing.Optional[typing.Callable] = None,
+                on_update: typing.Optional[typing.Callable] = None,
+                on_shift_click: typing.Optional[typing.Callable] = None,
+                on_button_press: typing.Optional[typing.Callable] = None,
+                on_click_on_slot: typing.Optional[typing.Callable] = None,
+                empty_image: typing.Optional[pyglet.image.AbstractImage] = None,
                 enable_hovering_background=True,
-                capacity=None,
+                capacity: typing.Optional[int] = None,
                 check_function=None,
                 ):
+
+            variable itemstack: ItemStack
+
+            variable allowed_item_tags: typing.Optional[typing.List[str]]
+
+            variable disallowed_item_tags: typing.Optional[typing.List[str]]
+
+            variable allowed_item_test: typing.Optional[typing.Callable]
+
+            variable on_update: typing.Optional[typing.Callable]
+
+            variable on_shift_click: typing.Optional[typing.Callable]
+
+            variable on_button_press: typing.Optional[typing.Callable]
+
+            variable on_click_on_slot: typing.Optional[typing.Callable]
+
+            variable empty_image: typing.Optional[pyglet.image.AbstractImage]
+
+            variable capacity: typing.Optional[int]
             
             Creates a new slot
             :param itemstack: the itemstack to use
@@ -149,8 +171,6 @@ ___
             variable self.__capacity
 
             variable self.check_function
-
-        function handle_click(self, button: int, modifiers: int) -> bool
 
                 variable result
 
@@ -293,15 +313,13 @@ ___
 
         function get_linked_itemstack_for_sift_clicking(self)
 
-        function handle_click(self, button: int, modifiers: int) -> bool
-
         function get_allowed_item_tags(self)
 
         function set_allowed_item_tags(self, tags: list)
 
         variable allowed_item_tags
 
-        function get_itemstack(self)
+        function get_itemstack(self) -> ItemStack
 
         function set_itemstack(self, stack, **kwargs)
 

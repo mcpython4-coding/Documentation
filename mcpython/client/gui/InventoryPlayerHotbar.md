@@ -1,4 +1,4 @@
-***InventoryPlayerHotbar.py - documentation - last updated on 20.12.2021 by uuk***
+***InventoryPlayerHotbar.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -29,11 +29,13 @@ ___
 
     variable TEXTURES
 
-    function reload()
-
             variable base: pyglet.image.AbstractImage
 
         function _get_tex_region(rx, ry, rex, rey)
+
+        variable base1
+
+        variable base2
 
         class Textures
 
@@ -43,15 +45,11 @@ ___
 
             variable hunger
 
-            variable base
-
             variable bar
 
             variable bar_size
 
             variable selection
-
-            variable base
 
             variable xp_bars
 

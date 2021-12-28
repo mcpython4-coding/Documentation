@@ -1,4 +1,4 @@
-***PillagerOutpostDefinition.py - documentation - last updated on 13.11.2021 by uuk***
+***PillagerOutpostDefinition.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -14,6 +14,8 @@ ___
     variable POSSIBLE_STRUCTURES
 
     variable STRUCTURES
+
+        variable STRUCTURES
 
     @shared.registry class PillagerOutpostDefinition extends mcpython.server.worldgen.feature.IFeature.IFeature
 

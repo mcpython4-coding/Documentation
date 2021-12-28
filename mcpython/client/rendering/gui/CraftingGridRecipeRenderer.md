@@ -1,4 +1,4 @@
-***CraftingGridRecipeRenderer.py - documentation - last updated on 9.2.2021 by uuk***
+***CraftingGridRecipeRenderer.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -15,8 +15,8 @@ ___
 
         variable TEXTURE: typing.Optional[pyglet.image.AbstractImage]
 
-        static
-        function update_texture(cls)
+            variable texture
+                the custom view background
 
             variable size
 

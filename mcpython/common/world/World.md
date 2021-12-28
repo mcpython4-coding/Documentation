@@ -1,4 +1,4 @@
-***World.py - documentation - last updated on 13.12.2021 by uuk***
+***World.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -124,17 +124,6 @@ ___
 
         @deprecation.deprecated()
         function join_dimension(self, dim_id: int)
-            
-            will change the dimension of the active player
-            :param dim_id: the dimension to change to todo: make str
-            todo: move to player
-
-
-            variable sector
-
-            variable old
-
-            variable self.active_dimension
             
             Will change the dimension of the active player
             :param dim_id: the dimension to change to todo: make str

@@ -1,4 +1,4 @@
-***util.py - documentation - last updated on 20.12.2021 by uuk***
+***util.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -17,6 +17,8 @@ ___
 
     variable FLOAT
 
+    variable BYTE
+
     class ReadBuffer
 
         function __init__(self, stream: typing.Union[typing.BinaryIO, bytes])
@@ -28,6 +30,8 @@ ___
         function read_bool_group(self, count: int)
 
         function read_struct(self, structure: struct.Struct)
+
+        function read_byte(self)
 
         function read_int(self)
 
@@ -51,6 +55,18 @@ ___
 
         function read_uuid(self)
 
+            variable module
+
+            variable name
+
+                variable module
+
+                variable cls: "IBufferSerializeAble"
+
+                variable container_instance
+
+            variable tag
+
     class WriteBuffer
 
         function __init__(self)
@@ -65,6 +81,8 @@ ___
 
         function write_struct(self, structure: struct.Struct, *data)
 
+        function write_byte(self, value: int)
+
         function write_int(self, value: int)
 
         function write_long(self, value: int)
@@ -74,6 +92,8 @@ ___
         function write_float(self, value: float)
 
         function write_string(self, value: str, size_size=2, encoding="utf-8")
+
+            variable data
 
                 variable result
 
@@ -87,4 +107,9 @@ ___
 
         function write_uuid(self, uid: uuid.UUID)
 
+            variable cls
+
     class IBufferSerializeAble extends ABC
+
+        static
+        function create_new(cls) -> "IBufferSerializeAble"

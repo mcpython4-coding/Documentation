@@ -1,4 +1,4 @@
-***UIPartButton.py - documentation - last updated on 13.12.2021 by uuk***
+***UIPartButton.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -14,8 +14,6 @@ ___
     variable image
 
     variable IMAGES
-
-    function load_images()
 
         variable image
 

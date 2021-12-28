@@ -1,4 +1,4 @@
-***AbstractFoodItem.py - documentation - last updated on 19.10.2021 by uuk***
+***AbstractFoodItem.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -14,12 +14,10 @@ ___
     class AbstractFoodItem extends mcpython.common.item.AbstractItem.AbstractItem,  ABC
 
         variable HUNGER_ADDITION
-
-        function on_eat(self, itemstack)
             
             Called when the player eats the item
             :param itemstack: the itemstack to eat from
             :return: if the item was eaten or not
 
 
-        function get_eat_hunger_addition(self) -> int
+            variable shared.world.get_active_player().hunger

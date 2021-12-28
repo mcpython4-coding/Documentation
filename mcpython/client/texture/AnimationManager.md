@@ -1,4 +1,4 @@
-***AnimationManager.py - documentation - last updated on 20.12.2021 by uuk***
+***AnimationManager.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -81,8 +81,6 @@ ___
         function __init__(self)
 
             variable self.texture2controller: typing.List[AnimationController]
-
-        function prepare_animated_texture(self, location: str) -> int
             
             Prepares a texture for later animation; Internally loads the .mcmeta file for the image,
             and does some parsing for knowing how the animation should play

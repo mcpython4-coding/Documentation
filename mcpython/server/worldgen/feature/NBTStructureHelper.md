@@ -1,4 +1,4 @@
-***NBTStructureHelper.py - documentation - last updated on 13.12.2021 by uuk***
+***NBTStructureHelper.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -13,8 +13,7 @@ ___
 
     class StructureNBTHelper
 
-        static
-        function from_file(cls, file: str)
+            variable data
 
         function __init__(self, data: dict)
 

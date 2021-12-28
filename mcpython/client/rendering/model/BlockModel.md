@@ -1,4 +1,4 @@
-***BlockModel.py - documentation - last updated on 13.12.2021 by uuk***
+***BlockModel.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -43,12 +43,12 @@ ___
 
             variable self.box_models
                 prepare the box models from parent
-
-        function bake_textures(self)
             
             Informs the texture bake system about our new textures we want to be in there
             Prepares the texture_addresses attribute with the location of the texture
 
+
+            variable to_add
 
             variable add
 
@@ -66,7 +66,7 @@ ___
 
                 variable self.texture_names
 
-        function parse_texture(self, texture: str, name: str)
+                variable self.texture_names[name]
 
                     variable texture_f
 

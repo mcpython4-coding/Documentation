@@ -1,4 +1,4 @@
-***util.py - documentation - last updated on 16.9.2021 by uuk***
+***util.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -13,6 +13,10 @@ ___
 
     variable TAB_TEXTURE
 
+    function getTabTexture()
+
+        variable TAB_TEXTURE
+
     class CreativeTabScrollbar
         
         Creative tab scrollbar
@@ -26,8 +30,9 @@ ___
 
         variable SELECTED_SCROLLBAR
 
-        static
-        function reload(cls)
+            variable cls.NON_SELECTED_SCROLLBAR
+
+            variable cls.SELECTED_SCROLLBAR
 
         function __init__(self, callback: typing.Callable[[int], None], scroll_until: int = 1)
 

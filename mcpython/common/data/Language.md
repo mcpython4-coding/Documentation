@@ -1,4 +1,4 @@
-***Language.py - documentation - last updated on 13.12.2021 by uuk***
+***Language.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -73,14 +73,14 @@ ___
         function add_entry(self, key: str, value: str)
 
         function read_value(self, key: str)
-
-    function from_directory(directory: str, modname: str)
         
         will create Language data for an directory
         :param directory: the directory name
         :param modname: the mod name
 
 
-    function from_mod_name(modname: str)
+            variable modname
 
-    function load()
+        variable files
+
+        variable m

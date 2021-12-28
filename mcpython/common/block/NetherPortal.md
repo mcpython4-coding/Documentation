@@ -1,4 +1,4 @@
-***NetherPortal.py - documentation - last updated on 13.12.2021 by uuk***
+***NetherPortal.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -43,7 +43,7 @@ ___
 
             variable block
 
-        function on_no_collision_collide(self, entity, previous: bool)
+                    variable entity.should_leave_nether_portal_before_dim_change
 
                 variable entity.in_nether_portal_since
 

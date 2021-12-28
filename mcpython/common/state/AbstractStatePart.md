@@ -1,4 +1,4 @@
-***AbstractStatePart.py - documentation - last updated on 13.12.2021 by uuk***
+***AbstractStatePart.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -29,7 +29,7 @@ ___
 
             variable self.state_renderer_init
 
-        function init_rendering(self)
+            variable self.state_renderer_init
 
             variable self.underlying_batch
 

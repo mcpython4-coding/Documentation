@@ -1,4 +1,4 @@
-***TextureAtlas.py - documentation - last updated on 13.12.2021 by uuk***
+***TextureAtlas.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -35,11 +35,7 @@ ___
 
             variable image
 
-        function add_image_file(
-                self,
-                file: str,
-                identifier: typing.Hashable = None,
-                ) -> typing.Tuple[typing.Tuple[int, int], "TextureAtlas"]:
+            variable identifier: typing.Hashable
             
             Adds a single image by file name (loadable by resource system!)
 
@@ -58,10 +54,6 @@ ___
             variable m_size
 
             variable atlas
-
-        function add_image_files(
-                self, files: list, identifier: typing.Hashable = None, single_atlas=True
-                ) -> typing.List[typing.Tuple[typing.Tuple[int, int], "TextureAtlas"]]:
 
             variable images
 

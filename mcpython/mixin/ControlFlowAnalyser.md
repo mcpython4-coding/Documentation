@@ -1,4 +1,4 @@
-***ControlFlowAnalyser.py - documentation - last updated on 13.12.2021 by uuk***
+***ControlFlowAnalyser.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -12,7 +12,6 @@ ___
 
 
     variable FLOW_INTERRUPT
-        RETURN_VALUE, RAISE_VARARGS
 
     variable FLOW_JUMP_CONDITIONAL_OFFSET
         SETUP_WITH, FOR_ITER, SETUP_FINALLY
@@ -29,7 +28,9 @@ ___
 
             variable self.following_branches
 
-            variable self.instructions
+            variable self.instructions: typing.List[dis.Instruction]
+
+            variable self.dataflow_for_instructions
 
             variable self.batch
 
@@ -40,6 +41,86 @@ ___
         function prepare_rendering(self)
 
         function draw(self)
+
+        function prepare_dataflow(self, tracker: "StackAnalyserTracker")
+
+                        variable a
+
+                        variable b
+
+                        variable a
+
+                        variable b
+
+                        variable c
+
+                        variable a
+
+                        variable b
+
+                        variable c
+
+                        variable d
+
+                        variable a
+
+                        variable a
+
+                        variable b
+
+    class IDataFlowDataSource
+
+    class StackAnalyserTracker
+
+        function __init__(self)
+
+            variable self.stack_data_flow: typing.List[IDataFlowDataSource]
+
+        function pop(self)
+
+        function push(self, value: IDataFlowDataSource)
+
+    class ConstantDataSource extends IDataFlowDataSource
+
+        function __init__(self)
+
+            variable self.value
+
+    class InvokeResultSource extends IDataFlowDataSource
+
+        function __init__(self)
+
+            variable self.body_ref: str
+
+            variable self.arg_sources: typing.List[IDataFlowDataSource]
+
+    class IterItemSource extends IDataFlowDataSource
+
+        function __init__(self)
+
+            variable self.iter_source: IDataFlowDataSource
+
+    class IterUnpackSource extends IDataFlowDataSource
+
+        function __init__(self)
+
+            variable self.iter_source: IDataFlowDataSource
+
+            variable self.iter_item
+
+    class AttributSource extends IDataFlowDataSource
+
+        function __init__(self)
+
+            variable self.name: str
+
+            variable self.target: IDataFlowDataSource
+
+    class ModuleImportSource extends IDataFlowDataSource
+
+        function __init__(self)
+
+            variable self.module_name: str
 
     class ControlFlowAnalyser
 
@@ -57,6 +138,8 @@ ___
             variable self.entry_branch
 
             variable self.offset2branch
+
+        function calculate_data_flow(self)
 
         function calculate_branches(self)
 
@@ -77,5 +160,3 @@ ___
                         variable new
 
             variable self.entry_branch
-
-        variable obj

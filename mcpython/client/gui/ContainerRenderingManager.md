@@ -1,4 +1,4 @@
-***ContainerRenderingManager.py - documentation - last updated on 20.12.2021 by uuk***
+***ContainerRenderingManager.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -159,7 +159,7 @@ ___
             :param inventory: the inventory to add
 
             
-            Shows a inventory by adding it to the corresponding structure
+            Shows an inventory by adding it to the corresponding structure
             :param inventory: the inventory to show
 
             

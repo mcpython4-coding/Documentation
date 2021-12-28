@@ -1,4 +1,4 @@
-***EnderChest.py - documentation - last updated on 13.12.2021 by uuk***
+***EnderChest.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -35,6 +35,8 @@ ___
         variable ASSIGNED_TOOLS
 
             variable CHEST_BLOCK_RENDERER
+
+                variable cls.CHEST_BLOCK_RENDERER
 
                 variable self.face_info.custom_renderer
 

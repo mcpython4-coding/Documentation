@@ -1,4 +1,4 @@
-***BoxModel.py - documentation - last updated on 13.12.2021 by uuk***
+***BoxModel.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -394,6 +394,8 @@ ___
 
             variable self.raw_texture
 
+            variable self.texture_source
+
             variable self.texture
 
             variable self.__texture_region
@@ -409,6 +411,8 @@ ___
             variable self.rotation_center
 
             variable self.vertex_provider: typing.Optional[VertexProvider]
+
+            variable self.texture
 
         function auto_value_region(
                 self,

@@ -1,4 +1,4 @@
-***InventoryCreativeTab.py - documentation - last updated on 20.12.2021 by uuk***
+***InventoryCreativeTab.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -51,8 +51,7 @@ ___
 
         variable bg_texture: pyglet.image.AbstractImage
 
-        static
-        function reload(cls)
+            variable cls.bg_texture
 
         function __init__(
                 self, name: str, icon: ItemStack, group: ItemGroup = None, linked_tag=None
@@ -135,8 +134,7 @@ ___
 
     class CreativeTabSearchBar extends CreativeItemTab
 
-        static
-        function reload(cls)
+            variable cls.bg_texture
 
         function __init__(
                 self, name: str, icon: ItemStack, group: ItemGroup = None, linked_tag=None
@@ -162,8 +160,7 @@ ___
 
         variable TEXTURE
 
-        static
-        function reload(cls)
+            variable cls.TEXTURE
 
         function __init__(self)
 
@@ -200,8 +197,13 @@ ___
 
         variable LOWER_TAB_SELECTED
 
-        static
-        function reload(cls)
+            variable cls.UPPER_TAB
+
+            variable cls.UPPER_TAB_SELECTED
+
+            variable cls.LOWER_TAB
+
+            variable cls.LOWER_TAB_SELECTED
 
         function __init__(self)
 

@@ -1,4 +1,4 @@
-***api.py - documentation - last updated on 13.12.2021 by uuk***
+***api.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -112,9 +112,6 @@ ___
 
         static
         function validate(cls, data: dict) -> bool
-
-        static
-        function decode(cls, data: dict, model)
 
     @onlyInClient() class AbstractBoxModel extends ABC
 

@@ -1,4 +1,4 @@
-***test_Mixin.py - documentation - last updated on 14.10.2021 by uuk***
+***test_Mixin.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -26,6 +26,10 @@ ___
 
             variable patcher
 
+            variable handler
+
+            variable patcher
+
         function test_function_lookup(self)
 
             variable method
@@ -46,3 +50,21 @@ ___
             variable helper
 
             variable count
+
+            variable patcher
+
+            variable helper
+
+            variable count
+
+            variable patcher
+
+            variable helper
+
+            variable count
+
+            function sync()
+
+            variable patcher
+
+            variable helper

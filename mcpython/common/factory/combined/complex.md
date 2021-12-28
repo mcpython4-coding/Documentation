@@ -1,4 +1,4 @@
-***complex.py - documentation - last updated on 9.2.2021 by uuk***
+***complex.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -10,9 +10,5 @@ ___
     Mod loader inspired by "Minecraft Forge" (https://github.com/MinecraftForge/MinecraftForge) and similar
     This project is not official by mojang and does not relate to it.
 
-
-    function create_full_slab_wall_set(
-            name: str, texture: str, and_button=False
-            ) -> CombinedFactoryInstance:
 
         variable instance

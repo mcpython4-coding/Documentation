@@ -1,4 +1,4 @@
-***StoneCutterContainerRenderer.py - documentation - last updated on 20.12.2021 by uuk***
+***StoneCutterContainerRenderer.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -22,9 +22,6 @@ ___
         variable TEXTURE_SIZE
 
         variable SCROLLBAR_TEXTURE
-
-        static
-        function update_texture(cls)
 
             variable texture
 

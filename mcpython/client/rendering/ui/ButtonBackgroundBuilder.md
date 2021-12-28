@@ -1,4 +1,4 @@
-***ButtonBackgroundBuilder.py - documentation - last updated on 23.8.2021 by uuk***
+***ButtonBackgroundBuilder.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -52,8 +52,8 @@ ___
 
     variable DefaultButtonTexture
 
-    function reload()
-
         variable WIDGETS
 
         variable DefaultButtonTexture
+
+    function getDefaultTexture()

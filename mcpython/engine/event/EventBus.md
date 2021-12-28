@@ -1,4 +1,4 @@
-***EventBus.py - documentation - last updated on 20.12.2021 by uuk***
+***EventBus.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -37,7 +37,7 @@ ___
             variable crash_on_error: bool
             
             Creates a new EventBus instance
-            :param crash_on_error: if an crash should be triggered on an exception of a function
+            :param crash_on_error: if a crash should be triggered on an exception of a function
 
 
             variable self.id

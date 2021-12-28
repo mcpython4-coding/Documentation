@@ -1,4 +1,4 @@
-***test_util.py - documentation - last updated on 14.10.2021 by uuk***
+***test_util.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -14,8 +14,6 @@ ___
     variable ]
 
     class TestBuffer extends TestCase
-
-        function test_module_import(self)
 
         function test_empty(self)
 
@@ -36,6 +34,14 @@ ___
         function test_bool_group(self)
 
                 variable group
+
+                variable write
+
+                variable read
+
+        function test_bytes(self)
+
+                variable v
 
                 variable write
 
@@ -102,3 +108,35 @@ ___
                 variable write
 
                 variable read
+
+                variable count
+
+                variable entries
+
+                variable data
+
+                variable write
+
+                variable read
+
+    class Simple extends IBufferSerializeAble
+
+        function __init__(self)
+
+            variable self.valid
+
+            variable self.valid
+
+    class TestContainerSerializer extends unittest.TestCase
+
+            variable buffer
+
+            variable obj
+
+            variable read
+
+            variable obj: Simple
+
+            variable buffer
+
+            variable read

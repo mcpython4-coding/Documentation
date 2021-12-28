@@ -1,4 +1,4 @@
-***ItemFactory.py - documentation - last updated on 19.10.2021 by uuk***
+***ItemFactory.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -33,6 +33,9 @@ ___
         variable configs: dict
 
         variable name
+            configs.setdefault(
+            "tool_tip_renderer", mcpython.client.gui.HoveringItemBox.DEFAULT_ITEM_TOOLTIP
+            )
 
             variable name
 
@@ -56,13 +59,13 @@ ___
                     ):
 
             static
-            function get_default_item_image_location() -> str
+            function get_default_item_image_location(cls) -> str
 
             function get_active_image_location(self)
 
             function get_tooltip_provider(self)
 
-                function on_eat(self, itemstack)
+                variable DURABILITY
 
                 variable DURABILITY
 
@@ -72,8 +75,14 @@ ___
 
                 function get_speed_multiplyer(self, itemstack)
 
+                variable TOOL_TYPE
+
+                variable TOOL_LEVEL
+
+                function get_speed_multiplyer(self, itemstack)
+
                 variable DEFENSE_POINTS
 
-            function on_set_from_item(self, block)
+                variable DEFENSE_POINTS
 
     variable ItemFactory

@@ -1,4 +1,4 @@
-***Items.py - documentation - last updated on 20.12.2021 by uuk***
+***Items.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -12,3 +12,17 @@ ___
 
 
         function lambda_add_random_xp(instance, itemstack)
+
+        function modify(factory)
+
+        variable wooden
+
+        variable stone
+
+        variable iron
+
+        variable golden
+
+        variable diamond
+
+        variable netherite

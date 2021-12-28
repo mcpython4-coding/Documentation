@@ -1,4 +1,4 @@
-***ItemTextureAtlas.py - documentation - last updated on 25.4.2021 by uuk***
+***ItemTextureAtlas.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -23,7 +23,7 @@ ___
 
         function add_file(self, internal_name: str, file: str)
 
-        function add_file_dynamic(self, internal_name: str, file: str)
+            variable arrival
 
                 variable image
 
@@ -38,8 +38,6 @@ ___
             variable self.lookup_map[internal_name]
 
         function load(self)
-
-        function build(self)
 
             variable added
 
@@ -60,8 +58,6 @@ ___
         function dump(self)
 
         function get_texture_info(self, name: str)
-
-        function get_texture_info_or_add(self, name: str, file: str)
             
             Save variant for adding an texture to the atlas
             Will ensure that the file is there, but must be fed with the texture file and name

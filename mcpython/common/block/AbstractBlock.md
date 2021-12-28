@@ -1,4 +1,4 @@
-***AbstractBlock.py - documentation - last updated on 20.12.2021 by uuk***
+***AbstractBlock.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -210,8 +210,6 @@ ___
             :param itemstack: the itemstack hit with, nullable
             :return: if default logic should be interrupted or not
 
-
-        function on_no_collision_collide(self, entity, previous: bool)
             
             Called when NO_COLLIDE is True and the entity is in the block every collision check [so more than ones per tick]
             :param entity: the entity entering the block

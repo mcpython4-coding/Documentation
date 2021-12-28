@@ -1,4 +1,4 @@
-***ChestRenderer.py - documentation - last updated on 18.11.2021 by uuk***
+***ChestRenderer.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -36,6 +36,16 @@ ___
         function __init__(self, texture_location: str)
 
             variable self.texture_location
+
+            variable self.texture
+
+            variable self.group
+
+            variable self.box_model_top
+
+            variable self.box_model_bottom
+
+            variable self.lock_model
 
             variable self.texture
 

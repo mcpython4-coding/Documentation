@@ -1,4 +1,4 @@
-***AbstractItem.py - documentation - last updated on 13.12.2021 by uuk***
+***AbstractItem.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -57,6 +57,10 @@ ___
 
             variable self.can_be_set_on
 
+        function draw_in_inventory(
+                self, itemstack, position: typing.Tuple[int, int], scale: float
+                ):
+
             variable can_destroy_flag
 
             variable can_be_set_on_flag
@@ -87,10 +91,6 @@ ___
                 def get_block(self) -> str:
 
         function get_block(self) -> str
-
-        function on_player_interact(
-                self, player, block, button: int, modifiers: int, itemstack, previous
-                ) -> bool:
             
             Called when the player tries to use the item by pressing a mouse button
             :param player: the player interacting
@@ -102,10 +102,6 @@ ___
             :return: if default logic should be interrupted
             todo: pass full hit info into here
 
-
-        function on_block_broken_with(self, itemstack, player, block)
-
-        function on_set_from_item(self, block)
 
         function get_data(self)
 

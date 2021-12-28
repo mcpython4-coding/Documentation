@@ -1,4 +1,4 @@
-***BucketItem.py - documentation - last updated on 13.12.2021 by uuk***
+***BucketItem.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -17,21 +17,6 @@ ___
 
         variable STACK_SIZE
 
-        static
-        function could_accept(
-                cls,
-                itemstack: ItemStack,
-                fluidstack: FluidStack,
-                ) -> bool:
-
-        static
-        function accept(
-                cls,
-                itemstack: ItemStack,
-                fluidstack: FluidStack,
-                insert_parts=True,
-                ) -> bool:
-
                 variable bucket
 
     class FilledBucketItem extends AbstractFluidContainer,  ABC
@@ -39,26 +24,6 @@ ___
         variable ASSIGNED_FLUID
 
         variable STACK_SIZE
-
-        static
-        function get_underlying_fluid_stacks(
-                cls, itemstack: ItemStack
-                ) -> typing.Iterable[FluidStack]:
-
-        static
-        function can_provide(
-                cls,
-                itemstack: ItemStack,
-                fluidstack: FluidStack,
-                ) -> bool:
-
-        static
-        function provide(
-                cls,
-                itemstack: ItemStack,
-                fluidstack: FluidStack,
-                extract_parts=True,
-                ) -> bool:
 
     @shared.registry class WaterBucket extends FilledBucketItem
 

@@ -1,4 +1,4 @@
-***Buttons.py - documentation - last updated on 13.12.2021 by uuk***
+***Buttons.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -39,6 +39,8 @@ ___
 
             variable self.underlying_event_bus: mcpython.engine.event.EventBus.EventBus
 
+            variable self.backgrounds
+
         function on_mouse_move(self, x, y, dx, dy)
 
         function on_key_press(self, button, mod)
@@ -59,7 +61,11 @@ ___
 
     variable LEFT_ARROW
 
-    function reload()
+        variable ARROW_TEXTURE_SHEET
+
+        variable RIGHT_ARROW
+
+        variable LEFT_ARROW
 
     function arrow_button_left(position, callback)
 

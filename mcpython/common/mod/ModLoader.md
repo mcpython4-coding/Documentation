@@ -1,4 +1,4 @@
-***ModLoader.py - documentation - last updated on 13.12.2021 by uuk***
+***ModLoader.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -55,8 +55,6 @@ ___
             variable self.loaded_mods
 
         function add_resources(self)
-
-        function try_identify_mod_loader(self)
             
             Does some lookup for identifying the mod loader
 
@@ -82,8 +80,6 @@ ___
             variable self.parent
 
             variable self.raw_data
-
-        function on_select(self)
             
             Informal method called sometime after construction
 
@@ -97,11 +93,9 @@ ___
         static
         function match_container_loader(cls, container: ModContainer) -> bool
 
-        function on_select(self)
+            variable data
 
             variable self.raw_data
-
-        function load_from_data(self, data)
 
             variable version
 
@@ -124,13 +118,15 @@ ___
         static
         function match_container_loader(cls, container: ModContainer) -> bool
 
-        function on_select(self)
+                variable data
+
+                variable data
 
                 variable data
 
             variable self.raw_data
 
-        function load_from_data(self, data)
+                    variable loader
 
                         variable mod_loader
 
@@ -203,7 +199,19 @@ ___
 
         function __call__(
                 self, modname: str, event_name: str, *args, **kwargs
-                ) -> typing.Callable[[typing.Callable], typing.Callable]:
+                ) -> typing.Callable[
+                [typing.Callable | typing.Awaitable], typing.Callable | typing.Awaitable
+                ]:
+                """
+                Annotation to the event system
+                :param modname: the mod name
+                :param event_name: the event name
+                :param info: the info, as shown by EventBus during errors
+                :return: a callable, used for regisering
+                
+                Example:
+                @shared.mod_loader("minecraft", "stage:mod:init")
+                def test():
             
             Annotation to the event system
             :param modname: the mod name
@@ -214,7 +222,14 @@ ___
             @shared.mod_loader("minecraft", "stage:mod:init")
             def test():
                 print("Hello world!")
+            Will wrap the target around an async method if needed
 
+
+            function annotate(target)
+
+                        variable result
+
+                            variable result
 
         function __getitem__(self, item: str)
 

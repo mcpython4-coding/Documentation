@@ -1,4 +1,4 @@
-***AbstractArmorItem.py - documentation - last updated on 13.12.2021 by uuk***
+***AbstractArmorItem.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -12,8 +12,18 @@ ___
 
 
     class AbstractArmorItem extends  mcpython.common.item.AbstractDamageBarItem.DefaultDamageBarItem,  ABC 
+        
+        Base class for armor
+        Provides the properties specific to an armor item
+
 
         variable DURABILITY
+
+        variable DEFENSE_POINTS
+
+        variable STACK_SIZE
+
+        variable TOOL_TIP_RENDERER
 
         function __init__(self)
 
@@ -21,13 +31,11 @@ ___
 
             variable self.damage
 
-        variable DEFENSE_POINTS
+        function get_damage(self, itemstack) -> float
 
-        function get_defense_points(self)
+        function get_tooltip_provider(self)
 
-        variable STACK_SIZE
-
-        function get_damage(self) -> float
+        function getDamageBarInfo(self, itemstack: ItemStack) -> str
 
         function get_data(self)
 

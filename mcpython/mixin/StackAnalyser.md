@@ -1,4 +1,4 @@
-***StackAnalyser.py - documentation - last updated on 9.10.2021 by uuk***
+***StackAnalyser.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -60,3 +60,30 @@ ___
                     stack.append(self.patcher.patcher.cell_vars[index])
                 else:
                     stack.append(self.patcher.patcher.free_vars[index-len(self.patcher.patcher.cell_vars)])
+
+
+        function identifyMethodInvocationContext(self, i: int) -> "FunctionCallInformation"
+
+    class PyTrackingObjectIdentifier
+
+        function __init__(self)
+
+            variable self.primitive_value
+
+            variable self.primitive_type
+
+    class FunctionCallInformation
+
+        function __init__(self)
+
+            variable self.invoke_opcode: int
+
+            variable self.offset
+
+            variable self.is_static_call
+
+            variable self.argument_count
+
+        function lookup_argument_types(self) -> typing.Iterable[PyTrackingObjectIdentifier]
+
+        function lookup_possible_targets(self) -> typing.Iterable
