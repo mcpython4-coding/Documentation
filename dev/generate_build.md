@@ -1,4 +1,4 @@
-***generate_build.py - documentation - last updated on 18.11.2021 by uuk***
+***generate_build.py - documentation - last updated on 3.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -173,6 +173,8 @@ ___
             variable self.special_config
 
         function execute_on(self, view: ProjectView, build_output_dir: str, build_manager)
+
+                            variable minified
 
     class JsonMinifierTask extends AbstractBuildStage
 

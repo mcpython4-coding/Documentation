@@ -1,4 +1,4 @@
-***Furnace.py - documentation - last updated on 20.12.2021 by uuk***
+***Furnace.py - documentation - last updated on 3.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,7 +11,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class Furnace extends IHorizontalOrientableBlock
+    class Furnace extends IHorizontalOrientableBlock,  SimpleInventoryWrappingContainer
         
         Class for the furnace block
 
@@ -40,11 +40,7 @@ ___
 
         function get_model_state(self) -> dict
 
-        function set_model_state(self, state: dict)
-
-        function get_inventories(self)
-
-        function get_provided_slot_lists(self, side)
+                variable self.active
 
                 variable dimension
 

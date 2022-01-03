@@ -1,4 +1,4 @@
-***AbstractInterface.py - documentation - last updated on 13.12.2021 by uuk***
+***AbstractInterface.py - documentation - last updated on 3.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -54,7 +54,7 @@ ___
                 self, itemstack, position: typing.Tuple[float, float, float], pickup_delay=0
                 ):
 
-    class IChunk extends ISupportWorldInterface,  ABC
+    class IChunk extends ISupportWorldInterface,  IBufferSerializeAble,  ABC
         
         Abstract class for chunks
         Belows follows an API description

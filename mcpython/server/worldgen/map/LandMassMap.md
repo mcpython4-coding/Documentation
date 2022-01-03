@@ -1,4 +1,4 @@
-***LandMassMap.py - documentation - last updated on 2.5.2021 by uuk***
+***LandMassMap.py - documentation - last updated on 3.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,25 +11,21 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    @shared.world_generation_handler class LandMassMap extends mcpython.server.worldgen.map.AbstractChunkInfoMap.AbstractMap
+    class LandMassMap extends mcpython.server.worldgen.map.AbstractChunkInfoMap.AbstractMap
 
         variable NAME
 
         function __init__(self, chunk)
 
-        function load_from_saves(self, data)
+            variable table
 
-            variable previous_mass
+                variable mass
 
-                    variable index
+            variable data
 
-                        variable previous_mass
+            variable table
 
-        function dump_for_saves(self)
-
-            variable previous_mass
-
-                    variable mass
+                variable index
 
         function get_at_xz(self, x: int, z: int) -> str
 

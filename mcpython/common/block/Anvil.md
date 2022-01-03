@@ -1,4 +1,4 @@
-***Anvil.py - documentation - last updated on 13.12.2021 by uuk***
+***Anvil.py - documentation - last updated on 3.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,7 +11,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class AbstractAnvil extends IFallingBlock.IFallingBlock
+    class AbstractAnvil extends IFallingBlock.IFallingBlock,  SimpleInventoryWrappingContainer
         
         Base class for all anvils
         Mods are allowed to implement this for their own anvils
@@ -71,7 +71,7 @@ ___
 
         function get_provided_slot_lists(self, side)
 
-        function set_model_state(self, state: dict)
+                variable face
 
                     variable self.facing
 
@@ -82,7 +82,7 @@ ___
         static
         function set_block_data(cls, item, block)
 
-        function on_request_item_for_block(self, itemstack)
+                variable itemstack.item.inventory
 
     class Anvil extends AbstractAnvil
 

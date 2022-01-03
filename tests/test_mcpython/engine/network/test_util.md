@@ -1,4 +1,4 @@
-***test_util.py - documentation - last updated on 28.12.2021 by uuk***
+***test_util.py - documentation - last updated on 3.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -118,6 +118,108 @@ ___
                 variable write
 
                 variable read
+
+            variable table
+
+            variable buffer
+
+            variable read
+
+            variable table2
+
+            variable table
+
+            variable buffer
+
+            variable read
+
+            variable table2
+
+            variable buffer
+
+            variable read
+
+            variable table2
+
+            variable table
+
+            variable buffer
+
+            variable read
+
+            variable table
+
+            variable buffer
+
+            variable read
+
+            variable table
+
+            variable buffer
+
+            variable read
+
+            variable table
+
+            variable buffer
+
+            variable data
+
+            variable read
+
+            variable table
+
+            variable buffer
+
+            variable data
+
+            variable read
+
+            variable table
+
+            variable buffer
+
+            variable data
+
+            variable read
+
+            variable table: TableIndexedOffsetTable
+
+            variable buffer
+
+            variable read_buffer
+
+            variable data
+
+            variable buffer
+
+            variable read_buffer
+
+            variable data
+
+            variable buffer
+
+            variable read_buffer
+
+            variable data
+
+            variable buffer
+
+            variable read_buffer
+
+            variable data
+
+            variable buffer
+
+            variable read_buffer
+
+            variable data
+
+            variable buffer
+
+            variable read_buffer
+
+            variable data
 
     class Simple extends IBufferSerializeAble
 

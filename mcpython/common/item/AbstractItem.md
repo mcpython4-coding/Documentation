@@ -1,4 +1,4 @@
-***AbstractItem.py - documentation - last updated on 28.12.2021 by uuk***
+***AbstractItem.py - documentation - last updated on 3.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -12,6 +12,8 @@ ___
 
 
     class AbstractItem extends  mcpython.common.event.api.IRegistryContent,  ICapabilityContainer,  IBufferSerializeAble,  ABC,  
+
+        variable VERSION
 
         variable TYPE
 
@@ -61,6 +63,16 @@ ___
                 self, itemstack, position: typing.Tuple[int, int], scale: float
                 ):
 
+            variable version
+
+                    variable fixer
+
+                    variable write
+
+                    variable buffer
+
+                    variable version
+
             variable can_destroy_flag
 
             variable can_be_set_on_flag
@@ -68,6 +80,18 @@ ___
                 variable self.can_destroy
 
                 variable self.can_be_set_on
+
+            variable can_destroy_flag
+
+            variable can_be_set_on_flag
+
+                variable self.can_destroy
+
+                variable self.can_be_set_on
+
+            variable can_destroy_flag
+
+            variable can_be_set_on_flag
 
             variable can_destroy_flag
 
@@ -102,10 +126,6 @@ ___
             :return: if default logic should be interrupted
             todo: pass full hit info into here
 
-
-        function get_data(self)
-
-        function set_data(self, data)
 
         function get_tooltip_provider(self)
 

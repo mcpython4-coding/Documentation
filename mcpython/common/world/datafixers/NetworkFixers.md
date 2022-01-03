@@ -1,4 +1,4 @@
-***NetworkFixers.py - documentation - last updated on 20.12.2021 by uuk***
+***NetworkFixers.py - documentation - last updated on 3.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -37,3 +37,45 @@ ___
 
         static
         function __init_subclass__(cls, **kwargs)
+
+    class ItemDataFixer extends AbstractNetworkFixer,  ABC
+        
+        Handler for fixing item data using network buffers for items
+        When subclassing and setting ITEM_NAME to a good item name (a item name found in registry),
+        the fixer will be automatically bound to the block class
+        Use the Block.NETWORK_BUFFER_DATA_FIXERS for manual registration
+        WARNING: returning True from apply2stream() will intercept any further buffer loading, so also the stuff
+                you don't need to do yourself, but instead you use await super().read_from_network_buffer(...)
+
+
+        static
+        function __init_subclass__(cls, **kwargs)
+
+    class EntityDataFixer extends AbstractNetworkFixer,  ABC
+
+        static
+        function bind(cls, entity_cls)
+
+    class ChunkInfoMapFixer extends AbstractNetworkFixer,  ABC
+        
+        Handler for fixing chunk data maps
+
+
+        variable MAP_NAME: str
+
+        static
+        function __init_subclass__(cls, **kwargs)
+
+                variable target.DATA_FIXERS[cls.BEFORE_VERSION]
+
+    class ContainerDataFixer extends AbstractNetworkFixer,  ABC
+
+        static
+        function bind(cls, inventory)
+
+    class ChunkDataFixer extends AbstractNetworkFixer,  ABC
+
+        static
+        function __init_subclass__(cls, **kwargs)
+
+            variable Chunk.DATA_FIXERS[cls.BEFORE_VERSION]

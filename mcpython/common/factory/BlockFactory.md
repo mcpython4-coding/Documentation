@@ -1,4 +1,4 @@
-***BlockFactory.py - documentation - last updated on 28.12.2021 by uuk***
+***BlockFactory.py - documentation - last updated on 3.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -127,27 +127,15 @@ ___
 
             function __init__(self)
 
-            function set_creation_properties(self, *args, **kwargs)
-
-            function get_item_saved_state(self)
-
-            function set_item_saved_state(self, state)
-
             function get_inventories(self)
 
             function get_provided_slot_lists(self, side: mcpython.util.enums.EnumSide)
 
             function get_model_state(self) -> dict
 
-            function set_model_state(self, state: dict)
-
             function get_view_bbox(self)
 
             function get_collision_bbox(self)
-
-            function on_request_item_for_block(
-                    self, itemstack: mcpython.common.container.ResourceStack.ItemStack
-                    ):
 
             function inject_redstone_power(self, side: mcpython.util.enums.EnumSide, level: int)
 

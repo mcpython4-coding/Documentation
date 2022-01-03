@@ -1,4 +1,4 @@
-***ModLoader.py - documentation - last updated on 28.12.2021 by uuk***
+***ModLoader.py - documentation - last updated on 3.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -60,8 +60,6 @@ ___
 
 
                     variable self.assigned_mod_loader
-
-        function load_meta_files(self)
             
             Looks out for some meta files
 
@@ -69,9 +67,6 @@ ___
         function __repr__(self)
 
     class AbstractModLoaderInstance extends ABC
-
-        static
-        function match_container_loader(cls, container: ModContainer) -> bool
 
         function __init__(self, container: ModContainer)
 
@@ -89,9 +84,6 @@ ___
     class PyFileModLoader extends AbstractModLoaderInstance
 
     class DefaultModJsonBasedLoader extends AbstractModLoaderInstance
-
-        static
-        function match_container_loader(cls, container: ModContainer) -> bool
 
             variable data
 
@@ -114,9 +106,6 @@ ___
                         variable mod_loader.parent
 
     class TomlModLoader extends DefaultModJsonBasedLoader
-
-        static
-        function match_container_loader(cls, container: ModContainer) -> bool
 
                 variable data
 
@@ -247,7 +236,7 @@ ___
 
             variable files
 
-        function parse_mod_files(self)
+            variable containers
 
                 variable self.current_container
 
@@ -255,7 +244,7 @@ ___
 
         function check_errors(self)
 
-        function load_missing_mods(self)
+                    variable self.current_container
 
         function check_for_updates(self)
             
@@ -282,8 +271,6 @@ ___
             Use only when really needed. The system is designed for being data-driven, and things might go wrong
                 when manually doing this
 
-
-            variable self.mods[instance.name]
 
                 variable instance.container
 

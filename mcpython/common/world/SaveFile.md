@@ -1,4 +1,4 @@
-***SaveFile.py - documentation - last updated on 13.12.2021 by uuk***
+***SaveFile.py - documentation - last updated on 3.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -48,8 +48,10 @@ ___
         - improved block palette
         - improved entity storage
         - removed some sanity checks for backwards compatibility
-    - 11: introduced: 26.10.2021, outdated since: -, not loadable since: -
+    - 11: introduced: 26.10.2021, outdated since: 29.12.2021, not loadable since: 29.12.2021
         - chunk block data is now serialized via the network API, not the old storage API
+    - 12: introduced: 29.12.2021, outdated since: -, not loadable since: -
+        - containers & data maps contain now their version
 
 
     variable shared.STORAGE_VERSION
@@ -67,6 +69,25 @@ ___
     function register_mod_fixer(
             _, fixer: mcpython.common.world.datafixers.IDataFixer.IModVersionFixer
             ):
+
+    class RegionFileAccess
+
+        function __init__(self, save_file: "SaveFile", file: str, data: bytes)
+
+            variable self.data
+
+            variable self.file
+
+            variable self.save_file
+
+            variable buffer
+
+            variable self.table: TableIndexedOffsetTable
+
+                variable data
+
+            variable buffer
+                todo: add scheduler for dumping region files to storage for later
 
     class SaveFile
         
@@ -98,6 +119,8 @@ ___
             variable self.version
 
             variable self.save_in_progress
+
+            variable self.region_accesses
 
         function region_iterator(self)
             
@@ -219,6 +242,8 @@ ___
 
 
             variable file
+
+            variable data
             
             saves stuff with json into the system
             :param file: the file to save to
@@ -251,44 +276,12 @@ ___
 
             variable d
 
-        @deprecation.deprecated()
-        function load_world(self)
+            variable file
 
-        @deprecation.deprecated()
-        function save_world(self, *_, override=False)
+            variable d
 
-        @deprecation.deprecated()
-        function apply_storage_fixer(self, name: str, *args, **kwargs)
+                variable d
 
-        @deprecation.deprecated()
-        function apply_group_fixer(self, name: str, *args, **kwargs)
+            variable obj
 
-        @deprecation.deprecated()
-        function apply_part_fixer(self, name: str, *args, **kwargs)
-
-        @deprecation.deprecated()
-        function apply_mod_fixer(self, modname: str, source_version: tuple, *args, **kwargs)
-
-        @deprecation.deprecated()
-        function read(self, part, **kwargs)
-
-        @deprecation.deprecated()
-        function dump(self, data, part, **kwargs)
-
-        @deprecation.deprecated()
-        function access_file_json(self, file: str)
-
-        @deprecation.deprecated()
-        function access_file_pickle(self, file: str)
-
-        @deprecation.deprecated()
-        function access_raw(self, file: str)
-
-        @deprecation.deprecated()
-        function dump_file_json(self, file: str, data)
-
-        @deprecation.deprecated()
-        function dump_file_pickle(self, file: str, data)
-
-        @deprecation.deprecated()
-        function dump_raw(self, file: str, data: bytes)
+            variable self.region_accesses[file]

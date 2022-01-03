@@ -1,4 +1,4 @@
-***AbstractEntity.py - documentation - last updated on 13.12.2021 by uuk***
+***AbstractEntity.py - documentation - last updated on 3.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -24,11 +24,13 @@ ___
 
         variable TYPE
 
+        variable VERSION
+
         variable SUMMON_ABLE
             If the entity can be used in /summon-command
 
         static
-        function create_new(cls, position, *args, dimension=None, **kwargs)
+        function create_new_entity(cls, position, *args, dimension=None, **kwargs)
             
             Creates a new entity and set up it correctly for later use
             :param position: the position to create at
@@ -44,6 +46,8 @@ ___
 
             variable entity.position
 
+            variable instance
+
         static
         function init_renderers(cls)
             
@@ -55,7 +59,7 @@ ___
             
             Creates a new entity for the world
             for moder: you SHOULD implement a custom constructor which set the bellow values to "good" values
-            For creating entities, use create_new() - it is far more saver and does some internal stuff
+            For creating entities, use create_new_entity() - it is far more saver and does some internal stuff
 
 
             variable self.dimension
@@ -82,6 +86,16 @@ ___
             variable self.dead
 
         function get_collision_box(self)
+
+            variable version
+
+                    variable fixer
+
+                    variable write
+
+                    variable buffer.stream
+
+                    variable version
 
             variable dim_name
 

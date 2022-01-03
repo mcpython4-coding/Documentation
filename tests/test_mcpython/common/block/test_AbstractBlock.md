@@ -1,4 +1,4 @@
-***test_AbstractBlock.py - documentation - last updated on 13.12.2021 by uuk***
+***test_AbstractBlock.py - documentation - last updated on 3.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -23,7 +23,7 @@ ___
 
                 function get_model_state(self) -> dict
 
-                function set_model_state(s, state: dict)
+                    variable TestBlock.model_state_set
 
             variable buffer
 
@@ -35,8 +35,6 @@ ___
 
             variable block
 
-        function test_get_rotated_variant(self)
-
             class Block extends mcpython.common.block.AbstractBlock.AbstractBlock
 
                 function __init__(self)
@@ -45,7 +43,7 @@ ___
 
                 function get_model_state(self)
 
-                function set_model_state(self_, state: dict)
+                    variable self_.invoked
 
             variable b
 

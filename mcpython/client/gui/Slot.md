@@ -1,4 +1,4 @@
-***Slot.py - documentation - last updated on 28.12.2021 by uuk***
+***Slot.py - documentation - last updated on 3.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -55,10 +55,6 @@ ___
         function is_item_allowed(
                 self, itemstack: mcpython.common.container.ResourceStack.ItemStack
                 ) -> bool:
-
-        function save(self)
-
-        function load(self, data)
 
         function getParent(self) -> "ISlot"
 
@@ -249,12 +245,6 @@ ___
 
             variable check_allowed_func
 
-        function save(self)
-
-                variable d["data"]
-
-        function load(self, data)
-
         function __str__(self)
 
         function __repr__(self)
@@ -334,10 +324,6 @@ ___
         function draw_label(self, x=None, y=None)
 
         function is_item_allowed(self, itemstack) -> bool
-
-        function save(self)
-
-        function load(self, data)
 
         function __str__(self)
 

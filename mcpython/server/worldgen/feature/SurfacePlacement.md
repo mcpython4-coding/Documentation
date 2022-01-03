@@ -1,4 +1,4 @@
-***SurfacePlacement.py - documentation - last updated on 18.11.2021 by uuk***
+***SurfacePlacement.py - documentation - last updated on 3.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -18,15 +18,9 @@ ___
         static
         function place(cls, dimension, x, y, z, config)
 
-        static
-        function place_array(cls, array, x: int, y: int, z: int, config)
-
     @shared.registry class MelonPlacer extends IFeature.IFeature
 
         variable NAME
 
         static
         function place(cls, dimension, x, y, z, config)
-
-        static
-        function place_array(cls, array, x: int, y: int, z: int, config)

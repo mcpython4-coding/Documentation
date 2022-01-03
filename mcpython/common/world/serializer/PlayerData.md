@@ -1,4 +1,4 @@
-***PlayerData.py - documentation - last updated on 13.11.2021 by uuk***
+***PlayerData.py - documentation - last updated on 3.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -15,40 +15,38 @@ ___
 
         variable PART
 
-            variable data
-                todo: gather
+        variable FILE_VERSION
+
+            variable buffer: ReadBuffer
+
+            variable version
+
+            variable players
+
+            variable current_player
+
+                variable player_buffer
+
+                variable player_name
 
                     variable player
 
-                    variable player
+            variable buffer: ReadBuffer
 
-            variable pd
+                variable players
 
-            variable player.hearts
+                variable version
 
-            variable player.hunger
+                variable players
 
-            variable player.xp
+            variable player_names
 
-            variable player.xp_level
-
-            variable player.fallen_since_y
-
-            variable player.active_inventory_slot
-
-            variable player.position
-
-            variable player.rotation
-
-            variable player.flying
-
-                variable player.in_nether_portal_since
-
-            variable player.should_leave_nether_portal_before_dim_change
-
-            variable data
+                variable p_buffer
 
                 variable data
 
-                variable data[player.name]
-                    todo: move to player custom save data
+            variable additional
+
+                    variable players[index]
+
+            variable write_buffer

@@ -1,4 +1,4 @@
-***Chunk.py - documentation - last updated on 13.12.2021 by uuk***
+***Chunk.py - documentation - last updated on 3.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -15,35 +15,61 @@ ___
 
         variable PART
 
+        variable IGNORED_BLOCKS: typing.Set[str]
+
+        variable IGNORED_ENTITIES: typing.Set[str]
+
+        variable CHUNK_DATA_VERSION
+
             variable region
+
+            variable chunk_instance: IChunk
+
+            variable shared.world_generation_handler.enable_generation
+
+            variable region
+
+            variable read_buffer: ReadBuffer
+
+            variable version
+
+                    variable fixer
+
+                    variable target
+
+                    variable result
+
+                    variable read_buffer.stream
 
                 variable data
 
-            variable chunk_instance: mcpython.engine.world.AbstractInterface.IChunk
-
-            variable shared.world_generation_handler.enable_generation
-                Don't generate stuff while we are saving stuff
-
-            variable data
+                variable read_buffer.stream
 
             variable chunk_instance.generated
 
-            variable inv_file
-                This file stores the inventory data
+            variable palette
 
-                    variable data["block_palette"][i]
+            variable block_data_buffer
+
+            variable height
+
+                variable index
 
                 variable position
 
-                variable d
+                    variable block_buffer
 
-                    variable data_map_data
+                    variable name
 
-                    variable entity_instance
+                    variable visible
 
-                variable entity_instance.rotation
+                variable type_name
 
-                variable entity_instance.hearts
+                variable buf
+
+            variable current_type_name
+
+                variable current_type_name
 
             variable chunk_instance.loaded
 
@@ -53,54 +79,34 @@ ___
 
             variable shared.world_generation_handler.enable_generation
 
-                    variable buffer
+            variable region
 
-            variable flag
+            variable chunk_instance: IChunk
 
             variable region
 
-            variable chunk_instance: mcpython.engine.world.AbstractInterface.IChunk
-
-            variable data
-
-                variable data
-
-                variable cdata
-
-                variable cdata
-
-                variable override
-                    And mark that all data should be written
+            variable target_buffer
 
             variable shared.world_generation_handler.enable_generation
                 When doing stuff, please make sure that nothing fancy happens with chunks
 
+            variable block_buffer
+
             variable palette
-                Load the block palette
-                list of {"custom": <some stuff>, "name": <name>, "shown": <shown>, ...}
-
-            variable inv_file
-                where to dump inventory stuff
-
-            variable overridden
-
-                variable rel_position
-                    the relative position to the chunk
 
                 variable block
 
-                variable buffer
+                    variable block_instance_buffer
 
-                variable block_data
+                    variable block_data
 
-                    variable cdata["blocks"][rel_position]
+            variable entity_buffer
 
-                    variable cdata["blocks"][rel_position]
+                variable buf
 
-                variable entity_data
+            variable map_buffer
 
-                    variable cdata["maps"][data_map.NAME]
-
-            variable data[chunk] - dump the chunk into the region
+                variable buf
 
             variable shared.world_generation_handler.enable_generation
+                re-enable world gen as we are finished

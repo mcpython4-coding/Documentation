@@ -1,4 +1,4 @@
-***OpenSimplexImplementation.py - documentation - last updated on 9.2.2021 by uuk***
+***OpenSimplexImplementation.py - documentation - last updated on 3.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -25,3 +25,5 @@ ___
         function set_seed(self, seed: int)
 
         function calculate_position(self, position) -> float
+
+            variable position

@@ -1,4 +1,4 @@
-***ContainerRenderer.py - documentation - last updated on 20.12.2021 by uuk***
+***ContainerRenderer.py - documentation - last updated on 3.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -61,6 +61,8 @@ ___
         Client-only code
 
 
+        variable VERSION
+
         static
         function get_config_file() -> typing.Optional[str]
             
@@ -107,6 +109,18 @@ ___
 
             variable self.slots
 
+            variable version
+
+                    variable fixer
+
+                    variable target
+
+                        variable buffer.stream
+
+                    variable buffer.stream
+
+                    variable version
+
             variable self.active
 
             variable self.custom_name
@@ -114,6 +128,8 @@ ___
                 variable self.custom_name
 
                 variable self.custom_name_label.text
+
+            variable self.uuid
 
             variable size
 
@@ -225,25 +241,6 @@ ___
         function clear(self)
 
         function copy(self)
-
-        function load(self, data) -> bool
-            
-            Deserializes the data into the inventory
-            :param data: the data saved
-            :return: if load is valid or not
-
-
-        function post_load(self, data)
-            
-            Deserializes stuff after the the slot data is loaded
-            :param data: the data stored
-
-
-        function save(self)
-            
-            Serializes the inventory into an pickle-able data stream
-            :return: the data
-
 
         function insert_items(
                 self, items: list, random_check_order=False, insert_when_same_item=True
