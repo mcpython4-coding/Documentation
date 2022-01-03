@@ -1,4 +1,4 @@
-***DefaultFeatureLayer.py - documentation - last updated on 13.11.2021 by uuk***
+***DefaultFeatureLayer.py - documentation - last updated on 3.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -19,8 +19,7 @@ ___
 
             variable chunk
 
-        static
-        function generate_position(x, z, reference, config)
+            variable chunk
 
             variable treemap
                 todo: rename to structure blocking info or something similar

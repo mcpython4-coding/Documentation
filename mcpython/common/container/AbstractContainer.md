@@ -1,4 +1,4 @@
-***AbstractContainer.py - documentation - last updated on 13.12.2021 by uuk***
+***AbstractContainer.py - documentation - last updated on 3.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -39,6 +39,10 @@ ___
             variable self.custom_name
 
             variable self.uuid
+            
+            serializes stuff after the slot data is loaded
+            :param data: the data stored
+
 
         function create_renderer(self) -> typing.Any
             
@@ -60,25 +64,6 @@ ___
         function clear(self)
 
         function copy(self)
-
-        function load(self, data) -> bool
-            
-            serializes the data into the inventory
-            :param data: the data saved
-            :return: if load is valid or not
-
-
-        function post_load(self, data)
-            
-            serializes stuff after the the slot data is loaded
-            :param data: the data stored
-
-
-        function save(self)
-            
-            serializes the inventory into an pickle-able data stream
-            :return: the data
-
 
         function insert_items(
                 self, items: list, random_check_order=False, insert_when_same_item=True

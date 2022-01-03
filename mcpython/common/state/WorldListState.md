@@ -1,4 +1,4 @@
-***WorldListState.py - documentation - last updated on 13.12.2021 by uuk***
+***WorldListState.py - documentation - last updated on 3.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -44,15 +44,9 @@ ___
 
             variable self.selected_world
 
-        function on_scroll(self, x, y, dx, dy, button, mod, status)
-
-        function on_mouse_scroll(self, x, y, dx, dy)
-
         function recalculate_sprite_position(self)
 
                 variable self.parts[-1].active
-
-        function reload_world_icons(self)
 
                 variable path
 
@@ -62,21 +56,29 @@ ___
 
                     variable sprite
 
+                    variable delta
+
+                    variable date
+
+                    variable modification_time
+
+                    variable edit
+
                         variable data
 
-                    variable edit_date
+                    variable read_buffer
 
-                    variable diff
+                    variable save_version
 
-                        variable edit
+                    variable version_id
 
-                        variable edit
+                    variable player_name
+
+                    variable mods
 
                     variable labels
 
             variable self.parts[-1].active
-
-        function on_delete_press(self, *_)
 
     variable world_selection
 

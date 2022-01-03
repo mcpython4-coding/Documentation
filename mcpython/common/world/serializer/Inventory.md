@@ -1,4 +1,4 @@
-***Inventory.py - documentation - last updated on 13.11.2021 by uuk***
+***Inventory.py - documentation - last updated on 3.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -12,7 +12,7 @@ ___
 
 
     improvements for the future:
-    - add option to store under an special directory the data and output the binary data
+    - make the whole serializer an network buffer and store at head an offset table
 
 
     @shared.registry class Inventory extends mcpython.common.world.serializer.IDataSerializer.IDataSerializer
@@ -31,20 +31,20 @@ ___
 
                 variable file
 
-            variable data
+            variable data: ReadBuffer
 
-            variable data
+                variable data: bytes
 
-            variable inventory.uuid
-
-            variable status
+            variable buffer
 
                 variable file
 
-            variable data
+            variable data: ReadBuffer
 
-                variable data
+                variable table
 
-            variable idata
+                variable table
 
-            variable data[path]
+            variable buffer
+
+            variable write

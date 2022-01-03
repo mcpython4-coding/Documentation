@@ -34,7 +34,7 @@ ___
 
             variable method
 
-        function test_mixin_by_name(self)
+        function test_mixin_override(self)
 
             variable handler
 

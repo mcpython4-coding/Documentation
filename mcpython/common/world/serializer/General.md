@@ -1,4 +1,4 @@
-***General.py - documentation - last updated on 13.11.2021 by uuk***
+***General.py - documentation - last updated on 3.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -15,16 +15,24 @@ ___
 
         variable PART
 
-            variable data
+            variable read_buffer: ReadBuffer
 
             variable save_file.version
 
+            variable version_id
+
             variable player_name
+
+            variable mods
+
+            variable chunks_to_generate
 
             variable shared.world.config
 
-            variable wd
+            variable dimensions
 
-            variable mcpython.server.worldgen.noise.NoiseManager.manager.default_implementation
+            variable current_dimension
 
-            variable data
+            variable default_noise_implementation
+
+            variable target_buffer

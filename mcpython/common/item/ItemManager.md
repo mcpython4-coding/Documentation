@@ -1,4 +1,4 @@
-***ItemManager.py - documentation - last updated on 28.12.2021 by uuk***
+***ItemManager.py - documentation - last updated on 3.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -19,7 +19,7 @@ ___
 
         variable ITEM_ATLAS
 
-                variable items.item_index_table[cls.NAME][file]
+                variable items.item_index_table[cls.NAME][ - " + str(i), file)
 
                     variable data
 

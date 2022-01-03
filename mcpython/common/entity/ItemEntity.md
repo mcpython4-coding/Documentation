@@ -1,4 +1,4 @@
-***ItemEntity.py - documentation - last updated on 13.12.2021 by uuk***
+***ItemEntity.py - documentation - last updated on 3.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -38,8 +38,9 @@ ___
 
             variable self.pickup_delay
 
-            variable self.test_block
-                todo: fetch real item model here
+                variable self.test_block
+
+                variable self.test_block
 
             variable self.test_block.dimension
                 Set the block dimension so the block can do cool stuff with rendering if it wants to

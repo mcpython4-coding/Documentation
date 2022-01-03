@@ -1,4 +1,4 @@
-***AbstractFluidContainer.py - documentation - last updated on 28.12.2021 by uuk***
+***AbstractFluidContainer.py - documentation - last updated on 3.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,24 +11,6 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class AbstractFluidContainer extends mcpython.common.item.AbstractItem.AbstractItem,  ABC
+    class AbstractFluidContainer extends mcpython.common.item.AbstractItem.AbstractItem,  FluidContainer,  ABC
         
         Common base class for container-like items holding fluids
-
-            
-            Informal method for getting the fluids in the container [All of them]
-
-            
-            Checks if the container could in theory accept the fluid given.
-            When returning False, accept is never called
-
-            
-            Inserts a certain amount of fluid
-            The fluidstack may contain remaining liquid if not everything could be accepted if insert_parts is True
-
-            
-            Checks if the given fluid container can provide the given fluid with the given amount
-
-            
-            Removes a certain amount of fluid from the container
-            Is allowed to modify the fluidstack when not everything is provided when extract_parts is True

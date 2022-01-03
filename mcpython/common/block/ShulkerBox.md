@@ -1,4 +1,4 @@
-***ShulkerBox.py - documentation - last updated on 13.12.2021 by uuk***
+***ShulkerBox.py - documentation - last updated on 3.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -27,10 +27,6 @@ ___
 
                 variable self.inventory
 
-            function get_inventories(self)
-
-            function get_provided_slot_lists(self, side)
-
             static
             function modify_block_item(
                     cls, item_constructor: mcpython.common.factory.ItemFactory.ItemFactory
@@ -39,6 +35,6 @@ ___
             static
             function set_block_data(cls, item_instance, block)
 
-            function on_request_item_for_block(self, itemstack)
+                variable itemstack.item.inventory
 
     function load()

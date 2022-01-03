@@ -1,4 +1,4 @@
-***PartFixers.py - documentation - last updated on 13.11.2021 by uuk***
+***PartFixers.py - documentation - last updated on 3.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -34,49 +34,3 @@ ___
         variable TARGET_GAMERULE_NAME - which game rules to apply to
 
             variable data
-
-    class WorldConfigFixer extends IPartFixer
-        
-        Class representing an fix for the config-entry
-
-
-        variable TARGET_SERIALIZER_NAME
-
-            variable data
-
-            variable data["config"]
-
-    class WorldGeneralFixer extends IPartFixer
-        
-        Class representing an fix for the config-entry
-
-
-        variable TARGET_SERIALIZER_NAME
-
-            variable data
-
-            variable data
-
-    class PlayerDataFixer extends IPartFixer
-        
-        fixer for fixing player data
-
-
-        variable TARGET_SERIALIZER_NAME
-            
-            will apply the fix
-            :param savefile: the savefile to use
-            :param player: the player used or None if not provided
-            :param data: the data used
-            :return: the fixed data
-
-
-            variable data
-
-                variable player_data
-
-                variable player
-
-                variable player_data
-
-                variable data[name]

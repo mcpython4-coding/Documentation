@@ -1,4 +1,4 @@
-***Chest.py - documentation - last updated on 28.12.2021 by uuk***
+***Chest.py - documentation - last updated on 3.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -13,7 +13,7 @@ ___
 
     variable BBOX
 
-    class Chest extends  IHorizontalOrientableBlock,  mcpython.client.rendering.blocks.ChestRenderer.IChestRendererSupport,  
+    class Chest extends  IHorizontalOrientableBlock,  mcpython.client.rendering.blocks.ChestRenderer.IChestRendererSupport,  SimpleInventoryWrappingContainer,  
         
         The Chest block class
 
@@ -70,16 +70,12 @@ ___
 
                     variable self.loot_table_link
 
-        function get_inventories(self)
-
-        function get_provided_slot_lists(self, side)
-
         function get_view_bbox(self)
 
         static
         function set_block_data(cls, instance, block)
 
-        function on_request_item_for_block(self, itemstack)
+                variable itemstack.item.inventory
 
                 variable dimension
 

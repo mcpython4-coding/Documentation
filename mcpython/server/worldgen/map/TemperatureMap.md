@@ -1,4 +1,4 @@
-***TemperatureMap.py - documentation - last updated on 2.5.2021 by uuk***
+***TemperatureMap.py - documentation - last updated on 3.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,15 +11,11 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    @shared.world_generation_handler class TemperatureMap extends mcpython.server.worldgen.map.AbstractChunkInfoMap.AbstractMap
+    class TemperatureMap extends mcpython.server.worldgen.map.AbstractChunkInfoMap.AbstractMap
 
         variable NAME
 
         function __init__(self, chunk)
-
-        function load_from_saves(self, data)
-
-        function dump_for_saves(self)
 
         function get_at_xz(self, x: int, z: int) -> float
 

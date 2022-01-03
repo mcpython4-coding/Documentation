@@ -1,4 +1,4 @@
-***WorldGenerationHandler.py - documentation - last updated on 13.12.2021 by uuk***
+***WorldGenerationHandler.py - documentation - last updated on 3.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -16,6 +16,8 @@ ___
         Main handler instance for world generation
         Stored data for world generation and handles requests for generating chunks
 
+
+        variable CHUNK_GENERATOR_VERSION
 
         function __init__(self)
 
@@ -48,9 +50,13 @@ ___
 
             variable self.chunk_maps[chunk_map.NAME]
 
-        function serialize_chunk_generator_info(self) -> dict
+            variable version
 
-        function deserialize_chunk_generator_info(self, data: dict)
+                variable name
+
+                variable dim_data
+
+            variable data
 
         function add_chunk_to_generation_list(
                 self,

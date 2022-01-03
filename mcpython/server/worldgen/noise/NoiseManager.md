@@ -1,4 +1,4 @@
-***NoiseManager.py - documentation - last updated on 9.2.2021 by uuk***
+***NoiseManager.py - documentation - last updated on 3.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -68,8 +68,10 @@ ___
 
         function calculate_part_seed(self, part: str)
 
-        function serialize_seed_map(self) -> dict
+            variable d
 
-        function deserialize_seed_map(self, data: dict)
+            variable mapped
+
+            variable self.default_implementation
 
     variable manager

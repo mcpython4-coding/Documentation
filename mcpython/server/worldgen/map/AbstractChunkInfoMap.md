@@ -1,4 +1,4 @@
-***AbstractChunkInfoMap.py - documentation - last updated on 2.5.2021 by uuk***
+***AbstractChunkInfoMap.py - documentation - last updated on 3.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,13 +11,15 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class AbstractMap extends ABC
+    class AbstractMap extends IBufferSerializeAble,  ABC
         
         Abstract map class holding information about a Chunk, in map-like formats
-        Contains code for writing to saves, by default, does nothing
+        Contains code for writing to save, by default, does nothing
 
 
         variable NAME
+
+        variable VERSION
 
         static
         function init_on(cls, chunk) -> "AbstractMap"
@@ -26,8 +28,16 @@ ___
 
             variable self.chunk
 
-        function load_from_saves(self, data)
+            variable version
 
-        function dump_for_saves(self)
+                    variable fixer
+
+                    variable target
+
+                        variable buffer.stream
+
+                    variable buffer.stream
+
+                    variable version
 
         function dump_debug_info(self, file: str)

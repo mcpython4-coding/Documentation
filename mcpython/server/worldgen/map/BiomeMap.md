@@ -1,4 +1,4 @@
-***BiomeMap.py - documentation - last updated on 23.8.2021 by uuk***
+***BiomeMap.py - documentation - last updated on 3.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,36 +11,28 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    @shared.world_generation_handler class BiomeMap extends mcpython.server.worldgen.map.AbstractChunkInfoMap.AbstractMap
+    class BiomeMap extends mcpython.server.worldgen.map.AbstractChunkInfoMap.AbstractMap
 
         variable NAME
 
         function __init__(self, chunk)
 
-        function load_from_saves(self, data)
+            variable data
 
-            variable steps
+            variable biomes
 
-                    variable previous_column
+                variable index
 
-                        variable index
+            variable table
 
-                            variable previous_column
+                variable biome
 
-        function dump_for_saves(self)
+        function get_at_xz(self, x: int, z: int) -> str | None
 
-                    variable previous_column
+        function get_at_xyz(self, x: int, y: int, z: int) -> str | None
 
-                        variable biome
+        function set_at_xz(self, x: int, z: int, biome: str | None)
 
-                            variable previous_column
-
-        function get_at_xz(self, x: int, z: int) -> str
-
-        function get_at_xyz(self, x: int, y: int, z: int) -> str
-
-        function set_at_xz(self, x: int, z: int, biome: str)
-
-        function set_at_xyz(self, x: int, y: int, z: int, biome: str)
+        function set_at_xyz(self, x: int, y: int, z: int, biome: str | None)
 
         function dump_debug_info(self, file: str)

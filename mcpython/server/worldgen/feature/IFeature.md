@@ -1,4 +1,4 @@
-***IFeature.py - documentation - last updated on 16.9.2021 by uuk***
+***IFeature.py - documentation - last updated on 3.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -56,16 +56,6 @@ ___
 
         static
         function place(cls, dimension, x: int, y: int, z: int, config)
-
-        static
-        function place_array(
-                cls,
-                array: mcpython.server.worldgen.WorldGenerationTaskArrays.IWorldGenerationTaskHandlerReference,
-                x: int,
-                y: int,
-                z: int,
-                config,
-                ):
 
         static
         function as_feature_definition(

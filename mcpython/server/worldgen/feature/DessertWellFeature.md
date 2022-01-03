@@ -1,4 +1,4 @@
-***DessertWellFeature.py - documentation - last updated on 9.2.2021 by uuk***
+***DessertWellFeature.py - documentation - last updated on 3.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -23,15 +23,5 @@ ___
         variable SANDSTONE_SLAB
 
         variable WATER
-
-        static
-        function place_array(
-                cls,
-                array: mcpython.server.worldgen.WorldGenerationTaskArrays.IWorldGenerationTaskHandlerReference,
-                x: int,
-                y: int,
-                z: int,
-                config,
-                ):
             
             Code ported from minecraft using minecraft forge dev-environment for version 1.16.4

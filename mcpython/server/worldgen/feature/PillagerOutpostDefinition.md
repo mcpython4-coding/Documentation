@@ -1,4 +1,4 @@
-***PillagerOutpostDefinition.py - documentation - last updated on 28.12.2021 by uuk***
+***PillagerOutpostDefinition.py - documentation - last updated on 3.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -24,5 +24,4 @@ ___
         static
         function place(cls, dimension, x, y, z, config)
 
-        static
-        function place_array(cls, array, x: int, y: int, z: int, config)
+            variable structure
