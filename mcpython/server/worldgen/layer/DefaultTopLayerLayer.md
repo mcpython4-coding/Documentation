@@ -32,7 +32,7 @@ ___
                 variable biome
 
         static
-        function generate_xz(reference, x, z, config, noise_value, world_height, biome)
+        function generate_xz_section(reference, x, z, config, noise_value, world_height, biome)
 
             variable r
 

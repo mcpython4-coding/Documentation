@@ -27,4 +27,4 @@ ___
                     variable height
 
         static
-        function generate_xz(reference, x, z, config, height)
+        function generate_xz_section(reference, x, z, config, height)
