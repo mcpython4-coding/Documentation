@@ -1,4 +1,4 @@
-***getskin.py - documentation - last updated on 19.10.2021 by uuk***
+***getskin.py - documentation - last updated on 10.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -21,11 +21,7 @@ ___
 
     function find_texture_info(properties)
 
-    function store_missing_texture(path: str)
-
         variable missing_texture
-
-    function download_skin(username: str, store: str)
         
         Will download skin data for a username
         :param username: the user to download for

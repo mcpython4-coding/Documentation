@@ -1,4 +1,4 @@
-***util.py - documentation - last updated on 3.1.2022 by uuk***
+***util.py - documentation - last updated on 10.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -187,6 +187,8 @@ ___
 
         function write_bool_group(self, bools: typing.List[bool])
 
+                variable bits
+
         function write_struct(self, structure: struct.Struct, *data)
 
         function write_byte(self, value: int)
@@ -201,11 +203,18 @@ ___
 
         function write_big_long(self, value: int, size_size=2)
 
+            variable length
+                todo: can we optimize this calculation (one byte more is a lot bigger than we need!)?
+
+            variable data
+
         function write_float(self, value: float)
 
         function write_string(self, value: str, size_size=2, encoding="utf-8")
 
         function write_nullable_string(self, value: str, size_size=2, encoding="utf-8")
+
+                variable data
 
             variable data
 

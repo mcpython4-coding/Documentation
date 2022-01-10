@@ -1,4 +1,4 @@
-***test_AbstractBlock.py - documentation - last updated on 3.1.2022 by uuk***
+***test_AbstractBlock.py - documentation - last updated on 10.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -34,6 +34,10 @@ ___
         function test_is_solid_method(self)
 
             variable block
+
+            variable block
+
+            variable block.face_solid
 
             class Block extends mcpython.common.block.AbstractBlock.AbstractBlock
 

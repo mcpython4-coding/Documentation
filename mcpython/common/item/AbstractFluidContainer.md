@@ -1,4 +1,4 @@
-***AbstractFluidContainer.py - documentation - last updated on 3.1.2022 by uuk***
+***AbstractFluidContainer.py - documentation - last updated on 10.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,6 +11,6 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class AbstractFluidContainer extends mcpython.common.item.AbstractItem.AbstractItem,  FluidContainer,  ABC
+    class AbstractFluidContainer extends  mcpython.common.item.AbstractItem.AbstractItem,  FluidContainer,  ABC 
         
         Common base class for container-like items holding fluids

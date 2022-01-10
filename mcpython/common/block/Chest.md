@@ -1,4 +1,4 @@
-***Chest.py - documentation - last updated on 3.1.2022 by uuk***
+***Chest.py - documentation - last updated on 10.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -12,16 +12,18 @@ ___
 
 
     variable BBOX
+        the bounding box of the chest
 
     class Chest extends  IHorizontalOrientableBlock,  mcpython.client.rendering.blocks.ChestRenderer.IChestRendererSupport,  SimpleInventoryWrappingContainer,  
         
         The Chest block class
 
 
-        variable now: datetime - now
+        variable now: datetime
+            now, for deciding to render the Christmas variant or not
 
-        variable is_christmas: bool
-            if Christmas is today
+        variable IS_CHRISTMAS: bool
+            If Christmas is today, or not
 
         variable NAME: str
 

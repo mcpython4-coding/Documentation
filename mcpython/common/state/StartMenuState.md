@@ -1,4 +1,4 @@
-***StartMenuState.py - documentation - last updated on 13.12.2021 by uuk***
+***StartMenuState.py - documentation - last updated on 10.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -24,9 +24,6 @@ ___
             variable shared.world.world_loaded
 
             variable shared.ENABLE_ANIMATED_TEXTURES
-
-        static
-        function on_quit_game_press(x, y)
 
     variable start_menu
 

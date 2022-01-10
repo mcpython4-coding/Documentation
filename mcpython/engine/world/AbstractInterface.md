@@ -1,4 +1,4 @@
-***AbstractInterface.py - documentation - last updated on 3.1.2022 by uuk***
+***AbstractInterface.py - documentation - last updated on 10.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -82,6 +82,14 @@ ___
 
             variable self.data_maps
 
+        function position_iterator(self) -> typing.Iterator[typing.Tuple[int, int, int]]
+
+        function block_iterator(
+                self,
+                ) -> typing.Iterator[typing.Tuple[typing.Tuple[int, int, int], typing.Any]]:
+
+        function entity_iterator(self) -> typing.Iterable
+
         function clear(self)
 
         function get_map(self, name: str)
@@ -92,7 +100,7 @@ ___
 
         function get_positions_updated_since_last_save(self)
 
-        function mark_position_dirty(self, position)
+        function mark_position_dirty(self, position: typing.Tuple[int, int, int])
 
         function is_loaded(self) -> bool
 
@@ -259,6 +267,8 @@ ___
 
         function save(self)
 
+        function dump_debug_maps(self, file_formatter: str)
+
         function __getitem__(self, item)
 
         function __setitem__(self, key, value)
@@ -272,10 +282,6 @@ ___
         function __eq__(self, other: "IChunk")
 
         function __hash__(self)
-
-        function entity_iterator(self) -> typing.Iterable
-
-        function dump_debug_maps(self, file_formatter: str)
 
     class IDimension extends ISupportWorldInterface,  ABC
 

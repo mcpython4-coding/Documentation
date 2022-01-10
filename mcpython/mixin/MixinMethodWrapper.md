@@ -1,4 +1,4 @@
-***MixinMethodWrapper.py - documentation - last updated on 28.12.2021 by uuk***
+***MixinMethodWrapper.py - documentation - last updated on 10.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -24,6 +24,9 @@ ___
         
         Invoke before a normal return in a mixin injected to return the method injected into
         This method call and the return will be combined into a regular return statement
+        Use from <...>.MixinMethodWrapper import mixin_return outside the method in a global scope when possible,
+        it makes it easier to detect inside the bytecode
+        todo: use this for real!
 
 
     variable OFFSET_JUMPS
@@ -33,16 +36,14 @@ ___
     class MixinPatchHelper
         
         See https://docs.python.org/3/library/dis.html#python-bytecode-instructions for a detailed instruction listing
-        Contains helper methods for working with bytecode outside the basic wrapper
+        Contains helper methods for working with bytecode outside the basic wrapper container
+        Can save-ly exchange code regions with others, and redirect jump instructions correctly.
+        Also contains code to inline whole methods into the code
 
 
-        function __init__(self, patcher: FunctionPatcher)
+        function __init__(self, patcher: FunctionPatcher | types.FunctionType)
 
             variable self.patcher
-
-            variable self.instruction_listing
-
-            variable self.is_async
 
         function walk(self) -> typing.Iterable[typing.Tuple[int, dis.Instruction]]
 
@@ -93,6 +94,33 @@ ___
 
             variable self.instruction_listing
 
+        function replaceConstant(
+                self,
+                previous,
+                new,
+                matcher: typing.Callable[["MixinPatchHelper", int, int], bool] = None,
+                ):
+            
+            Replaces a constant with another one
+            :param previous: the old constant
+            :param new: the new constant
+            :param matcher: the matcher for instructions, or None
+
+
+                variable const_index
+
+                variable self.patcher.constants[const_index]
+
+                variable const_index
+
+            variable match
+
+                        variable self.instruction_listing[index]
+
+        function getLoadGlobalsLoading(
+                self, global_name: str
+                ) -> typing.Iterable[typing.Tuple[int, dis.Instruction]]:
+
         function insertMethodAt(self, start: int, method: FunctionPatcher, force_inline=True)
             
             Inserts a method body at the given position
@@ -122,6 +150,36 @@ ___
 
 
             variable self.is_async
+
+        function makeMethodSync(self)
+            
+            Simply makes this method sync, like it was declared without "async def"
+
+
+            variable self.is_async
+
+        function insertGivenMethodCallAt(
+                self,
+                offset: int,
+                method: typing.Callable,
+                *args,
+                collected_locals=tuple(),
+                pop_result=True,
+                include_stack_top_copy=False,
+                special_args_collectors: typing.Iterable[dis.Instruction] = tuple(),
+                insert_after=tuple(),
+                ):
+            
+            Injects the given method as a constant call into the bytecode of that function
+            :param offset: the offset to inject at
+            :param method: the method to inject
+            :param collected_locals: what locals to send to the method call
+            :param pop_result: if to pop the result
+            :param include_stack_top_copy: if to add the stack top as the last parameter
+            :param special_args_collectors: args collecting instructions for some stuff,
+                the entry count represents the arg count added here
+            :param insert_after: an iterable of instructions to insert after the method call
+
 
         function insertStaticMethodCallAt(self, offset: int, method: str, *args)
             
@@ -160,20 +218,6 @@ ___
                 variable real_module
 
             variable instructions
-
-        function identify_call_instruction(
-                self, target_method_name: str
-                ) -> typing.Iterable[int]:
-
-            function identify(info)
-
-        function identify_call_instruction_custom(
-                self, comparator: typing.Callable[[typing.Any], bool]
-                ) -> typing.Iterable[int]:
-
-            variable stack_analyser
-
-                    variable context
 
         static
         function prepare_method_for_insert(method: FunctionPatcher) -> FunctionPatcher

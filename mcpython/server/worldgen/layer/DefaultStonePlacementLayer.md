@@ -1,4 +1,4 @@
-***DefaultStonePlacementLayer.py - documentation - last updated on 13.11.2021 by uuk***
+***DefaultStonePlacementLayer.py - documentation - last updated on 10.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -24,7 +24,5 @@ ___
 
             variable heightmap
 
-                    variable height
-
         static
-        function generate_xz_section(reference, x, z, config, height)
+        function get_parts(cls, position, heightmap)

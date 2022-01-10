@@ -1,7 +1,7 @@
-***test_space.py - documentation - last updated on 10.1.2022 by uuk***
+***OptimiserMixins.py - documentation - last updated on 10.1.2022 by uuk***
 ___
 
-    mcpython - a minecraft clone written in python licenced under the MIT-licence 
+    mcpython - a minecraft clone written in python licenced under the MIT-licence
     (https://github.com/mcpython4-coding/core)
     Contributors: uuk, xkcdjerry (inactive)
     Based on the game of fogleman (https://github.com/fogleman/Minecraft), licenced under the MIT-licence
@@ -11,17 +11,8 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    variable INVOKED
+        @shared.mod_loader("minecraft", "stage:mixin:prepare")
+        function optimise()
 
-    function test_for_invoke()
-
-    function create_big_function()
-
-        variable names
-
-        variable func_code
-        
-    def test():
-
-
-        variable scope
+        @shared.mod_loader("minecraft", "stage:mixin:prepare")
+        function optimise()

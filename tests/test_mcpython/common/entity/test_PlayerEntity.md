@@ -1,4 +1,4 @@
-***test_PlayerEntity.py - documentation - last updated on 13.12.2021 by uuk***
+***test_PlayerEntity.py - documentation - last updated on 10.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -35,6 +35,10 @@ ___
         function __getitem__(self, item)
 
     class TestPlayerEntity extends TestCase
+
+        function setUp(self) -> None
+
+        function tearDown(self) -> None
 
         function test_module_import(self)
 
@@ -79,3 +83,15 @@ ___
             variable instance
 
             variable count
+
+            variable shared.IS_CLIENT
+
+            variable shared.mod_loader
+
+            variable instance
+
+            variable buffer
+
+            variable read_buffer
+
+            variable new_instance

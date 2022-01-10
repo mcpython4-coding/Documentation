@@ -1,4 +1,4 @@
-***WorldGenerationHandler.py - documentation - last updated on 3.1.2022 by uuk***
+***WorldGenerationHandler.py - documentation - last updated on 10.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -129,7 +129,6 @@ ___
             Generates the chunk in-place
             :param chunk: the chunk, as an instance, or a tuple
             :param dimension: if tuple, specifies the dimension. When still None, the active dimension is used
-            :param check_chunk: if the chunk should be checked if its generated or not
             todo: add flag to override any data, not only add additional if the chunk exists
 
 

@@ -1,4 +1,4 @@
-***PackageReroutingPackage.py - documentation - last updated on 10.1.2022 by uuk***
+***AxeItem.py - documentation - last updated on 28.12.2021 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,20 +11,13 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class PackageReroute extends AbstractPackage
+    class AbstractAxeItem extends AbstractToolItem
 
-        variable PACKAGE_NAME
+        variable AXE_TRANSFORMS
+            todo: make this data driven
 
-        variable PACKAGE_TYPE_ID
+                variable state
 
-        function __init__(self)
+                variable new
 
-            variable self.route_target: int
-
-            variable self.inner_package: typing.Optional[AbstractPackage]
-
-        function set_package(self, target: int, package: AbstractPackage)
-
-            variable self.route_target
-
-            variable self.inner_package
+                            variable itemstack.item.damage

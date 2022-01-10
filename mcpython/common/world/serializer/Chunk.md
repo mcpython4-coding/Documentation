@@ -1,4 +1,4 @@
-***Chunk.py - documentation - last updated on 3.1.2022 by uuk***
+***Chunk.py - documentation - last updated on 10.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -32,6 +32,8 @@ ___
             variable read_buffer: ReadBuffer
 
             variable version
+
+            variable chunk
 
                     variable fixer
 
@@ -81,11 +83,16 @@ ___
 
             variable region
 
-            variable chunk_instance: IChunk
+                variable chunk_instance: IChunk
 
-            variable region
+                variable region
 
-            variable target_buffer
+                variable target_buffer
+
+                variable shared.world_generation_handler.enable_generation
+                    re-enable world gen when we are finished or we encountered an error
+
+            variable chunk
 
             variable shared.world_generation_handler.enable_generation
                 When doing stuff, please make sure that nothing fancy happens with chunks
@@ -107,6 +114,3 @@ ___
             variable map_buffer
 
                 variable buf
-
-            variable shared.world_generation_handler.enable_generation
-                re-enable world gen as we are finished

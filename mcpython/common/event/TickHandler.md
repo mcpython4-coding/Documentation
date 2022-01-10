@@ -1,4 +1,4 @@
-***TickHandler.py - documentation - last updated on 28.12.2021 by uuk***
+***TickHandler.py - documentation - last updated on 10.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -40,6 +40,7 @@ ___
         function schedule_tick(self, dt: float)
             
             Execute ticks
+            Internally applies a small mixin for the IS_CLIENT checks (see OptimiserMixins.py)
             :param dt: the time that came after the last event
 
 

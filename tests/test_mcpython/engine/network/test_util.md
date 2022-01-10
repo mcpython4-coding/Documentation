@@ -1,4 +1,4 @@
-***test_util.py - documentation - last updated on 3.1.2022 by uuk***
+***test_util.py - documentation - last updated on 10.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -39,9 +39,27 @@ ___
 
                 variable read
 
-        function test_bytes(self)
+        function test_byte(self)
 
                 variable v
+
+                variable write
+
+                variable read
+
+        function test_bytes_1(self)
+
+                variable v
+
+                variable write
+
+                variable read
+
+        function test_bytes_2(self)
+
+                variable v
+
+                variable size_size
 
                 variable write
 

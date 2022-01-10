@@ -1,4 +1,4 @@
-***test_NetworkManager.py - documentation - last updated on 13.12.2021 by uuk***
+***test_NetworkManager.py - documentation - last updated on 10.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -17,8 +17,76 @@ ___
 
             variable data
 
+            variable shared.IS_TEST_ENV
+
+            class TestPackage extends AbstractPackage
+
+                variable PACKAGE_NAME
+
+            variable data
+
             variable package
 
             variable data
 
             variable package2
+
+            variable package
+
+            variable package.previous_packages
+
+            variable data
+
+            variable package2
+
+            class TestPackage extends AbstractPackage
+
+                variable PACKAGE_NAME
+
+                variable PACKAGE_TYPE_ID
+
+                variable handled
+
+                    variable TestPackage.handled
+
+            variable package
+
+            variable data
+
+            class stream
+
+                variable data_stream
+
+                variable connected
+
+                static
+                function work(cls)
+
+            variable shared.CLIENT_NETWORK_HANDLER
+
+            variable shared.CLIENT_NETWORK_HANDLER
+
+            class TestPackage extends AbstractPackage
+
+                variable PACKAGE_NAME
+
+                variable PACKAGE_TYPE_ID
+
+                variable handled
+
+            variable package
+
+            variable data
+
+            class stream
+
+                variable data_stream
+
+                variable connected
+
+                static
+                function work(cls)
+
+            variable shared.CLIENT_NETWORK_HANDLER
+
+            variable shared.CLIENT_NETWORK_HANDLER

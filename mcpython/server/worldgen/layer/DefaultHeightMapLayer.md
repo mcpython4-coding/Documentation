@@ -1,4 +1,4 @@
-***DefaultHeightMapLayer.py - documentation - last updated on 18.11.2021 by uuk***
+***DefaultHeightMapLayer.py - documentation - last updated on 10.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -17,9 +17,13 @@ ___
 
         variable DEPENDS_ON
 
-        variable noise
+        variable base_noise
 
-        variable noise.merger_config
+        variable base_noise.merger_config
+
+        variable inter_noise_1
+
+        variable inter_noise_2
 
         static
         function normalize_config(config: LayerConfig)
@@ -28,7 +32,21 @@ ___
 
             variable height_map
 
-            variable noise_map
+            variable base_noise_map
                 todo: can we optimize this preparation by sending prepared noise values directly to the async part
 
-            variable info - todo: do some more special stuff here!
+            variable inter_noise_map_1
+
+            variable inter_noise_map_2
+
+            variable height
+
+                variable total_height
+
+                    variable info
+
+                    variable inter
+
+                    variable info
+
+                variable info
