@@ -1,4 +1,4 @@
-***BiomeMap.py - documentation - last updated on 3.1.2022 by uuk***
+***BiomeMap.py - documentation - last updated on 16.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -15,24 +15,35 @@ ___
 
         variable NAME
 
+        variable VERSION
+
         function __init__(self, chunk)
+
+            variable self.biome_data
+
+            variable self.reference_table
 
             variable data
 
+            variable self.biome_data[:]
+
             variable biomes
 
-                variable index
-
-            variable table
-
-                variable biome
-
-        function get_at_xz(self, x: int, z: int) -> str | None
+            variable self.reference_table
 
         function get_at_xyz(self, x: int, y: int, z: int) -> str | None
-
-        function set_at_xz(self, x: int, z: int, biome: str | None)
 
         function set_at_xyz(self, x: int, y: int, z: int, biome: str | None)
 
         function dump_debug_info(self, file: str)
+
+                    variable seed
+
+                    variable biome2color[biome]
+
+        function get_biome_color_at(
+                self, x: int, y: int, z: int
+                ) -> typing.Tuple[float, float, float]:
+
+            variable biome
+                todo: implement biome color blending

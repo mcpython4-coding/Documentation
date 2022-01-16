@@ -1,4 +1,4 @@
-***util.py - documentation - last updated on 10.1.2022 by uuk***
+***util.py - documentation - last updated on 16.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -84,6 +84,8 @@ ___
         function read_nullable_string(self, size_size=2, encoding="utf-8") -> str | None
 
             variable size
+
+                variable result
 
                 variable result
 
@@ -217,6 +219,8 @@ ___
                 variable data
 
             variable data
+
+                variable result
 
                 variable result
 

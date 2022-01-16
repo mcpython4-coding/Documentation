@@ -1,4 +1,4 @@
-***IFoliageColoredBlock.py - documentation - last updated on 13.11.2021 by uuk***
+***IFoliageColoredBlock.py - documentation - last updated on 16.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -21,7 +21,3 @@ ___
                 ) -> typing.Tuple[float, float, float, float]:
 
             variable biome_map
-
-            variable biome_name
-
-            variable biome

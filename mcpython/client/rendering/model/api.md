@@ -1,4 +1,4 @@
-***api.py - documentation - last updated on 28.12.2021 by uuk***
+***api.py - documentation - last updated on 16.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -52,6 +52,8 @@ ___
 
 
         variable TYPE
+
+        variable __slots__
 
         static
         function is_valid(cls, data: dict) -> bool

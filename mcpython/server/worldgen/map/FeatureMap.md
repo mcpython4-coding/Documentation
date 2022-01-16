@@ -1,4 +1,4 @@
-***FeatureMap.py - documentation - last updated on 3.1.2022 by uuk***
+***FeatureMap.py - documentation - last updated on 16.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -15,8 +15,21 @@ ___
 
         variable NAME
 
+        variable VERSION
+
         function __init__(self, chunk)
 
-        function get_at_xz(self, x: int, z: int, group: str) -> bool
+            variable self.feature_map
 
-        function set_at_xz(self, x: int, z: int, group: str)
+            variable self.feature_data
+
+        function reserve_region(
+                self,
+                start: typing.Tuple[int, int, int],
+                end: typing.Tuple[int, int, int],
+                name: str,
+                ):
+
+        function overlaps_with_region(
+                self, start: typing.Tuple[int, int, int], end: typing.Tuple[int, int, int]
+                ) -> bool:

@@ -1,4 +1,4 @@
-***TemperatureMap.py - documentation - last updated on 3.1.2022 by uuk***
+***TemperatureMap.py - documentation - last updated on 16.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -17,8 +17,14 @@ ___
 
         function __init__(self, chunk)
 
+            variable self.temperature_data
+
+            variable self.temperature_data[:]
+
         function get_at_xz(self, x: int, z: int) -> float
 
         function set_at_xz(self, x: int, z: int, temperature: float)
 
         function dump_debug_info(self, file: str)
+
+                variable temp

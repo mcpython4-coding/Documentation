@@ -1,4 +1,4 @@
-***test_PlayerEntity.py - documentation - last updated on 10.1.2022 by uuk***
+***test_PlayerEntity.py - documentation - last updated on 16.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -38,7 +38,11 @@ ___
 
         function setUp(self) -> None
 
+            variable shared.world
+
         function tearDown(self) -> None
+
+            variable shared.world
 
         function test_module_import(self)
 

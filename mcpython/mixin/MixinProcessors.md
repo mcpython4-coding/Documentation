@@ -1,4 +1,4 @@
-***MixinProcessors.py - documentation - last updated on 10.1.2022 by uuk***
+***MixinProcessors.py - documentation - last updated on 16.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -157,13 +157,21 @@ ___
 
     class InjectFunctionCallAtHeadProcessor extends AbstractMixinProcessor
 
-        function __init__(self, target_func: typing.Callable, *args, collected_locals=tuple())
+        function __init__(
+                self,
+                target_func: typing.Callable,
+                *args,
+                collected_locals=tuple(),
+                inline=False,
+                ):
 
             variable self.target_func
 
             variable self.args
 
             variable self.collected_locals
+
+            variable self.inline
 
         function apply(
                 self,
@@ -183,6 +191,7 @@ ___
                 matcher: AbstractInstructionMatcher = None,
                 collected_locals=tuple(),
                 add_return_value=False,
+                inline=False,
                 ):
 
             variable matcher: AbstractInstructionMatcher
@@ -196,6 +205,8 @@ ___
             variable self.collected_locals
 
             variable self.add_return_value
+
+            variable self.inline
 
         function apply(
                 self,
@@ -247,6 +258,7 @@ ___
                 matcher: AbstractInstructionMatcher = None,
                 collected_locals=tuple(),
                 add_yield_value=False,
+                inline=False,
                 ):
 
             variable matcher: AbstractInstructionMatcher
@@ -260,6 +272,8 @@ ___
             variable self.collected_locals
 
             variable self.add_yield_value
+
+            variable self.inline
 
         function apply(
                 self,
@@ -317,6 +331,7 @@ ___
                 *args,
                 collected_locals=tuple(),
                 add_return_value=False,
+                inline=False,
                 ):
 
             variable self.target_func
@@ -326,6 +341,8 @@ ___
             variable self.collected_locals
 
             variable self.add_return_value
+
+            variable self.inline
 
         function apply(
                 self,
@@ -365,3 +382,20 @@ ___
             variable collected_locals
 
             variable store_locals
+
+    class MethodInlineProcessor extends AbstractMixinProcessor
+
+        function __init__(self, func_name: str, target_accessor: typing.Callable[[], typing.Callable] = None)
+
+            variable self.func_name
+
+            variable self.target_accessor
+
+        function apply(
+                self,
+                handler,
+                target: FunctionPatcher,
+                helper: MixinPatchHelper,
+                ):
+
+                        variable source

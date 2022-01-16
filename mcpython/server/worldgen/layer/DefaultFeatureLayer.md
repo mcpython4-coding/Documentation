@@ -1,4 +1,4 @@
-***DefaultFeatureLayer.py - documentation - last updated on 3.1.2022 by uuk***
+***DefaultFeatureLayer.py - documentation - last updated on 16.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -17,6 +17,8 @@ ___
 
         variable NAME
 
+        variable placement_noise
+
             variable chunk
 
             variable chunk
@@ -30,6 +32,10 @@ ___
             variable height
 
                     variable count
+
+                    variable sector
+
+                    variable offset
 
                     variable feature_def: mcpython.server.worldgen.feature.IFeature.FeatureDefinition
                         Use one random feature todo: make noise based

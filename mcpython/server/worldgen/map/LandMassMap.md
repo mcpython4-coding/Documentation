@@ -1,4 +1,4 @@
-***LandMassMap.py - documentation - last updated on 3.1.2022 by uuk***
+***LandMassMap.py - documentation - last updated on 16.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -12,20 +12,22 @@ ___
 
 
     class LandMassMap extends mcpython.server.worldgen.map.AbstractChunkInfoMap.AbstractMap
+        
+        Class storing which land mass we are in
+        todo: migrate to biome map
+
 
         variable NAME
 
-        function __init__(self, chunk)
+        function __init__(self, chunk: IChunk)
 
-            variable table
+            variable self.land_mass_table
 
-                variable mass
+            variable self.reference_table
 
-            variable data
+            variable self.land_mass_table[:]
 
-            variable table
-
-                variable index
+            variable self.reference_table[:]
 
         function get_at_xz(self, x: int, z: int) -> str
 

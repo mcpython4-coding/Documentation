@@ -1,4 +1,4 @@
-***MixinMethodWrapper.py - documentation - last updated on 10.1.2022 by uuk***
+***MixinMethodWrapper.py - documentation - last updated on 16.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -29,9 +29,30 @@ ___
         todo: use this for real!
 
 
+    function capture_local(name: str)
+        
+        Captures the value from an outer local variable into this function body.
+        Use only in mixin injected (real injection) code!
+        WARNING: when storing the result in a local variable, the name of the variable is captured
+        in the whole function, meaning any read/write to this name will be redirected to the real local
+        variable; This can result in unwanted side effects
+        :param name: the name of the local
+        :return: the local value
+
+
     variable OFFSET_JUMPS
 
     variable REAL_JUMPS
+
+    variable LOAD_SINGLE_VALUE
+
+    variable POP_SINGLE_VALUE
+
+    variable POP_DOUBLE_VALUE
+
+    variable POP_DOUBLE_AND_PUSH_SINGLE
+
+    variable POP_SINGLE_AND_PUSH_SINGLE
 
     class MixinPatchHelper
         
@@ -94,6 +115,8 @@ ___
 
             variable self.instruction_listing
 
+        function deleteInstruction(self, instr: dis.Instruction)
+
         function replaceConstant(
                 self,
                 previous,
@@ -121,13 +144,91 @@ ___
                 self, global_name: str
                 ) -> typing.Iterable[typing.Tuple[int, dis.Instruction]]:
 
-        function insertMethodAt(self, start: int, method: FunctionPatcher, force_inline=True)
+        function insertMethodAt(
+                self, start: int, method: FunctionPatcher | types.MethodType, force_inline=True, added_args=0,
+                discard_return_result=True,
+                ):
             
             Inserts a method body at the given position
             Does some magic for linking the code
-            Use mixin_return or capture_local for advance control flow
+            Use mixin_return() or capture_local() for advance control flow
             Will not modify the passed method. Will copy that object
+            All locals not capture()-ed get a new prefix of the method name
+            WARNING: mixin_return() with arg the arg must be from local variable storage, as it is otherwise
+                hard to detect where the method came from (LOAD_GLOBAL somewhere in instruction list...)
+            todo: add a better way to trace function calls
+            WARNING: highly experimental, it may break at any time!
+            :param start: where the method head should be inserted
+            :param method: the method object ot inject
+            :param force_inline: forced a inline, currently always inlining code
+            :param added_args: how many positional args are added to the method call
+            :param discard_return_result: if the return result should be deleted or not
 
+
+                variable method
+
+            variable target
+
+            variable target.variable_names
+                Rebind all inner local variables to something we cannot possibly enter,
+                so we cannot get conflicts (in the normal case)
+
+            variable helper
+
+                    variable helper.instruction_listing[index]
+
+            variable captured
+
+            variable captured_indices
+
+            variable captured_names
+
+            variable protect
+
+            variable index
+
+                        variable possible_load
+
+                            variable local
+
+                                variable capture_target
+
+                                variable captured[
+
+                        variable helper.instruction_listing[index]
+
+            variable index
+
+            variable size
+                The last return statement does not need a jump_absolute wrapper, as it continues into
+                normal code
+
+            variable index
+
+                            variable possible_load
+
+                                variable helper.instruction_listing[index]
+                                    Delete the LOAD_GLOBAL instruction
+
+                            variable possible_load
+
+                                variable helper.instruction_listing[index]
+
+                    variable helper.instruction_listing[index]
+
+                    variable name
+
+                    variable helper.instruction_listing[index]
+
+                    variable helper.instruction_listing[index]
+
+            variable bind_locals
+
+                    variable following
+
+                    variable tail_index
+
+                    variable self.instruction_listing[index]
 
         function insertMethodMultipleTimesAt(
                 self,
@@ -142,6 +243,7 @@ ___
             :param method: the method to inject
             :param force_multiple_inlines: if we should force multiple inlines for each method call, or if we can
                 optimise stuff
+            todo: how can we remember the old instruction offset?
 
 
         function makeMethodAsync(self)
@@ -234,3 +336,11 @@ ___
                 variable instr
 
         function print_stats(self)
+
+        function findSourceOfStackIndex(self, index: int, offset: int) -> typing.Iterator[dis.Instruction]
+            
+            Finds the source instruction of the given stack element.
+            Uses advanced back-tracking in code
+            :param index: current instruction index, before which we want to know the layout
+            :param offset: the offset, where 0 is top, and all following numbers (1, 2, 3, ...) give the i+1-th
+                element of the stack

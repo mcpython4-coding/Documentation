@@ -1,4 +1,4 @@
-***NetworkFixers.py - documentation - last updated on 3.1.2022 by uuk***
+***NetworkFixers.py - documentation - last updated on 16.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -65,6 +65,8 @@ ___
 
         static
         function __init_subclass__(cls, **kwargs)
+
+                variable target
 
                 variable target.DATA_FIXERS[cls.BEFORE_VERSION]
 

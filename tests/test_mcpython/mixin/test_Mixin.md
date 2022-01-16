@@ -1,4 +1,4 @@
-***test_Mixin.py - documentation - last updated on 10.1.2022 by uuk***
+***test_Mixin.py - documentation - last updated on 16.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -12,6 +12,8 @@ ___
 
 
     variable INVOKER_COUNTER
+
+    variable INVOKED
 
     function increase_counter()
 
@@ -45,9 +47,13 @@ ___
 
         function test_global3()
 
+        variable INVOKED
+
     class TestMixinHandler extends TestCase
 
         function setUp(self)
+
+            variable shared.IS_TEST_ENV
 
             variable MixinHandler.LOCKED
 
@@ -233,6 +239,21 @@ ___
             @handler.inject_at_head("tests.test_mcpython.mixin.test_Mixin:test", args=(5,))
             function inject2(c)
 
+        function test_mixin_inject_at_head_inline_1(self)
+
+            function target()
+
+            variable handler
+
+            @handler.inject_at_head("test", inline=True)
+            function inject()
+
+            variable INVOKED
+
+            variable INVOKED
+
+            variable INVOKED
+
         function test_mixin_inject_at_return_1(self)
 
             variable handler
@@ -279,6 +300,16 @@ ___
 
             @handler.inject_at_return("test", add_return_value=True)
             function inject(c)
+
+        function test_mixin_inject_at_return_inline_1(self)
+
+            variable handler
+
+            function inject(c)
+
+            variable INVOKED
+
+            variable INVOKED
 
         function test_mixin_inject_at_return_value_1(self)
 
@@ -374,6 +405,12 @@ ___
             @handler.inject_at_yield("test", add_yield_value=True)
             function inject(v, _)
 
+        function test_mixin_inject_at_yield_inline_1(self)
+
+            variable handler
+
+            function inject(_)
+
         function test_mixin_inject_at_yield_value_1(self)
 
             variable handler
@@ -402,6 +439,17 @@ ___
 
             @handler.inject_at_tail("test", add_return_value=True)
             function inject(c)
+
+        function test_mixin_inject_at_tail_inline_1(self)
+
+            variable invoked
+
+            function target(flag)
+
+            variable handler
+
+            @handler.inject_at_tail("test", inline=True)
+            function inject()
 
         function test_mixin_given_method_call_inject_1(self)
 
@@ -463,77 +511,4 @@ ___
 
             function func(c)
 
-            @handler.inject_local_variable_modifier_at("test", CounterMatcher(0), ["c", "d"])
             function inject(c, d)
-
-        function test_mixin_static_method_call(self)
-
-            function localtest()
-
-            variable patcher
-
-            variable helper
-
-            variable count
-
-            variable test_mcpython.mixin.test_space.INVOKED
-
-        function test_mixin_static_method_call_twice(self)
-
-            function localtest()
-
-            variable patcher
-
-            variable helper
-
-            variable count
-
-            variable test_mcpython.mixin.test_space.INVOKED
-
-            variable patcher
-
-            variable helper
-
-            variable count
-
-            variable test_mcpython.mixin.test_space.INVOKED
-
-            variable patcher
-
-            variable helper
-
-            variable count
-
-            variable test_mcpython.mixin.test_space.INVOKED
-
-            variable patcher
-
-            variable helper
-
-            variable count
-
-            variable test_mcpython.mixin.test_space.INVOKED
-
-            variable patcher
-
-            variable helper
-
-            variable count
-
-            variable test_mcpython.mixin.test_space.INVOKED
-
-            function sync()
-
-            variable patcher
-
-            variable helper
-
-            variable coro
-
-            variable coro
-
-            variable patcher
-
-            variable helper
-
-            variable coro

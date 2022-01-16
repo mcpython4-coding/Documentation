@@ -1,4 +1,4 @@
-***BlockModel.py - documentation - last updated on 28.12.2021 by uuk***
+***BlockModel.py - documentation - last updated on 16.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -17,7 +17,9 @@ ___
         Contains the needed API functions to render the model
 
 
-        function __init__(self, name: str, modname: str)
+        variable __slots__
+
+        function __init__(self, name: str, modname: str = None)
 
             variable self.name
 

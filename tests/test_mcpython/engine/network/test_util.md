@@ -1,4 +1,4 @@
-***test_util.py - documentation - last updated on 10.1.2022 by uuk***
+***test_util.py - documentation - last updated on 16.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -112,6 +112,42 @@ ___
                 variable d
 
                 variable write
+
+                variable read
+
+                variable count
+
+                variable entries
+
+                variable data
+
+                variable index
+
+                function write_element(e)
+
+                variable write
+
+                variable index
+
+                function read_element()
+
+                variable read
+
+                variable count
+
+                variable entries
+
+                variable data
+
+                variable index
+
+                function write_element(e)
+
+                variable write
+
+                variable index
+
+                function read_element()
 
                 variable read
 
@@ -247,7 +283,7 @@ ___
 
             variable self.valid
 
-    class TestContainerSerializer extends unittest.TestCase
+    class TestContainerSerializer extends TestCase
 
             variable buffer
 

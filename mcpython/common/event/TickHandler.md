@@ -1,4 +1,4 @@
-***TickHandler.py - documentation - last updated on 10.1.2022 by uuk***
+***TickHandler.py - documentation - last updated on 16.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -54,22 +54,24 @@ ___
 
                         variable result
 
-        function schedule_once(self, function, *args, **kwargs)
+        function schedule_once(self, function: typing.Callable | typing.Coroutine, *args, **kwargs)
             
             Will execute the function in near time. Helps when in an event and need to exchange stuff which might be
             affected when calling further down the event stack
             :param function: the function to call
 
 
+        @constant_arg("kwargs")
+        @constant_arg("args")
         function bind(
-                self, function, tick, is_delta=True, ticket_function=None, args=[], kwargs={}
+                self, function: typing.Callable | typing.Coroutine, tick: int, is_delta=True, ticket_function=None, args=[], kwargs={}
                 ):
             
             bind an function to an given tick
             :param function: the function to bind
             :param tick: the tick to add
             :param is_delta: if it is delta or not
-            :param ticket_function: function which is called when the function is called with some informations
+            :param ticket_function: function which is called when the function is called with some information
             :param args: the args to give
             :param kwargs: the kwargs to give
 

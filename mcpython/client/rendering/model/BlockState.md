@@ -1,4 +1,4 @@
-***BlockState.py - documentation - last updated on 13.12.2021 by uuk***
+***BlockState.py - documentation - last updated on 16.1.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -22,6 +22,8 @@ ___
         todo: can we optimize it by pre-doing some stuff?
         todo: fix alias system
 
+
+        variable __slots__
 
         variable NAME
 
@@ -170,8 +172,12 @@ ___
         Decoder for mc block state files.
         WARNING: the following decoder has some extended features:
         entry parent: An parent DefaultDecoded blockstate from which states and model aliases should be copied
-        entry alias: An dict of original -> aliased model to transform any model name of this kind in the system with the given model. Alias names MUST start with alias:
+        entry alias: An dict of original -> aliased model to transform any model name of this kind in the system with the given model.
+        Alias names MUST start with "alias:"
+        todo: add better lookup system for variants
 
+
+        variable __slots__
 
         variable NAME
 
@@ -286,6 +292,8 @@ ___
 
             variable data
 
+        variable __slots__
+
         function __init__(self, name: str, immediate=False, force=False)
 
             variable self.name
@@ -335,6 +343,12 @@ ___
                 ):
 
     class BlockState
+        
+        Container holding a single block state link
+        todo: don't store the raw data
+
+
+        variable __slots__
 
         function __init__(self)
 
