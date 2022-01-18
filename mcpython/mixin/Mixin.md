@@ -233,7 +233,7 @@ ___
             :param matcher: the instruction matcher object
 
 
-        function replace_function_body(
+        function override(
                 self, access_str: str, priority=0, optional=True
                 ) -> typing.Callable[[types.FunctionType], types.FunctionType]:
             

@@ -69,7 +69,7 @@ ___
 
             function test()
 
-            @handler.replace_function_body("test")
+            @handler.override("test")
             function override()
 
             variable patcher
@@ -90,17 +90,17 @@ ___
 
             variable handler
 
-            @handler.replace_function_body("tests.test_mcpython.mixin.test_Mixin:test")
+            @handler.override("tests.test_mcpython.mixin.test_Mixin:test")
             function override()
 
         function test_mixin_override_twice(self)
 
             variable handler
 
-            @handler.replace_function_body("tests.test_mcpython.mixin.test_Mixin:test")
+            @handler.override("tests.test_mcpython.mixin.test_Mixin:test")
             function override()
 
-            @handler.replace_function_body("tests.test_mcpython.mixin.test_Mixin:test")
+            @handler.override("tests.test_mcpython.mixin.test_Mixin:test")
             function override2()
 
         function test_mixin_by_name_twice_with_priority(self)
@@ -109,14 +109,14 @@ ___
 
             function override()
 
-            @handler.replace_function_body("tests.test_mcpython.mixin.test_Mixin:test")
+            @handler.override("tests.test_mcpython.mixin.test_Mixin:test")
             function override2()
 
         function test_mixin_by_name_twice_with_negative_priority(self)
 
             variable handler
 
-            @handler.replace_function_body("tests.test_mcpython.mixin.test_Mixin:test")
+            @handler.override("tests.test_mcpython.mixin.test_Mixin:test")
             function override()
 
             function override2()
@@ -135,7 +135,7 @@ ___
 
             function override()
 
-            @handler.replace_function_body("tests.test_mcpython.mixin.test_Mixin:test")
+            @handler.override("tests.test_mcpython.mixin.test_Mixin:test")
             function override2()
 
         function test_mixin_by_name_twice_conflicting_order(self)
