@@ -1,4 +1,4 @@
-***AbstractFluid.py - documentation - last updated on 27.9.2021 by uuk***
+***AbstractFluid.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -68,8 +68,9 @@ ___
                 position: typing.Tuple[int, int, int],
                 ) -> int:
             
-            How many ticks it take to flow one block further
+            How many ticks it takes to flow one block further
             This function is only used when defining a FluidBlock with this fluid
+            This may be used by mods providing machines without pumps, to pump the fluid around
             :param dimension: the dimension in
             :param position: the position at
             :return: the flow rate
@@ -91,6 +92,7 @@ ___
                 position_this: typing.Optional[typing.Tuple[float, float, float]],
                 position_that: typing.Optional[typing.Tuple[float, float, float]],
                 is_fluid_block=(True, True),
+                env: FluidCombinationEnvironment = None,
                 ):
             
             Called when this fluid is touching another one and CAN_BE_CRITICAL_ON_CONTACT is True
@@ -99,3 +101,16 @@ ___
             :param position_this: optional: were we are in the dimension
             :param position_that: optional: were the other fluid is in this dimension
             :param is_fluid_block: this and that are fluid blocks [the position is a pointer to a fluid block]?
+            :param env: the environment they are touching in
+
+
+        static
+        function mix_fluids(
+                cls, this_stack, other_stacks: list, env: FluidCombinationEnvironment
+                ) -> typing.Tuple[list, FluidCombinationEnvironment]:
+            
+            Mixes the two given fluids, and returns what's left afterwards
+            :param this_stack: this stack, representing this liquid
+            :param other_stacks: a list of ResourceStacks this is mixed together with
+            :param env: the environment mixed in
+            :return: the list of ResourceStacks that are created, and the modified environment

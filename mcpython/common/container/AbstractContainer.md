@@ -1,4 +1,4 @@
-***AbstractContainer.py - documentation - last updated on 3.1.2022 by uuk***
+***AbstractContainer.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -39,10 +39,6 @@ ___
             variable self.custom_name
 
             variable self.uuid
-            
-            serializes stuff after the slot data is loaded
-            :param data: the data stored
-
 
         function create_renderer(self) -> typing.Any
             

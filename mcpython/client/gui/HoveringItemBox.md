@@ -1,4 +1,4 @@
-***HoveringItemBox.py - documentation - last updated on 28.12.2021 by uuk***
+***HoveringItemBox.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -20,9 +20,7 @@ ___
         Please make sure that you look for changes before applying your changes (as you might interfere with stuff from another plugin)
 
 
-        function manipulateShownText(
-                self, slot: mcpython.common.container.ResourceStack.ItemStack, text: list
-                ):
+        function manipulateShownText(self, slot: ItemStack, text: list)
 
     class IHoveringItemBoxDefinition
         
@@ -37,9 +35,7 @@ ___
             Call this method on every child to set up
 
 
-        function getHoveringText(
-                self, itemstack: mcpython.common.container.ResourceStack.ItemStack
-                ) -> list:
+        function getHoveringText(self, itemstack: ItemStack) -> list
 
         static
         function addPlugin(cls, plugin: IHoveringItemBoxDefinitionPlugin)
@@ -64,9 +60,7 @@ ___
 
         function getAdditionalText(self, itemstack: ItemStack) -> typing.List[str]
 
-        function getHoveringText(
-                self, itemstack: mcpython.common.container.ResourceStack.ItemStack
-                ) -> typing.List[str]:
+        function getHoveringText(self, itemstack: ItemStack) -> typing.List[str]
 
             variable item_name
 
@@ -116,20 +110,12 @@ ___
 
             variable self.bg_rectangle
 
-        function renderFor(
-                self, itemstack: mcpython.common.container.ResourceStack.ItemStack, position
-                ):
+        function renderFor(self, itemstack: ItemStack, position)
             
             Will render the ItemBoxProvider for a given slot
             :param itemstack: the slot to render over
             :param position: the position to render at, or None if calculated from slot
 
-
-                variable self.last_slot
-
-                variable self.cached_provider
-
-                variable self.cached_text
 
                     variable self.labels
 

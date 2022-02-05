@@ -1,4 +1,4 @@
-***util.py - documentation - last updated on 16.1.2022 by uuk***
+***util.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -25,7 +25,9 @@ ___
 
     class TableIndexedOffsetTable
 
-        function __init__(self, data: typing.Dict[str, bytes] = None, handling: typing.Callable = _to_bin)
+        function __init__(
+                self, data: typing.Dict[str, bytes] = None, handling: typing.Callable = to_bin
+                ):
 
             variable self.data
 
@@ -133,7 +135,11 @@ ___
 
         class SkipableIterator
 
-            function __init__(self, handler: typing.Callable[["ReadBuffer"], typing.Awaitable | typing.Any], parts: typing.List[bytes])
+            function __init__(
+                    self,
+                    handler: typing.Callable[["ReadBuffer"], typing.Awaitable | typing.Any],
+                    parts: typing.List[bytes],
+                    ):
 
                 variable self.handler
 
@@ -236,6 +242,8 @@ ___
 
             variable cls
 
+            variable dump_handler
+
         function write_sub_buffer(self, buffer: "WriteBuffer")
 
         function write_sub_buffer_dynamic_size(self, buffer: "WriteBuffer", size_size=2)
@@ -249,6 +257,8 @@ ___
                 variable r
 
             variable encoded
+
+            variable entry_size: int
             
             Writes a list of arbitrary data of similar size (with padding)
             Optimal when storing multiple items of the same size, fast access times,

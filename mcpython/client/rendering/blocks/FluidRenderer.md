@@ -1,4 +1,4 @@
-***FluidRenderer.py - documentation - last updated on 28.12.2021 by uuk***
+***FluidRenderer.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -13,7 +13,7 @@ ___
 
     variable SOME_SMALL_VALUES
 
-    class FluidRenderer extends  mcpython.client.rendering.blocks.ICustomBlockRenderer.ICustomBatchBlockRenderer 
+    @onlyInClient() class FluidRenderer extends  mcpython.client.rendering.blocks.ICustomBlockRenderer.ICustomBatchBlockRenderer 
         
         Class defining how a fluid block is rendered
 

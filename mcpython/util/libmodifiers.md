@@ -1,4 +1,4 @@
-***libmodifiers.py - documentation - last updated on 13.12.2021 by uuk***
+***libmodifiers.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -15,7 +15,7 @@ ___
 
         variable method
 
-        variable method.code_string[27] - LOAD_GLOBAL BICUBIC -> NEAREST
+        variable method.code_string[27]
 
     function patchAsyncSystem()
 

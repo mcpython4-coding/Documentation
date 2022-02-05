@@ -1,4 +1,4 @@
-***Chest.py - documentation - last updated on 10.1.2022 by uuk***
+***Chest.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,10 +11,42 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
+        class IChestRendererSupport
+
+        class key
+
+            variable MOD_SHIFT
+
+            variable MOD_CTRL
+
+            variable MOD_ALT
+
+            variable MOD_CAPSLOCK
+
+            variable MOD_NUMLOCK
+
+            variable MOD_WINDOWS
+
+            variable MOD_COMMAND
+
+            variable MOD_OPTION
+
+            variable MOD_SCROLLLOCK
+
+            variable MOD_FUNCTION
+
+        class mouse
+
+            variable LEFT
+
+            variable MIDDLE
+
+            variable RIGHT
+
     variable BBOX
         the bounding box of the chest
 
-    class Chest extends  IHorizontalOrientableBlock,  mcpython.client.rendering.blocks.ChestRenderer.IChestRendererSupport,  SimpleInventoryWrappingContainer,  
+    class Chest extends  IHorizontalOrientableBlock,  IChestRendererSupport,  SimpleInventoryWrappingContainer,  
         
         The Chest block class
 

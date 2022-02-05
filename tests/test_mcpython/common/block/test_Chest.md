@@ -1,4 +1,4 @@
-***test_Chest.py - documentation - last updated on 10.1.2022 by uuk***
+***test_Chest.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -10,6 +10,10 @@ ___
     Mod loader inspired by "Minecraft Forge" (https://github.com/MinecraftForge/MinecraftForge) and similar
     This project is not official by mojang and does not relate to it.
 
+
+        variable SCREEN_ARRIVAL
+
+        variable SCREEN_ARRIVAL
 
     class TestChest extends TestCase
 

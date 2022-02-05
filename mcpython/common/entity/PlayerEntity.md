@@ -1,4 +1,4 @@
-***PlayerEntity.py - documentation - last updated on 20.12.2021 by uuk***
+***PlayerEntity.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -17,6 +17,8 @@ ___
 
         static
         function init_renderers(cls)
+
+            variable cls.RENDERER
 
         variable NAME
 

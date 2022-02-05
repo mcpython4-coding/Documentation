@@ -1,4 +1,4 @@
-***InventoryPlayerHotbar.py - documentation - last updated on 28.12.2021 by uuk***
+***InventoryPlayerHotbar.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -69,15 +69,15 @@ ___
 
             variable self.player
 
-            variable self.lable
-
             variable self.last_index
 
             variable self.last_item
 
             variable self.time_since_last_change
 
-            variable self.xp_level_lable
+                variable self.xp_level_lable
+
+                variable self.lable
 
         function free(self)
 

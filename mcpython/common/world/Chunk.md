@@ -1,4 +1,4 @@
-***Chunk.py - documentation - last updated on 3.1.2022 by uuk***
+***Chunk.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -21,6 +21,7 @@ ___
 
         variable now - when is now?
 
+        @builtins_are_static()
         function __init__(
                 self,
                 dimension: mcpython.engine.world.AbstractInterface.IDimension,
@@ -54,6 +55,7 @@ ___
             variable self.dirty
                 Indicated that the chunk was modified
 
+        @name_is_static("tuple", lambda: tuple)
         function entity_iterator(self) -> typing.Iterable
 
         function tick(self)
@@ -64,8 +66,10 @@ ___
 
         function save(self)
 
+        @returns_argument()
         function as_shareable(self) -> mcpython.engine.world.AbstractInterface.IChunk
 
+        @returns_argument()
         function mark_dirty(self)
 
         function get_dimension(self) -> mcpython.engine.world.AbstractInterface.IDimension
@@ -81,11 +85,13 @@ ___
             :param x: the x coord
             :param z: the y coord
             :param default: the default value when no value is set
-            :return: the y value at that position
+            :return: the y value at that position, maybe negative
 
 
             variable height_map
 
+        @name_is_static("shared", lambda: shared)
+        @builtins_are_static()
         function draw(self)
             
             Will draw the chunk with the content for it
@@ -96,6 +102,7 @@ ___
 
         variable ALL_FACES_EXPOSED
 
+        @builtins_are_static()
         function exposed_faces(
                 self, position: typing.Tuple[int, int, int]
                 ) -> typing.Dict[str, bool]:
@@ -123,6 +130,7 @@ ___
 
                     variable faces[face.normal_name]
 
+        @builtins_are_static()
         function exposed_faces_list(
                 self, position: typing.Tuple[int, int, int]
                 ) -> typing.List[bool]:
@@ -145,6 +153,7 @@ ___
 
                     variable faces[face.index]
 
+        @builtins_are_static()
         function exposed_faces_flag(self, block) -> int
 
             variable faces
@@ -159,6 +168,7 @@ ___
 
                     variable new_block
 
+        @builtins_are_static()
         function exposed_faces_iterator(
                 self, position: typing.Tuple[int, int, int]
                 ) -> typing.Iterator[mcpython.util.enums.EnumSide]:
@@ -182,6 +192,7 @@ ___
             :return: if there is an block
 
 
+        @deprecation.deprecated()
         function add_block_unsafe(self, *args, **kwargs)
             
             Adds a block to the given position
@@ -249,6 +260,8 @@ ___
 
                 variable position
 
+        @name_is_static("EnmSide", lambda: EnumSide)
+        @builtins_are_static()
         function check_neighbors(self, position: typing.Tuple[int, int, int])
             
             Check all blocks surrounding `position` and ensure their visual
@@ -260,6 +273,8 @@ ___
 
                 variable block
 
+        @name_is_static("Block", lambda: Block)
+        @builtins_are_static()
         function show_block(
                 self,
                 position: typing.Union[typing.Tuple[int, int, int], Block.AbstractBlock],
@@ -274,6 +289,8 @@ ___
 
                 variable position
 
+        @name_is_static("Block", lambda: Block)
+        @builtins_are_static()
         function hide_block(
                 self,
                 position: typing.Union[typing.Tuple[int, int, int], Block.AbstractBlock],
@@ -288,6 +305,7 @@ ___
 
                 variable position
 
+        @name_is_static("shared", lambda: shared)
         function show(self, force=False)
             
             will show the chunk
@@ -296,6 +314,7 @@ ___
 
             variable self.visible
 
+        @name_is_static("shared", lambda: shared)
         function hide(self, force=False)
             
             will hide the chunk
@@ -308,18 +327,19 @@ ___
 
         function update_visible_block(self, position: typing.Tuple[int, int, int], hide=True)
 
+        @builtins_are_static()
         function exposed(self, position: typing.Tuple[int, int, int]) -> bool
 
         function update_visible(self, hide=True, immediate=False)
             
-            will update all visible of all blocks of the chunk
+            Will update all visible of all blocks of the chunk
             :param hide: if blocks should be hidden if needed
             :param immediate: if immediate call or not
 
 
         function hide_all(self, immediate=True)
             
-            will hide all blocks in the chunk
+            Will hide all blocks in the chunk
             :param immediate: if immediate or not
 
 

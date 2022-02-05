@@ -1,4 +1,4 @@
-***window.py - documentation - last updated on 20.12.2021 by uuk***
+***window.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -39,7 +39,7 @@ ___
 
         function set_maximum_size(self, width, height)
 
-    @onlyInClient() class Window extends pyglet.window.Window if not shared.NO_WINDOW else NoWindow
+    @onlyInClient() class Window extends  pyglet.window.Window if not shared.NO_WINDOW and shared.IS_CLIENT else NoWindow 
         
         Class representing the game window.
         Interacts with the pyglet backend.
@@ -65,34 +65,34 @@ ___
             variable self.dy - todo: move to player
                 Velocity in the y (upward) direction.
 
-            variable self.num_keys
-                Convenience list of num keys, todo: move to config.py
+                variable self.num_keys
+                    Convenience list of num keys, todo: move to config.py
 
-            variable self.label
-                The label that is displayed in the top left of the canvas.  todo: move to separated class
+                variable self.keys - key handler from pyglet
 
-            variable self.label2
+                variable self.mouse_pressing
+                    storing mouse information todo: use pyglet's mouse handler
 
-            variable self.label3
+                variable self.mouse_position
+
+                variable self.label
+                    The label that is displayed in the top left of the canvas.  todo: move to separated class
+
+                variable self.label2
+
+                variable self.label3
 
             variable self.cpu_usage
                 todo: move both to separated class
 
             variable self.cpu_usage_timer
 
-            variable self.mouse_pressing
-                storing mouse information todo: use pyglet's mouse handler
-
-            variable self.mouse_position
-
-            variable self.keys - key handler from pyglet
-
             variable self.CROSSHAIRS_TEXTURE
                 todo: move to separated class
 
         function load(self)
 
-            variable self.CROSSHAIRS_TEXTURE
+                variable self.CROSSHAIRS_TEXTURE
 
         function reset_caption(self)
             
@@ -117,13 +117,13 @@ ___
             
             This method is scheduled to be called repeatedly by the pyglet clock.
             :param dt: The change in time since the last call.
-            todo: move to TickHandler
 
 
                 variable self.cpu_usage
 
                 variable self.cpu_usage_timer
 
+        @onlyInClient()
         function on_mouse_press(self, x: int, y: int, button: int, modifiers: int)
             
             Called when a mouse button is pressed. See pyglet docs for button amd modifier mappings.
@@ -136,11 +136,13 @@ ___
 
             variable self.mouse_pressing[button]
 
+        @onlyInClient()
         function on_mouse_release(self, x, y, button, modifiers)
             
             Called when an button is released with the same argument as on_mouse_press
 
 
+        @onlyInClient()
         function on_mouse_drag(
                 self, x: int, y: int, dx: int, dy: int, buttons: int, modifiers: int
                 ):
@@ -156,6 +158,7 @@ ___
 
             variable self.mouse_position
 
+        @onlyInClient()
         function on_mouse_scroll(self, x: int, y: int, scroll_x: int, scroll_y: int)
             
             Called by pyglet when the mouse wheel is spun
@@ -165,6 +168,7 @@ ___
             :param scroll_y: the delta y
 
 
+        @onlyInClient()
         function on_mouse_motion(self, x: int, y: int, dx: float, dy: float)
             
             Called when the player moves the mouse.
@@ -175,6 +179,7 @@ ___
 
             variable self.mouse_position
 
+        @onlyInClient()
         function on_key_press(self, symbol: int, modifiers: int)
             
             Called when the player presses a key. See pyglet docs for key mappings.
@@ -188,6 +193,7 @@ ___
                         os.makedirs(shared.build+"/profiles", exist_ok=True)
                         shared.profiler.dump_stats(shared.build+"/profiles/"+str(time.time())+".txt")
 
+        @onlyInClient()
         function on_key_release(self, symbol, modifiers)
             
             Called when the player releases a key. See pyglet docs for key mappings.
@@ -195,29 +201,38 @@ ___
             :param modifiers: Number representing any modifying keys that were pressed.
 
 
+        @onlyInClient()
         function on_resize(self, width: int, height: int)
             
             Called when the window is resized to a new `width` and `height`.
 
 
-        function set_2d(self)
+            @onlyInClient()
+            @name_is_static("pyglet", lambda: pyglet)
+            function set_2d(self)
 
-        function set_3d(self, position=None, rotation=None)
+            @onlyInClient()
+            @name_is_static("pyglet", lambda: pyglet)
+            function set_3d(self, position=None, rotation=None)
 
-                variable shared.rendering_helper.default_3d_stack
+                    variable shared.rendering_helper.default_3d_stack
 
-        function on_draw(self)
-            
-            Called by pyglet to draw the canvas.
-            todo: move to separated configurable rendering pipeline
+            @onlyInClient()
+            @name_is_static("pyglet", lambda: pyglet)
+            function on_draw(self)
+                
+                Called by pyglet to draw the canvas.
+                todo: move to separated configurable rendering pipeline
 
 
+        @onlyInClient()
         function draw_focused_block(self)
             
             Draw black edges around the block that is currently under the crosshairs.
             todo: move to special helper class
 
 
+        @onlyInClient()
         function draw_label(self)
             
             Draw the label in the top left of the screen.
@@ -262,6 +277,7 @@ ___
 
                     variable blockname
 
+        @onlyInClient()
         function draw_reticle(self)
             
             Draw the crosshairs in the center of the screen.

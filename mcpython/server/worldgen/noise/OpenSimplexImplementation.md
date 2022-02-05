@@ -1,4 +1,4 @@
-***OpenSimplexImplementation.py - documentation - last updated on 3.1.2022 by uuk***
+***OpenSimplexImplementation.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,9 +11,12 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
+    function create_getter(noise: opensimplex.OpenSimplex)
+
     class OpenSimplexImplementation extends INoiseImplementation
         
         Default noise implementation.
+        todo: cache create_getter() results
 
 
         variable NAME

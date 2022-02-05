@@ -1,4 +1,4 @@
-***WorldGenerationTaskArrays.py - documentation - last updated on 13.12.2021 by uuk***
+***WorldGenerationTaskArrays.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -303,7 +303,8 @@ ___
 
             variable self.chunk
 
-            variable self.shared
+            variable self.shared - OffProcessTaskHelper.OffProcessTaskHelperShared()
+                todo: implement
 
             variable self.process
 

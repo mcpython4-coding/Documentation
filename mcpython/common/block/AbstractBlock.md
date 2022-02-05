@@ -1,4 +1,4 @@
-***AbstractBlock.py - documentation - last updated on 3.1.2022 by uuk***
+***AbstractBlock.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -25,9 +25,11 @@ ___
         todo: add custom properties to set_creation_properties() -> injected by add_block() call
         todo: cache somehow the block state for rendering here (-> also custom relinking)
         todo: optimise block state lookup by using a array internally & using integers for references
-        todo: add a util method to get the loots of the block
+        todo: add a util method to get the loots of the block HERE
 
 
+        @object_method_is_protected("split", lambda: str.split)
+        @object_method_is_protected("__call__", lambda: shared.mod_loader.__call__)
         static
         function bind_block_item_to_creative_tab(cls, tab_getter: typing.Callable)
             
@@ -101,9 +103,12 @@ ___
             todo: make this create the factory
 
 
+        @name_is_static("run_optimisations", lambda: run_optimisations)
+        @name_is_static("try_optimise", lambda: try_optimise)
         static
         function __init_subclass__(cls, **kwargs)
 
+        @builtins_are_static()
         function __init__(self)
             
             Creates a new Block-instance
@@ -119,7 +124,7 @@ ___
 
             variable self.set_by - optional player
 
-            variable self.face_info: mcpython.common.block.FaceInfo.FaceInfo
+            variable self.face_info
                 Reference to the FaceInfo instance; Only present on server
 
             variable self.block_state: typing.Optional[int]
@@ -132,6 +137,7 @@ ___
             variable self.injected_redstone_power
                 The redstone power values
 
+        @builtins_are_static()
         function is_face_solid(self, face: EnumSide) -> bool
 
             variable state: dict
@@ -262,13 +268,22 @@ ___
 
                 variable itemstack.item.stored_block_state
 
-        function inject_redstone_power(self, side: mcpython.util.enums.EnumSide, level: int)
+        function inject_redstone_power(
+                self, side: mcpython.util.enums.EnumSide, level: int, call_update=True
+                ):
             
             Used to inject a redstone value into the system
             :param side: the side from which the redstone value comes
             :param level: the level of redstone, between 0 and 15
+            :param call_update: if to call a redstone update or not
             todo: do we want it to be async?
 
+
+            variable self.injected_redstone_power[side.index]
+
+                variable dimension
+
+                    variable block
 
         function get_redstone_output(self, side: mcpython.util.enums.EnumSide) -> int
             

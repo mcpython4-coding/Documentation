@@ -1,4 +1,4 @@
-***ContainerRenderingManager.py - documentation - last updated on 28.12.2021 by uuk***
+***ContainerRenderingManager.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -30,7 +30,7 @@ ___
 
             variable self.original_amount: typing.List[int]
 
-            variable self.tool_tip_renderer
+                variable self.tool_tip_renderer
 
         function bind_to_eventbus(self)
 

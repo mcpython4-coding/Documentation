@@ -1,4 +1,4 @@
-***AbstractItem.py - documentation - last updated on 3.1.2022 by uuk***
+***AbstractItem.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -41,7 +41,8 @@ ___
                 ) -> str:  # WARNING: will be removed during item rendering update
                 return "assets/{}/textures/item/{}.png".format(*cls.NAME.split(":"))
                 
-                def __init__(self):
+                @classmethod
+                def __init_subclass__(cls, **kwargs):
 
         static
         function get_default_item_image_location(
@@ -49,7 +50,11 @@ ___
                 ) -> str:  # WARNING: will be removed during item rendering update
                 return "assets/{}/textures/item/{}.png".format(*cls.NAME.split(":"))
                 
-                def __init__(self):
+                @classmethod
+                def __init_subclass__(cls, **kwargs):
+
+        static
+        function __init_subclass__(cls, **kwargs)
 
         function __init__(self)
 

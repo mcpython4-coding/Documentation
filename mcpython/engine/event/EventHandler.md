@@ -1,4 +1,4 @@
-***EventHandler.py - documentation - last updated on 1.9.2021 by uuk***
+***EventHandler.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -28,6 +28,8 @@ ___
         function deactivate_bus(self, bus: EventBus)
 
         function call(self, event_name, *args, **kwargs)
+
+        function call_ordered(self, event_name, *args, **kwargs)
 
         function call_cancelable(self, event_name, *args, **kwargs)
 

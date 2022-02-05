@@ -1,4 +1,4 @@
-***test_FaceInfo.py - documentation - last updated on 19.10.2021 by uuk***
+***test_FaceInfo.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,11 +11,17 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
+        variable SCREEN_ARRIVAL
+
+        variable SCREEN_ARRIVAL
+
     variable shared.IS_CLIENT
 
     class Weakable
 
-    class TestFaceInfo extends TestCase
+    @skipUnless(SCREEN_ARRIVAL, "only when rendering is arrival") class TestFaceInfo extends TestCase
+
+        function setUp(self) -> None
 
         function test_module_import(self)
 

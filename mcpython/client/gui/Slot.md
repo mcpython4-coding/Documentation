@@ -1,4 +1,4 @@
-***Slot.py - documentation - last updated on 3.1.2022 by uuk***
+***Slot.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -31,11 +31,11 @@ ___
 
         function get_capacity(self) -> int
 
-        function get_itemstack(self) -> mcpython.common.container.ResourceStack.ItemStack
+        function get_itemstack(self) -> ItemStack
 
         function set_itemstack(
                 self,
-                stack: mcpython.common.container.ResourceStack.ItemStack,
+                stack: ItemStack,
                 update=True,
                 player=False,
                 ):
@@ -52,9 +52,7 @@ ___
 
         function draw_label(self, x=None, y=None)
 
-        function is_item_allowed(
-                self, itemstack: mcpython.common.container.ResourceStack.ItemStack
-                ) -> bool:
+        function is_item_allowed(self, itemstack: ItemStack) -> bool
 
         function getParent(self) -> "ISlot"
 
@@ -82,7 +80,7 @@ ___
                 on_shift_click: typing.Optional[typing.Callable] = None,
                 on_button_press: typing.Optional[typing.Callable] = None,
                 on_click_on_slot: typing.Optional[typing.Callable] = None,
-                empty_image: typing.Optional[pyglet.image.AbstractImage] = None,
+                empty_image: typing.Optional = None,
                 enable_hovering_background=True,
                 capacity: typing.Optional[int] = None,
                 check_function=None,
@@ -104,7 +102,7 @@ ___
 
             variable on_click_on_slot: typing.Optional[typing.Callable]
 
-            variable empty_image: typing.Optional[pyglet.image.AbstractImage]
+            variable empty_image: typing.Optional
 
             variable capacity: typing.Optional[int]
             
@@ -133,9 +131,11 @@ ___
 
                 variable self.sprite
 
-            variable self.amount_label
+                variable self.amount_label
 
-            variable self.__last_item_file
+                variable self.__last_item_file
+
+                variable self.amount_label
 
             variable self.interaction_mode
                 todo: make separated attributes
@@ -146,11 +146,9 @@ ___
 
             variable self.on_shift_click
 
-            variable self.amount_label
-
             variable self.children
 
-            variable self.empty_image
+                variable self.empty_image
 
             variable self.on_click_on_slot
 
@@ -172,13 +170,13 @@ ___
 
         function get_capacity(self) -> int
 
-        function get_itemstack(self) -> mcpython.common.container.ResourceStack.ItemStack
+        function get_itemstack(self) -> ItemStack
 
         function get_linked_itemstack_for_sift_clicking(self)
 
         function set_itemstack(
                 self,
-                stack: mcpython.common.container.ResourceStack.ItemStack,
+                stack: ItemStack,
                 update=True,
                 player=False,
                 ):
@@ -233,9 +231,7 @@ ___
 
                 variable self.amount_label.y
 
-        function is_item_allowed(
-                self, itemstack: mcpython.common.container.ResourceStack.ItemStack
-                ) -> bool:
+        function is_item_allowed(self, itemstack: ItemStack) -> bool
 
             variable any_tag_set
 
@@ -295,7 +291,7 @@ ___
 
             variable self.on_shift_click
 
-            variable self.amount_label
+                variable self.amount_label
 
             variable self.on_button_press
 
@@ -369,7 +365,7 @@ ___
 
             variable self.on_shift_click
 
-            variable self.amount_label
+                variable self.amount_label
 
             variable self.on_button_press
 
@@ -412,9 +408,7 @@ ___
 
         function __str__(self)
 
-        function is_item_allowed(
-                self, itemstack: mcpython.common.container.ResourceStack.ItemStack
-                ) -> bool:
+        function is_item_allowed(self, itemstack: ItemStack) -> bool
 
     class SlotInfiniteStackExchangeable extends Slot
 
@@ -434,7 +428,7 @@ ___
 
         function set_itemstack(
                 self,
-                stack: mcpython.common.container.ResourceStack.ItemStack,
+                stack: ItemStack,
                 update=True,
                 player=False,
                 ):

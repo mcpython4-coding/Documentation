@@ -1,4 +1,4 @@
-***BlockItemGeneratorState.py - documentation - last updated on 20.12.2021 by uuk***
+***BlockItemGeneratorState.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -59,6 +59,10 @@ ___
 
             variable self.tasks
                 Fetch the list of all blocks
+
+            variable item_registry
+                Remove the blocks we have items for
+                This is needed for the custom items (like redstone torch) that override this
 
             variable shared.model_handler.hide_blockstate_errors
                 We want to hide this error messages

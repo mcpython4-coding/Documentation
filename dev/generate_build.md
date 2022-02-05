@@ -1,4 +1,4 @@
-***generate_build.py - documentation - last updated on 3.1.2022 by uuk***
+***generate_build.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -273,8 +273,6 @@ ___
             variable result - here we store the context
 
             variable in_multi_line_comment
-
-                variable line
 
                 variable multi_line_change
 

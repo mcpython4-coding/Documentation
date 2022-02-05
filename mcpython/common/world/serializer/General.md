@@ -1,4 +1,4 @@
-***General.py - documentation - last updated on 3.1.2022 by uuk***
+***General.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -19,8 +19,6 @@ ___
 
             variable save_file.version
 
-            variable version_id
-
             variable player_name
 
             variable mods
@@ -32,7 +30,5 @@ ___
             variable dimensions
 
             variable current_dimension
-
-            variable default_noise_implementation
 
             variable target_buffer

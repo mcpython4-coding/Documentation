@@ -1,4 +1,4 @@
-***RecipeViewRenderer.py - documentation - last updated on 13.11.2021 by uuk***
+***RecipeViewRenderer.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -26,9 +26,7 @@ ___
 
         function draw(self, position: typing.Tuple[int, int], hovering_slot=None)
 
-        function add_to_batch(
-                self, position: typing.Tuple[int, int], batch: pyglet.graphics.Batch
-                ):
+        function add_to_batch(self, position: typing.Tuple[int, int], batch)
 
         function get_rendering_size(self) -> typing.Tuple[int, int]
 

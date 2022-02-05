@@ -1,4 +1,4 @@
-***TickHandler.py - documentation - last updated on 16.1.2022 by uuk***
+***TickHandler.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -40,31 +40,44 @@ ___
         function schedule_tick(self, dt: float)
             
             Execute ticks
-            Internally applies a small mixin for the IS_CLIENT checks (see OptimiserMixins.py)
+            Internally applies a small mixin for the IS_CLIENT checks
             :param dt: the time that came after the last event
 
+
+                    variable self.lost_time
+
+                        variable result
 
                         variable result
 
                             variable result
 
-                            variable self.results[ticket_id]
-
-                        variable self.lost_time
+                        variable self.results[ticket_id]
 
                         variable result
 
-        function schedule_once(self, function: typing.Callable | typing.Coroutine, *args, **kwargs)
+        @object_method_is_protected("append", lambda: list.append)
+        function schedule_once(
+                self, function: typing.Callable | typing.Coroutine, *args, **kwargs
+                ):
             
             Will execute the function in near time. Helps when in an event and need to exchange stuff which might be
             affected when calling further down the event stack
             :param function: the function to call
 
 
+        @builtins_are_static()
+        @object_method_is_protected("append", lambda: list.append)
         @constant_arg("kwargs")
         @constant_arg("args")
         function bind(
-                self, function: typing.Callable | typing.Coroutine, tick: int, is_delta=True, ticket_function=None, args=[], kwargs={}
+                self,
+                function: typing.Callable | typing.Coroutine,
+                tick: int,
+                is_delta=True,
+                ticket_function=None,
+                args=[],
+                kwargs={},
                 ):
             
             bind an function to an given tick
@@ -82,6 +95,8 @@ ___
 
                 variable ticket_id
 
+        @object_method_is_protected("bind", lambda: TickHandler.bind)
+        @inline_call("%.bind", lambda: TickHandler.bind)
         function bind_redstone_tick(self, function, tick, *args, **kwargs)
 
             variable dimension

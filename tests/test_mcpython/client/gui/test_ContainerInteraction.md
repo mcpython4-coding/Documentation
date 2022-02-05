@@ -1,4 +1,4 @@
-***test_ContainerInteraction.py - documentation - last updated on 13.12.2021 by uuk***
+***test_ContainerInteraction.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,28 +11,36 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    variable shared.IS_CLIENT
+        variable HAS_VISUAL
 
-    variable shared.IS_TEST_ENV
+        variable HAS_VISUAL
 
-    variable test_item
+        variable shared.IS_TEST_ENV
 
-    variable test_item_2
+        variable shared.IS_CLIENT
 
-    class FakeWindow
+        variable test_item
 
-        variable mouse_position
+        variable test_item_2
 
-        static
-        function get_size(cls)
+        class FakeWindow
 
-    class Inventory extends ContainerRenderer
+            variable mouse_position
 
-        function add_slot(self, slot: Slot)
+            static
+            function get_size(cls)
 
-    class ContainerInteraction extends TestCase
+        class Inventory extends ContainerRenderer
+
+            function add_slot(self, slot: Slot)
+
+    @skipUnless(HAS_VISUAL, "rendering backend is needed") class ContainerInteraction extends TestCase
 
         function setUp(self) -> None
+
+            variable self.interaction_manager
+
+            variable shared.window
 
         function tearDown(self) -> None
 
@@ -44,6 +52,8 @@ ___
 
                 variable invoked
 
+            variable shared.IS_CLIENT
+
             variable s
 
             variable s.on_button_press
@@ -58,6 +68,8 @@ ___
 
                 variable invoked
 
+            variable shared.IS_CLIENT
+
             variable s
 
             variable s.on_button_press
@@ -66,13 +78,7 @@ ___
 
             variable inventory
 
-            variable s
-
-            variable shared.window.mouse_position
-
-            variable self.interaction_manager.moving_itemstack
-
-            variable inventory
+            variable shared.IS_CLIENT
 
             variable s
 
@@ -81,6 +87,18 @@ ___
             variable self.interaction_manager.moving_itemstack
 
             variable inventory
+
+            variable shared.IS_CLIENT
+
+            variable s
+
+            variable shared.window.mouse_position
+
+            variable self.interaction_manager.moving_itemstack
+
+            variable inventory
+
+            variable shared.IS_CLIENT
 
             variable s
 

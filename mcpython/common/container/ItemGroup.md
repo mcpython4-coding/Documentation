@@ -1,4 +1,4 @@
-***ItemGroup.py - documentation - last updated on 13.12.2021 by uuk***
+***ItemGroup.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -12,6 +12,8 @@ ___
 
 
     class ItemGroup extends IBufferSerializeAble
+
+        variable __slots__
 
         function __init__(self)
 
@@ -43,6 +45,8 @@ ___
 
     class FilteredItemGroup extends ItemGroup
 
+        variable __slots__
+
         function __init__(self)
 
             variable self.raw_filter: str
@@ -51,6 +55,6 @@ ___
 
         function view(self) -> typing.Iterator[ItemStack]
 
-        function apply_raw_filter(self, filter: str)
+        function apply_raw_filter(self, filter_code: str)
 
-        function apply_filter(self, filter: re.Pattern)
+        function apply_filter(self, filter_pattern: re.Pattern)

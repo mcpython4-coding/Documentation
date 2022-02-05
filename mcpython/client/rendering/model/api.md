@@ -1,4 +1,4 @@
-***api.py - documentation - last updated on 16.1.2022 by uuk***
+***api.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -77,14 +77,14 @@ ___
         function add_face_to_batch(
                 self,
                 instance: IBlockStateRenderingTarget,
-                batch: pyglet.graphics.Batch,
+                batch,
                 face: mcpython.util.enums.EnumSide,
                 ) -> typing.Iterable:
 
         function add_faces_to_batch(
                 self,
                 instance: IBlockStateRenderingTarget,
-                batch: pyglet.graphics.Batch,
+                batch,
                 faces: int,
                 ) -> typing.Iterable:
 

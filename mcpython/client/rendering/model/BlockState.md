@@ -1,4 +1,4 @@
-***BlockState.py - documentation - last updated on 16.1.2022 by uuk***
+***BlockState.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -27,6 +27,7 @@ ___
 
         variable NAME
 
+        @forced_arg_type("data", lambda: dict, may_subclass=False)
         static
         function is_valid(cls, data: dict) -> bool
 
@@ -36,6 +37,8 @@ ___
 
             variable self.model_alias
 
+        @forced_arg_type("data", lambda: dict, may_subclass=False)
+        @builtins_are_static()
         function parse_data(self, data: dict)
 
                 variable self.parent
@@ -71,6 +74,8 @@ ___
 
             variable box_model
 
+            variable box_model
+
         function add_faces_to_batch(
                 self,
                 instance: IBlockStateRenderingTarget,
@@ -81,7 +86,7 @@ ___
 
             variable state
 
-            variable )
+            variable box_model
 
             variable box_model
 
@@ -238,8 +243,6 @@ ___
         function add_raw_face_to_batch(
                 self, instance: IBlockStateRenderingTarget, position, state, batches, face
                 ):
-
-            variable state
 
         function transform_to_bounding_box(
                 self, instance: mcpython.client.rendering.model.api.IBlockStateRenderingTarget

@@ -1,4 +1,4 @@
-***ContainerRenderer.py - documentation - last updated on 3.1.2022 by uuk***
+***ContainerRenderer.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -97,11 +97,10 @@ ___
                 todo: add special class holding this information with serializer for it
 
             variable self.custom_name - the custom name; If set, rendered in the inventory
-                asyncio.get_event_loop().run_until_complete(self.reload_config())
 
-            variable self.custom_name_label
+                variable self.custom_name_label
 
-            variable self.custom_name_label.anchor_y
+                variable self.custom_name_label.anchor_y
 
             variable self.created_slots
 

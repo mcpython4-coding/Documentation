@@ -1,4 +1,4 @@
-***FluidBlock.py - documentation - last updated on 13.12.2021 by uuk***
+***FluidBlock.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -35,6 +35,8 @@ ___
 
         static
         function __init_subclass__(cls, **kwargs)
+
+                variable cls.FLUID_RENDERER
 
         function __init__(self)
 

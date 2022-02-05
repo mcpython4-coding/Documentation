@@ -1,4 +1,4 @@
-***WorldListState.py - documentation - last updated on 3.1.2022 by uuk***
+***WorldListState.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,11 +11,11 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    variable MISSING_TEXTURE
+        variable MISSING_TEXTURE
 
-    variable WORLD_SELECTION
+        variable WORLD_SELECTION
 
-    variable WORLD_SELECTION_SELECT
+        variable WORLD_SELECTION_SELECT
 
     class WorldList extends AbstractState.AbstractState
 
@@ -68,11 +68,7 @@ ___
 
                     variable read_buffer
 
-                    variable save_version
-
                     variable version_id
-
-                    variable player_name
 
                     variable mods
 

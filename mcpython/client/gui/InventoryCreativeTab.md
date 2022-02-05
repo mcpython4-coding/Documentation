@@ -1,4 +1,4 @@
-***InventoryCreativeTab.py - documentation - last updated on 28.12.2021 by uuk***
+***InventoryCreativeTab.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -49,7 +49,7 @@ ___
 
     class CreativeItemTab extends ICreativeView
 
-        variable bg_texture: pyglet.image.AbstractImage
+        variable bg_texture
 
             variable cls.bg_texture
 
@@ -69,7 +69,7 @@ ___
 
             variable self.custom_name
 
-            variable self.scroll_bar
+                variable self.scroll_bar
 
         function set_scrolling(self, progress: int)
 
@@ -142,11 +142,11 @@ ___
 
             variable self.group: FilteredItemGroup
 
-            variable self.search_bar
+                variable self.search_bar
 
-            variable self.tab_icon
+                variable self.tab_icon
 
-            variable self.tab_icon_selected
+                variable self.tab_icon_selected
 
             variable self.need_reload
 
@@ -221,11 +221,11 @@ ___
 
             variable self.hovering_tab
 
-            variable self.page_left
+                variable self.page_left
 
-            variable self.page_right
+                variable self.page_right
 
-            variable self.page_label
+                variable self.page_label
 
             variable self.lower_left_position
 

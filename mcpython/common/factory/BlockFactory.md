@@ -1,4 +1,4 @@
-***BlockFactory.py - documentation - last updated on 3.1.2022 by uuk***
+***BlockFactory.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -137,7 +137,11 @@ ___
 
             function get_collision_bbox(self)
 
-            function inject_redstone_power(self, side: mcpython.util.enums.EnumSide, level: int)
+            function inject_redstone_power(
+                    self, side: mcpython.util.enums.EnumSide, level: int, call_update=True
+                    ):
+
+                variable self.injected_redstone_power[side.index]
 
             function get_redstone_output(self, side: mcpython.util.enums.EnumSide) -> int
 

@@ -1,4 +1,4 @@
-***EventBus.py - documentation - last updated on 28.12.2021 by uuk***
+***EventBus.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -21,6 +21,8 @@ ___
             variable self.canceled
 
         function cancel(self)
+
+    function create_optional_async(target, *args, **kwargs)
 
     class EventBus
         
@@ -52,6 +54,9 @@ ___
 
             variable self.sub_buses
 
+        @object_method_is_protected("append", lambda: list.append)
+        @object_method_is_protected("setdefault", lambda: dict.setdefault)
+        @object_method_is_protected("subscribe", lambda: EventBus.subscribe)
         function subscribe(
                 self,
                 event_name: str,
@@ -70,6 +75,8 @@ ___
             :param info: an info to give for the caller
 
 
+        @builtins_are_static()
+        @object_method_is_protected("remove", lambda: list.remove)
         function unsubscribe(
                 self, event_name: str, function: typing.Callable | typing.Awaitable
                 ):
@@ -84,11 +91,9 @@ ___
 
                     variable any_found
 
-            variable exception_occ
-
-                        variable result
-
-                    variable exception_occ
+        @object_method_is_protected("iscoroutine", lambda: asyncio.iscoroutine)
+        @inline_call("create_optional_async", lambda: create_optional_async)
+        function _yield_awaitable_or_invoke(self, event_name: str, *args, **kwargs)
 
         function call(self, event_name: str, *args, **kwargs)
 
@@ -116,6 +121,7 @@ ___
 
         function create_sub_bus(self, *args, activate=True, **kwargs)
 
+        @builtins_are_static()
         function call_as_stack(
                 self, event_name: str, *args, amount=1, store_stuff=True, **kwargs
                 ):
@@ -126,6 +132,7 @@ ___
 
                         variable ex
 
+        @builtins_are_static()
         function call_as_stack_no_result(
                 self, event_name: str, *args, amount=1, store_stuff=True, **kwargs
                 ):
@@ -139,8 +146,6 @@ ___
                             variable r
 
                         variable r
-
-                            variable r
 
         function reset_event_stack(self, event_name: str)
             

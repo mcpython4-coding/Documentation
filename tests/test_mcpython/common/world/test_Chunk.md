@@ -1,4 +1,4 @@
-***test_Chunk.py - documentation - last updated on 13.12.2021 by uuk***
+***test_Chunk.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -10,6 +10,8 @@ ___
     Mod loader inspired by "Minecraft Forge" (https://github.com/MinecraftForge/MinecraftForge) and similar
     This project is not official by mojang and does not relate to it.
 
+
+    variable shared.IS_CLIENT
 
     variable test_block
 
@@ -62,12 +64,6 @@ ___
             variable instance
 
             variable b
-
-            variable dim
-
-            variable instance
-
-        function test_add_block_non_integer(self)
 
             variable dim
 

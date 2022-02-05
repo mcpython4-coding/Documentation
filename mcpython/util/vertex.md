@@ -1,4 +1,4 @@
-***vertex.py - documentation - last updated on 6.11.2021 by uuk***
+***vertex.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -16,18 +16,22 @@ ___
 
     variable CUBE_MAP
 
+    @try_optimise()
     function calculate_default(size: typing.Tuple[float, float, float])
 
         variable CORNERS
 
+    @try_optimise()
     function offset_data(data, offset: typing.Tuple[float, float, float])
 
+    @try_optimise()
     function rotate_data(
             data,
             origin: typing.Tuple[float, float, float],
             rotation: typing.Tuple[float, float, float],
             ):
 
+    @try_optimise()
     function scale_data(data, scale: float)
 
     class VertexProvider
@@ -78,6 +82,7 @@ ___
 
             variable self.cache
 
+        @try_optimise()
         function get_vertex_data(
                 self,
                 element_position: typing.Tuple[float, float, float],
@@ -86,6 +91,7 @@ ___
                 scale: float = 1,
                 ):
 
+        @try_optimise()
         function ensure_prepared_rotation(
                 self,
                 rotation: typing.Tuple[float, float, float],

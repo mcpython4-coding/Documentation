@@ -1,4 +1,4 @@
-***BlockModel.py - documentation - last updated on 16.1.2022 by uuk***
+***BlockModel.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -84,6 +84,8 @@ ___
 
                 variable self.texture_names[name]
 
+        @object_method_is_protected("println", lambda: logger.println)
+        @builtins_are_static()
         function prepare_rendering_data_multi_face(
                 self,
                 instance: IBlockStateRenderingTarget,
@@ -165,7 +167,7 @@ ___
                 instance,
                 position: typing.Tuple[float, float, float],
                 config: dict,
-                face: mcpython.util.enums.EnumSide | int,
+                face: EnumSide | int,
                 scale: float = 1,
                 ):
             
@@ -175,6 +177,8 @@ ___
 
                 variable face
 
+        @forced_arg_type("name", lambda: str, may_subclass=False)
+        @builtins_are_static()
         function get_texture_position(
                 self, name: str
                 ) -> typing.Optional[typing.Tuple[int, int]]:
@@ -192,7 +196,7 @@ ___
                 instance: IBlockStateRenderingTarget,
                 position: typing.Tuple[float, float, float],
                 config: dict,
-                face: mcpython.util.enums.EnumSide,
+                face: EnumSide,
                 scale: float,
                 previous: typing.Tuple[typing.List[float], typing.List[float]] = None,
                 batch=None,
@@ -219,7 +223,7 @@ ___
                 position: typing.Tuple[float, float, float],
                 batch: pyglet.graphics.Batch,
                 config: dict,
-                face: mcpython.util.enums.EnumSide,
+                face: EnumSide,
                 ):
 
         @deprecation.deprecated()
@@ -229,7 +233,7 @@ ___
                 position: typing.Tuple[float, float, float],
                 batch: pyglet.graphics.Batch,
                 config: dict,
-                face: mcpython.util.enums.EnumSide,
+                face: EnumSide,
                 ):
 
         @deprecation.deprecated()
@@ -238,7 +242,7 @@ ___
                 instance: IBlockStateRenderingTarget,
                 position: typing.Tuple[float, float, float],
                 config: dict,
-                face: mcpython.util.enums.EnumSide,
+                face: EnumSide,
                 previous: typing.Tuple[typing.List[float], typing.List[float]] = None,
                 batch=None,
                 ) -> typing.Tuple[
@@ -257,7 +261,7 @@ ___
                 instance,
                 position: typing.Tuple[float, float, float],
                 config: dict,
-                face: mcpython.util.enums.EnumSide,
+                face: EnumSide,
                 scale: float,
                 ):
 
@@ -267,6 +271,6 @@ ___
                 instance,
                 position: typing.Tuple[float, float, float],
                 config: dict,
-                face: mcpython.util.enums.EnumSide,
+                face: EnumSide,
                 scale: float,
                 ):

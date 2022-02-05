@@ -1,4 +1,4 @@
-***Anvil.py - documentation - last updated on 3.1.2022 by uuk***
+***Anvil.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -58,6 +58,14 @@ ___
                 await self.inventory.read_from_network_buffer(buffer)
 
             variable self.facing
+
+                variable face
+
+                    variable self.facing
+
+                    variable self.facing
+
+        function get_model_state(self) -> dict
                 
             if button == mouse.RIGHT and not modifiers & (
                 key.MOD_SHIFT | key.MOD_ALT | key.MOD_CTRL
@@ -70,14 +78,6 @@ ___
         function get_inventories(self)
 
         function get_provided_slot_lists(self, side)
-
-                variable face
-
-                    variable self.facing
-
-                    variable self.facing
-
-        function get_model_state(self) -> dict
 
         static
         function set_block_data(cls, item, block)

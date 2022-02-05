@@ -1,4 +1,4 @@
-***BoxModel.py - documentation - last updated on 28.12.2021 by uuk***
+***BoxModel.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -186,8 +186,6 @@ ___
             variable vertex
 
             variable collected_data
-
-                variable batch
 
                 variable batch
 

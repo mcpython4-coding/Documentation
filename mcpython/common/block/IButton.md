@@ -1,4 +1,4 @@
-***IButton.py - documentation - last updated on 3.1.2022 by uuk***
+***IButton.py - documentation - last updated on 5.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -20,10 +20,6 @@ ___
         function __init__(self)
 
             variable self.powered
-
-            variable dimension
-
-            variable block
 
         function get_model_state(self) -> dict
 
