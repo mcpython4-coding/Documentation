@@ -1,4 +1,4 @@
-***AbstractInterface.py - documentation - last updated on 10.1.2022 by uuk***
+***AbstractInterface.py - documentation - last updated on 9.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -54,7 +54,7 @@ ___
                 self, itemstack, position: typing.Tuple[float, float, float], pickup_delay=0
                 ):
 
-    class IChunk extends ISupportWorldInterface,  IBufferSerializeAble,  ABC
+    @forced_attribute_type("data_maps", lambda: dict) @forced_attribute_type("chunk_loaded_list", lambda: tuple) @forced_attribute_type("entity", lambda: set) @forced_attribute_type("_positions_updated_since_last_save", lambda: set) @forced_attribute_type("_world", lambda: dict) class IChunk extends ISupportWorldInterface,  IBufferSerializeAble,  ABC
         
         Abstract class for chunks
         Belows follows an API description
@@ -242,22 +242,21 @@ ___
 
 
         function get_block(
-                self, position: typing.Tuple[int, int, int], none_if_str=False
+                self, position: typing.Tuple[int, int, int], none_if_str=True
                 ) -> typing.Union[typing.Any, str, None]:
             
-            Getter function for a block
+            Getter method for a block
             :param position: the position
-            :param none_if_str: if the block instance would be a str, replace it by None?
+            :param none_if_str: if the block instance would be a str, replace it by None, defaults to True
             :return: the block instance, a str representing a block (e.g. for scheduled during generation) or None
                 if there is no block
 
 
-        function as_shareable(self) -> "IChunk"
-            
-            Creates a reference to this chunk which can be linked across threads / processes
-            :return: this chunk instance
-            INFO: currently not in use
+        @onlyInClient()
+        function show_block(self, position)
 
+        @onlyInClient()
+        function hide_block(self, position)
 
         function mark_dirty(self)
 
@@ -283,7 +282,7 @@ ___
 
         function __hash__(self)
 
-    class IDimension extends ISupportWorldInterface,  ABC
+    @forced_attribute_type("loaded", lambda: bool) @forced_attribute_type("chunks", lambda: dict) class IDimension extends ISupportWorldInterface,  ABC
 
         function __init__(self)
 

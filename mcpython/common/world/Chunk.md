@@ -1,4 +1,4 @@
-***Chunk.py - documentation - last updated on 5.2.2022 by uuk***
+***Chunk.py - documentation - last updated on 9.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,7 +11,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class Chunk extends mcpython.engine.world.AbstractInterface.IChunk
+    @forced_attribute_type("dirty", lambda: bool) @forced_attribute_type("generated", lambda: bool) @forced_attribute_type("loaded", lambda: bool) @forced_attribute_type("visible", lambda: bool) @forced_attribute_type("is_ready", lambda: bool) @forced_attribute_type("position", lambda: tuple) class Chunk extends mcpython.engine.world.AbstractInterface.IChunk
         
         Default representation of a chunk in the world
         Defines the default behaviour
@@ -55,7 +55,7 @@ ___
             variable self.dirty
                 Indicated that the chunk was modified
 
-        @name_is_static("tuple", lambda: tuple)
+        @builtins_are_static()
         function entity_iterator(self) -> typing.Iterable
 
         function tick(self)
@@ -67,13 +67,12 @@ ___
         function save(self)
 
         @returns_argument()
-        function as_shareable(self) -> mcpython.engine.world.AbstractInterface.IChunk
-
-        @returns_argument()
         function mark_dirty(self)
 
+        @constant_operation()
         function get_dimension(self) -> mcpython.engine.world.AbstractInterface.IDimension
 
+        @constant_operation()
         function get_position(self) -> typing.Tuple[int, int]
 
         function get_maximum_y_coordinate_from_generation(
@@ -102,12 +101,15 @@ ___
 
         variable ALL_FACES_EXPOSED
 
+        @name_is_static("position_to_chunk", lambda: position_to_chunk)
+        @name_is_static("EnumSide", lambda: EnumSide)
         @builtins_are_static()
+        @deprecation.deprecated()
         function exposed_faces(
                 self, position: typing.Tuple[int, int, int]
                 ) -> typing.Dict[str, bool]:
             
-            Returns an dict of the exposed status of every face of the given block
+            Returns a dict of the exposed status of every face of the given block
             :param position: the position to check
             :return: the dict for the status
 
@@ -130,7 +132,10 @@ ___
 
                     variable faces[face.normal_name]
 
+        @name_is_static("position_to_chunk", lambda: position_to_chunk)
+        @name_is_static("EnumSide", lambda: EnumSide)
         @builtins_are_static()
+        @deprecation.deprecated()
         function exposed_faces_list(
                 self, position: typing.Tuple[int, int, int]
                 ) -> typing.List[bool]:
@@ -153,8 +158,10 @@ ___
 
                     variable faces[face.index]
 
+        @name_is_static("position_to_chunk", lambda: position_to_chunk)
+        @name_is_static("EnumSide", lambda: EnumSide)
         @builtins_are_static()
-        function exposed_faces_flag(self, block) -> int
+        function exposed_faces_flag(self, block: str | Block.AbstractBlock | None) -> int
 
             variable faces
 
@@ -168,10 +175,11 @@ ___
 
                     variable new_block
 
+        @name_is_static("EnumSide", lambda: EnumSide)
         @builtins_are_static()
         function exposed_faces_iterator(
                 self, position: typing.Tuple[int, int, int]
-                ) -> typing.Iterator[mcpython.util.enums.EnumSide]:
+                ) -> typing.Iterator[EnumSide]:
 
             variable instance
 
@@ -195,7 +203,7 @@ ___
         @deprecation.deprecated()
         function add_block_unsafe(self, *args, **kwargs)
             
-            Adds a block to the given position
+            Adds a block (given by name or a block instance) to the given position in this chunk
             :param position: the position to add
             :param block_name: the name of the block or an instance of it
             :param immediate: if the block should be shown if needed
@@ -233,14 +241,16 @@ ___
             variable self._world[position]
                 store the block instance in the local world
             
-            Will call to the neighbor blocks an block update
+            Will call to the neighbor blocks a block update
             :param position: the position in the center
-            :param include_itself: if the block itself should be updated
+            :param include_itself: if the block itself (the block at 'position') should be updated
 
 
             variable to_invoke
 
-                            variable b: Block.AbstractBlock
+                variable b: Block.AbstractBlock
+
+                variable b
 
             variable immediate: bool
 
@@ -260,6 +270,7 @@ ___
 
                 variable position
 
+        @name_is_static("shared", lambda: shared)
         @name_is_static("EnmSide", lambda: EnumSide)
         @builtins_are_static()
         function check_neighbors(self, position: typing.Tuple[int, int, int])
@@ -273,6 +284,7 @@ ___
 
                 variable block
 
+        @name_is_static("shared", lambda: shared)
         @name_is_static("Block", lambda: Block)
         @builtins_are_static()
         function show_block(
@@ -284,11 +296,12 @@ ___
             Show the block at the given `position`. This method assumes the
             block has already been added with add_block()
             :param position: The (x, y, z) position of the block to show.
-            :param immediate: Whether or not to show the block immediately.
+            :param immediate: Whether to show the block immediately or not
 
 
                 variable position
 
+        @name_is_static("shared", lambda: shared)
         @name_is_static("Block", lambda: Block)
         @builtins_are_static()
         function hide_block(
@@ -300,7 +313,7 @@ ___
             Hide the block at the given `position`. Hiding does not remove the
             block from the world.
             :param position: The (x, y, z) position of the block to hide.
-            :param immediate: Whether or not to immediately remove the block from the canvas.
+            :param immediate: Whether to immediately remove the block from the canvas or not.
 
 
                 variable position
@@ -308,7 +321,7 @@ ___
         @name_is_static("shared", lambda: shared)
         function show(self, force=False)
             
-            will show the chunk
+            Will show the chunk
             :param force: if the chunk show should be forced or not
 
 
@@ -323,13 +336,17 @@ ___
 
             variable self.visible
 
+        @name_is_static("shared", lambda: shared)
         function is_visible(self) -> bool
 
+        @name_is_static("shared", lambda: shared)
         function update_visible_block(self, position: typing.Tuple[int, int, int], hide=True)
 
         @builtins_are_static()
         function exposed(self, position: typing.Tuple[int, int, int]) -> bool
 
+        @name_is_static("shared", lambda: shared)
+        @object_method_is_protected("keys", lambda: dict.keys)
         function update_visible(self, hide=True, immediate=False)
             
             Will update all visible of all blocks of the chunk
@@ -337,6 +354,7 @@ ___
             :param immediate: if immediate call or not
 
 
+        @name_is_static("shared", lambda: shared)
         function hide_all(self, immediate=True)
             
             Will hide all blocks in the chunk
@@ -344,14 +362,14 @@ ___
 
 
         function get_block(
-                self, position: typing.Tuple[int, int, int], none_if_str=False
+                self, position: typing.Tuple[int, int, int], none_if_str=True
                 ) -> typing.Union[Block.AbstractBlock, str, None]:
             
-            will get the block at an given position
+            Will get the block at an given position
             :param position: the position to check for, must be normalized
-            :param none_if_str: if none if the block instance is str
+            :param none_if_str: if none if the block instance is str, defaults to True
             :return: None if no block, str if scheduled and Block.Block if created
-            todo: split up into get_block_generated and get_block_un_generated
+            todo: split up into get_block[_generated] and get_block_un_generated
 
 
         function __str__(self)
@@ -362,6 +380,8 @@ ___
 
         function get_entities(self)
 
+        @object_method_is_protected("values", lambda: dict.values)
+        @object_method_is_protected("format", lambda: str.format)
         function dump_debug_maps(self, file_formatter: str)
 
         function spawn_itemstack_in_world(

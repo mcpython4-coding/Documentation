@@ -1,4 +1,4 @@
-***ServerConnectionState.py - documentation - last updated on 14.10.2021 by uuk***
+***ServerConnectionState.py - documentation - last updated on 9.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -20,6 +20,8 @@ ___
             variable self.config_background
 
             variable self.connecting_label
+
+        function bind_to_eventbus(self)
 
         function create_state_parts(self) -> list
 

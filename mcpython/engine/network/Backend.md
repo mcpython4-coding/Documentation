@@ -1,4 +1,4 @@
-***Backend.py - documentation - last updated on 13.12.2021 by uuk***
+***Backend.py - documentation - last updated on 9.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -42,6 +42,8 @@ ___
             variable shared.IS_NETWORKING
 
         function work(self)
+
+            variable packages
 
                     variable d
 
@@ -104,3 +106,5 @@ ___
         function single_client_thread_recv(self, conn, client_id: int)
 
         function single_client_thread_send(self, conn, client_id: int)
+
+                    variable packages

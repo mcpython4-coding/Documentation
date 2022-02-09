@@ -1,4 +1,4 @@
-***WorldLoadingProgressState.py - documentation - last updated on 13.12.2021 by uuk***
+***WorldLoadingProgressState.py - documentation - last updated on 9.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -25,6 +25,8 @@ ___
 
             variable save_file
 
+        function bind_to_eventbus(self)
+
         function create_state_parts(self) -> list
 
                     variable c
@@ -43,10 +45,6 @@ ___
                 immediate=False)
 
                 variable player
-
-        function bind_to_eventbus(self)
-
-        function on_key_press(self, symbol, modifiers)
 
         function calculate_percentage_of_progress(self)
 

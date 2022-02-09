@@ -1,4 +1,4 @@
-***ModelHandler.py - documentation - last updated on 13.12.2021 by uuk***
+***ModelHandler.py - documentation - last updated on 9.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -11,7 +11,7 @@ ___
     This project is not official by mojang and does not relate to it.
 
 
-    class ModelHandler
+    @forced_attribute_type("break_stages", list) @forced_attribute_type("raw_models", list) @forced_attribute_type("hide_blockstate_errors", lambda: bool) @forced_attribute_type("dependence_list", lambda: list) @forced_attribute_type("lookup_locations", lambda: set) @forced_attribute_type("blockstates", lambda: dict) @forced_attribute_type("found_models", lambda: dict) @forced_attribute_type("used_models", lambda: set) @forced_attribute_type("models", lambda: dict) class ModelHandler
 
         function __init__(self)
 

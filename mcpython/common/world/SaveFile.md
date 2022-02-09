@@ -1,4 +1,4 @@
-***SaveFile.py - documentation - last updated on 3.1.2022 by uuk***
+***SaveFile.py - documentation - last updated on 9.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -88,6 +88,8 @@ ___
 
             variable buffer
                 todo: add scheduler for dumping region files to storage for later
+
+    class UnableToFixDataException extends Exception
 
     class SaveFile
         

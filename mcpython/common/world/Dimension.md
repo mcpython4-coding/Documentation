@@ -1,4 +1,4 @@
-***Dimension.py - documentation - last updated on 13.12.2021 by uuk***
+***Dimension.py - documentation - last updated on 9.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -74,7 +74,7 @@ ___
 
     variable shared.dimension_handler
 
-    class Dimension extends mcpython.engine.world.AbstractInterface.IDimension
+    @forced_attribute_type("height_range", lambda: tuple) @forced_attribute_type("batches", lambda: list) @forced_attribute_type("world_generation_config_objects", lambda: dict) @forced_attribute_type("name", lambda: str) @forced_attribute_type("chunks", lambda: dict) @forced_attribute_type("id", lambda: int) class Dimension extends mcpython.engine.world.AbstractInterface.IDimension
         
         Class holding a whole dimension
         Default cross-side implementation

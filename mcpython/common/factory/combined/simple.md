@@ -1,4 +1,4 @@
-***simple.py - documentation - last updated on 28.12.2021 by uuk***
+***simple.py - documentation - last updated on 9.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -135,6 +135,8 @@ ___
                     variable data
 
                         variable data
+
+            variable suffix: str
             
             Creates a set for a log like block
             :param suffix: the name suffix

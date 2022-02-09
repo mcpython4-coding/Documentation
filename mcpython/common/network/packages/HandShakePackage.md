@@ -1,4 +1,4 @@
-***HandShakePackage.py - documentation - last updated on 13.12.2021 by uuk***
+***HandShakePackage.py - documentation - last updated on 9.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -37,6 +37,8 @@ ___
             variable shared.NETWORK_MANAGER.client_profiles.setdefault(self.sender_id,
 
             variable shared.NETWORK_MANAGER.playername2connectionID[
+
+            variable mod_list_package
 
     class Server2ClientHandshake extends AbstractPackage
         

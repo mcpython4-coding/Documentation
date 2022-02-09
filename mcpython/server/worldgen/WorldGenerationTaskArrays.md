@@ -1,4 +1,4 @@
-***WorldGenerationTaskArrays.py - documentation - last updated on 5.2.2022 by uuk***
+***WorldGenerationTaskArrays.py - documentation - last updated on 9.2.2022 by uuk***
 ___
 
     mcpython - a minecraft clone written in python licenced under the MIT-licence 
@@ -20,18 +20,21 @@ ___
 
         function __init__(self)
 
+            variable self.chunks: weakref.WeakSet[IChunk]
+
+            variable self.data_maps - invoke, world_changes, shown_updates
+
         function get_total_task_stats(self) -> list
             
             Will return the sum of all tasks of the whole system, in invoke, world_changes and shown_updates separated
 
 
         function get_task_count_for_chunk(
-                self, chunk: mcpython.engine.world.AbstractInterface.IChunk
+                self, chunk: IChunk
                 ) -> int:
             
-            Gets the total count of tasks for an given chunk as an int
-            :param chunk:
-            :return:
+            Gets the total count of tasks for a given chunk as an int
+            :param chunk: the chunk instance to get the task count for
 
 
             variable dim
@@ -42,13 +45,13 @@ ___
 
         function schedule_invoke(
                 self,
-                chunk: mcpython.engine.world.AbstractInterface.IChunk,
+                chunk: IChunk,
                 method: typing.Callable | typing.Awaitable,
                 *args,
                 **kwargs,
                 ):
             
-            Schedules a callable-invoke for the future or an await on such a task
+            Schedules a callable-invoke for the future or an 'await' on a coroutine
             :param chunk: the chunk to link to
             :param method: the method to call
             :param args: the args to call with
@@ -57,20 +60,20 @@ ___
 
         function schedule_block_add(
                 self,
-                chunk: mcpython.engine.world.AbstractInterface.IChunk,
-                position: tuple,
+                chunk: IChunk,
+                position: typing.Tuple[int, int, int],
                 name: str,
                 *args,
                 on_add=None,
                 **kwargs,
                 ):
             
-            Schedules an addition of an block
+            Schedules an addition of a block
             :param chunk: the chunk the block is linked to
             :param position: the position of the block
             :param name: the name of the block
             :param args: the args to send to the add_block-method
-            :param on_add: an callable called together with the block instance when the block is added
+            :param on_add: a callable called together with the block instance when the block is added
             :param kwargs: the kwargs send to the add_block-method
 
 
@@ -78,32 +81,32 @@ ___
 
         function schedule_block_remove(
                 self,
-                chunk: mcpython.engine.world.AbstractInterface.IChunk,
-                position: tuple,
+                chunk: IChunk,
+                position: typing.Tuple[int, int, int],
                 *args,
                 on_remove=None,
                 **kwargs,
                 ):
             
-            Schedules an removal of an block
+            Schedules the removal of a block
             :param chunk: the chunk the block is linked to
             :param position: the position of the block
             :param args: the args to call the remove_block-function with
-            :param on_remove: an callable to call when the block gets removed, with None as an parameter
+            :param on_remove: a callable to call when the block gets removed, with None as a parameter
             :param kwargs: the kwargs to call the remove_block-function with
 
 
         function schedule_block_show(
-                self, chunk: mcpython.engine.world.AbstractInterface.IChunk, position: tuple
+                self, chunk: IChunk, position: tuple
                 ):
             
-            schedules an show of an block
+            Schedules a show of a block
             :param chunk: the chunk
             :param position: the position of the block
 
 
         function schedule_block_hide(
-                self, chunk: mcpython.engine.world.AbstractInterface.IChunk, position: tuple
+                self, chunk: IChunk, position: tuple
                 ):
             
             Schedules hiding a block
@@ -112,7 +115,7 @@ ___
 
 
         function schedule_visual_update(
-                self, chunk: mcpython.engine.world.AbstractInterface.IChunk, position: tuple
+                self, chunk: IChunk, position: tuple
                 ):
             
             Schedules a visual update of a block (-> show/hide as needed)
@@ -120,12 +123,17 @@ ___
             :param position: the position of the block
 
 
-        function process_one_task(self, chunk=None, log_msg=False) -> int
+        function process_one_task(self, chunk: IChunk = None, log_msg=False) -> int
             
             Processes one task from a semi-random chunk or a given one
             :param chunk: the chunk or None to select one
             :param log_msg: if messages for extra info should be logged
+            :return: a return status for the task; 1 when no tasks are arrival, 2 or 3 otherwise 
 
+
+            variable start
+
+                variable chunk
 
                 variable chunk.generated
 
@@ -136,7 +144,7 @@ ___
             Process tasks in chunks [default to all scheduled chunks] until more time than timer is left behind
                 [Defaults to no limit]
             :param chunks: if given, an iterable of chunks to generate
-            :param timer: if given, an float in seconds to determine how far to generate
+            :param timer: if given, a float in seconds to determine how far to generate
             todo: add some better sorting function!
 
 
@@ -184,7 +192,7 @@ ___
                     variable block
 
         function get_block(
-                self, position: tuple, chunk: mcpython.engine.world.AbstractInterface.IChunk
+                self, position: tuple, chunk: IChunk
                 ):
             
             Gets an generated block from the array
@@ -195,7 +203,7 @@ ___
 
             variable dimension
 
-        function clear_chunk(self, chunk: mcpython.engine.world.AbstractInterface.IChunk)
+        function clear_chunk(self, chunk: IChunk)
             
             Will remove all scheduled tasks from an given chunk
             :param chunk: the chunk
@@ -258,7 +266,7 @@ ___
         function __init__(
                 self,
                 handler: WorldGenerationTaskHandler,
-                chunk: mcpython.engine.world.AbstractInterface.IChunk,
+                chunk: IChunk,
                 ):
 
             variable self.handler
@@ -330,14 +338,14 @@ ___
 
         function create(
                 self,
-                chunk: mcpython.engine.world.AbstractInterface.IChunk,
+                chunk: IChunk,
                 default: WorldGenerationTaskHandlerReference,
                 ) -> typing.Tuple[
                 "ProcessSeparatedWorldGenerationTaskHandlerReference", OffProcessTaskHelper
                 ]:
                 helper_instance = OffProcessTaskHelper(chunk)
                 array_instance = ProcessSeparatedWorldGenerationTaskHandlerReference(
-                helper_instance.shared, chunk.as_shareable()
+                helper_instance.shared, chunk
                 )
                 helper_instance.reference = array_instance
                 self.references.append((helper_instance, array_instance, default))
@@ -366,7 +374,7 @@ ___
         function __init__(
                 self,
                 shared_helper: OffProcessTaskHelper.OffProcessTaskHelperShared,
-                chunk: mcpython.engine.world.AbstractInterface.IChunk,
+                chunk: IChunk,
                 ):
 
             variable self.shared_helper
